@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+@keyframes particles {
+  0% { transform: translateY(0px) }
+  50% { transform: translateY(-6px) }
+  100% { transform: translateY(0px) }
+}
+
+@keyframes reflect-slide {
+  0% { transform: translateX(-200%) }
+  100% { transform: translateX(200%) }
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes slide {
+  0% { transform: translateX(-100%); opacity: 0.9; }
+  50% { transform: translateX(0%); opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0.9; }
+}
+
+@keyframes slideMirror {
+  0% { transform: translateX(-50%) scaleX(1); opacity: 0.9; }
+  49% { transform: translateX(50%) scaleX(1); opacity: 1; }
+  50% { transform: translateX(50%) scaleX(-1); opacity: 1; }
+  99% { transform: translateX(-50%) scaleX(-1); opacity: 0.9; }
+  100% { transform: translateX(-50%) scaleX(1); opacity: 0.9; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   ANIMATION UTILITY CLASSES
+============================================================ */
+.animate-pulse-slow { animation: particles 6s ease-in-out infinite; }
+.animate-reflect { animation: reflect-slide 3.5s ease-in-out infinite; }
+.animate-gradient-x { background-size: 200% 200%; animation: shimmer 3s ease-in-out infinite; }
+
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-float-medium { animation: float 4s ease-in-out infinite; }
+.animate-float-slow { animation: float 7s ease-in-out infinite; }
+
+.animate-bounce-slow { animation: bounce-slow 2s ease-in-out infinite; }
+.animate-slide { animation: slide 8s linear infinite alternate; }
+.animate-slideMirror { animation: slideMirror 20s linear infinite; }
+
+/* ============================================================
+   GLASS EFFECTS (safe version)
+============================================================ */
+.glass-card {
+  background: rgba(255, 255, 255, 0.65); /* ✅ No black tint */
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  color: #111;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+.glass-btn {
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(6px);
+  color: #111;
+}
+
+/* ============================================================
+   GLOBAL COLOR VARIABLES
+============================================================ */
+:root {
+  --background: #ffffff;   /* Always white */
+  --foreground: #171717;
+
+  --color-primary: 39, 141, 164;
+  --color-primary-hex: #278da4;
+
+  --color-secondary: 0, 60, 132;
+  --color-secondary-hex: #003c84;
+
+  --color-tertiary: 255,255,255;
+  --color-tertiary-hex: #ffffff;
+}
+
+/* ============================================================
+   Force White Background (Fixes mobile black screen)
+============================================================ */
+html,
+body {
+  background-color: #ffffff !important;
+  color: var(--foreground);
+  font-family: 'Helvetica Neue', 'Helvetica', 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   Disable Dark Mode Black Background Completely
+============================================================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff !important;
+    --foreground: #171717;
+  }
+
+  html, body {
+    background-color: #ffffff !important;
+  }
+}
+
+/* ============================================================
+   UTILITY COLOR CLASSES
+============================================================ */
+.bg-primary { background-color: rgb(var(--color-primary)); }
+.bg-secondary { background-color: rgb(var(--color-secondary)); }
+.bg-tertiary { background-color: rgb(var(--color-tertiary)); }
+
+.text-primary { color: rgb(var(--color-primary)); }
+.text-secondary { color: rgb(var(--color-secondary)); }
+.text-tertiary { color: rgb(var(--color-tertiary)); }
+
+.border-primary { border-color: rgb(var(--color-primary)); }
+.border-secondary { border-color: rgb(var(--color-secondary)); }
+.border-tertiary { border-color: rgb(var(--color-tertiary)); }
+
+.transition-color { transition: color 0.2s ease, text-decoration-color 0.2s ease; }
+
+/* ============================================================
+   FORM FIXES (Modal Inputs)
+============================================================ */
+.modal-form input::placeholder { color: #6b7280 !important; }
+.modal-form input { color: #111827 !important; }
+.modal-form select { color: #111827 !important; }
+
+.modal-form option[value=""] { color: #6b7280 !important; }
+.modal-form option:not([value=""]) { color: #111827 !important; }
+
+/* ============================================================
+   TESTIMONIAL CARD
+============================================================ */
+.testimonial-card { animation: fadeInUp 0.6s ease-out; }
+.testimonial-card:hover { animation: float 3s ease-in-out infinite; }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}

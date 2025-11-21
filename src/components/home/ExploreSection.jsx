@@ -21,13 +21,12 @@ const ExploreSection = () => {
 
         {/* ✅ Split heading into two clear lines */}
         <h2 className="text-2xl lg:text-3xl font-extrabold text-[#003366] mb-6 leading-snug">
-          INDIRA COLLEGE OF ENGINEERING <br />
-          & MANAGEMENT
+          INDIRA GLOBAL SCHOOL OF BUSINESS
         </h2>
 
         {/* ✅ Paragraph text justified */}
         <p className="text-gray-700 text-lg lg:text-xl leading-relaxed text-justify">
-          Located near Pune, Indira College of Engineering & Management, one of
+          Located near Pune, Indira Global School of Business, one of
           the leading NAAC accredited engineering institutions, offers a world
           of learning to help you achieve your goals. Choose from
           industry-led programs, learn from outstanding faculty in

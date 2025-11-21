@@ -52,36 +52,13 @@ const HeroSlider = () => {
 
   return (
     <div className="relative w-full overflow-hidden">
-
-      {/* ---------------- TOP SPOTLIGHT SECTION ---------------- */}
-      <div className="w-full bg-white border-b border-gray-200 flex items-center overflow-hidden relative">
-        <div className="relative flex items-center justify-center font-semibold text-sm px-8 py-2 clip-ribbon-left z-10 bg-secondary text-white">
-          SPOTLIGHT
-        </div>
-
-        <div className="flex-1 overflow-hidden whitespace-nowrap bg-white">
-          <div className="flex animate-seamlessMarquee font-semibold text-sm py-2 text-secondary">
-            <span className="mr-12">Public Advisory Notice</span>
-            <span className="mr-12">All 4 PG Programs Computer Engineering</span>
-            <span className="mr-12">Admission Open 2025–26</span>
-            <span className="mr-12">Placement Record 2025 Announced</span>
-
-            {/* Duplicate for seamless loop */}
-            <span className="mr-12">Public Advisory Notice</span>
-            <span className="mr-12">All 4 PG Programs Computer Engineering</span>
-            <span className="mr-12">Admission Open 2025–26</span>
-            <span className="mr-12">Placement Record 2025 Announced</span>
-          </div>
-        </div>
-
-        <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-primary to-transparent"></div>
-      </div>
-
       {/* ---------------- DESKTOP SLIDER ---------------- */}
       <div className="hidden md:block">
         <div
           className={`flex ${
-            isTransitioning ? "transition-transform duration-700 ease-in-out" : ""
+            isTransitioning
+              ? "transition-transform duration-700 ease-in-out"
+              : ""
           }`}
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
@@ -124,7 +101,9 @@ const HeroSlider = () => {
       <div className="block md:hidden">
         <div
           className={`flex ${
-            isTransitioning ? "transition-transform duration-700 ease-in-out" : ""
+            isTransitioning
+              ? "transition-transform duration-700 ease-in-out"
+              : ""
           }`}
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >

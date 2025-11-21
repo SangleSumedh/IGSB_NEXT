@@ -133,9 +133,9 @@ const Navbar = () => {
           ], // Change This to a single page or Subsection like groups of committees
         },
         {
-          title: " ",
+          title: null,
+          offsetTop: true,
           items: [
-            { label: " ", link: " " },
             {
               label: "Academic Advisory Committee",
               link: "/about/accreditation",
@@ -295,9 +295,11 @@ const Navbar = () => {
     <div className="max-w-8xl px-8 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 animate-in fade-in-0 zoom-in-95 duration-300 ">
       {content.sections.map((section, index) => (
         <div key={index}>
-          <h3 className="text-lg font-semibold text-secondary mb-4">
-            {section.title || content.title}
-          </h3>
+          {section.title ? (
+            <h3 className="text-lg font-semibold text-secondary mb-4">
+              {section.title}
+            </h3>
+          ) : null}
           <ul className="space-y-4 text-gray-800 text-sm">
             {section.items.map((item, itemIndex) => (
               <li
@@ -404,30 +406,21 @@ const Navbar = () => {
                 </a>
                 <span className="text-gray-400">|</span>
                 <a
-                  href="https://indira.edupluscampus.com/"
+                  href="http://220.226.204.21/login.aspx/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-secondary transition-colors duration-200"
                 >
-                  ERP Login Staff
+                  ERP Login
                 </a>
                 <span className="text-gray-400">|</span>
                 <a
-                  href="https://myindira.edupluscampus.com/"
+                  href="https://app.joinsuperset.com/join/#/signup/student/placements/621c7653-bdeb-4ee2-bb72-765e5d1d9635"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-secondary transition-colors duration-200"
                 >
-                  ERP Login Student
-                </a>
-                <span className="text-gray-400">|</span>
-                <a
-                  href="https://indiraicem.ac.in/ICEM-360-degree-virtual-tour/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors duration-200"
-                >
-                  360<sup>0</sup> Tour
+                  Superset
                 </a>
                 <span className="text-gray-400">|</span>
                 <a

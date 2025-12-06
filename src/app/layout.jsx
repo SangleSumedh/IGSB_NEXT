@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
 
         {/* ✔ Wrap entire scrollable content with Lenis */}
         <LenisProvider>
-          <main className="flex-grow">{children}</main>
+          <main className="flex-grow pb-12">{children}</main>
           <Footer />
         </LenisProvider>
       </body>

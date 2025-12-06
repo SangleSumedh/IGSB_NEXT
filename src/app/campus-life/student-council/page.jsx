@@ -50,14 +50,14 @@ function IcemStudentCouncil() {
       <div className="relative w-full h-[60vh]">
         <Image
           src={bannerImg}
-          alt="ICEM Campus"
+          alt="IGSB Campus"
           fill
           style={{ objectFit: "cover" }}
           priority
         />
         <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg text-center">
-            ICEM Student Council
+            IGSB Student Council
           </h1>
         </div>
       </div>
@@ -67,7 +67,7 @@ function IcemStudentCouncil() {
         {/* Left Section */}
         <div className="md:w-2/3 bg-white p-6 rounded-xl shadow-md">
           <h2 className="text-2xl font-semibold text-secondary mb-6">
-            About ICEM Student Council
+            About IGSB Student Council
           </h2>
 
           <p className="text-gray-700 leading-relaxed mb-4">
@@ -88,7 +88,7 @@ function IcemStudentCouncil() {
           </p>
 
           <p className="text-gray-700 leading-relaxed mb-10">
-            <b>Indira College of Engineering and Management (ICEM)</b> has
+            <b>Indira Global School Of business (IGSB)</b> has
             formed its Student Council under the guidance of the above-mentioned
             Act. The following are the council members.
           </p>

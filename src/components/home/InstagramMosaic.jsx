@@ -115,7 +115,7 @@ export default function InstagramMosaic() {
         {/* MOBILE BUTTON */}
         <div className="mt-10 text-center sm:hidden">
           <Link
-            href="https://www.instagram.com/icem_pune?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" // Replace with actual profile link
+            href="https://www.instagram.com/p/DQ3MMj_CEel/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA== " // Replace with actual profile link
             target="_blank"
             className="inline-flex items-center justify-center px-8 py-3 bg-secondary text-white font-semibold rounded-full shadow-lg"
           >

@@ -12,7 +12,7 @@ export default function ResearchLab() {
               </h2>
 
               <p className="text-gray-700 leading-relaxed mb-6 text-base md:text-lg">
-                ICEM stands as a hub of innovation and experiential learning,
+                IGSB stands as a hub of innovation and experiential learning,
                 where technology, creativity, and research converge. Every
                 laboratory and facility is designed to nurture curiosity,
                 encourage experimentation, and build industry-relevant

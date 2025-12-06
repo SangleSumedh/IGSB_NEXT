@@ -118,7 +118,7 @@ export default function Sports() {
       { database: "NDL (National Digital Library of India)", url: "https://ndl.iitkgp.ac.in" },
       { database: "DELNET (Developing Library Network)", url: "http://www.delnet.in" },
       { database: "J-gate", url: "https://www.jgateenext.com" },
-      { database: "Question Papers", url: "Autonomous ENDSEM Question Papers ICEM" }
+      { database: "Question Papers", url: "Autonomous ENDSEM Question Papers IGSB" }
     ]
   };
 
@@ -163,7 +163,7 @@ export default function Sports() {
 
   // Primary Health Centre data
   const healthCentreData = {
-    description: "Indira Primary Health Centre is an In-house Medical Clinic Facility for Students and Staffs of ICEM campus. Medical Clinic is equipped with equipment needed for primary health management.",
+    description: "Indira Primary Health Centre is an In-house Medical Clinic Facility for Students and Staffs of IGSB campus. Medical Clinic is equipped with equipment needed for primary health management.",
     services: [
       "Medical Consultation",
       "Gynaecological Consultation",
@@ -178,7 +178,7 @@ export default function Sports() {
   // Hostel data
   const hostelData = {
     overview: {
-      description: "ICEM is having Boys & Girls hostel facility with spacious rooms.",
+      description: "IGSB is having Boys & Girls hostel facility with spacious rooms.",
       capacity: {
         girls: "168",
         boys: "126"
@@ -296,7 +296,7 @@ export default function Sports() {
     {
       title: "Table Tennis Runners-Up",
       description:
-        "The ICEM Parandwadi Girls Team clinched the Runner-up position in the SPPU Intercollegiate Table Tennis Tournament, honoured by national player Mr. Rajat Kadam.",
+        "The IGSB Parandwadi Girls Team clinched the Runner-up position in the SPPU Intercollegiate Table Tennis Tournament, honoured by national player Mr. Rajat Kadam.",
         img: "/sports/tabletennis.webp",
     },
     {
@@ -320,13 +320,13 @@ export default function Sports() {
     {
       title: "Water Polo Runners-Up",
       description:
-        "The ICEM Water Polo Team secured the Runner-up trophy at the SPPU Intercollegiate tournament, with team members Mr. Dhanraj Raut and Mr. Vallabh Lawate selected for the Pune District Team.",
+        "The IGSB Water Polo Team secured the Runner-up trophy at the SPPU Intercollegiate tournament, with team members Mr. Dhanraj Raut and Mr. Vallabh Lawate selected for the Pune District Team.",
         img: "/sports/water-polo.webp",
     },
     {
       title: "Mallkhambh Qualification",
       description:
-        "Mr. Deepak Yadav (S.E. Computer) excelled in his sport, qualifying to represent ICEM at the SPPU Interzonal Mallkhambh Competition.",
+        "Mr. Deepak Yadav (S.E. Computer) excelled in his sport, qualifying to represent IGSB at the SPPU Interzonal Mallkhambh Competition.",
         img: "/sports/malkhamb.webp",
     },
   ];
@@ -377,7 +377,7 @@ const highlight = {
               </h2>
 
               <p className="text-gray-700 leading-relaxed mb-4">
-                At <b>ICEM</b>, we believe in the holistic development of our
+                At <b>IGSB</b>, we believe in the holistic development of our
                 students, and sports play a vital role in shaping character,
                 building teamwork, and promoting physical fitness.
               </p>
@@ -531,7 +531,7 @@ const highlight = {
                 <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
                   <h3 className="text-xl font-bold text-green-800 mb-4">Library Vision</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    Mr. Shankar Rao Wakalkar Library (ICEM Central Library) will be recognized as leading library by informing and inspiring its user making them all more resilient, more knowledgeable, more connected and more successful.
+                    Mr. Shankar Rao Wakalkar Library (IGSB Central Library) will be recognized as leading library by informing and inspiring its user making them all more resilient, more knowledgeable, more connected and more successful.
                   </p>
                   <p className="text-gray-700 leading-relaxed mt-3">
                     The Library continues to embrace change and align itself to thrive on diversity, to support professional growth and opportunity, and to reward flexibility and innovation.
@@ -817,7 +817,7 @@ const highlight = {
           // Transport-specific content
           <div className="max-w-full mx-auto px-6 py-10">
             <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Transport @ ICEM</h2>
+              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Transport @ IGSB</h2>
               
               {/* Route Layout Section */}
               <div className="mb-12">
@@ -862,7 +862,7 @@ const highlight = {
           // Gym-specific content
           <div className="max-w-full mx-auto px-6 py-10">
             <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Gymnasium @ ICEM</h2>
+              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Gymnasium @ IGSB</h2>
               
               {/* Gym Images Grid */}
               <div className="mb-12">
@@ -919,7 +919,7 @@ const highlight = {
           // Canteen-specific content
           <div className="max-w-full mx-auto px-6 py-10">
             <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Canteen @ ICEM</h2>
+              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Canteen @ IGSB</h2>
               
               {/* Canteen Images Grid */}
               <div className="mb-12">
@@ -957,7 +957,7 @@ const highlight = {
           // Primary Health Centre-specific content
           <div className="max-w-full mx-auto px-6 py-10">
             <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Primary Health Centre @ ICEM</h2>
+              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Primary Health Centre @ IGSB</h2>
               
               {/* Health Centre Images Grid */}
               <div className="mb-12">
@@ -1012,7 +1012,7 @@ const highlight = {
           <div className="max-w-full mx-auto px-6 py-10 space-y-12">
             {/* Overview Section */}
             <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Hostel @ ICEM</h2>
+              <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Hostel @ IGSB</h2>
               
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div className="bg-green-50 p-6 rounded-lg">
@@ -1211,7 +1211,7 @@ const highlight = {
           // Default content for other tabs
           <div className="max-w-full mx-auto px-6 py-10">
             <div className="w-full bg-white p-8 rounded-xl shadow-md text-center">
-              <h2 className="text-3xl font-bold text-secondary mb-6">{activeSection} @ ICEM</h2>
+              <h2 className="text-3xl font-bold text-secondary mb-6">{activeSection} @ IGSB</h2>
               <div className="bg-gray-50 p-8 rounded-lg">
                 <p className="text-gray-700 text-lg leading-relaxed">
                   Content for {activeSection} section is being updated. Please check back later for detailed information about our {activeSection.toLowerCase()} facilities and services.

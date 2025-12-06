@@ -11,7 +11,7 @@ function ContactUs() {
           {/* Left Section */}
           <div>
             <h2 className="text-2xl font-semibold mb-4">
-              Indira College of Engineering and Management, Pune
+              Indira Global  School of Business, Pune
             </h2>
             <p className="text-gray-700 mb-6">
               Gat No. 276, Tal. Maval, S.No. 64, 65, Indira College Road,
@@ -26,7 +26,7 @@ function ContactUs() {
 
               <p>
                 <strong>Campus:</strong> Indira College of Engineering and
-                Management (ICEM)
+                Management (IGSB)
               </p>
 
               <p>
@@ -40,10 +40,10 @@ function ContactUs() {
               <p>
                 <strong>Email:</strong>{" "}
                 <a
-                  href="mailto:admissions@indiraicem.ac.in"
+                  href="#"
                   className="text-blue-600 hover:underline"
                 >
-                  admissions@indiraicem.ac.in
+                  (coming soon)
                 </a>
               </p>
             </div>
@@ -76,22 +76,22 @@ function ContactUs() {
               {
                 title: "Registrar",
                 name: "Mr. Ganesh Pokale",
-                email: "registrar@indiraicem.ac.in",
+                email: "coming soon",
               },
               {
                 title: "Deputy CAFO - Finance & Accounts",
                 name: "Preeti Chandak",
-                email: "finance@indiraicem.ac.in",
+                email: "coming soon",
               },
               {
                 title: "Director of Admissions",
                 name: "Dr. Prakash Mainkar",
-                email: "director.admissions@indiraicem.ac.in",
+                email: "coming soon",
               },
               {
                 title: "Controller of Examination",
                 name: "Dr. Rahul Joshi",
-                email: "coe@indiraicem.ac.in",
+                email: "coming soon",
               },
             ].map((office, index) => (
               <div
@@ -117,22 +117,22 @@ function ContactUs() {
           {[
             {
               name: "Prateek Patil",
-              email: "international.admissions@indiraicem.ac.in",
+              email: "coming soon",
               phone: "+91 77200 61619",
             },
             {
               name: "Amruta Sakhare",
-              email: "international.admissions@indiraicem.ac.in",
+              email: "coming soon",
               phone: "+91 74474 54556",
             },
             {
               name: "Mudasir Naik",
-              email: "international.admissions@indiraicem.ac.in",
+              email: "coming soon",
               phone: "+91 70309 63294",
             },
             {
               name: "Ninad Sapre",
-              email: "international.admissions@indiraicem.ac.in",
+              email: "coming soon",
               phone: "+91 86528 42525",
             },
           ].map((person, index) => (
@@ -155,8 +155,7 @@ function ContactUs() {
           {/* Left Info */}
           <div className="bg-cyan-100 text-gray-800 p-6 rounded-lg">
             <p>
-              <strong>Campus:</strong> Indira College of Engineering and
-              Management
+              <strong>Campus:</strong> Indira Global School of Business
             </p>
             <p>
               <strong>Campus Address:</strong> Gat No. 276, Tal. Maval, S.No.
@@ -166,7 +165,7 @@ function ContactUs() {
               <strong>Phone:</strong> +91 20-6673 7800 / +91 20-6673 7801
             </p>
             <p>
-              <strong>Email:</strong> admissions@indiraicem.ac.in
+              <strong>Email:</strong> coming soon
             </p>
           </div>
 

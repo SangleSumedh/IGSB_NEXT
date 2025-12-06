@@ -348,15 +348,15 @@ const ChanakyaEdu = () => {
           
               <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
                 <Image
-                  src="/ICEM.jpg"
-                  alt="Indira College of Engineering & Management (ICEM)"
+                  src="/IGSB.jpg"
+                  alt="Indira College of Engineering & Management (IGSB)"
                   width={1200}
                   height={800}
                   className="w-full h-64 object-cover"
                 />
                 <div className="py-4 text-center">
                   <h3 className="text-lg font-semibold text-gray-800">
-                    Indira College of Engineering & Management (ICEM)
+                    Indira College of Engineering & Management (IGSB)
                   </h3>
                 </div>
               </div>
@@ -591,7 +591,7 @@ const ChanakyaEdu = () => {
                     <ul className="space-y-4 text-gray-700 leading-relaxed text-lg">
                       <li className=" py-2">
                         <span className="font-semibold text-secondary">1.</span>{" "}
-                        Accounting for business decisions, ICEM, ISBN
+                        Accounting for business decisions, IGSB, ISBN
                         -978-81-920427-3-2, Sept 2013
                       </li>
                       <li className=" py-2">

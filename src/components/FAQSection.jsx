@@ -56,7 +56,7 @@ const FAQSection = () => {
     "Course Structure & Credits",
     "Facilities",
     "Staff",
-    "Why Indira ICEM",
+    "Why Indira IGSB",
     "Features",
   ];
 
@@ -164,9 +164,9 @@ const FAQSection = () => {
   const faqData = [
     {
       question: "About Department",
-      answer: `Keeping in view the emerging IT industry challenges, the computer department at ICEM is known for its academic excellence along with professional learning flexibility for turning the students and providing enhanced training in advanced technologies. The students are trained in core domain areas like Computational Complexity Theory, Applications and Databases, Computer Graphics, Programming and Algorithms.
+      answer: `Keeping in view the emerging IT industry challenges, the computer department at IGSB is known for its academic excellence along with professional learning flexibility for turning the students and providing enhanced training in advanced technologies. The students are trained in core domain areas like Computational Complexity Theory, Applications and Databases, Computer Graphics, Programming and Algorithms.
 
-The Computer Engineering Department at ICEM is well equipped with the Highly Qualified and Skilled Teaching Staff with Industrial Experience, Sophisticated Laboratories and state-of-art infrastructure.
+The Computer Engineering Department at IGSB is well equipped with the Highly Qualified and Skilled Teaching Staff with Industrial Experience, Sophisticated Laboratories and state-of-art infrastructure.
 
 The Department focusses on inculcating in-depth knowledge of all fields of Computer Engineering as well as imparting knowledge of discipline, teamwork, communication skills and an ability to work with a diverse set of constraints. The Department regularly arranges guest lectures, seminars and workshops to train the students in all these aspects. The trainers are from Academia as well as from Industry.
 
@@ -293,19 +293,19 @@ To nurture and nourish effective communication, interpersonal skills, and create
     },
   ];
 
-  // ✅ Why Indira ICEM Section
+  // ✅ Why Indira IGSB Section
   const whyIndiraData = [
     {
       question: "About Indira College of Engineering & Management",
-      answer: `Indira College of Engineering and Management (ICEM), Pune is an AICTE approved engineering college in Pune, established in 2007 under the umbrella of Indira Group of Institutes. The institute is approved by All India Council of Technical Education (AICTE), New Delhi, recognized by the Government of Maharashtra, and is affiliated to Savitribai Phule, Pune University. 
+      answer: `Indira College of Engineering and Management (IGSB), Pune is an AICTE approved engineering college in Pune, established in 2007 under the umbrella of Indira Group of Institutes. The institute is approved by All India Council of Technical Education (AICTE), New Delhi, recognized by the Government of Maharashtra, and is affiliated to Savitribai Phule, Pune University. 
 
-ICEM, one of the best NAAC accredited engineering colleges in Pune, has laid its foundation in the serene and picturesque settings of Parandwadi Village of Maval Taluka, which was then dried in terms of educational and infrastructural facilities. With the untiring efforts of the management, this college has been successful in creating educational and economic possibilities in the adjacent rural areas. 
+IGSB, one of the best NAAC accredited engineering colleges in Pune, has laid its foundation in the serene and picturesque settings of Parandwadi Village of Maval Taluka, which was then dried in terms of educational and infrastructural facilities. With the untiring efforts of the management, this college has been successful in creating educational and economic possibilities in the adjacent rural areas. 
 
 The college offers a stress-free process for Engineering Admission 2024 with reasonable Engineering Admission 2024 fees, thus helping the locals. It has also made possible positive results in empowering people from surrounding rural communities and has been a torch-bearer in providing the refined education system.
 
 Indira College of Engineering Management, Pune has maintained a perfect balance between the theory and the practical aspects of the learning process, with the theoretical inputs being adequately supplemented by functional components as case studies, fieldwork, industry visits, interaction with professionals, and project study. 
 
-Several industrial tours organized by the institute help the students get exposed to industry practices, skills demanded, management practices, industry expectations, and market opportunities. Such Industry–Institute Interaction keeps the students abreast with the latest technology to help them meet the competitive standards of the industry. ICEM is thus the best engineering college in Pune, empowering students for life.`,
+Several industrial tours organized by the institute help the students get exposed to industry practices, skills demanded, management practices, industry expectations, and market opportunities. Such Industry–Institute Interaction keeps the students abreast with the latest technology to help them meet the competitive standards of the industry. IGSB is thus the best engineering college in Pune, empowering students for life.`,
     },
     {
       question: "Three Decade Legacy",
@@ -688,8 +688,8 @@ Several industrial tours organized by the institute help the students get expose
                       Contact Admission Office:
                     </p>
                     <p>Phone: 020-XXXX-XXXX</p>
-                    <p>Email: admissions@icem.ac.in</p>
-                    <p>Website: www.icem.ac.in</p>
+                    <p>Email: admissions@IGSB.ac.in</p>
+                    <p>Website: www.IGSB.ac.in</p>
                   </div>
                 </div>
               </div>
@@ -893,11 +893,11 @@ Several industrial tours organized by the institute help the students get expose
               </div>
             )}
 
-            {/* ✅ Why Indira ICEM Tab */}
-            {activeTab === "Why Indira ICEM" && (
+            {/* ✅ Why Indira IGSB Tab */}
+            {activeTab === "Why Indira IGSB" && (
               <div>
                 <h3 className="text-lg font-semibold text-secondary mb-4">
-                  Why Choose Indira ICEM
+                  Why Choose Indira IGSB
                 </h3>
                 {whyIndiraData.map((item, i) => (
                   <div key={i} className="border rounded-md mb-2">

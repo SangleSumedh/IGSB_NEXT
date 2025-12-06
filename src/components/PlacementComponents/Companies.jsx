@@ -26,7 +26,7 @@ const Companies = () => {
 
         {/* ✅ Description */}
         <p className="text-gray-700 text-xs sm:text-sm max-w-5xl mx-auto leading-relaxed mb-10 sm:mb-12 px-2">
-          The consistent quality and industry-readiness of ICEM graduates have made our campus a preferred recruitment destination for top-tier companies across the globe. These partnerships are a testament to our shared commitment to nurturing future-ready professionals
+          The consistent quality and industry-readiness of IGSB graduates have made our campus a preferred recruitment destination for top-tier companies across the globe. These partnerships are a testament to our shared commitment to nurturing future-ready professionals
         </p>
 
         {/* ✅ Recruiter Logos Grid */}

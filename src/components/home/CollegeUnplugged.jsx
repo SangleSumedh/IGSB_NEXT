@@ -14,12 +14,12 @@ const videos = [
     url: "https://youtu.be/VFNW2xjcLS4?si=82O2nNba-C76P6Sj",
   },
   {
-    title: "ICEM (Indira College of Engineering and Management) Award Function",
+    title: "IGSB (Indira Global School of Business) Award Function",
     thumbnail: "https://img.youtube.com/vi/KrkLiGVGeT0/0.jpg",
     url: "https://youtu.be/KrkLiGVGeT0?si=-OHivtfzbudfoUWz",
   },
   {
-    title: "Sunidhi Chauhan at ICEM",
+    title: "Sunidhi Chauhan at IGSB",
     thumbnail: "https://img.youtube.com/vi/UxjeDzFtpMY/0.jpg",
     url: "https://youtu.be/UxjeDzFtpMY?si=1PQkCtSjM5gDA0ez",
   },

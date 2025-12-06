@@ -12,7 +12,7 @@ export default function IIC() {
   {/* Header Section */}
   <div className="space-y-2 mb-6">
     <h2 className="text-2xl font-semibold text-secondary mb-2">
-      The Institution's Innovation Council at ICEM
+      The Institution's Innovation Council at IGSB
     </h2>
     <h3 className="text-xl font-semibold text-secondary">
       Fostering a Culture of Innovation
@@ -24,7 +24,7 @@ export default function IIC() {
     <div className="bg-white p-0">
       <p className="text-gray-700 leading-relaxed">
         Indira College of Engineering and Management formally established
-        the Institution's Innovation Council (ICEM-IIC) in December 2021,
+        the Institution's Innovation Council (IGSB-IIC) in December 2021,
         operating under the strategic guidelines of the Ministry of
         Education's Innovation Cell (MIC). This initiative underscores our
         commitment to systematically cultivating innovation and
@@ -41,7 +41,7 @@ export default function IIC() {
     </h3>
     <div className="bg-white p-0">
       <p className="text-gray-700 leading-relaxed">
-        The fundamental objective of ICEM-IIC is to actively encourage,
+        The fundamental objective of IGSB-IIC is to actively encourage,
         inspire, and nurture young minds by providing a supportive framework
         that enables students to develop novel ideas into functional
         prototypes and viable products. This dedicated effort aims to
@@ -79,7 +79,7 @@ export default function IIC() {
   {/* Closing Statement */}
   <div className="bg-white p-0 mb-6">
     <p className="text-gray-700 leading-relaxed">
-      Through these focused initiatives, ICEM-IIC serves as the central
+      Through these focused initiatives, IGSB-IIC serves as the central
       platform for transforming creative concepts into tangible solutions,
       positioning our institution at the forefront of technological
       innovation and entrepreneurial development.
@@ -89,7 +89,7 @@ export default function IIC() {
   {/* Team Section */}
   <div className="space-y-4 mb-6">
     <h3 className="text-xl font-semibold text-secondary">
-      ICEM – IIC Team
+      IGSB – IIC Team
     </h3>
     <p className="text-gray-700 mb-4">
       The team consists of the following members:

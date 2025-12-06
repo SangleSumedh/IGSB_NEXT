@@ -296,7 +296,7 @@ export const councilReports = [
     {
       year: "Student Council A.Y. 2019-20",
       members: [
-        ["1", "Dr. Sunil Ingole", "President, Student Council, ICEM", ""],
+        ["1", "Dr. Sunil Ingole", "President, Student Council, IGSB", ""],
         ["2", "JAMBALE SHRIKANT", "SENIOR TEACHER", "9850900498"],
         ["3", "TATIYA MANJUSHA", "DEAN- STUDENT ACTIVITY", "9730019882"],
         ["4", "SHIRBHATE SIDDHESHWAR", "NSS - PO", "9158030101"],
@@ -347,7 +347,7 @@ export const councilReports = [
     {
       year: "Student Council A.Y. 2018-19",
       members: [
-        ["1", "Dr. Sunil Admuthe", "President, Student Council, ICEM", ""],
+        ["1", "Dr. Sunil Admuthe", "President, Student Council, IGSB", ""],
         ["2", "Prof. Shrikant Jambale", "SENIOR TEACHER", "9850900498"],
         ["3", "Prof. Siddheshwar Shirbhate", "NSS - Program Officer", "9158030101"],
         ["4", "Prof. Atul Gore", "SPORT DIRECTOR", "9922980399"],

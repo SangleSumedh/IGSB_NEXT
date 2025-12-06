@@ -78,7 +78,7 @@ export default function Research() {
 
             {/* ===================== MDP ===================== */}
             {activeTab === "mdp" && (
-              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-12">
+              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-12 mb-12">
                 {/* INTRO */}
                 <section className="space-y-4">
                   <h2 className="text-3xl font-bold text-secondary text-center">
@@ -305,7 +305,7 @@ export default function Research() {
 
             {/* ===================== FDP ===================== */}
             {activeTab === "fdp" && (
-              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-16">
+              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-16 mb-12">
                 {/* 1 */}
                 <section className="space-y-6">
                   <h3 className="text-2xl font-bold text-secondary text-center">
@@ -439,7 +439,7 @@ export default function Research() {
 
             {/* ===================== RESEARCH ===================== */}
             {activeTab === "research" && (
-              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-10">
+              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-10 mb-12">
                 <h2 className="text-3xl font-bold text-secondary text-center">
                   Research & Innovation
                 </h2>
@@ -572,7 +572,7 @@ export default function Research() {
 
             {/* ===================== CONFERENCE ===================== */}
             {activeTab === "conference" && (
-              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-12">
+              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-12 mb-12">
                 {/* AY 24-25 */}
                 <section className="space-y-4">
                   <h2 className="text-2xl font-bold text-secondary text-center">
@@ -674,7 +674,7 @@ export default function Research() {
 
             {/* ===================== PUBLICATIONS ===================== */}
             {activeTab === "publications" && (
-              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-16">
+              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-16 mb-12">
                 {/* Faculty Publications */}
                 <section className="space-y-10">
                   <h2 className="text-3xl font-bold text-secondary text-center">
@@ -725,41 +725,13 @@ export default function Research() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Existing Items */}
                     <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Annual Reports
-                    </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Institute Journals
-                    </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Policy Documents
-                    </div>
-
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Research Bulletins
-                    </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Conference Proceedings
-                    </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      White Papers
-                    </div>
-
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Industry Reports
-                    </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Newsletter Publications
-                    </div>
-
-                    {/* ➕ Newly Added 6 Items */}
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
                       Campus Drone
                     </div>
                     <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
                       Monograph
                     </div>
                     <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Analysi–Case Booklet
+                      Analysi - Case Booklet
                     </div>
 
                     <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
@@ -778,7 +750,7 @@ export default function Research() {
 
             {/* ===================== RESOURCE PERSON ===================== */}
             {activeTab === "resourcePerson" && (
-              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-20">
+              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-20 mb-12">
                 {/* 1 */}
                 <section className="space-y-6">
                   <h2 className="text-2xl font-bold text-secondary text-center">

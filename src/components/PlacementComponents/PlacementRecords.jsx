@@ -476,7 +476,7 @@ const PlacementRecords = () => {
 
         {/* Title */}
         <h1 className="text-4xl font-bold text-secondary text-center">
-          Placement Records
+          Placement Records <span className="text-red-500">(Will be Updated Soon)</span>
         </h1>
 
         {/* Year Tabs */}
@@ -533,6 +533,8 @@ const PlacementRecords = () => {
         </div>
       </div>
     </div>
+
+    
   );
 };
 

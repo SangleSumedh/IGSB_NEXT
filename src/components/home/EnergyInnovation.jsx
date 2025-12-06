@@ -26,7 +26,7 @@ const DiscoverSection = () => {
     {
       title: "Corporate Partnerships & Recruitment",
       description:
-        "We have established strong, lasting relationships with a diverse portfolio of national and multinational corporations. Benefit from recruitment drives, on-campus placements, and access to employers seeking ICEM talent.",
+        "We have established strong, lasting relationships with a diverse portfolio of national and multinational corporations. Benefit from recruitment drives, on-campus placements, and access to employers seeking IGSB talent.",
       image: "/CorporateRelations.JPG",
     },
   ];

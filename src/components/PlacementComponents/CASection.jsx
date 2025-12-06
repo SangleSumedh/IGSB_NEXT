@@ -7,7 +7,7 @@ export default function CASsection() {
             We turn your potential into placement.
           </h2>
           <p className="text-xl text-gray-700 max-w-5xl mx-auto mb-16 leading-relaxed">
-            Indira College of Engineering and Management ensures every student
+            Indira Global School Of Business ,  ensures every student
             steps into the industry with confidence. From specialized training
             to top-tier recruiter connect, our placement ecosystem is built to
             transform academic learning into real-world success

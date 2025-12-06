@@ -13,35 +13,35 @@ export default function Testimonials() {
     {
       image: "/logos/logo8.png",
       quote:
-        "ICEM has always provided us with trained mechanical engineers, and as an organization, we appreciate the college's efforts to prepare the students for the industry.",
+        "IGSB has always provided us with trained mechanical engineers, and as an organization, we appreciate the college's efforts to prepare the students for the industry.",
       name: "Mr. Rahul Bagale",
       position: "Group HR Head – Force Motors",
     },
     {
       image: "/logos/logo45.png",
       quote:
-        "We have entered into an MOU with ICEM to actively support their endeavours in providing excellent job opportunities for civil engineering students. Our longstanding partnership of over a decade with ICEM will continue further to support the civil engineers. ",
+        "We have entered into an MOU with IGSB to actively support their endeavours in providing excellent job opportunities for civil engineering students. Our longstanding partnership of over a decade with IGSB will continue further to support the civil engineers. ",
       name: "Mr. Siddharth Moorthy",
       position: "Managing Director – Vascon Engineers",
     },
     {
       image: "/logos/logo2.png",
       quote:
-        "While conducting campus recruitment drives across the country, ICEM consistently emerges as the top choice due to their exceptional commitment to preparing students for their dream job offers.",
+        "While conducting campus recruitment drives across the country, IGSB consistently emerges as the top choice due to their exceptional commitment to preparing students for their dream job offers.",
       name: "Ms. Shilpi Mahar",
       position: "Manager, TA – Data Axle",
     },
     {
       image: "/logos/logo22.png",
       quote:
-        "We appreciate the designed training programs by ICEM aimed at equipping core Mechanical Engineering students with the necessary skills to excel in the industry. These programs ensure that students emerge as industry-ready professionals  ",
+        "We appreciate the designed training programs by IGSB aimed at equipping core Mechanical Engineering students with the necessary skills to excel in the industry. These programs ensure that students emerge as industry-ready professionals  ",
       name: "Ms. Sumana Chakraborty",
       position: "HR Business Partner – Bridgestone India",
     },
     {
       image: "/logos/logo19.png",
       quote:
-        "ICEM has been a part of Ready Engineers Programme from a long time. Their way of creating resources prepared specifically to meet the needs of students, ensures a transformative experience that prepares them effectively for the corporate world.",
+        "IGSB has been a part of Ready Engineers Programme from a long time. Their way of creating resources prepared specifically to meet the needs of students, ensures a transformative experience that prepares them effectively for the corporate world.",
       name: "Mr. Sushant Kumar",
       position: "India Lead – University Relations, Tata Technologies",
     },
@@ -71,7 +71,7 @@ export default function Testimonials() {
               Trusted by the Best in the Business
             </h2>
             <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-              Our strongest endorsements come from our recruitment partners. Discover why leading companies consistently choose ICEM graduates to drive their success.
+              Our strongest endorsements come from our recruitment partners. Discover why leading companies consistently choose IGSB graduates to drive their success.
             </p>
           </div>
 

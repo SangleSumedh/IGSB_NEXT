@@ -16,7 +16,7 @@ export default function Career() {
     {
       icon: <FaHandshake className="text-3xl sm:text-4xl mb-2 text-primary" />,
       title: "Corporate Partnerships & Recruitment Drive",
-      desc: "We have established strong, lasting relationships with a diverse portfolio of national and multinational corporations. Benefit from exclusive recruitment drives, on-campus placements, and direct access to sought-after employers actively seeking ICEM talent.",
+      desc: "We have established strong, lasting relationships with a diverse portfolio of national and multinational corporations. Benefit from exclusive recruitment drives, on-campus placements, and direct access to sought-after employers actively seeking IGSB talent.",
     },
     {
       icon: <FaLightbulb className="text-3xl sm:text-4xl mb-2 text-primary" />,
@@ -40,30 +40,31 @@ export default function Career() {
 
         {/* Subheading */}
         <p className="text-sm sm:text-base lg:text-lg max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-14 leading-relaxed text-gray-200">
-          Your potential is limitless, and so are your opportunities at ICEM. We
+          Your potential is limitless, and so are your opportunities at IGSB. We
           merge academic rigor with real-world readiness, empowering you with
           the skills, network, and experience to excel.
         </p>
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 items-stretch">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className="bg-white/10 border border-white/10 hover:border-primary/40 hover:bg-white/15 p-4 sm:p-6 lg:p-8 rounded-xl lg:rounded-2xl shadow-lg backdrop-blur-md transition-all duration-300 flex flex-col items-center text-center h-full"
-            >
-              <div className="flex flex-col items-center text-center flex-1 justify-between">
-                {card.icon}
-                <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3 text-white">
-                  {card.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-gray-200 leading-relaxed">
-                  {card.desc}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+  {cards.map((card, index) => (
+    <div
+      key={index}
+      className="bg-white border border-gray-200 hover:border-primary/40 p-4 sm:p-6 lg:p-8 rounded-xl lg:rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center h-full"
+    >
+      <div className="flex flex-col items-center text-center flex-1 justify-between">
+        {card.icon}
+        <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3 text-black">
+          {card.title}
+        </h3>
+        <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+          {card.desc}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
+
       </div>
     </section>
   );

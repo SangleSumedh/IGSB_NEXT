@@ -128,7 +128,7 @@ export default function Cell() {
       <div className="w-full h-[60vh] relative">
         <Image
           src="/BannerOverviewPage.jpg"
-          alt="Governance at ICEM"
+          alt="Governance at IGSB"
           className="w-full h-full object-cover"
           height={600}
           width={1700}

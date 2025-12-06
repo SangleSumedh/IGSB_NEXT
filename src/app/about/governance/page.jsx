@@ -5,13 +5,13 @@ export default function Governance() {
   const boardOfGovernors = [
     { sr: 1, name: "Dr. Tarita Shankar", role: "Chairman", representation: "Chairperson IGI" },
     { sr: 2, name: "Mrs. Sarita Shankarrao Wakalkar", role: "Member", representation: "Trust Representative" },
-    { sr: 3, name: "Dr. Pandit Mali", role: "Member", representation: "Trust Representative" },
+    // { sr: 3, name: "Dr. Pandit Mali", role: "Member", representation: "Trust Representative" },
     { sr: 4, name: "Mr. Shardul Gangal", role: "Member", representation: "Trust Representative" },
     { sr: 5, name: "Prof. Chetan Wakalkar", role: "Member", representation: "IGI Academic Advisor" },
     { sr: 6, name: "Western Regional Officer", role: "Member", representation: "Nominee AICTE" },
     { sr: 7, name: "Dr. D.V Jadhav", role: "Member", representation: "Nominee DTE" },
     { sr: 8, name: "Ms. Rajeshree Ghavte", role: "Member", representation: "Nominee State Govt./UT (Ex-Officio)" },
-    { sr: 9, name: "Mr. Shash Bhat", role: "Member", representation: "Industry Expert" },
+    { sr: 9, name: "Mr. Shashi Bhat", role: "Member", representation: "Industry Expert" },
     { sr: 10, name: "Awaited", role: "Member", representation: "SPPU Academic Expert" },
     { sr: 11, name: "Dr. Pallavi Sajnawar", role: "Member", representation: "Nominee Teaching Representative (Professor & Dean - Academics and Research)" },
     { sr: 12, name: "Dr. Aatish Zagade", role: "Member", representation: "Nominee Teaching Representative (Assoc. Professor & Dy. Director)" },
@@ -27,7 +27,7 @@ export default function Governance() {
       <div className="w-full h-[60vh] relative">
         <Image
           src="/BannerOverviewPage.jpg"
-          alt="Governance at ICEM"
+          alt="Governance at IGSB"
           className="w-full h-full object-cover"
           height={600}
           width={1700}

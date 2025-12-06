@@ -38,7 +38,7 @@ export default function EventsSection() {
   return (
     <section className="w-full bg-gray-50 py-16 overflow-hidden">
       <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-10">
-        Academic Conferences & Campus Events
+        Academic Conferences & Campus Events <span className="text-red-500">(will be Updated Soon)</span>
       </h2>
 
       <div className="relative w-full overflow-visible py-10">

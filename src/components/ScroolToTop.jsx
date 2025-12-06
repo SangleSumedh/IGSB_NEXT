@@ -29,7 +29,7 @@ export default function ScrollToTop({ lenis }) {
   return (
     <button
       onClick={scrollTop}
-      className={`fixed bottom-28 right-6 z-[999999] bg-[#e69a38] text-white p-4 rounded-md shadow-lg 
+      className={`fixed bottom-28 right-6 z-[999999] bg-teal-200 text-gray-700 p-4 rounded-md shadow-lg 
         transition-all duration-500 
         ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}
       `}

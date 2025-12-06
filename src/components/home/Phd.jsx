@@ -66,25 +66,25 @@ function Card({ img, tag, title, tall, big }) {
       />
 
       {/* Hover Overlay */}
-      <div className="absolute inset-0 bg-teal-200 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+      <div className="absolute inset-0 bg-teal-200 opacity-0 group-hover:opacity-100 transition-all duration-500 "></div>
 
       {/* Tag */}
-      <span className="absolute top-4 left-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-md z-20">
+      <span className="absolute top-4 left-4 bg-teal-200 text-black text-xs font-semibold px-3 py-1 rounded-md z-20 group-hover:bg-white">
         {tag}
       </span>
 
       {/* Text Content */}
       <div className="absolute bottom-6 left-6 right-6 z-20">
-        <h3 className="text-xl font-semibold text-white transition-all duration-500 transform group-hover:-translate-y-1">
+        <h3 className="text-xl font-semibold text-white transition-all duration-500 transform group-hover:-translate-y-1 group-hover:text-black">
           {title}
         </h3>
 
         <p className="text-sm text-white opacity-0 max-h-0 overflow-hidden 
-          group-hover:max-h-24 group-hover:opacity-100 transition-all duration-500">
+          group-hover:max-h-24 group-hover:opacity-100 transition-all duration-500 group-hover:text-black">
           Explore advanced PhD research opportunities across specializations.
         </p>
 
-        <div className="flex items-center gap-1 mt-3 text-sm font-medium text-white">
+        <div className="flex items-center gap-1 mt-3 text-sm font-medium text-white group-hover:text-black">
           <span>Know More</span>
           <ChevronRight size={18} />
         </div>

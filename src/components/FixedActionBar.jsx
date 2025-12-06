@@ -28,7 +28,7 @@ const FixedActionBar = () => {
           <div className="relative p-[2px] transition-all duration-500 rounded-md">
             <button
               title="Menu"
-              className="relative flex items-center justify-center bg-[#e69a38] text-white p-4 rounded-md shadow-lg hover:brightness-110 transition-all duration-300"
+              className="relative flex items-center justify-center bg-teal-200 text-gray-700 p-4 rounded-md shadow-lg hover:brightness-110 transition-all duration-300"
             >
               <LayoutGrid size={22} />
             </button>
@@ -42,7 +42,7 @@ const FixedActionBar = () => {
                 : "opacity-0 translate-x-3 pointer-events-none"
             }`}
           >
-            <div className="bg-[#e69a38] px-3 py-2 shadow-lg flex items-center gap-3 rounded-l-md">
+            <div className="bg-teal-200 px-3 py-2 shadow-lg flex items-center gap-3 rounded-l-md">
               <a
                 href="#"
                 className="bg-white text-black p-2.5 rounded-md shadow hover:scale-105 transition"

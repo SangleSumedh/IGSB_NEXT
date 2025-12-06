@@ -606,10 +606,10 @@ The meet was insightful, engaging, and productive with exchange of ideas, feedba
   return (
     <>
       <Head>
-        <title>ICEM Alumni Network</title>
+        <title>IGSB Alumni Network</title>
         <meta
           name="description"
-          content="Connect with ICEM alumni and stay updated with our alumni network."
+          content="Connect with IGSB alumni and stay updated with our alumni network."
         />
       </Head>
 
@@ -627,7 +627,7 @@ The meet was insightful, engaging, and productive with exchange of ideas, feedba
           {/* ✅ Header Section */}
           <div className="text-center  py-8">
             <h1 className="text-4xl font-bold text-secondary mb-4">
-              ICEM Alumni Network
+              IGSB Alumni Network
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Stay connected with your alma mater and fellow alumni. Join our

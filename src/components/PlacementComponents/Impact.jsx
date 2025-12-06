@@ -32,7 +32,7 @@ export default function Impact() {
 
   // ➤ Count animation logic
   const animateNumbers = () => {
-    const targets = [27, 8.16, 350, 100];
+    const targets = [27, 8.16, 650, 100];
     const duration = 2000;
     const frameRate = 30;
 

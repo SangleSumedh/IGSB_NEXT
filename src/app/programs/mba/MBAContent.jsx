@@ -6,6 +6,7 @@ import Image from "next/image";
 import RecruitersSection from "@/components/home/RecruiterSection";
 import CTASection from "@/components/home/CTASection";
 import ApplyForm from "@/components/home/ApplyForm";
+import MBAOverview from "@/components/programs/MBAOverview";
 
 export default function MBAContent() {
   const faqRef = useRef(null);
@@ -14,9 +15,8 @@ export default function MBAContent() {
   const applyRef = useRef(null);
 
   const scrollToApply = () => {
-  applyRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-};
- 
+    applyRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   // Highlight Marquee Hover Effect
   const marqueeRef = useRef(null);
@@ -45,27 +45,25 @@ export default function MBAContent() {
   };
 
   const commonCareers = [
-  "Brand Manager",
-  "Digital Marketing Manager",
-  "Market Research Analyst",
-  "Sales Manager",
-  "Product Manager",
-  "Media Planner",
-  "CRM Manager",
-  "Head of Marketing",
-  "Financial Analyst",
-  "Investment Banker",
-  "Risk Manager",
-  "HR Business Partner",
-  "Talent Acquisition Manager",
-  "Operations Manager",
-  "Supply Chain Analyst",
-  "Business Development Manager",
-  "Project Manager",
-  "Strategy Consultant",
-];
-
-
+    "Brand Manager",
+    "Digital Marketing Manager",
+    "Market Research Analyst",
+    "Sales Manager",
+    "Product Manager",
+    "Media Planner",
+    "CRM Manager",
+    "Head of Marketing",
+    "Financial Analyst",
+    "Investment Banker",
+    "Risk Manager",
+    "HR Business Partner",
+    "Talent Acquisition Manager",
+    "Operations Manager",
+    "Supply Chain Analyst",
+    "Business Development Manager",
+    "Project Manager",
+    "Strategy Consultant",
+  ];
 
   const toggleModal = () => setIsModalOpen(!isModalOpen);
 
@@ -84,13 +82,11 @@ export default function MBAContent() {
     "/Programs/MBA/MBA3.jpg",
   ];
 
-  
-
   const mbaData = {
     marketing: {
-      title: "MBA in Marketing Management",
+      title: "Marketing Management (MKT)",
       overview:
-        "This specialization delves into consumer behaviour, digital marketing strategies, brand management, and integrated marketing communications. It equips students with the skills to analyse markets, build powerful brands, and design data-driven campaigns that deliver measurable business results.",
+        "This specialization equips students with cutting-edge skills in digital marketing, branding, consumer behavior, sales strategy, market research, and product management. Students learn to understand markets, create value-driven campaigns, and build strong customer relationships, developing into innovative marketers ready to compete in fast-changing global markets.  ",
       structure: [
         "Marketing Management & Consumer Behaviour",
         "Digital Marketing & Social Media Strategy",
@@ -115,9 +111,9 @@ export default function MBAContent() {
     },
 
     finance: {
-      title: "MBA in Financial Management",
+      title: "Finance Management (FIN)",
       overview:
-        "This specialization provides an in-depth understanding of corporate finance, investment analysis, financial markets, and risk management. It prepares students to make strategic financial decisions and navigate the global financial ecosystem.",
+        "The finance specialization develops strong analytical and strategic decision-making skills in financial planning, investment analysis, corporate finance, banking, risk management, and capital markets. Students learn to interpret financial data, evaluate opportunities, and drive sustainable financial growth, preparing them for diverse roles in the financial sector.",
       structure: [
         "Corporate Finance & Financial Statement Analysis",
         "Investment Analysis & Portfolio Management",
@@ -142,9 +138,9 @@ export default function MBAContent() {
     },
 
     hr: {
-      title: "MBA in Human Resources Management",
+      title: "Human Resource Management (HR)",
       overview:
-        "This specialization focuses on strategic HR, talent hiring, organizational behaviour, performance management, and employee development. It prepares future HR leaders",
+        "The HR specialization prepares students to manage people, culture, and organizational development with strategic insight. Students learn talent acquisition, performance management, employee engagement, HR analytics, and labor laws, enabling them to build high-performing workplaces and lead transformational people practices in dynamic business environments.",
       structure: [
         "Talent Management & Acquisition",
         "Organizational Behaviour & Development",
@@ -163,15 +159,15 @@ export default function MBAContent() {
         },
         {
           title: "Leadership in Change Management",
-          text: "Develop the ability to drive organizational transformation and employee engagement."
+          text: "Develop the ability to drive organizational transformation and employee engagement.",
         },
       ],
     },
 
     operations: {
-      title: "MBA in Operations & Supply Chain Management",
+      title: "Operations and Supply Chain Management (OSCM)",
       overview:
-        "This specialization covers supply chain dynamics, logistics, operations management, and project planning. It prepares students to manage large-scale systems efficiently.",
+        "Focused on efficiency and value creation, this specialization trains students in logistics, process optimization, supply chain strategy, project management, quality systems, and technology-enabled operations. Graduates gain the expertise to streamline operations, reduce costs, and manage complex supply networks in a competitive global business landscape.",
       structure: [
         "Operations Strategy & Supply Chain Management",
         "Logistics & Transportation Management",
@@ -179,6 +175,25 @@ export default function MBAContent() {
         "Procurement & Sourcing Strategies",
         "Analytics for Operations & Decision Modelling",
       ],
+      highlights: [
+        {
+          title: "End-to-End Supply Chain View",
+          text: "Understand sourcing, production, logistics, distribution, and last-mile operations.",
+        },
+        {
+          title: "Quantitative Problem-Solving",
+          text: "Learn forecasting, optimization, and ERP tools for real-world problem solving.",
+        },
+        {
+          title: "Global Perspective",
+          text: "Explore international logistics, trade regulations, and risk mitigation strategies",
+        },
+      ],
+    },
+    ba: {
+      title: "Business Analytics (BA)",
+      overview: "Coming soon",
+      structure: ["Coming soon"],
       highlights: [
         {
           title: "End-to-End Supply Chain View",
@@ -218,7 +233,11 @@ export default function MBAContent() {
             </h2>
 
             <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
-              This rigorous programme is designed to develop strategic thinkers and future business leaders. It combines core management principles with deep specialization, fostering analytical prowess, leadership qualities, and an ethical mindset to drive organizational success in a complex global economy.
+              This rigorous programme is designed to develop strategic thinkers
+              and future business leaders. It combines core management
+              principles with deep specialization, fostering analytical prowess,
+              leadership qualities, and an ethical mindset to drive
+              organizational success in a complex global economy.
             </p>
 
             <div className="flex gap-4 mt-6">
@@ -268,6 +287,8 @@ export default function MBAContent() {
         </div>
       </div>
 
+      <MBAOverview />
+
       <div ref={faqRef}>
         <FAQSection />
       </div>
@@ -277,50 +298,55 @@ export default function MBAContent() {
       =============================== */}
       <div className="w-full bg-white py-16 text-black">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-secondary mb-10 text-center">
-            Programme Structure (All Specializations)
+          <h2 className="text-2xl md:text-4xl font-bold text-secondary mb-4 text-center">
+            MBA Specializations
           </h2>
+          <p className="text-md md:text-lg font-bold text-slate-700 mb-10 text-center">
+            IGSB offers diverse MBA specializations—including Marketing,
+            Finance, HR, and Operations & Supply Chain Management - designed to
+            build industry-ready professionals with strong analytical,
+            leadership, and strategic capabilities.
+          </p>
 
           {/* GRID: 2 cards per row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {Object.keys(mbaData).map((key) => {
               const s = mbaData[key];
 
               return (
                 <div
-  key={key}
-  className="bg-white shadow-md border border-gray-300 p-8 rounded-xl"
->
-  {/* Title */}
-  <h2 className="text-3xl font-bold text-secondary mb-4">
-    {s.title}
-  </h2>
+                  key={key}
+                  className="bg-white shadow-md border border-gray-300 px-4 py-4 sm:px-8 sm:py-8 rounded-xl flex flex-col justify-between"
+                >
+                  {/* Title */}
+                  <h2 className="text-2xl font-bold text-secondary mb-4">
+                    {s.title}
+                  </h2>
 
-  {/* Overview */}
-  <p className="text-gray-700 mb-6 text-lg leading-relaxed">
-    {s.overview}
-  </p>
+                  {/* Overview */}
+                  <p className="text-gray-700 mb-6 text-md leading-relaxed">
+                    {s.overview}
+                  </p>
 
-  {/* Structure */}
-  <h3 className="text-xl font-semibold text-secondary mb-3">
-    Programme Structure
-  </h3>
+                  {/* Structure */}
+                  {/* <h3 className="text-xl font-semibold text-secondary mb-3">
+                    Programme Structure
+                  </h3>
 
-  <ul className="list-disc list-inside space-y-2 text-gray-800">
-    {s.structure.map((item, i) => (
-      <li key={i}>{item}</li>
-    ))}
-  </ul>
+                  <ul className="list-disc list-inside space-y-2 text-gray-800">
+                    {s.structure.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul> */}
 
-  {/* APPLY BUTTON */}
-  <button
-    onClick={scrollToApply}
-    className="mt-6 bg-secondary text-white px-6 py-2 rounded-lg font-semibold hover:bg-secondary/90 transition"
-  >
-    Enquire Now
-  </button>
-</div>
-
+                  {/* APPLY BUTTON */}
+                  <button
+                    onClick={scrollToApply}
+                    className=" bg-secondary text-white px-6 py-2 rounded-lg font-semibold hover:bg-secondary/90 transition"
+                  >
+                    Enquire Now
+                  </button>
+                </div>
               );
             })}
           </div>
@@ -414,38 +440,35 @@ export default function MBAContent() {
       {/* ============================
      CAREER OPPORTUNITIES + APPLY FORM (SIDE BY SIDE)
 ============================ */}
-<div
-  ref={applyRef}
-  className="max-w-7xl mx-auto px-6 py-16 text-black grid grid-cols-1 md:grid-cols-2 gap-12"
->
+      <div
+        ref={applyRef}
+        className="max-w-7xl mx-auto px-6 py-16 text-black grid grid-cols-1 md:grid-cols-2 gap-12"
+      >
+        {/* LEFT — COMMON CAREER OPPORTUNITIES */}
+        <div className="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+          <h2 className="text-3xl font-bold text-secondary mb-4">
+            Career Opportunities
+          </h2>
 
-  {/* LEFT — COMMON CAREER OPPORTUNITIES */}
-  <div className="bg-white p-8 rounded-xl shadow-md border border-gray-200">
-    <h2 className="text-3xl font-bold text-secondary mb-4">
-      Career Opportunities
-    </h2>
+          <p className="text-gray-700 mb-6">
+            This programme opens pathways to impactful leadership and management
+            roles:
+          </p>
 
-    <p className="text-gray-700 mb-6">
-      This programme opens pathways to impactful leadership and management roles:
-    </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {commonCareers.map((career, index) => (
+              <p key={index} className="text-gray-800 flex items-center gap-2">
+                ➜ <span>{career}</span>
+              </p>
+            ))}
+          </div>
+        </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-      {commonCareers.map((career, index) => (
-        <p key={index} className="text-gray-800 flex items-center gap-2">
-          ➜ <span>{career}</span>
-        </p>
-      ))}
-    </div>
-  </div>
-
-  {/* RIGHT — APPLY FORM */}
-  <div className="bg-white p-8 rounded-xl shadow-md border border-gray-200">
-    <ApplyForm />
-  </div>
-
-</div>
-
-
+        {/* RIGHT — APPLY FORM */}
+        <div className="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+          <ApplyForm />
+        </div>
+      </div>
 
       <CTASection />
 

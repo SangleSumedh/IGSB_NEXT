@@ -32,56 +32,18 @@ const examList = [
   },
 ];
 
-// ================== FACULTY IMAGES ==================
-const facultyImages = Array.from({ length: 12 }, (_, i) => ({
-  id: i + 1,
-  src: `/images/faculty-${(i % 4) + 1}.jpg`,
-  alt: `Faculty Member ${i + 1}`,
-}));
-
 // ================== MAIN COMPONENT ==================
 export default function FAQENTC() {
-  const [active, setActive] = useState("About Us");
+  const [active, setActive] = useState("MBA Programme Structure (Detailed)");
 
   const sectionContent = {
-    "About Us": {
+    "MBA Programme Structure (Detailed)": {
       type: "accordion",
       content: {
-        "About IGSB": [
-          `Indira Global School of Business (IGSB) offers a transformative two-year MBA program designed to shape future leaders by blending academic excellence with practical business insights, while encouraging learning from real-world challenges and past experiences. This program emphasizes holistic development through a dynamic curriculum, experienced faculty, and industry-oriented training, ensuring students gain exposure to real-world business challenges, innovative problem-solving techniques, and global perspectives.`,
-          `The MBA program at IGSB goes beyond traditional boundaries by fostering international collaborations with reputed global institutions, enabling students to participate in exchange programs and gain cross-cultural business acumen. Students can choose from a wide array of specializations, including Marketing, Finance, Human Resource Management, Operations, and Business Analytics, tailored to meet the demands of emerging industries.`,
-          `IGSB also hosts a robust series of guest lectures and masterclasses delivered by industry leaders, visionaries, and global experts across diverse sectors. These engagements offer students direct insights into contemporary business practices, emerging trends, and innovative strategies.`,
-          `Experiential learning is further elevated through thoughtfully curated industry visits, hands-on projects, and live case studies that offer invaluable insights into corporate culture and operational dynamics. Striking a balance between theoretical rigor and practical exposure, the curriculum is meticulously designed in line with the Choice-Based Credit System (CBCS) and the Grading System Outcome-Based Education Pattern aligned with the National Education Policy (NEP) 2020, ensuring a holistic and outcome-driven academic experience.`,
-          `With a strong focus on leadership, entrepreneurship, ethical business practices, and global exposure, the MBA program at IGSB empowers aspiring professionals to transform their ambitions into impactful, successful careers in a competitive corporate environment.`,
-        ],
-      },
-    },
-    "MBA Programme Structure": {
-      type: "accordion",
-      content: {
-        "Programme Overview": [
-          `Masters of Business Administration (MBA) is a 2-year full-time program offered under the Choice Based Credit System (CBCS) with Outcome Based Education (OBE).`,
-          `The programme consists of 4 semesters and follows an outcome-based assessment structure focused on student performance and skill application.`,
-        ],
-
-        "Outcome Based Education (OBE) & CBCS": [
-          `The revised SPPU MBA curriculum is aligned with Outcome Based Education, emphasizing measurable learning outcomes.`,
-          `Students earn their degree by accumulating the required number of credits prescribed by the university.`,
-          `The syllabus offers flexibility through CBCS, allowing students to choose courses based on their interests, specializations, and career goals.`,
-        ],
-
         "Types of Courses in CBCS": [
           `• Foundation Courses – For students needing fundamental knowledge such as Accounting, Economics, etc.`,
           `• Enrichment Courses – For students interested in exploring subjects beyond the core syllabus.`,
           `• Alternative Study Credit Courses – Independent study via live projects, MOOCs, research work, and more.`,
-        ],
-
-        "Specialization Options at IGSB": [
-          `IGSB offers the following specializations:`,
-          `• Marketing Management`,
-          `• Financial Management`,
-          `• Human Resource Management`,
-          `• Operations & Supply Chain Management`,
         ],
 
         "Major + Minor Specialization Structure": [
@@ -93,18 +55,94 @@ export default function FAQENTC() {
           `Students opting for Major + Minor must choose Foundation/Enrichment/ASC courses ONLY in lieu of Generic Electives.`,
         ],
 
-        "Specialization Guidelines & Rules": [
-          `• Institutes may offer specializations based on demand, faculty strength, and industry relevance.`,
-          `• A specialization will NOT run unless at least 20% of students enroll.`,
-          `• Elective subjects also require a minimum of 20% enrollment.`,
-          `• Students may choose any Major + any Minor (subject to institute criteria).`,
-          `• Minor specialization courses are taken only in Year 2 (Sem III & IV).`,
-          `• All Sem II Core + Elective subjects must belong to the SAME specialization.`,
-        ],
-
         "Degree Award Details": [
           `• Completing 6 Core + 7 Electives in one domain earns: MBA (Specialization).`,
           `• Completing a Major + Minor combination earns: MBA (Major Specialization + Minor Specialization).`,
+        ],
+      },
+    },
+    "Programme Objectives (AY 2024-25)": {
+      type: "accordion",
+      content: {
+        "Programme Educational Objectives (PEOs)": [
+          "1. PEO1: Graduates of the MBA program will successfully integrate core, cross-functional and inter-disciplinary aspects of management theories, models and frameworks with the real-world practices and the sector specific nuances to provide solutions to real world business, policy and social issues in a dynamic and complex world.",
+          "2. PEO2: Graduates of the MBA program will possess excellent communication skills, excel in cross-functional, multi-disciplinary, multi-cultural teams, and have an appreciation for local, domestic and global contexts so as to manage continuity, change, risk, ambiguity and complexity.",
+          "3. PEO3: Graduates of the MBA program will be appreciative of the significance of Indian ethos and values in managerial decision making and exhibit value centered leadership.",
+          "4. PEO4: Graduates of the MBA program will be ready to engage in successful career pursuits covering a broad spectrum of areas in corporate, non-profit organizations, public policy, entrepreneurial ventures and engage in life-long learning.",
+          "5. PEO5: Graduates of the MBA program will be recognized in their chosen fields for their managerial competence, creativity & innovation, integrity & sensitivity to local and global issues of social relevance and earn the trust & respect of others as inspiring, effective and ethical leaders, managers, entrepreneurs, intrapreneurs and change agents.",
+        ],
+        "Programme Outcomes (POs)": [
+          "1. Generic and Domain Knowledge - Ability to articulate, illustrate, analyze, synthesize and apply the knowledge of principles and frameworks of management and allied domains to the solutions of real-world complex business issues.",
+          "2. Problem Solving & Innovation - Ability to Identify, formulate and provide innovative solution frameworks to real world complex business and social problems by systematically applying modern quantitative and qualitative problem-solving tools and techniques.",
+          "3. Critical Thinking - Ability to conduct investigation of multidimensional business problems using research based knowledge and research methods to arrive at data driven decisions.",
+          "4. Effective Communication - Ability to effectively communicate in cross-cultural settings, in technology mediated environments, especially in the business context and with society at large.",
+          "5. Leadership and Team Work - Ability to collaborate in an organizational context and across organizational boundaries and lead themselves and others in the achievement of organizational goals and optimize outcomes for all stakeholders.",
+          "6. Global Orientation and Cross-Cultural Appreciation: Ability to approach any relevant business issues from a global perspective and exhibit an appreciation of Cross Cultural aspects of business and management.",
+          "7. Entrepreneurship - Ability to identify entrepreneurial opportunities and leverage managerial & leadership skills for founding, leading & managing startups as well as professionalizing and growing family businesses.",
+          "8. Environment and Sustainability - Ability to demonstrate knowledge of and need for sustainable development and assess the impact of managerial decisions and business priorities on the societal, economic and environmental aspects.",
+          "9. Social Responsiveness and Ethics - Ability to exhibit a broad appreciation of the ethical and value underpinnings of managerial choices in a political, cross-cultural, globalized, digitized, socio-economic environment and distinguish between ethical and unethical behaviors & act with integrity.",
+          "10. LifeLong Learning – Ability to operate independently in new environment, acquire new knowledge and skills and assimilate them into the internalized knowledge and skills.",
+        ],
+        "Programme Specific Outcomes (PSOs) - Marketing": [
+          "PSO MKT1: Strategic Marketing Analysis and Decision Making: Graduates specializing in Marketing Management for the MBA programme will be able to Analyze market opportunities and challenges using advanced marketing research tools and techniques. They will develop strategic marketing plans that align with organizational objectives and respond effectively to dynamic market conditions.",
+          "PSO MKT2: Digital and Social Media Marketing Proficiency: Graduates specializing in Marketing Management for the MBA programme will be able to demonstrate proficiency in leveraging digital and social media platforms to enhance brand visibility and customer engagement. They will design and execute integrated digital marketing campaigns that drive business growth.",
+          "PSO MKT3: Customer Relationship Management and Service Excellence: Graduates specializing in Marketing Management for the MBA programme will be able to excel in building and maintaining strong customer relationships through effective communication, personalized marketing, and superior customer service. They will implement CRM systems to enhance customer loyalty and satisfaction.",
+          "PSO MKT4: Innovative Product and Brand Management: Graduates specializing in Marketing Management for the MBA programme will be able to develop innovative product and brand management strategies that address consumer needs and preferences. They will manage product lifecycles, brand portfolios, and execute branding initiatives that strengthen brand equity.",
+        ],
+        "Programme Specific Outcomes (PSOs) - Finance": [
+          "PSO FIN1: Financial Analysis and Reporting: Graduates specializing in Financial Management for the MBA programme will be able to demonstrate the ability to analyze and interpret financial statements, conduct financial ratio analysis, and prepare comprehensive financial reports to support decision-making processes.",
+          "PSO FIN2: Investment and Portfolio Management: Graduates specializing in Financial Management for the MBA programme will be able to Apply knowledge of investment theories, financial instruments, and portfolio management techniques to construct and manage investment portfolios aimed at achieving specific financial goals.",
+          "PSO FIN3: Corporate Finance and Risk Management: Graduates specializing in Financial Management for the MBA programme will be able to Develop expertise in corporate finance principles, including capital structure, cost of capital, and capital budgeting, while effectively managing financial risks using various risk management tools and techniques.",
+          "PSO FIN4: Financial Technology and Innovation: Graduates specializing in Financial Management for the MBA programme will be able to Leverage emerging financial technologies (FinTech) and innovative financial solutions to improve financial services delivery, enhance operational efficiency, and support strategic financial planning.",
+        ],
+        "Programme Specific Outcomes (PSOs) - HRM": [
+          "PSO HRM1: Strategic HR Planning and Implementation: Graduates specializing in Human Resource Management for the MBA programme will be able to Demonstrate the ability to develop and implement strategic human resource plans that align with organizational goals, ensuring optimal utilization of human capital.",
+          "PSO HRM2: Talent Acquisition and Development: Graduates specializing in Human Resource Management for the MBA programme will be able to Apply advanced techniques and methodologies for effective talent acquisition, development, and retention, fostering a culture of continuous learning and professional growth.",
+          "PSO HRM3: Employee Relations and Legal Compliances: Graduates specializing in Human Resource Management for the MBA programme will be able to Ensure compliance with labor laws and ethical standards while managing employee relations, promoting a positive and legally compliant work environment.",
+          "PSO HRM4: HR Analytics and Performance Management: Graduates specializing in Human Resource Management for the MBA programme will be able to Utilize HR analytics and performance management systems to drive data-driven decisions, enhance employee performance, and achieve organizational excellence.",
+        ],
+        "Programme Specific Outcomes (PSOs) - OSCM": [
+          "PSO OSCM1: Operations Strategy and Process Improvement: Graduates specializing in Operations and Supply Chain Management for the MBA programme will be able to Develop and implement effective operations strategies to enhance process efficiency, reduce waste, and improve overall productivity within organizations.",
+          "PSO OSCM2: Supply Chain Design and Management: Graduates specializing in Operations and Supply Chain Management for the MBA programme will be able to Design, analyze, and manage end-to-end supply chains to ensure the seamless flow of goods, services, and information, while minimizing costs and meeting customer demands.",
+          "PSO OSCM3: Data-Driven Decision Making in Operations: Graduates specializing in Operations and Supply Chain Management for the MBA programme will be able to Utilize quantitative and qualitative data analysis techniques to make informed decisions in operations and supply chain management, ensuring alignment with business goals and customer requirements.",
+          "PSO OSCM4: Sustainable and Ethical Supply Chain Practices: Graduates specializing in Operations and Supply Chain Management for the MBA programme will be able to Promote and implement sustainable and ethical practices within operations and supply chain management to support environmental sustainability, social responsibility, and ethical governance.",
+        ],
+        "Programme Specific Outcomes (PSOs) - Business Analytics": [
+          "PSO BA1: Data-Driven Decision Making: Graduates specializing in Business Analytics for the MBA programme will be able to apply advanced analytical techniques and tools to collect, process, and interpret large datasets, enabling data-driven decision making in various business functions.",
+          "PSO BA2: Business Intelligence and Reporting: Graduates specializing in Business Analytics for the MBA programme will be able to Demonstrate proficiency in using business intelligence tools and software to create comprehensive reports and dashboards.",
+          "PSO BA3: Application of Business Analytics: Graduates specializing in Business Analytics for the MBA programme will be able to Apply business analytics methodologies to various functional areas such as marketing, finance, operations, and human resources.",
+          "PSO BA4: Integration of Analytics in Business Strategy: Graduates specializing in Business Analytics for the MBA programme will be able to Integrate business analytics methodologies with strategic management practices.",
+        ],
+      },
+    },
+    "Programme Objectives (Legacy/Pre-2024)": {
+      type: "accordion",
+      content: {
+        "Programme Educational Objectives (PEOs)": [
+          "PEO-1: Graduates will integrate cross-functional management theories with real-world practices.",
+          "PEO-2: Graduates will possess excellent communication skills and appreciate global contexts.",
+          "PEO-3: Graduates will be appreciative of Indian ethos and values in decision making.",
+          "PEO-4: Graduates will be ready for careers in corporate, non-profit, and entrepreneurial ventures.",
+          "PEO-5: Graduates will be recognized for managerial competence and ethical leadership.",
+        ],
+        "Programme Outcomes (POs)": [
+          "PO-1: Generic and Domain Knowledge",
+          "PO-2: Problem Solving & Innovation",
+          "PO-3: Critical Thinking",
+          "PO-4: Effective Communication",
+          "PO-5: Leadership and Team Work",
+          "PO-6: Global Orientation",
+          "PO-7: Entrepreneurship",
+          "PO-8: Environment and Sustainability",
+          "PO-9: Social Responsiveness and Ethics",
+          "PO-10: Life Long Learning",
+        ],
+        "Programme Specific Outcomes (PSOs)": [
+          "PSO – MKT: To groom Marketing Professionals with abilities to contemplate business problems and design sustainable strategies.",
+          "PSO – FIN: To develop finance professionals with analytical skills for various industries.",
+          "PSO – HR: To develop HR professionals with in-depth knowledge of HRM practices.",
+          "PSO – OSCM: To develop skills for planning, designing and operations control.",
+          "PSO – BA: To be updated by next week.",
         ],
       },
     },
@@ -276,11 +314,6 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
       },
     },
 
-    Faculty: {
-      type: "gallery",
-      content: facultyImages,
-      title: "Faculty Members",
-    },
     Exam: {
       type: "syllabus",
       content: examList,
@@ -300,9 +333,9 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
       case "accordion":
         return (
           <div className="space-y-4">
-            {Object.entries(data.content).map(([title, items]) => (
+            {Object.entries(data.content).map(([title, items], index) => (
               <div key={title} className="border border-gray-300 rounded-lg">
-                <details className="group">
+                <details className="group" open={index === 0}>
                   <summary className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg">
                     <h4 className="font-semibold text-secondary text-lg">
                       {title}
@@ -312,7 +345,7 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
                     </span>
                   </summary>
 
-                  <div className="p-4 pt-2 space-y-2">
+                  <div className="p-4 pt-2 space-y-2 text-justify">
                     {items.map((item, i) => {
                       // TABLE SUPPORT
                       if (typeof item === "object" && item.table) {
@@ -367,7 +400,6 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
                         );
                       }
 
-                      // NORMAL TEXT
                       // LIST SUPPORT
                       if (typeof item === "object" && item.list) {
                         return (
@@ -481,71 +513,6 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
           </div>
         );
 
-      case "entcLabs":
-        return (
-          <div>
-            <h4 className="font-semibold text-secondary text-lg mb-4">
-              Department Laboratories
-            </h4>
-
-            <div className="overflow-x-auto border border-gray-300 rounded-lg">
-              <table className="w-full text-sm text-left border-collapse">
-                <thead className="bg-gray-100 text-gray-700">
-                  <tr>
-                    <th className="border border-gray-300 p-3">Sr. No.</th>
-                    <th className="border border-gray-300 p-3">Lab No.</th>
-                    <th className="border border-gray-300 p-3">Lab Name</th>
-                    <th className="border border-gray-300 p-3">Total PCs</th>
-                    <th className="border border-gray-300 p-3">
-                      Configuration
-                    </th>
-                    <th className="border border-gray-300 p-3">
-                      Software Installed
-                    </th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {data.content.map((lab, index) => (
-                    <tr
-                      key={index}
-                      className="border-b border-gray-300 align-top"
-                    >
-                      <td className="border border-gray-300 p-3">{lab.srNo}</td>
-                      <td className="border border-gray-300 p-3">
-                        {lab.labNo}
-                      </td>
-                      <td className="border border-gray-300 p-3">
-                        {lab.labName}
-                      </td>
-                      <td className="border border-gray-300 p-3">
-                        {lab.totalPCs}
-                      </td>
-                      <td className="border border-gray-300 p-3 whitespace-pre-line">
-                        {lab.configuration}
-                      </td>
-                      <td className="border border-gray-300 p-3 whitespace-pre-line">
-                        {lab.software}
-                      </td>
-                    </tr>
-                  ))}
-
-                  {/* Total PCs Row */}
-                  <tr className="font-semibold bg-gray-50">
-                    <td className="border border-gray-300 p-3" colSpan={3}>
-                      Total PCs
-                    </td>
-                    <td className="border border-gray-300 p-3">75</td>
-                    <td className="border border-gray-300 p-3" colSpan={2}></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        );
-
-      // ========== UPDATED MECHANICAL LAB TABLE (2 COLUMNS) ==========
-
       default:
         return null;
     }
@@ -557,7 +524,7 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
         {/* HEADER */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-secondary mb-4">
-            Department of MBA <span className="text-red-500">(Will be Updated Soon)</span>
+            Department of MBA
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
             Empowering future innovators with technical excellence, research,
@@ -589,10 +556,6 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
 
           {/* RIGHT CONTENT */}
           <div className="lg:col-span-3 bg-white rounded-xl shadow-sm p-8 border border-gray-300">
-            {/* <div className="mb-6 pb-4 border-b border-gray-300">
-              <h3 className="text-2xl font-bold text-secondary">{active}</h3>
-            </div> */}
-
             {renderContent(sectionContent[active])}
           </div>
         </div>

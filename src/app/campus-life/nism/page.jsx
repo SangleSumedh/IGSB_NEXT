@@ -92,7 +92,7 @@ const workshops = [
 export default function NISMPage() {
   return (
     <section className="w-full bg-slate-50 py-16 text-slate-800">
-      <div className=" px-4 md:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Header Section */}
         <div className="mb-10 text-center md:text-left">
           <h1 className="text-2xl lg:text-4xl font-bold text-slate-900 leading-tight">

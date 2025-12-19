@@ -7,7 +7,7 @@ export default function NISMPage() {
   return (
     <section className="w-full bg-slate-50 py-16 text-slate-800">
       {/* Added max-w-6xl to prevent text from stretching too wide while keeping your px-4/8 */}
-      <div className="px-4 md:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Header Section */}
         <div className="text-left mb-10 ">
           <h1 className="text-2xl lg:text-4xl text-center md:text-left font-bold text-slate-900 leading-tight">

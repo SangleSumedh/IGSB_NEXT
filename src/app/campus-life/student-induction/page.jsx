@@ -16,7 +16,7 @@ export default function StudentInductionPage() {
         />
       </div>
       {/* Page Content */}
-      <div className="md:px-8 px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         <StudentInduction />
       </div>
     </div>

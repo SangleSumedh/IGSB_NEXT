@@ -32,20 +32,20 @@ const dropdownContent = {
             link: "/about/chanakya-edu#about-chairperson",
           },
           {
-            label: "Director's Profile",
+            label: "Director's Message",
             link: "/about/chanakya-edu#about-director",
           },
           {
-            label: "Vision Mission & Values",
+            label: "Vision & Mission",
             link: "/about/chanakya-edu#about-vision",
           },
-          {
-            label: "Recognition / Affiliation",
-            link: "/about/chanakya-edu#about-recognition",
-          },
+          // {
+          //   label: "Recognition / Affiliation",
+          //   link: "/about/chanakya-edu#about-recognition",  if needed later
+          // },
           {
             label: "Human Capital / Intellectual Capital",
-            link: "/",
+            link: "/humancapital",
           },
           {
             label: "Facilities",
@@ -80,7 +80,7 @@ const dropdownContent = {
           },
           {
             label: "Mandatory Disclosure",
-            link: "/",
+            link: "MandatoryDisclosure.pdf",
           },
         ],
       },

@@ -47,11 +47,15 @@ export default function Committee() {
 
   const grievanceCommittee = [
     { sr: 1, name: "Dr. Virendra Tatake", mobile: "02114 661 609 / 9657856103", role: "Chairman", rep: "Director" },
-    { sr: 2, name: "Prof. Kanchan Patil", mobile: "7385717517", role: "Member", rep: "Teaching Representative – Female" },
-    { sr: 3, name: "Shri. B. D. Udhane", mobile: "25601192 / 25690028", role: "Member", rep: "Ombudsman by University" },
-    { sr: 4, name: "Mr. Yogesh Gheware", mobile: "02114 661 568 / 9545278111", role: "Member", rep: "Non-Teaching Representatives" },
-    { sr: 5, name: "Mr. Santosh Dagade", mobile: "9763853241", role: "Member", rep: "Librarian" },
-    { sr: 6, name: "Dr. Priyanka Darekar", mobile: "9890067178", role: "Member Secretary", rep: "Senior Faculty" },
+    { sr: 2, name: "Dr.Pallavi Sajanapwar ", mobile: "9822406437 ", role: "Member", rep: "Teaching Representative – Female" },
+    { sr: 3, name: "Ms.Snehal Masurkar ", mobile: "9561317957 ", role: "Member", rep: "Teaching Representative – Female" },
+    { sr: 4, name: "Shri. B. D. Udhane Deputy Registrar, Law & Grievances ", mobile: "25601192/ 25690028 ", role: "Member", rep: "Ombudsman by University " },
+    { sr: 5, name: "Mr. Yogesh Gheware ", mobile: "02114 661 568 / 9545278111 ", role: "Member", rep: "Non-Teaching Representatives " },
+    { sr: 6, name: " Bhumika Deshmukh ", mobile: "7410148796 ", role: "Member", rep: "Student Representative (Female)-Co-curricular Representative " },
+    { sr: 7, name: "Abhishek Satav ", mobile: "8805771049", role: "Member", rep: "Student Representative -Academic Representative/ / Sports Representative " },
+    { sr: 8, name: "Karan Chandankhed ", mobile: "7057625895 ", role: "Member", rep: "Student Representative -Academic Representative " },
+    { sr: 9, name: "Nidhi Sachin Nene ", mobile: "9022523307 ", role: "Member", rep: "Student Representative -Academic Representative " },
+    { sr: 10, name: "Mr.Mahesh Bhagat ", mobile: "9822074890 ", role: "Member Secretary ", rep: "Teaching Representative ( SC/ST/OBC)" },
   ];
 
   const internalComplaintsCommittee = [

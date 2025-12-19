@@ -108,7 +108,7 @@ const ChanakyaEdu = () => {
         {/* Board of Trustees Section */}
         <section id="about-trustees" className="relative scroll-mt-[15vh]">
           <div className="bg-white p-8 rounded-xl shadow-lg">
-            <h2 className="text-3xl font-bold text-secondary mb-2">
+            <h2 className="text-2xl md:text-4xl font-bold text-secondary mb-2">
               Board of Trustees
             </h2>
             <p className="text-gray-600 text-lg mb-10">
@@ -226,208 +226,203 @@ const ChanakyaEdu = () => {
         </section>
 
         {/* Chairperson Section - UPDATED */}
-        <section id="about-chairperson" className="relative scroll-mt-[15vh]">
-          <div className="bg-white p-8 rounded-xl shadow-lg">
-            <h2 className="text-3xl font-bold text-secondary mb-10">
-              Chairperson & Chief Mentor's – IGI Message
-            </h2>
+       {/* Chairperson Section */}
+<section id="about-chairperson" className="relative scroll-mt-[15vh]">
+  <div className="bg-white p-8 rounded-xl shadow-lg">
+    <h2 className="text-3xl font-bold text-secondary mb-10">
+      Chairperson & Chief Mentor's – IGI Message
+    </h2>
 
-            <div className="flex flex-col lg:flex-row items-start gap-12 bg-white p-8 rounded-xl border border-gray-100">
-              <div className="lg:w-2/5 w-full space-y-6">
-                <div className="relative rounded-2xl overflow-hidden shadow-lg">
-                  <Image
-                    src="/TaritaMam1.jpg"
-                    alt="Dr. Tarita Shankar"
-                    width={500}
-                    height={600}
-                    className="w-full h-auto object-contain rounded-2xl"
-                  />
-                </div>
-                {/* Contact details added below the image */}
-                <div className="text-center lg:text-left">
-                  <p className="font-semibold text-gray-800">
-                    Dr. Tarita Shankar
-                  </p>
+    <div className="flex flex-col lg:flex-row items-start gap-12 bg-white p-8 rounded-xl border border-gray-100">
+      <div className="lg:w-2/5 w-full">
+        <div className="relative rounded-2xl overflow-hidden shadow-lg mb-10">
+          <Image
+            src="/TaritaMam1.jpg"
+            alt="Dr. Tarita Shankar"
+            width={500}
+            height={600}
+            className="w-full h-auto object-contain rounded-2xl"
+          />
+        </div>
 
-                  <p className="text-gray-800">
-                    Founder Secretary & Chief Managing Trustee,
-                  </p>
-                  <p className=" text-gray-800">
-                    Shree Chankya Education Society
-                  </p>
-                  <p className="text-gray-800">
-                    Chairperson & Chief Mentor,
-                  </p>
-                  <p className="text-gray-800 mb-2">
-                    Indira Group of Institutes, Pune
-                  </p>
-                  <p className="font-semibold text-gray-800">
-                    Email: <span className="text-secondary">taritashankar@indiraedu.com</span> 
-                  </p>
-                </div>
-              </div>
+        <div className="text-center lg:text-left">
+          <p className="font-semibold text-gray-800">
+            Founder Secretary & Chief Managing Trustee,
+          </p>
+          <p className="font-semibold text-gray-800">
+            Shree Chankya Education Society
+          </p>
+          <p className="font-semibold text-gray-800">
+            Chairperson & Chief Mentor,
+          </p>
+          <p className="font-semibold text-gray-800 mb-2">
+            Indira Group of Institutes, Pune
+          </p>
+          <p className="text-secondary font-medium">
+            Email: taritashankar@indiraedu.com
+          </p>
+        </div>
+      </div>
 
-              <div className="lg:w-3/5 w-full">
-                <div className="border-l-4 border-secondary pl-6 mb-6">
-                  <h3 className="text-2xl font-bold text-secondary mb-1">
-                    DR. TARITA SHANKAR
-                  </h3>
-                  <p className="text-secondary font-semibold text-lg mb-2">
-                    CHAIRPERSON & CHIEF MENTOR
-                  </p>
-                  <p className="text-gray-700 font-semibold">
-                    INDIRA GROUP OF INSTITUTES, PUNE
-                  </p>
-                </div>
+      <div className="lg:w-3/5 w-full">
+        {/* Desktop-only title section */}
+        <div className="hidden lg:block border-l-4 border-secondary pl-6 mb-6">
+          <h3 className="text-2xl font-bold text-secondary mb-1">
+            DR. TARITA SHANKAR
+          </h3>
+          <p className="text-secondary font-semibold text-lg mb-2">
+            CHAIRPERSON & CHIEF MENTOR
+          </p>
+          <p className="text-gray-700 font-semibold">
+            INDIRA GROUP OF INSTITUTES, PUNE
+          </p>
+        </div>
 
-                {/* Message paragraphs separated */}
-                <div className="space-y-6">
-                  <p className="text-gray-700 leading-relaxed text-md">
-                    Dear Students,
-                  </p>
-                  <p className="text-gray-700 leading-relaxed text-md">
-                    Pursuit of Management Education at Indira Group of
-                    Institutes has been an inspiring journey. With over two
-                    decades of existence, and shortly closing on twenty five
-                    years of celebrating education, Indira strongly believes in
-                    the power of education to transform the youth. The
-                    philosophy, governance and values of business are witnessing
-                    a sea change and plenty of its repercussions are already
-                    being witnessed across the globe. Indira embraces these
-                    changes and epitomizes matching innovation in curriculum.
-                    Such transformational efforts lead our aspiring managers to
-                    become professionals who develop capabilities to lead in
-                    dynamic environment.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed text-md">
-                    Quality being the bottom line for every industry, Indira has
-                    never lost sight of the fact that for India to forge ahead
-                    in its drive towards economic supremacy in the world, it is
-                    the quality of our people who drive it that matters most.
-                    And quality, as the cliché goes, is never an accident but an
-                    article of faith, and the entire faculty team at Indira
-                    embodies such dedication to quality. The Indira Group has
-                    proven itself on this count and has no intention of resting
-                    on its laurels.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed text-md">
-                    Indira offers holistic and transformative learning
-                    experience, designed and delivered by experts from industry
-                    and academia. While the curriculum keeps the programs
-                    contextually abreast, innovative pedagogies inspire
-                    application oriented learning.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed text-md">
-                    Indira strives to create good human beings and not just
-                    professionals. With the confidence that our intentions have
-                    matched our efforts, I wish you the very best in the future.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Message paragraphs separated */}
+        <div className="space-y-6">
+          <p className="text-gray-700 leading-relaxed text-lg">
+            Dear Students,
+          </p>
+          <p className="text-gray-700 leading-relaxed text-lg text-justify">
+            Pursuit of Management Education at Indira Group of
+            Institutes has been an inspiring journey. With over two
+            decades of existence, and shortly closing on twenty five
+            years of celebrating education, Indira strongly believes in
+            the power of education to transform the youth. The
+            philosophy, governance and values of business are witnessing
+            a sea change and plenty of its repercussions are already
+            being witnessed across the globe. Indira embraces these
+            changes and epitomizes matching innovation in curriculum.
+            Such transformational efforts lead our aspiring managers to
+            become professionals who develop capabilities to lead in
+            dynamic environment.
+          </p>
+          <p className="text-gray-700 leading-relaxed text-lg text-justify">
+            Quality being the bottom line for every industry, Indira has
+            never lost sight of the fact that for India to forge ahead
+            in its drive towards economic supremacy in the world, it is
+            the quality of our people who drive it that matters most.
+            And quality, as the cliché goes, is never an accident but an
+            article of faith, and the entire faculty team at Indira
+            embodies such dedication to quality. The Indira Group has
+            proven itself on this count and has no intention of resting
+            on its laurels.
+          </p>
+          <p className="text-gray-700 leading-relaxed text-lg text-justify">
+            Indira offers holistic and transformative learning
+            experience, designed and delivered by experts from industry
+            and academia. While the curriculum keeps the programs
+            contextually abreast, innovative pedagogies inspire
+            application oriented learning.
+          </p>
+          <p className="text-gray-700 leading-relaxed text-lg text-justify">
+            Indira strives to create good human beings and not just
+            professionals. With the confidence that our intentions have
+            matched our efforts, I wish you the very best in the future.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        {/* Directors Profile Section - UPDATED */}
-        <section id="about-director" className="relative scroll-mt-[15vh]">
-          <div className="bg-white p-8 rounded-xl shadow-lg">
-            <h2 className="text-3xl font-bold text-secondary mb-10">
-              Director's Profile – Message
-            </h2>
+{/* Director Section */}
+<section id="about-director" className="relative scroll-mt-[15vh]">
+  <div className="bg-white p-8 rounded-xl shadow-lg">
+    <h2 className="text-3xl font-bold text-secondary mb-10">
+      Director's Profile – Message
+    </h2>
 
-            <div className="flex flex-col lg:flex-row items-start gap-12 bg-white p-8 rounded-xl border border-gray-100">
-              <div className="lg:w-2/5 w-full">
-                <div className="relative rounded-2xl overflow-hidden shadow-lg mb-10">
-                  <Image
-                    src="/banners/Dr-Virendra-Tatake.jpg"
-                    alt="Dr. Virendra Tatake"
-                    width={500}
-                    height={600}
-                    className="w-full h-auto object-contain rounded-2xl"
-                  />
-                </div>
+    <div className="flex flex-col lg:flex-row items-start gap-12 bg-white p-8 rounded-xl border border-gray-100">
+      <div className="lg:w-2/5 w-full">
+        <div className="relative rounded-2xl overflow-hidden shadow-lg mb-10">
+          <Image
+            src="/banners/Dr-Virendra-Tatake.jpg"
+            alt="Dr. Virendra Tatake"
+            width={500}
+            height={600}
+            className="w-full h-auto object-contain rounded-2xl"
+          />
+        </div>
 
-                <div className="text-center lg:text-left">
-                  <p className="font-semibold text-gray-800">
-                    DR. VIRENDRA TATAKE
-                  </p>
+        <div className="text-center lg:text-left">
+          <p className="font-semibold text-gray-800">
+            DR. VIRENDRA TATAKE
+          </p>
+          <p className=" text-gray-800">
+            Indira Global School of Business
+          </p>
+          <p className="text-gray-800">
+            Director ,
+          </p>
+          
+          <p className="font-semibold text-gray-800">
+            Email: <span className="text-secondary">virendratatake@indiraedu.com</span> 
+          </p>
+        </div>
+      </div>
 
-                  <p className="text-gray-800">
-                    Founder Secretary & Chief Managing Trustee,
-                  </p>
-                  <p className=" text-gray-800">
-                    Indira Global School of Business
-      git            </p>
-                  <p className="text-gray-800">
-                    Director ,
-                  </p>
-                  
-                  <p className="font-semibold text-gray-800">
-                    Email: <span className="text-secondary">virendratatake@indiraedu.com</span> 
-                  </p>
-                </div>
-              </div>
+      <div className="lg:w-3/5 w-full">
+        {/* Desktop-only title section */}
+        <div className="hidden lg:block border-l-4 border-secondary pl-6 mb-6">
+          <h3 className="text-2xl font-bold text-secondary mb-1">
+            DR. VIRENDRA TATAKE
+          </h3>
+          <p className="text-secondary font-semibold text-lg mb-2">
+            DIRECTOR
+          </p>
+          <p className="text-gray-700 font-semibold">
+            INDIRA Global School of Business, PUNE
+          </p>
+        </div>
 
-              <div className="lg:w-3/5 w-full">
-                <div className="border-l-4 border-secondary pl-6 mb-6">
-                  <h3 className="text-2xl font-bold text-secondary mb-1">
-                    DR. VIRENDRA TATAKE
-                  </h3>
-                  <p className="text-secondary font-semibold text-lg mb-2">
-                    DIRECTOR
-                  </p>
-                  <p className="text-gray-700 font-semibold">
-                    INDIRA Global School of Business, PUNE
-                  </p>
-                </div>
-
-                {/* Message paragraphs separated */}
-                <div className="space-y-6">
-                  <p className="text-gray-700 leading-relaxed text-md">
-                    Dear Students,
-                  </p>
-                  <p className="text-gray-700 leading-relaxed text-md">
-                    Indira Global Business School is proud to be the part of
-                    The Shree Chanakya Education Society (SCES) which is
-                    celebrating its Silver Jubilee Year of its establishment.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed text-md">
-                    During these 25 years, Indira Group of Institutes (IGI) has
-                    grown steadily and today it has 14 Institutes, having more
-                    than 8000 students from all over India pursuing
-                    multi-disciplinary, graduate & post-graduate programmes. IGI
-                    has always been committed to impart effective & qualitative
-                    education throughout this journey of 25 years.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed text-md">
-                    The completion of 25 years is indeed a major milestone in
-                    the life of an educational institution. IGI since its
-                    foundation in 1994, has earned appreciation for providing
-                    value-based education and for imparting the ideals of
-                    academic excellence, sense of discipline and high moral and
-                    ethical values, leading to the development of integrated
-                    personalities.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed text-md">
-                    The motto of The SCES is reflected in its faith that
-                    education is a process of awakening individual potential to
-                    creative knowledge inculcating in them, the desire to excel
-                    in various spheres. It is extremely noteworthy that IGI
-                    considers it to be its duty to nurture its students as
-                    sensitive people with strong values, who will leverage their
-                    individual achievements to strengthen the fabric of the
-                    community, the nation and the planet.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed text-md">
-                    I, on behalf of Indira Global Business School convey our
-                    good wishes and thanks to everyone associated with us during
-                    this journey and wish all success and a great future ahead.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Message paragraphs separated */}
+        <div className="space-y-6">
+          <p className="text-gray-700 leading-relaxed text-lg">
+            Dear Students,
+          </p>
+          <p className="text-gray-700 leading-relaxed text-md text-justify">
+            Indira Global Business School is proud to be the part of
+            The Shree Chanakya Education Society (SCES) which is
+            celebrating its Silver Jubilee Year of its establishment.
+          </p>
+          <p className="text-gray-700 leading-relaxed text-md text-justify">
+            During these 25 years, Indira Group of Institutes (IGI) has
+            grown steadily and today it has 14 Institutes, having more
+            than 8000 students from all over India pursuing
+            multi-disciplinary, graduate & post-graduate programmes. IGI
+            has always been committed to impart effective & qualitative
+            education throughout this journey of 25 years.
+          </p>
+          <p className="text-gray-700 leading-relaxed text-md text-justify">
+            The completion of 25 years is indeed a major milestone in
+            the life of an educational institution. IGI since its
+            foundation in 1994, has earned appreciation for providing
+            value-based education and for imparting the ideals of
+            academic excellence, sense of discipline and high moral and
+            ethical values, leading to the development of integrated
+            personalities.
+          </p>
+          <p className="text-gray-700 leading-relaxed text-md text-justify">
+            The motto of The SCES is reflected in its faith that
+            education is a process of awakening individual potential to
+            creative knowledge inculcating in them, the desire to excel
+            in various spheres. It is extremely noteworthy that IGI
+            considers it to be its duty to nurture its students as
+            sensitive people with strong values, who will leverage their
+            individual achievements to strengthen the fabric of the
+            community, the nation and the planet.
+          </p>
+          <p className="text-gray-700 leading-relaxed text-md text-justify">
+            I, on behalf of Indira Global Business School convey our
+            good wishes and thanks to everyone associated with us during
+            this journey and wish all success and a great future ahead.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
       </div>
     </div>
   );

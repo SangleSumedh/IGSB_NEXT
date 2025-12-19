@@ -16,7 +16,7 @@ export default function StudentCertificationPage() {
         />
       </div>
       {/* Page Content */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className=" px-4 md:px-8 py-12">
         <StudentCertification />
       </div>
     </div>

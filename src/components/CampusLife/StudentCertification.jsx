@@ -38,70 +38,94 @@ function MiniCertificate({ certification }) {
 /* ============================================================
    Full Certification Card (auto-renders all fields)
    ============================================================ */
+/* ============================================================
+   Full Certification Card (auto-renders all fields)
+   ============================================================ */
 export function Certificate({ certification }) {
+  const isSingleImage = certification.images?.length === 1;
+
   return (
     <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 space-y-6">
-      {/* Title */}
-      <h2 className="text-2xl font-semibold text-[#023b5e] leading-snug">
-        {certification.title}
-      </h2>
+      <div
+        className={isSingleImage ? "grid md:grid-cols-3 gap-8" : "space-y-6"}
+      >
+        {/* Text Content Column */}
+        <div
+          className={isSingleImage ? "md:col-span-2 space-y-6" : "space-y-6"}
+        >
+          {/* Title */}
+          <h2 className="text-2xl font-semibold text-[#023b5e] leading-snug">
+            {certification.title}
+          </h2>
 
-      {/* Description */}
-      {certification.description?.length > 0 && (
-        <div className="space-y-4 text-gray-700 leading-relaxed text-[1.05rem]">
-          {certification.description.map((para, idx) => (
-            <p key={idx}>{para}</p>
-          ))}
-        </div>
-      )}
-
-      {/* Objective */}
-      {certification.objective && (
-        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-          <h4 className="font-semibold text-[#023b5e] mb-2">Objective</h4>
-
-          {Array.isArray(certification.objective) ? (
-            <ul className="list-disc pl-6 space-y-1 text-gray-700">
-              {certification.objective.map((obj, idx) => (
-                <li key={idx}>{obj}</li>
+          {/* Description */}
+          {certification.description?.length > 0 && (
+            <div className="space-y-4 text-gray-700 leading-relaxed text-[1.05rem]">
+              {certification.description.map((para, idx) => (
+                <p key={idx}>{para}</p>
               ))}
-            </ul>
-          ) : (
-            <p className="text-gray-700">{certification.objective}</p>
+            </div>
+          )}
+
+          {/* Objective */}
+          {certification.objective && (
+            <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+              <h4 className="font-semibold text-[#023b5e] mb-2">Objective</h4>
+
+              {Array.isArray(certification.objective) ? (
+                <ul className="list-disc pl-6 space-y-1 text-gray-700">
+                  {certification.objective.map((obj, idx) => (
+                    <li key={idx}>{obj}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-gray-700">{certification.objective}</p>
+              )}
+            </div>
+          )}
+
+          {/* Topics */}
+          {certification.topics?.length > 0 && (
+            <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+              <h4 className="font-semibold text-[#023b5e] mb-2">
+                Topics Covered
+              </h4>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700">
+                {certification.topics.map((topic, idx) => (
+                  <li key={idx}>{topic}</li>
+                ))}
+              </ul>
+            </div>
           )}
         </div>
-      )}
 
-      {/* Topics */}
-      {certification.topics?.length > 0 && (
-        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-          <h4 className="font-semibold text-[#023b5e] mb-2">Topics Covered</h4>
-          <ul className="list-disc pl-6 space-y-1 text-gray-700">
-            {certification.topics.map((topic, idx) => (
-              <li key={idx}>{topic}</li>
+        {/* Image Column */}
+        {certification.images?.length > 0 && (
+          <div
+            className={
+              isSingleImage
+                ? "md:col-span-1"
+                : "grid sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2"
+            }
+          >
+            {certification.images.slice(0, 6).map((img, idx) => (
+              <div
+                key={idx}
+                className={`relative w-full rounded-xl overflow-hidden shadow-md border border-gray-200 ${
+                  isSingleImage ? "h-full min-h-[300px]" : "h-60"
+                }`}
+              >
+                <Image
+                  src={img}
+                  alt={certification.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
             ))}
-          </ul>
-        </div>
-      )}
-
-      {/* Images */}
-      {certification.images?.length > 0 && (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
-          {certification.images.slice(0, 6).map((img, idx) => (
-            <div
-              key={idx}
-              className="relative w-full h-52 rounded-xl overflow-hidden shadow-md border border-gray-200"
-            >
-              <Image
-                src={img}
-                alt={certification.title}
-                fill
-                className="object-cover"
-              />
-            </div>
-          ))}
-        </div>
-      )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
@@ -111,7 +135,7 @@ export function Certificate({ certification }) {
    ============================================================ */
 export default function StudentCertification() {
   const YEARS = Object.keys(certifications);
-  const [selectedYear, setSelectedYear] = useState(YEARS[0]); // default first year dynamically
+  const [selectedYear, setSelectedYear] = useState(YEARS.at(-1)); // default first year dynamically
 
   // detect mini card
   function isMiniCard(certification) {
@@ -132,8 +156,8 @@ export default function StudentCertification() {
   return (
     <div className="space-y-12 w-full">
       {/* Header */}
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 pb-6 border-b">
-        <h1 className="text-3xl font-semibold text-[#023b5e]">
+      <div className="flex flex-col items-center lg:flex-row lg:items-center lg:justify-between gap-4 pb-6 border-b">
+        <h1 className="text-2xl md:text-4xl font-semibold text-[#023b5e]">
           Student Certifications
         </h1>
 

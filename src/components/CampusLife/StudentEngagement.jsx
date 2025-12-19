@@ -85,11 +85,11 @@ export function StudentEvent({ event }) {
 
       {/* Images */}
       {event.images && event.images.length > 0 && (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
           {event.images.slice(0, 6).map((img, idx) => (
             <div
               key={idx}
-              className="relative w-full h-52 rounded-xl overflow-hidden shadow-md border border-gray-200"
+              className="relative w-full h-60 rounded-xl overflow-hidden shadow-md border border-gray-200"
             >
               <Image
                 src={img}
@@ -110,7 +110,7 @@ export function StudentEvent({ event }) {
    ============================================================ */
 export default function StudentWelfare() {
   const YEARS = Object.keys(studentEvents);
-  const [selectedYear, setSelectedYear] = useState("AY-2024-25");
+  const [selectedYear, setSelectedYear] = useState(YEARS.at(-1));
 
   // Helper to detect which events should be mini cards
   function isMiniCard(event) {

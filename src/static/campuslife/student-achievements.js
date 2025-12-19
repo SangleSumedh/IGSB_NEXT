@@ -1,44 +1,5 @@
 // ===================== Achievements Dataset =====================
 export const achievements = {
-  "AY-2023-24": [
-    {
-      title: "IGSB Girls Cricket Team – 1st Prize at AVISHKAR 2024",
-      description: [
-        "The IGSB girls cricket team secured the 1st prize at the AVISHKAR 2024 Annual Sports Event, demonstrating outstanding teamwork and athletic excellence.",
-      ],
-      images: [`/IGSB/student-achievements/Student-Achievement1.jpg`],
-    },
-    {
-      title: "Runners-up at the Labella Fashion Show Competition – Gusto",
-      description: [
-        "Team IGSB earned the runners-up position at the Labella Fashion Show Competition during the Gusto cultural fest.",
-      ],
-      images: [`/IGSB/student-achievements/Student-Achievement2.jpg`],
-    },
-    {
-      title: "Best Research Paper Presentation Award",
-      description: [
-        "IGSB students Shivam Dad and Aditi Sharma received the Best Research Paper Presentation Award at the Dewang Mehta National Education Leadership Awards Ceremony.",
-      ],
-      images: [`/IGSB/student-achievements/Student-Achievement4.jpg`],
-    },
-    {
-      title:
-        "IGSB Boys Cricket Team – Winners at Sadhu Vaswani Institute Tournament",
-      description: [
-        "The IGSB boys cricket team won the inter-college cricket match hosted by Sadhu Vaswani Institute of Management Studies.",
-      ],
-      images: [`/IGSB/student-achievements/Student-Achievement5.jpg`],
-    },
-    {
-      title: "Certificate of Appreciation – State of India’s Birds",
-      description: [
-        "IGSB student Varad Kulkarni received a Certificate of Appreciation from 'The State of India’s Birds' for his significant contribution.",
-      ],
-      images: [`/IGSB/student-achievements/Student-Achievement6.jpg`],
-    },
-  ],
-
   "AY-2022-23": [
     {
       title: "Winners – Mad Ads Competition (HNIMR)",
@@ -103,6 +64,44 @@ export const achievements = {
         "IGSB students Sehrish Khan and Vaishnavi Kohale were awarded Best Creative Anchors during the 'Arambh: Together We Strive' induction program.",
       ],
       images: [`/IGSB/student-achievements/Student-Achievement20.png`],
+    },
+  ],
+  "AY-2023-24": [
+    {
+      title: "IGSB Girls Cricket Team – 1st Prize at AVISHKAR 2024",
+      description: [
+        "The IGSB girls cricket team secured the 1st prize at the AVISHKAR 2024 Annual Sports Event, demonstrating outstanding teamwork and athletic excellence.",
+      ],
+      images: [`/IGSB/student-achievements/Student-Achievement1.jpg`],
+    },
+    {
+      title: "Runners-up at the Labella Fashion Show Competition – Gusto",
+      description: [
+        "Team IGSB earned the runners-up position at the Labella Fashion Show Competition during the Gusto cultural fest.",
+      ],
+      images: [`/IGSB/student-achievements/Student-Achievement2.jpg`],
+    },
+    {
+      title: "Best Research Paper Presentation Award",
+      description: [
+        "IGSB students Shivam Dad and Aditi Sharma received the Best Research Paper Presentation Award at the Dewang Mehta National Education Leadership Awards Ceremony.",
+      ],
+      images: [`/IGSB/student-achievements/Student-Achievement4.jpg`],
+    },
+    {
+      title:
+        "IGSB Boys Cricket Team – Winners at Sadhu Vaswani Institute Tournament",
+      description: [
+        "The IGSB boys cricket team won the inter-college cricket match hosted by Sadhu Vaswani Institute of Management Studies.",
+      ],
+      images: [`/IGSB/student-achievements/Student-Achievement5.jpg`],
+    },
+    {
+      title: "Certificate of Appreciation – State of India’s Birds",
+      description: [
+        "IGSB student Varad Kulkarni received a Certificate of Appreciation from 'The State of India’s Birds' for his significant contribution.",
+      ],
+      images: [`/IGSB/student-achievements/Student-Achievement6.jpg`],
     },
   ],
 };

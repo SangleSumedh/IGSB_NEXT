@@ -11,12 +11,12 @@ function AchievementCard({ item }) {
   const hasMultipleImages = item.images && item.images.length > 1;
 
   return (
-    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+    <div className="bg-white px-4 md:px-8 py-6 rounded-xl shadow-sm border border-gray-200">
       {/* For single image: Text on left, image on right */}
       {!hasMultipleImages && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
           {/* LEFT SIDE – TEXT */}
-          <div className="space-y-4 order-2 lg:order-1">
+          <div className="space-y-4 order-2 lg:col-span-2 lg:order-1">
             <h2 className="text-2xl font-semibold text-[#023b5e] leading-snug">
               {item.title}
             </h2>
@@ -97,15 +97,15 @@ function AchievementCard({ item }) {
    ============================ */
 export default function AchievementsComponent() {
   const YEARS = Object.keys(achievements);
-  const [selectedYear, setSelectedYear] = useState(YEARS[0]);
+  const [selectedYear, setSelectedYear] = useState(YEARS.at(-1)); // default first year dynamically
 
   const yearData = achievements[selectedYear];
 
   return (
     <div className="space-y-12 w-full">
       {/* Header */}
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 pb-6 border-b">
-        <h1 className="text-3xl font-semibold text-[#023b5e]">
+      <div className="flex flex-col items-center lg:flex-row lg:items-center lg:justify-between gap-4 pb-6 border-b">
+        <h1 className="text-2xl md:text-4xl font-semibold text-[#023b5e]">
           Student Achievements
         </h1>
 

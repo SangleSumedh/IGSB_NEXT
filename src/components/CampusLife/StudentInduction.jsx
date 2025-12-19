@@ -67,10 +67,10 @@ export function InductionCard({ item }) {
             return (
               <div
                 key={idx}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-4 bg-gray-50 border border-gray-200 rounded-xl shadow-sm"
+                className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 bg-gray-50 border border-gray-200 rounded-xl shadow-sm"
               >
                 {/* LEFT: Session Details */}
-                <div className="space-y-2">
+                <div className="space-y-2 col-span-2">
                   <h5 className="text-xl font-semibold text-[#023b5e]">
                     {session.title}
                   </h5>
@@ -146,7 +146,7 @@ export function InductionCard({ item }) {
           {item.images.slice(0, 6).map((img, idx) => (
             <div
               key={idx}
-              className="relative w-full h-52 rounded-xl overflow-hidden shadow-md border border-gray-200"
+              className="relative w-full h-60 rounded-xl overflow-hidden shadow-md border border-gray-200"
             >
               <Image src={img} alt={item.title} fill className="object-cover" />
             </div>

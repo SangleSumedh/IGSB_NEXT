@@ -53,7 +53,7 @@ const dropdownContent = {
           },
         ],
       },
-      
+
       {
         title: "Governance",
         items: [
@@ -117,7 +117,6 @@ const dropdownContent = {
           },
         ],
       },
-      
     ],
   },
 
@@ -153,7 +152,23 @@ const dropdownContent = {
           // },
         ],
       },
-    
+      {
+        title: "Professional Associations",
+        items: [
+          {
+            label: "NISM",
+            link: "/campus-life/nism",
+          },
+          {
+            label: "NHRD",
+            link: "/campus-life/nhrd",
+          },
+          {
+            label: "C414",
+            link: "/campus-life/c414",
+          },
+        ],
+      },
     ],
   },
   programs: {

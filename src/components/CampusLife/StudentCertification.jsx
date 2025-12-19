@@ -105,7 +105,7 @@ export function Certificate({ certification }) {
             className={
               isSingleImage
                 ? "md:col-span-1"
-                : "grid sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2"
+                : "grid sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2"
             }
           >
             {certification.images.slice(0, 6).map((img, idx) => (

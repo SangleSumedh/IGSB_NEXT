@@ -28,7 +28,7 @@ export default function Research() {
             className="object-cover"
           />
         </div>
-        <div className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8 ">
+        <div className="max-w-7xl mx-auto  px-4 lg:px-8 ">
           {/* ===========================
               🔷 PAGE HEADER
           ============================ */}
@@ -58,7 +58,7 @@ export default function Research() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-6 py-2 rounded-lg font-semibold transition-all ${
+                className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                   activeTab === tab.id
                     ? "bg-secondary text-white shadow-md"
                     : "bg-white text-gray-700 border border-gray-300 hover:border-secondary hover:text-secondary"
@@ -74,14 +74,13 @@ export default function Research() {
           ============================ */}
           <div>
             {/* ===================== RESEARCH CENTRE ===================== */}
-           
 
             {/* ===================== MDP ===================== */}
             {activeTab === "mdp" && (
-              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-12 mb-12">
+              <div className="bg-white px-4 md:px-8 py-8 rounded-2xl shadow-lg space-y-12 mb-12">
                 {/* INTRO */}
-                <section className="space-y-4">
-                  <h2 className="text-3xl font-bold text-secondary text-center">
+                <section className="space-y-4 text-lg">
+                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center mb-8">
                     Management Development Programmes (MDP)
                   </h2>
 
@@ -210,12 +209,14 @@ export default function Research() {
                     program that nurtured and groomed the next set of HR leaders
                     in the organization, and they were a part of the mentoring
                     team for the Business Impact projects. Dr. Anuradha mentored
-                    2 groups and Dr. Priyanka mentored 6 Groups.Their journey of
-                    the participants closed with a Business Impact project that
-                    they had identified based on the learnings and business
-                    needs which were facilitated by the Mentors. The mentoring
-                    consultancy was carried out in the month of August and
-                    September 2023.
+                    2 groups and Dr. Priyanka mentored 6 Groups.
+                  </p>
+                  <p className="text-gray-700 text-justify">
+                    Their journey of the participants closed with a Business
+                    Impact project that they had identified based on the
+                    learnings and business needs which were facilitated by the
+                    Mentors. The mentoring consultancy was carried out in the
+                    month of August and September 2023.
                   </p>
                 </section>
 
@@ -255,12 +256,14 @@ export default function Research() {
                     capability-building program. It was a skill development
                     program that nurtured and groomed the next set of HR leaders
                     in the organization, and they were a part of the mentoring
-                    team for the Business Impact projects.Their journey of the
-                    participants closed with a Business Impact project that they
-                    had identified based on the learnings and business needs
-                    which were facilitated by the Mentors. The mentoring
-                    consultancy was carried out in the month of September and
-                    October 2024.
+                    team for the Business Impact projects.
+                  </p>
+                  <p className="text-gray-700 text-justify">
+                    Their journey of the participants closed with a Business
+                    Impact project that they had identified based on the
+                    learnings and business needs which were facilitated by the
+                    Mentors. The mentoring consultancy was carried out in the
+                    month of September and October 2024.
                   </p>
 
                   <div className="w-full h-auto rounded-2xl overflow-hidden shadow">
@@ -285,11 +288,13 @@ export default function Research() {
                     a leading SEZ for diversified contract manufacturing company
                     providing vertically integrated product solutions across the
                     Aerospace and Consumer Goods industries. The assignment was
-                    conducted in the duration Jan to March 2025.The assignment
-                    involved: Assessing employees’ competencies on prescribed
-                    tool matrix; giving feedback; Consolidation of observations,
-                    interpretation and preparation of reports and developing
-                    Individual Development Plans
+                    conducted in the duration Jan to March 2025.
+                  </p>
+                  <p className="text-gray-700 text-justify">
+                    The assignment involved: Assessing employees’ competencies
+                    on prescribed tool matrix; giving feedback; Consolidation of
+                    observations, interpretation and preparation of reports and
+                    developing Individual Development Plans.
                   </p>
 
                   <div className="w-full h-106 rounded-2xl overflow-hidden shadow">
@@ -305,10 +310,10 @@ export default function Research() {
 
             {/* ===================== FDP ===================== */}
             {activeTab === "fdp" && (
-              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-16 mb-12">
+              <div className="bg-white px-4 md:px-8 py-8 rounded-2xl shadow-lg space-y-16 mb-12">
                 {/* 1 */}
                 <section className="space-y-6">
-                  <h3 className="text-2xl font-bold text-secondary text-center">
+                  <h3 className="text-2xl font-bold text-secondary text-left">
                     1-Day In-House FDP: Overview of NBA, OBE & BLOOMS TAXONOMY
                   </h3>
 
@@ -343,7 +348,7 @@ export default function Research() {
 
                 {/* 2 */}
                 <section className="space-y-6">
-                  <h3 className="text-2xl font-bold text-secondary text-center">
+                  <h3 className="text-2xl font-bold text-secondary text-left">
                     1-Day In-House FDP: Sectorial & Industry Analysis Using
                     Strategic Models
                   </h3>
@@ -365,7 +370,7 @@ export default function Research() {
 
                 {/* 3 */}
                 <section className="space-y-6">
-                  <h3 className="text-2xl font-bold text-secondary text-center">
+                  <h3 className="text-2xl font-bold text-secondary text-left">
                     1-Day In-House FDP: CO-PO Mapping and Attainments
                   </h3>
 
@@ -413,11 +418,12 @@ export default function Research() {
                       </div>
                     ))}
                   </div>
-
-                  <h4 className="text-xl font-semibold text-secondary mt-6">
+                </section>
+                <section className="space-y-6">
+                  <h3 className="text-2xl font-bold text-secondary text-left">
                     Translation of Investment-related Books into Regional
                     Language
-                  </h4>
+                  </h3>
 
                   <p className="text-gray-700 leading-relaxed text-justify">
                     Dr Tatake has translated the famous books *Romancing the
@@ -439,8 +445,8 @@ export default function Research() {
 
             {/* ===================== RESEARCH ===================== */}
             {activeTab === "research" && (
-              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-10 mb-12">
-                <h2 className="text-3xl font-bold text-secondary text-center">
+              <div className="bg-white px-4 md:px-8 py-8 rounded-2xl shadow-lg space-y-10 mb-12">
+                <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
                   Research & Innovation
                 </h2>
 
@@ -572,10 +578,10 @@ export default function Research() {
 
             {/* ===================== CONFERENCE ===================== */}
             {activeTab === "conference" && (
-              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-12 mb-12">
+              <div className="bg-white px-4 md:px-8 py-8 rounded-2xl shadow-lg space-y-12 mb-12">
                 {/* AY 24-25 */}
                 <section className="space-y-4">
-                  <h2 className="text-2xl font-bold text-secondary text-center">
+                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
                     Academic Year 2024–25
                   </h2>
 
@@ -674,14 +680,14 @@ export default function Research() {
 
             {/* ===================== PUBLICATIONS ===================== */}
             {activeTab === "publications" && (
-              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-16 mb-12">
+              <div className="bg-white px-4 md:px-8 py-8 rounded-2xl shadow-lg space-y-16 mb-12">
                 {/* Faculty Publications */}
                 <section className="space-y-10">
-                  <h2 className="text-3xl font-bold text-secondary text-center">
+                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
                     Faculty Publications
                   </h2>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
                       Ph.D Guide
                     </div>
@@ -705,30 +711,32 @@ export default function Research() {
                     <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
                       Scopus
                     </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
+                    {/* <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
                       ABDC
                     </div>
 
                     <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
                       Conference Proceedings
-                    </div>
+                    </div> */}
                   </div>
                 </section>
 
                 {/* Institute Publications */}
-                {/* Institute Publications */}
                 <section className="space-y-10">
-                  <h2 className="text-3xl font-bold text-secondary text-center">
+                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
                     Institute Publications
                   </h2>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Existing Items */}
                     <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
                       Campus Drone
                     </div>
                     <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Monograph
+                      Campus Herald
+                    </div>
+                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
+                      Management Research Monograph
                     </div>
                     <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
                       Analysi - Case Booklet
@@ -750,10 +758,10 @@ export default function Research() {
 
             {/* ===================== RESOURCE PERSON ===================== */}
             {activeTab === "resourcePerson" && (
-              <div className="bg-white p-10 rounded-2xl shadow-lg space-y-20 mb-12">
+              <div className="bg-white px-4 md:px-8 py-8 rounded-2xl shadow-lg space-y-20 mb-12">
                 {/* 1 */}
                 <section className="space-y-6">
-                  <h2 className="text-2xl font-bold text-secondary text-center">
+                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
                     Session Chair — International Conference (Tashkent)
                   </h2>
                   <div className="flex justify-between items-center gap-5">

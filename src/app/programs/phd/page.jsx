@@ -71,12 +71,12 @@ export default function PHD() {
       {/* ===================================================
           ABOUT RESEARCH CENTRE
       =================================================== */}
-      <section className="bg-white p-10  space-y-6 max-w-7xl mx-auto mt-12 shadow-sm">
-        <h2 className="text-3xl font-bold text-secondary text-left">
+      <section className="bg-white px-4 sm:px-8 py-8  space-y-6 max-w-7xl mx-auto mt-12 shadow-sm">
+        <h2 className="text-2xl md:text-4xl font-bold text-secondary text-left">
           About IGSB Research Centre
         </h2>
 
-        <div className="space-y-4 text-justify text-gray-700">
+        <div className="space-y-4 text-justify text-md md:text-lg text-gray-700">
           <p>
             Indira Global School of Business (IGSB) is recognized by AICTE and
             UGC and affiliated with Savitribai Phule Pune University (SPPU). The
@@ -118,12 +118,12 @@ export default function PHD() {
       {/* ===================================================
           ADMISSION DETAILS
       =================================================== */}
-      <section className="bg-gray-50 p-10 rounded-none space-y-6 max-w-7xl mx-auto mt-12 shadow-sm ">
+      <section className="bg-gray-50 px-4 md:px-8 py-8 rounded-none space-y-6 max-w-7xl mx-auto mt-12 shadow-sm ">
         <h2 className="text-3xl font-bold text-secondary text-left">
           Admission Details
         </h2>
 
-        <p className="text-gray-700 text-justify">
+        <p className="text-gray-700 text-justify text-md md:text-lg">
           Admissions to the Ph.D. program are conducted strictly as per SPPU
           norms and guidelines. Vacancy details are announced as per university
           timelines before each admission cycle.
@@ -139,7 +139,7 @@ export default function PHD() {
       {/* ===================================================
           PHD GUIDES
       =================================================== */}
-      <section className="bg-white p-10 rounded-none space-y-6 max-w-7xl mx-auto mt-12 shadow-sm ">
+      <section className="bg-white px-4 sm:px-8 py-8  space-y-6 max-w-7xl mx-auto mt-12  ">
         <h2 className="text-3xl font-bold text-secondary text-left">
           Recognized Ph.D. Guides
         </h2>
@@ -174,7 +174,7 @@ export default function PHD() {
           ].map(([name, field, img], i) => (
             <div
               key={i}
-              className="bg-gray-50 border border-gray-300 rounded-xl shadow-lg p-4 text-center space-y-2"
+              className="bg-gray-50 border border-gray-300 rounded-xl  p-4 text-center space-y-2"
             >
               <div className="w-full rounded-lg overflow-hidden">
                 <Image
@@ -196,9 +196,9 @@ export default function PHD() {
       {/* ===================================================
           RESEARCH ACTIVITIES
       =================================================== */}
-      <section className="bg-gray-50 p-10 rounded-none flex justify-between items-center gap-10 space-y-6 max-w-7xl mx-auto mt-12 shadow-sm ">
+      <section className="bg-gray-50 px-4 md:px-8 py-8 rounded-none flex justify-between items-center gap-10 space-y-6 max-w-7xl mx-auto mt-12 shadow-sm ">
         <div className="flex flex-col min-w-3xl items-left  gap-y-5 justify-between">
-          <h2 className="text-3xl font-bold text-secondary ">
+          <h2 className="text-2xl md:text-4xl font-bold text-secondary ">
             Research Centre Activities
           </h2>
 

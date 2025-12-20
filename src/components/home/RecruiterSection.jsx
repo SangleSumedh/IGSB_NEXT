@@ -1,45 +1,48 @@
 "use client";
- 
+
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
- 
+
 gsap.registerPlugin(ScrollTrigger);
- 
+
 const RecruitersSection = () => {
   const pathname = usePathname();
   const sectionRef = useRef(null);
- 
+
   const pageContent = {
     "/": {
       headline: "INDIRA DEGREE OPENS DOORS. WIDE.",
-      body: "At Indira College of Engineering & Management, there is a strong focus on preparing every student to be industry ready. With numerous recruiters visiting our campus each year, our graduates gain access to a network of opportunities, resources, and the support needed to excel in a rapidly evolving job market.",
+      body:
+        "At Indira College of Engineering & Management, there is a strong focus on preparing every student to be industry ready. With numerous recruiters visiting our campus each year, our graduates gain access to a network of opportunities, resources, and the support needed to excel in a rapidly evolving job market.",
     },
     "/placement": {
       headline: "INDIRA DEGREE OPENS DOORS. WIDE.",
-      body: "At Indira College of Engineering & Management, there is a strong focus on preparing every student to be industry ready. With numerous recruiters visiting our campus each year, our graduates gain access to a network of opportunities, resources, and the support needed to excel in a rapidly evolving job market.",
+      body:
+        "At Indira College of Engineering & Management, there is a strong focus on preparing every student to be industry ready. With numerous recruiters visiting our campus each year, our graduates gain access to a network of opportunities, resources, and the support needed to excel in a rapidly evolving job market.",
     },
     "/programs/mba": {
       headline: "INDIRA DEGREE OPENS DOORS. WIDE.",
-      body: "At Indira College of Engineering & Management, there is a strong focus on preparing every student to be industry ready. With numerous recruiters visiting our campus each year, our graduates gain access to a network of opportunities, resources, and the support needed to excel in a rapidly evolving job market.",
+      body:
+        "At Indira College of Engineering & Management, there is a strong focus on preparing every student to be industry ready. With numerous recruiters visiting our campus each year, our graduates gain access to a network of opportunities, resources, and the support needed to excel in a rapidly evolving job market.",
     },
   };
- 
+
   const { headline, body } = pageContent[pathname] || pageContent["/"];
- 
+
   const allLogos = Array.from(
     { length: 44 },
     (_, i) => `/logos/logo${i + 1}.png`
   ).filter((_, index) => ![35, 37].includes(index + 1));
- 
+
   const mainLogos = allLogos.filter((_, index) => ![17, 24].includes(index));
   const reorderedLogos = [...mainLogos, allLogos[17], allLogos[24]];
- 
+
   useEffect(() => {
     const section = sectionRef.current;
- 
+
     gsap.fromTo(
       section.querySelectorAll(".fade-up"),
       { autoAlpha: 0, y: 40 },
@@ -56,8 +59,7 @@ const RecruitersSection = () => {
         },
       }
     );
- 
-    // ⚡ FASTER LOGO ANIMATION
+
     gsap.fromTo(
       section.querySelectorAll(".logo-item:not(.hidden-logo)"),
       { autoAlpha: 0, y: 20, x: 20 },
@@ -65,9 +67,9 @@ const RecruitersSection = () => {
         autoAlpha: 1,
         y: 0,
         x: 0,
-        duration: 0.55, // faster
-        ease: "power2.out", // snappier
-        stagger: { each: 0.025 }, // faster
+        duration: 0.55,
+        ease: "power2.out",
+        stagger: { each: 0.025 },
         scrollTrigger: {
           trigger: section,
           start: "top 75%",
@@ -75,7 +77,7 @@ const RecruitersSection = () => {
         },
       }
     );
- 
+
     gsap.fromTo(
       section.querySelector(".circle-badge"),
       { autoAlpha: 0, scale: 0.7 },
@@ -92,41 +94,44 @@ const RecruitersSection = () => {
       }
     );
   }, []);
- 
+
   return (
-    <div
+    <section
       ref={sectionRef}
-      className="bg-gray-50 py-6 sm:py-8 relative overflow-hidden"
+      className="bg-gray-50  py-12 relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="fade-up text-2xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
+      <div className="max-w-7xl mx-auto  text-center">
+        {/* HEADING */}
+        <h2 className="fade-up text-2xl md:text-4xl font-bold text-gray-900 mb-4">
           {headline}
         </h2>
- 
-        <p className="fade-up text-gray-700 text-sm sm:text-xl max-w-5xl mx-auto leading-relaxed mb-4 sm:mb-8 px-2">
+
+        {/* TEXT */}
+        <p className="fade-up text-gray-700 text-md md:text-lg max-w-5xl mx-auto leading-relaxed mb-10">
           {body}
         </p>
- 
+
+        {/* LOGOS GRID */}
         <div
           className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7
-                        gap-x-2 sm:gap-x-3 gap-y-5 sm:gap-y-7 place-items-center relative"
+                     gap-x-2 sm:gap-x-3 gap-y-5 sm:gap-y-7 place-items-center relative"
         >
           {reorderedLogos.map((logo, index) => {
             const shouldHide = [17, 24].includes(index);
             const hideOnDesktopOnly = shouldHide ? "hidden sm:flex" : "flex";
- 
+
             return (
-              <div key={index}
+              <div
+                key={index}
                 className={`logo-item ${hideOnDesktopOnly} items-center justify-center
-    w-20 sm:w-24 md:w-28 h-14 sm:h-16 bg-white rounded-md shadow-sm hover:shadow-md
-    transition-all duration-300
- 
-    ${
-      shouldHide
-        ? "sm:hidden-logo sm:opacity-0 sm:bg-transparent sm:shadow-none sm:border-none sm:pointer-events-none"
-        : ""
-    }
-  `}
+                  w-20 sm:w-24 md:w-28 h-14 sm:h-16
+                  bg-white rounded-md shadow-sm hover:shadow-md
+                  transition-all duration-300
+                  ${
+                    shouldHide
+                      ? "sm:hidden-logo sm:opacity-0 sm:bg-transparent sm:shadow-none sm:border-none sm:pointer-events-none"
+                      : ""
+                  }`}
               >
                 <Image
                   src={logo}
@@ -138,10 +143,11 @@ const RecruitersSection = () => {
               </div>
             );
           })}
- 
+
+          {/* CENTER BADGE */}
           <div
             className="circle-badge hidden sm:block absolute top-[49%] left-1/2
-                          transform -translate-x-1/2 -translate-y-1/2 z-20"
+                       transform -translate-x-1/2 -translate-y-1/2 z-20"
           >
             <div
               className="w-28 h-28 md:w-40 md:h-40 rounded-full
@@ -155,8 +161,8 @@ const RecruitersSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
- 
+
 export default RecruitersSection;

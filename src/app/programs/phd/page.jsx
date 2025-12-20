@@ -78,24 +78,15 @@ export default function PHD() {
 
         <div className="space-y-4 text-justify text-md md:text-lg text-gray-700">
           <p>
-            Indira Global School of Business (IGSB) is recognized by AICTE and
-            UGC and affiliated with Savitribai Phule Pune University (SPPU). The
-            institute has evolved as a premier B-School offering MBA programs,
-            and from Academic Year 2025–26, IGSB also offers Doctoral Programs
-            in Management.
+            Indira Global School of Business (IGSB) is recognized by AICTE and UGC, and is affiliated with Savitribai Phule Pune University (SPPU). It was established with a clear vision to develop globally-oriented researchers capable of driving sustainable growth in the evolving international business landscape. Over the years, IGSB has emerged as a premier B-School in Pune, offering MBA programs. From the academic year 2025–26, IGSB also offers Doctoral Programs in Management.
           </p>
 
           <p>
-            The IGSB Research Center (PGRC) is a recognized Ph.D. Research
-            Center affiliated with SPPU. It is dedicated to advancing management
-            research and developing professional scholars, researchers, and
-            academic leaders.
+            The IGSB Research Center (PGRC) is a recognized Ph.D. Research Center, affiliated with SPPU, and is dedicated to fostering advanced research in the field of management. The Doctoral Programme in Management plays a pivotal role in nurturing future scholars, academicians, and industry researchers by encouraging rigorous inquiry and innovation across various management domains.
           </p>
 
           <p>
-            The centre encourages rigorous academic inquiry, interdisciplinary
-            research, and evidence-based innovation addressing contemporary
-            business challenges.
+            The aim of the IGSB Research Center is to cultivate a vibrant research ecosystem that promotes scholarly inquiry, critical thinking, and innovation in management. The Center is committed to contributing to the advancement of knowledge by supporting high-quality doctoral research, encouraging interdisciplinary collaboration, and addressing contemporary business and societal challenges through evidence-based insights.
           </p>
 
           <p className="font-semibold">Ph.D. specialization offered in:</p>
@@ -105,20 +96,18 @@ export default function PHD() {
             <li>Human Resource Management</li>
             <li>Marketing</li>
             <li>General Management</li>
-            <li>Organizational Behaviour, Operations & Decision Sciences</li>
-            <li>
-              Public Systems, Strategy, Innovation and Management in Education
-            </li>
+            <li>Organizational Behaviour, Operations & Decision Sciences. Public Systems, Strategy, Innovation and Management in Education</li>
+            
           </ul>
 
-          <p>Multidisciplinary research is strongly encouraged.</p>
+          <p>We strongly encourage multidisciplinary research.</p>
         </div>
       </section>
 
       {/* ===================================================
           ADMISSION DETAILS
       =================================================== */}
-      <section className="bg-gray-50 px-4 md:px-8 py-8 rounded-none space-y-6 max-w-7xl mx-auto mt-12 shadow-sm ">
+      <section className="bg-white px-4 md:px-8 py-8 rounded-none space-y-6 max-w-7xl mx-auto mt-12 shadow-sm ">
         <h2 className="text-3xl font-bold text-secondary text-left">
           Admission Details
         </h2>
@@ -139,7 +128,7 @@ export default function PHD() {
       {/* ===================================================
           PHD GUIDES
       =================================================== */}
-      <section className="bg-white px-4 sm:px-8 py-8  space-y-6 max-w-7xl mx-auto mt-12  ">
+      <section className="bg-white  py-8  space-y-6 max-w-7xl mx-auto mt-12  ">
         <h2 className="text-3xl font-bold text-secondary text-left">
           Recognized Ph.D. Guides
         </h2>
@@ -196,7 +185,7 @@ export default function PHD() {
       {/* ===================================================
           RESEARCH ACTIVITIES
       =================================================== */}
-      <section className="bg-gray-50 px-4 md:px-8 py-8 rounded-none flex justify-between items-center gap-10 space-y-6 max-w-7xl mx-auto mt-12 shadow-sm ">
+      <section className="bg-white mb-16 px-4 md:px-8 py-8 rounded-none flex justify-between items-center gap-10 space-y-6 max-w-7xl mx-auto mt-12 shadow-sm ">
         <div className="flex flex-col min-w-3xl items-left  gap-y-5 justify-between">
           <h2 className="text-2xl md:text-4xl font-bold text-secondary ">
             Research Centre Activities

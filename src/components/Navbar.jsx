@@ -143,6 +143,10 @@ const dropdownContent = {
             label: "Student Achievements",
             link: "/campus-life/student-achievements",
           },
+          {
+            label: "Facilities",
+            link: "/facilities",
+          },
           // {
           //   label: "Industry Institution Interaction",
           //   link: "/campus-life/icem-awards",
@@ -195,8 +199,8 @@ const dropdownContent = {
             link: "/programs/mba?spec=operations",
           },
           {
-            label: "Human Capital/ Intellectual Capital",
-            link: "/programs/mba",
+            label: "Bussiness Analytics",
+            link: "/programs/mba?spec=ba",
           },
         ],
       },
@@ -473,12 +477,26 @@ const Navbar = () => {
                 >
                   Leaving Certificate
                 </a> */}
-                {/* <span className="text-secondary">|</span> */}
+              
                 <Link
                   href="/contact"
                   className="relative inline-block group hover:text-primary transition-colors duration-200"
                 >
                   Contact Us
+                  {/* AQUA UNDERLINE */}
+                  <span
+                    className="absolute left-0 -bottom-1 h-[6px] w-full 
+               scale-x-0 bg-[#7FFFD4] opacity-70 
+               transition-transform duration-300 
+               origin-left group-hover:scale-x-100"
+                  ></span>
+                </Link>
+                  <span className="text-secondary">|</span>
+                <Link
+                  href="/blogs"
+                  className="relative inline-block group hover:text-primary transition-colors duration-200"
+                >
+                  Blogs
                   {/* AQUA UNDERLINE */}
                   <span
                     className="absolute left-0 -bottom-1 h-[6px] w-full 
@@ -503,7 +521,7 @@ const Navbar = () => {
           {/* Bottom Nav Links */}
           <div className="flex  justify-end items-center gap-2 md:gap-3 lg:gap-5 h-[55%] text-xs lg:text-sm font-semibold lg:font-bold whitespace-nowrap ">
             <div
-              className="flex  h-full  items-center px-2 lg:px-5 gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
+              className="flex  h-full  items-center px-2 lg:px-3 gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
               onPointerEnter={() => handleMouseEnter("aboutUs")}
               onPointerLeave={handleMouseLeave}
             >
@@ -534,7 +552,7 @@ const Navbar = () => {
               /> */}
             </div>
             <div
-              className="flex items-center gap-1 px-2 lg:px-5  cursor-pointer hover:text-secondary transition-all duration-200 group"
+              className="flex items-center gap-1 px-2 lg:px-3  cursor-pointer hover:text-secondary transition-all duration-200 group"
               onPointerEnter={() => handleMouseEnter("programs")}
               onPointerLeave={handleMouseLeave}
             >
@@ -550,7 +568,7 @@ const Navbar = () => {
             </div>
             <Link
               href="/placement"
-              className="hover:text-secondary px-2 lg:px-5   transition-colors duration-200 group"
+              className="hover:text-secondary px-2 lg:px-3   transition-colors duration-200 group"
             >
               <span className="relative">
                 Placement
@@ -565,7 +583,7 @@ const Navbar = () => {
             </Link> */}
             <Link
               href="/alumni"
-              className="hover:text-secondary px-2 lg:px-5   transition-colors duration-200 group"
+              className="hover:text-secondary px-2 lg:px-3   transition-colors duration-200 group"
             >
               <span className="relative">
                 Alumni
@@ -574,7 +592,7 @@ const Navbar = () => {
             </Link>
             <Link
               href="/research"
-              className="hover:text-secondary px-2 lg:px-5   transition-colors duration-200 group"
+              className="hover:text-secondary px-2 lg:px-3   transition-colors duration-200 group"
             >
               <span className="relative">
                 Research

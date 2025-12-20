@@ -55,47 +55,37 @@ const DiscoverSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="
-        relative py-24 px-6 lg:px-16 overflow-visible 
-        bg-secondary
-      "
+      className="relative bg-secondary px-6 py-12 overflow-visible"
     >
       <div className="relative max-w-7xl mx-auto text-center z-10">
 
-        <h2 className="fade-up text-3xl lg:text-3xl font-extrabold text-white mb-2">
+        {/* HEADINGS */}
+        <h2 className="fade-up text-2xl md:text-4xl font-extrabold text-white mb-2">
           At Indira College, you will discover an
         </h2>
 
-        <h2
-          className="fade-up text-3xl lg:text-4xl font-extrabold mb-14 
-            text-white  leading-snug"
-        >
+        <h2 className="fade-up text-2xl md:text-4xl font-extrabold text-white mb-14 leading-snug">
           Energy that runs through Everything and Everyone.
         </h2>
 
         {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-14">
-
           {cards.map((card, index) => (
             <div key={index} className="relative group fade-up">
 
-              {/* ❌ Removed Glow Offset */}
-              {/* (This div is now deleted) */}
-
-              {/* Main Card */}
+              {/* MAIN CARD */}
               <div
                 className="
-  relative z-10 p-5 rounded-xl 
-  bg-white/90 group-hover:bg-[#A7F3D0]/90 backdrop-blur-xl 
-  border border-white/15 
-  shadow-[0_8px_35px_rgba(0,0,0,0.45)]
-  transition-all duration-300
-  group-hover:-translate-y-2 group-hover:-translate-x-2 
-  group-hover:shadow-xl
-  flex flex-col
-  h-[500px]
-"
-
+                  relative z-10 p-5 rounded-xl 
+                  bg-white/90 group-hover:bg-[#A7F3D0]/90 backdrop-blur-xl 
+                  border border-white/15 
+                  shadow-[0_8px_35px_rgba(0,0,0,0.45)]
+                  transition-all duration-300
+                  group-hover:-translate-y-2 group-hover:-translate-x-2 
+                  group-hover:shadow-xl
+                  flex flex-col
+                  h-[500px]
+                "
               >
                 <Image
                   src={card.image}
@@ -114,7 +104,7 @@ const DiscoverSection = () => {
                   {card.title}
                 </h3>
 
-                <p className="text-gray-700 text-sm leading-relaxed text-justify flex-grow">
+                <p className="text-gray-700 text-md md:text-md leading-relaxed text-justify flex-grow">
                   {card.description}
                 </p>
 
@@ -132,7 +122,6 @@ const DiscoverSection = () => {
               </div>
             </div>
           ))}
-
         </div>
       </div>
     </section>

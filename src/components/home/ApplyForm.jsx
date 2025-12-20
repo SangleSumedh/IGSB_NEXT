@@ -26,11 +26,12 @@ export default function ApplyForm({ variant = "card" }) {
     setCities(selectedState ? stateCityData[selectedState] : []);
   }, [selectedState]);
 
+  // Responsive input classes
   const inputClass =
-    "w-full border border-gray-300 bg-white rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary";
+    "w-full border border-gray-300 bg-white rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary text-sm sm:text-base";
 
   const selectClass =
-    "w-full border border-gray-300 bg-white rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-secondary appearance-none cursor-pointer";
+    "w-full border border-gray-300 bg-white rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-secondary appearance-none cursor-pointer text-sm sm:text-base";
 
   // AJAX Submit
   const handleSubmit = async (e) => {
@@ -61,16 +62,16 @@ export default function ApplyForm({ variant = "card" }) {
     <div
       id="contact-form"
       className={`w-full scroll-mt-[15vh] ${
-        isModal ? "p-0" : "bg-white rounded-lg p-6 shadow-md border border-gray-200"
+        isModal ? "p-0" : "bg-white rounded-lg p-4 sm:p-6 shadow-md border border-gray-200"
       }`}
     >
       {!isModal && (
-        <h3 className="text-xl font-semibold text-secondary mb-6 text-center">
+        <h3 className="text-lg sm:text-xl font-semibold text-secondary mb-4 sm:mb-6 text-center">
           Enquire Now
         </h3>
       )}
 
-      <form onSubmit={handleSubmit} className={`space-y-4 ${isModal ? "mt-4 px-2" : ""}`}>
+      <form onSubmit={handleSubmit} className={`space-y-3 sm:space-y-4 ${isModal ? "mt-4 px-2" : ""}`}>
 
         {/* NAME */}
         <input
@@ -90,14 +91,14 @@ export default function ApplyForm({ variant = "card" }) {
           className={inputClass}
         />
 
-        {/* PHONE NUMBER */}
-        <div className="flex gap-3 w-full">
-          <div className="relative w-32">
+        {/* PHONE NUMBER - Responsive layout */}
+        <div className="flex flex-col sm:flex-row gap-3 w-full">
+          <div className="relative w-full sm:w-32">
             <select
               name="countryCode"
               value={countryCode}
               onChange={(e) => setCountryCode(e.target.value)}
-              className={selectClass}
+              className={`${selectClass} w-full`}
             >
               {countryCodes.map((c) => (
                 <option key={c.code} value={c.code}>
@@ -112,7 +113,7 @@ export default function ApplyForm({ variant = "card" }) {
             name="mobile"
             required
             placeholder="Enter Mobile Number *"
-            className={`${inputClass} flex-1`}
+            className={`${inputClass} w-full`}
           />
         </div>
 
@@ -153,9 +154,13 @@ export default function ApplyForm({ variant = "card" }) {
         </select>
 
         {/* CHECKBOX */}
-        <div className="flex items-center gap-2">
-          <input type="checkbox" required />
-          <label className="text-sm text-gray-700">
+        <div className="flex items-start gap-2">
+          <input 
+            type="checkbox" 
+            required 
+            className="mt-1"
+          />
+          <label className="text-xs sm:text-sm text-gray-700 leading-tight">
             I agree to receive information regarding my registration*
           </label>
         </div>
@@ -164,7 +169,7 @@ export default function ApplyForm({ variant = "card" }) {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-secondary text-white font-semibold py-2 rounded-md"
+          className="w-full bg-secondary text-white font-semibold py-2 px-4 rounded-md text-sm sm:text-base"
         >
           {loading ? "Submitting..." : "Submit"}
         </button>

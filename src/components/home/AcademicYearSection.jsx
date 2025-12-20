@@ -13,10 +13,9 @@ const AcademicYearSection = () => {
 
   useEffect(() => {
     const sec = sectionRef.current;
-
     if (!sec) return;
 
-    // Fade-in heading or text blocks
+    // Fade-in blocks
     gsap.fromTo(
       sec.querySelectorAll(".fade-up"),
       { autoAlpha: 0, y: 40 },
@@ -34,7 +33,7 @@ const AcademicYearSection = () => {
       }
     );
 
-    // Left Content (ProgramList) — fade from left
+    // Left content
     gsap.fromTo(
       sec.querySelectorAll(".fade-left"),
       { autoAlpha: 0, x: -50 },
@@ -51,7 +50,7 @@ const AcademicYearSection = () => {
       }
     );
 
-    // Right Content (ApplyForm) — fade from right
+    // Right content
     gsap.fromTo(
       sec.querySelectorAll(".fade-right"),
       { autoAlpha: 0, x: 50 },
@@ -70,28 +69,28 @@ const AcademicYearSection = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="bg-gray-50 py-16">
+    <section
+      ref={sectionRef}
+      className="bg-gray-50 px-4 sm:px-6 py-8 sm:py-12"
+    >
       <div
         className="
-          max-w-7xl mx-auto 
+          max-w-7xl mx-auto
           grid grid-cols-1 lg:grid-cols-10
-          gap-12
-          px-4 sm:px-6 lg:px-0
+          gap-6 sm:gap-8 lg:gap-12
         "
       >
         {/* LEFT: Program List (70%) */}
-        <div className="col-span-7 w-full h-full left-content fade-left">
+        <div className="col-span-1 lg:col-span-7 w-full h-full left-content fade-left">
           <ProgramList />
         </div>
 
-        {/* RIGHT: Apply Form (30%) */}
-        <div className="col-span-3 w-full h-full flex right-content fade-right">
-          <div className="w-full h-full">
-            <ApplyForm />
-          </div>
+        {/* RIGHT: Apply Form (30%) - Stack on mobile */}
+        <div className="col-span-1 lg:col-span-3 w-full h-full right-content fade-right">
+          <ApplyForm />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

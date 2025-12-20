@@ -6,6 +6,7 @@ import Link from "next/link";
 import { HiMenuAlt2, HiX } from "react-icons/hi";
 import { TbExternalLink } from "react-icons/tb";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { Menu } from "lucide-react";
 
 const dropdownContent = {
   aboutUs: {
@@ -389,10 +390,10 @@ const Navbar = () => {
       {/* ===== NAVBAR ===== */}
       <nav
         ref={navbarRef}
-        className="w-full h-[12vh] flex bg-white text-black shadow-sm font-sans fixed top-0 left-0 right-0 z-50" // Changed from sticky to fixed
+        className="w-full h-[12vh] flex justify-between bg-white text-black shadow-sm font-sans fixed top-0 left-0 right-0 z-50" // Changed from sticky to fixed
       >
         {/* Left: Logo - 80% width on mobile */}
-        <div className="w-full md:w-[30%] h-full flex items-center justify-start md:pl-0 md:justify-center">
+        <div className="w-[60%] lg:w-[30%] h-full flex items-center justify-start md:pl-0 md:justify-center">
           <Link href="/">
             <Image
               src="/Logo.png"
@@ -401,6 +402,7 @@ const Navbar = () => {
               width={300}
               className="w-auto cursor-pointer object-contain transition-transform duration-300 "
               priority
+              fetchPriority="high"
               unoptimized={true}
             />
           </Link>
@@ -409,9 +411,9 @@ const Navbar = () => {
         {/* Right Section - Desktop */}
         <div className="hidden md:flex w-[70%] h-full flex-col">
           {/* Top Bar */}
-          <div className="flex justify-end  w-full h-[45%] text-xs sm:text-sm ">
-            <div className="flex gap-4">
-              <div className="flex items-center gap-2 font-semibold">
+          <div className="flex justify-end w-full h-[45%] text-xs lg:text-sm ">
+            <div className="flex gap-2 lg:gap-4">
+              <div className="flex items-center gap-2 md:gap-4 font-semibold">
                 <a
                   href="https://rapid.grayquest.com/iudp-master"
                   target="_blank"
@@ -499,9 +501,9 @@ const Navbar = () => {
           </div>
 
           {/* Bottom Nav Links */}
-          <div className="flex  justify-end items-center gap-1 h-[55%]  px-6 text-md font-semibold whitespace-nowrap ">
+          <div className="flex  justify-end items-center gap-2 md:gap-3 lg:gap-5 h-[55%] text-xs lg:text-sm font-semibold lg:font-bold whitespace-nowrap ">
             <div
-              className="flex  h-full  items-center gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
+              className="flex  h-full  items-center px-2 lg:px-5 gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
               onPointerEnter={() => handleMouseEnter("aboutUs")}
               onPointerLeave={handleMouseLeave}
             >
@@ -517,7 +519,7 @@ const Navbar = () => {
               /> */}
             </div>
             <div
-              className="flex items-center gap-1  px-5  cursor-pointer hover:text-secondary transition-all duration-200 group"
+              className="flex items-center gap-1  md:px-2  cursor-pointer hover:text-secondary transition-all duration-200 group"
               onPointerEnter={() => handleMouseEnter("campusLife")}
               onPointerLeave={handleMouseLeave}
             >
@@ -532,7 +534,7 @@ const Navbar = () => {
               /> */}
             </div>
             <div
-              className="flex items-center gap-1  px-5  cursor-pointer hover:text-secondary transition-all duration-200 group"
+              className="flex items-center gap-1 px-2 lg:px-5  cursor-pointer hover:text-secondary transition-all duration-200 group"
               onPointerEnter={() => handleMouseEnter("programs")}
               onPointerLeave={handleMouseLeave}
             >
@@ -548,7 +550,7 @@ const Navbar = () => {
             </div>
             <Link
               href="/placement"
-              className="hover:text-secondary  px-5  transition-colors duration-200 group"
+              className="hover:text-secondary px-2 lg:px-5   transition-colors duration-200 group"
             >
               <span className="relative">
                 Placement
@@ -563,7 +565,7 @@ const Navbar = () => {
             </Link> */}
             <Link
               href="/alumni"
-              className="hover:text-secondary  px-5  transition-colors duration-200 group"
+              className="hover:text-secondary px-2 lg:px-5   transition-colors duration-200 group"
             >
               <span className="relative">
                 Alumni
@@ -572,7 +574,7 @@ const Navbar = () => {
             </Link>
             <Link
               href="/research"
-              className="hover:text-secondary  px-5  transition-colors duration-200 group"
+              className="hover:text-secondary px-2 lg:px-5   transition-colors duration-200 group"
             >
               <span className="relative">
                 Research
@@ -588,7 +590,7 @@ const Navbar = () => {
             onClick={toggleMobileMenu}
             className="text-gray-700 hover:text-primary transition-all duration-300 hover:scale-110"
           >
-            <HiMenuAlt2 size={28} />
+            <Menu size={28} />
           </button>
         </div>
 

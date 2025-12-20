@@ -27,10 +27,10 @@ export default function StudentCommittees() {
           className="space-y-6 scroll-mt-[15vh]"
         >
           <div className="text-left mb-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#023b5e] mb-4">
+            <h2 className="text-2xl lg:text-4xl font-bold text-secondary mb-4">
               Grievance Redressal Committee - Student
             </h2>
-            <div className="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+            {/* <div className="w-24 h-1 bg-secondary mx-auto rounded-full"></div> */}
           </div>
           <CommitteeTable
             rows={[
@@ -71,31 +71,31 @@ export default function StudentCommittees() {
               ],
               [
                 "6",
-                "Sejal Chandak",
-                "9322180511",
+                "Bhumika Deshmukh",
+                "7410148796 ",
                 "Member",
-                "Student Representative - Academic Representative",
+                "Student Representative (Female)-Co-curricular Representative ",
               ],
               [
                 "7",
-                "Vaishnavi Chavan",
-                "9975557161",
+                "Abhishek Satav ",
+                "8805771049 ",
                 "Member",
-                "Student Representative - Academic Representative",
+                "Student Representative -Academic Representative / Sports Representative ",
               ],
               [
                 "8",
                 "Karan Chandankhed",
                 "7057625895",
                 "Member",
-                "Student Representative - Academic Representative / Sports Representative",
+                "Student Representative -Academic Representative ",
               ],
               [
                 "9",
                 "Nidhi Sachin Nene",
                 "9022523307",
                 "Member",
-                "Student Representative (Female) - Co-curricular Representative",
+                "Student Representative -Academic Representative",
               ],
               [
                 "10",
@@ -105,6 +105,7 @@ export default function StudentCommittees() {
                 "Teaching Representative (SC/ST/OBC)",
               ],
             ]}
+            isEventsCommittee={false}
           />
         </section>
 
@@ -116,10 +117,9 @@ export default function StudentCommittees() {
           className="space-y-6 scroll-mt-[15vh]"
         >
           <div className="text-left mb-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#023b5e] mb-4">
+            <h2 className="text-2xl lg:text-4xl font-bold text-secondary mb-4">
               Anti Ragging Committee
             </h2>
-            <div className="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
           </div>
           <CommitteeTable
             rows={[
@@ -139,38 +139,38 @@ export default function StudentCommittees() {
               ],
               [
                 "3",
-                "Mr.Ashish Jadhav",
-                "9527225056",
+                "Mr.Yogesh Gheware ",
+                "02114 661 568 / 9545278111 ",
                 "Member",
                 "Non - Teaching Representative",
               ],
               [
                 "4",
-                "Mr. Ganesh Phanve",
-                "9503884287",
+                "Dattatray Tukaram Oval ",
+                "8788562431 ",
                 "Member",
                 "Boys Hostel Rector",
               ],
               [
                 "5",
-                "Ms. Sapana Dhalke",
-                "9699913109",
+                "Manisha Aburao Dhiwar ",
+                "9588475368 ",
                 "Member",
                 "Girls Hostel Rector",
               ],
               [
                 "6",
-                "Devesh Nehete",
-                "9545783376",
+                "Mahesh Narendra Kolhe ",
+                "9325109224 ",
                 "Member",
-                "Student Representative - Seniors-Boy",
+                "Student Representative - Fresher Batch (Boy) ",
               ],
               [
                 "7",
-                "Janhavi Kulkarni",
-                "7021078573",
+                "Shreya Narasinha Prabhukhanolkar",
+                "9764707052 ",
                 "Member",
-                "Student Representative - Seniors-Girl",
+                "Student Representative - Fresher Batch (Girl)",
               ],
               [
                 "8",
@@ -188,10 +188,10 @@ export default function StudentCommittees() {
               ],
               [
                 "10",
-                "Mr.Swapnali Mule",
-                "7020524022",
+                "Mr.Narendra Kolhe ",
+                "8055859081 ",
                 "Member",
-                "Parents Representative - Senior Batch",
+                "Parents Representative -  Fresher  Batch ",
               ],
               [
                 "11",
@@ -204,7 +204,7 @@ export default function StudentCommittees() {
                 "12",
                 "Mrs. Sulbhatai Kundan Bhote",
                 "8766456009",
-                "Member",
+                "Member", 
                 "Civil Administration Representative",
               ],
               [
@@ -219,23 +219,24 @@ export default function StudentCommittees() {
                 "Mrs. Reshma Phadtare",
                 "7038784875",
                 "Member",
-                "Local Media - Senior Officer (Business Standard Pvt. Ltd.)",
+                "Local Media (Senior Officer Business Standard Pvt. Ltd.) - AWAJ News Tal. - Maval",
               ],
               [
                 "15",
-                "Ms.Smita Roy",
+                "Ms.Smita Shetty",
                 "9881091409",
                 "Member",
                 "NGO Representative",
               ],
               [
                 "16",
-                "Dr.Poonam Wani",
-                "9595411935",
+                "Ms.Chhaya Bodkurwar ",
+                "9767104510 ",
                 "Member Secretary",
                 "Teaching Representative - Female",
               ],
             ]}
+            isEventsCommittee={false}
           />
         </section>
 
@@ -244,10 +245,9 @@ export default function StudentCommittees() {
         ================================= */}
         <section id="anti-ragging-squad" className="space-y-6 scroll-mt-[15vh]">
           <div className="text-left mb-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#023b5e] mb-4">
+            <h2 className="text-2xl lg:text-4xl font-bold text-secondary mb-4">
               Anti Ragging Squad
             </h2>
-            <div className="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
           </div>
           <CommitteeTable
             rows={[
@@ -261,14 +261,14 @@ export default function StudentCommittees() {
               [
                 "2",
                 "Mr.Jagannath Kadam",
-                "97300 23413",
+                "9730023413",
                 "Member",
                 "Non-Teaching Staff Representative",
               ],
               [
                 "3",
                 "Mr.Balasaheb Shinde",
-                "99716 58919",
+                "9971658919",
                 "Member",
                 "Non-Teaching Staff Representative",
               ],
@@ -288,12 +288,13 @@ export default function StudentCommittees() {
               ],
               [
                 "6",
-                "Prof.Kanchan Patil",
-                "7385717517",
+                "Dr.Neha Chaudhry ",
+                "9172657155 ",
                 "Member Secretary",
-                "Academic Coordinator",
+                "Teaching Representative -Female",
               ],
             ]}
+            isEventsCommittee={false}
           />
         </section>
 
@@ -305,10 +306,10 @@ export default function StudentCommittees() {
           className="space-y-6 scroll-mt-[15vh]"
         >
           <div className="text-left mb-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#023b5e] mb-4">
+            <h2 className="text-2xl lg:text-4xl font-bold text-secondary mb-4">
               Students Welfare Council
             </h2>
-            <div className="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+            
           </div>
           <CommitteeTable
             rows={[
@@ -326,29 +327,25 @@ export default function StudentCommittees() {
                 "Member",
                 "Teaching Representative - Senior Faculty Member",
               ],
-              ["3", "Ms. Mrunal Salve", "-", "President", "-"],
-              ["4", "Mr. Abhishek Padale", "-", "Secretary", "-"],
-              ["5", "Ms. Neha Wankhade", "-", "Lady Representative", "-"],
+              ["3", "Ms.Snehal Masurkar", "9561317957", "Member ", "Teaching Representative-Cultural Coordinator"],
+              ["4", "Ms.Mrunal Salve", "7498 684 661", "President", "Student Representative"],
+              ["5", "Abhishek Padale", "7972749782", "Secretary", "Student Representative"],
               [
                 "6",
-                "Ms. Shrawani Otari",
-                "-",
-                "VP - Community Representative",
-                "-",
+                "Ms. Neha Wankhade",
+                "8830263096",
+                "Lady Representative",
+                "Student Representative",
               ],
-              ["7", "Mr. Prafull Shinde", "-", "VP - Placement", "-"],
-              ["8", "Ms. Unnati Gawali", "-", "VP - Alumni", "-"],
-              ["9", "Ms. Aditi Agarwal", "-", "VP - Branding", "-"],
-              ["10", "Mr. Mayur Darade", "-", "VP - Cultural", "-"],
-              ["11", "Mr. Hrishikesh Nikam", "-", "VP - Sports", "-"],
-              [
-                "12",
-                "Mr.Amol Ankush",
-                "8767740257",
-                "Member Secretary",
-                "Teaching Representative - Sports Coordinator",
-              ],
+              ["7", "Ms. Shrawani Otari", "9307247732", "Community Representative", "Student Representative"],
+              ["8", "Mr. Hrishikesh Nikam", "7775957990", "NSS/NCC/Sports Representative", "Student Representative"],
+              ["9", "Mr. Mayur Darade", "7666215348", "Cultural Representative", "Student Representative - Marketing"],
+              ["10", "Mr. Datta Gore", "8766520505", "Class Representative – Div A", "Student Representative- Placements (HR)"],
+              ["11", "Mr. Siddhesh Gujarathi", "7775094250", "Class Representative – Div B ", "Student Representative - Alumni (Finance) "],
+              ["12", "Ms.Shrushti Gondekar ", "8830614847 ", "Class Representative – Div C", "Student Representative- Branding  "],
+              ["13", "Mr.Amol Ankush", "8767740257", "Member Secretary", "Teaching Representative- Sports Coordinator"],
             ]}
+            isEventsCommittee={false}
           />
         </section>
 
@@ -357,21 +354,92 @@ export default function StudentCommittees() {
         ================================= */}
         <section id="student-counsellor" className="space-y-6 scroll-mt-[15vh]">
           <div className="text-left mb-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#023b5e] mb-4">
+            <h2 className="text-2xl lg:text-4xl font-bold text-secondary mb-4">
               Student Counsellor
             </h2>
-            <div className="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
           </div>
           <CommitteeTable
             rows={[
               [
                 "1",
-                "Dr.Shilpa Tambe",
-                "92269 58888",
+                "Mrs..Shilpa Tambe",
+                "9226958888",
                 "Student Counsellor",
                 "Clinical Counsellor",
               ],
+              [
+                "2",
+                "Ms.Siddhi Dhoble",
+                "7058145454",
+                "Member",
+                "Teaching Representative",
+              ],
+              [
+                "3",
+                "Dr.Aatish Zagade",
+                "9823939483",
+                "Incharge",
+                "Deputy Director",
+              ],
             ]}
+            isEventsCommittee={false}
+          />
+        </section>
+
+        <section id="Events-Committee" className="space-y-6 scroll-mt-[15vh]">
+          <div className="text-left mb-8">
+            <h2 className="text-2xl lg:text-4xl font-bold text-secondary mb-4">
+              Events-Committee
+            </h2>
+          </div>
+          <CommitteeTable
+            rows={[
+              [
+                "1",
+                "Mr. Sadahiv Joshi",
+                "90210 04897",
+                "Team Leader",
+                
+              ],
+              [
+                "2",
+                "Ms. Shriya Jain",
+                "97665 58948",
+                "Coordinator- Content",
+                
+              ],
+              [
+                "3",
+                "Mr. Datta Gore",
+                "87665 20505",
+                "Coordinator - Logistic",
+              ],
+              [
+                "4",
+                "Ms. Khushboo Singh",
+                "84858 93320",
+                "Coordinator - Creatives",
+              ],
+              [
+                "5",
+                "Ms. Samiksha Mukadam",
+                "724 935 4960",
+                "Coordinator - Music",
+              ],
+              [
+                "6",
+                "Mr. Mayur Sawant",
+                "93703 45507",
+                "Coordinator - IT support",
+              ],
+              [
+                "7",
+                "Mr. Shubham Dhengle",
+                "90227 11370",
+                "Coordinator - Finance ",
+              ],
+            ]}
+            isEventsCommittee={true}
           />
         </section>
       </div>
@@ -382,19 +450,18 @@ export default function StudentCommittees() {
 /* ============================================
    TABLE COMPONENT (Updated)
 ============================================= */
-function CommitteeTable({ rows }) {
+function CommitteeTable({ rows, isEventsCommittee = false }) {
+  // Define headers based on whether it's the Events Committee
+  const headers = isEventsCommittee 
+    ? ["Sr.No", "Name of the Member", "Mobile Number", "Role"]
+    : ["Sr.No", "Name of the Member", "Mobile Number", "Role", "Representation"];
+
   return (
     <div className="overflow-x-auto rounded-md border border-gray-200 shadow-lg transition-all hover:shadow-xl">
       <table className="min-w-full text-left text-[0.95rem] border-collapse">
         <thead className="bg-secondary text-white">
           <tr>
-            {[
-              "Sr.No",
-              "Name of the Member",
-              "Mobile Number",
-              "Role",
-              "Representation",
-            ].map((head, idx) => (
+            {headers.map((head, idx) => (
               <th
                 key={idx}
                 className="px-6 py-4 font-semibold text-sm uppercase tracking-wider border border-gray-200"

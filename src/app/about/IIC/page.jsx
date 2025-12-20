@@ -69,11 +69,11 @@ export default function IICPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="w-full h-[350px] relative rounded-xl overflow-hidden shadow-md">
-            <Image src="/ipr1.jpg" alt="IPR Session 1" fill className="object-cover" />
+            <Image src="/IIC1.png" alt="IPR Session 1" fill className="object-cover" />
           </div>
 
           <div className="w-full h-[350px] relative rounded-xl overflow-hidden shadow-md">
-            <Image src="/ipr2.jpg" alt="IPR Session 2" fill className="object-cover" />
+            <Image src="/IIC2.png" alt="IPR Session 2" fill className="object-cover" />
           </div>
         </div>
       </div>
@@ -86,7 +86,7 @@ export default function IICPage() {
 
         <div className="max-w-6xl mx-auto relative rounded-xl overflow-hidden shadow-lg">
           <Image
-            src="/certificate.jpg"  // ✅ Replace with actual certificate image
+            src="/IIC.png"  // ✅ Replace with actual certificate image
             alt="IIC Certificate"
             width={2000}
             height={1200}

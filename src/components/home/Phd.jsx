@@ -9,21 +9,47 @@ export default function PhdSection() {
     { tag: "PHD", title: "PhD in Human Resource", img: "/MBA4.jpg" },
   ];
 
-    // Human Resource Management
-  // Finance Management
-  // Operations & Supply Chain Management
-  // Marketing Management
-  // Business Analytics
-
   return (
     <div className="w-full bg-white py-16">
-      <section className="w-full max-w-7xl mx-auto px-4">
+      <section className="w-full max-w-7xl mx-auto">
 
         {/* Heading */}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-secondary mb-10">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-secondary mb-4">
           PhD Research Programmes
         </h2>
 
+        {/* ⭐ TEXT BELOW HEADING */}
+        <div className="max-w-7xl mb-10 space-y-4">
+          <p className="text-gray-700 text-md lg:text-lg leading-relaxed text-justify">
+            Indira Global School of Business (IGSB), recognized by AICTE and UGC and
+            affiliated with Savitribai Phule Pune University (SPPU), has built a strong
+            reputation as a premier B-School shaping globally competent management
+            professionals. Strengthening its academic excellence, IGSB now offers
+            Doctoral Programs in Management from the academic year 2025–26, marking a
+            significant step toward fostering impactful research and innovation.
+          </p>
+
+          <p className="text-gray-700 text-md lg:text-lg leading-relaxed text-justify">
+            The IGSB Research Center (PGRC) is a recognized Ph.D. Research Center under
+            SPPU, dedicated to promoting high-quality, rigorous research across diverse
+            management domains. The Center aims to cultivate an intellectually
+            stimulating environment where scholars, academicians, and industry
+            researchers collaborate to explore contemporary business challenges and
+            contribute original insights to the field of management.
+          </p>
+
+          <p className="text-gray-700 text-md lg:text-lg leading-relaxed text-justify">
+            At the heart of the Research Center’s philosophy is a commitment to advancing
+            knowledge through scholarly inquiry, critical thinking, and interdisciplinary
+            engagement. The Doctoral Programme encourages research that not only enriches
+            academic literature but also supports industry, policy, and society through
+            evidence-based outcomes. IGSB strongly promotes multidisciplinary research,
+            empowering scholars to integrate perspectives and address complex, real-world
+            challenges with depth and innovation.
+          </p>
+        </div>
+
+        {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
           {/* LEFT TALL CARD */}
@@ -66,7 +92,7 @@ function Card({ img, tag, title, tall, big }) {
       />
 
       {/* Hover Overlay */}
-      <div className="absolute inset-0 bg-teal-200 opacity-0 group-hover:opacity-100 transition-all duration-500 "></div>
+      <div className="absolute inset-0 bg-teal-200 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
 
       {/* Tag */}
       <span className="absolute top-4 left-4 bg-teal-200 text-black text-xs font-semibold px-3 py-1 rounded-md z-20 group-hover:bg-white">

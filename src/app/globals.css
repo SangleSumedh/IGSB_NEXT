@@ -178,3 +178,14 @@ body {
 .animate-scroll {
   animation: scroll 25s linear infinite;
 }
+
+
+.clip-path-slant {
+  clip-path: polygon(
+    0 0,
+    20% 0,
+    80% 100%,
+    0 100%
+  );
+}
+

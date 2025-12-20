@@ -27,7 +27,7 @@ function MiniCertificate({ certification }) {
 
       {/* Title */}
       <div className="p-4">
-        <h3 className="text-lg font-semibold text-[#023b5e] line-clamp-2">
+        <h3 className="text-lg font-semibold text-secondary line-clamp-2">
           {certification.title}
         </h3>
       </div>
@@ -54,7 +54,7 @@ export function Certificate({ certification }) {
           className={isSingleImage ? "md:col-span-2 space-y-6" : "space-y-6"}
         >
           {/* Title */}
-          <h2 className="text-2xl font-semibold text-[#023b5e] leading-snug">
+          <h2 className="text-2xl font-semibold text-secondary leading-snug">
             {certification.title}
           </h2>
 
@@ -70,7 +70,7 @@ export function Certificate({ certification }) {
           {/* Objective */}
           {certification.objective && (
             <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-              <h4 className="font-semibold text-[#023b5e] mb-2">Objective</h4>
+              <h4 className="font-semibold text-secondary mb-2">Objective</h4>
 
               {Array.isArray(certification.objective) ? (
                 <ul className="list-disc pl-6 space-y-1 text-gray-700">
@@ -87,7 +87,7 @@ export function Certificate({ certification }) {
           {/* Topics */}
           {certification.topics?.length > 0 && (
             <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-              <h4 className="font-semibold text-[#023b5e] mb-2">
+              <h4 className="font-semibold text-secondary mb-2">
                 Topics Covered
               </h4>
               <ul className="list-disc pl-6 space-y-1 text-gray-700">
@@ -157,7 +157,7 @@ export default function StudentCertification() {
     <div className="space-y-12 w-full">
       {/* Header */}
       <div className="flex flex-col items-center lg:flex-row lg:items-center lg:justify-between gap-4 pb-6 border-b">
-        <h1 className="text-2xl md:text-4xl font-semibold text-[#023b5e]">
+        <h1 className="text-2xl md:text-4xl font-semibold text-secondary">
           Student Certifications
         </h1>
 
@@ -170,7 +170,7 @@ export default function StudentCertification() {
               className={`px-4 py-2 rounded-lg border transition font-medium ${
                 selectedYear === year
                   ? "bg-secondary text-white border-secondary shadow-md"
-                  : "bg-white text-[#023b5e] border-gray-300 hover:bg-gray-100"
+                  : "bg-white text-secondary border-gray-300 hover:bg-gray-100"
               }`}
             >
               {year}

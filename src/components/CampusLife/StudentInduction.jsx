@@ -26,7 +26,7 @@ function MiniInductionCard({ item }) {
       )}
 
       <div className="p-4">
-        <h3 className="text-lg font-semibold text-[#023b5e] line-clamp-2">
+        <h3 className="text-lg font-semibold text-secondary line-clamp-2">
           {item.title}
         </h3>
       </div>
@@ -41,7 +41,7 @@ export function InductionCard({ item }) {
   return (
     <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 space-y-6">
       {/* Title */}
-      <h2 className="text-2xl font-semibold text-[#023b5e] leading-snug">
+      <h2 className="text-2xl font-semibold text-secondary leading-snug">
         {item.title}
       </h2>
 
@@ -59,7 +59,7 @@ export function InductionCard({ item }) {
          ================================ */}
       {item.sessions && item.sessions.length > 0 && (
         <div className="space-y-6">
-          <h4 className="font-semibold text-[#023b5e] text-xl">Sessions</h4>
+          <h4 className="font-semibold text-secondary text-xl">Sessions</h4>
 
           {item.sessions.map((session, idx) => {
             const imageForSession = item.images?.[idx];
@@ -71,7 +71,7 @@ export function InductionCard({ item }) {
               >
                 {/* LEFT: Session Details */}
                 <div className="space-y-2 col-span-2">
-                  <h5 className="text-xl font-semibold text-[#023b5e]">
+                  <h5 className="text-xl font-semibold text-secondary">
                     {session.title}
                   </h5>
 
@@ -114,7 +114,7 @@ export function InductionCard({ item }) {
       {/* Objective */}
       {item.objective && (
         <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-          <h4 className="font-semibold text-[#023b5e] mb-2">Objective</h4>
+          <h4 className="font-semibold text-secondary mb-2">Objective</h4>
 
           {Array.isArray(item.objective) ? (
             <ul className="list-disc pl-6 space-y-1 text-gray-700">
@@ -131,7 +131,7 @@ export function InductionCard({ item }) {
       {/* Topics */}
       {item.topics?.length > 0 && (
         <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-          <h4 className="font-semibold text-[#023b5e] mb-2">Topics Covered</h4>
+          <h4 className="font-semibold text-secondary mb-2">Topics Covered</h4>
           <ul className="list-disc pl-6 space-y-1 text-gray-700">
             {item.topics.map((topic, idx) => (
               <li key={idx}>{topic}</li>
@@ -185,7 +185,7 @@ export default function StudentInduction() {
       {/* Header */}
       <div className="pb-6 border-b">
         {/* Title */}
-        <h1 className="text-3xl font-semibold text-[#023b5e] mb-4">
+        <h1 className="text-3xl font-semibold text-secondary mb-4">
           Student Induction Program
         </h1>
 
@@ -198,7 +198,7 @@ export default function StudentInduction() {
           ${
             selectedYear === year
               ? "bg-secondary text-white border-secondary shadow"
-              : "bg-white text-[#023b5e] border-gray-300 hover:bg-gray-100"
+              : "bg-white text-secondary border-gray-300 hover:bg-gray-100"
           }`}
               onClick={() => setSelectedYear(year)}
             >

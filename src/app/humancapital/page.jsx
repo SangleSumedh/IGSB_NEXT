@@ -164,8 +164,6 @@ const teachingStaff = [
   },
 ];
 
-
-
 // Non-Teaching Staff
 const nonTeachingStaff = [
   {
@@ -212,7 +210,7 @@ const nonTeachingStaff = [
     role: "Senior Admin Officer",
     image: "/Faculty/Jiban-Murikal.jpg",
     linkedin: true,
-    website: true,  
+    website: true,
   },
   {
     name: "Mr. Balasaheb Chhaburao Shinde",
@@ -253,7 +251,6 @@ const nonTeachingStaff = [
   },
 ];
 
-
 // Visiting Staff
 const visitingStaff = [
   {
@@ -287,7 +284,6 @@ export default function Page() {
 
   return (
     <div className="bg-gray-100">
-
       {/* BANNER */}
       <div className="relative w-full h-[40vh] sm:h-[50vh] lg:h-[70vh]">
         <Image
@@ -301,7 +297,7 @@ export default function Page() {
 
       {/* TABS */}
       <div className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto flex gap-6 px-6 py-6">
+        <div className="max-w-7xl mx-auto flex flex-wrap gap-4 md:gap-6 px-4 sm:px-6 py-4 sm:py-6">
           <TabButton
             active={activeTab === "teaching"}
             onClick={() => setActiveTab("teaching")}
@@ -323,9 +319,9 @@ export default function Page() {
         </div>
       </div>
 
-      {/* CARDS */}
-      <div className="py-20 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+      {/* CARDS - Single column below lg, two columns on lg and above */}
+      <div className="py-10 sm:py-16 lg:py-20 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
           {getActiveData().map((item, index) => (
             <FacultyCard key={index} data={item} />
           ))}
@@ -343,7 +339,7 @@ function TabButton({ active, onClick, children }) {
   return (
     <button
       onClick={onClick}
-      className={`px-6 py-3 font-semibold rounded-full transition ${
+      className={`px-4 sm:px-6 py-2 sm:py-3 font-semibold rounded-full transition text-sm sm:text-base ${
         active
           ? "bg-secondary text-white"
           : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -353,54 +349,53 @@ function TabButton({ active, onClick, children }) {
     </button>
   );
 }
-
 function FacultyCard({ data }) {
   return (
-    <div className="relative bg-white rounded-lg shadow-lg overflow-hidden flex min-h-[260px]">
+    <div className="relative bg-white rounded-lg shadow-lg overflow-hidden flex flex-col sm:flex-row min-h-[280px] sm:min-h-[260px] lg:min-h-[280px]">
+      {/* BLUE SHAPE - Only visible on medium screens and above */}
+      <div className="absolute left-0 top-0 h-full w-[45%] sm:w-[40%] bg-secondary clip-path-slant" />
 
-      {/* BLUE SHAPE */}
-      <div className="absolute left-0 top-0 h-full w-[40%] bg-secondary clip-path-slant" />
-
-      {/* IMAGE */}
-      <div className="relative z-10 flex items-center pl-12">
-        <div className="w-32 h-32 rounded-full border-4 border-white overflow-hidden bg-gray-200">
+      {/* IMAGE - Responsive Circle with center alignment on mobile */}
+      <div className="relative z-10 flex items-center justify-center sm:justify-start pl-0 sm:pl-8 lg:pl-12 pt-6 sm:pt-0">
+        <div className="w-36 h-36 sm:w-32 sm:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-full border-4 border-white overflow-hidden bg-gray-200 shadow-lg">
           <Image
             src={data.image}
             alt={data.name}
-            width={128}
-            height={128}
+            width={160}
+            height={160}
             className="object-cover w-full h-full"
+            sizes="(max-width: 640px) 144px, (max-width: 768px) 128px, (max-width: 1024px) 128px, (min-width: 1025px) 144px, 160px"
           />
         </div>
       </div>
 
-      {/* CONTENT */}
-      <div className="relative z-10 flex-1 px-10 py-8">
-        <h3 className="text-2xl font-bold text-secondary">{data.name}</h3>
+      {/* CONTENT - Center aligned text on mobile */}
+      <div className="relative z-10 flex-1 px-6 sm:px-8 lg:px-10 py-6 sm:py-8 text-center sm:text-left">
+        <h3 className="text-xl sm:text-2xl font-bold text-secondary">{data.name}</h3>
 
-        <p className="font-semibold text-gray-800 mt-1">{data.role}</p>
+        <p className="font-semibold text-gray-800 mt-1 text-sm sm:text-base">{data.role}</p>
 
         {data.subRole && (
-          <p className="font-semibold text-gray-700">{data.subRole}</p>
+          <p className="font-semibold text-gray-700 text-sm sm:text-base">{data.subRole}</p>
         )}
 
         {data.expertise && (
-          <p className="text-gray-700 mt-3 text-sm">{data.expertise}</p>
+          <p className="text-gray-700 mt-3 text-xs sm:text-sm">{data.expertise}</p>
         )}
 
         {data.experience && (
-          <p className="text-gray-700 text-sm mt-1">
+          <p className="text-gray-700 text-xs sm:text-sm mt-1">
             Experience: {data.experience}
           </p>
         )}
 
         {(data.linkedin || data.website) && (
-          <div className="flex items-center gap-4 mt-6">
+          <div className="flex items-center gap-3 sm:gap-4 mt-4 sm:mt-6 justify-center sm:justify-start">
             {data.linkedin && (
-              <FaLinkedinIn className="text-[#0a66c2] text-xl cursor-pointer" />
+              <FaLinkedinIn className="text-[#0a66c2] text-lg sm:text-xl cursor-pointer" />
             )}
             {data.website && (
-              <FaGlobe className="text-gray-700 text-xl cursor-pointer" />
+              <FaGlobe className="text-gray-700 text-lg sm:text-xl cursor-pointer" />
             )}
           </div>
         )}

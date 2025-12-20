@@ -177,7 +177,7 @@ const BlogPage = () => {
     <div className="bg-white min-h-screen py-16 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-12 border-l-4 border-secondary pl-4">
+        <div className="mb-12  pl-4">
           <h1 className="text-4xl font-bold text-gray-900">IGSB Blog Posts</h1>
           <p className="text-gray-600 mt-2">
             Latest updates, news, and academic articles from our experts.

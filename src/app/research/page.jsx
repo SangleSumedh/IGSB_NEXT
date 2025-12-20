@@ -451,9 +451,9 @@ export default function Research() {
                 </h2>
 
                 <p className="text-gray-700 text-lg leading-relaxed text-justify">
-                  This section provides a summary of research activities,
-                  publications, and scholarly contributions made by the faculty
-                  of IGSB.
+                  Education is considered to be a catalyst in change management and it is possible because of its ability to anticipate future trends and equip human resources with the required skills. Academic institutes should shoulder the responsibility to drive the market trends and provide necessary consultation to the industry for sustainable growth.
+
+Research plays a vital role in grooming a teacher with contemporary skills and empowering learners with the wisdom to face future challenges. IGSB has consistently attempted to align its institutional growth and pivoted on research for a sustainable future. Faculty members in IGSB try to develop research acumen through persistent participation in research activities by publishing papers in reputed journals and working on research projects and other allied research activities.
                 </p>
 
                 <div className="overflow-x-auto">

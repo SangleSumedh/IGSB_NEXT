@@ -85,18 +85,62 @@ const ExploreSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[65%_35%] gap-10">
 
           {/* TEXT */}
-          <div className="fade-text">
-            <p className="text-gray-700 text-lg lg:text-xl leading-relaxed text-justify">
-              Located near Pune, Indira Global School of Business one of the
-              leading NAAC-accredited MBA institution that offers a rich blend
-              of management education and research driven learning. Choose from
-              industry focused specializations, learn from research active
-              faculty, and gain practical insights through case studies,
-              projects, and data driven analysis, while accessing strong
-              placements and opportunities to participate in seminars,
-              conferences, and research initiatives.
-            </p>
-          </div>
+          {/* TEXT */}
+<div className="fade-text">
+  <p className="text-gray-700 text-md lg:text-lg leading-relaxed text-justify">
+    Indira Global School of Business (IGSB) is committed to shaping globally competent,
+    socially responsible, and purpose-driven leaders for the dynamic world of business.
+    Guided by our vision of becoming a preferred center of academic excellence, we nurture
+    management professionals who combine strategic thinking with integrity, compassion,
+    and a deep sense of responsibility toward society and the environment.
+  </p>
+
+  <p className="text-gray-700 text-md lg:text-lg leading-relaxed text-justify mt-2">
+    At IGSB, our mission is to mentor future-ready managers, global leaders, and aspiring
+    entrepreneurs through a vibrant learning environment that encourages innovation,
+    sustainability, and practical problem-solving. We actively promote strategic alliances
+    that foster cross-cultural understanding, academic excellence, research involvement,
+    and holistic development for all stakeholders.
+  </p>
+  <p className="text-gray-700 text-md lg:text-lg leading-relaxed text-justify mt-2">
+    Located along the serene Mumbai–Pune Expressway, the IGSB campus offers modern infrastructure amidst natural surroundings, inspiring students to think boldly and grow holistically. With industry-relevant MBA programs and a focus on experiential learning, IGSB empowers students to become confident, adaptable, and ethical leaders who can thrive in an unpredictable global economy. 
+  </p>
+
+  {/* OUR VALUES */}
+  <div className="mt-8">
+    <h3 className="text-xl font-bold text-gray-800 mb-4">
+      Our Values
+    </h3>
+
+    <div className="flex flex-wrap gap-3">
+      {[
+        "Integrity",
+        "Passion",
+        "Environmental Sensitivity",
+        "Social Sensitivity",
+        "Excellence",
+      ].map((value, index) => (
+        <span
+          key={index}
+          className="
+            px-4 py-2
+            rounded-md
+            bg-secondary
+            text-gray-100
+            text-sm
+            font-medium
+            border border-slate-700
+            hover:bg-slate-700
+            transition
+          "
+        >
+          {value}
+        </span>
+      ))}
+    </div>
+  </div>
+</div>
+
 
           {/* LOGOS */}
           <div className="logos-wrapper flex gap-6 justify-start lg:justify-center items-start">

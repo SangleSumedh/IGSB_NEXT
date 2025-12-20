@@ -212,7 +212,7 @@ const nonTeachingStaff = [
     role: "Senior Admin Officer",
     image: "/Faculty/Jiban-Murikal.jpg",
     linkedin: true,
-    website: true,
+    website: true,  
   },
   {
     name: "Mr. Balasaheb Chhaburao Shinde",

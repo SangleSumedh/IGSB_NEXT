@@ -82,7 +82,7 @@ const Footer = () => {
                 <strong>Administrative:</strong> +91 9657856103
               </p>
               <p>
-                <strong>Emails -</strong> 
+                <strong>Emails -</strong>
               </p>
               <div className="flex flex-col space-y-1">
                 <Link
@@ -144,8 +144,13 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-secondary">
+                <Link href="/privacy-policy" className="hover:text-secondary">
                   Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/blogs" className="hover:text-secondary">
+                  Blogs
                 </Link>
               </li>
             </ul>
@@ -153,7 +158,7 @@ const Footer = () => {
 
           <div>
             <h3 className="text-lg font-semibold text-gray-900 border-b-2 border-secondary inline-block pb-1 mb-4">
-              Documents
+              Featured Links
             </h3>
             <ul className="space-y-3 text-sm text-gray-700">
               <li>

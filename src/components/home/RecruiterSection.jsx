@@ -116,7 +116,7 @@ const RecruitersSection = () => {
             const hideOnDesktopOnly = shouldHide ? "hidden sm:flex" : "flex";
  
             return (
-              <div
+              <div key={index}
                 className={`logo-item ${hideOnDesktopOnly} items-center justify-center
     w-20 sm:w-24 md:w-28 h-14 sm:h-16 bg-white rounded-md shadow-sm hover:shadow-md
     transition-all duration-300

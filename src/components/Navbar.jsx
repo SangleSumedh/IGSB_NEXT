@@ -81,7 +81,7 @@ const dropdownContent = {
           },
           {
             label: "Mandatory Disclosure",
-            link: "MandatoryDisclosure.pdf",
+            link: "/MandatoryDisclosure.pdf",
           },
         ],
       },
@@ -794,7 +794,6 @@ const Navbar = () => {
                 {/* 🔹 Single Links */}
                 {[
                   { label: "Placement", href: "/placement" },
-                  { label: "Examination", href: "/about/examination" },
                   { label: "Alumni", href: "/alumni" },
                   { label: "Research", href: "/research" },
                 ].map((item, index) => (

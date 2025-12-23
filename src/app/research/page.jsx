@@ -28,15 +28,15 @@ export default function Research() {
             className="object-cover"
           />
         </div>
-        <div className="max-w-7xl mx-auto  px-4 lg:px-8 ">
+        <div className="max-w-7xl mx-auto px-6 py-16 lg:px-8 ">
           {/* ===========================
               🔷 PAGE HEADER
           ============================ */}
           <div className="text-center py-10">
-            <h1 className="text-4xl font-bold text-secondary mb-4">
+            <h1 className="text-2xl md:text-4xl font-bold text-secondary mb-4">
               IGSB Research & Development Centre
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-md md:text-lg text-gray-600 max-w-3xl mx-auto">
               Explore research initiatives, publications, academic development
               programmes, and scholarly contributions of IGSB.
             </p>
@@ -77,28 +77,28 @@ export default function Research() {
 
             {/* ===================== MDP ===================== */}
             {activeTab === "mdp" && (
-              <div className="bg-white px-4 md:px-8 py-8 rounded-2xl shadow-lg space-y-12 mb-12">
+              <div className="bg-white px-6 py-16 rounded-2xl shadow-lg space-y-12 mb-12">
                 {/* INTRO */}
                 <section className="space-y-4 text-lg">
                   <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center mb-8">
                     Management Development Programmes (MDP)
                   </h2>
 
-                  <p className="text-gray-700 text-justify leading-relaxed">
+                  <p className="text-md md:text-lg text-gray-700 text-justify leading-relaxed">
                     Management Development Program [MDP] Cell of IGSB focuses on
                     skill improvement, interaction ability, confidence building,
                     competence, and capacity of managing projects in a
                     cross-cultural environment.
                   </p>
 
-                  <p className="text-gray-700 text-justify leading-relaxed">
+                  <p className="text-md md:text-lg text-gray-700 text-justify leading-relaxed">
                     Management Development Program cell of IGSB will aim at the
                     managerial development within a structured scenario &
                     synergetic system of organizational behavior with value
                     addition to recognize functional areas such as:
                   </p>
 
-                  <ul className="list-disc ml-6 text-gray-700">
+                  <ul className="list-disc ml-6 text-md md:text-lg text-gray-700">
                     <li>
                       Develop effective training programs based on experiential
                       learning models.
@@ -123,10 +123,10 @@ export default function Research() {
                     <li>Financial Literacy Campaign</li>
                   </ul>
 
-                  <p className="text-gray-700 font-semibold mt-4">
+                  <p className="text-md md:text-lg text-gray-700 font-semibold mt-4">
                     HIGHLIGHTS OF THE MDP CELL
                   </p>
-                  <ul className="list-disc ml-6 text-gray-700">
+                  <ul className="list-disc ml-6 text-md md:text-lg text-gray-700">
                     <li>Tailor made programs</li>
                     <li>Certified Trainers</li>
                     <li>Reading material</li>
@@ -138,13 +138,13 @@ export default function Research() {
 
                 {/* 1 - Development Centre */}
                 <section className="space-y-4">
-                  <h3 className="text-2xl font-bold text-secondary">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
                     1. Development Centre
                   </h3>
-                  <p className="text-gray-700 text-justify">
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
                     Dr. Priyanka Darekar conducted a Developmental Centre for an
                     established Insurance company at Mumbai on 23 to 25th
-                    January 2023.The assignment involved: Assessing employees’
+                    January 2023.The assignment involved: Assessing employees'
                     competencies on prescribed tool matrix; giving feedback;
                     Consolidation of observations, interpretation and
                     preparation of reports and developing Individual Development
@@ -162,11 +162,11 @@ export default function Research() {
 
                 {/* 2 - External Evaluator */}
                 <section className="space-y-4">
-                  <h3 className="text-2xl font-bold text-secondary">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
                     2. External Evaluator for the HR Capability Program
                   </h3>
 
-                  <p className="text-gray-700 text-justify">
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
                     Dr. Anuradha Phadnis, undertook an MDP assignment as an
                     External Evaluator for the HR capability program of a
                     large-scale retail client; Reliance Retails- HR Academy (Via
@@ -198,11 +198,11 @@ export default function Research() {
 
                 {/* 3 - Mentor for Reliance Retail */}
                 <section className="space-y-4">
-                  <h3 className="text-2xl font-bold text-secondary">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
                     3. Mentor for Reliance Retail's Capability-Building Program
                   </h3>
 
-                  <p className="text-gray-700 text-justify">
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
                     Dr. Anuradha Phadnis and Dr. Priyanka Darekar had been
                     assigned as a Mentor for Reliance Retail's prestigious
                     capability-building program. It was a skill development
@@ -211,7 +211,7 @@ export default function Research() {
                     team for the Business Impact projects. Dr. Anuradha mentored
                     2 groups and Dr. Priyanka mentored 6 Groups.
                   </p>
-                  <p className="text-gray-700 text-justify">
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
                     Their journey of the participants closed with a Business
                     Impact project that they had identified based on the
                     learnings and business needs which were facilitated by the
@@ -222,12 +222,12 @@ export default function Research() {
 
                 {/* 4 - Pre & Post Psychometric Assessment */}
                 <section className="space-y-4">
-                  <h3 className="text-2xl font-bold text-secondary">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
                     4. Pre and Post Psychometric Assessment for VNL Constrotech
                     Pvt Ltd
                   </h3>
 
-                  <p className="text-gray-700 text-justify">
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
                     Dr. Priyanka Darekar completed the pre and post psychometric
                     assessment for VNL Constrotech Pvt Ltd for their Sales,
                     Negotiation and Presentation Skills Training in June 2024.
@@ -246,11 +246,11 @@ export default function Research() {
 
                 {/* 5 - Mentor for Reliance Retail (second) */}
                 <section className="space-y-4">
-                  <h3 className="text-2xl font-bold text-secondary">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
                     5. Mentor for Reliance Retail's Capability-Building Program
                   </h3>
 
-                  <p className="text-gray-700 text-justify">
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
                     Dr. Pallavi Sajanapwar and Dr. Priyanka Darekar had been
                     assigned as a Mentor for Reliance Retail's prestigious
                     capability-building program. It was a skill development
@@ -258,7 +258,7 @@ export default function Research() {
                     in the organization, and they were a part of the mentoring
                     team for the Business Impact projects.
                   </p>
-                  <p className="text-gray-700 text-justify">
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
                     Their journey of the participants closed with a Business
                     Impact project that they had identified based on the
                     learnings and business needs which were facilitated by the
@@ -277,12 +277,12 @@ export default function Research() {
 
                 {/* 6 - Aerospace & Consumer Goods Development Centre */}
                 <section className="space-y-4">
-                  <h3 className="text-2xl font-bold text-secondary">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
                     6. Development Centre for a Diversified Contract
                     Manufacturing Company
                   </h3>
 
-                  <p className="text-gray-700 text-justify">
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
                     Dr. Priyanka Darekar was appointed as an Assessor for
                     conducting development centre for senior leadership team of
                     a leading SEZ for diversified contract manufacturing company
@@ -290,8 +290,8 @@ export default function Research() {
                     Aerospace and Consumer Goods industries. The assignment was
                     conducted in the duration Jan to March 2025.
                   </p>
-                  <p className="text-gray-700 text-justify">
-                    The assignment involved: Assessing employees’ competencies
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
+                    The assignment involved: Assessing employees' competencies
                     on prescribed tool matrix; giving feedback; Consolidation of
                     observations, interpretation and preparation of reports and
                     developing Individual Development Plans.
@@ -310,14 +310,14 @@ export default function Research() {
 
             {/* ===================== FDP ===================== */}
             {activeTab === "fdp" && (
-              <div className="bg-white px-4 md:px-8 py-8 rounded-2xl shadow-lg space-y-16 mb-12">
+              <div className="bg-white px-6 py-16 rounded-2xl shadow-lg space-y-16 mb-12">
                 {/* 1 */}
                 <section className="space-y-6">
-                  <h3 className="text-2xl font-bold text-secondary text-left">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary text-left">
                     1-Day In-House FDP: Overview of NBA, OBE & BLOOMS TAXONOMY
                   </h3>
 
-                  <p className="text-gray-700 leading-relaxed text-justify">
+                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
                     IGSB organized 1-day FDP program on Overview of NBA, OBE &
                     BLOOMS TAXONOMY on 28th March 2024. The course was delivered
                     by Dr. Pallavi Sajanapwar, starting with basics of deep
@@ -348,12 +348,12 @@ export default function Research() {
 
                 {/* 2 */}
                 <section className="space-y-6">
-                  <h3 className="text-2xl font-bold text-secondary text-left">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary text-left">
                     1-Day In-House FDP: Sectorial & Industry Analysis Using
                     Strategic Models
                   </h3>
 
-                  <p className="text-gray-700 leading-relaxed text-justify">
+                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
                     IGSB's IQAC organized a one-day FDP on "Sectorial and
                     Industry Analysis using Strategic models" for all Faculty
                     members.
@@ -370,11 +370,11 @@ export default function Research() {
 
                 {/* 3 */}
                 <section className="space-y-6">
-                  <h3 className="text-2xl font-bold text-secondary text-left">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary text-left">
                     1-Day In-House FDP: CO-PO Mapping and Attainments
                   </h3>
 
-                  <p className="text-gray-700 leading-relaxed text-justify">
+                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
                     "IGSB organized 1 day In-house FDP on CO-PO Mapping and
                     attainments for faculty members of IGSB and ICMS on 25th
                     April 2023. Resource Person Dr. Anuradha Phadnis conducted
@@ -382,7 +382,7 @@ export default function Research() {
                     to get hands on experience on the FDP topic".
                   </p>
 
-                  <p className="text-gray-700 leading-relaxed text-justify">
+                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
                     Indira Global School of Business aims to be a preferred
                     center of academic excellence and thus demands innovative
                     approach towards capacity building of faculty and students.
@@ -391,7 +391,7 @@ export default function Research() {
                     environment for management students.
                   </p>
 
-                  <p className="text-gray-700 leading-relaxed text-justify">
+                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
                     To ensure that students are benefited from the faculty
                     expertise, it is our ongoing endeavor to invest in capacity
                     building. At IGSB we provide opportunities for faculty to
@@ -399,7 +399,7 @@ export default function Research() {
                     consultation.
                   </p>
 
-                  <p className="text-gray-700 leading-relaxed text-justify">
+                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
                     Dr. Virendra Tatake has been actively involved in Financial
                     Awareness Programs through the Aarthbodh Initiative of IGSB.
                   </p>
@@ -420,12 +420,12 @@ export default function Research() {
                   </div>
                 </section>
                 <section className="space-y-6">
-                  <h3 className="text-2xl font-bold text-secondary text-left">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary text-left">
                     Translation of Investment-related Books into Regional
                     Language
                   </h3>
 
-                  <p className="text-gray-700 leading-relaxed text-justify">
+                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
                     Dr Tatake has translated the famous books *Romancing the
                     Balance Sheet* and *Flirting with the Stocks* into regional
                     languages. These books simplify complex financial concepts
@@ -445,12 +445,12 @@ export default function Research() {
 
             {/* ===================== RESEARCH ===================== */}
             {activeTab === "research" && (
-              <div className="bg-white px-4 md:px-8 py-8 rounded-2xl shadow-lg space-y-10 mb-12">
+              <div className="bg-white px-6 py-16 rounded-2xl shadow-lg space-y-10 mb-12">
                 <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
                   Research & Innovation
                 </h2>
 
-                <p className="text-gray-700 text-lg leading-relaxed text-justify">
+                <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
                   Education is considered to be a catalyst in change management and it is possible because of its ability to anticipate future trends and equip human resources with the required skills. Academic institutes should shoulder the responsibility to drive the market trends and provide necessary consultation to the industry for sustainable growth.
 
 Research plays a vital role in grooming a teacher with contemporary skills and empowering learners with the wisdom to face future challenges. IGSB has consistently attempted to align its institutional growth and pivoted on research for a sustainable future. Faculty members in IGSB try to develop research acumen through persistent participation in research activities by publishing papers in reputed journals and working on research projects and other allied research activities.
@@ -578,20 +578,20 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
 
             {/* ===================== CONFERENCE ===================== */}
             {activeTab === "conference" && (
-              <div className="bg-white px-4 md:px-8 py-8 rounded-2xl shadow-lg space-y-12 mb-12">
+              <div className="bg-white px-6 py-16 rounded-2xl shadow-lg space-y-12 mb-12">
                 {/* AY 24-25 */}
                 <section className="space-y-4">
                   <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
                     Academic Year 2024–25
                   </h2>
 
-                  <p className="text-gray-700 text-justify">
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
                     <strong>Fintech for inclusivity and sustainability</strong>
                     <br />
                     This conference was organized at IGSB to promote student
                     research activity. The conference saw a wonderful response
                     with 35 students participating and presenting research
-                    papers on “Fintech for Inclusivity and Sustainability”. The
+                    papers on "Fintech for Inclusivity and Sustainability". The
                     inauguration was done by CMA Sagar Malpure, Chairperson,
                     ICMAI PCA Chapter. Valuable inputs were given by Prof.
                     Chetan Wakalkar (Academic Advisor - IGI) and Dr. Virendra
@@ -611,11 +611,11 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
 
                 {/* AY 23-24 */}
                 <section className="space-y-4">
-                  <h2 className="text-2xl font-bold text-secondary text-center">
+                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
                     Academic Year 2023–24
                   </h2>
 
-                  <p className="text-gray-700 text-justify">
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
                     <strong>
                       India's Growth Story Amidst Global Challenges
                     </strong>
@@ -638,11 +638,11 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
 
                 {/* AY 22-23 */}
                 <section className="space-y-4">
-                  <h2 className="text-2xl font-bold text-secondary text-center">
+                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
                     Academic Year 2022–23
                   </h2>
 
-                  <p className="text-gray-700 text-justify">
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
                     <strong>
                       National Conference in Association with The Institute of
                       Cost Accountants of India PCA
@@ -680,7 +680,7 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
 
             {/* ===================== PUBLICATIONS ===================== */}
             {activeTab === "publications" && (
-              <div className="bg-white px-4 md:px-8 py-8 rounded-2xl shadow-lg space-y-16 mb-12">
+              <div className="bg-white px-6 py-16 rounded-2xl shadow-lg space-y-16 mb-12">
                 {/* Faculty Publications */}
                 <section className="space-y-10">
                   <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
@@ -758,14 +758,14 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
 
             {/* ===================== RESOURCE PERSON ===================== */}
             {activeTab === "resourcePerson" && (
-              <div className="bg-white px-4 md:px-8 py-8 rounded-2xl shadow-lg space-y-20 mb-12">
+              <div className="bg-white px-6 py-16 rounded-2xl shadow-lg space-y-20 mb-12">
                 {/* 1 */}
                 <section className="space-y-6">
                   <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
                     Session Chair — International Conference (Tashkent)
                   </h2>
                   <div className="flex justify-between items-center gap-5">
-                    <p className="text-gray-700 text-justify">
+                    <p className="text-md md:text-lg text-gray-700 text-justify">
                       Dr. Priyanka Darekar served as a Session Chair at 4th
                       International Conference on Technological Advancements in
                       Computational Sciences, Amity University, Tashkent City,
@@ -789,14 +789,14 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
 
                 {/* 2 */}
                 <section className="space-y-6">
-                  <h2 className="text-2xl font-bold text-secondary text-center">
+                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
                     FDPs Conducted as Resource Person
                   </h2>
 
-                  <p className="text-gray-700 text-justify">
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
                     Dr. Anuradha Phadnis conducted 1 Day Faculty Development
                     Program at Sinhgad Institute of Management, Pune, Vadagon
-                    (BK) for Faculty Members on the Topic: “How to prepare
+                    (BK) for Faculty Members on the Topic: "How to prepare
                     course file and CO PO mapping for NAAC Preparation " on
                     Tuesday 17th Oct 2023.
                   </p>
@@ -832,12 +832,12 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
 
                 {/* 3 */}
                 <section className="space-y-6">
-                  <h2 className="text-2xl font-bold text-secondary text-center">
+                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
                     Guest Speaker at Government College for Women, Cluster
                     University, Srinagar
                   </h2>
 
-                  <p className="text-gray-700 text-justify">
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
                     Dr. Priyanka Darekar conducted was invited as a Guest
                     Speaker at the Government College for Women, Cluster
                     University, Srinagar. She delivered a session on "Career
@@ -870,17 +870,17 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
 
                 {/* 4 */}
                 <section className="space-y-6">
-                  <h2 className="text-2xl font-bold text-secondary text-center">
+                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
                     Aarthbodh Forum — Initiatives by Dr. Tatake
                   </h2>
 
                   {/* sub 1 */}
                   <div className="space-y-3">
-                    <h3 className="text-xl font-semibold text-secondary">
+                    <h3 className="text-xl md:text-4xl font-semibold text-secondary">
                       1. Conducting Investment Awareness Programs at Reputed
                       Educational Institutes:
                     </h3>
-                    <p className="text-gray-700 text-justify">
+                    <p className="text-md md:text-lg text-gray-700 text-justify">
                       IGSB Aarthbodh Forum is very keen in creating financial
                       awareness amongst the young generation. Dr Tatake has been
                       conducting investment awareness sessions for post-graduate
@@ -904,10 +904,10 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
 
                   {/* sub 2 */}
                   <div className="space-y-3">
-                    <h3 className="text-xl font-semibold text-secondary">
+                    <h3 className="text-xl md:text-4xl font-semibold text-secondary">
                       2. Writing articles in daily newspapers and magazines
                     </h3>
-                    <p className="text-gray-700 text-justify">
+                    <p className="text-md md:text-lg text-gray-700 text-justify">
                       Dr Tatake has been an avid writer and loves to educate
                       people on financial topics through his prolific writing
                       skills. He has is an editor in regional newspapers and
@@ -926,10 +926,10 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
 
                   {/* sub 3 */}
                   <div className="space-y-3">
-                    <h3 className="text-xl font-semibold text-secondary">
+                    <h3 className="text-xl md:text-4xl font-semibold text-secondary">
                       3. Conducting programs on Radio
                     </h3>
-                    <p className="text-gray-700 text-justify">
+                    <p className="text-md md:text-lg text-gray-700 text-justify">
                       Radio is an effective tool to reach out to youngsters and
                       can be entertaining to educate people through engaging
                       programs.Dr Tatake has conducted programs on All India

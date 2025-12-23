@@ -13,7 +13,7 @@ export default function Governance() {
     { sr: 8, name: "Ms. Rajeshree Ghavte", role: "Member", representation: "Nominee State Govt./UT (Ex-Officio)" },
     { sr: 9, name: "Mr. Shashi Bhat", role: "Member", representation: "Industry Expert" },
     { sr: 10, name: "Awaited", role: "Member", representation: "SPPU Academic Expert" },
-    { sr: 11, name: "Dr. Pallavi Sajnawar", role: "Member", representation: "Nominee Teaching Representative (Professor & Dean - Academics and Research)" },
+    { sr: 11, name: "Dr. Pallavi Sajanapwar", role: "Member", representation: "Nominee Teaching Representative (Professor & Dean - Academics and Research)" },
     { sr: 12, name: "Dr. Aatish Zagade", role: "Member", representation: "Nominee Teaching Representative (Assoc. Professor & Dy. Director)" },
     { sr: 13, name: "Dr. Anuradha Phadnis", role: "Member", representation: "Nominee Teaching Representative (Assoc. Professor & IQAC Head)" },
     { sr: 14, name: "Dr. Priyanka Darekar", role: "Member", representation: "Nominee Teaching Representative - Asst. Prof" },

@@ -7,6 +7,7 @@ import { HiMenuAlt2, HiX } from "react-icons/hi";
 import { TbExternalLink } from "react-icons/tb";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { Menu } from "lucide-react";
+import ApplyForm from "./home/ApplyForm";
 
 const dropdownContent = {
   aboutUs: {
@@ -206,7 +207,29 @@ const dropdownContent = {
       },
       {
         title: "PHD",
-        items: [{ label: "Research Center", link: "/programs/phd" }],
+        items: [
+          { label: "Research Center", link: "/programs/phd" },
+          {
+            label: "Marketing Management",
+            link: "/programs/phd?spec=marketing",
+          },
+          {
+            label: "Finance Management",
+            link: "/programs/phd?spec=finance",
+          },
+          {
+            label: "Human Resource Management",
+            link: "/programs/phd?spec=hr",
+          },
+          // {
+          //   label: "Operations & Supply Chain Management",
+          //   link: "/programs/phd?spec=operations",
+          // },
+          {
+            label: "Bussiness Analytics",
+            link: "/programs/phd?spec=ba",
+          },
+        ],
       },
     ],
   },
@@ -273,6 +296,7 @@ const Navbar = () => {
   // ✅ Refs to manage hover timers and outside clicks (no flicker)
   const dropdownTimeoutRef = useRef(null);
   const navbarRef = useRef(null);
+  const modalRef = useRef(null);
 
   const toggleHelpline = () => setIsHelplineOpen(!isHelplineOpen);
   const toggleModal = () => setIsModalOpen(!isModalOpen);
@@ -307,6 +331,24 @@ const Navbar = () => {
       if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
     };
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isModalOpen &&
+        modalRef.current &&
+        !modalRef.current.contains(event.target)
+      ) {
+        setIsModalOpen(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("pointerdown", handleClickOutside);
+    };
+  }, [isModalOpen]);
 
   const toggleMobileDropdown = (dropdownName) => {
     setMobileDropdown(mobileDropdown === dropdownName ? null : dropdownName);
@@ -477,7 +519,7 @@ const Navbar = () => {
                 >
                   Leaving Certificate
                 </a> */}
-              
+
                 <Link
                   href="/contact"
                   className="relative inline-block group hover:text-primary transition-colors duration-200"
@@ -491,7 +533,7 @@ const Navbar = () => {
                origin-left group-hover:scale-x-100"
                   ></span>
                 </Link>
-                  <span className="text-secondary">|</span>
+                <span className="text-secondary">|</span>
                 <Link
                   href="/blogs"
                   className="relative inline-block group hover:text-primary transition-colors duration-200"
@@ -677,50 +719,57 @@ const Navbar = () => {
                   </button>
 
                   {mobileDropdown === "quickLinks" && (
-  <div className="bg-gray-50 rounded-lg mt-1 overflow-hidden animate-in fade-in-0 slide-in-from-top-2 duration-300">
-    <ul className="space-y-1 text-xs font-medium text-gray-700">
-      {[
-        {
-          label: "Pay Fee",
-          href: "https://rapid.grayquest.com/iudp-master",
-        },
-        {
-          label: "ERP Login",
-          href: "http://220.226.204.21/login.aspx/",
-        },
-        {
-          label: "Superset",
-          href: "https://app.joinsuperset.com/join/#/signup/student/placements/621c7653-bdeb-4ee2-bb72-765e5d1d9635",
-        },
-        {
-          label: "Contact Us",
-          href: "/contact",
-        },
-        {
-          label: "Blogs",
-          href: "/blogs",
-        },
-      ].map((item, index) => (
-        <li
-          key={index}
-          className="animate-in fade-in-0 slide-in-from-left-2 duration-300"
-          style={{ animationDelay: `${index * 50}ms` }}
-        >
-          <a
-            href={item.href}
-            target={item.href.startsWith("http") ? "_blank" : "_self"}
-            rel={item.href.startsWith("http") ? "noopener noreferrer" : ""}
-            className="flex items-center justify-between px-4 py-2 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
-          >
-            {item.label}
-            <TbExternalLink className="text-gray-1000 text-xs transition-transform duration-200 hover:scale-110" />
-          </a>
-        </li>
-      ))}
-    </ul>
-  </div>
-)}
-
+                    <div className="bg-gray-50 rounded-lg mt-1 overflow-hidden animate-in fade-in-0 slide-in-from-top-2 duration-300">
+                      <ul className="space-y-1 text-xs font-medium text-gray-700">
+                        {[
+                          {
+                            label: "Pay Fee",
+                            href: "https://rapid.grayquest.com/iudp-master",
+                          },
+                          {
+                            label: "ERP Login",
+                            href: "http://220.226.204.21/login.aspx/",
+                          },
+                          {
+                            label: "Superset",
+                            href: "https://app.joinsuperset.com/join/#/signup/student/placements/621c7653-bdeb-4ee2-bb72-765e5d1d9635",
+                          },
+                          {
+                            label: "Contact Us",
+                            href: "/contact",
+                          },
+                          {
+                            label: "Blogs",
+                            href: "/blogs",
+                          },
+                        ].map((item, index) => (
+                          <li
+                            key={index}
+                            className="animate-in fade-in-0 slide-in-from-left-2 duration-300"
+                            style={{ animationDelay: `${index * 50}ms` }}
+                          >
+                            <a
+                              href={item.href}
+                              target={
+                                item.href.startsWith("http")
+                                  ? "_blank"
+                                  : "_self"
+                              }
+                              rel={
+                                item.href.startsWith("http")
+                                  ? "noopener noreferrer"
+                                  : ""
+                              }
+                              className="flex items-center justify-between px-4 py-2 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
+                            >
+                              {item.label}
+                              <TbExternalLink className="text-gray-1000 text-xs transition-transform duration-200 hover:scale-110" />
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
 
                 {/* 🔹 About Us */}
@@ -859,160 +908,8 @@ const Navbar = () => {
       {/* ===== APPLY NOW MODAL ===== */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60] animate-in fade-in-0 duration-300">
-          <div className="bg-white w-[90%] md:w-[680px] p-6 rounded-lg shadow-lg relative max-h-[90vh] overflow-y-auto animate-in fade-in-0 zoom-in-95 duration-500">
-            {/* Close Button */}
-            <button
-              onClick={toggleModal}
-              aria-label="Close"
-              className="absolute top-3 right-3 text-gray-600 hover:text-red-600 text-2xl transition-all duration-300 hover:scale-110"
-            >
-              ×
-            </button>
-
-            <h2 className="text-2xl font-bold text-center mb-6 text-blue-900 animate-in fade-in-0 slide-in-from-top-2 duration-500">
-              Enquire Now
-            </h2>
-
-            <form className="space-y-4">
-              {/* Name & Email */}
-              <input
-                type="text"
-                placeholder="Enter Name *"
-                className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105"
-              />
-              <input
-                type="email"
-                placeholder="Enter Email Address *"
-                className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105"
-              />
-
-              {/* Mobile */}
-              <div className="flex gap-2">
-                <select className="w-24 border border-gray-300 rounded-md px-2 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
-                  <option value="" selected className="text-gray-400">
-                    +91
-                  </option>
-                  <option value="" className="text-gray-400">
-                    +92
-                  </option>
-                </select>
-                <input
-                  type="tel"
-                  placeholder="Enter Mobile Number *"
-                  className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105"
-                />
-              </div>
-
-              {/* State & City */}
-              <div className="flex gap-2">
-                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
-                  <option value="" disabled selected className="text-gray-400">
-                    Select State *
-                  </option>
-                  <option value="Maharashtra" className="text-gray-900">
-                    Maharashtra
-                  </option>
-                  <option value="Karnataka" className="text-gray-900">
-                    Karnataka
-                  </option>
-                </select>
-                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
-                  <option value="" disabled selected className="text-gray-400">
-                    Select City *
-                  </option>
-                  <option value="Pune" className="text-gray-900">
-                    Pune
-                  </option>
-                  <option value="Mumbai" className="text-gray-900">
-                    Mumbai
-                  </option>
-                </select>
-              </div>
-
-              {/* Discipline & Course */}
-              <div className="flex gap-2">
-                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
-                  <option value="" disabled selected className="text-gray-400">
-                    Select Discipline Applying For *
-                  </option>
-                  <option value="Engineering" className="text-gray-900">
-                    Engineering
-                  </option>
-                  <option value="Management" className="text-gray-900">
-                    Management
-                  </option>
-                </select>
-                <select className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
-                  <option value="" disabled selected className="text-gray-400">
-                    Select Course *
-                  </option>
-                  <option
-                    value="Computer Engineering"
-                    className="text-gray-900"
-                  >
-                    Computer Engineering
-                  </option>
-                  <option
-                    value="Mechanical Engineering"
-                    className="text-gray-900"
-                  >
-                    Mechanical Engineering
-                  </option>
-                </select>
-              </div>
-
-              {/* Program */}
-              <select className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105">
-                <option value="" disabled selected className="text-gray-400">
-                  Select Program *
-                </option>
-                <option value="B.Tech" className="text-gray-900">
-                  B.Tech
-                </option>
-                <option value="M.Tech" className="text-gray-900">
-                  M.Tech
-                </option>
-              </select>
-
-              {/* CET Score */}
-              <input
-                type="text"
-                placeholder="Enter CET Score"
-                className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105"
-              />
-
-              {/* Captcha */}
-              <div className="flex gap-3 items-center">
-                <div className="bg-gray-100 border border-gray-300 rounded-md w-1/2 flex items-center justify-center py-2 text-gray-700 font-bold select-none transition-all duration-300 hover:shadow-md">
-                  8fcb09
-                </div>
-                <input
-                  type="text"
-                  placeholder="Enter Captcha"
-                  className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E85C0D] transition-all duration-300 focus:scale-105"
-                />
-              </div>
-
-              {/* Checkbox */}
-              <div className="flex items-center gap-2 mt-2">
-                <input
-                  type="checkbox"
-                  id="agreeModal"
-                  className="transition-all duration-300 hover:scale-110"
-                />
-                <label htmlFor="agreeModal" className="text-sm text-gray-700">
-                  I agree to receive information regarding my submitted enquiry*
-                </label>
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full bg-[#E85C0D] hover:bg-[#d14f08] text-gray-100 font-semibold py-2 rounded-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
-              >
-                SUBMIT
-              </button>
-            </form>
+          <div ref={modalRef} className="max-w-4xl">
+            <ApplyForm />
           </div>
         </div>
       )}

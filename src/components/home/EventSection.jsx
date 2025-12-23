@@ -210,7 +210,7 @@ export default function EventsSection() {
 
         .scale-up {
           transform: scale(1.05) translateZ(0);
-          background-color: #f0f9ff;
+          background-color: #99f6e4;
           z-index: 20;
           box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
         }

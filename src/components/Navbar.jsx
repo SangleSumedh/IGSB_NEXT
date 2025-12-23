@@ -677,58 +677,50 @@ const Navbar = () => {
                   </button>
 
                   {mobileDropdown === "quickLinks" && (
-                    <div className="bg-gray-50 rounded-lg mt-1 overflow-hidden animate-in fade-in-0 slide-in-from-top-2 duration-300">
-                      <ul className="space-y-1 text-xs font-medium text-gray-700">
-                        {[
-                          {
-                            label: "Pay Fee",
-                            href: "https://rapid.grayquest.com/iudp-master",
-                          },
-                          {
-                            label: "ERP Staff",
-                            href: "https://indira.edupluscampus.com/",
-                          },
-                          {
-                            label: "ERP Student",
-                            href: "https://myindira.edupluscampus.com/",
-                          },
-                          {
-                            label: "360° Tour",
-                            href: "https://indiraicem.ac.in/ICEM-360-degree-virtual-tour/",
-                          },
-                          {
-                            label: "Leaving Certificate",
-                            href: "https://lc-icem-sumedh.vercel.app",
-                          },
-                          { label: "Contact Us", href: "/contact" },
-                        ].map((item, index) => (
-                          <li
-                            key={index}
-                            className="animate-in fade-in-0 slide-in-from-left-2 duration-300"
-                            style={{ animationDelay: `${index * 50}ms` }}
-                          >
-                            <a
-                              href={item.href}
-                              target={
-                                item.href.startsWith("http")
-                                  ? "_blank"
-                                  : "_self"
-                              }
-                              rel={
-                                item.href.startsWith("http")
-                                  ? "noopener noreferrer"
-                                  : ""
-                              }
-                              className="flex items-center justify-between px-4 py-2 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
-                            >
-                              {item.label}
-                              <TbExternalLink className="text-gray-1000 text-xs transition-transform duration-200 hover:scale-110" />
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+  <div className="bg-gray-50 rounded-lg mt-1 overflow-hidden animate-in fade-in-0 slide-in-from-top-2 duration-300">
+    <ul className="space-y-1 text-xs font-medium text-gray-700">
+      {[
+        {
+          label: "Pay Fee",
+          href: "https://rapid.grayquest.com/iudp-master",
+        },
+        {
+          label: "ERP Login",
+          href: "http://220.226.204.21/login.aspx/",
+        },
+        {
+          label: "Superset",
+          href: "https://app.joinsuperset.com/join/#/signup/student/placements/621c7653-bdeb-4ee2-bb72-765e5d1d9635",
+        },
+        {
+          label: "Contact Us",
+          href: "/contact",
+        },
+        {
+          label: "Blogs",
+          href: "/blogs",
+        },
+      ].map((item, index) => (
+        <li
+          key={index}
+          className="animate-in fade-in-0 slide-in-from-left-2 duration-300"
+          style={{ animationDelay: `${index * 50}ms` }}
+        >
+          <a
+            href={item.href}
+            target={item.href.startsWith("http") ? "_blank" : "_self"}
+            rel={item.href.startsWith("http") ? "noopener noreferrer" : ""}
+            className="flex items-center justify-between px-4 py-2 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
+          >
+            {item.label}
+            <TbExternalLink className="text-gray-1000 text-xs transition-transform duration-200 hover:scale-110" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+
                 </div>
 
                 {/* 🔹 About Us */}

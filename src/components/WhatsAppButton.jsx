@@ -42,7 +42,7 @@ const WhatsAppButton = () => {
         whileHover={{ scale: 1.1 }}
       >
         <a
-          href="https://wa.me/917720010705?text=Hi,%20I'm%20interested%20in%20ICEM%20admissions"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg transition-colors duration-200 flex items-center justify-center"

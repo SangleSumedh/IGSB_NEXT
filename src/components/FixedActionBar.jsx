@@ -63,7 +63,7 @@ const FixedActionBar = () => {
               <span className="w-[1px] h-6 bg-white/40"></span>
 
               <Link
-                href="mailto"
+                href="#"
                 target="_blank"
                 className="bg-white text-black p-2.5 rounded-md shadow hover:scale-105 transition"
               >

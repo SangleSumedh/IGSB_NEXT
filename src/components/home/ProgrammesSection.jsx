@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
 export default function ProgrammesSection() {
@@ -7,6 +8,7 @@ export default function ProgrammesSection() {
       tag: "Human Resource Management",
       title: "Human Resource Management",
       img: "/MBA4.jpg",
+      href: "/programs/mba?spec=hr",
       desc:
         "The HR specialization prepares students to manage people, culture, and organizational development with strategic insight. Students learn talent acquisition, performance management, employee engagement, HR analytics, and labor laws—enabling them to build high-performing workplaces and lead transformational people practices in dynamic business environments.",
     },
@@ -14,6 +16,7 @@ export default function ProgrammesSection() {
       tag: "Finance Management",
       title: "Finance Management",
       img: "/MBA1.jpg",
+      href: "/programs/mba?spec=finance",
       desc:
         "The finance specialization develops strong analytical and strategic decision-making skills in financial planning, investment analysis, corporate finance, banking, risk management, and capital markets.",
     },
@@ -21,6 +24,7 @@ export default function ProgrammesSection() {
       tag: "Operations & Supply Chain Management",
       title: "Operations & Supply Chain Management",
       img: "/MBA3.jpg",
+      href: "/programs/mba?spec=operations",
       desc:
         "Focused on efficiency and value creation, this specialization trains students in logistics, process optimization, supply chain strategy, and technology-enabled operations.",
     },
@@ -28,6 +32,7 @@ export default function ProgrammesSection() {
       tag: "Marketing Management",
       title: "Marketing Management",
       img: "/MBA2.jpg",
+      href: "/programs/mba?spec=marketing",
       desc:
         "This specialization equips students with cutting-edge skills in digital marketing, branding, consumer behavior, sales strategy, and market research.",
     },
@@ -35,6 +40,7 @@ export default function ProgrammesSection() {
       tag: "Business Analytics",
       title: "Business Analytics",
       img: "/MBA4.jpg",
+      href: "/programs/mba?spec=ba",
       desc:
         "The Business Analytics specialization empowers students with data-driven decision-making skills using statistics, data visualization, predictive analytics, and BI tools.",
     },
@@ -58,42 +64,48 @@ export default function ProgrammesSection() {
 
         {/* ================= MOBILE + TABLET + LG ================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:hidden">
-
-          {/* First row (2 cards) */}
-          <Card {...items[0]} />
-          <Card {...items[1]} />
-
-          {/* Second row (3 cards) */}
-          <Card {...items[2]} />
-          <Card {...items[3]} />
-          <Card {...items[4]} />
+          {items.map((item, index) => (
+            <Link key={index} href={item.href}>
+              <Card {...item} />
+            </Link>
+          ))}
         </div>
 
-        {/* ================= XL DESKTOP (CURRENT LAYOUT) ================= */}
+        {/* ================= XL DESKTOP ================= */}
         <div className="hidden xl:grid xl:grid-cols-3 xl:gap-6">
 
           {/* FIRST ROW */}
           <div className="xl:col-span-2 grid xl:grid-cols-3 gap-6">
             <div className="xl:col-span-2">
-              <Card {...items[0]} />
+              <Link href={items[0].href}>
+                <Card {...items[0]} />
+              </Link>
             </div>
             <div className="xl:col-span-1">
-              <Card {...items[1]} />
+              <Link href={items[1].href}>
+                <Card {...items[1]} />
+              </Link>
             </div>
           </div>
 
           {/* TALL CARD */}
           <div className="xl:row-span-2">
-            <Card {...items[2]} tall />
+            <Link href={items[2].href}>
+              <Card {...items[2]} tall />
+            </Link>
           </div>
 
           {/* SECOND ROW */}
           <div className="xl:col-span-2 grid xl:grid-cols-3 gap-6">
             <div className="xl:col-span-1">
-              <Card {...items[3]} />
+              <Link href={items[3].href}>
+                <Card {...items[3]} />
+              </Link>
             </div>
             <div className="xl:col-span-2">
-              <Card {...items[4]} />
+              <Link href={items[4].href}>
+                <Card {...items[4]} />
+              </Link>
             </div>
           </div>
 
@@ -119,7 +131,7 @@ function Card({ img, tag, title, desc, tall }) {
 
       <div className="absolute inset-0 bg-teal-200 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
 
-      <span className="absolute top-4 left-4 bg-teal-200 text-black text-xs font-semibold px-3 py-1 rounded-md z-20">
+      <span className="absolute top-4 left-4 bg-teal-200 text-black text-xs font-semibold px-3 py-1 rounded-md z-20 group-hover:bg-white">
         {tag}
       </span>
 

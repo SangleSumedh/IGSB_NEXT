@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
 export default function PhdSection() {
@@ -18,61 +19,57 @@ export default function PhdSection() {
           PhD Research Programmes
         </h2>
 
-        {/* TEXT BELOW HEADING */}
+        {/* TEXT */}
         <div className="max-w-7xl mb-10 space-y-4">
           <p className="text-gray-700 text-md md:text-lg leading-relaxed text-justify">
             Indira Global School of Business (IGSB), recognized by AICTE and UGC and
             affiliated with Savitribai Phule Pune University (SPPU), has built a strong
             reputation as a premier B-School shaping globally competent management
-            professionals. Strengthening its academic excellence, IGSB now offers
-            Doctoral Programs in Management from the academic year 2025–26, marking a
-            significant step toward fostering impactful research and innovation.
+            professionals.
           </p>
 
           <p className="text-gray-700 text-md md:text-lg leading-relaxed text-justify">
             The IGSB Research Center (PGRC) is a recognized Ph.D. Research Center under
             SPPU, dedicated to promoting high-quality, rigorous research across diverse
-            management domains. The Center aims to cultivate an intellectually
-            stimulating environment where scholars, academicians, and industry
-            researchers collaborate to explore contemporary business challenges and
-            contribute original insights to the field of management.
+            management domains.
           </p>
 
           <p className="text-gray-700 text-md md:text-lg leading-relaxed text-justify">
-            At the heart of the Research Center’s philosophy is a commitment to advancing
-            knowledge through scholarly inquiry, critical thinking, and interdisciplinary
-            engagement. The Doctoral Programme encourages research that not only enriches
-            academic literature but also supports industry, policy, and society through
-            evidence-based outcomes. IGSB strongly promotes multidisciplinary research,
-            empowering scholars to integrate perspectives and address complex, real-world
-            challenges with depth and innovation.
+            The Doctoral Programme encourages multidisciplinary research that enriches
+            academic literature and addresses real-world challenges with innovation.
           </p>
         </div>
 
-        {/* ================= MOBILE (EQUAL CARDS) ================= */}
+        {/* ================= MOBILE ================= */}
         <div className="grid grid-cols-1 gap-6 md:hidden">
           {items.map((item, index) => (
-            <Card key={index} {...item} />
+            <Link key={index} href="/programs/phd">
+              <Card {...item} />
+            </Link>
           ))}
         </div>
 
-        {/* ================= DESKTOP (EXISTING LAYOUT) ================= */}
+        {/* ================= DESKTOP ================= */}
         <div className="hidden md:grid md:grid-cols-3 gap-6">
 
           {/* LEFT TALL CARD */}
-          <div className="md:row-span-2">
+          <Link href="/programs/phd" className="md:row-span-2">
             <Card {...items[0]} tall />
-          </div>
+          </Link>
 
-          {/* RIGHT TOP BIG CARD */}
-          <div className="md:col-span-2">
+          {/* RIGHT TOP CARD */}
+          <Link href="/programs/phd" className="md:col-span-2">
             <Card {...items[1]} />
-          </div>
+          </Link>
 
           {/* RIGHT BOTTOM TWO CARDS */}
           <div className="md:col-span-2 grid md:grid-cols-2 gap-6">
-            <Card {...items[2]} />
-            <Card {...items[3]} />
+            <Link href="/programs/phd">
+              <Card {...items[2]} />
+            </Link>
+            <Link href="/programs/phd">
+              <Card {...items[3]} />
+            </Link>
           </div>
 
         </div>
@@ -102,17 +99,17 @@ function Card({ img, tag, title, tall }) {
       <div className="absolute inset-0 bg-teal-200 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
 
       {/* TAG */}
-      <span className="absolute top-4 left-4 bg-teal-200 text-black text-xs font-semibold px-3 py-1 rounded-md z-20">
+      <span className="absolute top-4 left-4 bg-teal-200 text-black text-xs font-semibold px-3 py-1 rounded-md z-20 group-hover:bg-white">
         {tag}
       </span>
 
       {/* CONTENT */}
       <div className="absolute bottom-6 left-6 right-6 z-20">
-        <h3 className="text-xl font-semibold text-white transition-all duration-500 group-hover:text-black">
+        <h3 className="text-xl font-semibold text-white group-hover:text-black transition-all duration-500">
           {title}
         </h3>
 
-        <p className="text-sm text-white opacity-0 max-h-0 overflow-hidden 
+        <p className="text-sm text-white opacity-0 max-h-0 overflow-hidden
           group-hover:max-h-24 group-hover:opacity-100 transition-all duration-500 group-hover:text-black">
           Explore advanced PhD research opportunities across specializations.
         </p>

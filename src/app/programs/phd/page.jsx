@@ -42,7 +42,7 @@ export default function PHD() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
 
         <div className="relative max-w-6xl px-6 md:px-12 lg:px-20 z-20 text-white">
-          <h1 className="text-4xl md:text-5xl font-bold leading-snug">
+          <h1 className="text-2xl md:text-4xl font-bold leading-snug">
             Ph.D. Research Centre in Indira Global School of Business
           </h1>
           <p className="mt-4 text-white/90 max-w-2xl leading-relaxed">
@@ -128,7 +128,7 @@ export default function PHD() {
       {/* ===================================================
           PHD GUIDES
       =================================================== */}
-      <section className="bg-white  py-8  space-y-6 max-w-7xl mx-auto mt-12  ">
+      <section className="bg-white px-6 md:px-8  py-8  space-y-6 max-w-7xl mx-auto mt-12  ">
         <h2 className="text-3xl font-bold text-secondary text-left">
           Recognized Ph.D. Guides
         </h2>

@@ -296,13 +296,15 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
 
   // Render content by type
   const renderContent = (data) => {
+    if (!data) return null; // Safety check
+
     switch (data.type) {
       case "accordion":
         return (
           <div className="space-y-4">
-            {Object.entries(data.content).map(([title, items]) => (
+            {Object.entries(data.content).map(([title, items], index) => (
               <div key={title} className="border border-gray-300 rounded-lg">
-                <details className="group">
+                <details className="group" open={index === 0}>
                   <summary className="flex justify-between items-center p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 rounded-lg">
                     <h4 className="font-semibold text-secondary text-lg">
                       {title}
@@ -312,9 +314,8 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
                     </span>
                   </summary>
 
-                  <div className="p-4 pt-2 space-y-2">
+                  <div className="p-4 pt-2 space-y-2 text-justify">
                     {items.map((item, i) => {
-                      // TABLE SUPPORT
                       if (typeof item === "object" && item.table) {
                         return (
                           <div key={i} className="overflow-x-auto my-4">
@@ -352,8 +353,6 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
                           </div>
                         );
                       }
-
-                      // PDF LINKS
                       if (typeof item === "object" && item.pdf) {
                         return (
                           <a
@@ -366,9 +365,6 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
                           </a>
                         );
                       }
-
-                      // NORMAL TEXT
-                      // LIST SUPPORT
                       if (typeof item === "object" && item.list) {
                         return (
                           <ul
@@ -381,8 +377,6 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
                           </ul>
                         );
                       }
-
-                      // LINK SUPPORT
                       if (typeof item === "object" && item.link) {
                         return (
                           <a
@@ -394,8 +388,6 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
                           </a>
                         );
                       }
-
-                      // NORMAL TEXT
                       return (
                         <p
                           key={i}
@@ -441,7 +433,6 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
                         ))}
                       </tr>
                     </thead>
-
                     <tbody>
                       {tbl.rows.map((row, ri) => (
                         <tr key={ri} className="border-b hover:bg-gray-50">
@@ -459,7 +450,6 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
             ))}
           </div>
         );
-
       case "syllabus":
         return (
           <div className="space-y-4">
@@ -472,7 +462,7 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
                 <a
                   href={item.pdf}
                   target="_blank"
-                  className="px-4 py-2 bg-secondary text-white rounded-md"
+                  className="mt-2 sm:mt-0 px-4 py-2 bg-secondary text-white rounded-md text-center"
                 >
                   View / Download
                 </a>
@@ -480,72 +470,6 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
             ))}
           </div>
         );
-
-      case "entcLabs":
-        return (
-          <div>
-            <h4 className="font-semibold text-secondary text-lg mb-4">
-              Department Laboratories
-            </h4>
-
-            <div className="overflow-x-auto border border-gray-300 rounded-lg">
-              <table className="w-full text-sm text-left border-collapse">
-                <thead className="bg-gray-100 text-gray-700">
-                  <tr>
-                    <th className="border border-gray-300 p-3">Sr. No.</th>
-                    <th className="border border-gray-300 p-3">Lab No.</th>
-                    <th className="border border-gray-300 p-3">Lab Name</th>
-                    <th className="border border-gray-300 p-3">Total PCs</th>
-                    <th className="border border-gray-300 p-3">
-                      Configuration
-                    </th>
-                    <th className="border border-gray-300 p-3">
-                      Software Installed
-                    </th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {data.content.map((lab, index) => (
-                    <tr
-                      key={index}
-                      className="border-b border-gray-300 align-top"
-                    >
-                      <td className="border border-gray-300 p-3">{lab.srNo}</td>
-                      <td className="border border-gray-300 p-3">
-                        {lab.labNo}
-                      </td>
-                      <td className="border border-gray-300 p-3">
-                        {lab.labName}
-                      </td>
-                      <td className="border border-gray-300 p-3">
-                        {lab.totalPCs}
-                      </td>
-                      <td className="border border-gray-300 p-3 whitespace-pre-line">
-                        {lab.configuration}
-                      </td>
-                      <td className="border border-gray-300 p-3 whitespace-pre-line">
-                        {lab.software}
-                      </td>
-                    </tr>
-                  ))}
-
-                  {/* Total PCs Row */}
-                  <tr className="font-semibold bg-gray-50">
-                    <td className="border border-gray-300 p-3" colSpan={3}>
-                      Total PCs
-                    </td>
-                    <td className="border border-gray-300 p-3">75</td>
-                    <td className="border border-gray-300 p-3" colSpan={2}></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        );
-
-      // ========== UPDATED MECHANICAL LAB TABLE (2 COLUMNS) ==========
-
       default:
         return null;
     }
@@ -565,11 +489,50 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        {/* ================= MOBILE VIEW (Accordion Layout) ================= */}
+        {/* This div is hidden on large screens (lg:hidden) */}
+        <div className="lg:hidden space-y-4">
+          {tabs.map((tab) => (
+            <div
+              key={tab}
+              className="bg-white rounded-xl shadow-sm border border-gray-300 overflow-hidden"
+            >
+              {/* Accordion Header (The Tab Button) */}
+              <button
+                onClick={() => setActive(active === tab ? "" : tab)}
+                className={`w-full text-left px-6 py-4 font-semibold flex justify-between items-center transition-colors ${
+                  active === tab
+                    ? "bg-secondary text-white"
+                    : "bg-white text-gray-800 hover:bg-gray-50"
+                }`}
+              >
+                {tab}
+                <span
+                  className={`transform transition-transform duration-200 ${
+                    active === tab ? "rotate-180" : ""
+                  }`}
+                >
+                  ▼
+                </span>
+              </button>
+
+              {/* Accordion Content (Renders below header if active) */}
+              {active === tab && (
+                <div className="p-6 border-t border-gray-200 bg-white animate-fadeIn">
+                  {renderContent(sectionContent[tab])}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* ================= DESKTOP VIEW (Sidebar + Content) ================= */}
+        {/* This div is hidden on small screens and grid on large (hidden lg:grid) */}
+        <div className="hidden lg:grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* LEFT MENU */}
-          <nav className="lg:col-span-1 bg-white rounded-xl shadow-sm p-6 space-y-2 border border-gray-300 sticky top-24">
-            <h3 className="font-semibold text-gray-800 mb-4 text-lg">
-              Quick Links
+          <nav className="lg:col-span-1 bg-white rounded-xl shadow-sm p-6 space-y-2 border border-gray-300 sticky top-24 h-fit">
+            <h3 className="font-semibold text-gray-800 mb-4 text-lg text-center">
+              MBA Overview
             </h3>
 
             {tabs.map((tab) => (
@@ -588,12 +551,14 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
           </nav>
 
           {/* RIGHT CONTENT */}
-          <div className="lg:col-span-3 bg-white rounded-xl shadow-sm p-8 border border-gray-300">
-            <div className="mb-6 pb-4 border-b border-gray-300">
-              <h3 className="text-2xl font-bold text-secondary">{active}</h3>
-            </div>
-
-            {renderContent(sectionContent[active])}
+          <div className="lg:col-span-3 bg-white rounded-xl shadow-sm p-8 border border-gray-300 min-h-[400px]">
+            {active && sectionContent[active] ? (
+              renderContent(sectionContent[active])
+            ) : (
+              <p className="text-gray-500 text-center mt-10">
+                Select a section to view details.
+              </p>
+            )}
           </div>
         </div>
       </div>

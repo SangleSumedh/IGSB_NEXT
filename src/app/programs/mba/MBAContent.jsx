@@ -227,8 +227,8 @@ export default function MBAContent() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent z-10" />
 
         <div className="relative max-w-[1500px] px-6 md:px-12 lg:px-20 z-20">
-          <div className="max-w-3xl text-white">
-            <h2 className="text-4xl md:text-5xl font-bold leading-snug">
+          <div className="max-w-3xl text-white text-sm md:text-lg">
+            <h2 className="text-2xl  md:text-4xl font-bold leading-snug">
               2-Year Master of Business Administration (MBA)
             </h2>
 
@@ -243,13 +243,13 @@ export default function MBAContent() {
             <div className="flex gap-4 mt-6">
               <button
                 onClick={toggleModal}
-                className="bg-secondary text-white px-8 py-3 rounded-lg"
+                className="bg-secondary text-white px-6 py-2 rounded-lg"
               >
                 Enquire Now
               </button>
               <button
                 onClick={handleBrochureDownload}
-                className="bg-secondary text-white px-8 py-3 rounded-lg"
+                className="bg-secondary text-white px-6 py-2 rounded-lg"
               >
                 Download Brochure
               </button>
@@ -440,10 +440,7 @@ export default function MBAContent() {
       {/* ============================
      CAREER OPPORTUNITIES + APPLY FORM (SIDE BY SIDE)
 ============================ */}
-      <div
-        ref={applyRef}
-        className="max-w-7xl mx-auto px-6 py-16 text-black grid grid-cols-1 md:grid-cols-2 gap-12"
-      >
+      <div className="max-w-7xl mx-auto px-6 py-16 text-black grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* LEFT — COMMON CAREER OPPORTUNITIES */}
         <div className="bg-white p-8 rounded-xl shadow-md border border-gray-200">
           <h2 className="text-3xl font-bold text-secondary mb-4">
@@ -465,7 +462,10 @@ export default function MBAContent() {
         </div>
 
         {/* RIGHT — APPLY FORM */}
-        <div className="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+        <div
+          ref={applyRef}
+          className="bg-white scroll-mt-15 rounded-xl shadow-md border border-gray-200"
+        >
           <ApplyForm />
         </div>
       </div>
@@ -475,16 +475,13 @@ export default function MBAContent() {
       {/* MODAL */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60]">
-          <div className="bg-white w-[90%] md:w-[680px] p-6 rounded-lg shadow-lg relative max-h-[90vh] overflow-y-auto">
+          <div className="bg-white w-[90%] md:w-[680px]  rounded-lg shadow-lg relative max-h-[90vh] overflow-y-auto">
             <button
               onClick={toggleModal}
               className="absolute top-3 right-3 text-2xl"
             >
               ×
             </button>
-            <h2 className="text-2xl font-bold text-center mb-6 text-blue-900">
-              Enquire Now
-            </h2>
 
             <ApplyForm />
           </div>

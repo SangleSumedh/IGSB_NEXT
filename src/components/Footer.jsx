@@ -63,7 +63,7 @@ const Footer = () => {
                   <FaInstagram />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.youtube.com/user/indiracollege"
                   className="hover:text-secondary transition-colors"
                 >
                   <FaYoutube />

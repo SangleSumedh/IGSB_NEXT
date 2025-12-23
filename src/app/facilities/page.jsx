@@ -30,7 +30,7 @@ export default function Sports() {
   };
 
 
-  
+
 
   // Hostel data
   const hostelData = {
@@ -366,8 +366,8 @@ export default function Sports() {
                     <div key={item} className="bg-gray-100 rounded-lg overflow-hidden shadow-md">
                       <div className="relative h-48 bg-gray-200 flex items-center justify-center">
                         <Image
-                          src={`/Facilities/${item}.jpg`}
-                          alt={`Canteen ${item}`}
+                          src={`/Facilities/${item}.webp`}
+                          alt={`${item}`}
                           fill
                           className="object-cover"
                           unoptimized={true}
@@ -568,33 +568,52 @@ export default function Sports() {
 
             {/* Contact Details Section */}
             <div className="w-full bg-white p-8 rounded-xl shadow-md">
-              <h3 className="text-2xl md:text-4xl font-bold text-secondary mb-6">Hostel Management Team</h3>
-              <div className="bg-white border border-gray-200 rounded-lg overflow-hidden mb-8">
-                <table className="w-full">
-                  <thead className="bg-secondary text-white">
-                    <tr>
-                      <th className="p-4 text-left">Name</th>
-                      <th className="p-4 text-left">Designation</th>
-                      <th className="p-4 text-left">Contact</th>
-                      <th className="p-4 text-left">Email</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {hostelData.managementTeam.map((staff, index) => (
-                      <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                        <td className="p-4 border-b border-gray-200 text-md md:text-lg">{staff.name}</td>
-                        <td className="p-4 border-b border-gray-200 text-md md:text-lg">{staff.designation}</td>
-                        <td className="p-4 border-b border-gray-200 text-md md:text-lg">{staff.contact}</td>
-                        <td className="p-4 border-b border-gray-200 text-blue-600 text-md md:text-lg">{staff.email}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              <h3 className="text-2xl md:text-4xl font-bold text-secondary mb-6">
+  Hostel Management Team
+</h3>
+
+<div className="bg-white border border-gray-200 rounded-lg mb-8">
+  <div className="overflow-x-auto">
+    <table className="min-w-[900px] w-full">
+      <thead className="bg-secondary text-white">
+        <tr>
+          <th className="p-4 text-left">Name</th>
+          <th className="p-4 text-left">Designation</th>
+          <th className="p-4 text-left">Contact</th>
+          <th className="p-4 text-left">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {hostelData.managementTeam.map((staff, index) => (
+          <tr
+            key={index}
+            className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}
+          >
+            <td className="p-4 border-b border-gray-200 text-md md:text-lg">
+              {staff.name}
+            </td>
+            <td className="p-4 border-b border-gray-200 text-md md:text-lg">
+              {staff.designation}
+            </td>
+            <td className="p-4 border-b border-gray-200 text-md md:text-lg">
+              {staff.contact}
+            </td>
+            <td className="p-4 border-b border-gray-200 text-blue-600 text-md md:text-lg">
+              {staff.email}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+
 
               <h3 className="text-2xl md:text-4xl font-bold text-secondary mb-6">Mess (Canteen) Team</h3>
-              <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                <table className="w-full">
+              <div className="bg-white border border-gray-200 rounded-lg mb-8">
+  <div className="overflow-x-auto">
+    <table className="min-w-[700px] w-full">
+
                   <thead className="bg-secondary text-white">
                     <tr>
                       <th className="p-4 text-left">Name</th>
@@ -612,6 +631,7 @@ export default function Sports() {
                     ))}
                   </tbody>
                 </table>
+                  </div>
               </div>
             </div>
 

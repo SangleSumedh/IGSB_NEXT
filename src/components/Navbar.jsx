@@ -552,7 +552,7 @@ const Navbar = () => {
               <div className="flex">
                 <button
                   onClick={toggleModal}
-                  className="bg-secondary text-gray-50 px-8 rounded-bl-lg text-sm font-semibold relative overflow-hidden transition-all duration-300"
+                  className="bg-secondary hover:!bg-teal-200 hover:text-gray-800 text-gray-50 px-6 rounded-bl-sm text-sm font-semibold relative overflow-hidden transition-all duration-300"
                 >
                   <span>Enquire Now</span>
                 </button>

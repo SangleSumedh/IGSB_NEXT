@@ -211,15 +211,15 @@ const dropdownContent = {
           { label: "Research Center", link: "/programs/phd" },
           {
             label: "Marketing Management",
-            link: "/programs/phd?spec=marketing",
+            link: "/programs/phd",
           },
           {
             label: "Finance Management",
-            link: "/programs/phd?spec=finance",
+            link: "/programs/phd",
           },
           {
             label: "Human Resource Management",
-            link: "/programs/phd?spec=hr",
+            link: "/programs/phd",
           },
           // {
           //   label: "Operations & Supply Chain Management",
@@ -227,7 +227,7 @@ const dropdownContent = {
           // },
           {
             label: "Bussiness Analytics",
-            link: "/programs/phd?spec=ba",
+            link: "/programs/phd",
           },
         ],
       },

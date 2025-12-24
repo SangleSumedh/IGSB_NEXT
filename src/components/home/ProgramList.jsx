@@ -6,11 +6,11 @@ import { IoMdArrowDropright } from "react-icons/io";
 
 const ProgramList = () => {
   const mbaPrograms = [
-    { name: "MBA – Human Resource Management", link: "/programs/mba/hr" },
-    { name: "MBA – Finance", link: "/programs/mba/finance" },
-    { name: "MBA – Marketing Management", link: "/programs/mba/marketing" },
-    { name: "MBA – Business Analytics", link: "/programs/mba/business-analytics" },
-        { name: "MBA – Operations & Supply Chain Management", link: "/programs/mba/operations" },
+    { name: "MBA – Human Resource Management", link: "/programs/mba" },
+    { name: "MBA – Finance", link: "/programs/mba" },
+    { name: "MBA – Marketing Management", link: "/programs/mba" },
+    { name: "MBA – Business Analytics", link: "/programs/mba" },
+    { name: "MBA – Operations & Supply Chain Management", link: "/programs/mba" },
   ];
 
   const phdPrograms = [
@@ -70,8 +70,9 @@ const ProgramList = () => {
 
           <ul className="space-y-3">
             {phdPrograms.map((item, index) => (
-              <li
+              <Link
                 key={index}
+                href="/programs/phd"
                 className="
                   flex items-center group
                   text-md md:text-lg
@@ -87,7 +88,7 @@ const ProgramList = () => {
                   "
                 />
                 {item.name}
-              </li>
+              </Link>
             ))}
           </ul>
         </div>

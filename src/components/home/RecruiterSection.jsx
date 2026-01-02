@@ -10,15 +10,15 @@ const RecruitersSection = () => {
   const pageContent = {
     "/": {
       headline: "INDIRA DEGREE OPENS DOORS. WIDE.",
-      body: "At Indira College of Engineering & Management, there is a strong focus on preparing every student to be industry ready. With numerous recruiters visiting our campus each year, our graduates gain access to a network of opportunities, resources, and the support needed to excel in a rapidly evolving job market.",
+      body: "At Indira Global School of Business, there is a strong focus on preparing every student to be industry ready. With numerous recruiters visiting our campus each year, our graduates gain access to a network of opportunities, resources, and the support needed to excel in a rapidly evolving job market.",
     },
     "/placement": {
       headline: "INDIRA DEGREE OPENS DOORS. WIDE.",
-      body: "At Indira College of Engineering & Management, there is a strong focus on preparing every student to be industry ready. With numerous recruiters visiting our campus each year, our graduates gain access to a network of opportunities, resources, and the support needed to excel in a rapidly evolving job market.",
+      body: "At Indira Global School of Business, there is a strong focus on preparing every student to be industry ready. With numerous recruiters visiting our campus each year, our graduates gain access to a network of opportunities, resources, and the support needed to excel in a rapidly evolving job market.",
     },
     "/programs/mba": {
       headline: "INDIRA DEGREE OPENS DOORS. WIDE.",
-      body: "At Indira College of Engineering & Management, there is a strong focus on preparing every student to be industry ready. With numerous recruiters visiting our campus each year, our graduates gain access to a network of opportunities, resources, and the support needed to excel in a rapidly evolving job market.",
+      body: "At Indira Global School of Business, there is a strong focus on preparing every student to be industry ready. With numerous recruiters visiting our campus each year, our graduates gain access to a network of opportunities, resources, and the support needed to excel in a rapidly evolving job market.",
     },
   };
 

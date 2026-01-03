@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------------------------------------
+Second Design Explore Section ...................
+ 
+"use client";
+
+import React from "react";
+import Image from "next/image";
+
+const ExploreSection = () => {
+  const logos = [
+    { title: "Approved by AICTE", img: "/AICTE.webp" },
+    { title: "Affiliated to SPPU Pune", img: "/SPPU.webp" },
+  ];
+
+  return (
+    <section className="w-full bg-white relative z-30 px-6 py-14">
+      <div className="max-w-7xl mx-auto space-y-8">
+
+        {/* TOP ROW — HEADING + LOGOS */}
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-2">
+
+          {/* HEADING */}
+          <div className="max-w-4xl">
+            <h2 className="text-3xl md:text-5xl lg:text-5xl font-semibold text-gray-800 leading-tight">
+              Explore Your Potential At
+            </h2>
+            <h2 className="text-3xl md:text-5xl lg:text-4xl font-extrabold text-secondary leading-tight mt-2">
+              INDIRA GLOBAL SCHOOL OF BUSINESS
+            </h2>
+          </div>
+
+          {/* LOGOS — clean */}
+          <div className="flex gap-6 shrink-0 items-center">
+            {logos.map((logo, index) => (
+              <Image
+                key={index}
+                src={logo.img}
+                alt={logo.title}
+                width={120}
+                height={120}
+                className="object-contain"
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* FULL WIDTH TEXT */}
+        <div className="space-y-4">
+          <p className="text-gray-700 text-md md:text-lg leading-relaxed text-justify">
+            We develop globally competent, purpose-driven leaders equipped to excel in today’s fast-evolving business landscape. As a premier AICTE-approved MBA institute, our vision is to be a hub of academic excellence that nurtures strategic thinkers who lead with integrity, empathy, and a commitment to sustainable and socially responsible business practices.
+          </p>
+
+          <p className="text-gray-700 text-md md:text-lg leading-relaxed text-justify">
+            IGSB is located along the Mumbai–Pune Expressway, our campus blends state-of-the-art infrastructure with a serene, natural setting, offering a fresh and inspiring environment that fosters innovation, focus, and holistic development.
+          </p>
+
+          <p className="text-gray-700 text-md md:text-lg leading-relaxed text-justify">
+            Through industry-integrated MBA programmes and a rigorous experiential learning pedagogy, IGSB empowers future leaders with the strategic acumen, adaptive mindset, and ethical grounding needed to navigate complex markets and drive meaningful organizational impact. We don't just teach management, we cultivate leaders who create value, inspire change, and lead with vision.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default ExploreSection;
+
+----------------------------------------------------------------------------------------

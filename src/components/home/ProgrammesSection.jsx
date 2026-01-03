@@ -5,51 +5,46 @@ import { ChevronRight } from "lucide-react";
 export default function ProgrammesSection() {
   const items = [
     {
+      tag: "Marketing Management",
+      title: "Marketing Management",
+      img: "/MBA2.jpg",
+      href: "/programs/mba?spec=marketing",
+      desc: "This specialization equips students with cutting-edge skills in digital marketing, branding, consumer behavior, sales strategy, and market research.",
+    },
+
+    {
       tag: "Human Resource Management",
       title: "Human Resource Management",
       img: "/MBA4.jpg",
       href: "/programs/mba?spec=hr",
-      desc:
-        "The HR specialization prepares students to manage people, culture, and organizational development with strategic insight. Students learn talent acquisition, performance management, employee engagement, HR analytics, and labor laws—enabling them to build high-performing workplaces and lead transformational people practices in dynamic business environments.",
+      desc: "The HR specialization prepares students to manage people, culture, and organizational development with strategic insight. Students learn talent acquisition, performance management, employee engagement, HR analytics, and labor laws—enabling them to build high-performing workplaces and lead transformational people practices in dynamic business environments.",
     },
     {
       tag: "Finance Management",
       title: "Finance Management",
       img: "/MBA1.jpg",
       href: "/programs/mba?spec=finance",
-      desc:
-        "The finance specialization develops strong analytical and strategic decision-making skills in financial planning, investment analysis, corporate finance, banking, risk management, and capital markets.",
-    },
-    {
-      tag: "Operations & Supply Chain Management",
-      title: "Operations & Supply Chain Management",
-      img: "/MBA3.jpg",
-      href: "/programs/mba?spec=operations",
-      desc:
-        "Focused on efficiency and value creation, this specialization trains students in logistics, process optimization, supply chain strategy, and technology-enabled operations.",
-    },
-    {
-      tag: "Marketing Management",
-      title: "Marketing Management",
-      img: "/MBA2.jpg",
-      href: "/programs/mba?spec=marketing",
-      desc:
-        "This specialization equips students with cutting-edge skills in digital marketing, branding, consumer behavior, sales strategy, and market research.",
+      desc: "The finance specialization develops strong analytical and strategic decision-making skills in financial planning, investment analysis, corporate finance, banking, risk management, and capital markets.",
     },
     {
       tag: "Business Analytics",
       title: "Business Analytics",
       img: "/MBA4.jpg",
       href: "/programs/mba?spec=ba",
-      desc:
-        "The Business Analytics specialization empowers students with data-driven decision-making skills using statistics, data visualization, predictive analytics, and BI tools.",
+      desc: "The Business Analytics specialization empowers students with data-driven decision-making skills using statistics, data visualization, predictive analytics, and BI tools.",
+    },
+    {
+      tag: "Operations & Supply Chain Management",
+      title: "Operations & Supply Chain Management",
+      img: "/MBA3.jpg",
+      href: "/programs/mba?spec=operations",
+      desc: "Focused on efficiency and value creation, this specialization trains students in logistics, process optimization, supply chain strategy, and technology-enabled operations.",
     },
   ];
 
   return (
     <div className="w-full bg-white px-6 py-12">
       <section className="w-full max-w-7xl mx-auto">
-
         {/* HEADING */}
         <h2 className="text-2xl md:text-4xl font-extrabold text-secondary mb-4">
           MBA Specializations
@@ -57,9 +52,10 @@ export default function ProgrammesSection() {
 
         {/* TEXT */}
         <p className="text-gray-700 text-md md:text-lg mb-10 max-w-7xl">
-          IGSB offers diverse MBA specializations—including Marketing, Finance, HR,
-          and Operations & Supply Chain Management—designed to build industry-ready
-          professionals with strong analytical, leadership, and strategic capabilities.
+          IGSB offers diverse MBA specializations—including Marketing, Finance,
+          HR, and Operations & Supply Chain Management—designed to build
+          industry-ready professionals with strong analytical, leadership, and
+          strategic capabilities.
         </p>
 
         {/* ================= MOBILE + TABLET + LG ================= */}
@@ -73,7 +69,6 @@ export default function ProgrammesSection() {
 
         {/* ================= XL DESKTOP ================= */}
         <div className="hidden xl:grid xl:grid-cols-3 xl:gap-6">
-
           {/* FIRST ROW */}
           <div className="xl:col-span-2 grid xl:grid-cols-3 gap-6">
             <div className="xl:col-span-2">
@@ -108,7 +103,6 @@ export default function ProgrammesSection() {
               </Link>
             </div>
           </div>
-
         </div>
       </section>
     </div>

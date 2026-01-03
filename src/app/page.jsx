@@ -13,6 +13,7 @@ import InstagramMosaic from "@/components/home/InstagramMosaic";
 import NewDiscover from "@/components/home/newDiscover";
 import ProgrammesSection from "@/components/home/ProgrammesSection";
 import Phd from "@/components/home/Phd";
+import Pillar from "@/components/home/Pillar";
 
 
 export default function HomePage() {
@@ -23,6 +24,7 @@ export default function HomePage() {
         {/* <NewDiscover /> */}
 
         {/* <DiscoverPaths /> */}
+        <Pillar />
         <ProgrammesSection />
         <Phd />
         <AcademicYearSection />

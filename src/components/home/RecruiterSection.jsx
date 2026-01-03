@@ -9,16 +9,16 @@ const RecruitersSection = () => {
 
   const pageContent = {
     "/": {
-      headline: "INDIRA DEGREE OPENS DOORS. WIDE.",
-      body: "At Indira Global School of Business, there is a strong focus on preparing every student to be industry ready. With numerous recruiters visiting our campus each year, our graduates gain access to a network of opportunities, resources, and the support needed to excel in a rapidly evolving job market.",
+      headline: "Trusted by Industry, Defined by Outcomes ",
+      body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of graduate performance and professional readiness.",
     },
     "/placement": {
-      headline: "INDIRA DEGREE OPENS DOORS. WIDE.",
-      body: "At Indira Global School of Business, there is a strong focus on preparing every student to be industry ready. With numerous recruiters visiting our campus each year, our graduates gain access to a network of opportunities, resources, and the support needed to excel in a rapidly evolving job market.",
+      headline: "Trusted by Industry, Defined by Outcomes ",
+      body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of graduate performance and professional readiness. ",
     },
     "/programs/mba": {
-      headline: "INDIRA DEGREE OPENS DOORS. WIDE.",
-      body: "At Indira Global School of Business, there is a strong focus on preparing every student to be industry ready. With numerous recruiters visiting our campus each year, our graduates gain access to a network of opportunities, resources, and the support needed to excel in a rapidly evolving job market.",
+      headline: "Trusted by Industry, Defined by Outcomes ",
+      body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of graduate performance and professional readiness. ",
     },
   };
 
@@ -33,9 +33,9 @@ const RecruitersSection = () => {
   const reorderedLogos = [...mainLogos, allLogos[17], allLogos[24]];
 
   return (
-    <div className="bg-gray-50 px-6 sm:px-8 py-6 sm:py-8 relative overflow-hidden">
+    <div className="bg-white px-6 sm:px-8 py-6 sm:py-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="fade-up text-2xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
+        <h2 className="fade-up text-2xl sm:text-4xl font-extrabold text-secondary mb-4 sm:mb-6">
           {headline}
         </h2>
 

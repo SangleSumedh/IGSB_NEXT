@@ -1,34 +1,29 @@
 import React from "react";
 import Link from "next/link";
 import {
-  ChevronRight,
   TrendingUp,
+  PieChart,
   Users,
   BarChart3,
-  PieChart,
   ArrowUpRight,
 } from "lucide-react";
 
-const PROGRAMS = [
+const PHD_DOMAINS = [
   {
-    title: "PhD in Finance",
-    icon: <TrendingUp className="text-secondary" size={32} />,
-    color: "bg-blue-50",
+    title: "Marketing",
+    icon: <PieChart size={22} className="text-secondary" />,
   },
   {
-    title: "PhD in Marketing",
-    icon: <PieChart className="text-secondary" size={32} />,
-    color: "bg-teal-50",
+    title: "Finance",
+    icon: <TrendingUp size={22} className="text-secondary" />,
   },
   {
-    title: "PhD in Human Resource",
-    icon: <Users className="text-secondary" size={32} />,
-    color: "bg-purple-50",
+    title: "Human Resource Management",
+    icon: <Users size={22} className="text-secondary" />,
   },
   {
-    title: "PhD in Business Analytics",
-    icon: <BarChart3 className="text-secondary" size={32} />,
-    color: "bg-cyan-50",
+    title: "Business Analytics",
+    icon: <BarChart3 size={22} className="text-secondary" />,
   },
 ];
 
@@ -36,50 +31,71 @@ export default function PhdSection() {
   return (
     <section className="w-full bg-white py-16 px-6">
       <div className="max-w-7xl mx-auto">
-        {/* Simplified Header */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-secondary mb-4">
-            PhD Research Programmes
-          </h2>
-          <p className="text-gray-600 max-w-3xl text-md md:text-lg leading-relaxed">
-            The IGSB Research Center (PGRC) promotes high-quality, rigorous
-            research across diverse management domains, addressing real-world
-            challenges through academic innovation.
-          </p>
-        </div>
 
-        {/* Clean Icon Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {PROGRAMS.map((item, idx) => (
-            <Link
-              key={idx}
-              href="/programs/phd"
-              className="group block p-8 rounded-xl border border-gray-100 hover:border-teal-500 hover:shadow-sm transition-all duration-300 relative overflow-hidden"
-            >
-              {/* Subtle Icon Background */}
-              <div className={`mb-6 inline-flex p-3 rounded-lg ${item.color}`}>
-                {item.icon}
-              </div>
+        {/* SECTION HEADING — SEPARATE */}
+        <h2 className="text-2xl md:text-4xl font-extrabold text-secondary mb-10">
+          PhD Research Programmes
+        </h2>
 
-              <h3 className="text-lg font-bold text-gray-800 group-hover:text-secondary transition-colors">
-                {item.title}
-              </h3>
+        {/* MAIN GRID — 65 : 35 */}
+        <div className="grid grid-cols-1 lg:grid-cols-[65%_35%] gap-10 items-start">
 
-              <div className="mt-4 flex items-center text-sm font-medium text-gray-400 group-hover:text-secondary">
-                <span>View Program</span>
+          {/* LEFT SECTION — TEXT ONLY */}
+          <div className="space-y-5">
+            <p className="text-gray-700 text-md md:text-lg leading-relaxed text-justify">
+              Indira Global School of Business (IGSB) is an AICTE-approved,
+              UGC-recognized institution affiliated with Savitribai Phule Pune
+              University (SPPU) and is committed to advancing academic excellence,
+              thought leadership, and high-impact management research.
+            </p>
+
+            <p className="text-gray-700 text-md md:text-lg leading-relaxed text-justify">
+              The IGSB Research Centre (PGRC) is a recognized Ph.D. Research Centre
+              under SPPU. We promote original, methodologically rigorous research
+              that contributes meaningfully to global academic literature, policy
+              development, and practical business innovation, while preparing
+              scholars for careers in academia, research institutions, and
+              industry-led knowledge roles.
+            </p>
+            <p className="text-gray-700 text-md md:text-lg leading-relaxed text-justify">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio molestiae quaerat voluptatem, architecto eveniet in? Ad alias doloremque impedit magni earum cum quis dolor natus magnam? Vero molestias similique non.
+            </p>
+          </div>
+
+          {/* RIGHT SECTION — DOMAIN BLOCKS */}
+          <div className="flex flex-col justify-between h-full space-y-3">
+
+            {PHD_DOMAINS.map((item, index) => (
+              <Link
+                key={index}
+                href="/programs/phd"
+                className="group flex items-center justify-between gap-4 p-4
+                border border-gray-200 rounded-lg
+                hover:border-secondary hover:bg-gray-50
+                transition-all duration-300"
+              >
+                {/* LEFT — ICON + TITLE */}
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-md bg-gray-100 flex items-center justify-center shrink-0">
+                    {item.icon}
+                  </div>
+
+                  <h3 className="text-base font-semibold text-gray-800 leading-tight">
+                    {item.title}
+                  </h3>
+                </div>
+
+                {/* RIGHT — ARROW */}
                 <ArrowUpRight
-                  size={16}
-                  className="ml-1 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  size={18}
+                  className="text-gray-400 group-hover:text-secondary transition"
                 />
-              </div>
-            </Link>
-          ))}
-        </div>
+              </Link>
+            ))}
 
-        {/* Accreditation Footer */}
-        <p className="mt-10 text-center text-sm text-gray-400 font-medium italic">
-          Affiliated with Savitribai Phule Pune University (SPPU)
-        </p>
+          </div>
+
+        </div>
       </div>
     </section>
   );

@@ -27,7 +27,7 @@ export default function HomePage() {
         <Pillar />
         <ProgrammesSection />
         <Phd />
-        <AcademicYearSection />
+        {/* <AcademicYearSection /> */}
         <RecruitersSection />
         <EnergyInnovation />
         {/* <CollegeUnplugged /> */}

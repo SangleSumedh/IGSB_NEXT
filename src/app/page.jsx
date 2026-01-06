@@ -14,6 +14,7 @@ import NewDiscover from "@/components/home/newDiscover";
 import ProgrammesSection from "@/components/home/ProgrammesSection";
 import Phd from "@/components/home/Phd";
 import Pillar from "@/components/home/Pillar";
+import FormSection from "@/components/home/FormSection";
 
 
 export default function HomePage() {
@@ -26,6 +27,7 @@ export default function HomePage() {
         {/* <DiscoverPaths /> */}
         <Pillar />
         <ProgrammesSection />
+        <FormSection />
         <Phd />
         {/* <AcademicYearSection /> */}
         <RecruitersSection />

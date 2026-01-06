@@ -112,7 +112,7 @@ export default function ProgrammesSection() {
 
       {/* LEFT SIDE: CIRCLE INTERFACE */}
       <div className="hidden lg:block absolute -bottom-10 left-20 w-[45vw] h-[45vw]">
-        <div className="relative w-full h-full rounded-full border-[3px] border-orange-500 z-10">
+        <div className="relative w-full h-full rounded-full border-4 border-[#fc7116] z-10">
           {specializations.map((spec, index) => {
             const radian = (spec.angle * Math.PI) / 180;
             const left = 50 + 50 * Math.cos(radian);
@@ -139,7 +139,7 @@ export default function ProgrammesSection() {
                     ${
                       isActive
                         ? "bg-orange-600 text-white scale-125 border-4 border-orange-200"
-                        : "bg-white border-2 border-orange-500 text-black group-hover:scale-110"
+                        : "bg-white border-2 border-[#fc7116] text-black group-hover:scale-110"
                     }
                   `}
                 >
@@ -154,8 +154,8 @@ export default function ProgrammesSection() {
                     px-3 py-2 rounded-lg transition-all duration-300
                     ${
                       isActive
-                        ? "text-orange-600"
-                        : "text-slate-800 group-hover:text-orange-600"
+                        ? "text-[#fc7116]"
+                        : "text-slate-800 group-hover:text-[#fc7116]"
                     }
                   `}
                 >
@@ -230,10 +230,14 @@ export default function ProgrammesSection() {
       {/* RIGHT SIDE: INFO CARD */}
       <div className="hidden  lg:absolute right-0 top-0 w-full lg:w-1/3 h-full lg:flex items-center justify-center p-8 z-40 pointer-events-none">
         <div className="pointer-events-auto max-w-lg w-full">
-          <div className="bg-white/90 backdrop-blur-xl border border-white/20 shadow-2xl rounded-3xl p-8 md:p-12 relative overflow-hidden transition-all duration-500">
+          <div className="bg-[white/90] backdrop-blur-xl border border-white/20 shadow-2xl rounded-3xl p-8 md:p-12 relative overflow-hidden transition-all duration-500">
             {/* Decorative Background Icon */}
-            <div className="absolute -right-6 -top-6 opacity-10 rotate-12 scale-150">
-              <RenderIcon spec={activeSpec} size={180} />
+            <div className="absolute -right-6 -top-6 opacity-20 rotate-12 scale-150">
+              <RenderIcon
+                spec={activeSpec}
+                size={180}
+                className="text-orange-600"
+              />
             </div>
 
             {/* Animated Content */}
@@ -248,7 +252,7 @@ export default function ProgrammesSection() {
                 </span>
               </div>
 
-              <h2 className="text-3xl  font-extrabold text-slate-900 mb-6 leading-tight">
+              <h2 className="text-3xl  font-extrabold text-[#10404A] mb-6 leading-tight">
                 {activeSpec.title}
               </h2>
 
@@ -260,7 +264,7 @@ export default function ProgrammesSection() {
               {/* 4. 'Read More' Button with Routing */}
               <button
                 onClick={() => router.push("/programs/mba")}
-                className="group flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300"
+                className="group flex items-center gap-2 bg-[#10404A] text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300"
               >
                 Read More
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

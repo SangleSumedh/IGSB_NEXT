@@ -11,7 +11,9 @@ export default function ScrollToTop({ lenis }) {
   useEffect(() => {
     const handleScroll = () => {
       const isMobile = window.innerWidth < 768;
-      const scrollThreshold = isMobile ? 0.8 * window.innerHeight : window.innerHeight;
+      const scrollThreshold = isMobile
+        ? 0.8 * window.innerHeight
+        : window.innerHeight;
       setShow(window.scrollY > scrollThreshold);
     };
 
@@ -35,7 +37,7 @@ export default function ScrollToTop({ lenis }) {
   return (
     <button
       onClick={scrollTop}
-      className={` block fixed bottom-2 sm:bottom-28 right-4 sm:right-6 z-[999999] bg-secondary text-white p-2 sm:p-4 rounded-full shadow-lg w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center
+      className={` block fixed bottom-2 sm:bottom-28 right-4 sm:right-6 z-[999999] bg-[#10404A] text-white p-2 sm:p-4 rounded-full shadow-lg w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center
         transition-all duration-500 
         ${
           show

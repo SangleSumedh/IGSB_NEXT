@@ -27,7 +27,7 @@ const FixedActionBar = () => {
           <div className="relative p-[2px] transition-all duration-500 rounded-md">
             <button
               title="Menu"
-              className="relative flex items-center justify-center bg-secondary text-white p-4 rounded-md shadow-lg hover:brightness-110 transition-all duration-300"
+              className="relative flex items-center justify-center bg-[#10404A] text-white p-4 rounded-md shadow-lg hover:brightness-110 transition-all duration-300"
             >
               <LayoutGrid size={22} />
             </button>
@@ -41,7 +41,7 @@ const FixedActionBar = () => {
                 : "opacity-0 translate-x-3 pointer-events-none"
             }`}
           >
-            <div className="bg-secondary px-3 py-2 shadow-lg flex items-center gap-3 rounded-l-md">
+            <div className="bg-[#10404A] px-3 py-2 shadow-lg flex items-center gap-3 rounded-l-md">
               <Link
                 href="https://www.facebook.com/igsbpune"
                 target="_blank"
@@ -93,9 +93,13 @@ const FixedActionBar = () => {
             <button
               title="Social Media"
               onClick={() => setIsOpenMobile(!isOpenMobile)}
-              className="relative flex items-center justify-center bg-secondary text-white p-2 shadow-lg hover:brightness-110 transition-all duration-300"
+              className="relative flex items-center justify-center bg-[#10404A] text-white p-2 shadow-lg hover:brightness-110 transition-all duration-300"
             >
-              {isOpenMobile ? <PanelRightOpen size={18} /> : <PanelLeftOpen size={18} />}
+              {isOpenMobile ? (
+                <PanelRightOpen size={18} />
+              ) : (
+                <PanelLeftOpen size={18} />
+              )}
             </button>
           </div>
 
@@ -107,7 +111,7 @@ const FixedActionBar = () => {
                 : "opacity-0 -translate-x-3 pointer-events-none"
             }`}
           >
-            <div className="bg-secondary px-2 py-1 shadow-lg flex items-center gap-2 rounded-md">
+            <div className="bg-[#10404A] px-2 py-1 shadow-lg flex items-center gap-2 rounded-md">
               <Link
                 href="https://www.facebook.com/ICEM.AVIRAT/"
                 target="_blank"

@@ -55,7 +55,6 @@ const ExploreSection = () => {
           </div>
 
           {/* RIGHT CONTENT */}
-          {/* RIGHT CONTENT */}
           <div className="w-full flex flex-col h-full gap-6">
             {/* LOGOS ROW — CENTERED */}
             <div className="flex justify-center gap-6">
@@ -110,7 +109,7 @@ const ExploreSection = () => {
                   height={44}
                   className="mx-auto"
                 />
-                <h3 className="text-lg font-semibold tracking-widest text-orange-400">
+                <h3 className="text-lg font-semibold tracking-widest text-[#fc7116]">
                   VISION
                 </h3>
                 <p className="text-base sm:text-lg font-bold leading-relaxed font-['baskerville-bt-bold'] italic">
@@ -127,7 +126,7 @@ const ExploreSection = () => {
                   height={44}
                   className="mx-auto"
                 />
-                <h3 className="text-lg font-semibold tracking-widest text-orange-400">
+                <h3 className="text-lg font-semibold tracking-widest text-[#fc7116]">
                   MISSION
                 </h3>
                 <p className="text-base sm:text-lg font-bold leading-relaxed font-['baskerville-bt-bold'] italic">

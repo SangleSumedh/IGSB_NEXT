@@ -161,7 +161,7 @@ export default function ApplyForm({ variant = "card" }) {
             className="mt-1"
           />
           <label className="text-xs sm:text-sm text-gray-700 leading-tight">
-            I agree to receive information regarding my registration*
+            I agree to receive information regarding my registration
           </label>
         </div>
 

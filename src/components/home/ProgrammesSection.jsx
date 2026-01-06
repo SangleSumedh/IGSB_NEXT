@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation"; // 1. Import Router
 import {
-  Megaphone,
+  PieChart,
   CircleDollarSign,
   Users,
   Settings,
@@ -57,7 +57,7 @@ function RenderIcon({ spec, size = 28, className = "" }) {
 const specializations = [
   {
     title: "Marketing Management",
-    icon: <Megaphone size={20} />,
+    icon: <PieChart size={20} />,
     angle: 70,
     description:
       "The MBA in Marketing at IGSB develops market-oriented, data-driven marketing leaders equipped to operate in dynamic and competitive environments, including emerging business models such as quick commerce, e-commerce, and dark store ecosystems. The programme blends marketing strategy, consumer behaviour, brand management, sales management, and digital marketing analytics, ensuring relevance across traditional, digital, and platform-led markets. Students learn to translate market insights into scalable business growth, preparing them for roles in brand management, digital marketing, sales leadership, market research, and growth strategy across consumer-centric sectors and technology-enabled commerce platforms.",
@@ -98,57 +98,65 @@ export default function ProgrammesSection() {
   const activeSpec = specializations[activeIndex];
 
   return (
-    <section className="relative w-full lg:h-screen overflow-hidden bg-white font-sans flex items-center">
-      {/* IMAGE AT BOTTOM LEFT */}
-      <div className="hidden lg:block absolute bottom-0 left-0 w-[50vw] h-[80vh] z-20 pointer-events-none">
-        <Image
-          src="/Home/MBASpec.png"
-          alt="MBA Specializations"
-          fill
-          className="object-contain object-bottom left-0"
-          priority
-        />
+    <div>
+      {/* 1. HEADING AT THE TOP */}
+      <div className=" px-6 md:px-16 mt-10">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+          MBA SPECIALIZATIONS
+        </h2>
+        {/* <div className="w-20 h-1.5 bg-[#fc7116] mt-4 rounded-full" /> */}
       </div>
+      <section className="relative w-full lg:h-screen overflow-hidden bg-white font-sans flex items-center">
+        {/* IMAGE AT BOTTOM LEFT */}
+        <div className="hidden lg:block absolute bottom-0 left-0 w-[50vw] h-[80vh] z-20 pointer-events-none">
+          <Image
+            src="/Home/MBASpec.png"
+            alt="MBA Specializations"
+            fill
+            className="object-contain object-bottom left-0"
+            priority
+          />
+        </div>
 
-      {/* LEFT SIDE: CIRCLE INTERFACE */}
-      <div className="hidden lg:block absolute -bottom-10 left-20 w-[45vw] h-[45vw]">
-        <div className="relative w-full h-full rounded-full border-4 border-[#fc7116] z-10">
-          {specializations.map((spec, index) => {
-            const radian = (spec.angle * Math.PI) / 180;
-            const left = 50 + 50 * Math.cos(radian);
-            const top = 50 - 50 * Math.sin(radian);
-            const isActive = index === activeIndex;
+        {/* LEFT SIDE: CIRCLE INTERFACE */}
+        <div className="hidden lg:block absolute -bottom-10 left-20 w-[45vw] h-[45vw]">
+          <div className="relative w-full h-full rounded-full border-4 border-[#fc7116] z-10">
+            {specializations.map((spec, index) => {
+              const radian = (spec.angle * Math.PI) / 180;
+              const left = 50 + 50 * Math.cos(radian);
+              const top = 50 - 50 * Math.sin(radian);
+              const isActive = index === activeIndex;
 
-            return (
-              <div
-                key={index}
-                className="absolute flex items-center group cursor-pointer [--base-left:65%] xl:[--base-left:50%]"
-                style={{
-                  left: `calc(var(--base-left) + ${50 * Math.cos(radian)}%)`,
-                  top: `${top}%`,
-                  transform: "translate(-10%, -50%)",
-                }}
-                onClick={() => setActiveIndex(index)}
-              >
-                {/* ICON BUBBLE */}
+              return (
                 <div
-                  className={`
+                  key={index}
+                  className="absolute flex items-center group cursor-pointer [--base-left:65%] xl:[--base-left:50%]"
+                  style={{
+                    left: `calc(var(--base-left) + ${50 * Math.cos(radian)}%)`,
+                    top: `${top}%`,
+                    transform: "translate(-10%, -50%)",
+                  }}
+                  onClick={() => setActiveIndex(index)}
+                >
+                  {/* ICON BUBBLE */}
+                  <div
+                    className={`
                     w-12 h-12 md:w-16 md:h-16 rounded-full 
                     flex items-center justify-center 
                     shadow-lg z-30 transition-all duration-300
                     ${
                       isActive
                         ? "bg-orange-600 text-white scale-125 border-4 border-orange-200"
-                        : "bg-white border-2 border-[#fc7116] text-black group-hover:scale-110"
+                        : "bg-white border-4 border-[#fc7116] text-black group-hover:scale-110"
                     }
                   `}
-                >
-                  <RenderIcon spec={spec} size={20} className="" />
-                </div>
+                  >
+                    <RenderIcon spec={spec} size={20} className="" />
+                  </div>
 
-                {/* LABEL */}
-                <span
-                  className={`
+                  {/* LABEL */}
+                  <span
+                    className={`
                     ml-4 w-32 md:w-48 text-left leading-tight
                     text-xs md:text-base font-bold 
                     px-3 py-2 rounded-lg transition-all duration-300
@@ -158,30 +166,30 @@ export default function ProgrammesSection() {
                         : "text-slate-800 group-hover:text-[#fc7116]"
                     }
                   `}
-                >
-                  {spec.title}
-                </span>
-              </div>
-            );
-          })}
+                  >
+                    {spec.title}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
         </div>
-      </div>
 
-      {/* MOBILE TREE STRUCTURE */}
-      <div className="lg:hidden w-full px-6 py-4 flex flex-col gap-6">
-        {specializations.map((spec, index) => {
-          const isActive = index === activeIndex;
+        {/* MOBILE TREE STRUCTURE */}
+        <div className="lg:hidden w-full px-6 py-4 flex flex-col gap-6">
+          {specializations.map((spec, index) => {
+            const isActive = index === activeIndex;
 
-          return (
-            <div key={index} className="relative flex gap-4">
-              {/* Vertical line */}
-              {index !== specializations.length - 1 && (
-                <span className="absolute left-6 top-14 h-full w-px bg-orange-300" />
-              )}
+            return (
+              <div key={index} className="relative flex gap-4">
+                {/* Vertical line */}
+                {index !== specializations.length - 1 && (
+                  <span className="absolute left-6 top-14 h-full w-px bg-orange-300" />
+                )}
 
-              <button
-                onClick={() => setActiveIndex(index)}
-                className={`
+                <button
+                  onClick={() => setActiveIndex(index)}
+                  className={`
                   shrink-0 min-w-12 min-h-12
                   z-10 w-12 h-12 rounded-full 
                   flex items-center justify-center
@@ -192,87 +200,88 @@ export default function ProgrammesSection() {
                       : "bg-white border-2 border-orange-500 text-slate-800"
                   }
                 `}
-              >
-                <RenderIcon spec={spec} size={18} className="shrink-0" />
-              </button>
-
-              {/* Text */}
-              <div className="pt-2 flex-1">
-                <h4
-                  className={`font-bold text-base ${
-                    isActive ? "text-orange-600" : "text-slate-900"
-                  }`}
                 >
-                  {spec.title}
-                </h4>
+                  <RenderIcon spec={spec} size={18} className="shrink-0" />
+                </button>
 
-                {isActive && (
-                  <>
-                    <p className="text-sm text-slate-600 mt-2 line-clamp-4">
-                      {spec.description}
-                    </p>
+                {/* Text */}
+                <div className="pt-2 flex-1">
+                  <h4
+                    className={`font-bold text-base ${
+                      isActive ? "text-orange-600" : "text-slate-900"
+                    }`}
+                  >
+                    {spec.title}
+                  </h4>
 
-                    <button
-                      onClick={() => router.push("/programs/mba")}
-                      className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange-600 hover:text-orange-700"
-                    >
-                      Read More
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </>
-                )}
+                  {isActive && (
+                    <>
+                      <p className="text-sm text-slate-600 mt-2 line-clamp-4">
+                        {spec.description}
+                      </p>
+
+                      <button
+                        onClick={() => router.push("/programs/mba")}
+                        className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange-600 hover:text-orange-700"
+                      >
+                        Read More
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </>
+                  )}
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
 
-      {/* RIGHT SIDE: INFO CARD */}
-      <div className="hidden  lg:absolute right-0 top-0 w-full lg:w-1/3 h-full lg:flex items-center justify-center p-8 z-40 pointer-events-none">
-        <div className="pointer-events-auto max-w-lg w-full">
-          <div className="bg-[white/90] backdrop-blur-xl border border-white/20 shadow-2xl rounded-3xl p-8 md:p-12 relative overflow-hidden transition-all duration-500">
-            {/* Decorative Background Icon */}
-            <div className="absolute -right-6 -top-6 opacity-20 rotate-12 scale-150">
-              <RenderIcon
-                spec={activeSpec}
-                size={180}
-                className="text-orange-600"
-              />
-            </div>
-
-            {/* Animated Content */}
-            <div
-              key={activeIndex}
-              className="relative z-10 animate-in fade-in slide-in-from-bottom-4 duration-500"
-            >
-              <div className="flex items-center gap-3 mb-4 text-orange-600">
-                <RenderIcon spec={activeSpec} size={20} />
-                <span className="text-sm font-bold tracking-wider uppercase">
-                  Specialization
-                </span>
+        {/* RIGHT SIDE: INFO CARD */}
+        <div className="hidden  lg:absolute right-0 top-0 w-full lg:w-1/3 h-full lg:flex items-center justify-center p-8 z-40 pointer-events-none">
+          <div className="pointer-events-auto max-w-lg w-full">
+            <div className="bg-[white/90] backdrop-blur-xl border border-white/20 shadow-2xl rounded-3xl p-8 md:p-12 relative overflow-hidden transition-all duration-500">
+              {/* Decorative Background Icon */}
+              <div className="absolute -right-6 -top-6 opacity-10 rotate-12 scale-150">
+                <RenderIcon
+                  spec={activeSpec}
+                  size={180}
+                  className="text-orange-600"
+                />
               </div>
 
-              <h2 className="text-3xl  font-extrabold text-[#10404A] mb-6 leading-tight">
-                {activeSpec.title}
-              </h2>
-
-              {/* 3. Description with line-clamp-3 */}
-              <p className="text-slate-600 text-lg leading-relaxed mb-8 line-clamp-10">
-                {activeSpec.description}
-              </p>
-
-              {/* 4. 'Read More' Button with Routing */}
-              <button
-                onClick={() => router.push("/programs/mba")}
-                className="group flex items-center gap-2 bg-[#10404A] text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300"
+              {/* Animated Content */}
+              <div
+                key={activeIndex}
+                className="relative z-10 animate-in fade-in slide-in-from-bottom-4 duration-500"
               >
-                Read More
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+                <div className="flex items-center gap-3 mb-4 text-orange-600">
+                  <RenderIcon spec={activeSpec} size={20} />
+                  <span className="text-sm font-bold tracking-wider uppercase">
+                    Specialization
+                  </span>
+                </div>
+
+                <h2 className="text-3xl  font-extrabold text-[#10404A] mb-6 leading-tight">
+                  {activeSpec.title}
+                </h2>
+
+                {/* 3. Description with line-clamp-3 */}
+                <p className="text-slate-600 text-lg leading-relaxed mb-8 line-clamp-10">
+                  {activeSpec.description}
+                </p>
+
+                {/* 4. 'Read More' Button with Routing */}
+                <button
+                  onClick={() => router.push("/programs/mba")}
+                  className="group flex items-center gap-2 bg-[#10404A] text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300"
+                >
+                  Read More
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

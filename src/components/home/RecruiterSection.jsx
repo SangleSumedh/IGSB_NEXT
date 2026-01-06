@@ -35,7 +35,7 @@ const RecruitersSection = () => {
   return (
     <div className="bg-white px-6 sm:px-8 py-6 sm:py-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="fade-up text-2xl sm:text-4xl font-extrabold text-secondary mb-4 sm:mb-6">
+        <h2 className="fade-up text-2xl sm:text-4xl font-extrabold text-slate-900 mb-4 sm:mb-6">
           {headline}
         </h2>
 
@@ -72,9 +72,24 @@ const RecruitersSection = () => {
           })}
 
           <div className="circle-badge hidden sm:block absolute top-[49%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 fade-up fade-delay-3">
-            <div className="w-28 h-28 md:w-40 md:h-40 rounded-full bg-[linear-gradient(145deg,#278da4_0%,#003c84_90%)] text-white flex flex-col items-center justify-center shadow-xl border-[4px] border-[#D4AF37]">
-              <p className="text-lg md:text-2xl font-bold">650+</p>
-              <p className="text-xs md:text-base font-medium">Corporates</p>
+            <div
+              className="
+    w-28 h-28 md:w-40 md:h-40 
+    rounded-full 
+    bg-gradient-to-r from-[#10404A] to-[#1F6D71] 
+    text-white 
+    flex flex-col items-center justify-center 
+    shadow-2xl 
+    border-[4px] border-[#fb7035]
+    transition-transform duration-300 hover:scale-105
+  "
+            >
+              <p className="text-xl md:text-3xl font-black tracking-tight">
+                650+
+              </p>
+              <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest opacity-90">
+                Corporates
+              </p>
             </div>
           </div>
         </div>

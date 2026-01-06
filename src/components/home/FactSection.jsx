@@ -4,7 +4,7 @@ import React from "react";
 
 export default function FacultyStatSection() {
   return (
-    <section className="relative w-full bg-[#10404A] py-4 lg:py-8 overflow-hidden text-white">
+    <section className="relative w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] py-4 lg:py-8 overflow-hidden text-white">
       {/* BACKGROUND DECORATION */}
       {/* <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#FF8B61] opacity-10 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" /> */}
 
@@ -27,22 +27,13 @@ export default function FacultyStatSection() {
 
           {/* RIGHT SIDE: 2/3 Width */}
           <div className="w-full lg:w-2/3">
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 lg:p-10 shadow-2xl relative">
-              {/* Decorative Quote Icon */}
-              <div className="absolute top-4 left-4 lg:top-6 lg:left-6 text-[#FF8B61] opacity-20 text-5xl lg:text-6xl font-serif leading-none">
-                &ldquo;
-              </div>
-
+            <div className="bg-[#3aafa9] backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 lg:p-10 shadow-2xl relative">
               <p className="relative z-10 text-base md:text-lg lg:text-xl leading-relaxed text-white/95 font-light">
-                <span className="font-semibold text-[#FF8B61]">
-                  Expertise you can trust.
-                </span>{" "}
-                98% of IGSB’s faculty members are Ph.D. holders, ensuring that
-                every learner is guided by scholars with deep subject expertise,
+                IGSB’s faculty members are Ph.D. holders, ensuring that every
+                learner is guided by scholars with deep subject expertise,
                 strong research credentials, and a rigorous understanding of
                 advanced management concepts.
               </p>
-
               {/* Bottom decorative line */}
               <div className="w-16 h-1 bg-[#FF8B61] mt-6 lg:mt-8 rounded-full" />
 

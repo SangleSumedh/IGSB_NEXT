@@ -51,17 +51,13 @@ export default function FormSection() {
 
           <div className="max-w-[860px] w-full text-center">
 
-            {/* QUOTE — MORE SPACE BELOW */}
             <p className="text-white text-[28px] italic leading-snug
               font-['baskerville-bt'] mb-14">
               Every risk is worth taking as long as it’s for a good <br /> cause and
               contributes to a good life.
             </p>
 
-            {/* TESTIMONIAL CARD */}
             <div className="relative mx-auto max-w-[660px]">
-
-              {/* AVATAR — SMALLER & LOWER */}
               <div className="absolute -top-10 left-1/2 -translate-x-1/2
                 w-16 h-16 rounded-full border-4 border-white
                 bg-white overflow-hidden z-10">
@@ -73,28 +69,19 @@ export default function FormSection() {
                 />
               </div>
 
-              {/* CARD — REDUCED SIZE */}
               <div className="bg-[#3aafa9] rounded-[22px]
                 px-6 pt-12 pb-6
                 text-white shadow-xl">
 
-                <h3 className="text-lg font-semibold">
-                  {active.name}
-                </h3>
-                <p className="text-xs opacity-90 mb-3">
-                  {active.branch}
-                </p>
+                <h3 className="text-lg font-semibold">{active.name}</h3>
+                <p className="text-xs opacity-90 mb-3">{active.branch}</p>
 
-                <p className="text-md leading-relaxed  whitespace-pre-line">
+                <p className="text-md leading-relaxed whitespace-pre-line">
                   {commonText}
                 </p>
 
-                {/* CONTROLS */}
                 <div className="flex justify-center items-center gap-3 mt-5">
-                  <button
-                    onClick={prev}
-                    className="p-1.5 rounded-full bg-white/20 hover:bg-white/30"
-                  >
+                  <button onClick={prev} className="p-1.5 rounded-full bg-white/20">
                     <ChevronLeft size={14} />
                   </button>
 
@@ -109,21 +96,28 @@ export default function FormSection() {
                     ))}
                   </div>
 
-                  <button
-                    onClick={next}
-                    className="p-1.5 rounded-full bg-white/20 hover:bg-white/30"
-                  >
+                  <button onClick={next} className="p-1.5 rounded-full bg-white/20">
                     <ChevronRight size={14} />
                   </button>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
 
         {/* RIGHT FORM */}
         <div className="relative">
-          <div className="absolute top-1/2 -translate-y-1/2 right-[4%] w-[420px]">
+          <div
+            className="
+              absolute
+              top-1/2
+              -translate-y-1/2
+              right-[4%]
+              2xl:right-[36%]
+              w-[420px]
+            "
+          >
             <div className="bg-[#ff885b] text-white rounded-xl shadow-2xl p-5">
               <h2 className="text-xl text-center font-bold mb-4">
                 Admission Form

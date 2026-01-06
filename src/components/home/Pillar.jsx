@@ -26,7 +26,7 @@ const pillars = [
 export default function PillarsSection() {
   return (
     // Background Gradient: Approximating the Brown/Orange to Dark Teal fade
-    <section className="w-full bg-gradient-to-r from-[#a05542]  to-[#0f3640] px-16 py-8  text-white">
+    <section className="w-full bg-gradient-to-r from-[#FF8B61] via-[#10404A]  to-[#10404A] px-16 py-8  text-white">
       <div className="">
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-8">
           {/* --- LEFT SIDE: HEADING --- */}

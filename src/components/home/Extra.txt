@@ -330,3 +330,63 @@ function Card({ img, tag, title, desc, tall }) {
       ),
     },
   ];
+
+  ---------------------------------------------------------------------------------------------------------
+  "use client";
+
+import React from "react";
+import { Check, Phone, ChevronDown, Quote } from "lucide-react";
+
+export default function FormSection() {
+  return (
+    <section className="relative w-full flex flex-col md:block ">
+      <div className="grid grid-cols-1  lg:grid-cols-[65%_35%] h-full min-h-[60vh]">
+        {/* ================= RIGHT COLUMN (Teal Gradient) ================= */}
+        <div className="bg-green-200">
+          <div className="flex flex-col  items-center w-2/3   px-6 py-8">
+            {/* Opening Quote (Top Left) */}
+            <div className="w-full flex justify-start mb-2">
+              <Quote
+                size={28}
+                className="text-[#ff885b] fill-current rotate-180"
+              />
+            </div>
+
+            {/* Text */}
+            <p className="text-white text-2xl  font-serif italic text-center leading-relaxed px-4">
+              Every risk is worth taking as long as it’s for a good cause and
+              contributes to a good life.
+            </p>
+
+            {/* Closing Quote (Bottom Right) */}
+            <div className="w-full flex justify-end mt-2">
+              <Quote size={28} className="text-[#ff885b] fill-current " />
+            </div>
+          </div>
+
+          <div>
+            <div className="border-2 h-24 w-24 border-black rounded-full bg-gray-200 flex justify-center items-center">
+              <p>Placeholder</p>
+            </div>
+            <div className="h-1/2 w-1/2 bg-amber-300 border border-gray-200 ">
+              <p className="mb-4">
+                The MBA in Finance at IGSB prepares students for analytical,
+                decision-driven roles in the financial ecosystem. The curriculum
+                emphasizes financial management, corporate finance, financial
+                modelling, investment analysis, risk management, and strategic
+                financial decision-making.
+              </p>
+              <p>
+                Students gain exposure to capital markets, valuation, budgeting,
+                compliance, fintech fundamentals, enabling them to contribute
+                effectively in corporate finance, banking, and consulting.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="bg-red-200"></div>
+        <div className="h-[500px] w-[300px] absolute bg-blue-500 inset-0 left-2/3 -translate-x-1/2 top-1/2 -translate-y-1/2"></div>
+      </div>
+    </section>
+  );
+}

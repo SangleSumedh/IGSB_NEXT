@@ -19,7 +19,7 @@ export default function ProgrammesSection() {
           "
         >
           {/* LEFT — IMAGE (STICK TO LEFT) */}
-          <div className="w-full h-full flex items-center justify-start">
+          <div className="relative w-full h-full flex items-center justify-start">
             <Image
               src="/IGSB/static/mba_idea.png"
               alt="MBA Specializations"

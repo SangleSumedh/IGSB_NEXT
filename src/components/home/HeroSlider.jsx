@@ -5,8 +5,7 @@ import Image from "next/image";
 
 const HeroSlider = () => {
   const desktopImages = [
-    "/banners/IGSB_banner1.jpg",
-    "/banners/IGSB_banner2.jpg",
+    "/banners/NewBanner.jpg",
   ];
 
   const mobileImages = [
@@ -49,7 +48,7 @@ const HeroSlider = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden isolate">
+    <div className="relative w-full ">
       {/* ---------------- SPOTLIGHT ---------------- */}
       <div className="w-full h-[4vh] bg-white border-b border-gray-200 flex items-center overflow-hidden relative">
         <div className="relative flex items-center justify-center font-semibold text-xs sm:text-sm px-4 sm:px-8 py-2 clip-ribbon-left z-10 bg-secondary text-white">
@@ -105,7 +104,7 @@ const HeroSlider = () => {
       </div>
 
       {/* ---------------- SLIDER WRAPPER (HEIGHT REDUCED BY 4vh) ---------------- */}
-      <div className="relative w-full h-[70vh] overflow-hidden">
+      <div className="relative w-full h-[84vh] overflow-hidden">
         {/* ---------------- DESKTOP SLIDER ---------------- */}
         <div className="hidden md:block relative w-full h-full">
           {[...desktopImages, desktopImages[0]].map((img, i) => (

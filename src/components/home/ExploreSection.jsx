@@ -35,7 +35,7 @@ const ExploreSection = () => {
               </p>
 
               <p className="text-gray-700 text-md md:text-lg leading-relaxed text-justify mt-2">
-                IGSB is located along the Mumbai–Pune Expressway, our campus blends state-of-the-art infrastructure with a serene, natural setting, offering a fresh and inspiring environment that fosters innovation, focus, and holistic development. 
+                IGSB is located along the Mumbai–Pune Expressway, our campus blends state-of-the-art infrastructure with a serene, natural setting, offering a fresh and inspiring environment that fosters innovation, focus, and holistic development.
               </p>
 
               <p className="text-gray-700 text-md md:text-lg leading-relaxed text-justify mt-2">
@@ -47,7 +47,7 @@ const ExploreSection = () => {
           {/* RIGHT SECTION */}
           <div className="grid grid-cols-2 gap-4 self-start">
 
-            {/* LOGO 1 */}
+            {/* LOGOS */}
             <div className="flex items-center justify-center border border-gray-200 rounded-xl p-4 hover:shadow-md transition">
               <Image
                 src={logos[0].img}
@@ -58,7 +58,6 @@ const ExploreSection = () => {
               />
             </div>
 
-            {/* LOGO 2 */}
             <div className="flex items-center justify-center border border-gray-200 rounded-xl p-4 hover:shadow-md transition">
               <Image
                 src={logos[1].img}
@@ -69,8 +68,8 @@ const ExploreSection = () => {
               />
             </div>
 
-            {/* VISION — FULL WIDTH */}
-            <div className="col-span-2 border border-gray-200 rounded-xl p-5 flex flex-col items-start justify-start hover:shadow-md transition">
+            {/* VISION */}
+            <div className="border border-gray-200 rounded-xl p-5 flex flex-col items-start justify-start hover:shadow-md transition">
               <h3 className="text-lg font-semibold text-secondary mb-2">
                 Vision
               </h3>
@@ -79,8 +78,8 @@ const ExploreSection = () => {
               </p>
             </div>
 
-            {/* MISSION — FULL WIDTH */}
-            <div className="col-span-2 border border-gray-200 rounded-xl p-5 flex flex-col items-start justify-start hover:shadow-md transition">
+            {/* MISSION */}
+            <div className="border border-gray-200 rounded-xl p-5 flex flex-col items-start justify-start hover:shadow-md transition">
               <h3 className="text-lg font-semibold text-secondary mb-2">
                 Mission
               </h3>

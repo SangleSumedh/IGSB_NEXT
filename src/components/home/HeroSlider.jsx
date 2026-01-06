@@ -5,19 +5,13 @@ import Image from "next/image";
 
 const HeroSlider = () => {
   const desktopImages = [
-    "/banners/BANNER1.jpg",
-    "/banners/BANNER2.jpg",
-    "/banners/BANNER3.jpg",
-    "/banners/BANNER4.jpg",
-    "/banners/BANNER5.jpg",
+    "/banners/IGSB_banner1.jpg",
+    "/banners/IGSB_banner2.jpg",
   ];
 
   const mobileImages = [
-    "/banners/BANNER1.jpg",
-    "/banners/BANNER2.jpg",
-    "/banners/BANNER3.jpg",
-    "/banners/BANNER4.jpg",
-    "/banners/BANNER5.jpg",
+    "/banners/IGSB_banner1.jpg",
+    "/banners/IGSB_banner2.jpg",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -56,60 +50,62 @@ const HeroSlider = () => {
 
   return (
     <div className="relative w-full overflow-hidden isolate">
-
       {/* ---------------- SPOTLIGHT ---------------- */}
-      {/* ---------------- SPOTLIGHT ---------------- */}
-<div className="w-full h-[4vh] bg-white border-b border-gray-200 flex items-center overflow-hidden relative">
-  <div className="relative flex items-center justify-center font-semibold text-xs sm:text-sm px-4 sm:px-8 py-2 clip-ribbon-left z-10 bg-secondary text-white">
-    SPOTLIGHT
-  </div>
+      <div className="w-full h-[4vh] bg-white border-b border-gray-200 flex items-center overflow-hidden relative">
+        <div className="relative flex items-center justify-center font-semibold text-xs sm:text-sm px-4 sm:px-8 py-2 clip-ribbon-left z-10 bg-secondary text-white">
+          SPOTLIGHT
+        </div>
 
-  <div className="flex-1 overflow-hidden whitespace-nowrap bg-white">
-    <div className="flex animate-seamlessMarquee font-semibold text-sm py-2 text-secondary">
+        <div className="flex-1 overflow-hidden whitespace-nowrap bg-white">
+          <div className="flex animate-seamlessMarquee font-semibold text-sm py-2 text-secondary">
+            <span className="mr-12">
+              Important Notice: Inter-Se-Merit List for ILS ACAP Admission for
+              A.Y. 2025–26
+            </span>
 
-      <span className="mr-12">
-        Important Notice: Inter-Se-Merit List for ILS ACAP Admission for A.Y. 2025–26
-      </span>
+            <span className="mr-12">
+              Admission Advertisement for ILS / ACAP MBA (MB06976) – IGSB
+              2025–26
+            </span>
 
-      <span className="mr-12">
-        Admission Advertisement for ILS / ACAP MBA (MB06976) – IGSB 2025–26
-      </span>
+            <span className="mr-12">
+              MBA Admission Alert: DTE Code for Indira Global School of
+              Business, Pune is *MB6976*
+            </span>
 
-      <span className="mr-12">
-        MBA Admission Alert: DTE Code for Indira Global School of Business, Pune is *MB6976*
-      </span>
+            <span className="mr-12">
+              AICTE Approved M.B.A. / M.M.S. Affiliated to Savitribai Phule Pune
+              University
+            </span>
 
-      <span className="mr-12">
-        AICTE Approved M.B.A. / M.M.S. Affiliated to Savitribai Phule Pune University
-      </span>
+            {/* duplicate for seamless loop */}
+            <span className="mr-12">
+              Important Notice: Inter-Se-Merit List for ILS ACAP Admission for
+              A.Y. 2025–26
+            </span>
 
-      {/* duplicate for seamless loop */}
-      <span className="mr-12">
-        Important Notice: Inter-Se-Merit List for ILS ACAP Admission for A.Y. 2025–26
-      </span>
+            <span className="mr-12">
+              Admission Advertisement for ILS / ACAP MBA (MB06976) – IGSB
+              2025–26
+            </span>
 
-      <span className="mr-12">
-        Admission Advertisement for ILS / ACAP MBA (MB06976) – IGSB 2025–26
-      </span>
+            <span className="mr-12">
+              MBA Admission Alert: DTE Code for Indira Global School of
+              Business, Pune is *MB6976*
+            </span>
 
-      <span className="mr-12">
-        MBA Admission Alert: DTE Code for Indira Global School of Business, Pune is *MB6976*
-      </span>
+            <span className="mr-12">
+              AICTE Approved M.B.A. / M.M.S. Affiliated to Savitribai Phule Pune
+              University
+            </span>
+          </div>
+        </div>
 
-      <span className="mr-12">
-        AICTE Approved M.B.A. / M.M.S. Affiliated to Savitribai Phule Pune University
-      </span>
-
-    </div>
-  </div>
-
-  <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-primary to-transparent"></div>
-</div>
-
+        <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-primary to-transparent"></div>
+      </div>
 
       {/* ---------------- SLIDER WRAPPER (HEIGHT REDUCED BY 4vh) ---------------- */}
-      <div className="relative w-full min-h-[46vh] h-[46vh] sm:min-h-[84vh] sm:h-[84vh] overflow-hidden">
-
+      <div className="relative w-full h-[70vh] overflow-hidden">
         {/* ---------------- DESKTOP SLIDER ---------------- */}
         <div className="hidden md:block relative w-full h-full">
           {[...desktopImages, desktopImages[0]].map((img, i) => (
@@ -197,16 +193,24 @@ const HeroSlider = () => {
       {/* ---------------- CSS ---------------- */}
       <style jsx>{`
         @keyframes progressFill {
-          from { width: 0%; }
-          to { width: 100%; }
+          from {
+            width: 0%;
+          }
+          to {
+            width: 100%;
+          }
         }
         .animate-progressFill {
           animation: progressFill 5s linear forwards;
         }
 
         @keyframes seamlessMarquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
         }
         .animate-seamlessMarquee {
           animation: seamlessMarquee 25s linear infinite;

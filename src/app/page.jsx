@@ -14,8 +14,6 @@ import NewDiscover from "@/components/home/newDiscover";
 import ProgrammesSection from "@/components/home/ProgrammesSection";
 import Phd from "@/components/home/Phd";
 import Pillar from "@/components/home/Pillar";
-import FactSection from "@/components/home/FactSection";
-
 
 import FormSection from "@/components/home/FormSection"; // XL+
 import SmallDesktopFormSection from "@/components/home/SmallDesktopFormSection"; // LG → XL
@@ -37,7 +35,6 @@ export default function HomePage() {
 
         <Phd />
         {/* <AcademicYearSection /> */}
-        <FactSection />
         <RecruitersSection />
         <EnergyInnovation />
         {/* <CollegeUnplugged /> */}

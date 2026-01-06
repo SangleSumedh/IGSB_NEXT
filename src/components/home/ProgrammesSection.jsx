@@ -21,7 +21,7 @@ export default function ProgrammesSection() {
           {/* LEFT — IMAGE (STICK TO LEFT) */}
           <div className="relative w-full h-full flex items-center justify-start">
             <Image
-              src="/IGSB/static/mba_idea.png"
+              src="/Home/MBASpec.png"
               alt="MBA Specializations"
               fill
               className="object-contain object-left"

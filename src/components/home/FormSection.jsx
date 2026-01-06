@@ -5,8 +5,7 @@ import Image from "next/image";
 import { Phone, ChevronLeft, ChevronRight } from "lucide-react";
 import ApplyForm from "./ApplyForm";
 
-const commonText =
-`The MBA in Finance at IGSB prepares students for analytical,
+const commonText = `The MBA in Finance at IGSB prepares students for analytical,
 decision-driven roles in the financial ecosystem. The curriculum
 emphasizes financial management, corporate finance, financial
 modelling, investment analysis, risk management, and strategic
@@ -26,49 +25,46 @@ export default function FormSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % testimonials.length);
-    }, 4000);
-    return () => clearInterval(interval);
+    const t = setInterval(
+      () => setActiveIndex((i) => (i + 1) % testimonials.length),
+      4000
+    );
+    return () => clearInterval(t);
   }, []);
 
-  const prevSlide = () =>
-    setActiveIndex((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
-    );
-
-  const nextSlide = () =>
-    setActiveIndex((prev) => (prev + 1) % testimonials.length);
+  const prev = () =>
+    setActiveIndex((i) => (i === 0 ? testimonials.length - 1 : i - 1));
+  const next = () =>
+    setActiveIndex((i) => (i + 1) % testimonials.length);
 
   const active = testimonials[activeIndex];
 
   return (
-    <section className="relative w-full min-h-screen md:min-h-[880px] bg-white overflow-hidden">
+    <section className="relative w-full bg-white overflow-hidden">
 
-      {/* BACKGROUND GRID */}
-      <div className="grid grid-cols-1 md:grid-cols-[65%_35%] lg:grid-cols-[80%_20%] min-h-[880px]">
+      {/* ================= XL AND ABOVE ================= */}
+      <div className="hidden xl:grid grid-cols-[78%_22%] min-h-[600px]">
 
-        {/* LEFT COLUMN */}
+        {/* LEFT */}
         <div className="bg-gradient-to-r from-[#10404A] to-[#1F6D71]
-          px-6 md:px-12 lg:px-16 py-20 flex items-center justify-center">
+          flex items-center justify-center px-20 py-8">
 
-          <div className="max-w-4xl w-full flex flex-col items-center">
+          <div className="max-w-[860px] w-full text-center">
 
-            {/* QUOTE */}
-            <div className="max-w-3xl mb-14 text-center">
-              <p className="text-white text-2xl md:text-3xl italic leading-relaxed font-['baskerville-bt']">
-                Every risk is worth taking as long as it’s for a good cause and
-                contributes to a good life.
-              </p>
-            </div>
+            {/* QUOTE — MORE SPACE BELOW */}
+            <p className="text-white text-[28px] italic leading-snug
+              font-['baskerville-bt'] mb-14">
+              Every risk is worth taking as long as it’s for a good <br /> cause and
+              contributes to a good life.
+            </p>
 
             {/* TESTIMONIAL CARD */}
-            <div className="relative w-full max-w-3xl">
+            <div className="relative mx-auto max-w-[660px]">
 
-              {/* AVATAR */}
-              <div className="absolute -top-14 left-1/2 -translate-x-1/2
-                w-24 h-24 md:w-28 md:h-28 rounded-full border-4 border-white
-                z-10 overflow-hidden bg-white">
+              {/* AVATAR — SMALLER & LOWER */}
+              <div className="absolute -top-10 left-1/2 -translate-x-1/2
+                w-16 h-16 rounded-full border-4 border-white
+                bg-white overflow-hidden z-10">
                 <Image
                   src={active.image}
                   alt={active.name}
@@ -77,35 +73,36 @@ export default function FormSection() {
                 />
               </div>
 
-              {/* CARD */}
-              <div className="bg-[#3aafa9] rounded-[32px]
-                px-8 md:px-12 py-10 pt-16 text-white shadow-2xl text-center">
+              {/* CARD — REDUCED SIZE */}
+              <div className="bg-[#3aafa9] rounded-[22px]
+                px-6 pt-12 pb-6
+                text-white shadow-xl">
 
-                <h3 className="text-xl md:text-2xl font-bold">
+                <h3 className="text-lg font-semibold">
                   {active.name}
                 </h3>
-                <p className="text-sm md:text-base opacity-90 mb-4">
+                <p className="text-xs opacity-90 mb-3">
                   {active.branch}
                 </p>
 
-                <p className="mt-3 text-lg md:text-xl leading-relaxed whitespace-pre-line">
+                <p className="text-md leading-relaxed  whitespace-pre-line">
                   {commonText}
                 </p>
 
                 {/* CONTROLS */}
-                <div className="flex items-center justify-center gap-4 mt-8">
+                <div className="flex justify-center items-center gap-3 mt-5">
                   <button
-                    onClick={prevSlide}
-                    className="p-2 rounded-full bg-white/20 hover:bg-white/30"
+                    onClick={prev}
+                    className="p-1.5 rounded-full bg-white/20 hover:bg-white/30"
                   >
-                    <ChevronLeft size={18} />
+                    <ChevronLeft size={14} />
                   </button>
 
-                  <div className="flex gap-2">
+                  <div className="flex gap-1.5">
                     {testimonials.map((_, i) => (
                       <span
                         key={i}
-                        className={`w-2.5 h-2.5 rounded-full ${
+                        className={`w-1.5 h-1.5 rounded-full ${
                           activeIndex === i ? "bg-white" : "bg-white/40"
                         }`}
                       />
@@ -113,49 +110,39 @@ export default function FormSection() {
                   </div>
 
                   <button
-                    onClick={nextSlide}
-                    className="p-2 rounded-full bg-white/20 hover:bg-white/30"
+                    onClick={next}
+                    className="p-1.5 rounded-full bg-white/20 hover:bg-white/30"
                   >
-                    <ChevronRight size={18} />
+                    <ChevronRight size={14} />
                   </button>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
 
-        <div className="hidden md:block bg-white" />
-      </div>
+        {/* RIGHT FORM */}
+        <div className="relative">
+          <div className="absolute top-1/2 -translate-y-1/2 right-[4%] w-[420px]">
+            <div className="bg-[#ff885b] text-white rounded-xl shadow-2xl p-5">
+              <h2 className="text-xl text-center font-bold mb-4">
+                Admission Form
+              </h2>
 
-      {/* FLOATING FORM */}
-      <div
-        className="
-          absolute z-20 w-full
-          md:w-[480px] lg:w-[520px] xl:w-[580px]
-          top-0 md:top-1/2 md:-translate-y-1/2
-          right-0 md:right-[2%] lg:right-[5%] xl:right-[8%]
-          p-4 md:p-0
-        "
-      >
-        <div className="bg-[#ff885b] text-white rounded-xl shadow-2xl
-          p-5 md:p-8 lg:p-10">
+              <ApplyForm variant="modal" />
 
-          <h2 className="text-2xl md:text-4xl text-center font-bold mb-6">
-            Admission Form
-          </h2>
-
-          <ApplyForm variant="modal" />
-
-          <div className="text-center mt-6">
-            <p className="font-semibold flex justify-center items-center gap-2">
-              Or Give us a call <Phone size={18} /> +91 0000000000
-            </p>
-            <p className="text-xs md:text-sm opacity-90 mt-1">
-              The Support Centre is Available 24/7
-            </p>
+              <div className="text-center mt-4">
+                <p className="font-semibold flex justify-center gap-2 text-sm">
+                  Or Give us a call <Phone size={14} /> +91 0000000000
+                </p>
+                <p className="text-xs opacity-90 mt-1">
+                  The Support Centre is Available 24/7
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+
       </div>
     </section>
   );

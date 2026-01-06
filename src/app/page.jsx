@@ -14,8 +14,9 @@ import NewDiscover from "@/components/home/newDiscover";
 import ProgrammesSection from "@/components/home/ProgrammesSection";
 import Phd from "@/components/home/Phd";
 import Pillar from "@/components/home/Pillar";
-import FormSection from "@/components/home/FormSection";
 
+import FormSection from "@/components/home/FormSection"; // XL+
+import SmallDesktopFormSection from "@/components/home/SmallDesktopFormSection"; // LG → XL
 
 export default function HomePage() {
   return (
@@ -23,11 +24,15 @@ export default function HomePage() {
       <ScrollCrushWrapper Hero={<HeroSlider />}>
         <ExploreSection />
         {/* <NewDiscover /> */}
-
         {/* <DiscoverPaths /> */}
+
         <Pillar />
         <ProgrammesSection />
-        <FormSection />
+
+        {/* ===== FORMS (RESPONSIVE) ===== */}
+        <FormSection />                {/* xl and above */}
+        <SmallDesktopFormSection />    {/* lg → xl */}
+
         <Phd />
         {/* <AcademicYearSection /> */}
         <RecruitersSection />
@@ -35,8 +40,8 @@ export default function HomePage() {
         {/* <CollegeUnplugged /> */}
         <EventsSection />
         <CTASection />
-        
       </ScrollCrushWrapper>
+
       <InstagramMosaic />
     </div>
   );

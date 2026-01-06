@@ -169,7 +169,7 @@ export default function ApplyForm({ variant = "card" }) {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-secondary text-white font-semibold py-2 px-4 rounded-md text-sm sm:text-base"
+          className="w-full bg-[#10404A]  text-white font-semibold py-2 px-4 rounded-md text-sm sm:text-base"
         >
           {loading ? "Submitting..." : "Submit"}
         </button>

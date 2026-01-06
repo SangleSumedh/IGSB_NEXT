@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const HeroSlider = () => {
   const desktopImages = [
-    "/banners/NewBanner.jpg",
+    "/banners/IGSB_banner1.jpg",
   ];
 
   const mobileImages = [

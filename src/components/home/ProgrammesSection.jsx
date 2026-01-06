@@ -11,6 +11,25 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+/* ---------------- ICON RENDERER (NEW) ---------------- */
+function RenderIcon({ spec, size = 28, className = "" }) {
+  if (typeof spec.icon === "string") {
+    return (
+      <Image
+        src={spec.icon}
+        alt={spec.title}
+        width={size}
+        height={size}
+        className={className}
+      />
+    );
+  }
+
+  const IconComponent = spec.icon.type;
+  return <IconComponent size={size} className={className} />;
+}
+/* ---------------------------------------------------- */
+
 const specializations = [
   {
     title: "Marketing Management",
@@ -21,7 +40,7 @@ const specializations = [
   },
   {
     title: "Finance Management",
-    icon: <CircleDollarSign size={20} />,
+    icon: "/Home/Symbol.svg",
     angle: 33,
     description:
       "Gain expertise in financial analysis, investment banking, and corporate finance. Develop the skills to manage assets and make data-driven financial decisions.",
@@ -51,7 +70,6 @@ const specializations = [
 
 export default function ProgrammesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
-
   const activeSpec = specializations[activeIndex];
 
   return (
@@ -100,7 +118,7 @@ export default function ProgrammesSection() {
                     }
                   `}
                 >
-                  {spec.icon}
+                  <RenderIcon spec={spec} size={20} />
                 </div>
 
                 {/* LABEL */}
@@ -128,8 +146,8 @@ export default function ProgrammesSection() {
         <div className="pointer-events-auto max-w-lg w-full">
           <div className="bg-white/90 backdrop-blur-xl border border-white/20 shadow-2xl rounded-3xl p-8 md:p-12 relative overflow-hidden transition-all duration-500">
             {/* Decorative Background Icon */}
-            <div className="absolute -right-6 -top-6 text-orange-100 opacity-50 rotate-12 scale-150">
-              {React.cloneElement(activeSpec.icon, { size: 180 })}
+            <div className="absolute -right-6 -top-6 opacity-10 rotate-12 scale-150">
+              <RenderIcon spec={activeSpec} size={180} />
             </div>
 
             {/* Animated Content */}
@@ -138,7 +156,7 @@ export default function ProgrammesSection() {
               className="relative z-10 animate-in fade-in slide-in-from-bottom-4 duration-500"
             >
               <div className="flex items-center gap-3 mb-4 text-orange-600">
-                {activeSpec.icon}
+                <RenderIcon spec={activeSpec} size={20} />
                 <span className="text-sm font-bold tracking-wider uppercase">
                   Specialization
                 </span>

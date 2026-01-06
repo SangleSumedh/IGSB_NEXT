@@ -39,9 +39,9 @@ export default function HomePage() {
         {/* <AcademicYearSection /> */}
         <FactSection />
         <RecruitersSection />
-        <EnergyInnovation />
+        {/* <EnergyInnovation /> */}
         {/* <CollegeUnplugged /> */}
-        <EventsSection />
+        {/* <EventsSection /> */}
         <CTASection />
       </ScrollCrushWrapper>
 

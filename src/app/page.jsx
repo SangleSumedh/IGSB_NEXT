@@ -45,7 +45,7 @@ export default function HomePage() {
         {/* <CollegeUnplugged /> */}
         {/* <EventsSection /> */}
         <NewCTA />
-        {/* <CTASection /> */}
+        <CTASection />
       </ScrollCrushWrapper>
 
       <InstagramMosaic />

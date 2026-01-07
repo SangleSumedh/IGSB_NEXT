@@ -20,6 +20,7 @@ import SmallDesktopFormSection from "@/components/home/SmallDesktopFormSection";
 import NewCTA from "@/components/home/NewCTA";
 import Training from "@/components/home/Training";
 import FactSection from "@/components/home/FactSection";
+import CarSection from "@/components/home/CarSection";
 
 export default function HomePage() {
   return (
@@ -49,6 +50,7 @@ export default function HomePage() {
         {/* <CTASection /> */}
         {/* <EventsSection /> */}
         <NewCTA />
+        <CarSection />
         <CTASection />
       </ScrollCrushWrapper>
 

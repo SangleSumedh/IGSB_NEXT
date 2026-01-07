@@ -155,7 +155,7 @@ export default function CTASection() {
         </div>
 
         {/* --- COLUMN 3 (1/8): PERSON IMAGE --- */}
-        <div className="flex md:col-span-1 items-end justify-center relative h-40 md:h-full pb-0 bg-white/5 md:bg-transparent">
+        <div className="flex md:col-span-1git items-end justify-center relative h-40 md:h-full pb-0 bg-white/5 md:bg-transparent">
           <img
             src="/Home/suitman.png"
             alt="Confused person"

@@ -52,7 +52,7 @@ export default function HomePage() {
         {/* <CTASection /> */}
         {/* <EventsSection /> */}
         <NewCTA />
-        <CarSection />
+        {/* <CarSection /> */}
         <CTASection />
       </ScrollCrushWrapper>
 

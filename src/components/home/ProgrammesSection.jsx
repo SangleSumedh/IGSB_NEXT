@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import {
@@ -95,7 +95,28 @@ const specializations = [
 export default function ProgrammesSection() {
   const router = useRouter();
   const [activeIndex, setActiveIndex] = useState(0);
+
+  // 1. STATE: Track the current delay (default 5000ms)
+  const [delay, setDelay] = useState(5000);
+
   const activeSpec = specializations[activeIndex];
+
+  // 2. EFFECT: Use setTimeout to handle variable delays
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setActiveIndex((prev) => (prev + 1) % specializations.length);
+      // After an auto-rotation, always reset speed to normal (5s)
+      setDelay(5000);
+    }, delay);
+
+    return () => clearTimeout(timer);
+  }, [activeIndex, delay]); // Re-runs whenever index changes (manual or auto)
+
+  // 3. HANDLER: Manual select sets a long delay (10s)
+  const handleManualSelect = (index) => {
+    setActiveIndex(index);
+    setDelay(10000); // Pause for 10 seconds before resuming auto-rotation
+  };
 
   return (
     <div>
@@ -103,7 +124,6 @@ export default function ProgrammesSection() {
 
       <section className="relative w-full lg:h-screen overflow-hidden bg-white font-sans flex items-center">
         {/* IMAGE AT BOTTOM LEFT */}
-        {/* Adjusted w-[45vw] for lg to fit better, restoring 50vw for xl */}
         <div className="hidden lg:block absolute bottom-0 left-0 lg:w-[45vw] xl:w-[50vw] h-[80vh] z-20 pointer-events-none">
           <Image
             src="/Home/MBASpec.png"
@@ -115,11 +135,6 @@ export default function ProgrammesSection() {
         </div>
 
         {/* LEFT SIDE: CIRCLE INTERFACE */}
-        {/* Changes for LG:
-            1. left-10 (instead of 20) to pull it closer to edge
-            2. w-[38vw] (instead of 45vw) to shrink the circle diameter, bringing icons inwards
-            3. Restored original values at xl:
-        */}
         <div className="hidden lg:block absolute -bottom-10 lg:left-10 xl:left-20 lg:w-[40vw] lg:h-[40vw] xl:w-[45vw] xl:h-[45vw]">
           <div className="relative w-full h-full rounded-full border-4 border-[#fc7116] z-10">
             {specializations.map((spec, index) => {
@@ -131,45 +146,55 @@ export default function ProgrammesSection() {
               return (
                 <div
                   key={index}
-                  // Tweaked --base-left for lg to 60%, restored to 50% for xl
                   className="absolute flex items-center group cursor-pointer lg:[--base-left:52%] xl:[--base-left:50%]"
                   style={{
                     left: `calc(var(--base-left) + ${50 * Math.cos(radian)}%)`,
                     top: `${top}%`,
                     transform: "translate(-10%, -50%)",
                   }}
-                  onClick={() => setActiveIndex(index)}
+                  onClick={() => handleManualSelect(index)}
                 >
                   {/* ICON BUBBLE */}
-                  {/* Reduced size for lg (w-12), restored for xl (w-16) */}
                   <div
                     className={`
-                    lg:w-14 lg:h-14 xl:w-16 xl:h-16 rounded-full 
-                    flex items-center justify-center 
-                    shadow-lg z-30 transition-all duration-300
-                    ${
-                      isActive
-                        ? "bg-orange-600 text-white scale-125 border-4 border-orange-200"
-                        : "bg-white border-4 border-[#fc7116] text-black group-hover:scale-110"
-                    }
-                  `}
+                      lg:w-14 lg:h-14 xl:w-16 xl:h-16 rounded-full
+                      flex items-center justify-center
+                      z-30 cursor-pointer
+                      transition-all duration-300 ease-out
+                      hover:scale-110
+                      active:scale-95
+                      ${
+                        isActive
+                          ? `
+                              bg-orange-600 text-white
+                              border-4 border-orange-200
+                              shadow-[0_0_0_0_rgba(252,113,22,0.6)]
+                              animate-[pulseBorder_2s_ease-in-out_infinite]
+                            `
+                          : `
+                              bg-white text-black
+                              border-4 border-[#fc7116]
+                              shadow-md
+                            `
+                      }
+                    `}
                   >
-                    <RenderIcon spec={spec} size={20} className="" />
+                    <RenderIcon spec={spec} size={20} />
                   </div>
 
                   {/* LABEL */}
-                  {/* Reduced width and text size for lg */}
                   <span
                     className={`
-                    ml-4 lg:w-40 xl:w-48 text-left leading-tight
-                    lg:text-sm xl:text-base font-bold 
-                    px-3 py-2 rounded-lg transition-all duration-300
-                    ${
-                      isActive
-                        ? "text-[#fc7116]"
-                        : "text-slate-800 group-hover:text-[#fc7116]"
-                    }
-                  `}
+                      ml-4 lg:w-40 xl:w-48 text-left leading-tight
+                      lg:text-sm xl:text-base font-bold 
+                      px-3 py-2 rounded-lg transition-all duration-300
+                      cursor-pointer
+                      ${
+                        isActive
+                          ? "text-[#fc7116]"
+                          : "text-slate-800 group-hover:text-[#fc7116]"
+                      }
+                    `}
                   >
                     {spec.title}
                   </span>
@@ -179,7 +204,7 @@ export default function ProgrammesSection() {
           </div>
         </div>
 
-        {/* MOBILE TREE STRUCTURE (Unchanged) */}
+        {/* MOBILE TREE STRUCTURE */}
         <div className="lg:hidden w-full px-6 py-4 flex flex-col gap-6">
           {specializations.map((spec, index) => {
             const isActive = index === activeIndex;
@@ -192,7 +217,7 @@ export default function ProgrammesSection() {
                 )}
 
                 <button
-                  onClick={() => setActiveIndex(index)}
+                  onClick={() => handleManualSelect(index)}
                   className={`
                   shrink-0 min-w-12 min-h-12
                   z-10 w-12 h-12 rounded-full 
@@ -205,15 +230,24 @@ export default function ProgrammesSection() {
                   }
                 `}
                 >
-                  <RenderIcon spec={spec} size={18} className="shrink-0" />
+                  <RenderIcon
+                    spec={spec}
+                    size={18}
+                    className={`
+                      shrink-0
+                      transition-transform duration-300
+                      ${isActive ? "rotate-180" : "rotate-0"}
+                    `}
+                  />
                 </button>
 
                 {/* Text */}
                 <div className="pt-2 flex-1">
                   <h4
-                    className={`font-bold text-base ${
+                    className={`font-bold text-base cursor-pointer ${
                       isActive ? "text-orange-600" : "text-slate-900"
                     }`}
+                    onClick={() => handleManualSelect(index)}
                   >
                     {spec.title}
                   </h4>
@@ -242,7 +276,6 @@ export default function ProgrammesSection() {
         {/* RIGHT SIDE: INFO CARD */}
         <div className="hidden lg:absolute right-0 top-0 w-full lg:w-[40%] xl:w-1/3 h-full lg:flex items-center justify-center lg:p-4 xl:p-8 z-40 pointer-events-none">
           <div className="pointer-events-auto max-w-lg w-full">
-            {/* Reduced padding for lg, restored for xl */}
             <div className="bg-[white/90] backdrop-blur-xl border border-white/20 shadow-2xl rounded-3xl lg:p-8 xl:p-12 relative overflow-hidden transition-all duration-500">
               {/* Decorative Background Icon */}
               <div className="absolute -right-6 -top-6 opacity-10 rotate-12 scale-150">
@@ -265,12 +298,10 @@ export default function ProgrammesSection() {
                   </span>
                 </div>
 
-                {/* Smaller heading for lg, original for xl */}
                 <h2 className="lg:text-2xl xl:text-3xl font-extrabold text-[#10404A] mb-4 xl:mb-6 leading-tight">
                   {activeSpec.title}
                 </h2>
 
-                {/* Smaller text and stricter clamp for lg */}
                 <p className="text-slate-600 lg:text-sm xl:text-lg lg:leading-snug xl:leading-relaxed mb-6 xl:mb-8 lg:line-clamp-8 xl:line-clamp-10">
                   {activeSpec.description}
                 </p>

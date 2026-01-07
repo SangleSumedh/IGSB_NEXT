@@ -14,7 +14,7 @@ function NewCTA() {
   };
 
   return (
-    <div className="relative w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] text-white shadow-xl overflow-hidden">
+    <div className="relative mt-50 w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] text-white shadow-xl overflow-hidden">
       {/* CONTAINER HEIGHT:
         - Mobile: h-auto (Stack content vertically)
         - Desktop (md+): h-[25vh] (Strict horizontal strip)

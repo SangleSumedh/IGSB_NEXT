@@ -30,13 +30,28 @@ function Training() {
 
           {/* FLOATING WHITE CARD */}
           <div className="relative -mt-10 mx-6 mb-6 bg-white rounded-xl shadow-lg p-8 space-y-6 flex flex-col h-full">
-            <p className="text-gray-700 leading-relaxed">
-              The Industry Readiness Programme (IRP) is a structured training
-              programme designed in close collaboration with industry experts to
-              align academic learning with real-world corporate expectations. It
-              focuses on building functional skills, analytical thinking, and
-              job readiness through hands-on training and expert mentorship.
-            </p>
+            {/* TEXT + IMAGE */}
+            <div className="flex gap-6">
+              {/* TEXT — 70% */}
+              <div className="w-[70%]">
+                <p className="text-gray-700 leading-relaxed">
+                  The Industry Readiness Programme (IRP) is a structured training
+                  programme designed in close collaboration with industry experts to
+                  align academic learning with real-world corporate expectations. It
+                  focuses on building functional skills, analytical thinking, and
+                  job readiness through hands-on training and expert mentorship.
+                </p>
+              </div>
+
+              {/* IMAGE — 30% */}
+              <div className="w-[30%] flex items-center justify-center">
+                <img
+                  src="/Home/ICEMCertificates.jpg"
+                  alt="ICEM Certificates"
+                  className="w-full h-auto max-h-40 object-contain rounded-lg"
+                />
+              </div>
+            </div>
 
             {/* ICONS */}
             <div className="grid grid-cols-4 gap-4 mt-auto">
@@ -138,7 +153,6 @@ function Training() {
                   className="flex flex-col items-center justify-center p-4 rounded-lg 
                     border-2 border-orange-500 shadow-md bg-white hover:shadow-lg transition-shadow"
                 >
-                  {/* Square Icon Container */}
                   <div className="w-12 h-12 mb-2 flex items-center justify-center rounded-md overflow-hidden bg-gray-50">
                     <img
                       src="/Home/powerbi.webp"
@@ -146,7 +160,6 @@ function Training() {
                       className="w-10 h-10 object-contain"
                     />
                   </div>
-                  {/* Label */}
                   <span className="text-sm font-medium text-black text-center">
                     {item.label}
                   </span>
@@ -155,6 +168,7 @@ function Training() {
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

@@ -12,53 +12,58 @@ function NewCTA() {
   };
 
   return (
-    <div
-      className="
-        relative w-full overflow-hidden
-        bg-gradient-to-r from-[#10404A] to-[#1F6D71]
-        text-white shadow-xl
-      "
-    >
-      {/* GRID WRAPPER */}
-      <div className="grid grid-cols-1 lg:grid-cols-8">
-        {/* COLUMN 1 — IMAGE (NO PY, TOUCHES BOTTOM) */}
-        <div className="relative flex items-end justify-center lg:justify-start">
+    <div className="relative w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] text-white shadow-xl overflow-hidden">
+      {/* CONTAINER HEIGHT:
+        - Mobile: h-auto (Stack content vertically)
+        - Desktop (md+): h-[25vh] (Strict horizontal strip)
+      */}
+      <div className="grid grid-cols-1 md:grid-cols-8 h-auto md:h-[25vh]">
+        {/* --- COLUMN 1: LEFT IMAGE (Confused Person) --- 
+            Mobile: Visible, height fixed to h-40 (approx 160px) to not dominate screen.
+            Desktop: Visible, takes full height of container.
+        */}
+        <div className="flex md:col-span-1 items-end justify-center relative h-40 md:h-full pt-4 md:pt-0">
           <img
             src="/Home/confused.png"
-            alt="Confused person illustration"
+            alt="Confused person"
             onError={handleImageError}
             className="
-              h-[25vh]
-              w-auto
-              object-contain
-              opacity-90
+              h-full w-auto 
+              object-contain object-bottom 
+              opacity-90 hover:scale-105 transition-transform duration-500
             "
           />
         </div>
 
-        {/* COLUMN 2 — TEXT + CTA */}
-        <div className="flex flex-col justify-center items-center text-center px-6 md:px-10 py-8 md:col-span-2">
-          <h2 className="text-2xl md:text-3xl  lg:text-4xl font-bold text-white mb-4 leading-tight">
-            <span className="font-[baskerville-bt] italic">
+        {/* --- COLUMN 2: TEXT & CTA --- 
+            Mobile: Stacked below image.
+            Desktop: Center aligned (cols 2-3).
+        */}
+        <div className="flex flex-col justify-center items-center text-center px-4 pb-8 pt-2 md:py-0 md:col-span-2 z-10 relative">
+          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-3 leading-tight">
+            <span className="font-[baskerville-bt] italic text-white">
               Still confused?
             </span>
-            <span className="block text-3xl">Discover more about IGSB.</span>
+            <span className="block text-xl lg:text-2xl mt-1">
+              Discover more about IGSB.
+            </span>
           </h2>
 
           <button
             onClick={handleDownload}
             className="
-              inline-flex items-center justify-center gap-3
-              px-2 py-3 w-3/5
-               font-semibold
+              inline-flex items-center justify-center gap-2
+              px-4 py-2.5 w-auto min-w-[140px]
+              text-sm font-bold
               text-orange-500 bg-white
               rounded-md shadow-lg
-              hover:shadow-xl hover:-translate-y-0.5
-              transition
+              hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] 
+              hover:-translate-y-0.5
+              transition-all duration-300
             "
           >
             <svg
-              className="w-5 h-5"
+              className="w-4 h-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -66,25 +71,33 @@ function NewCTA() {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="2"
+                strokeWidth="2.5"
                 d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
               />
             </svg>
             Download Brochure
           </button>
         </div>
-        <div className="hidden max-h-[25vh] relative lg:flex items-center justify-center col-span-5">
-          <img
-            src="/Home/IGSB.jpg"
-            alt="Confused person illustration"
-            onError={handleImageError}
-            className="
-      object-contain
-      object-top
-      [mask-image:linear-gradient(to_right,rgba(0,0,0,0)_0%,rgba(0,0,0,1)_50%,rgba(0,0,0,1)_100%)]
-      [-webkit-mask-image:linear-gradient(to_right,rgba(0,0,0,0)_0%,rgba(0,0,0,1)_50%,rgba(0,0,0,1)_100%)]
-    "
-          />
+
+        {/* --- COLUMN 3: RIGHT IMAGE (IGSB Campus) --- 
+            Mobile: HIDDEN (as requested).
+            Desktop: Visible (cols 4-8), strict 25vh height.
+        */}
+        <div className="hidden md:block md:col-span-5 relative h-full w-full">
+          <div className="absolute inset-0 w-full h-full">
+            <img
+              src="/Home/IGSB.jpg"
+              alt="IGSB Campus"
+              onError={handleImageError}
+              className="
+                w-full h-full 
+                object-cover object-center
+                opacity-80 mix-blend-overlay md:mix-blend-normal md:opacity-100
+                [mask-image:linear-gradient(to_right,transparent,black_15%)]
+                [-webkit-mask-image:linear-gradient(to_right,transparent,black_15%)]
+              "
+            />
+          </div>
         </div>
       </div>
     </div>

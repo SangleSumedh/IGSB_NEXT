@@ -10,30 +10,30 @@ export default function Career() {
   const cards = [
     {
       icon: (
-        <FaUserGraduate className="text-3xl sm:text-4xl mb-2 text-primary" />
+        <FaUserGraduate className="text-3xl sm:text-4xl mb-2 text-[#ff712d]" />
       ),
       title: "Alumni Mentorship & Placement Guidance",
       desc: "Connect with our powerful network of accomplished alumni for one-on-one mentorship. Get personalized guidance on career paths, resume building, and interview strategies to land your dream role.",
     },
     {
-      icon: <FaHandshake className="text-3xl sm:text-4xl mb-2 text-primary" />,
+      icon: <FaHandshake className="text-3xl sm:text-4xl mb-2 text-[#ff712d]" />,
       title: "Corporate Partnerships & Recruitment Drive",
       desc: "We have established strong, lasting relationships with a diverse portfolio of national and multinational corporations. Benefit from exclusive recruitment drives, on-campus placements, and direct access to sought-after employers actively seeking IGSB talent.",
     },
     {
-      icon: <FaLightbulb className="text-3xl sm:text-4xl mb-2 text-primary" />,
+      icon: <FaLightbulb className="text-3xl sm:text-4xl mb-2 text-[#ff712d]" />,
       title: "Internships & Industry Exposure",
       desc: "Theory meets practice through mandatory, paid internships with our partner companies. From semester-long projects in Pune to global opportunities, gain invaluable hands-on experience that makes your resume stand out.",
     },
     {
-      icon: <FaIndustry className="text-3xl sm:text-4xl mb-2 text-primary" />,
+      icon: <FaIndustry className="text-3xl sm:text-4xl mb-2 text-[#ff712d]" />,
       title: "Career Development Workshops",
       desc: "We polish your professional edge. Through a continuous schedule of workshops—from mastering communication and leadership to acing mock interviews and building a powerful personal brand—we ensure you are not just qualified, but truly job-ready.",
     },
   ];
 
   return (
-    <section className="bg-secondary text-white py-12 sm:py-16 lg:py-20">
+    <section className="bg-[#10404A] text-white py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
         {/* Heading */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">

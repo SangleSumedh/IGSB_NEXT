@@ -37,7 +37,7 @@ export default function PhdSection() {
         </h2>
 
         {/* TEXT CONTENT */}
-        <div className="max-w-7xl space-y-2 mb-10">
+        <div className="w-full space-y-2 mb-10">
           <p className="text-gray-700 text-md md:text-lg leading-relaxed text-justify">
             Indira Global School of Business (IGSB) is an AICTE-approved,
             UGC-recognized institution affiliated with Savitribai Phule Pune

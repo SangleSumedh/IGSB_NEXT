@@ -170,7 +170,7 @@ export default function JourneyToCollege() {
           {/* --- COLLEGE BUILDING --- */}
           <div className="relative flex flex-col items-center z-20 mr-32">
             <img
-              src="/Home/IGSB_animated.png"
+              src="/Home/updated_igsb.png"
               alt="IGSB College"
               className="w-[500px] h-auto object-contain drop-shadow-2xl"
             />

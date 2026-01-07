@@ -14,12 +14,13 @@ import NewDiscover from "@/components/home/newDiscover";
 import ProgrammesSection from "@/components/home/ProgrammesSection";
 import Phd from "@/components/home/Phd";
 import Pillar from "@/components/home/Pillar";
-
+import CarSection from "@/components/home/CarSection";
 import FormSection from "@/components/home/FormSection"; // XL+
 import SmallDesktopFormSection from "@/components/home/SmallDesktopFormSection"; // LG → XL
 import NewCTA from "@/components/home/NewCTA";
 import Training from "@/components/home/Training";
 import FactSection from "@/components/home/FactSection";
+import Road from "@/components/home/Road";
 
 export default function HomePage() {
   return (
@@ -39,7 +40,8 @@ export default function HomePage() {
         <Phd />
         <FactSection />
         <Training />
-                <Road />
+              
+               
               {/* <NewCTA /> */}
         {/* <AcademicYearSection /> */}
         {/* <RecruitersSection /> */}
@@ -50,6 +52,7 @@ export default function HomePage() {
         {/* <CTASection /> */}
         {/* <EventsSection /> */}
         <NewCTA />
+        <CarSection />
         <CTASection />
       </ScrollCrushWrapper>
 

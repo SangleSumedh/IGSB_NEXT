@@ -32,8 +32,8 @@ const RecruitersSection = () => {
       body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of graduate performance and professional readiness.",
     },
     "/placement": {
-      headline: "Trusted by Industry, Defined by Outcomes",
-      body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of graduate performance and professional readiness.",
+      headline: "Recruiters Who Value Industry-Ready Talent ",
+      body: "Leading organizations that recognize, recruit, and trust IGSB graduates for their domain expertise and professional readiness.",
     },
     "/programs/mba": {
       headline: "Trusted by Industry, Defined by Outcomes",

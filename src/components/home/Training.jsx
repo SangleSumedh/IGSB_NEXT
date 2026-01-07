@@ -65,20 +65,63 @@ function Training() {
         <div className="relative flex flex-col h-full rounded-2xl overflow-hidden bg-[#3aafa9]">
           {/* TOP HEADER */}
           <div className="bg-[#10404A] text-center pt-6 pb-14">
-            <h2 className="text-xl md:text-2xl font-bold text-white ">
-              Career Leadership Development Programme (CLDP)
-            </h2>
+            <div className="flex items-center justify-center gap-3">
+              <h2 className="text-xl md:text-2xl font-bold text-white">
+                Career Leadership Development Programme (CLDP)
+              </h2>
+
+              {/* 5 STARS */}
+              <div className="flex gap-1">
+                <svg width="0" height="0">
+                  <defs>
+                    <linearGradient
+                      id="goldGradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stopColor="#FFD700" />
+                      <stop offset="50%" stopColor="#FFB800" />
+                      <stop offset="100%" stopColor="#C99700" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className="w-5 h-5"
+                    fill="url(#goldGradient)"
+                    stroke="url(#goldGradient)"
+                  />
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* FLOATING WHITE CARD */}
           <div className="relative -mt-10 mx-6 mb-6 bg-white rounded-xl shadow-2xl p-8 space-y-6 flex flex-col h-full">
-            <p className="text-gray-700 leading-relaxed">
-              The Career Leadership Development Programme (CLDP) is a
-              leadership-focused framework designed to develop future-ready MBA
-              professionals with expert-level capabilities. It strengthens
-              aptitude, communication, and domain expertise while offering
-              professional certifications.
-            </p>
+            <div className="flex gap-6">
+              {/* TEXT — 70% */}
+              <div className="w-[70%]">
+                <p className="text-gray-700 leading-relaxed">
+                  The Career Leadership Development Programme (CLDP) is a
+                  leadership-focused framework designed to develop future-ready
+                  MBA professionals with expert-level capabilities. It
+                  strengthens aptitude, communication, and domain expertise
+                  while offering professional certifications.
+                </p>
+              </div>
+
+              {/* IMAGE — 30% */}
+              <div className="w-[30%] flex items-center justify-center">
+                <img
+                  src="/Home/ICEMCertificates.jpg"
+                  alt="ICEM Certificates"
+                  className="w-full h-auto max-h-40 object-contain rounded-lg"
+                />
+              </div>
+            </div>
 
             {/* ICONS GRID */}
             <div className="grid grid-cols-2 md:grid-cols-6 gap-4 mt-auto">

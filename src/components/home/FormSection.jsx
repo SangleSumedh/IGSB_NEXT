@@ -1,43 +1,48 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { Phone, ChevronLeft, ChevronRight } from "lucide-react";
+import { Phone } from "lucide-react";
 import ApplyForm from "./ApplyForm";
+import { usePathname } from "next/navigation";
 
-const commonText = `The MBA in Finance at IGSB prepares students for analytical,
-decision-driven roles in the financial ecosystem. The curriculum
-emphasizes financial management, corporate finance, financial
-modelling, investment analysis, risk management, and strategic
-financial decision-making. Students gain exposure to capital markets,
-valuation, budgeting, compliance, fintech fundamentals, enabling them
-to contribute effectively in corporate finance, banking, and consulting.`;
+/* ---------------- RECRUITER DATA ---------------- */
 
-const testimonials = [
-  { name: "Amit Kulkarni", branch: "MBA – Finance", image: "/boy.png" },
-  { name: "Sneha Patil", branch: "MBA – Marketing", image: "/boy.png" },
-  { name: "Rahul Deshmukh", branch: "MBA – Business Analytics", image: "/boy.png" },
-  { name: "Pooja Sharma", branch: "MBA – Human Resource Management", image: "/boy.png" },
-  { name: "Kunal Mehta", branch: "MBA – Operations & Supply Chain", image: "/boy.png" },
-];
+const LOGO_COUNT = 44;
+const EXCLUDED_INDICES = [35, 37];
+
+const generateLogos = () =>
+  Array.from({ length: LOGO_COUNT }, (_, i) => {
+    const index = i + 1;
+    if (EXCLUDED_INDICES.includes(index)) return null;
+    return `/IGSB/logos/logo${index}.webp`;
+  }).filter(Boolean);
 
 export default function FormSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const pathname = usePathname();
+  const logos = generateLogos();
 
-  useEffect(() => {
-    const t = setInterval(
-      () => setActiveIndex((i) => (i + 1) % testimonials.length),
-      4000
-    );
-    return () => clearInterval(t);
-  }, []);
+  const third = Math.ceil(logos.length / 3);
+  const row1 = logos.slice(0, third);
+  const row2 = logos.slice(third, third * 2);
+  const row3 = logos.slice(third * 2);
 
-  const prev = () =>
-    setActiveIndex((i) => (i === 0 ? testimonials.length - 1 : i - 1));
-  const next = () =>
-    setActiveIndex((i) => (i + 1) % testimonials.length);
+  const pageContent = {
+    "/": {
+      headline: "Trusted by Industry, Defined by Outcomes",
+      body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of graduate performance and professional readiness.",
+    },
+    "/placement": {
+      headline: "Trusted by Industry, Defined by Outcomes",
+      body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of graduate performance and professional readiness.",
+    },
+    "/programs/mba": {
+      headline: "Trusted by Industry, Defined by Outcomes",
+      body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of graduate performance and professional readiness.",
+    },
+  };
 
-  const active = testimonials[activeIndex];
+  const { headline, body } = pageContent[pathname] || pageContent["/"];
 
   return (
     <section className="relative w-full bg-white overflow-hidden">
@@ -45,69 +50,54 @@ export default function FormSection() {
       {/* ================= XL AND ABOVE ================= */}
       <div className="hidden xl:grid grid-cols-[78%_22%] min-h-[600px]">
 
-        {/* LEFT */}
-        <div className="bg-gradient-to-r from-[#10404A] to-[#1F6D71]
-          flex items-center justify-center px-20 py-8">
+        {/* ================= LEFT ================= */}
+        <div className="relative overflow-hidden bg-gradient-to-r from-[#10404A] to-[#1F6D71]">
 
-          <div className="max-w-[860px] w-full text-center">
-
-            <p className="text-white text-[28px] italic leading-snug
-              font-['baskerville-bt'] mb-14">
-              Every risk is worth taking as long as it’s for a good <br /> cause and
-              contributes to a good life.
+          {/* TEXT (keeps padding) */}
+          <div className="relative z-10 pt-12 pb-6 px-20 text-center">
+            <h2 className="text-3xl font-extrabold text-white mb-4">
+              {headline}
+            </h2>
+            <p className="text-white/90 text-lg max-w-4xl mx-auto leading-relaxed">
+              {body}
             </p>
+          </div>
 
-            <div className="relative mx-auto max-w-[660px]">
-              <div className="absolute -top-10 left-1/2 -translate-x-1/2
-                w-16 h-16 rounded-full border-4 border-white
-                bg-white overflow-hidden z-10">
-                <Image
-                  src={active.image}
-                  alt={active.name}
-                  fill
-                  className="object-cover"
-                />
+          {/* MARQUEES — FULL WIDTH */}
+          <div className="relative z-10 space-y-10 py-6">
+
+            {/* ROW 1 → Right to Left */}
+            <div className="overflow-hidden">
+              <div className="marquee marquee-left gap-8">
+                {[...row1, ...row1].map((logo, i) => (
+                  <LogoItem key={`r1-${i}`} src={logo} />
+                ))}
               </div>
+            </div>
 
-              <div className="bg-[#3aafa9] rounded-[22px]
-                px-6 pt-12 pb-6
-                text-white shadow-xl">
+            {/* ROW 2 → Left to Right */}
+            <div className="overflow-hidden">
+              <div className="marquee marquee-right gap-8">
+                {[...row2, ...row2].map((logo, i) => (
+                  <LogoItem key={`r2-${i}`} src={logo} />
+                ))}
+              </div>
+            </div>
 
-                <h3 className="text-lg font-semibold">{active.name}</h3>
-                <p className="text-xs opacity-90 mb-3">{active.branch}</p>
-
-                <p className="text-md leading-relaxed whitespace-pre-line">
-                  {commonText}
-                </p>
-
-                <div className="flex justify-center items-center gap-3 mt-5">
-                  <button onClick={prev} className="p-1.5 rounded-full bg-white/20">
-                    <ChevronLeft size={14} />
-                  </button>
-
-                  <div className="flex gap-1.5">
-                    {testimonials.map((_, i) => (
-                      <span
-                        key={i}
-                        className={`w-1.5 h-1.5 rounded-full ${
-                          activeIndex === i ? "bg-white" : "bg-white/40"
-                        }`}
-                      />
-                    ))}
-                  </div>
-
-                  <button onClick={next} className="p-1.5 rounded-full bg-white/20">
-                    <ChevronRight size={14} />
-                  </button>
-                </div>
+            {/* ROW 3 → Right to Left */}
+            <div className="overflow-hidden">
+              <div className="marquee marquee-left gap-8">
+                {[...row3, ...row3].map((logo, i) => (
+                  <LogoItem key={`r3-${i}`} src={logo} />
+                ))}
               </div>
             </div>
 
           </div>
         </div>
 
-        {/* RIGHT FORM */}
-        <div className="relative">
+        {/* ================= RIGHT : FORM ================= */}
+        <div className="relative z-20">
           <div
             className="
               absolute
@@ -141,3 +131,17 @@ export default function FormSection() {
     </section>
   );
 }
+
+/* ---------------- LOGO ITEM ---------------- */
+
+const LogoItem = ({ src }) => (
+  <div className="flex items-center justify-center w-32 h-16 sm:w-40 sm:h-20 bg-white border border-white/30 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 flex-shrink-0">
+    <Image
+      src={src}
+      alt="Recruiter Logo"
+      width={120}
+      height={60}
+      className="object-contain max-w-[80%] max-h-[70%]"
+    />
+  </div>
+);

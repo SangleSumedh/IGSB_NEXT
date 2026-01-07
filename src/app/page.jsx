@@ -17,6 +17,7 @@ import Pillar from "@/components/home/Pillar";
 
 import FormSection from "@/components/home/FormSection"; // XL+
 import SmallDesktopFormSection from "@/components/home/SmallDesktopFormSection"; // LG → XL
+import NewCTA from "@/components/home/NewCTA";
 
 export default function HomePage() {
   return (
@@ -39,7 +40,8 @@ export default function HomePage() {
         {/* <EnergyInnovation /> */}
         {/* <CollegeUnplugged /> */}
         {/* <EventsSection /> */}
-        <CTASection />
+        <NewCTA />
+        {/* <CTASection /> */}
       </ScrollCrushWrapper>
 
       <InstagramMosaic />

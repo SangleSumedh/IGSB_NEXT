@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import { ArrowBigUp, Download } from "lucide-react";
+import { FaDownload } from "react-icons/fa";
 
 function NewCTA() {
   const handleDownload = () => {
@@ -53,16 +55,16 @@ function NewCTA() {
             onClick={handleDownload}
             className="
               inline-flex items-center justify-center gap-2
-              px-4 py-2.5 w-auto min-w-[140px]
+              px-5 py-3 w-auto min-w-[150px]
               text-sm font-bold
-              text-orange-500 bg-white
-              rounded-md shadow-lg
-              hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] 
+              text-[#10404A] bg-white
+              rounded-full shadow-lg
+              hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] 
               hover:-translate-y-0.5
               transition-all duration-300
             "
           >
-            <svg
+            {/* <svg
               className="w-4 h-4"
               fill="none"
               stroke="currentColor"
@@ -74,7 +76,8 @@ function NewCTA() {
                 strokeWidth="2.5"
                 d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
               />
-            </svg>
+            </svg> */}
+            <FaDownload/>
             Download Brochure
           </button>
         </div>

@@ -59,68 +59,61 @@ export default function CTASection() {
       */}
       <div className="grid grid-cols-1 md:grid-cols-8 h-auto ">
         {/* --- COLUMN 1 (5/8): TESTIMONIAL CAROUSEL --- */}
-        <div className="md:col-span-5 relative h-full w-full flex items-center justify-center p-6 md:p-8 bg-[#10404A]/50 md:bg-transparent">
-          <div className="w-full max-w-4xl flex flex-col md:flex-row items-center gap-8">
-            {/* Left: Avatar & Name */}
-            <div className="flex-shrink-0 flex flex-col items-center md:items-start text-center md:text-left min-w-[140px]">
-              <div className="relative w-16 h-16 rounded-full border-2 border-[#fb7035] overflow-hidden shadow-lg mb-3">
-                <Image
-                  src={active.image}
-                  alt={active.name}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="font-bold text-lg leading-tight">{active.name}</h3>
-              <p className="text-xs text-orange-200 opacity-90">
-                {active.branch}
-              </p>
-
-              {/* Navigation Controls */}
-              <div className="flex items-center gap-2 mt-3">
-                <button
-                  onClick={prev}
-                  className="p-1 rounded-full hover:bg-white/10 transition"
-                >
-                  <ChevronLeft size={16} />
-                </button>
-                <button
-                  onClick={next}
-                  className="p-1 rounded-full hover:bg-white/10 transition"
-                >
-                  <ChevronRight size={16} />
-                </button>
-              </div>
-            </div>
-
-            {/* Right: Quote Text */}
-            <div className="relative flex-1">
-              {/* Left Quote Icon */}
-              {/* <Quote className="absolute -top-3 -left-4 w-6 h-6 text-orange-400/30 rotate-180" /> */}
-
-              {/* Main Text - Line clamp removed */}
-              <p className="text-sm md:text-sm lg:text-base leading-relaxed text-white/95 pl-4 pr-4">
-                {commonText}
-              </p>
-
-              {/* Right Quote Icon */}
-              {/* <Quote className="absolute bottom-5 -right-2 w-6 h-6 text-orange-400/30" /> */}
-
-              {/* Dots Indicator */}
-              <div className="flex gap-1.5 mt-5 pl-4">
-                {testimonials.map((_, i) => (
-                  <span
-                    key={i}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${
-                      activeIndex === i
-                        ? "w-6 bg-[#fb7035]"
-                        : "w-1.5 bg-white/30"
-                    }`}
+        <div className="md:col-span-5 relative h-full w-full flex items-center justify-center p-2 md:p-4 bg-[#1F6D71]/50 md:bg-transparent">
+          <div className=" p-4 rounded-xl border-3 border-[#3aafa9]">
+            <div className="w-full max-w-4xl flex flex-col md:flex-row items-center gap-8">
+              {/* Left: Avatar & Name */}
+              <div className="flex-shrink-0 flex flex-col items-center md:items-center text-center md:text-left min-w-[140px]">
+                <div className="relative w-16 h-16 rounded-full border-2 border-[#fb7035] overflow-hidden shadow-lg mb-3">
+                  <Image
+                    src={active.image}
+                    alt={active.name}
+                    fill
+                    className="object-cover"
                   />
-                ))}
+                </div>
+                <h3 className="font-bold text-lg leading-tight">
+                  {active.name}
+                </h3>
+                <p className="text-xs text-white opacity-90">{active.branch}</p>
+
+                {/* Navigation Controls */}
+               
               </div>
+
+              {/* Right: Quote Text */}
+              <div className="relative flex-1">
+                {/* Left Quote Icon */}
+                {/* <Quote className="absolute -top-3 -left-4 w-6 h-6 text-orange-400/30 rotate-180" /> */}
+
+                {/* Main Text - Line clamp removed */}
+                <p className="text-sm md:text-sm lg:text-base leading-relaxed text-white/95 pl-4 pr-4">
+                  {commonText}
+                </p>
+
+                {/* Right Quote Icon */}
+                {/* <Quote className="absolute bottom-5 -right-2 w-6 h-6 text-orange-400/30" /> */}
+
+                {/* Dots Indicator */}
+                <div className="flex gap-1.5 mt-5 pl-4">
+                  {testimonials.map((_, i) => (
+                    <span
+                      key={i}
+                      className={`h-1.5 rounded-full transition-all duration-300 ${
+                        activeIndex === i
+                          ? "w-6 bg-[#fb7035]"
+                          : "w-1.5 bg-white/30"
+                      }`}
+                    />
+                  ))}
+                </div>
+                
+              </div>
+              
             </div>
+            
           </div>
+          
         </div>
 
         {/* --- COLUMN 2 (2/8): TEXT & CTA --- 
@@ -128,7 +121,7 @@ export default function CTASection() {
         */}
         <div className="flex flex-col justify-center items-center text-center px-4 pt-8 pb-4 md:py-0 md:col-span-2 z-10 relative bg-white/5 md:bg-transparent">
           <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4 leading-tight">
-            <span className="font-[baskerville-bt] italic text-orange-200">
+            <span className="font-[baskerville-bt] italic text-white">
               Ready to Lead?
             </span>
             <span className="block text-xl lg:text-2xl mt-1 text-white">

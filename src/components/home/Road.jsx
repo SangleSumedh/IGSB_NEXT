@@ -141,11 +141,8 @@ export default function JourneyToCollege() {
         {/* === SECTION 3: COLLEGE & FOREST (100vw) === */}
         <div className="w-[100vw] h-full flex items-end justify-center relative pl-20">
           {/* --- THICK PINE FOREST BACKGROUND --- */}
-          {/* CHANGE: Width increased to w-[200%] and anchored right-0. 
-              This makes it bleed backwards into Section 2. */}
           <div className="absolute bottom-0 right-0 h-full w-[200%] flex items-end justify-end pointer-events-none z-0">
             <div className="flex items-end w-full justify-end pr-0">
-              {/* CHANGE: Increased tree count from 30 to 60 to fill the extra space */}
               {Array.from({ length: 60 }).map((_, i) => (
                 <img
                   key={i}
@@ -154,7 +151,7 @@ export default function JourneyToCollege() {
                   style={{ transform: `scale(${0.8 + (i % 3) * 0.2})` }}
                   className={`
                         w-24 h-auto 
-                        -ml-12  /* Negative margin for density/overlap */
+                        -ml-12
                         ${
                           i % 2 === 0
                             ? "z-0 brightness-90"
@@ -170,7 +167,7 @@ export default function JourneyToCollege() {
           {/* --- COLLEGE BUILDING --- */}
           <div className="relative flex flex-col items-center z-20 mr-32">
             <img
-              src="/Home/updated_igsb.png"
+              src="/Home/svg/Igsbnew.png"
               alt="IGSB College"
               className="w-[500px] h-auto object-contain drop-shadow-2xl"
             />
@@ -191,17 +188,42 @@ export default function JourneyToCollege() {
         </div>
       </div>
 
-      {/* --- FOREGROUND (The Road) --- */}
-      <div className="absolute bottom-0 w-full h-[15%] bg-[#3a3a3a] border-t-4 border-gray-500 flex items-center overflow-hidden z-20">
-        <div
-          className={`w-[200%] h-0 border-t-4 border-dashed border-yellow-400 opacity-80 ${
-            isDriving ? "animate-road" : ""
-          }`}
-        ></div>
+      {/* --- ROAD SECTION (Replaced with second component's road) --- */}
+      <div className="absolute bottom-0 w-full h-[20%] bg-gradient-to-t from-[#cfcfcf] to-[#e6e6e6] z-20">
+        {/* Building (touching the road) */}
+        <div className="absolute right-20 bottom-[40px] z-30 opacity-95">
+          <img
+            src="/Home/svg/building.svg"
+            alt="College Building"
+            className="w-[200px] h-auto"
+          />
+        </div>
+
+        {/* Road */}
+        <div className="absolute bottom-0 w-full h-[45px] bg-[#707070] z-20">
+          {/* Road top border */}
+          <div className="absolute top-0 w-full h-[2px] bg-[#5a5a5a]"></div>
+          
+          {/* Lane markings */}
+          <div
+            className={`absolute top-1/2 left-0 w-[200%] h-1.5 -translate-y-1/2 ${
+              isDriving ? "animate-road-move" : ""
+            }`}
+          >
+            <div className="w-full h-full flex">
+              {Array.from({ length: 20 }).map((_, i) => (
+                <div key={i} className="flex items-center">
+                  <div className="w-8 h-full bg-yellow-400"></div>
+                  <div className="w-6 h-full bg-transparent"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* --- THE CAR (Asset) --- */}
-      <div className="absolute bottom-[5%] left-10 md:left-32 z-50">
+      <div className="absolute bottom-[8%] left-10 md:left-32 z-40">
         <div
           className={`relative w-48 h-auto
             ${isDriving ? "animate-suspension" : ""} 
@@ -211,7 +233,7 @@ export default function JourneyToCollege() {
         >
           {/* Car Asset */}
           <img
-            src="/Home/car.svg"
+            src="/Home/svg/car.svg"
             alt="Car"
             className="w-1/2 h-1/2 object-contain drop-shadow-lg"
           />
@@ -248,13 +270,13 @@ export default function JourneyToCollege() {
 
         @keyframes road-move {
           0% {
-            transform: translateX(0);
+            transform: translateX(0) translateY(-50%);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-50%) translateY(-50%);
           }
         }
-        .animate-road {
+        .animate-road-move {
           animation: road-move 0.4s linear infinite;
         }
 

@@ -109,7 +109,7 @@ const ExploreSection = () => {
                   height={44}
                   className="mx-auto"
                 />
-                <h3 className="text-lg font-semibold tracking-widest text-[#fc7116]">
+                <h3 className="text-lg font-semibold tracking-widest text]-[#fc7116">
                   VISION
                 </h3>
                 <p className="text-base sm:text-lg font-bold leading-relaxed font-['baskerville-bt-bold'] italic">

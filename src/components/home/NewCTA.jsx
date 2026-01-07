@@ -1,62 +1,93 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-// import { ArrowDownTrayIcon } from "@heroicons/react/24/outline"; // Optional icon, remove if not needed
-import { ArrowDownFromLine } from "lucide-react";
 
 function NewCTA() {
+  const handleDownload = () => {
+    alert("Downloading brochure...");
+  };
+
+  const handleImageError = (e) => {
+    e.currentTarget.style.display = "none";
+  };
+
   return (
-    <section className="w-full bg-gradient-to-r from-[#10404A] via-[#10404A] to-[#10404A] px-6  text-white relative overflow-hidden">
-      <div className="container mx-auto max-w-7xl">
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-          {/* LEFT SIDE: IMAGE (The "Confused" visual) */}
-          <div className="w-full md:w-1/2 relative flex justify-center md:justify-end">
-            <div className="relative z-10 w-full max-w-sm">
-              <Image
-                src="/Home/confused.png"
-                alt="Confused student"
-                width={400}
-                height={400}
-                className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500 ease-out"
+    <div
+      className="
+        relative w-full overflow-hidden
+        bg-gradient-to-r from-[#10404A] to-[#1F6D71]
+        text-white shadow-xl
+      "
+    >
+      {/* GRID WRAPPER */}
+      <div className="grid grid-cols-1 lg:grid-cols-8">
+        {/* COLUMN 1 — IMAGE (NO PY, TOUCHES BOTTOM) */}
+        <div className="relative flex items-end justify-center lg:justify-start">
+          <img
+            src="/Home/confused.png"
+            alt="Confused person illustration"
+            onError={handleImageError}
+            className="
+              h-[25vh]
+              w-auto
+              object-contain
+              opacity-90
+            "
+          />
+        </div>
+
+        {/* COLUMN 2 — TEXT + CTA */}
+        <div className="flex flex-col justify-center items-center text-center px-6 md:px-10 py-8 md:col-span-2">
+          <h2 className="text-2xl md:text-3xl  lg:text-4xl font-bold text-white mb-4 leading-tight">
+            <span className="font-[baskerville-bt] italic">
+              Still confused?
+            </span>
+            <span className="block text-3xl">Discover more about IGSB.</span>
+          </h2>
+
+          <button
+            onClick={handleDownload}
+            className="
+              inline-flex items-center justify-center gap-3
+              px-2 py-3 w-3/5
+               font-semibold
+              text-orange-500 bg-white
+              rounded-md shadow-lg
+              hover:shadow-xl hover:-translate-y-0.5
+              transition
+            "
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
               />
-
-              {/* Creative Touch: Floating Question Mark Badge */}
-              {/* <div className="absolute top-5 right-10 bg-[#FF8B61] text-[#10404A] w-16 h-16 flex items-center justify-center rounded-full text-4xl font-bold shadow-lg animate-bounce">
-                ?
-              </div> */}
-            </div>
-          </div>
-
-          {/* RIGHT SIDE: TEXT & CTA */}
-          <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
-            <div className="space-y-2">
-              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
-                Still Confused?
-              </h2>
-              <p className="text-xl md:text-2xl font-light text-white/90">
-                Discover more about{" "}
-                <span className="font-semibold text-[#FFCCBC]">IGSB</span>.
-              </p>
-            </div>
-
-            {/* <p className="text-white/80 max-w-md mx-auto md:mx-0 text-sm md:text-base leading-relaxed">
-              Find clarity in your career path. Download our comprehensive
-              brochure to explore the curriculum, faculty, and placement
-              opportunities that await you.
-            </p> */}
-
-            <div className="pt-2">
-              <button className="group relative inline-flex items-center gap-3 bg-white text-[#10404A] px-8 py-4 rounded-full font-bold text-lg shadow-[0_4px_14px_0_rgba(0,0,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,255,255,0.23)] hover:bg-[#f0f0f0] transition-all duration-300 transform hover:-translate-y-1">
-                <span>Download Brochure</span>
-                {/* Simple SVG Icon for download action */}
-                <ArrowDownFromLine className="w-5 h-5 stroke-2 group-hover:animate-bounce" />
-              </button>
-            </div>
-          </div>
+            </svg>
+            Download Brochure
+          </button>
+        </div>
+        <div className="hidden max-h-[25vh] relative lg:flex items-center justify-center col-span-5">
+          <img
+            src="/Home/IGSB.jpg"
+            alt="Confused person illustration"
+            onError={handleImageError}
+            className="
+      object-contain
+      object-top
+      [mask-image:linear-gradient(to_right,rgba(0,0,0,0)_0%,rgba(0,0,0,1)_50%,rgba(0,0,0,1)_100%)]
+      [-webkit-mask-image:linear-gradient(to_right,rgba(0,0,0,0)_0%,rgba(0,0,0,1)_50%,rgba(0,0,0,1)_100%)]
+    "
+          />
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

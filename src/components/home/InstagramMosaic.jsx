@@ -43,10 +43,17 @@ export default function InstagramMosaic() {
         {/* HEADER */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            <span className="text-secondary">#Connect</span> with us
+            <span className="text-[#fc7116]">#Connect</span> with us
           </h2>
           <p className="mt-3 text-gray-500 text-lg">
-            Follow our journey on Instagram @indiracollege
+            Follow our journey on Instagram{" "}
+            <Link
+              target="_blank"
+              href={"https://www.instagram.com/indira.igsb/"}
+              className="text-[#fc7116]"
+            >
+              @indira.igsb
+            </Link>
           </p>
         </div>
 

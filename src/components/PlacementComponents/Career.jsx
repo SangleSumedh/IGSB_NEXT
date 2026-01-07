@@ -9,7 +9,9 @@ import {
 export default function Career() {
   const cards = [
     {
-      icon: <FaUserGraduate className="text-3xl sm:text-4xl mb-2 text-primary" />,
+      icon: (
+        <FaUserGraduate className="text-3xl sm:text-4xl mb-2 text-primary" />
+      ),
       title: "Alumni Mentorship & Placement Guidance",
       desc: "Connect with our powerful network of accomplished alumni for one-on-one mentorship. Get personalized guidance on career paths, resume building, and interview strategies to land your dream role.",
     },
@@ -35,36 +37,36 @@ export default function Career() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
         {/* Heading */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
-          Your Career is Our Mission.
+          A Placement Ecosystem Designed for Real Careers
         </h2>
 
         {/* Subheading */}
         <p className="text-sm sm:text-base lg:text-lg max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-14 leading-relaxed text-gray-200">
-          Your potential is limitless, and so are your opportunities at IGSB. We
-          merge academic rigor with real-world readiness, empowering you with
-          the skills, network, and experience to excel.
+          IGSB offers a structured placement ecosystem focused on industry-ready
+          MBA careers. Through strong corporate partnerships, expert mentorship,
+          and hands-on exposure, students graduate with the skills, confidence,
+          and readiness required for long-term professional success.
         </p>
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 items-stretch">
-  {cards.map((card, index) => (
-    <div
-      key={index}
-      className="bg-white border border-gray-200 hover:border-primary/40 p-4 sm:p-6 lg:p-8 rounded-xl lg:rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center h-full"
-    >
-      <div className="flex flex-col items-center text-center flex-1 justify-between">
-        {card.icon}
-        <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3 text-black">
-          {card.title}
-        </h3>
-        <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-          {card.desc}
-        </p>
-      </div>
-    </div>
-  ))}
-</div>
-
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className="bg-white border border-gray-200 hover:border-primary/40 p-4 sm:p-6 lg:p-8 rounded-xl lg:rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center h-full"
+            >
+              <div className="flex flex-col items-center text-center flex-1 justify-between">
+                {card.icon}
+                <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3 text-black">
+                  {card.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  {card.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

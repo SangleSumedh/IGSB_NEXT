@@ -39,16 +39,17 @@ export default function HomePage() {
         <Phd />
         <FactSection />
         <Training />
+              <NewCTA />
         {/* <AcademicYearSection /> */}
         <RecruitersSection />
         {/* <EnergyInnovation /> */}
         {/* <CollegeUnplugged /> */}
-        {/* <EventsSection /> */}
-        <NewCTA />
+        <EventsSection />
+  
         {/* <CTASection /> */}
       </ScrollCrushWrapper>
 
-      <InstagramMosaic />
+      {/* <InstagramMosaic /> */}
     </div>
   );
 }

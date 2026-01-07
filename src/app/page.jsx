@@ -44,9 +44,15 @@ export default function HomePage() {
         <RecruitersSection />
         {/* <EnergyInnovation /> */}
         {/* <CollegeUnplugged /> */}
+<<<<<<< HEAD
         <EventsSection />
   
         {/* <CTASection /> */}
+=======
+        {/* <EventsSection /> */}
+        <NewCTA />
+        <CTASection />
+>>>>>>> 785b3b03707c1e7caa6e7066cc798056955e3b0e
       </ScrollCrushWrapper>
 
       {/* <InstagramMosaic /> */}

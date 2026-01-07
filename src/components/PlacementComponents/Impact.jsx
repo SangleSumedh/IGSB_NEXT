@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Impact() {
   // ➤ Updated Config with 4 items
   const statsConfig = [
-    { target: 27, label: "Highest Package", suffix: " LPA", decimal: 0 },
+    { target: 21, label: "Highest Package", suffix: " LPA", decimal: 0 },
     { target: 8.16, label: "Average Package", suffix: " LPA", decimal: 2 }, // Changed to 2 decimals for precision
     { target: 650, label: "Recruiting Companies", suffix: "+", decimal: 0 },
     { target: 100, label: "Placement Assistance", suffix: "%", decimal: 0 },

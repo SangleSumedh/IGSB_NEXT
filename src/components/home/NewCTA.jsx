@@ -1,62 +1,106 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-// import { ArrowDownTrayIcon } from "@heroicons/react/24/outline"; // Optional icon, remove if not needed
-import { ArrowDownFromLine } from "lucide-react";
 
 function NewCTA() {
+  const handleDownload = () => {
+    alert("Downloading brochure...");
+  };
+
+  const handleImageError = (e) => {
+    e.currentTarget.style.display = "none";
+  };
+
   return (
-    <section className="w-full bg-gradient-to-r from-[#10404A] via-[#10404A] to-[#10404A] px-6  text-white relative overflow-hidden">
-      <div className="container mx-auto max-w-7xl">
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-          {/* LEFT SIDE: IMAGE (The "Confused" visual) */}
-          <div className="w-full md:w-1/2 relative flex justify-center md:justify-end">
-            <div className="relative z-10 w-full max-w-sm">
-              <Image
-                src="/Home/confused.png"
-                alt="Confused student"
-                width={400}
-                height={400}
-                className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500 ease-out"
+    <div className="relative w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] text-white shadow-xl overflow-hidden">
+      {/* CONTAINER HEIGHT:
+        - Mobile: h-auto (Stack content vertically)
+        - Desktop (md+): h-[25vh] (Strict horizontal strip)
+      */}
+      <div className="grid grid-cols-1 md:grid-cols-8 h-auto md:h-[25vh]">
+        {/* --- COLUMN 1: LEFT IMAGE (Confused Person) --- 
+            Mobile: Visible, height fixed to h-40 (approx 160px) to not dominate screen.
+            Desktop: Visible, takes full height of container.
+        */}
+        <div className="flex md:col-span-1 items-end justify-center relative h-40 md:h-full pt-4 md:pt-0">
+          <img
+            src="/Home/confused.png"
+            alt="Confused person"
+            onError={handleImageError}
+            className="
+              h-full w-auto 
+              object-contain object-bottom 
+              opacity-90 hover:scale-105 transition-transform duration-500
+            "
+          />
+        </div>
+
+        {/* --- COLUMN 2: TEXT & CTA --- 
+            Mobile: Stacked below image.
+            Desktop: Center aligned (cols 2-3).
+        */}
+        <div className="flex flex-col justify-center items-center text-center px-4 pb-8 pt-2 md:py-0 md:col-span-2 z-10 relative">
+          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-3 leading-tight">
+            <span className="font-[baskerville-bt] italic text-white">
+              Still confused?
+            </span>
+            <span className="block text-xl lg:text-2xl mt-1">
+              Discover more about IGSB.
+            </span>
+          </h2>
+
+          <button
+            onClick={handleDownload}
+            className="
+              inline-flex items-center justify-center gap-2
+              px-4 py-2.5 w-auto min-w-[140px]
+              text-sm font-bold
+              text-orange-500 bg-white
+              rounded-md shadow-lg
+              hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] 
+              hover:-translate-y-0.5
+              transition-all duration-300
+            "
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2.5"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
               />
+            </svg>
+            Download Brochure
+          </button>
+        </div>
 
-              {/* Creative Touch: Floating Question Mark Badge */}
-              {/* <div className="absolute top-5 right-10 bg-[#FF8B61] text-[#10404A] w-16 h-16 flex items-center justify-center rounded-full text-4xl font-bold shadow-lg animate-bounce">
-                ?
-              </div> */}
-            </div>
-          </div>
-
-          {/* RIGHT SIDE: TEXT & CTA */}
-          <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
-            <div className="space-y-2">
-              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
-                Still Confused?
-              </h2>
-              <p className="text-xl md:text-2xl font-light text-white/90">
-                Discover more about{" "}
-                <span className="font-semibold text-[#FFCCBC]">IGSB</span>.
-              </p>
-            </div>
-
-            {/* <p className="text-white/80 max-w-md mx-auto md:mx-0 text-sm md:text-base leading-relaxed">
-              Find clarity in your career path. Download our comprehensive
-              brochure to explore the curriculum, faculty, and placement
-              opportunities that await you.
-            </p> */}
-
-            <div className="pt-2">
-              <button className="group relative inline-flex items-center gap-3 bg-white text-[#10404A] px-8 py-4 rounded-full font-bold text-lg shadow-[0_4px_14px_0_rgba(0,0,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,255,255,0.23)] hover:bg-[#f0f0f0] transition-all duration-300 transform hover:-translate-y-1">
-                <span>Download Brochure</span>
-                {/* Simple SVG Icon for download action */}
-                <ArrowDownFromLine className="w-5 h-5 stroke-2 group-hover:animate-bounce" />
-              </button>
-            </div>
+        {/* --- COLUMN 3: RIGHT IMAGE (IGSB Campus) --- 
+            Mobile: HIDDEN (as requested).
+            Desktop: Visible (cols 4-8), strict 25vh height.
+        */}
+        <div className="hidden md:block md:col-span-5 relative h-full w-full">
+          <div className="absolute inset-0 w-full h-full">
+            <img
+              src="/Home/IGSB.jpg"
+              alt="IGSB Campus"
+              onError={handleImageError}
+              className="
+                w-full h-full 
+                object-cover object-center
+                opacity-80 mix-blend-overlay md:mix-blend-normal md:opacity-100
+                [mask-image:linear-gradient(to_right,transparent,black_15%)]
+                [-webkit-mask-image:linear-gradient(to_right,transparent,black_15%)]
+              "
+            />
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

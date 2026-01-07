@@ -18,6 +18,8 @@ import Pillar from "@/components/home/Pillar";
 import FormSection from "@/components/home/FormSection"; // XL+
 import SmallDesktopFormSection from "@/components/home/SmallDesktopFormSection"; // LG → XL
 import NewCTA from "@/components/home/NewCTA";
+import Training from "@/components/home/Training";
+import FactSection from "@/components/home/FactSection";
 
 export default function HomePage() {
   return (
@@ -35,6 +37,8 @@ export default function HomePage() {
         <SmallDesktopFormSection />    {/* lg → xl */}
 
         <Phd />
+        <FactSection />
+        <Training />
         {/* <AcademicYearSection /> */}
         <RecruitersSection />
         {/* <EnergyInnovation /> */}

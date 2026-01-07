@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation"; // 1. Import Router
+import { useRouter } from "next/navigation";
 import {
   PieChart,
   CircleDollarSign,
@@ -53,7 +53,7 @@ function RenderIcon({ spec, size = 28, className = "" }) {
   return <IconComponent size={size} className={className} />;
 }
 
-/* ---------------- DATA WITH FULL CONTENT ---------------- */
+/* ---------------- DATA ---------------- */
 const specializations = [
   {
     title: "Marketing Management",
@@ -93,22 +93,18 @@ const specializations = [
 ];
 
 export default function ProgrammesSection() {
-  const router = useRouter(); // 2. Initialize Router
+  const router = useRouter();
   const [activeIndex, setActiveIndex] = useState(0);
   const activeSpec = specializations[activeIndex];
 
   return (
     <div>
       {/* 1. HEADING AT THE TOP */}
-      <div className=" px-6 md:px-16 mt-10">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
-          MBA SPECIALIZATIONS
-        </h2>
-        {/* <div className="w-20 h-1.5 bg-[#fc7116] mt-4 rounded-full" /> */}
-      </div>
+
       <section className="relative w-full lg:h-screen overflow-hidden bg-white font-sans flex items-center">
         {/* IMAGE AT BOTTOM LEFT */}
-        <div className="hidden lg:block absolute bottom-0 left-0 w-[50vw] h-[80vh] z-20 pointer-events-none">
+        {/* Adjusted w-[45vw] for lg to fit better, restoring 50vw for xl */}
+        <div className="hidden lg:block absolute bottom-0 left-0 lg:w-[45vw] xl:w-[50vw] h-[80vh] z-20 pointer-events-none">
           <Image
             src="/Home/MBASpec.png"
             alt="MBA Specializations"
@@ -119,7 +115,12 @@ export default function ProgrammesSection() {
         </div>
 
         {/* LEFT SIDE: CIRCLE INTERFACE */}
-        <div className="hidden lg:block absolute -bottom-10 left-20 w-[45vw] h-[45vw]">
+        {/* Changes for LG:
+            1. left-10 (instead of 20) to pull it closer to edge
+            2. w-[38vw] (instead of 45vw) to shrink the circle diameter, bringing icons inwards
+            3. Restored original values at xl:
+        */}
+        <div className="hidden lg:block absolute -bottom-10 lg:left-10 xl:left-20 lg:w-[40vw] lg:h-[40vw] xl:w-[45vw] xl:h-[45vw]">
           <div className="relative w-full h-full rounded-full border-4 border-[#fc7116] z-10">
             {specializations.map((spec, index) => {
               const radian = (spec.angle * Math.PI) / 180;
@@ -130,7 +131,8 @@ export default function ProgrammesSection() {
               return (
                 <div
                   key={index}
-                  className="absolute flex items-center group cursor-pointer [--base-left:65%] xl:[--base-left:50%]"
+                  // Tweaked --base-left for lg to 60%, restored to 50% for xl
+                  className="absolute flex items-center group cursor-pointer lg:[--base-left:52%] xl:[--base-left:50%]"
                   style={{
                     left: `calc(var(--base-left) + ${50 * Math.cos(radian)}%)`,
                     top: `${top}%`,
@@ -139,9 +141,10 @@ export default function ProgrammesSection() {
                   onClick={() => setActiveIndex(index)}
                 >
                   {/* ICON BUBBLE */}
+                  {/* Reduced size for lg (w-12), restored for xl (w-16) */}
                   <div
                     className={`
-                    w-12 h-12 md:w-16 md:h-16 rounded-full 
+                    lg:w-14 lg:h-14 xl:w-16 xl:h-16 rounded-full 
                     flex items-center justify-center 
                     shadow-lg z-30 transition-all duration-300
                     ${
@@ -155,10 +158,11 @@ export default function ProgrammesSection() {
                   </div>
 
                   {/* LABEL */}
+                  {/* Reduced width and text size for lg */}
                   <span
                     className={`
-                    ml-4 w-32 md:w-48 text-left leading-tight
-                    text-xs md:text-base font-bold 
+                    ml-4 lg:w-40 xl:w-48 text-left leading-tight
+                    lg:text-sm xl:text-base font-bold 
                     px-3 py-2 rounded-lg transition-all duration-300
                     ${
                       isActive
@@ -175,7 +179,7 @@ export default function ProgrammesSection() {
           </div>
         </div>
 
-        {/* MOBILE TREE STRUCTURE */}
+        {/* MOBILE TREE STRUCTURE (Unchanged) */}
         <div className="lg:hidden w-full px-6 py-4 flex flex-col gap-6">
           {specializations.map((spec, index) => {
             const isActive = index === activeIndex;
@@ -236,9 +240,10 @@ export default function ProgrammesSection() {
         </div>
 
         {/* RIGHT SIDE: INFO CARD */}
-        <div className="hidden  lg:absolute right-0 top-0 w-full lg:w-1/3 h-full lg:flex items-center justify-center p-8 z-40 pointer-events-none">
+        <div className="hidden lg:absolute right-0 top-0 w-full lg:w-[40%] xl:w-1/3 h-full lg:flex items-center justify-center lg:p-4 xl:p-8 z-40 pointer-events-none">
           <div className="pointer-events-auto max-w-lg w-full">
-            <div className="bg-[white/90] backdrop-blur-xl border border-white/20 shadow-2xl rounded-3xl p-8 md:p-12 relative overflow-hidden transition-all duration-500">
+            {/* Reduced padding for lg, restored for xl */}
+            <div className="bg-[white/90] backdrop-blur-xl border border-white/20 shadow-2xl rounded-3xl lg:p-8 xl:p-12 relative overflow-hidden transition-all duration-500">
               {/* Decorative Background Icon */}
               <div className="absolute -right-6 -top-6 opacity-10 rotate-12 scale-150">
                 <RenderIcon
@@ -256,20 +261,20 @@ export default function ProgrammesSection() {
                 <div className="flex items-center gap-3 mb-4 text-orange-600">
                   <RenderIcon spec={activeSpec} size={20} />
                   <span className="text-sm font-bold tracking-wider uppercase">
-                    Specialization
+                    MBA Specializations
                   </span>
                 </div>
 
-                <h2 className="text-3xl  font-extrabold text-[#10404A] mb-6 leading-tight">
+                {/* Smaller heading for lg, original for xl */}
+                <h2 className="lg:text-2xl xl:text-3xl font-extrabold text-[#10404A] mb-4 xl:mb-6 leading-tight">
                   {activeSpec.title}
                 </h2>
 
-                {/* 3. Description with line-clamp-3 */}
-                <p className="text-slate-600 text-lg leading-relaxed mb-8 line-clamp-10">
+                {/* Smaller text and stricter clamp for lg */}
+                <p className="text-slate-600 lg:text-sm xl:text-lg lg:leading-snug xl:leading-relaxed mb-6 xl:mb-8 lg:line-clamp-8 xl:line-clamp-10">
                   {activeSpec.description}
                 </p>
 
-                {/* 4. 'Read More' Button with Routing */}
                 <button
                   onClick={() => router.push("/programs/mba")}
                   className="group flex items-center gap-2 bg-[#10404A] text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300"

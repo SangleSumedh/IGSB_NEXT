@@ -55,39 +55,39 @@ const eventList = [
     },
     backdrop: "/Home/events/backdrop-placeholder.png",
   },
-  {
-    title: "Projections (TEMP)",
-    description:
-      "A technical symposium showcasing the latest innovations in technology and engineering.",
-    images: {
-      main: "/Home/boy.png",
-      top: "/Home/boy.png",
-      bottom: "/Home/boy.png",
-    },
-    backdrop: "/Home/events/backdrop-placeholder.png",
-  },
-  {
-    title: "IGSB Film & Design Festival (TEMP)",
-    description:
-      "A creative exploration of visual storytelling and design aesthetics.",
-    images: {
-      main: "/Home/boy.png",
-      top: "/Home/boy.png",
-      bottom: "/Home/boy.png",
-    },
-    backdrop: "/Home/events/backdrop-placeholder.png",
-  },
-  {
-    title: "National Health & Skills Conclave (TEMP)",
-    description:
-      "Focusing on the intersection of healthcare advancements and skill development.",
-    images: {
-      main: "/Home/boy.png",
-      top: "/Home/boy.png",
-      bottom: "/Home/boy.png",
-    },
-    backdrop: "/Home/events/backdrop-placeholder.png",
-  },
+  // {
+  //   title: "Projections (TEMP)",
+  //   description:
+  //     "A technical symposium showcasing the latest innovations in technology and engineering.",
+  //   images: {
+  //     main: "/Home/boy.png",
+  //     top: "/Home/boy.png",
+  //     bottom: "/Home/boy.png",
+  //   },
+  //   backdrop: "/Home/events/backdrop-placeholder.png",
+  // },
+  // {
+  //   title: "IGSB Film & Design Festival (TEMP)",
+  //   description:
+  //     "A creative exploration of visual storytelling and design aesthetics.",
+  //   images: {
+  //     main: "/Home/boy.png",
+  //     top: "/Home/boy.png",
+  //     bottom: "/Home/boy.png",
+  //   },
+  //   backdrop: "/Home/events/backdrop-placeholder.png",
+  // },
+  // {
+  //   title: "National Health & Skills Conclave (TEMP)",
+  //   description:
+  //     "Focusing on the intersection of healthcare advancements and skill development.",
+  //   images: {
+  //     main: "/Home/boy.png",
+  //     top: "/Home/boy.png",
+  //     bottom: "/Home/boy.png",
+  //   },
+  //   backdrop: "/Home/events/backdrop-placeholder.png",
+  // },
 ];
 
 export default function NewEvent() {

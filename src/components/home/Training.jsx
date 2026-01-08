@@ -89,7 +89,7 @@ function Training() {
 
               {/* 5 STARS */}
               {/* Changed container to absolute position, added rotation for diagonal effect, and reduced opacity */}
-              <div className="absolute top-7 right-5 flex gap-1 rotate-0 opacity-100 pointer-events-none">
+              <div className="absolute top-2 right-5 flex gap-1 rotate-0 opacity-100 pointer-events-none">
                 <svg width="0" height="0">
                   <defs>
                     <linearGradient

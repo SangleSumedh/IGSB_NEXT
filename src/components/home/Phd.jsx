@@ -29,7 +29,7 @@ const PHD_DOMAINS = [
 
 export default function PhdSection() {
   return (
-    <section className="w-full bg-white px-16 py-12">
+    <section className="w-full bg-white px-4 md:px-16 py-12">
       <div className="w-full">
         {/* SECTION HEADING */}
         <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 mb-10">

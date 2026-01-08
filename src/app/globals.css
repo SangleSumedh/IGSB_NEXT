@@ -160,18 +160,20 @@
    GLOBAL COLOR VARIABLES
 ============================================================ */
 :root {
-  --background: #ffffff; /* Always white */
+  --background: #ffffff;
   --foreground: #171717;
 
-  --color-primary: 39, 141, 164;
-  --color-primary-hex: #278da4;
+  /* ===== BRAND COLORS ===== */
+  --color-primary: 255, 139, 97;     /* #FF8B61 */
+  --color-primary-hex: #FF8B61;
 
-  --color-secondary: 0, 60, 132;
-  --color-secondary-hex: #023b5e;
+  --color-secondary: 16, 64, 74;     /* #10404A */
+  --color-secondary-hex: #10404A;
 
   --color-tertiary: 255, 255, 255;
   --color-tertiary-hex: #ffffff;
 }
+
 
 /* ============================================================
    Force White Background (Fixes mobile black screen)

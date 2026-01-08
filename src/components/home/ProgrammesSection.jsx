@@ -119,10 +119,12 @@ export default function ProgrammesSection() {
   };
 
   return (
-    <div>
-      <section className="relative w-full lg:h-screen overflow-hidden bg-white font-sans flex items-center">
+    <section className="relative w-full bg-white font-sans">
+      
+      {/* DESKTOP LAYOUT - LG AND ABOVE */}
+      <div className="hidden lg:block relative lg:h-[95vh] overflow-hidden flex items-center">
         {/* IMAGE AT BOTTOM LEFT */}
-        <div className="hidden lg:block absolute bottom-0 left-0 lg:w-[45vw] xl:w-[50vw] h-[80vh] z-20 pointer-events-none">
+        <div className="absolute bottom-0 left-0 lg:w-[45vw] xl:w-[50vw] h-[80vh] z-20 pointer-events-none">
           <Image
             src="/Home/MBASpec.png"
             alt="MBA Specializations"
@@ -133,7 +135,7 @@ export default function ProgrammesSection() {
         </div>
 
         {/* LEFT SIDE: CIRCLE INTERFACE */}
-        <div className="hidden lg:block absolute -bottom-10 lg:left-10 xl:left-20 lg:w-[40vw] lg:h-[40vw] xl:w-[45vw] xl:h-[45vw]">
+        <div className="absolute -bottom-10 lg:left-10 xl:left-16 lg:w-[40vw] lg:h-[40vw] xl:w-[45vw] xl:h-[45vw]">
           <div className="relative w-full h-full rounded-full border-4 border-[#fc7116] z-10">
             {specializations.map((spec, index) => {
               const radian = (spec.angle * Math.PI) / 180;
@@ -202,8 +204,64 @@ export default function ProgrammesSection() {
           </div>
         </div>
 
-        {/* MOBILE TREE STRUCTURE */}
-        <div className="lg:hidden w-full px-6 py-4 flex flex-col gap-6">
+        {/* RIGHT SIDE: INFO CARD */}
+        <div className="absolute  right-0 top-0 w-full lg:w-[40%] xl:w-1/3 h-[90%] flex items-center justify-center lg:p-4 xl:p-8 z-40 pointer-events-none">
+          <div className="pointer-events-auto max-w-lg w-full">
+            <div className="bg-[white/90] backdrop-blur-xl border border-white/20 shadow-2xl rounded-3xl lg:p-8 xl:p-12 relative overflow-hidden transition-all duration-500">
+              {/* Decorative Background Icon */}
+              <div className="absolute -right-6 -top-6 opacity-10 rotate-12 scale-150">
+                <RenderIcon
+                  spec={activeSpec}
+                  size={180}
+                  className="text-orange-600"
+                />
+              </div>
+
+              {/* Animated Content */}
+              <div
+                key={activeIndex}
+                className="relative z-10 animate-in fade-in slide-in-from-bottom-4 duration-500"
+              >
+                <div className="flex items-center gap-3 mb-4 text-orange-600">
+                  <RenderIcon spec={activeSpec} size={20} />
+                  <span className="text-sm font-bold tracking-wider uppercase">
+                    MBA Specializations
+                  </span>
+                </div>
+
+                <h2 className="lg:text-2xl xl:text-3xl font-extrabold text-[#10404A] mb-4 xl:mb-6 leading-tight">
+                  {activeSpec.title}
+                </h2>
+
+                <p className="text-slate-600 lg:text-sm xl:text-lg lg:leading-snug xl:leading-relaxed mb-6 xl:mb-8 lg:line-clamp-8 xl:line-clamp-10">
+                  {activeSpec.description}
+                </p>
+
+                <button
+                  onClick={() => router.push("/programs/mba")}
+                  className="group flex items-center gap-2 bg-[#10404A] text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300"
+                >
+                  Read More
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* MOBILE/TABLET LAYOUT - BELOW LG */}
+      <div className="lg:hidden w-full px-6 py-12">
+        {/* HEADING FOR BELOW LG SCREENS */}
+        <div className="text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#10404A] mb-3">
+            MBA Specializations
+          </h2>
+ 
+        </div>
+
+        {/* TREE STRUCTURE */}
+        <div className="flex flex-col gap-6">
           {specializations.map((spec, index) => {
             const isActive = index === activeIndex;
 
@@ -217,16 +275,16 @@ export default function ProgrammesSection() {
                 <button
                   onClick={() => handleManualSelect(index)}
                   className={`
-                  shrink-0 min-w-12 min-h-12
-                  z-10 w-12 h-12 rounded-full 
-                  flex items-center justify-center
-                  transition-all duration-300
-                  ${
-                    isActive
-                      ? "bg-orange-600 text-white scale-110"
-                      : "bg-white border-2 border-orange-500 text-slate-800"
-                  }
-                `}
+                    shrink-0 min-w-12 min-h-12
+                    z-10 w-12 h-12 rounded-full 
+                    flex items-center justify-center
+                    transition-all duration-300
+                    ${
+                      isActive
+                        ? "bg-orange-600 text-white scale-110"
+                        : "bg-white border-2 border-orange-500 text-slate-800"
+                    }
+                  `}
                 >
                   <RenderIcon
                     spec={spec}
@@ -270,52 +328,7 @@ export default function ProgrammesSection() {
             );
           })}
         </div>
-
-        {/* RIGHT SIDE: INFO CARD */}
-        <div className="hidden lg:absolute right-0 top-0 w-full lg:w-[40%] xl:w-1/3 h-full lg:flex items-center justify-center lg:p-4 xl:p-8 z-40 pointer-events-none">
-          <div className="pointer-events-auto max-w-lg w-full">
-            <div className="bg-[white/90] backdrop-blur-xl border border-white/20 shadow-2xl rounded-3xl lg:p-8 xl:p-12 relative overflow-hidden transition-all duration-500">
-              {/* Decorative Background Icon */}
-              <div className="absolute -right-6 -top-6 opacity-10 rotate-12 scale-150">
-                <RenderIcon
-                  spec={activeSpec}
-                  size={180}
-                  className="text-orange-600"
-                />
-              </div>
-
-              {/* Animated Content */}
-              <div
-                key={activeIndex}
-                className="relative z-10 animate-in fade-in slide-in-from-bottom-4 duration-500"
-              >
-                <div className="flex items-center gap-3 mb-4 text-orange-600">
-                  <RenderIcon spec={activeSpec} size={20} />
-                  <span className="text-sm font-bold tracking-wider uppercase">
-                    MBA Specializations
-                  </span>
-                </div>
-
-                <h2 className="lg:text-2xl xl:text-3xl font-extrabold text-[#10404A] mb-4 xl:mb-6 leading-tight">
-                  {activeSpec.title}
-                </h2>
-
-                <p className="text-slate-600 lg:text-sm xl:text-lg lg:leading-snug xl:leading-relaxed mb-6 xl:mb-8 lg:line-clamp-8 xl:line-clamp-10">
-                  {activeSpec.description}
-                </p>
-
-                <button
-                  onClick={() => router.push("/programs/mba")}
-                  className="group flex items-center gap-2 bg-[#10404A] text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300"
-                >
-                  Read More
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

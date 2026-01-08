@@ -1,151 +1,85 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { Phone, ChevronLeft, ChevronRight } from "lucide-react";
+import { Phone } from "lucide-react";
 import ApplyForm from "./ApplyForm";
 
-/* ================= DATA ================= */
+/* ---------------- RECRUITER CONTENT ---------------- */
 
-const commonText = `The MBA in Finance at IGSB prepares students for analytical,
-decision-driven roles in the financial ecosystem. The curriculum
-emphasizes financial management, corporate finance, financial
-modelling, investment analysis, risk management, and strategic
-financial decision-making. Students gain exposure to capital markets,
-valuation, budgeting, compliance, fintech fundamentals, enabling them
-to contribute effectively in corporate finance, banking, and consulting.`;
+const pageContent = {
+  headline: "Trusted by Industry, Defined by Outcomes",
+  body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of graduate performance and professional readiness.",
+};
 
-const testimonials = [
-  { name: "Amit Kulkarni", branch: "MBA – Finance", image: "/boy.png" },
-  { name: "Sneha Patil", branch: "MBA – Marketing", image: "/boy.png" },
-  { name: "Rahul Deshmukh", branch: "MBA – Business Analytics", image: "/boy.png" },
-  { name: "Pooja Sharma", branch: "MBA – Human Resource Management", image: "/boy.png" },
-  { name: "Kunal Mehta", branch: "MBA – Operations & Supply Chain", image: "/boy.png" },
-];
+/* ---------------- RECRUITER LOGOS ---------------- */
+
+const LOGO_COUNT = 44;
+const EXCLUDED_INDICES = [35, 37];
+
+const generateLogos = () =>
+  Array.from({ length: LOGO_COUNT }, (_, i) => {
+    const index = i + 1;
+    if (EXCLUDED_INDICES.includes(index)) return null;
+    return `/IGSB/logos/logo${index}.webp`;
+  }).filter(Boolean);
 
 /* ================= COMPONENT ================= */
 
 export default function SmallDesktopFormSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    const t = setInterval(
-      () => setActiveIndex((i) => (i + 1) % testimonials.length),
-      4000
-    );
-    return () => clearInterval(t);
-  }, []);
-
-  const prev = () =>
-    setActiveIndex((i) => (i === 0 ? testimonials.length - 1 : i - 1));
-  const next = () =>
-    setActiveIndex((i) => (i + 1) % testimonials.length);
-
-  const active = testimonials[activeIndex];
+  const logos = generateLogos();
 
   return (
     <section className="block xl:hidden w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71]">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
 
-      <div
-        className="
-          max-w-7xl mx-auto
-          px-6 md:px-10
-          py-14
-          grid
-          grid-cols-1
-          lg:grid-cols-2
-          gap-14
-          items-start
-        "
-      >
         {/* ================= LEFT CONTENT ================= */}
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center text-center gap-10">
 
-          {/* QUOTE */}
-          <p className="text-white text-2xl md:text-3xl italic leading-snug font-['baskerville-bt'] mb-10">
-            Every risk is worth taking as long as it’s for a good cause and
-            contributes to a good life.
-          </p>
+          {/* HEADLINE + BODY */}
+          <div className="max-w-3xl space-y-4">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+              {pageContent.headline}
+            </h2>
+            <p className="text-white/90 text-base md:text-lg leading-relaxed">
+              {pageContent.body}
+            </p>
+          </div>
 
-          {/* TESTIMONIAL CARD */}
-          <div className="relative w-full max-w-[560px]">
-
-            {/* AVATAR */}
-            <div
-              className="
-                absolute -top-8 left-1/2 -translate-x-1/2
-                w-14 h-14
-                rounded-full border-4 border-white
-                bg-white overflow-hidden z-10
-              "
-            >
-              <Image
-                src={active.image}
-                alt={active.name}
-                fill
-                className="object-cover"
-              />
+          {/* RECRUITER MARQUEES */}
+          <div className="w-full space-y-8">
+            {/* ROW 1 */}
+            <div className="overflow-hidden">
+              <div className="marquee marquee-left gap-6">
+                {[...logos, ...logos].map((logo, i) => (
+                  <LogoItem key={`r1-${i}`} src={logo} />
+                ))}
+              </div>
             </div>
 
-            {/* CARD */}
-            <div className="bg-[#3aafa9] rounded-[20px] px-6 pt-10 pb-6 text-white shadow-xl">
+            {/* ROW 2 */}
+            <div className="overflow-hidden">
+              <div className="marquee marquee-right gap-6">
+                {[...logos, ...logos].map((logo, i) => (
+                  <LogoItem key={`r2-${i}`} src={logo} />
+                ))}
+              </div>
+            </div>
 
-              <h3 className="text-base font-semibold">
-                {active.name}
-              </h3>
-              <p className="text-xs opacity-90 mb-3">
-                {active.branch}
-              </p>
-
-              <p className="text-sm leading-relaxed whitespace-pre-line">
-                {commonText}
-              </p>
-
-              {/* CONTROLS */}
-              <div className="flex justify-center items-center gap-3 mt-5">
-                <button
-                  onClick={prev}
-                  className="p-1.5 rounded-full bg-white/20 hover:bg-white/30"
-                >
-                  <ChevronLeft size={14} />
-                </button>
-
-                <div className="flex gap-1.5">
-                  {testimonials.map((_, i) => (
-                    <span
-                      key={i}
-                      className={`w-1.5 h-1.5 rounded-full ${
-                        activeIndex === i ? "bg-white" : "bg-white/40"
-                      }`}
-                    />
-                  ))}
-                </div>
-
-                <button
-                  onClick={next}
-                  className="p-1.5 rounded-full bg-white/20 hover:bg-white/30"
-                >
-                  <ChevronRight size={14} />
-                </button>
+            {/* ROW 3 — ONLY lg → xl */}
+            <div className="overflow-hidden hidden lg:block xl:hidden">
+              <div className="marquee marquee-left gap-6">
+                {[...logos, ...logos].map((logo, i) => (
+                  <LogoItem key={`r3-${i}`} src={logo} />
+                ))}
               </div>
             </div>
           </div>
         </div>
 
         {/* ================= RIGHT FORM ================= */}
-        <div className="flex justify-center lg:justify-end">
-
-          <div
-            className="
-              w-full
-              max-w-[420px]
-              bg-[#ff885b]
-              text-white
-              rounded-xl
-              shadow-2xl
-              p-5
-            "
-          >
+        <div className="flex justify-center lg:justify-center">
+          <div className="w-full max-w-[420px] bg-[#ff885b] text-white rounded-xl shadow-2xl p-5">
             <h2 className="text-xl text-center font-bold mb-4">
               Admission Form
             </h2>
@@ -161,9 +95,23 @@ export default function SmallDesktopFormSection() {
               </p>
             </div>
           </div>
-
         </div>
+
       </div>
     </section>
   );
 }
+
+/* ---------------- LOGO ITEM ---------------- */
+
+const LogoItem = ({ src }) => (
+  <div className="flex items-center justify-center w-28 h-14 bg-white border border-white/30 rounded-lg shadow-sm flex-shrink-0">
+    <Image
+      src={src}
+      alt="Recruiter Logo"
+      width={110}
+      height={55}
+      className="object-contain max-w-[80%] max-h-[70%]"
+    />
+  </div>
+);

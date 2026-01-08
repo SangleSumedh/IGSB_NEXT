@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { ArrowBigUp, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { ArrowBigUp } from "lucide-react";
 
 // --- DATA ---
 const commonText = `The MBA in Finance at IGSB prepares students for analytical,
@@ -15,17 +15,12 @@ valuation, budgeting, compliance, fintech fundamentals.`;
 const testimonials = [
   { name: "Amit Kulkarni", branch: "MBA – Finance", image: "/boy.png" },
   { name: "Sneha Patil", branch: "MBA – Marketing", image: "/boy.png" },
-  {
-    name: "Rahul Deshmukh",
-    branch: "MBA – Business Analytics",
-    image: "/boy.png",
-  },
+  { name: "Rahul Deshmukh", branch: "MBA – Business Analytics", image: "/boy.png" },
   { name: "Pooja Sharma", branch: "MBA – HR Management", image: "/boy.png" },
   { name: "Kunal Mehta", branch: "MBA – Operations", image: "/boy.png" },
 ];
 
 export default function CTASection() {
-  // --- STATE FOR CAROUSEL ---
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -36,35 +31,24 @@ export default function CTASection() {
     return () => clearInterval(t);
   }, []);
 
-  const prev = () =>
-    setActiveIndex((i) => (i === 0 ? testimonials.length - 1 : i - 1));
-  const next = () => setActiveIndex((i) => (i + 1) % testimonials.length);
-
   const active = testimonials[activeIndex];
 
-  // --- HANDLERS FOR CTA ---
   const handleDownload = () => {
     alert("Downloading brochure...");
   };
 
-  const handleImageError = () => {
-    e.currentTarget.style.display = "none";
-  };
-
   return (
     <div className="relative w-full bg-gradient-to-r from-[#10404A] via-[#10404A] to-[#FF8B61] text-white shadow-xl overflow-hidden mt-5 pt-2 md:pt-0">
-      {/* CONTAINER HEIGHT:
-          - Mobile: h-auto (Stack content)
-          - Desktop (md+): h-[35vh] (To accommodate full text)
-      */}
-      <div className="grid grid-cols-1 md:grid-cols-8 h-auto ">
-        {/* --- COLUMN 1 (5/8): TESTIMONIAL CAROUSEL --- */}
-        <div className="md:col-span-5 relative h-full w-full flex items-center justify-center p-2 md:p-4 bg-[#1F6D71]/50 md:bg-transparent">
-          <div className=" p-4 rounded-xl border-3 border-[#3aafa9]">
-            <div className="w-full max-w-4xl flex flex-col md:flex-row items-center gap-8">
-              {/* Left: Avatar & Name */}
-              <div className="flex-shrink-0 flex flex-col items-center md:items-center text-center md:text-left min-w-[140px]">
-                <div className="relative w-16 h-16 rounded-full border-2 border-[#fb7035] overflow-hidden shadow-lg mb-3">
+      <div className="grid grid-cols-1 md:grid-cols-8">
+
+        {/* --- TESTIMONIALS (SHORTER CARD) --- */}
+        <div className="md:col-span-4 flex items-center justify-center p-2 md:p-4 bg-[#1F6D71]/50 md:bg-transparent">
+          <div className="p-4 md:p-3 rounded-xl border-2 border-[#3aafa9] max-w-xl w-full">
+            <div className="flex flex-col md:flex-col lg:flex-row items-center gap-5">
+
+              {/* PROFILE (TOP on md–lg) */}
+              <div className="flex flex-col items-center text-center min-w-[120px]">
+                <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-[#fb7035] overflow-hidden shadow mb-2">
                   <Image
                     src={active.image}
                     alt={active.name}
@@ -72,29 +56,22 @@ export default function CTASection() {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="font-bold text-lg leading-tight">
+                <h3 className="font-semibold text-base leading-tight">
                   {active.name}
                 </h3>
-                <p className="text-xs text-white opacity-90">{active.branch}</p>
-
-                {/* Navigation Controls */}
+                <p className="text-[0.8rem] text-white/80">
+                  {active.branch}
+                </p>
               </div>
 
-              {/* Right: Quote Text */}
-              <div className="relative flex-1">
-                {/* Left Quote Icon */}
-                {/* <Quote className="absolute -top-3 -left-4 w-6 h-6 text-orange-400/30 rotate-180" /> */}
-
-                {/* Main Text - Line clamp removed */}
-                <p className="text-sm md:text-sm lg:text-base leading-relaxed text-white/95 pl-4 pr-4">
+              {/* TEXT BELOW PROFILE (md–lg) */}
+              <div className="flex-1 text-center lg:text-left">
+                <p className="text-[0.8rem] lg:text-sm leading-relaxed text-white/95 px-2">
                   {commonText}
                 </p>
 
-                {/* Right Quote Icon */}
-                {/* <Quote className="absolute bottom-5 -right-2 w-6 h-6 text-orange-400/30" /> */}
-
-                {/* Dots Indicator */}
-                <div className="flex gap-1.5 mt-5 pl-4">
+                {/* DOTS */}
+                <div className="flex justify-center lg:justify-start gap-1.5 mt-4">
                   {testimonials.map((_, i) => (
                     <span
                       key={i}
@@ -107,19 +84,18 @@ export default function CTASection() {
                   ))}
                 </div>
               </div>
+
             </div>
           </div>
         </div>
 
-        {/* --- COLUMN 2 (2/8): TEXT & CTA --- 
-            Border removed. Text changed.
-        */}
-        <div className="flex flex-col justify-center items-center text-center px-4 pt-8 pb-4 md:py-0 md:col-span-2 z-10 relative bg-white/5 md:bg-transparent">
-          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4 leading-tight">
-            <span className="font-[baskerville-bt] italic text-white">
+        {/* --- CTA --- */}
+        <div className="md:col-span-2 flex flex-col justify-center items-center text-center px-4 pt-8 pb-4 md:py-0 bg-white/5 md:bg-transparent">
+          <h2 className="text-xl lg:text-3xl font-bold mb-4 leading-tight">
+            <span className="font-[baskerville-bt] italic">
               Ready to Lead?
             </span>
-            <span className="block text-xl lg:text-2xl mt-1 text-white">
+            <span className="block text-lg lg:text-2xl mt-1">
               Get the full details.
             </span>
           </h2>
@@ -127,14 +103,13 @@ export default function CTASection() {
           <button
             onClick={handleDownload}
             className="
-              inline-flex items-center justify-center gap-2
-              px-5 py-3 w-auto min-w-[150px]
+              inline-flex items-center gap-2
+              px-5 py-3
               text-sm font-bold
               text-[#10404A] bg-white
               rounded-full shadow-lg
-              hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] 
               hover:-translate-y-0.5
-              transition-all duration-300
+              transition-all
             "
           >
             <ArrowBigUp />
@@ -142,19 +117,21 @@ export default function CTASection() {
           </button>
         </div>
 
-        {/* --- COLUMN 3 (1/8): PERSON IMAGE --- */}
-        <div className="flex md:col-span-1git items-end justify-center relative h-40 md:h-full pb-0 bg-white/5 md:bg-transparent">
+        {/* --- GENTLEMAN (MORE SPACE) --- */}
+        <div className="md:col-span-2 flex items-end justify-center relative h-44 md:h-full bg-white/5 md:bg-transparent">
           <img
             src="/Home/suitman.png"
-            alt="Confused person"
-            onError={handleImageError}
+            alt="Gentleman"
             className="
-              h-full w-auto rotate-0 
-              object-contain object-bottom 
-              opacity-90 hover:scale-105 transition-transform duration-500
+              h-[115%] md:h-[125%]
+              xl:w-[80%]
+              object-contain object-bottom
+              translate-y-2
+              opacity-95
             "
           />
         </div>
+
       </div>
     </div>
   );

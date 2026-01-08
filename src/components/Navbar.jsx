@@ -392,6 +392,55 @@ const Navbar = () => {
     </div>
   );
 
+  // Add these state variables
+const [isMdMenuOpen, setIsMdMenuOpen] = useState(false);
+const [mdDropdown, setMdDropdown] = useState(null);
+
+// Add these functions
+const toggleMdMenu = () => {
+  setIsMdMenuOpen(!isMdMenuOpen);
+  if (mdDropdown) setMdDropdown(null);
+};
+
+const toggleMdDropdown = (key) => {
+  setMdDropdown(mdDropdown === key ? null : key);
+};
+
+// Helper function for MD dropdown rendering
+const renderMdDropdown = (content, key) => {
+  if (!content) return null;
+  
+  return (
+    <div className="space-y-1 py-2 animate-in fade-in-0 slide-in-from-top-2 duration-300">
+      {content.map((item, index) => (
+        <div key={index} className="animate-in fade-in-0 slide-in-from-right-2"
+             style={{ animationDelay: `${index * 50}ms` }}>
+          {item.subtitle ? (
+            <div className="pt-2 pb-1">
+              <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-4">
+                {item.subtitle}
+              </h4>
+            </div>
+          ) : item.href ? (
+            <Link
+              href={item.href}
+              onClick={() => {
+                setIsMdMenuOpen(false);
+                setMdDropdown(null);
+              }}
+              className="block px-4 py-2 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded transition-all duration-200 hover:translate-x-1"
+            >
+              {item.label}
+            </Link>
+          ) : (
+            <p className="px-4 py-2 text-sm text-gray-700">{item.label}</p>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
   const renderMobileDropdown = (content, dropdownName) => (
     <div className="bg-gray-50 rounded-lg mt-2 overflow-hidden animate-in fade-in-0 slide-in-from-top-2 duration-300">
       {content.sections.map((section, index) => (
@@ -439,7 +488,7 @@ const Navbar = () => {
         className="w-full h-[12vh] flex justify-between bg-white text-black shadow-sm font-sans fixed top-0 left-0 right-0 z-50" // Changed from sticky to fixed
       >
         {/* Left: Logo - 80% width on mobile */}
-        <div className="w-[60%] lg:w-[30%] h-full flex items-center justify-start md:pl-0 md:justify-center">
+        <div className="w-[29%] lg:w-[25%] xl:w-[30%] h-full flex items-center justify-start md:pl-0 md:justify-center">
           <Link href="/">
             <Image
               src="/Logo.png"
@@ -455,11 +504,11 @@ const Navbar = () => {
         </div>
 
         {/* Right Section - Desktop */}
-        <div className="hidden md:flex w-[70%] h-full flex-col">
+        <div className="hidden md:flex w-[70%]  h-full flex-col">
           {/* Top Bar */}
-          <div className="flex justify-end w-full h-[45%] text-xs lg:text-sm ">
+          <div className="flex justify-end w-full h-[45%] text-[0.75rem] lg:text-sm ">
             <div className="flex gap-2 lg:gap-4">
-              <div className="flex items-center gap-2 md:gap-4 font-semibold">
+              <div className="flex items-center gap-2 md:gap-2 lg:gap-4 font-semibold">
                 <a
                   href="https://rapid.grayquest.com/iudp-master"
                   target="_blank"
@@ -470,7 +519,7 @@ const Navbar = () => {
                   {/* AQUA UNDERLINE — your original version */}
                   <span
                     className="absolute left-0 -bottom-1 h-[6px] w-full 
-               scale-x-0 bg-[#7FFFD4] opacity-70 
+               scale-x-0 bg-primary opacity-70 
                transition-transform duration-300 
                origin-left group-hover:scale-x-100"
                   ></span>
@@ -487,7 +536,7 @@ const Navbar = () => {
                   {/* AQUA UNDERLINE */}
                   <span
                     className="absolute left-0 -bottom-1 h-[6px] w-full 
-               scale-x-0 bg-[#7FFFD4] opacity-70 
+               scale-x-0 bg-primary opacity-70 
                transition-transform duration-300 
                origin-left group-hover:scale-x-100"
                   ></span>
@@ -504,7 +553,7 @@ const Navbar = () => {
                   {/* AQUA UNDERLINE */}
                   <span
                     className="absolute left-0 -bottom-1 h-[6px] w-full 
-               scale-x-0 bg-[#7FFFD4] opacity-70 
+               scale-x-0 bg-primary opacity-70 
                transition-transform duration-300 
                origin-left group-hover:scale-x-100"
                   ></span>
@@ -528,7 +577,7 @@ const Navbar = () => {
                   {/* AQUA UNDERLINE */}
                   <span
                     className="absolute left-0 -bottom-1 h-[6px] w-full 
-               scale-x-0 bg-[#7FFFD4] opacity-70 
+               scale-x-0 bg-primary opacity-70 
                transition-transform duration-300 
                origin-left group-hover:scale-x-100"
                   ></span>
@@ -542,17 +591,17 @@ const Navbar = () => {
                   {/* AQUA UNDERLINE */}
                   <span
                     className="absolute left-0 -bottom-1 h-[6px] w-full 
-               scale-x-0 bg-[#7FFFD4] opacity-70 
+               scale-x-0 bg-primary opacity-70 
                transition-transform duration-300 
                origin-left group-hover:scale-x-100"
                   ></span>
                 </Link>
               </div>
               {/* Buttons */}
-              <div className="flex">
+              <div className="flex justify-center items-center">
                 <button
                   onClick={toggleModal}
-                  className="bg-[#10404A] hover:!bg-[#fc7116] hover:text-gray-800 text-gray-50 px-6 rounded-bl-sm text-sm font-semibold relative overflow-hidden transition-all duration-300"
+                  className="bg-[#10404A] hover:!bg-[#fc7116] h-[80%] hover:text-gray-800 text-gray-50 px-6 rounded-bl-sm text-sm font-semibold relative overflow-hidden transition-all duration-300"
                 >
                   <span>Enquire Now</span>
                 </button>
@@ -561,7 +610,8 @@ const Navbar = () => {
           </div>
 
           {/* Bottom Nav Links */}
-          <div className="flex  justify-end items-center gap-2 md:gap-3 lg:gap-5 h-[55%] text-xs lg:text-sm font-semibold lg:font-bold whitespace-nowrap ">
+          <div className="flex  justify-end items-center gap-2 md:gap-2 lg:gap-5 h-[55%] text-[0.74rem] 
+ lg:text-sm font-bold lg:font-bold whitespace-nowrap ">
             <div
               className="flex  h-full  items-center px-2 lg:px-3 gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
               onPointerEnter={() => handleMouseEnter("aboutUs")}
@@ -570,7 +620,7 @@ const Navbar = () => {
               <span className="relative">
                 About Us
                 {/* AQUA UNDERLINE */}
-                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-[#7FFFD4]  opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary  opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
               </span>
               {/* <FiChevronDown
                 className={`w-3 h-3 transition-transform duration-300 ${
@@ -585,7 +635,7 @@ const Navbar = () => {
             >
               <span className="relative">
                 Campus Life
-                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-[#7FFFD4]  opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
               </span>
               {/* <FiChevronDown
                 className={`w-3 h-3 transition-transform duration-300 ${
@@ -600,7 +650,7 @@ const Navbar = () => {
             >
               <span className="relative">
                 Programs & Admission
-                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-[#7FFFD4]  opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
               </span>
               {/* <FiChevronDown
                 className={`w-3 h-3 transition-transform duration-300 ${
@@ -614,7 +664,7 @@ const Navbar = () => {
             >
               <span className="relative">
                 Placement
-                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-[#7FFFD4]  opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
               </span>
             </Link>
             {/* <Link
@@ -629,7 +679,7 @@ const Navbar = () => {
             >
               <span className="relative">
                 Alumni
-                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-[#7FFFD4]  opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
               </span>
             </Link>
             <Link
@@ -638,7 +688,7 @@ const Navbar = () => {
             >
               <span className="relative">
                 Research
-                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-[#7FFFD4] rounded-md opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary rounded-md opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
               </span>
             </Link>
           </div>

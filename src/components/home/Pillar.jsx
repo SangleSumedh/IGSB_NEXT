@@ -9,6 +9,10 @@ const pillars = [
     image: "/Home/Pillar1.png",
   },
   {
+    title: "Placement-Driven Curriculum Design",
+    image: "/Home/Pillar4.png",
+  },
+  {
     title: "480+ Hours of Career Leadership Development Programme",
     image: "/Home/Pillar3.png",
   },
@@ -16,10 +20,7 @@ const pillars = [
     title: "300+ Hours of Industry Readiness Programme",
     image: "/Home/Pillar2.png",
   },
-  {
-    title: "Placement-Driven Curriculum Design",
-    image: "/Home/Pillar4.png",
-  },
+  
 ];
 
 export default function PillarsSection() {

@@ -4,7 +4,7 @@ import React from "react";
 
 export default function FacultyStatSection() {
   return (
-    <section className="relative w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] py-4 lg:py-8 overflow-hidden text-white">
+    <section className="relative w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] py-8  overflow-hidden text-white">
       {/* BACKGROUND DECORATION */}
       {/* <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#FF8B61] opacity-10 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" /> */}
 
@@ -15,6 +15,9 @@ export default function FacultyStatSection() {
           <div className="w-full lg:w-1/3 flex flex-col items-center lg:items-start text-center lg:text-left">
             <div className="relative inline-block">
               {/* The Big Number */}
+              <p className="text-sm leading-none md:text-lg text-left  font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#FF8B61] to-white tracking-tighter">
+                Our Faculties are
+              </p>
               <h2 className="text-[100px] leading-none md:text-[140px] xl:text-[160px] font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#FF8B61] to-white tracking-tighter">
                 98%
               </h2>

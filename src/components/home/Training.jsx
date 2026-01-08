@@ -35,11 +35,12 @@ function Training() {
               {/* TEXT — 70% */}
               <div className="w-[70%]">
                 <p className="text-gray-700 leading-relaxed">
-                  The Industry Readiness Programme (IRP) is a structured training
-                  programme designed in close collaboration with industry experts to
-                  align academic learning with real-world corporate expectations. It
-                  focuses on building functional skills, analytical thinking, and
-                  job readiness through hands-on training and expert mentorship.
+                  The Industry Readiness Programme (IRP) is a structured
+                  training programme designed in close collaboration with
+                  industry experts to align academic learning with real-world
+                  corporate expectations. It focuses on building functional
+                  skills, analytical thinking, and job readiness through
+                  hands-on training and expert mentorship.
                 </p>
               </div>
 
@@ -63,11 +64,11 @@ function Training() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center gap-3 p-3 rounded-lg 
+                  className="flex flex-col items-center justify-center gap-3 px-3 py-3 rounded-lg 
                              bg-[#3aafa9] border-2 border-white/80"
                 >
                   <item.icon className="w-12 h-12 text-white" />
-                  <span className="text-sm font-medium text-white">
+                  <span className="text-sm font-medium text-white text-center">
                     {item.label}
                   </span>
                 </div>
@@ -79,14 +80,16 @@ function Training() {
         {/* ================= CLDP ================= */}
         <div className="relative flex flex-col h-full rounded-2xl overflow-hidden bg-[#3aafa9]">
           {/* TOP HEADER */}
-          <div className="bg-[#10404A] text-center pt-6 pb-14">
+          {/* Added 'relative' and 'overflow-hidden' here to contain the absolute stars */}
+          <div className="bg-[#10404A] text-center pt-6 pb-14 relative overflow-hidden">
             <div className="flex items-center justify-center gap-3">
-              <h2 className="text-xl md:text-2xl font-bold text-white">
+              <h2 className="text-xl md:text-2xl font-bold text-white z-10 relative">
                 Career Leadership Development Programme (CLDP)
               </h2>
 
               {/* 5 STARS */}
-              <div className="flex gap-1">
+              {/* Changed container to absolute position, added rotation for diagonal effect, and reduced opacity */}
+              <div className="absolute top-7 right-5 flex gap-1 rotate-0 opacity-100 pointer-events-none">
                 <svg width="0" height="0">
                   <defs>
                     <linearGradient
@@ -105,7 +108,7 @@ function Training() {
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-5 h-5"
+                    className="w-4 h-4" // Slightly larger stars for background effect
                     fill="url(#goldGradient)"
                     stroke="url(#goldGradient)"
                   />
@@ -115,8 +118,8 @@ function Training() {
           </div>
 
           {/* FLOATING WHITE CARD */}
-          <div className="relative -mt-10 mx-6 mb-6 bg-white rounded-xl shadow-2xl p-8 space-y-6 flex flex-col h-full">
-            <div className="flex gap-6">
+          <div className="relative -mt-10 mx-6 mb-6 bg-white rounded-xl shadow-2xl p-4 space-y-6 flex flex-col h-full z-20">
+            <div className="flex gap-3 p-4">
               {/* TEXT — 70% */}
               <div className="w-[70%]">
                 <p className="text-gray-700 leading-relaxed">
@@ -139,7 +142,7 @@ function Training() {
             </div>
 
             {/* ICONS GRID */}
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-4 mt-auto">
+            <div className="grid grid-cols-2 md:grid-cols-6 gap-2 mt-auto ">
               {[
                 { label: "Power BI" },
                 { label: "Communication" },
@@ -151,7 +154,7 @@ function Training() {
                 <div
                   key={index}
                   className="flex flex-col items-center justify-center p-4 rounded-lg 
-                    border-2 border-orange-500 shadow-md bg-white hover:shadow-lg transition-shadow"
+                  border-2 border-orange-500 shadow-md bg-white hover:shadow-lg transition-shadow"
                 >
                   <div className="w-12 h-12 mb-2 flex items-center justify-center rounded-md overflow-hidden bg-gray-50">
                     <img
@@ -160,7 +163,7 @@ function Training() {
                       className="w-10 h-10 object-contain"
                     />
                   </div>
-                  <span className="text-sm font-medium text-black text-center">
+                  <span className="text-xs  font-medium text-black text-center">
                     {item.label}
                   </span>
                 </div>
@@ -168,7 +171,6 @@ function Training() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

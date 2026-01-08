@@ -351,4 +351,38 @@ body {
   animation-duration: 45s;
 }
 
+@keyframes paceAndFlip {
+  /* 0% - 49%: Move Left to Right (Face Right) */
+  0% {
+    left: 10%;
+    transform: scaleX(1);
+  }
+  49% {
+    left: 80%; /* Limit distance to 70% so he doesn't overlap content */
+    transform: scaleX(1);
+  }
 
+  /* 50%: Instant Flip to Face Left */
+  50% {
+    left: 80%;
+    transform: scaleX(-1);
+  }
+
+  /* 51% - 99%: Move Right to Left (Face Left) */
+  99% {
+    left: 10%;
+    transform: scaleX(-1);
+  }
+
+  /* 100%: Instant Flip back to Face Right to restart loop */
+  100% {
+    left: 10%;
+    transform: scaleX(1);
+  }
+}
+
+.animate-pace {
+  /* Linear ensures constant speed with no easing */
+  animation: paceAndFlip 20s linear infinite;
+  will-change: left, transform;
+}

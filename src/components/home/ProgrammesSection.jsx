@@ -120,8 +120,6 @@ export default function ProgrammesSection() {
 
   return (
     <div>
-      {/* 1. HEADING AT THE TOP */}
-
       <section className="relative w-full lg:h-screen overflow-hidden bg-white font-sans flex items-center">
         {/* IMAGE AT BOTTOM LEFT */}
         <div className="hidden lg:block absolute bottom-0 left-0 lg:w-[45vw] xl:w-[50vw] h-[80vh] z-20 pointer-events-none">

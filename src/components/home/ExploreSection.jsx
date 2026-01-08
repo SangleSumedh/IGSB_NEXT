@@ -1,27 +1,32 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 const ExploreSection = () => {
+  const [isSafari, setIsSafari] = useState(false);
+
+  useEffect(() => {
+    // Robust regex to detect Safari (desktop or mobile)
+    const isSafariBrowser = /^((?!chrome|android).)*safari/i.test(
+      navigator.userAgent
+    );
+    setIsSafari(isSafariBrowser);
+  }, []);
+
   return (
-    <section className="w-full bg-white px-16 py-8 relative z-30 overflow-x-hidden">
+    // Added 'pb-10' to section to ensure text doesn't overlap the walker at the bottom
+    <section className="w-full bg-white px-6 md:px-16 py-8 pb-10 relative z-30 overflow-x-hidden">
       {/* FULL-WIDTH SAFE CONTAINER */}
-      <div className="w-full">
+      <div className="w-full mb-8">
+        {" "}
+        {/* Added margin-bottom to clear space for him */}
         {/* MAIN GRID */}
-        <div
-          className="
-            grid
-            grid-cols-1
-            lg:grid-cols-[minmax(0,60%)_minmax(0,40%)]
-            gap-12
-            items-stretch
-          "
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,60%)_minmax(0,40%)] gap-12 items-stretch">
           {/* LEFT CONTENT */}
-          <div className="space-y-6">
-            <h2 className="text-4xl sm:text-2xl xl:text-4xl font-extrabold text-gray-800 tracking-wide mb-18 mt-12">
-              ABOUT
+          <div className="space-y-6 relative">
+            <h2 className="text-4xl sm:text-2xl xl:text-4xl font-extrabold text-gray-800 tracking-tight mb-12 mt-12">
+              Explore your Potential at <br /> Indira Global School of Business
             </h2>
 
             <p className="text-gray-700 text-base sm:text-lg md:text-lg leading-relaxed text-justify">
@@ -83,23 +88,8 @@ const ExploreSection = () => {
               </div>
             </div>
 
-            {/* VISION & MISSION CARD — UPDATED GRADIENT */}
-            <div
-              className="
-      flex-1
-      bg-gradient-to-r
-      from-[#10404A]
-      to-[#1F6D71]
-      text-white
-      rounded-2xl
-      p-8
-      text-center
-      flex
-      flex-col
-      justify-center
-      space-y-12
-    "
-            >
+            {/* VISION & MISSION CARD */}
+            <div className="flex-1 bg-gradient-to-r from-[#10404A] to-[#1F6D71] text-white rounded-2xl p-8 text-center flex flex-col justify-center space-y-12">
               {/* VISION */}
               <div className="space-y-1">
                 <Image
@@ -138,6 +128,26 @@ const ExploreSection = () => {
           </div>
         </div>
       </div>
+
+      {/* --- CHANAKYA ANIMATION (Absolute Bottom of ExploreSection) --- */}
+      {/* 1. Positioned absolute bottom-0 to sit on the "border" 
+          2. Width is full (w-full) relative to the section
+          3. z-index ensures he walks In FRONT of everything in this section
+      */}
+      {!isSafari && (
+        <div className="hidden md:block absolute bottom-0 left-0 w-3/5 h-16 pointer-events-none z-40">
+          <div className="absolute bottom-0 animate-pace w-24 h-24">
+            <video
+              src="/chanakya.webm"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

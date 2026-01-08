@@ -21,6 +21,7 @@ import NewCTA from "@/components/home/NewCTA";
 import Training from "@/components/home/Training";
 import FactSection from "@/components/home/FactSection";
 import Road from "@/components/home/Road";
+import NewEvent from "@/components/home/NewEvent";
 
 export default function HomePage() {
   return (
@@ -54,6 +55,7 @@ export default function HomePage() {
         <NewCTA />
         {/* <CarSection /> */}
         <CTASection />
+        <NewEvent />
       </ScrollCrushWrapper>
 
       {/* <InstagramMosaic /> */}

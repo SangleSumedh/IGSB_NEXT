@@ -14,7 +14,7 @@ function NewCTA() {
   };
 
   return (
-    <div className="relative mt-50 w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] text-white shadow-xl overflow-hidden">
+    <div className="relative  w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] text-white shadow-xl overflow-hidden">
       {/* CONTAINER HEIGHT:
         - Mobile: h-auto (Stack content vertically)
         - Desktop (md+): h-[25vh] (Strict horizontal strip)
@@ -89,7 +89,7 @@ function NewCTA() {
         <div className="hidden md:block md:col-span-5 relative h-full w-full">
           <div className="absolute inset-0 w-full h-full">
             <img
-              src="/Home/IGSB.jpg"
+              src="/Home/igsb_grid.jpg"
               alt="IGSB Campus"
               onError={handleImageError}
               className="

@@ -52,7 +52,7 @@ export default function CTASection() {
   };
 
   return (
-    <div className="relative w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] text-white shadow-xl overflow-hidden mt-5 pt-2 md:pt-0">
+    <div className="relative w-full bg-gradient-to-r from-[#10404A] via-[#10404A] to-[#FF8B61] text-white shadow-xl overflow-hidden mt-5 pt-2 md:pt-0">
       {/* CONTAINER HEIGHT:
           - Mobile: h-auto (Stack content)
           - Desktop (md+): h-[35vh] (To accommodate full text)
@@ -78,7 +78,6 @@ export default function CTASection() {
                 <p className="text-xs text-white opacity-90">{active.branch}</p>
 
                 {/* Navigation Controls */}
-               
               </div>
 
               {/* Right: Quote Text */}
@@ -107,13 +106,9 @@ export default function CTASection() {
                     />
                   ))}
                 </div>
-                
               </div>
-              
             </div>
-            
           </div>
-          
         </div>
 
         {/* --- COLUMN 2 (2/8): TEXT & CTA --- 

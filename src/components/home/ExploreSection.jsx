@@ -26,7 +26,10 @@ const ExploreSection = () => {
           {/* LEFT CONTENT */}
           <div className="space-y-6 relative">
             <h2 className="text-4xl sm:text-2xl xl:text-4xl font-extrabold text-gray-800 tracking-tight mb-12 mt-12">
-              Explore your Potential at <br /> Indira Global School of Business
+              Explore your Potential at <br />{" "}
+              <span className="text-[#FF8B61]">
+                Indira Global School of Business
+              </span>
             </h2>
 
             <p className="text-gray-700 text-base sm:text-lg md:text-lg leading-relaxed text-justify">

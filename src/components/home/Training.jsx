@@ -37,10 +37,12 @@ function Training() {
                 <p className="text-gray-700 leading-relaxed text-sm md:text-base">
                   The Industry Readiness Programme (IRP) is a structured
                   training programme designed in close collaboration with
-                  industry experts to align academic learning with real-world
-                  corporate expectations. It focuses on building functional
-                  skills, analytical thinking, and job readiness through
-                  hands-on training and expert mentorship.
+                  <span className="font-bold"> industry experts</span> to align
+                  academic learning with real-world corporate expectations. It
+                  focuses on building functional skills, analytical thinking,
+                  and job readiness through{" "}
+                  <span className="font-bold"> hands-on training</span> and
+                  <span className="font-bold"> expert mentorship.</span>
                 </p>
               </div>
 
@@ -125,7 +127,11 @@ function Training() {
                   leadership-focused framework designed to develop future-ready
                   MBA professionals with expert-level capabilities. It
                   strengthens aptitude, communication, and domain expertise
-                  while offering professional certifications.
+                  while offering{" "}
+                  <span className="font-bold">
+                    {" "}
+                    professional certifications.
+                  </span>
                 </p>
               </div>
 

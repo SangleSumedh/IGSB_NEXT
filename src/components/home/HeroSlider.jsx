@@ -4,10 +4,7 @@ import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 
 const HeroSlider = () => {
-  const desktopImages = [
-    "/banners/IGSB_banner1.jpg",
-    "/Home/BANNER2.jpg",
-  ];
+  const desktopImages = ["/banners/IGSB_banner1.jpg", "/Home/BANNER2.jpg"];
 
   const mobileImages = [
     "/banners/IGSB_banner1.jpg",
@@ -49,7 +46,7 @@ const HeroSlider = () => {
   };
 
   return (
-    <div className="relative w-full ">
+    <div className="relative w-full">
       {/* ---------------- SPOTLIGHT ---------------- */}
       <div className="w-full h-[4vh] bg-white border-b border-gray-200 flex items-center overflow-hidden relative">
         <div className="relative flex items-center justify-center font-semibold text-xs sm:text-sm px-4 sm:px-8 py-2 clip-ribbon-left z-10 bg-secondary text-white">
@@ -104,8 +101,12 @@ const HeroSlider = () => {
         <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-primary to-transparent"></div>
       </div>
 
-      {/* ---------------- SLIDER WRAPPER (HEIGHT REDUCED BY 4vh) ---------------- */}
-      <div className="relative w-full h-[84vh] overflow-hidden">
+      {/* ---------------- SLIDER WRAPPER ---------------- 
+         FIX: Changed h-[84vh] to h-[50vh] sm:h-[60vh] md:h-[84vh].
+         This prevents the "skyscraper" effect on mobile which forces 
+         the image to zoom in and crop the sides.
+      */}
+      <div className="relative w-full h-[55vh] lg:h-[70vh] xl:h-[84vh] overflow-hidden">
         {/* ---------------- DESKTOP SLIDER ---------------- */}
         <div className="hidden md:block relative w-full h-full">
           {[...desktopImages, desktopImages[0]].map((img, i) => (
@@ -128,7 +129,7 @@ const HeroSlider = () => {
               <Image
                 src={img}
                 alt="banner"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
                 width={1600}
                 height={700}
                 unoptimized
@@ -179,7 +180,8 @@ const HeroSlider = () => {
               <Image
                 src={img}
                 alt="mobile banner"
-                className="w-full h-full object-cover"
+                // Added object-center to ensure the middle of the image is the focal point
+                className="w-full h-full object-cover object-center"
                 width={600}
                 height={400}
                 unoptimized

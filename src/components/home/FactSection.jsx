@@ -15,9 +15,9 @@ export default function FacultyStatSection() {
           <div className="w-full lg:w-1/3 flex flex-col items-center lg:items-start text-center lg:text-left">
             <div className="relative inline-block">
               {/* The Big Number */}
-              <p className="text-sm leading-none md:text-lg text-left  font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#FF8B61] to-white tracking-tighter">
+              {/* <p className="text-sm leading-none md:text-lg text-left  font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#FF8B61] to-white tracking-tighter">
                 Our Faculties are
-              </p>
+              </p> */}
               <h2 className="text-[100px] leading-none md:text-[140px] xl:text-[160px] font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#FF8B61] to-white tracking-tighter">
                 98%
               </h2>
@@ -32,7 +32,7 @@ export default function FacultyStatSection() {
           <div className="w-full lg:w-2/3">
             <div className="bg-[#3aafa9] backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 lg:p-10 shadow-2xl relative">
               <p className="relative z-10 text-base md:text-lg lg:text-xl leading-relaxed text-white/95 font-light">
-                IGSB’s faculty members are Ph.D. holders, ensuring that every
+                Most of IGSB’s faculty members are Ph.D. holders, ensuring that every
                 learner is guided by scholars with deep subject expertise,
                 strong research credentials, and a rigorous understanding of
                 advanced management concepts.

@@ -1,11 +1,7 @@
 import React from "react";
-import {
-  Briefcase,
-  Users,
-  BarChart3,
-  Target,
-  Star,
-} from "lucide-react";
+import { Briefcase, Users, BarChart3, Target, Star } from "lucide-react";
+
+import { Brain, Code2, MessageSquare, Wrench } from "lucide-react";
 
 function Training() {
   return (
@@ -24,8 +20,10 @@ function Training() {
           </div>
 
           {/* FLOATING WHITE CARD with hover animation */}
-          <div className="relative -mt-10 mx-4 sm:mx-6 lg:mx-6 xl:mx-6 mb-6 bg-white rounded-xl shadow-lg p-5 sm:p-6 lg:p-8 xl:p-8 space-y-6 flex flex-col h-full 
-                        transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-gray-50 hover:shadow-2xl">
+          <div
+            className="relative -mt-10 mx-4 sm:mx-6 lg:mx-6 xl:mx-6 mb-6 bg-white rounded-xl shadow-lg p-5 sm:p-6 lg:p-8 xl:p-8 space-y-6 flex flex-col h-full 
+                        transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-gray-50 hover:shadow-2xl"
+          >
             {/* TEXT + IMAGE - Certificate beside text */}
             <div className="flex flex-col sm:flex-row gap-6">
               {/* TEXT */}
@@ -55,15 +53,16 @@ function Training() {
             {/* ICONS - Responsive grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-auto">
               {[
-                { icon: Briefcase, label: "Industry Exposure" },
-                { icon: Users, label: "Expert Mentors" },
-                { icon: BarChart3, label: "Analytical Skills" },
-                { icon: Target, label: "Job Readiness" },
+                { icon: Brain, label: "Aptitude" },
+                { icon: Code2, label: "Technical" },
+                { icon: MessageSquare, label: "Soft Skills" },
+                { icon: Wrench, label: "Tools" },
               ].map((item, index) => (
                 <div
                   key={index}
                   className="flex flex-col items-center justify-center gap-2 sm:gap-3 px-2 py-3 rounded-lg 
-                             bg-[#3aafa9] border-2 border-white/80 transition-all duration-300 hover:bg-[#2B8B85] hover:scale-105"
+                 bg-[#3aafa9] border-2 border-white/80 transition-all duration-300 
+                 hover:bg-[#2B8B85] hover:scale-105"
                 >
                   <item.icon className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 xl:w-12 xl:h-12 text-white" />
                   <span className="text-xs sm:text-sm lg:text-sm xl:text-sm font-medium text-white text-center leading-tight">
@@ -84,7 +83,7 @@ function Training() {
               <h2 className="text-xl sm:text-2xl lg:text-2xl xl:text-2xl font-bold text-white text-center">
                 Career Leadership Development Programme (CLDP)
               </h2>
-              
+
               {/* STARS FOR NON-XL SCREENS */}
               <div className="xl:hidden flex gap-1 items-center mt-2">
                 <svg width="0" height="0">
@@ -115,8 +114,10 @@ function Training() {
           </div>
 
           {/* FLOATING WHITE CARD with hover animation */}
-          <div className="relative -mt-10 mx-4 sm:mx-6 lg:mx-6 xl:mx-6 mb-6 bg-white rounded-xl shadow-2xl p-4 sm:p-5 lg:p-6 xl:p-6 space-y-6 flex flex-col h-full z-20
-                        transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-gray-50 hover:shadow-3xl">
+          <div
+            className="relative -mt-10 mx-4 sm:mx-6 lg:mx-6 xl:mx-6 mb-6 bg-white rounded-xl shadow-2xl p-4 sm:p-5 lg:p-6 xl:p-6 space-y-6 flex flex-col h-full z-20
+                        transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-gray-50 hover:shadow-3xl"
+          >
             {/* TEXT + IMAGE - Certificate beside text */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-3 lg:gap-3 xl:gap-3">
               {/* TEXT */}
@@ -141,7 +142,7 @@ function Training() {
                   alt="ICEM Certificates"
                   className="w-full h-auto max-h-40 object-contain rounded-lg transition-all duration-300 hover:scale-105"
                 />
-                
+
                 {/* STARS FOR XL SCREENS - Absolute positioned above certificate */}
                 <div className="hidden xl:flex absolute -top-4 left-1/2 -translate-x-1/2 gap-1 items-center justify-center px-3 py-1">
                   <svg width="0" height="0">
@@ -174,32 +175,32 @@ function Training() {
             {/* ICONS GRID - Responsive columns with larger icons */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-2 sm:gap-2 lg:gap-3 xl:gap-3 mt-auto">
               {[
-                { 
-                  label: "Project Management", 
+                {
+                  label: "Project Management",
                   icon: "📋",
-                  color: "text-blue-600" 
+                  color: "text-blue-600",
                 },
-                { 
-                  label: "Product Management", 
+                {
+                  label: "Product Management",
                   icon: "📦",
-                  color: "text-purple-600" 
+                  color: "text-purple-600",
                 },
-                { 
-                  label: "Excel", 
-                  logo: "/Home/Excel.png",  
+                {
+                  label: "Excel",
+                  logo: "/Home/Excel.png",
                 },
-                { 
-                  label: "Power BI", 
-                  logo: "/Home/powerbi.webp" 
+                {
+                  label: "Power BI",
+                  logo: "/Home/powerbi.webp",
                 },
-                { 
-                  label: "Business Analytics", 
+                {
+                  label: "Business Analytics",
                   icon: "📈",
-                  color: "text-red-600" 
+                  color: "text-red-600",
                 },
-                { 
-                  label: "SQL | Tableau", 
-                  logo: "/Home/mysql1png.png"  
+                {
+                  label: "SQL | Tableau",
+                  logo: "/Home/mysql1png.png",
                 },
               ].map((item, index) => (
                 <div
@@ -216,7 +217,11 @@ function Training() {
                         className="w-10 h-10 sm:w-10 sm:h-10 lg:w-12 lg:h-12 xl:w-12 xl:h-12 object-contain transition-all duration-300 hover:scale-110"
                       />
                     ) : (
-                      <span className={`text-3xl sm:text-3xl lg:text-4xl xl:text-4xl ${item.color || ''} transition-all duration-300 hover:scale-110`}>
+                      <span
+                        className={`text-3xl sm:text-3xl lg:text-4xl xl:text-4xl ${
+                          item.color || ""
+                        } transition-all duration-300 hover:scale-110`}
+                      >
                         {item.icon}
                       </span>
                     )}

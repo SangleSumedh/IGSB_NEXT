@@ -23,6 +23,9 @@ const phdFaculty = teachingStaff.filter(f =>
 
 export default function FacultyStatSection() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [showAll, setShowAll] = useState(false);
+
+  const displayFaculty = showAll ? phdFaculty : phdFaculty.slice(0, 3);
 
   return (
     <section className="relative w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] py-8 overflow-hidden text-white">
@@ -44,8 +47,8 @@ export default function FacultyStatSection() {
           {/* RIGHT SIDE */}
           <div className="w-full lg:w-2/3">
             <div className="bg-[#3aafa9] border border-white/10 rounded-2xl p-6 md:p-8 lg:p-10 shadow-2xl">
-              <p className="text-base md:text-lg lg:text-xl leading-relaxed text-white/95 font-light">
-                Most of IGSB’s faculty members are Ph.D. holders, ensuring that every
+              <p className="text-base md:text-lg lg:text-xl leading-relaxed text-white font-semibold">
+                Most of IGSB's faculty members are Ph.D. holders, ensuring that every
                 learner is guided by scholars with deep subject expertise,
                 strong research credentials, and a rigorous understanding of
                 advanced management concepts.
@@ -56,7 +59,7 @@ export default function FacultyStatSection() {
               {/* AVATARS */}
               <div className="mt-6 flex items-center gap-4">
                 <div className="flex -space-x-3">
-                  {phdFaculty.map((faculty, index) => (
+                  {displayFaculty.map((faculty, index) => (
                     <div
                       key={index}
                       className="relative hover:z-20"
@@ -108,9 +111,28 @@ export default function FacultyStatSection() {
                       )}
                     </div>
                   ))}
+
+                  {/* Plus/X Button - Removed ml-3 to stack with images */}
+                  <button
+                    onClick={() => setShowAll(!showAll)}
+                    className="
+                      w-8 h-8 md:w-10 md:h-10
+                      rounded-full
+                      border-2 border-[#10404A]
+                      bg-[#FF8B61] text-[#10404A]
+                      flex items-center justify-center
+                      font-bold text-lg md:text-xl
+                      hover:bg-[#ff9c7c]
+                      transition-colors duration-200
+                      cursor-pointer
+                      relative hover:z-20
+                    "
+                  >
+                    {showAll ? "×" : "+"}
+                  </button>
                 </div>
 
-                <span className="text-xs md:text-sm text-white/60 uppercase tracking-widest font-semibold">
+                <span className="text-xs md:text-sm text-white/95 uppercase tracking-widest font-semibold">
                   Academic Excellence
                 </span>
               </div>

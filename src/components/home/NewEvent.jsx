@@ -23,6 +23,7 @@ const eventList = [
     },
     backdrop: "/Home/events/event1backdrop.png", // ✅ existing image
   },
+
   {
     title: "Indira Women Achievers Awards",
     description:
@@ -97,13 +98,13 @@ export default function NewEvent() {
   const activeEvent = eventList[activeEventIndex];
 
   return (
-    <div className="bg-slate-50 py-4 sm:py-8 overflow-hidden font-sans">
+    <div className="bg-slate-50 py-4 sm:py-12 overflow-hidden font-sans">
       <div className="max-w-full mx-auto px-4 sm:px-16">
         {/* 1. SECTION HEADER */}
         <div className="mb-12 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
           <div className="max-w-4xl">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#10404A] mb-4">
-              Life at IGSB
+              Life at IGSB 
             </h2>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
               From celebrity talks to Lit Fests and interactions with industry

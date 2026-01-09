@@ -23,11 +23,11 @@ export default function Placement() {
         <RecruitersSection />
         <Career />
         <CASsection />
-        <Upskilling />
+        {/* <Upskilling /> */}
         <PlacementRecords />
         {/* <PlacementOrientation /> */}
-        <PlacementIndustryVisit />
-        <PlacementCell />
+        {/* <PlacementIndustryVisit /> */}
+        {/* <PlacementCell /> */}
       </ScrollCrushWrapper>
     </div>
   );

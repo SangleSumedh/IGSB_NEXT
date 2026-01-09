@@ -1,73 +1,233 @@
-// pages/career.js
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
 import {
-  FaUserGraduate,
+  FaChalkboardTeacher,
+  FaBullseye,
   FaHandshake,
-  FaLightbulb,
-  FaIndustry,
+  FaBriefcase,
+  FaRocket,
+  FaUserGraduate,
 } from "react-icons/fa";
 
-export default function Career() {
-  const cards = [
+const Career = () => {
+  const dotTopPositions = [
+    "40%", // dot 1 (index 0) — you said perfect → keep similar
+    "60%", // dot 2 (index 1) — perfect → high peak
+    "55%", // dot 3 (index 2) — slightly lower than 2, still high
+    "50%", // dot 4 (index 3) — deep valley
+    "28%", // dot 5 (index 4) — still low
+    "60%", // dot 6 (index 5) — rising back toward center
+  ];
+  const steps = [
     {
-      icon: (
-        <FaUserGraduate className="text-3xl sm:text-4xl mb-2 text-[#ff712d]" />
-      ),
-      title: "Alumni Mentorship & Placement Guidance",
-      desc: "Connect with our powerful network of accomplished alumni for one-on-one mentorship. Get personalized guidance on career paths, resume building, and interview strategies to land your dream role.",
+      id: 1,
+      title: "Industry-Led Induction",
+      desc: "From day one, students engage with industry leaders, corporate mentors, and business experts, enabling early exposure to real-world expectations.",
+      icon: <FaChalkboardTeacher />,
     },
     {
-      icon: <FaHandshake className="text-3xl sm:text-4xl mb-2 text-[#ff712d]" />,
-      title: "Corporate Partnerships & Recruitment Drive",
-      desc: "We have established strong, lasting relationships with a diverse portfolio of national and multinational corporations. Benefit from exclusive recruitment drives, on-campus placements, and direct access to sought-after employers actively seeking IGSB talent.",
+      id: 2,
+      title: "Domain-Specific Support",
+      desc: "Focused training and niche, sector-wise placement preparation ensure students develop specialization-aligned competencies.",
+      icon: <FaBullseye />,
     },
     {
-      icon: <FaLightbulb className="text-3xl sm:text-4xl mb-2 text-[#ff712d]" />,
-      title: "Internships & Industry Exposure",
-      desc: "Theory meets practice through mandatory, paid internships with our partner companies. From semester-long projects in Pune to global opportunities, gain invaluable hands-on experience that makes your resume stand out.",
+      id: 3,
+      title: "Corporate Recruitment",
+      desc: "Active partnerships with leading national and multinational companies enable on-campus recruitment and placement opportunities.",
+      icon: <FaHandshake />,
     },
     {
-      icon: <FaIndustry className="text-3xl sm:text-4xl mb-2 text-[#ff712d]" />,
-      title: "Career Development Workshops",
-      desc: "We polish your professional edge. Through a continuous schedule of workshops—from mastering communication and leadership to acing mock interviews and building a powerful personal brand—we ensure you are not just qualified, but truly job-ready.",
+      id: 4,
+      title: "Internships & Exposure",
+      desc: "Mandatory internships and live projects provide practical business experience, strengthening employability and workplace readiness.",
+      icon: <FaBriefcase />,
+    },
+    {
+      id: 5,
+      title: "Career Development",
+      desc: "Focused training in aptitude, communication, and executive presence ensures students are confident, competent, and placement ready.",
+      icon: <FaRocket />,
+    },
+    {
+      id: 6,
+      title: "Alumni & Mentorship",
+      desc: "Guidance from experienced alumni and industry experts supports informed career decisions, interview readiness, and professional growth.",
+      icon: <FaUserGraduate />,
     },
   ];
 
   return (
-    <section className="bg-[#10404A] text-white py-12 sm:py-16 lg:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-        {/* Heading */}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
-          A Placement Ecosystem Designed for Real Careers
-        </h2>
+    <section className="bg-[#10404A] text-white py-16 lg:py-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
+        {/* ================= HEADER ================= */}
+        <div className="text-center mb-16 lg:mb-24">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-extrabold mb-6"
+          >
+            An Ecosystem Designed for{" "}
+            <span className="text-[#ff712d]">Real Careers</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed"
+          >
+            IGSB offers a structured placement ecosystem focused on
+            industry-ready MBA careers. Through strong corporate partnerships,
+            expert mentorship, and hands-on exposure, students graduate with the
+            skills required for long-term success.
+          </motion.p>
+        </div>
 
-        {/* Subheading */}
-        <p className="text-sm sm:text-base lg:text-lg max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-14 leading-relaxed text-gray-200">
-          IGSB offers a structured placement ecosystem focused on industry-ready
-          MBA careers. Through strong corporate partnerships, expert mentorship,
-          and hands-on exposure, students graduate with the skills, confidence,
-          and readiness required for long-term professional success.
-        </p>
-
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 items-stretch">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className="bg-white border border-gray-200 hover:border-primary/40 p-4 sm:p-6 lg:p-8 rounded-xl lg:rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center h-full"
+        {/* ================= DESKTOP TIMELINE (Horizontal Wave) ================= */}
+        <div className="hidden lg:block relative h-[500px]">
+          {/* THE CURVED LINE (SVG) */}
+          <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 z-0">
+            <svg
+              width="100%"
+              height="200"
+              viewBox="0 0 1200 200"
+              fill="none"
+              preserveAspectRatio="none"
             >
-              <div className="flex flex-col items-center text-center flex-1 justify-between">
-                {card.icon}
-                <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3 text-black">
-                  {card.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                  {card.desc}
-                </p>
-              </div>
-            </div>
-          ))}
+              <motion.path
+                d="M0,100
+   C67,30 133,30 200,100
+   C267,170 333,170 400,100
+   C467,30 533,30 600,100
+   C667,170 733,170 800,100
+   C867,30 933,30 1000,100
+   C1067,170 1133,170 1200,100"
+                stroke="#ff712d"
+                strokeWidth="4"
+                fill="none"
+                strokeDasharray="10 10" // Dashed line styling
+                initial={{ pathLength: 0 }}
+                whileInView={{ pathLength: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 2, ease: "easeInOut" }}
+              />
+            </svg>
+          </div>
+
+          {/* THE CARDS GRID */}
+          <div className="grid grid-cols-6 gap-4 relative z-10 h-full">
+            {steps.map((step, index) => {
+              // Determine if item is Top or Bottom based on index
+              // Pattern: Top, Top-ish, Bottom, Bottom-ish... adapted to the curve
+              // Actually, simplified alternating Pattern: Even = Top, Odd = Bottom works for straight lines,
+              // but for a curve, we position manually relative to the "Wave" visual.
+
+              const isTop = index % 2 === 0;
+
+              return (
+                <div
+                  key={step.id}
+                  className="relative flex flex-col items-center justify-center h-full"
+                >
+                  {/* CARD CONTENT */}
+                  <motion.div
+                    initial={{ opacity: 0, y: isTop ? -50 : 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.2, duration: 0.5 }}
+                    className={`absolute w-full max-w-[220px] p-5 rounded-xl md:rounded-3xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors
+                      ${isTop ? "top-[60%]" : "bottom-[60%]"}
+                    `}
+                  >
+                    <div className="text-[#ff712d] text-3xl mb-3">
+                      {step.icon}
+                    </div>
+                    <h3 className="font-bold text-lg leading-tight mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-xs text-gray-300 leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </motion.div>
+
+                  {/* ICON BUBBLE */}
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.2 + 0.5, type: "spring" }}
+                    className={`w-12 h-12 rounded-full bg-[#ff712d] border-4 border-[#10404A] shadow-[0_0_20px_rgba(255,113,45,0.6)] z-20 flex items-center justify-center text-white font-bold text-lg
+                      absolute top-1/2 -translate-y-1/2
+                      ${
+                        index === 1 || index === 2 ? "-mt-16" : ""
+                      }  // Manual adjustments to follow the visual curve
+                      ${index === 3 || index === 4 ? "mt-16" : ""}
+                      ${index === 1 ? "-mt-[80px]" : ""}
+                      ${index === 2 ? "-mt-[80px]" : ""}
+                      ${index === 3 ? "-mt-[80px]" : ""}
+                      ${index === 4 ? "-mt-[80px]" : ""}
+                      
+                      // Actually, let's keep it simple: Alternating Up/Down visually
+                      ${index % 2 === 0 ? "mb-0" : "mt-0"}
+                    `}
+                    // Override styles to strictly stick to the SVG curve visual approx
+                    style={{ top: dotTopPositions[index] }}
+                  >
+                    {index + 1}
+                  </motion.div>
+
+                 
+                  {/* <div
+                    className={`absolute w-[2px] h-[40px] bg-[#ff712d]/50
+                     ${isTop ? "bottom-[50%] mb-6" : "top-[50%] mt-6"}
+                  `}
+                  ></div> */}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* ================= MOBILE TIMELINE (Vertical) ================= */}
+        <div className="block lg:hidden relative pl-4">
+          {/* Vertical Line */}
+          <div className="absolute left-[27px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#ff712d] to-transparent"></div>
+
+          <div className="space-y-10">
+            {steps.map((step, index) => (
+              <motion.div
+                key={step.id}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="relative flex items-start gap-6"
+              >
+                {/* ICON BUBBLE */}
+                <div className="relative z-10 w-14 h-14 shrink-0 rounded-full bg-[#10404A] border-2 border-[#ff712d] flex items-center justify-center text-xl text-[#ff712d] shadow-lg">
+                  {step.icon}
+                </div>
+
+                {/* CONTENT CARD */}
+                <div className="bg-white/5 border border-white/10 p-5 rounded-xl w-full">
+                  <h3 className="text-xl font-bold text-[#ff712d] mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    {step.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Career;

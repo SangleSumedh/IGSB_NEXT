@@ -3,7 +3,7 @@ import { RotateCcw, Target, Users, Briefcase } from "lucide-react";
 export default function CASsection() {
   return (
     <section className="bg-gradient-to-br from-gray-50 to-white py-20 px-4">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-9xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* CLDP Card */}
           <div

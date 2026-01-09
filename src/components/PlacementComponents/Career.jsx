@@ -61,7 +61,7 @@ const Career = () => {
 
   return (
     <section className="bg-[#10404A] text-white py-16 lg:py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
+      <div className="max-w-9xl mx-auto px-4 sm:px-6 relative">
         {/* ================= HEADER ================= */}
         <div className="text-center mb-16 lg:mb-24">
           <motion.h2
@@ -106,7 +106,7 @@ const Career = () => {
    C667,170 733,170 800,100
    C867,30 933,30 1000,100
    C1067,170 1133,170 1200,100"
-                stroke="#ff712d"
+                stroke="#3aafa9"
                 strokeWidth="4"
                 fill="none"
                 strokeDasharray="10 10" // Dashed line styling
@@ -139,17 +139,18 @@ const Career = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2, duration: 0.5 }}
-                    className={`absolute w-full max-w-[220px] p-5 rounded-xl md:rounded-3xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors
+                    className={`absolute w-full max-w-[220px] p-5 rounded-xl md:rounded-3xl bg-[#3aafa9] backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors
                       ${isTop ? "top-[60%]" : "bottom-[60%]"}
                     `}
                   >
-                    <div className="text-[#ff712d] text-3xl mb-3">
+                    <div className="text-secondary text-3xl mb-3">
                       {step.icon}
                     </div>
                     <h3 className="font-bold text-lg leading-tight mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-xs text-gray-300 leading-relaxed">
+                    <p className="text-xs text-gray-50
+                  leading-relaxed">
                       {step.desc}
                     </p>
                   </motion.div>
@@ -160,7 +161,7 @@ const Career = () => {
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2 + 0.5, type: "spring" }}
-                    className={`w-12 h-12 rounded-full bg-[#ff712d] border-4 border-[#10404A] shadow-[0_0_20px_rgba(255,113,45,0.6)] z-20 flex items-center justify-center text-white font-bold text-lg
+                    className={`w-12 h-12 rounded-full  bg-[#3aafa9] border-4 border-[#052c34] shadow-[0_0_20px_rgba(58,175,169,0.6)] z-20 flex items-center justify-center text-white font-bold text-lg
                       absolute top-1/2 -translate-y-1/2
                       ${
                         index === 1 || index === 2 ? "-mt-16" : ""
@@ -180,7 +181,6 @@ const Career = () => {
                     {index + 1}
                   </motion.div>
 
-                 
                   {/* <div
                     className={`absolute w-[2px] h-[40px] bg-[#ff712d]/50
                      ${isTop ? "bottom-[50%] mb-6" : "top-[50%] mt-6"}

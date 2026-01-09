@@ -12,6 +12,7 @@ import PlacementRecords from "@/components/PlacementComponents/PlacementRecords"
 import PlacementOrientation from "@/components/PlacementComponents/PlacementOrientation";
 import PlacementIndustryVisit from "@/components/PlacementComponents/PlacementIndustryVisit";
 import PlacementCell from "@/components/PlacementComponents/PlacementCell";
+import RecruiterPlacement from "@/components/PlacementComponents/RecruiterPlacement";
 
 export default function Placement() {
   return (
@@ -20,7 +21,8 @@ export default function Placement() {
       <ScrollCrushWrapper Hero={<PlacementHero />}>
         {/* Sections with scroll fade animation */}
         <Impact />
-        <RecruitersSection />
+        {/* <RecruitersSection /> */}
+        <RecruiterPlacement />
         <Career />
         <CASsection />
         {/* <Upskilling /> */}

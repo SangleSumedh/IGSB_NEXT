@@ -3,14 +3,18 @@ import Image from "next/image";
 
 export default function PlacementHero() {
   return (
-    <div className="relative w-full h-[40vh] sm:h-[50vh] lg:h-[88vh]">
-      <Image
-        src="/PlacementBanner1.jpg"
+    <div className="relative w-full h-auto ">
+      <div className="relative w-full overflow-hidden">
+        <Image
+        src="/placement4.jpg"
         alt="Placement Banner"
-        fill
         priority
-        className="object-cover"
+        className="w-full h-auto "
+        width={1600}
+        height={700}
       />
+        </div>
+      
     </div>
   );
 }

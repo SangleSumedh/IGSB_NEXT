@@ -21,7 +21,6 @@ const generateLogos = () =>
 const RecruiterPlacement = () => {
   const pathname = usePathname();
   const logos = generateLogos();
-  // Display first 40 logos
   const visibleLogos = logos.slice(0, 36);
 
   const pageContent = {
@@ -42,80 +41,108 @@ const RecruiterPlacement = () => {
   const { headline, body } = pageContent[pathname] || pageContent["/"];
 
   return (
-    <section className="bg-[#3aafa9] py-16 lg:py-24 relative overflow-hidden">
-      <div className="max-w-9xl mx-auto px-4 sm:px-6">
+    <section className="relative w-full overflow-hidden bg-white">
+      
+      {/* ================= DESKTOP LAYOUT (LG+) ================= */}
+      {/* 1. The Split Grid Background Logic */}
+      <div className="hidden lg:grid grid-cols-[80%_20%] min-h-[600px]">
         
-        {/* SECTION HEADER */}
-        <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6">
-            {headline}
-          </h2>
-          <p className="text-gray-100 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
-            {body}
-          </p>
+        {/* LEFT COL: Cyan Background + Content */}
+        <div className="relative bg-[#3aafa9] py-16 pl-4 pr-16 xl:pl-20 xl:pr-38 flex flex-col justify-center">
+            
+            {/* Header Text */}
+            <div className="relative z-10 mb-10">
+              <h2 className="text-3xl xl:text-5xl font-extrabold text-white mb-6">
+                {headline}
+              </h2>
+              <p className="text-gray-100 text-lg max-w-2xl leading-relaxed">
+                {body}
+              </p>
+            </div>
+
+            {/* Logo Grid */}
+            <div className="relative z-10 grid grid-cols-4 xl:grid-cols-6 gap-4">
+               {visibleLogos.map((logo, i) => (
+                  <LogoItem key={i} src={logo} />
+               ))}
+            </div>
+
+            {/* Optional decorative circle */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
         </div>
 
-        {/* MAIN CONTENT SPLIT */}
-        {/* Restored to flex-row for side-by-side layout matching the screenshot */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-          
-          {/* LEFT: LOGO GRID */}
-          <div className="w-full lg:w-2/3">
-             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-6 gap-4">
-                {visibleLogos.map((logo, i) => (
-                  <LogoItem key={i} src={logo} />
-                ))}
-             </div>
-          </div>
-
-          {/* RIGHT: ORANGE CARD (Info / Lorem Ipsum) */}
-          <div className="w-full lg:w-1/3 sticky top-8">
-            <div className="bg-[#ff712d] rounded-2xl p-8 shadow-2xl relative overflow-hidden text-white">
-               
-               {/* Background Glow Effect */}
-               <div className="absolute top-0 right-0 w-40 h-40 bg-white/20 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
-
-               <h3 className="text-2xl font-bold mb-4 border-b-2 border-white/30 pb-4">
-                 Why Recruiters Choose Us
-               </h3>
-               
-               <div className="space-y-4 text-white/90 leading-relaxed text-sm md:text-base">
-                 <p>
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                   Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-                 </p>
-                 <ul className="list-disc list-inside space-y-2 mt-4 font-medium">
-                   <li>Industry-aligned curriculum</li>
-                   <li>Rigorous soft-skills training</li>
-                   <li>Consistent top-tier placement records</li>
-                 </ul>
-               </div>
-
-               <button className="mt-8 w-full bg-white text-[#ff712d] font-bold py-3 px-6 rounded-lg shadow-md hover:bg-gray-100 hover:scale-[1.02] transition-all">
-                  Contact Placement Cell
-               </button>
-
-            </div>
-          </div>
-
+        {/* RIGHT COL: White Space (Empty placeholder) */}
+        <div className="bg-white relative">
+            {/* This space is intentionally empty to let the absolute card overlap it */}
         </div>
       </div>
+
+
+      {/* ================= MOBILE LAYOUT (< LG) ================= */}
+      <div className="block lg:hidden bg-[#3aafa9] py-12 px-4">
+         <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-white mb-4">{headline}</h2>
+            <p className="text-gray-100">{body}</p>
+         </div>
+         <div className="grid grid-cols-4 sm:grid-cols-4 gap-3 mb-12">
+            {visibleLogos.slice(0,40).map((logo, i) => (
+               <LogoItem key={i} src={logo} />
+            ))}
+         </div>
+         {/* On mobile, card is just stacked normally at the bottom */}
+         <div className="relative">
+             <OrangeCard />
+         </div>
+      </div>
+
+
+      {/* ================= FLOATING CARD (DESKTOP ONLY) ================= */}
+      {/* Positioned absolutely to 'straddle' the 78%/22% line */}
+      <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 right-[2%] xl:right-[1%] w-[380px] xl:w-[400px] z-20">
+         <OrangeCard />
+      </div> 
+
     </section>
   );
 };
 
 /* ---------------- SUB COMPONENTS ---------------- */
 
+const OrangeCard = () => (
+    <div className="bg-[#ff712d] md:h-[500px] rounded-2xl p-8 shadow-2xl relative overflow-hidden text-white">
+        {/* Background Glow */}
+        <div className="absolute top-0 right-0 w-40 h-40 bg-white/20 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+
+        <h3 className="text-2xl font-bold mb-4 border-b-2 border-white/30 pb-4">
+            Why Recruiters Choose Us
+        </h3>
+
+        <div className="space-y-4 text-white/90 leading-relaxed text-sm">
+            <p>
+            We prepare students not just for jobs, but for careers. Our industry-integrated curriculum ensures that every graduate hits the ground running.
+            </p>
+            <ul className="list-disc list-inside space-y-2 mt-4 font-medium">
+            <li>Corporate Mentorship Programs</li>
+            <li>Live Projects & Internships</li>
+            <li>Soft Skills & Aptitude Training</li>
+            </ul>
+        </div>
+
+        <button className="mt-8 w-full bg-white text-[#ff712d] font-bold py-3 px-6 rounded-lg shadow-md hover:bg-gray-100 hover:scale-[1.02] transition-all">
+            Contact Placement Cell
+        </button>
+    </div>
+);
+
 const LogoItem = ({ src }) => (
-  <div className="bg-white rounded-xl p-4 h-24 flex items-center justify-center shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+  <div className="bg-white rounded-lg p-2 h-16 xl:h-20 flex items-center justify-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
     <div className="relative w-full h-full">
       <Image
         src={src}
         alt="Recruiter Logo"
         fill
-        className="object-contain p-2"
-        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 20vw"
+        className="object-contain p-1"
+        sizes="(max-width: 768px) 33vw, 15vw"
       />
     </div>
   </div>

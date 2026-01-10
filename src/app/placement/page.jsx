@@ -13,6 +13,7 @@ import PlacementOrientation from "@/components/PlacementComponents/PlacementOrie
 import PlacementIndustryVisit from "@/components/PlacementComponents/PlacementIndustryVisit";
 import PlacementCell from "@/components/PlacementComponents/PlacementCell";
 import RecruiterPlacement from "@/components/PlacementComponents/RecruiterPlacement";
+import DomainSteps from "@/components/PlacementComponents/DomainSteps";
 
 export default function Placement() {
   return (
@@ -26,6 +27,7 @@ export default function Placement() {
         <Career />
         <CASsection />
         {/* <Upskilling /> */}
+        <DomainSteps />
         <PlacementRecords />
         {/* <PlacementOrientation /> */}
         {/* <PlacementIndustryVisit /> */}

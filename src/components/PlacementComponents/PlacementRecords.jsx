@@ -472,11 +472,11 @@ const PlacementRecords = () => {
 
   return (
     <div className="w-full bg-white text-gray-800">
-      <div className="max-w-7xl mx-auto py-16 px-6 space-y-14">
+      <div className="max-w-full mx-auto py-16 px-6 space-y-14">
 
         {/* Title */}
         <h1 className="text-4xl font-bold text-secondary text-center">
-          Placement Records <span className="text-red-500">(Will be Updated Soon)</span>
+          Placement Records 
         </h1>
 
         {/* Year Tabs */}
@@ -518,7 +518,7 @@ const PlacementRecords = () => {
         </div>
 
         {/* Student Placement Table */}
-        <div>
+        {/* <div>
           <h2 className="text-2xl font-bold text-secondary mb-6 text-center">
             IGSB Placement MBA Batch — {activeYear}
           </h2>
@@ -530,7 +530,7 @@ const PlacementRecords = () => {
               Placement data will be updated soon...
             </p>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
 

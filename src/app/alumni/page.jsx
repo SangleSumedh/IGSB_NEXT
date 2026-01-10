@@ -1,932 +1,481 @@
 "use client";
 
-import React, { useState } from "react";
-import Head from "next/head";
-import Image from "next/image";
-/* ✅ Alumni Meet Sections — FULLY UPDATED */
-const alumniMeet = [
+import React, { useRef, useState, useEffect, Suspense } from "react";
+import { useGLTF } from "@react-three/drei";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { OrbitControls, Html } from "@react-three/drei";
+import * as THREE from "three";
+import ContributionSection from "./ContributionPage";
+import AlumniSpotlight from "./AlumniSpotlight";
+
+// --- CONFIGURATION ---
+const GLOBE_RADIUS = 2;
+const AUTO_ROTATE_SPEED = 0.5;
+const CAROUSEL_INTERVAL = 5000; // 5 Seconds
+
+// --- ASSETS & DATA ---
+const EARTH_DAY_TEXTURE =
+  "https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg";
+
+const ALUMNI_LOCATIONS = [
   {
-    heading: "IGSB Alumni Meet 2025",
-    text: `The IGSB Alumni Meet 2025, scheduled for 5th April, was a vibrant and memorable gathering celebrating the achievements and togetherness of the IGSB community. The event commenced with a warm welcome to alumni, including the distribution of welcome kits, followed by the dignified rendition of the National Anthem. The traditional lamp lighting ceremony and an uplifting Ganesh Vandana dance performance set an auspicious tone for the day.
-
-The formal proceedings included were a welcome address by Dr. Virendra Tatake, Director of IGSB, and special addresses by Prof. Chetan Wakalkar, Academic Advisor at IGI, and the distinguished Chief Guest, Mr. Sangram Abhang, an alumnus from the 2011-13 batch. The program enlivened by a series of cultural performances by students, celebrating talent and diversity.
-
-Academic excellence was recognized through the felicitation of this year’s toppers, followed by vibrant performances by alumni, further strengthening the spirit of camaraderie. An audio-visual presentation showcased the notable achievements of alumni, followed by a dedicated alumni speech, highlighting their journey and contribution.
-
-Fun and entertainment continued with interactive faculty activities and engaging games, after which Dr. Poonam Wani, Faculty Coordinator, IGSB Alumni Cell delivered the vote of thanks. A networking lunch afterwards provided a relaxed atmosphere for reconnecting and sharing experiences.
-
-The event concluded with specialization-wise interactive sessions and a panel discussion, fostering insightful conversations and future collaborations among alumni and faculty.
-
-The IGSB Alumni Meet 2025 stands as a testament to the institute’s enduring legacy, providing a platform for learning, enjoyment, and renewed bonds.`,
-    images: ["/IGSB/Alumni/AlumniMeet/Meet25.png"],
+    id: 1,
+    name: "Sarah Jenkins",
+    role: "Senior Product Manager",
+    company: "Google",
+    companyLogo:
+      "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg",
+    lat: 40.7128,
+    lon: -74.006,
+    location: "New York, USA",
+    img: "/boy.png",
+    bio: "Leading the Maps integration team. Graduated Batch of 2018.",
   },
-
   {
-    heading: "IGSB Alumni Meet 2024",
-    text: `On 21st September 2024, Indira Global School of Business organized an alumni panel discussion for first-year students, featuring two distinguished alumni from the 2015-2017 batch: Mr. Vishal Garje and Mr. Rushi Gokani. The session aimed to provide students with essential guidance on navigating the placement process and developing the necessary skills to secure desirable roles in the corporate world.
-
-Both alumni shared their professional journeys and practical advice on how to approach interviews, select suitable roles, and handle different stages of recruitment. They emphasized understanding company expectations, job profiles, and long-term growth.
-
-Students were encouraged to choose roles that align with career aspirations instead of focusing only on salary. The session concluded with an interactive Q&A, boosting student confidence for upcoming placements.
-
-Overall, the discussion helped students gain clarity, direction, and motivation for their future careers.`,
-    images: [
-      "/IGSB/Alumni/AlumniMeet/1Meet23.jpg",
-      "/IGSB/Alumni/AlumniMeet/2Meet23.jpg",
-      "/IGSB/Alumni/AlumniMeet/3Meet23.jpg",
-      "/IGSB/Alumni/AlumniMeet/4Meet23.jpg",
-    ],
+    id: 2,
+    name: "Raj Patel",
+    role: "Tech Lead",
+    company: "Microsoft",
+    companyLogo:
+      "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+    lat: 19.076,
+    lon: 72.8777,
+    location: "Mumbai, India",
+    img: "/boy.png",
+    bio: "Architecting cloud solutions for Azure. Graduated Batch of 2019.",
   },
-
   {
-    heading: "IGSB Alumni Meet 2023",
-    text: `The alumni meet 2023 was organized by alumni committee on Thursday, 8th June 2023.
-
-Objectives:
-• To reconnect with alumni  
-• To make them aware about recent institute-level structural changes  
-• Brief about Alumni committee composition  
-• Discuss and plan student development inputs involving alumni  
-
-Event Description:
-Prof. Aatish Zagade opened the event with a warm welcome and introduction. He updated alumni about institute merger, new organizational structure, new teams, and recent placement achievements.
-
-Dr. Anuradha Phadnis discussed IQAC initiatives, committees, accreditation process, and encouraged alumni involvement.
-
-Dr. Priyanka Darekar highlighted MDP cell activities and requested industry collaboration.
-
-Dr. Priya Tiwari spoke about industry-academia collaboration and requested alumni support for industrial visits and expert lectures.
-
-Prof. Pranita Bhujbal introduced IGI Alumni Portal, benefits, registrations, and networking reach of 5000+ IGI alumni.
-
-Alumni Inputs:
-• Alumni requested to mentor students through their MBA journey  
-• Offered expertise for SIP viva, PI, GD, guest lectures  
-• Suggested identifying high-performing students for advanced inputs  
-• Recommended training in communication, business etiquette, professionalism, mental well-being, technical certifications`,
-    images: [
-      "/IGSB/Alumni/AlumniMeet/1Meeet24.jpg",
-      "/IGSB/Alumni/AlumniMeet/2Meet24.jpg",
-      "/IGSB/Alumni/AlumniMeet/3Meet24.jpg",
-      "/IGSB/Alumni/AlumniMeet/4Meet24.jpg",
-    ],
+    id: 3,
+    name: "Chen Wei",
+    role: "Data Scientist",
+    company: "Alibaba",
+    companyLogo:
+      "https://upload.wikimedia.org/wikipedia/en/8/80/Alibaba-Group-Logo.svg",
+    lat: 31.2304,
+    lon: 121.4737,
+    location: "Shanghai, China",
+    img: "/boy.png",
+    bio: "Specializing in AI-driven logistics. Graduated Batch of 2020.",
   },
-
   {
-    heading: "IGSB Alumni Meet 2022",
-    text: `The virtual alumni meet 2022 was organized by alumni committee on Saturday, 6th August 2022. Alumni from batch 2010-12 to 2019-2021 attended.
-
-Organized By: Alumni Committee  
-Objective: reconnecting with alumni, introducing revised Vision & Mission, newly registered alumni association, and sharing achievements.
-
-Brief Report:
-The program began with a welcome note by Director, Dr. Virendra Tatake, followed by a keynote by Chief Guest Mr. Sankalp Chandelkar on “Chanakya’s Leadership Wisdom for Corporate Excellence.”
-
-An interactive talk show “Gup Shup” allowed alumni to express thoughts related to Azadi Ka Amrit Mahotsav. Cultural performances including dance, poetry, and memory lane segments created nostalgia.
-
-The Alumni Portal, achievements, and opportunities to contribute were highlighted. Alumni enthusiastically expressed willingness to support placements, guest lectures, mentoring, and industry connects.
-
-Outcome:
-The meet was insightful, engaging, and productive with exchange of ideas, feedback, networking, and commitment toward student development.`,
-    images: ["/IGSB/Alumni/AlumniMeet/Meet22.jpg"],
+    id: 4,
+    name: "Emma Wood",
+    role: "FinTech Consultant",
+    company: "Deloitte",
+    companyLogo:
+      "https://upload.wikimedia.org/wikipedia/commons/5/56/Deloitte.svg",
+    lat: 51.5074,
+    lon: -0.1278,
+    location: "London, UK",
+    img: "/boy.png",
+    bio: "Consulting for top tier banking firms. Graduated Batch of 2017.",
+  },
+  {
+    id: 5,
+    name: "Lucas Silva",
+    role: "UX Researcher",
+    company: "Spotify",
+    companyLogo:
+      "https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg",
+    lat: -23.5505,
+    lon: -46.6333,
+    location: "São Paulo, Brazil",
+    img: "/boy.png",
+    bio: "Enhancing user discovery flows. Graduated Batch of 2021.",
   },
 ];
 
-/* ✅ Alumni Interaction Cards (Old + Retained) */
-const interactionCards = [
-  {
-    img: "/IGSB/Alumni/AlumnniInteraction/PK2223.png",
-    topic: "Career Prospects in Marketing.",
-    speaker: "Prashant Katrabad",
-    organization: "Assistant Vice president at Credit Sussie.",
-    date: "3rd February 2023.",
-    time: "9.30 AM to 12.30 PM.",
-    mode: "Offline , Chanakya Hall, IGSB Pune.",
-    academicYear: "2022-23",
-  },
-  {
-    img: "/IGSB/Alumni/AlumnniInteraction/NP2223.png",
-    topic: "Placement Preparatory Session (ANZ Bank)",
-    speaker: "MS. Nisha Pareekh",
-    date: "1 st November, 2022",
-    time: "4 PM to 6 PM",
-    mode: "Online",
-    academicYear: "2022-23",
-  },
-  {
-    img: "/IGSB/Alumni/AlumnniInteraction/NG2223.png",
-    topic: "Placement Preparatory Session (Nielsen IQ)",
-    speaker: "Nikita Gedam",
-    organization: "Nielsen IQ",
-    date: "7th th October, 2022",
-    time: "4 pm to 6 pm",
-    mode: "Online",
-    academicYear: "2022-23",
-  },
-  {
-    img: "/IGSB/Alumni/AlumnniInteraction/PB2223.png",
-    topic: "Placement Preparatory Session (Nielsen IQ)",
-    speaker: "Pratik Balkawade",
-    organization: "Nielsen IQ",
-    date: "7th th October, 2022",
-    time: "4 pm to 6 pm",
-    mode: "Online",
-    academicYear: "2022-23",
-  },
-  {
-    img: "/IGSB/Alumni/AlumnniInteraction/ST2223.png",
-    topic: "Sector Deep Dive of IT and ITES sector.",
-    speaker: "Mr. Saurabh Tadelkar",
-    organization: "TIBCO Software",
-    date: "14th May, 2022",
-    time: "10.30 to 1.00 pm",
-    mode: "Offline , Classroom-1, First Floor, IGSB",
-    academicYear: "2022-23",
-  },
-  {
-    img: "/IGSB/Alumni/AlumnniInteraction/AK2223.jpg",
-    topic: " Placement preparation for core sales roles.",
-    speaker: "Akshay Shirke",
-    organization: "Amazon (Customer Service Manager)",
-    date: "19th September, 2020",
-    time: "12:00noon to 01.00pm",
-    mode: "Online",
-    academicYear: "2020-21",
-  },
-  {
-    img: "/IGSB/Alumni/AlumnniInteraction/HP2223.jpg",
-    topic: "Practical tips and domain knowledge to crack interviews.",
-    speaker: "Hemant Apte",
-    organization: "Huron Consulting (EPM Consultant)",
-    date: "17th October, 2020",
-    time: "02:00pm to 04.00pm",
-    mode: "Online",
-    academicYear: "2020-21",
-  },
-  {
-    img: "/IGSB/Alumni/AlumnniInteraction/GS2223.jpg",
-    topic: "Product Development and Pricing Strategies.",
-    speaker: "Govind Singh",
-    organization: "Renault India (Product Manager)",
-    date: "22nd August, 2020",
-    time: "11:00am to 12.00noon",
-    mode: "Online",
-    academicYear: "2020-21",
-  },
-  {
-    img: "/IGSB/Alumni/AlumnniInteraction/VV2223.jpg",
-    topic: "Career Opportunities relating to Knowledge Management",
-    speaker: " Vaishnavi Vartak",
-    organization: "Deloitte (Business Analyst)",
-    date: "26th March, 2020",
-    time: "02:00pm to 05.00pm",
-    mode: "Online",
-    academicYear: "2020-21",
-  },
-  {
-    img: "/IGSB/Alumni/AlumnniInteraction/ST2223.jpg",
-    topic: "Overview of the profiles relating to Taxation",
-    speaker: "Samiksha Tiwari",
-    organization: "KPMG (Tax Associate)",
-    date: "7th March, 2021",
-    time: "11:00am to 12.30pm",
-    mode: "Online",
-    academicYear: "2020-21",
-  },
-];
+// --- HELPER ---
+const latLongToVector3 = (lat, lon, radius) => {
+  const phi = (90 - lat) * (Math.PI / 180);
+  const theta = (lon + 180) * (Math.PI / 180);
+  const x = -(radius * Math.sin(phi) * Math.cos(theta));
+  const z = radius * Math.sin(phi) * Math.sin(theta);
+  const y = radius * Math.cos(phi);
+  return new THREE.Vector3(x, y, z);
+};
 
-/* ✅ Alumni Achievements — ALL 23 CARDS RECORDED */
-const achievementCards = [
-  // ✅ Existing 23 Cards — unchanged
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/PK1214.png",
-    name: "Prashant C Katrabad",
-    batch: "2012-14",
-    position: "AVP - Lead Business Analyst",
-    organization: "Credit Suisse",
-    awards: "Employee of the year, Employee of the Quarter, Best Newcomer",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/OB1416.jpg",
-    name: "Omkar Barge",
-    batch: "2014-16",
-    position: "Senior Territory Manager",
-    organization: "IDFC First Bank Ltd",
-    awards: "Ace Award winner",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/SK1314.png",
-    name: "Sridhar Kadam",
-    batch: "2013-14",
-    position: "Regional Lead",
-    organization: "Salesforce",
-    awards: "Presidents Club",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/MS1214.png",
-    name: "Mayuresh Sonawane",
-    batch: "2012-14",
-    position: "Operations Manager",
-    organization: "Stellar Value Chain Solutions",
-    awards: "Awarded for best Inventory Management",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/JD1214.png",
-    name: "Jyoti Dhanwani",
-    batch: "2012-14",
-    position: "Head of People & Culture Business Partner",
-    organization: "Agile Group of Companies, Ahmedabad",
-    awards: "Top 101 HR Tech Minds — World HRD Congress",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/RDG1820.png",
-    name: "Rajashree Dilip Ghavate",
-    batch: "2018-20",
-    position: "Assistant Inspector",
-    organization: "RTO Nashik",
-    awards: "Selected as inspector via MPSC exam",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/PAG1719.png",
-    name: "Praghya Anil Gurung",
-    batch: "2017-19",
-    position: "Deputy Manager",
-    organization: "Axis Bank Ltd.",
-    awards: "Awarded by CEO of ICICI Prudential LIC LTD",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/SS1719.png",
-    name: "Shrikant Shinde",
-    batch: "2017-19",
-    position: "Branch Sales Manager",
-    organization: "Piramal Capital & Housing Finance",
-    awards: "Business Heads Club Award — Best PAN India Portfolio (2nd Rank)",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/SK1719.png",
-    name: "Saurabh Kulkarni",
-    batch: "2017-19",
-    position: "SME Fixed Asset Associate",
-    organization: "NielsenIQ",
-    awards: "CFO Award 2022 Q1, Silver Award, Q1 2020 Best Performance",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/RB1214.jpg",
-    name: "Reshmi Bagchi",
-    batch: "2012-14",
-    position: "Entrepreneur, General Manager",
-    organization: "Medinilla Healthcare Pvt Ltd",
-    awards: "Language expert in French & Mandarin",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/SMA1113.png",
-    name: "Sangram Mansing Abhang",
-    batch: "2011-13",
-    position: "Cloud Solution Architect",
-    organization: "Microsoft Corp Mumbai",
-    awards: "Best Employee, Spot Award",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/TS1012.png",
-    name: "Tapan Singh",
-    batch: "2010-12",
-    position: "Area Sales Manager",
-    organization: "Bata India Ltd",
-    awards: "Top 2 ASM India, Highest Franchisee Openings Award",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/SD1113.png",
-    name: "Saurabh Deb",
-    batch: "2011-13",
-    position: "Head - Student Outreach",
-    organization: "XL Education India",
-    awards:
-      "Multiple recognitions across organizations including Big Basket, Housejoy, Bajaj Finserv",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/AS1113.png",
-    name: "Amit Soni",
-    batch: "2011-13",
-    position: "Senior Manager (Team Lead, Group Underwriting SME Business)",
-    organization: "NivaBupa Health Insurance",
-    awards: "Superstar Performer of the Year",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/SN.png",
-    name: "Sumanth Narla",
-    batch: "—",
-    position: "Business Head – EMR",
-    organization: "Sriven Corporation",
-    awards:
-      "Best Business Leader Award, Best Lorealian Award, Game Changer Award",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/KK1315.png",
-    name: "Kishan Kolhapur",
-    batch: "2013-15",
-    position: "Senior Business Analyst",
-    organization: "London Stock Exchange",
-    awards: "Branding Ambassador, Multiple project awards",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/AK1113.jpg",
-    name: "Amit Kumar",
-    batch: "2011-13",
-    position: "Project Manager",
-    organization: "Shyam Global",
-    awards: "Vice President — NGO Sahyog, The Helping Hand Delhi",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/NK1113.png",
-    name: "Nivesh Kumar",
-    batch: "2011-13",
-    position: "Area Business Manager",
-    organization: "Samsung Electronics",
-    awards: "Best CDE Award",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/SB1315.png",
-    name: "Shrikant Bambargekar",
-    batch: "2013-15",
-    position: "Strategy & Operations Associate — CEO Office",
-    organization: "Swades Foundation",
-    awards: "Chief Minister’s Fellowship Program Award — 2018",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/ST1719.jpg",
-    name: "Samiksha Tiwari",
-    batch: "2017-19",
-    position: "Tax Associate 2",
-    organization: "KPMG US",
-    awards: "Kudos Award",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/NW1315.jpg",
-    name: "Nikhil Wadekar",
-    batch: "2013-15",
-    position: "Assistant Vice President",
-    organization: "IndusInd Bank",
-    awards: "Multiple ICICI Bank Excellence & MDRT Awards",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/KJ1315.jpg",
-    name: "Kamlesh Jagdale",
-    batch: "2013-15",
-    position: "India Lead – University Recruiting and Early Talent Programs",
-    organization: "Nutanix",
-    awards:
-      "CEO Award, Business Excellence, Industry Partnership Award, Best Industry Mentor",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/NS1416.jpg",
-    name: "Neeklesh Sabale",
-    batch: "2014-16",
-    position: "Business Analyst",
-    organization: "Cognizant",
-    awards: "Best Performer of the Quarter & Year — Orbis Research",
-  },
+// --- COMPONENT: The Globe ---
+const Globe = ({ selectedId, onSelect }) => {
+  const globeRef = useRef();
+  const colorMap = useLoader(THREE.TextureLoader, EARTH_DAY_TEXTURE);
 
-  // ✅ Newly Added Based on Shared Screenshots
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/VK1416.png",
-    name: "Vikrant Kulkarni",
-    batch: "2014-16",
-    position: "Manager",
-    organization: "Nayara Energy Ltd (formerly known as Essar Oil)",
-    awards:
-      "ABHIMAAN – Pride of Nayara 2022 for outstanding contribution in Retail",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/SS1618.png",
-    name: "Shimon Salve",
-    batch: "2016-18",
-    position: "Business Analyst",
-    organization: "Springer Nature",
-    awards:
-      "Shoutout Award for significant project contribution, PSPO certified B.A.",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/BP1214.jpg",
-    name: "Bhagwan Patil",
-    batch: "2012-14",
-    position: "Team Lead",
-    organization: "Citco",
-    awards: "Employee of the year in project, Star Performer",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/MM1113.jpg",
-    name: "Mahesh Mitkari",
-    batch: "2011-13",
-    position: "Associate Vice President Sales",
-    organization: "Truecopy Credentials Private Limited",
-    awards: "Recognized for best sales performance",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/PG1618.png",
-    name: "Paresh Gund",
-    batch: "2016-18",
-    position: "Assistant Sales Manager",
-    organization: "Kohinoor Group, Shirgaon",
-    awards: "Awarded as Top Performer of the Year 2019 by Paranjape Schemes",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/SC1921.png",
-    name: "Sagar Chaudhari",
-    batch: "2019-21",
-    position: "L2 Manager",
-    organization: "—",
-    awards:
-      "Promoted from Sr. Associate to Manager; leading UI/UX, GET, product marketing & EV programs",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/VV1719.png",
-    name: "Vaishnavi Vartak",
-    batch: "2017-19",
-    position: "Sr. Analyst",
-    organization: "Deloitte, Hyderabad",
-    awards: "Applause Award for excellence in project & stakeholder management",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/PK1214.png",
-    name: "Prashant C Katrabad",
-    batch: "2012-14",
-    position: "Business Analyst / Solution Consultant",
-    organization: "Ivy Mobility",
-    awards: "Recognized for project execution & client engagement (2019–2020)",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/KK1315.png",
-    name: "Kiran Kad",
-    batch: "2013-15",
-    position: "—",
-    organization: "Abhiyanta India Solutions Pvt. Ltd.",
-    awards:
-      "Represented SAP India in Make in India Week 2016; interacted with Union Minister Nitin Gadkari",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/VD1315.jpg",
-    name: "Viraj Deshmukh",
-    batch: "2013-15",
-    position: "—",
-    organization: "Kolte Patil Developers Ltd",
-    awards:
-      '"Best Channel Manager" for outstanding sales performance in Pune region',
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/HP1618.jpg",
-    name: "Hemant Apte",
-    batch: "2016-18",
-    position: "—",
-    organization: "KPMG",
-    awards: "Qualified UGC-NET",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/VG1517.png",
-    name: "Vishal Garje",
-    batch: "2015-17",
-    position: "—",
-    organization: "Deloitte",
-    awards: "Qualified UGC-NET",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/BB1214.png",
-    name: "Bhumika Bhardwaj",
-    batch: "2012-14",
-    position: "—",
-    organization: "Boyden Global Executive Search",
-    awards: "Most consistent employee award",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/RS1315.jpg",
-    name: "Rinky Soni",
-    batch: "2013-15",
-    position: "—",
-    organization: "Signify Innovation’s India Ltd (Philips Lighting)",
-    awards: "Indira HR Excellence Award",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/EP1517.png",
-    name: "Eeshwari Pawar",
-    batch: "2015-17",
-    position: "—",
-    organization: "Deloitte",
-    awards:
-      "Spot Award, KX Clients Recognition, Applause Award for collaboration & domain expertise",
-  },
-  {
-    img: "/IGSB/Alumni/AlumniAchievements/SM1214.png",
-    name: "Shashank Mishra",
-    batch: "2012-2014",
-    position: "Assistant Manager",
-    organization: "Deloitte",
-    awards: "Applause Award, Spot Award",
-  },
-];
+  useFrame(() => {
+    if (globeRef.current) {
+      globeRef.current.rotation.y += 0.0005;
+    }
+  });
 
-/* ✅ Alumni Association Members — TABLE FROM IMAGE */
-const associationMembers = [
-  {
-    sr: 1,
-    name: "Dr. Virendra Tatake",
-    role: "Chairman",
-    representation: "Director",
-  },
-  {
-    sr: 2,
-    name: "Dr. Aatish Zagade",
-    role: "Treasurer",
-    representation: "Teaching Representative",
-  },
-  {
-    sr: 3,
-    name: "Dr. Pallavi Sajanapwar",
-    role: "Member",
-    representation: "Teaching Representative",
-  },
-  {
-    sr: 4,
-    name: "Mr. Hans Daryani",
-    role: "Alumni Association - President",
-    representation: "Alumni Representative",
-  },
-  {
-    sr: 5,
-    name: "Ms. Rashmi Bagchi",
-    role: "Alumni Association - Secretary",
-    representation: "Alumni Representative – Female",
-  },
-  {
-    sr: 6,
-    name: "Mr. Prashant Katrabad",
-    role: "Member",
-    representation: "Alumni Representative",
-  },
-  {
-    sr: 7,
-    name: "Mr. Saurabh Tadelkar",
-    role: "Member",
-    representation: "Alumni Representative",
-  },
-  {
-    sr: 8,
-    name: "Mr. Rushi Gokani",
-    role: "Member",
-    representation: "Alumni Representative (Hyderabad)",
-  },
-  {
-    sr: 9,
-    name: "Mr. Neeklesh Sable",
-    role: "Member",
-    representation: "Alumni Representative (Bangalore)",
-  },
-  {
-    sr: 10,
-    name: "Mr. Vishal Garje",
-    role: "Member",
-    representation: "Alumni Representative (Mumbai)",
-  },
-  {
-    sr: 11,
-    name: "Prof. Poonam Wani",
-    role: "Member Secretary",
-    representation: "Teaching Representative",
-  },
-];
+  return (
+    <group ref={globeRef}>
+      <mesh>
+        <sphereGeometry args={[GLOBE_RADIUS, 64, 64]} />
+        <meshStandardMaterial map={colorMap} roughness={1} metalness={0} />
+      </mesh>
+      <mesh scale={[1.02, 1.02, 1.02]}>
+        <sphereGeometry args={[GLOBE_RADIUS, 32, 32]} />
+        <meshBasicMaterial
+          color="#4da6ff"
+          transparent
+          opacity={0.15}
+          side={THREE.BackSide}
+        />
+      </mesh>
 
-export default function Alumni() {
-  const [activeTab, setActiveTab] = useState("alumni");
-  const [showMoreAchievements, setShowMoreAchievements] = useState(false);
+      {ALUMNI_LOCATIONS.map((alum) => {
+        const position = latLongToVector3(alum.lat, alum.lon, GLOBE_RADIUS);
+        return (
+          <Marker
+            key={alum.id}
+            data={alum}
+            position={position}
+            isSelected={selectedId === alum.id}
+            onSelect={onSelect}
+          />
+        );
+      })}
+    </group>
+  );
+};
 
-  /* ✅ Alumni Meet Sections */
+// --- COMPONENT: Interactive Marker ---
+const Marker = ({ position, data, isSelected, onSelect }) => {
+  const [hovered, setHovered] = useState(false);
+  const meshRef = useRef();
+
+  // Use frame to pulse the selected marker
+  useFrame(({ clock }) => {
+    if (isSelected && meshRef.current) {
+      const scale = 0.2 + Math.sin(clock.getElapsedTime() * 5) * 0.2; // Pulse effect
+      meshRef.current.scale.set(scale, scale, scale);
+    } else if (meshRef.current) {
+      meshRef.current.scale.set(1, 1, 1);
+    }
+  });
+
+  // Shared event handlers
+  const handlePointerOver = (e) => {
+    e.stopPropagation();
+    document.body.style.cursor = "pointer";
+    setHovered(true);
+  };
+
+  const handlePointerOut = (e) => {
+    e.stopPropagation();
+    document.body.style.cursor = "auto";
+    setHovered(false);
+  };
+
+  const handleClick = (e) => {
+    e.stopPropagation();
+    onSelect(data);
+  };
+
+  const isActive = hovered || isSelected;
+
+  return (
+    <group position={position}>
+      {/* 3D PIN GROUP */}
+      <group
+        onPointerOver={handlePointerOver}
+        onPointerOut={handlePointerOut}
+        onClick={handleClick}
+        ref={meshRef} // Apply scale animation here
+      >
+        {/* Invisible Hitbox */}
+        <mesh visible={false}>
+          <sphereGeometry args={[0.15, 16, 16]} />
+          <meshBasicMaterial />
+        </mesh>
+
+        {/* Visual Pin Head */}
+        <mesh>
+          <sphereGeometry args={[isSelected ? 0.06 : 0.04, 16, 16]} />
+          <meshBasicMaterial color={isActive ? "#fb7035" : "#ffffff"} />
+        </mesh>
+
+        {/* Visual Pin Ring */}
+        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, 0]}>
+          <ringGeometry args={[0.06, 0.08, 32]} />
+          <meshBasicMaterial
+            color={isActive ? "#fb7035" : "#ffffff"}
+            side={THREE.DoubleSide}
+            transparent
+            opacity={0.6}
+          />
+        </mesh>
+      </group>
+
+      {/* HTML OVERLAY */}
+      <Html
+        distanceFactor={12}
+        zIndexRange={[5, 0]}
+        style={{ pointerEvents: "auto" }}
+      >
+        <div
+          onMouseEnter={handlePointerOver}
+          onMouseLeave={handlePointerOut}
+          onClick={handleClick}
+          className={`flex flex-col items-center -translate-y-2/3 -translate-x-1/2 pb-2 cursor-pointer transition-transform duration-300 ${
+            isActive ? "scale-80 z-0" : "scale-50 z-[-5]"
+          }`}
+        >
+          <div
+            className={`w-8 h-8 rounded-full overflow-hidden border-2 shadow-md mb-1 bg-white transition-colors duration-300 ${
+              isActive ? "border-[#fb7035]" : "border-white"
+            }`}
+          >
+            <img
+              src={data.img}
+              alt={data.name}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            className={`px-2 py-0.5 bg-slate-900/90 text-white text-[10px] font-bold rounded shadow-xl whitespace-nowrap transition-opacity duration-200 ${
+              isActive ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {data.name}
+          </div>
+        </div>
+      </Html>
+    </group>
+  );
+};
+
+// --- COMPONENT: The Plane ---
+const Airplane = () => {
+  const planeRef = useRef();
+  const { scene } = useGLTF("/airplane.glb");
+
+  useFrame(({ clock }) => {
+    const t = clock.getElapsedTime() * 0.4;
+    const radius = GLOBE_RADIUS + 0.6;
+    if (planeRef.current) {
+      planeRef.current.position.x = radius * Math.sin(t);
+      planeRef.current.position.z = radius * Math.cos(t);
+      planeRef.current.position.y = Math.sin(t * 2.5) * 0.3;
+      planeRef.current.lookAt(
+        radius * Math.sin(t + 0.1),
+        Math.sin((t + 0.1) * 2.5) * 0.3,
+        radius * Math.cos(t + 0.1)
+      );
+    }
+  });
+
+  return (
+    <group ref={planeRef}>
+      <primitive object={scene} scale={0.08} rotation={[0, 0, 0]} />
+      <pointLight distance={1.5} intensity={1} color="#fb7035" />
+    </group>
+  );
+};
+
+useGLTF.preload("/airplane.glb");
+
+const Loader = () => (
+  <Html center>
+    <div className="text-slate-500 text-sm font-semibold animate-pulse">
+      Loading...
+    </div>
+  </Html>
+);
+
+// --- MAIN PAGE ---
+export default function AlumniPage() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const selectedAlumni = ALUMNI_LOCATIONS[currentIndex];
+
+  // Auto-Carousel Logic
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % ALUMNI_LOCATIONS.length);
+    }, CAROUSEL_INTERVAL);
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
+
+  // Handle Manual Selection
+  const handleManualSelect = (data) => {
+    // Find index of clicked data
+    const index = ALUMNI_LOCATIONS.findIndex((a) => a.id === data.id);
+    if (index !== -1) {
+      setCurrentIndex(index);
+      // Optional: Pause carousel when user manually clicks interaction?
+      // setIsPaused(true);
+    }
+  };
 
   return (
     <>
-      <Head>
-        <title>IGSB Alumni Network</title>
-        <meta
-          name="description"
-          content="Connect with IGSB alumni and stay updated with our alumni network."
-        />
-      </Head>
-
-      <div className="min-h-screen bg-gray-50">
-        <div className="relative w-full h-[40vh] sm:h-[50vh] lg:h-[65vh]">
-          <Image
-            src="/NISMBanner1.jpg"
-            alt="Alumni Banner"
-            fill
-            priority
-            className="object-cover object-center"
-          />
-        </div>
-        <div className="max-w-7xl mx-auto px-4  md:px-8 space-y-12">
-          {/* ✅ Header Section */}
-          <div className="text-center py-8">
-            <h1 className="text-2xl md:text-4xl font-bold text-secondary mb-4">
-              IGSB Alumni Network
+      <div className="w-full bg-white flex flex-col lg:flex-row overflow-hidden relative">
+        {/* --- LEFT SECTION: 1/3 Width --- */}
+        <div className="w-full lg:w-1/3 p-6 md:p-8  flex flex-col justify-center z-5 relative border-r border-slate-100 shadow-sm  backdrop-blur-sm lg:bg-white lg:backdrop-blur-none">
+          <div className="mb-8">
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tighter text-[#10404A] mb-3">
+              GLOBAL REACH
             </h1>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              Stay connected with your alma mater and fellow alumni. Join our
-              growing network of successful professionals.
+            <p className="text-slate-600 text-xs md:text-sm max-w-xs border-l-4 border-[#fb7035] pl-4 font-medium leading-relaxed">
+              IGSB Alumni are leading innovation in 45 countries. Click the
+              globe to explore.
             </p>
           </div>
 
-          {/* ✅ Tabs */}
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              { id: "alumni", label: "Alumni" },
-              { id: "interaction", label: "Alumni Interaction" },
-              { id: "achievements", label: "Alumni Achievements" },
-              { id: "association-pdf", label: "Alumni Association" },
-              { id: "meet", label: "Alumni Meet" },
-              { id: "association", label: "Alumni Association Composition" },
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                  activeTab === tab.id
-                    ? "bg-secondary text-white shadow-md"
-                    : "bg-white text-gray-700 border border-gray-300 hover:border-secondary hover:text-secondary"
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+          <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden transition-all duration-500">
+            <div className="h-20 bg-[#10404A] relative">
+              <div className="absolute -bottom-8 left-6">
+                <img
+                  src={selectedAlumni.img}
+                  alt={selectedAlumni.name}
+                  className="w-16 h-16 rounded-full border-4 border-white object-cover shadow-md bg-slate-200"
+                />
+              </div>
+              <div className="absolute bottom-3 right-4 bg-white p-1.5 rounded-md shadow-sm">
+                <img
+                  src={selectedAlumni.companyLogo}
+                  alt="Logo"
+                  className="h-5 w-auto object-contain"
+                />
+              </div>
+            </div>
 
-          {/* ✅ TAB CONTENT */}
-          <div>
-            {/* ✅ Alumni Description */}
-            {activeTab === "alumni" && (
-              <div className="bg-white px-4 md:px-8 py-8 rounded-2xl shadow-lg text-md text-gray-700 leading-[1.9] text-justify space-y-6">
-                <p>
-                  Alumni are the strongest representation of Indira Global
-                  School of Business in the outside world. The IGSB Alumni’s are
-                  doing extremely well in their respective fields and are also
-                  contributing to the growth of our institute with their support
-                  and expertise. The Alumni Cell had its inception in the year
-                  2014, currently our faculty Prof. Pranita Bhujbal is handling
-                  Alumni Cell as the faculty in charge. We believe in having a
-                  strong foundation for this team with the onus of representing
-                  the strong alumni network.
-                </p>
-                <p>
-                  We conduct various Alumni Initiatives throughout the academic
-                  year. Keeping in mind the core competencies that would be
-                  needed to surge ahead, the alumni contribute in various
-                  activities of the Institute like – Experience sharing in
-                  Induction & Orientation Programs, Expert Sessions, Workshops,
-                  organizing Industrial Visits, Entrepreneurship Development,
-                  judging cultural and sports activities, and supporting
-                  extension activities.
-                </p>
-                <p>
-                  All these activities lead to the development of holistic
-                  personality and enhancing employability and entrepreneurial
-                  abilities of the students.
+            <div className="pt-10 px-6 pb-6">
+              <div className="mb-1">
+                <h2 className="text-xl font-bold text-slate-800 leading-none">
+                  {selectedAlumni.name}
+                </h2>
+                <p className="text-[#fb7035] font-semibold text-xs mt-1">
+                  {selectedAlumni.role}
                 </p>
               </div>
-            )}
 
-            {/* ✅ Alumni Interaction */}
-            {activeTab === "interaction" && (
-              <div className="space-y-10">
-                <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
-                  Alumni Interaction Sessions
-                </h2>
+              <div className="flex items-center text-slate-500 text-xs mb-4">
+                <svg
+                  className="w-3 h-3 mr-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  ></path>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  ></path>
+                </svg>
+                {selectedAlumni.location}
+              </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
-                  {interactionCards.map((card, i) => (
-                    <div
-                      key={i}
-                      className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
-                    >
-                      <Image
-                        src={card.img}
-                        alt={card.speaker}
-                        width={400}
-                        height={400}
-                        className="w-full h-48 object-contain bg-gray-100"
-                      />
+              <p className="text-slate-600 text-xs leading-relaxed italic mb-4 bg-slate-50 p-2 rounded border border-slate-100">
+                "{selectedAlumni.bio}"
+              </p>
 
-                      <div className="p-4 text-sm text-gray-700 space-y-1">
-                        <p className="font-semibold text-secondary">
-                          {card.topic}
-                        </p>
-                        <p>
-                          <span className="font-bold">Speaker:</span>{" "}
-                          {card.speaker}
-                        </p>
-                        <p>
-                          <span className="font-bold">Organization:</span>{" "}
-                          {card.organization}
-                        </p>
-                        <p>
-                          <span className="font-bold">Date:</span> {card.date}
-                        </p>
-                        <p>
-                          <span className="font-bold">Time:</span> {card.time}
-                        </p>
-                        <p>
-                          <span className="font-bold">Mode:</span> {card.mode}
-                        </p>
-                        <p>
-                          <span className="font-bold">Academic Year:</span>{" "}
-                          {card.academicYear}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
+              <div className="border-t border-slate-100 pt-3 flex gap-4">
+                <div className="flex flex-col">
+                  <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">
+                    Company
+                  </span>
+                  <span className="text-slate-800 text-xs font-medium">
+                    {selectedAlumni.company}
+                  </span>
+                </div>
+                <div className="flex flex-col pl-4 border-l border-slate-100">
+                  <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">
+                    Status
+                  </span>
+                  <span className="text-emerald-600 text-xs font-medium flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Active
+                  </span>
                 </div>
               </div>
-            )}
+            </div>
 
-            {activeTab === "association-pdf" && (
-              <div className="bg-white p-4 md:p-8 rounded-2xl shadow-lg">
-                <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
-                  <h2 className="text-2xl md:text-3xl font-bold text-secondary">
-                    Alumni Association Certificate
-                  </h2>
-                  <div className="flex gap-3">
-                    {/* Open in New Tab Button */}
-                    <a
-                      href="/IGSB/Alumni/alumni_association_certificate.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 border border-secondary text-secondary rounded-lg hover:bg-secondary hover:text-white transition-all"
-                    >
-                      View Fullscreen
-                    </a>
-                    {/* Download Button */}
-                    <a
-                      href="/IGSB/Alumni/alumni_association_certificate.pdf"
-                      download
-                      className="px-4 py-2 bg-secondary text-white rounded-lg hover:bg-secondary/90 transition-colors"
-                    >
-                      Download PDF
-                    </a>
-                  </div>
-                </div>
-
-                <div className="w-full h-[600px] md:h-[800px] rounded-xl overflow-hidden border border-gray-200 shadow-inner bg-gray-100">
-                  <object
-                    data="/IGSB/Alumni/alumni_association_certificate.pdf"
-                    type="application/pdf"
-                    className="w-full h-full"
-                  >
-                    <div className="flex flex-col items-center justify-center h-full p-6 text-center">
-                      <p className="text-gray-600 mb-4">
-                        Your browser does not support viewing PDFs inline.
-                      </p>
-                      <a
-                        href="/IGSB/pdf/Alumni-association-certificate.pdf"
-                        className="px-6 py-3 bg-secondary text-white rounded-lg"
-                        download
-                      >
-                        Download to View Certificate
-                      </a>
-                    </div>
-                  </object>
-                </div>
-              </div>
-            )}
-
-            {/* ✅ Alumni Achievements */}
-            {activeTab === "achievements" && (
-              <div className="space-y-10">
-                <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
-                  Alumni Achievements
-                </h2>
-
-                {/* Show Limited Data */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
-                  {achievementCards
-                    .slice(
-                      0,
-                      showMoreAchievements ? achievementCards.length : 8
-                    )
-                    .map((card, i) => (
-                      <div
-                        key={i}
-                        className="bg-white rounded-2xl p-6 shadow-md border border-gray-200 space-y-4"
-                      >
-                        {/* Placeholder Image */}
-                        <Image
-                          src={card.img}
-                          alt={card.name}
-                          width={400}
-                          height={400}
-                          className="w-full h-48 object-contain bg-gray-100"
-                        />
-
-                        <div className="space-y-1 text-gray-700 text-sm">
-                          <p>
-                            <strong>Name of Student:</strong> {card.name}
-                          </p>
-                          <p>
-                            <strong>Batch:</strong> {card.batch}
-                          </p>
-                          <p>
-                            <strong>Position:</strong> {card.position}
-                          </p>
-                          <p>
-                            <strong>Organization:</strong> {card.organization}
-                          </p>
-                          <p>
-                            <strong>Awards:</strong> {card.awards}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-
-                {/* Show More / Show Less Button */}
-                {achievementCards.length > 8 && (
-                  <div className="flex justify-center">
-                    <button
-                      onClick={() =>
-                        setShowMoreAchievements(!showMoreAchievements)
-                      }
-                      className="px-6 py-2 bg-secondary text-white rounded-lg shadow hover:bg-secondary/90 transition"
-                    >
-                      {showMoreAchievements ? "Show Less" : "Show More"}
-                    </button>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* ✅ Alumni Association */}
-            {activeTab === "association" && (
-              <div className="overflow-x-auto bg-white px-4 md:px-8 py-8 rounded-2xl shadow-lg">
-                <h2 className="text-2xl md:text-4xl font-bold text-secondary mb-8 text-center">
-                  Alumni Association Composition
-                </h2>
-
-                <table className="w-full border border-gray-300 text-gray-700">
-                  <thead className="bg-secondary text-white">
-                    <tr>
-                      <th className="p-2 border">Sr.No</th>
-                      <th className="p-2 border">Name of the Member</th>
-                      <th className="p-2 border">Role</th>
-                      <th className="p-2 border">Representation</th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    {associationMembers.map((m) => (
-                      <tr key={m.sr} className="text-center">
-                        <td className="p-2 border">{m.sr}</td>
-                        <td className="p-2 border">{m.name}</td>
-                        <td className="p-2 border">{m.role}</td>
-                        <td className="p-2 border">{m.representation}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
-
-            {/* ✅ Alumni Meet */}
-            {activeTab === "meet" && (
-              <div className="space-y-20">
-                {alumniMeet.map((m, i) => (
-                  <div
-                    key={i}
-                    className="bg-white px-4 md:px-8 py-8 rounded-2xl shadow-lg space-y-6"
-                  >
-                    <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
-                      {m.heading}
-                    </h2>
-
-                    <p className="text-gray-700 text-lg max-w-7xl mx-auto text-justify leading-relaxed">
-                      {m.text}
-                    </p>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-7xl mx-auto">
-                      {m.images.map((img, index) => (
-                        <div
-                          key={index}
-                          className="rounded-2xl overflow-hidden border shadow-md"
-                        >
-                          <Image
-                            src={img}
-                            alt={`${m.heading} Image ${index + 1}`}
-                            width={1400}
-                            height={800}
-                            className="w-full h-[350px] object-cover"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
+            {/* Progress Bar for Auto-Rotate */}
+            <div className="w-full h-1 bg-white mt-0">
+              <div
+                key={selectedAlumni.id} // Reset animation on change
+                className="h-full bg-[#fb7035]"
+                style={{
+                  width: "100%",
+                  animation: isPaused
+                    ? "none"
+                    : `progress ${CAROUSEL_INTERVAL}ms linear`,
+                }}
+              ></div>
+            </div>
+            <style jsx>{`
+              @keyframes progress {
+                from {
+                  width: 0%;
+                }
+                to {
+                  width: 100%;
+                }
+              }
+            `}</style>
           </div>
         </div>
+
+        {/* --- RIGHT SECTION: 2/3 Width --- */}
+        <div
+          className="w-full min-h-[50vh] lg:h-auto lg:w-2/3 bg-white relative cursor-move lg:absolute lg:right-0 lg:top-0 lg:bottom-0"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <Canvas camera={{ position: [0, 0, 5.5], fov: 45 }}>
+            <color attach="background" args={["#f8fafc"]} />
+            <fog attach="fog" args={["#f8fafc", 5, 12]} />
+            <ambientLight intensity={1.5} />
+            <directionalLight
+              position={[5, 5, 5]}
+              intensity={2}
+              color="#ffffff"
+              castShadow
+            />
+            <pointLight
+              position={[-5, -5, -5]}
+              intensity={0.5}
+              color="#ffffff"
+            />
+
+            <Suspense fallback={<Loader />}>
+              <Globe
+                selectedId={selectedAlumni.id}
+                onSelect={handleManualSelect}
+              />
+            </Suspense>
+
+            <Airplane />
+
+            <OrbitControls
+              enableZoom={false}
+              enablePan={false}
+              autoRotate={true}
+              autoRotateSpeed={AUTO_ROTATE_SPEED}
+              minPolarAngle={Math.PI / 3}
+              maxPolarAngle={Math.PI / 1.8}
+            />
+          </Canvas>
+
+          <div className="absolute top-0 left-0 h-full w-32 pointer-events-none hidden lg:block"></div>
+        </div>
       </div>
+
+      <AlumniSpotlight />
+      <ContributionSection />
     </>
   );
 }

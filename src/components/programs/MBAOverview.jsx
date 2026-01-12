@@ -32,39 +32,17 @@ export default function MBAOverview() {
 
   return (
     <section className="w-full bg-slate-50 py-16 text-slate-800">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="max-w-full mx-auto px-4 md:px-8">
         {/* Header Section - Synced with NHRD/NISM UI */}
         <div className="text-left mb-12 ">
           <h1 className="text-2xl lg:text-4xl font-bold text-slate-900 leading-tight">
             Master of Business Administration
             <span className="text-secondary"> (MBA) </span>
-            Programme Structure
+            Programme Structure (Will be updated soon)
           </h1>
           <p className="text-lg text-secondary mt-2">
             Affiliated to Savitribai Phule Pune University (SPPU).
           </p>
-        </div>
-
-        {/* Top Quick Stats - Clean and Minimal */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {[
-            { icon: Layers, label: "Duration", val: "2 Years (4 Semesters)" },
-            { icon: CheckCircle2, label: "Credit System", val: "CBCS Pattern" },
-            { icon: Target, label: "Methodology", val: "Outcome Based (OBE)" },
-          ].map((stat, i) => (
-            <div
-              key={i}
-              className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4"
-            >
-              <stat.icon className="text-secondary w-6 h-6 shrink-0" />
-              <div>
-                <p className="text-xs uppercase tracking-widest font-bold text-slate-400">
-                  {stat.label}
-                </p>
-                <p className="text-base font-bold text-slate-900">{stat.val}</p>
-              </div>
-            </div>
-          ))}
         </div>
 
         {/* Main Content Grid */}
@@ -114,62 +92,17 @@ export default function MBAOverview() {
                 students to be able to do once they have completed a course.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-                <div className="space-y-2">
-                  <h3 className="font-bold text-slate-900 flex items-center gap-2">
-                    <Lightbulb size={18} className="text-secondary" /> Flexible
-                    Learning
-                  </h3>
-                  <p className="text-base text-slate-600 leading-normal">
-                    Foundation courses seek to build core abilities in
-                    accounting and economics.
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="font-bold text-slate-900 flex items-center gap-2">
-                    <Target size={18} className="text-secondary" /> Independent
-                    Study
-                  </h3>
-                  <p className="text-base text-slate-600 leading-normal">
-                    Students can pursue innovative live projects and online
-                    MOOCs for additional credit.
-                  </p>
-                </div>
-              </div>
+              
             </div>
           </div>
 
           {/* Right Column: Specializations & Sticky Guidelines */}
           <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-24">
-            {/* Specializations Table-style list - Now moved above Guidelines */}
-            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
-              <div className="p-5 border-b border-slate-100 flex items-center gap-3">
-                <Users className="w-5 h-5 text-secondary" />
-                <h2 className="text-xl font-bold text-slate-900">
-                  Specializations at IGSB
-                </h2>
-              </div>
-              <div className="divide-y divide-slate-50">
-                {specializations.map((spec, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center gap-4 px-6 py-4 hover:bg-slate-50 transition-colors"
-                  >
-                    <ArrowRightCircle
-                      className="text-secondary/50 shrink-0"
-                      size={18}
-                    />
-                    <span className="font-semibold text-slate-700">{spec}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {/* Guidelines Section */}
             <div className="bg-secondary text-white rounded-2xl p-8 shadow-lg">
               <div className="flex items-center gap-2 mb-6">
                 <Info size={24} />
-                <h3 className="text-xl font-semibold">Important Guidelines</h3>
+                <h3 className="text-xl font-semibold">News Flash (To be added here)</h3>
               </div>
               <ul className="space-y-4">
                 {guidelines.map((line, idx) => (

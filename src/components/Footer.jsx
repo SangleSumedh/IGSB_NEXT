@@ -12,7 +12,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#10404A] border-t-4 border-[#ff712d] text-white">
+    <footer className="bg-[#10404A] border-t-4  border-[#ff712d] text-white">
       <div className="max-w-7xl mx-auto px-4 lg:px-8 py-10 lg:py-14">
         
         {/* FIX: Changed to 'lg:grid-cols-5' to give Links & Featured their own side-by-side columns */}

@@ -5,20 +5,42 @@ import Head from "next/head";
 import Image from "next/image";
 
 export default function Research() {
-  const [activeTab, setActiveTab] = useState("research");
+  const [activeTab, setActiveTab] = useState("mdp");
   const [showMoreAchievements, setShowMoreAchievements] = useState(false);
 
   return (
     <>
-  
+      <Head>
+        <title>IGSB Research</title>
+        <meta
+          name="description"
+          content="IGSB Research, MDP, FDP, Conferences, Publications, Resource Person Information."
+        />
+      </Head>
 
-      <div className="min-h-screen bg-white ">
-        
-        <div className="max-w-7xl mx-auto px-6 py-2 lg:px-8 ">
+      <div className="min-h-screen bg-gray-50 ">
+        <div className="relative w-full h-[40vh] sm:h-[50vh] lg:h-[65vh]">
+          <Image
+            src="/ResearchBanner1.jpg"
+            alt="Placement Banner"
+            fill
+            priority
+            className="object-cover"
+          />
+        </div>
+        <div className="max-w-7xl mx-auto px-6 py-16 lg:px-8 ">
           {/* ===========================
               🔷 PAGE HEADER
           ============================ */}
-      
+          <div className="text-center py-10">
+            <h1 className="text-2xl md:text-4xl font-bold text-secondary mb-4">
+              IGSB Research & Development Centre
+            </h1>
+            <p className="text-md md:text-lg text-gray-600 max-w-3xl mx-auto">
+              Explore research initiatives, publications, academic development
+              programmes, and scholarly contributions of IGSB.
+            </p>
+          </div>
 
           {/* ===========================
               🔷 TABS
@@ -26,7 +48,8 @@ export default function Research() {
           <div className="flex flex-wrap justify-center gap-3 py-12">
             {[
               // { id: "researchCentre", label: "IGSB Research Centre" },
-          
+              { id: "mdp", label: "MDP" },
+              { id: "fdp", label: "FDP" },
               { id: "research", label: "Research" },
               { id: "conference", label: "Conference" },
               { id: "publications", label: "Publications" },
@@ -53,10 +76,372 @@ export default function Research() {
             {/* ===================== RESEARCH CENTRE ===================== */}
 
             {/* ===================== MDP ===================== */}
-  
+            {activeTab === "mdp" && (
+              <div className="bg-white px-6 py-16 rounded-2xl shadow-lg space-y-12 mb-12">
+                {/* INTRO */}
+                <section className="space-y-4 text-lg">
+                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center mb-8">
+                    Management Development Programmes (MDP)
+                  </h2>
+
+                  <p className="text-md md:text-lg text-gray-700 text-justify leading-relaxed">
+                    Management Development Program [MDP] Cell of IGSB focuses on
+                    skill improvement, interaction ability, confidence building,
+                    competence, and capacity of managing projects in a
+                    cross-cultural environment.
+                  </p>
+
+                  <p className="text-md md:text-lg text-gray-700 text-justify leading-relaxed">
+                    Management Development Program cell of IGSB will aim at the
+                    managerial development within a structured scenario &
+                    synergetic system of organizational behavior with value
+                    addition to recognize functional areas such as:
+                  </p>
+
+                  <ul className="list-disc ml-6 text-md md:text-lg text-gray-700">
+                    <li>
+                      Develop effective training programs based on experiential
+                      learning models.
+                    </li>
+                    <li>
+                      Maximize individual potential of students through soft
+                      skills training.
+                    </li>
+                    <li>
+                      Personality Grooming (Communication, Presentation Skills,
+                      Team Dynamics)
+                    </li>
+                    <li>Finance for Non-Finance</li>
+                    <li>
+                      Personal Effectiveness for Corporates & Academic Capacity
+                      Building
+                    </li>
+                    <li>
+                      Assessment Centre (360° review of aptitude, personality,
+                      teamwork)
+                    </li>
+                    <li>Financial Literacy Campaign</li>
+                  </ul>
+
+                  <p className="text-md md:text-lg text-gray-700 font-semibold mt-4">
+                    HIGHLIGHTS OF THE MDP CELL
+                  </p>
+                  <ul className="list-disc ml-6 text-md md:text-lg text-gray-700">
+                    <li>Tailor made programs</li>
+                    <li>Certified Trainers</li>
+                    <li>Reading material</li>
+                    <li>Online Pre and Post Training Assessments</li>
+                    <li>Certification</li>
+                    <li>Consultancy Projects/MDP conducted</li>
+                  </ul>
+                </section>
+
+                {/* 1 - Development Centre */}
+                <section className="space-y-4">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
+                    1. Development Centre
+                  </h3>
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
+                    Dr. Priyanka Darekar conducted a Developmental Centre for an
+                    established Insurance company at Mumbai on 23 to 25th
+                    January 2023.The assignment involved: Assessing employees'
+                    competencies on prescribed tool matrix; giving feedback;
+                    Consolidation of observations, interpretation and
+                    preparation of reports and developing Individual Development
+                    Plans
+                  </p>
+
+                  <div className="w-full h-64 rounded-2xl overflow-hidden shadow">
+                    <img
+                      src="/IGSB/Research/MDP/1MDP.png"
+                      alt="Development Centre"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </section>
+
+                {/* 2 - External Evaluator */}
+                <section className="space-y-4">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
+                    2. External Evaluator for the HR Capability Program
+                  </h3>
+
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
+                    Dr. Anuradha Phadnis, undertook an MDP assignment as an
+                    External Evaluator for the HR capability program of a
+                    large-scale retail client; Reliance Retails- HR Academy (Via
+                    V-Mentors) for Capabilities Assessment of Senior HR
+                    Professionals for Pan India from 10th July 2023 till 25th
+                    September 2023.The evaluation process consisted of an
+                    assessment of solutions provided by HR solutions for the
+                    Article and Case Study provided to them to solve on a Grade
+                    point scale for around 80 HR professionals.
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="h-64 rounded-2xl overflow-hidden shadow">
+                      <img
+                        src="/IGSB/Research/MDP/2MDP1.png"
+                        alt="HR Capability Program 1"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="h-64 rounded-2xl overflow-hidden shadow">
+                      <img
+                        src="/IGSB/Research/MDP/2MDP2.png"
+                        alt="HR Capability Program 2"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </section>
+
+                {/* 3 - Mentor for Reliance Retail */}
+                <section className="space-y-4">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
+                    3. Mentor for Reliance Retail's Capability-Building Program
+                  </h3>
+
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
+                    Dr. Anuradha Phadnis and Dr. Priyanka Darekar had been
+                    assigned as a Mentor for Reliance Retail's prestigious
+                    capability-building program. It was a skill development
+                    program that nurtured and groomed the next set of HR leaders
+                    in the organization, and they were a part of the mentoring
+                    team for the Business Impact projects. Dr. Anuradha mentored
+                    2 groups and Dr. Priyanka mentored 6 Groups.
+                  </p>
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
+                    Their journey of the participants closed with a Business
+                    Impact project that they had identified based on the
+                    learnings and business needs which were facilitated by the
+                    Mentors. The mentoring consultancy was carried out in the
+                    month of August and September 2023.
+                  </p>
+                </section>
+
+                {/* 4 - Pre & Post Psychometric Assessment */}
+                <section className="space-y-4">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
+                    4. Pre and Post Psychometric Assessment for VNL Constrotech
+                    Pvt Ltd
+                  </h3>
+
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
+                    Dr. Priyanka Darekar completed the pre and post psychometric
+                    assessment for VNL Constrotech Pvt Ltd for their Sales,
+                    Negotiation and Presentation Skills Training in June 2024.
+                    The assessments were backed by development of Individual
+                    development plan for VNL Constrotech Pvt Ltd.
+                  </p>
+
+                  <div className="w-full h-106 rounded-2xl overflow-hidden shadow">
+                    <img
+                      src="/IGSB/Research/MDP/3MDP.png"
+                      alt="Psychometric Assessment"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </section>
+
+                {/* 5 - Mentor for Reliance Retail (second) */}
+                <section className="space-y-4">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
+                    5. Mentor for Reliance Retail's Capability-Building Program
+                  </h3>
+
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
+                    Dr. Pallavi Sajanapwar and Dr. Priyanka Darekar had been
+                    assigned as a Mentor for Reliance Retail's prestigious
+                    capability-building program. It was a skill development
+                    program that nurtured and groomed the next set of HR leaders
+                    in the organization, and they were a part of the mentoring
+                    team for the Business Impact projects.
+                  </p>
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
+                    Their journey of the participants closed with a Business
+                    Impact project that they had identified based on the
+                    learnings and business needs which were facilitated by the
+                    Mentors. The mentoring consultancy was carried out in the
+                    month of September and October 2024.
+                  </p>
+
+                  <div className="w-full h-auto rounded-2xl overflow-hidden shadow">
+                    <img
+                      src="/IGSB/Research/MDP/4MDP.png"
+                      alt="Mentor Program"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </section>
+
+                {/* 6 - Aerospace & Consumer Goods Development Centre */}
+                <section className="space-y-4">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
+                    6. Development Centre for a Diversified Contract
+                    Manufacturing Company
+                  </h3>
+
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
+                    Dr. Priyanka Darekar was appointed as an Assessor for
+                    conducting development centre for senior leadership team of
+                    a leading SEZ for diversified contract manufacturing company
+                    providing vertically integrated product solutions across the
+                    Aerospace and Consumer Goods industries. The assignment was
+                    conducted in the duration Jan to March 2025.
+                  </p>
+                  <p className="text-md md:text-lg text-gray-700 text-justify">
+                    The assignment involved: Assessing employees' competencies
+                    on prescribed tool matrix; giving feedback; Consolidation of
+                    observations, interpretation and preparation of reports and
+                    developing Individual Development Plans.
+                  </p>
+
+                  <div className="w-full h-106 rounded-2xl overflow-hidden shadow">
+                    <img
+                      src="/IGSB/Research/MDP/5MDP.jpg"
+                      alt="Manufacturing Development Centre"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </section>
+              </div>
+            )}
 
             {/* ===================== FDP ===================== */}
-    
+            {activeTab === "fdp" && (
+              <div className="bg-white px-6 py-16 rounded-2xl shadow-lg space-y-16 mb-12">
+                {/* 1 */}
+                <section className="space-y-6">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary text-left">
+                    1-Day In-House FDP: Overview of NBA, OBE & BLOOMS TAXONOMY
+                  </h3>
+
+                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
+                    IGSB organized 1-day FDP program on Overview of NBA, OBE &
+                    BLOOMS TAXONOMY on 28th March 2024. The course was delivered
+                    by Dr. Pallavi Sajanapwar, starting with basics of deep
+                    understanding of NBA, OBE overview to faculty members. The
+                    sessions were interactive. Outcome-based education policy
+                    and information related CO.PO, PSE, PEO were introduced from
+                    its core. The history, evolution, various tools which are
+                    available for OBE and BLOOMS TAXONOMY were discussed.
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="h-64 rounded-2xl overflow-hidden shadow">
+                      <img
+                        src="/IGSB/Research/FDP/1FDP.jpg"
+                        alt="FDP Image 1"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="h-64 rounded-2xl overflow-hidden shadow">
+                      <img
+                        src="/IGSB/Research/FDP/1FDP2.jpg"
+                        alt="FDP Image 2"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </section>
+
+                {/* 2 */}
+                <section className="space-y-6">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary text-left">
+                    1-Day In-House FDP: Sectorial & Industry Analysis Using
+                    Strategic Models
+                  </h3>
+
+                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
+                    IGSB's IQAC organized a one-day FDP on "Sectorial and
+                    Industry Analysis using Strategic models" for all Faculty
+                    members.
+                  </p>
+
+                  <div className="w-full max-w-7xl mx-auto h-106 rounded-2xl overflow-hidden shadow">
+                    <img
+                      src="/IGSB/Research/FDP/2FDP.jpg"
+                      alt="Sectorial FDP"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </section>
+
+                {/* 3 */}
+                <section className="space-y-6">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary text-left">
+                    1-Day In-House FDP: CO-PO Mapping and Attainments
+                  </h3>
+
+                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
+                    "IGSB organized 1 day In-house FDP on CO-PO Mapping and
+                    attainments for faculty members of IGSB and ICMS on 25th
+                    April 2023. Resource Person Dr. Anuradha Phadnis conducted
+                    the FDP in workshop mode, which facilitated the participants
+                    to get hands on experience on the FDP topic".
+                  </p>
+
+                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
+                    Indira Global School of Business aims to be a preferred
+                    center of academic excellence and thus demands innovative
+                    approach towards capacity building of faculty and students.
+                    Faculty members at IGSB forms a good mix of industry and
+                    academia experience, thus promoting an excellent learning
+                    environment for management students.
+                  </p>
+
+                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
+                    To ensure that students are benefited from the faculty
+                    expertise, it is our ongoing endeavor to invest in capacity
+                    building. At IGSB we provide opportunities for faculty to
+                    engage in knowledge- sharing sessions and industry
+                    consultation.
+                  </p>
+
+                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
+                    Dr. Virendra Tatake has been actively involved in Financial
+                    Awareness Programs through the Aarthbodh Initiative of IGSB.
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {[1, 2, 3, 4, 5, 6].map((i) => (
+                      <div
+                        key={i}
+                        className="h-64 rounded-2xl overflow-hidden shadow"
+                      >
+                        <img
+                          src={`/IGSB/Research/FDP/3FDP${i}.png`}
+                          alt={`CO-PO FDP Image ${i}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </section>
+                <section className="space-y-6">
+                  <h3 className="text-2xl md:text-4xl font-bold text-secondary text-left">
+                    Translation of Investment-related Books into Regional
+                    Language
+                  </h3>
+
+                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
+                    Dr Tatake has translated the famous books *Romancing the
+                    Balance Sheet* and *Flirting with the Stocks* into regional
+                    languages. These books simplify complex financial concepts
+                    for the common man.
+                  </p>
+
+                  <div className="mx-auto h-64 rounded-2xl overflow-hidden ">
+                    <img
+                      src="/IGSB/Research/FDP/4FDP.png"
+                      alt="Book Translation FDP"
+                      className="w-auto h-full object-contain"
+                    />
+                  </div>
+                </section>
+              </div>
+            )}
 
             {/* ===================== RESEARCH ===================== */}
             {activeTab === "research" && (

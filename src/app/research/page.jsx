@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import OldPage from "./OldPage"
 
 export default function Page() {
   const phdHolders = [
@@ -107,6 +108,7 @@ export default function Page() {
     },
   ];
 
+    const [showMemoryLane, setShowMemoryLane] = useState(false);
   const [currentMdpIndex, setCurrentMdpIndex] = useState(0);
   const [currentFdpIndex, setCurrentFdpIndex] = useState(0);
   const [isMdpHovered, setIsMdpHovered] = useState(false);
@@ -417,6 +419,50 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+        {/* Memory Lane Section */}
+            <div className="w-full bg-white border-t border-slate-200">
+              <button
+                onClick={() => setShowMemoryLane(!showMemoryLane)}
+                className="w-full py-8 flex flex-col items-center justify-center  transition-colors duration-300 group cursor-pointer outline-none"
+              >
+                <div className="flex items-center gap-3 text-[#10404A] group-hover:text-[#fb7035] transition-colors">
+                  <h3 className="text-lg font-bold tracking-wide uppercase">
+                    Revisit Memory Lane
+                  </h3>
+                  <svg
+                    className={`w-5 h-5 transition-transform duration-500 ${
+                      showMemoryLane ? "rotate-180" : "rotate-0"
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2.5"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </div>
+                <p className="text-xs text-slate-400 mt-2 font-medium tracking-widest opacity-80 group-hover:opacity-100">
+                  CLICK TO EXPAND ARCHIVE
+                </p>
+              </button>
+      
+              <div
+                className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
+                  showMemoryLane ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className=" border-t border-slate-100 bg-white shadow-inner">
+                    <OldPage />
+                  </div>
+                </div>
+              </div>
+            </div>
     </div>
   );
 }

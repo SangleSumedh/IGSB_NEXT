@@ -596,6 +596,19 @@ const renderMdDropdown = (content, key) => {
                origin-left group-hover:scale-x-100"
                   ></span>
                 </Link>
+                <Link
+                  href="/leadersdesk"
+                  className="relative inline-block group hover:text-primary transition-colors duration-200"
+                >
+                  Leaders
+                  {/* AQUA UNDERLINE */}
+                  <span
+                    className="absolute left-0 -bottom-1 h-[6px] w-full 
+               scale-x-0 bg-primary opacity-70 
+               transition-transform duration-300 
+               origin-left group-hover:scale-x-100"
+                  ></span>
+                </Link>
               </div>
               {/* Buttons */}
               <div className="flex justify-center items-center">

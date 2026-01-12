@@ -1,956 +1,536 @@
 "use client";
 
-import React, { useState } from "react";
-import Head from "next/head";
-import Image from "next/image";
+import React, { useState, useEffect } from "react";
 
-export default function Research() {
-  const [activeTab, setActiveTab] = useState("mdp");
-  const [showMoreAchievements, setShowMoreAchievements] = useState(false);
+export default function Page() {
+  const phdHolders = [
+    {
+      name: "Dr. A. K. Sharma",
+      designation: "Professor & Research Guide",
+      image: "/boy.png",
+      expertise: "Artificial Intelligence, Machine Learning",
+      description:
+        "Dr. Sharma has over 18 years of academic and research experience. His work focuses on applied AI systems, intelligent decision-making, and industry-driven research.",
+      students: [
+        { name: "Rahul Verma", image: "/boy.png" },
+        { name: "Sneha Patil", image: "/boy.png" },
+        { name: "Amit Kulkarni", image: "/boy.png" },
+        { name: "Pooja Sharma", image: "/boy.png" },
+      ],
+    },
+    {
+      name: "Dr. Meera Kulkarni",
+      designation: "Associate Professor",
+      image: "/boy.png",
+      expertise: "Data Science, Business Analytics",
+      description:
+        "Dr. Kulkarni specializes in data-driven research and analytics-based decision systems. She actively collaborates with industry and research institutions.",
+      students: [
+        { name: "Neha Joshi", image: "/boy.png" },
+        { name: "Rohan Deshpande", image: "/boy.png" },
+        { name: "Kunal Mehta", image: "/boy.png" },
+      ],
+    },
+    {
+      name: "Dr. S. R. Iyer",
+      designation: "Dean – Research & Innovation",
+      image: "/boy.png",
+      expertise: "Computer Networks, Cyber Security",
+      description:
+        "Dr. Iyer has guided multiple funded research projects and published extensively in international journals. His research interests include secure networks and distributed systems.",
+      students: [
+        { name: "Arjun Nair", image: "/boy.png" },
+        { name: "Priyanka Rao", image: "/boy.png" },
+        { name: "Vivek Singh", image: "/boy.png" },
+        { name: "Ananya Das", image: "/boy.png" },
+      ],
+    },
+  ];
+
+  const mdpItems = [
+    {
+      id: 1,
+      title: "Development Centre",
+      description: "Dr. Priyanka Darekar conducted a Developmental Centre for an established Insurance company at Mumbai on 23 to 25th January 2023. The assignment involved: Assessing employees' competencies on prescribed tool matrix; giving feedback; Consolidation of observations, interpretation and preparation of reports and developing Individual Development Plans",
+      image: "/IGSB/Research/MDP/1MDP.png",
+    },
+    {
+      id: 2,
+      title: "External Evaluator for the HR Capability Program",
+      description: "Dr. Anuradha Phadnis undertook an MDP assignment as an External Evaluator for the HR capability program of a large-scale retail client; Reliance Retails- HR Academy (Via V-Mentors) for Capabilities Assessment of Senior HR Professionals for Pan India from 10th July 2023 till 25th September 2023.",
+      image: "/IGSB/Research/MDP/2MDP1.png",
+    },
+    {
+      id: 3,
+      title: "Mentor for Reliance Retail's Capability-Building Program",
+      description: "Dr. Anuradha Phadnis and Dr. Priyanka Darekar had been assigned as a Mentor for Reliance Retail's prestigious capability-building program. It was a skill development program that nurtured and groomed the next set of HR leaders in the organization.",
+      image: "/IGSB/Research/MDP/4MDP.png",
+    },
+    {
+      id: 4,
+      title: "Pre and Post Psychometric Assessment for VNL Constrotech Pvt Ltd",
+      description: "Dr. Priyanka Darekar completed the pre and post psychometric assessment for VNL Constrotech Pvt Ltd for their Sales, Negotiation and Presentation Skills Training in June 2024.",
+      image: "/IGSB/Research/MDP/3MDP.png",
+    },
+    {
+      id: 5,
+      title: "Development Centre for a Diversified Contract Manufacturing Company",
+      description: "Dr. Priyanka Darekar was appointed as an Assessor for conducting development centre for senior leadership team of a leading SEZ for diversified contract manufacturing company providing vertically integrated product solutions across the Aerospace and Consumer Goods industries.",
+      image: "/IGSB/Research/MDP/5MDP.jpg",
+    },
+  ];
+
+  const fdpItems = [
+    {
+      id: 1,
+      title: "1-Day In-House FDP: Overview of NBA, OBE & BLOOMS TAXONOMY",
+      description: "IGSB organized 1-day FDP program on Overview of NBA, OBE & BLOOMS TAXONOMY on 28th March 2024. The course was delivered by Dr. Pallavi Sajanapwar, starting with basics of deep understanding of NBA, OBE overview to faculty members.",
+      image: "/IGSB/Research/FDP/1FDP.jpg",
+    },
+    {
+      id: 2,
+      title: "1-Day In-House FDP: Sectorial & Industry Analysis Using Strategic Models",
+      description: "IGSB's IQAC organized a one-day FDP on 'Sectorial and Industry Analysis using Strategic models' for all Faculty members.",
+      image: "/IGSB/Research/FDP/2FDP.jpg",
+    },
+    {
+      id: 3,
+      title: "1-Day In-House FDP: CO-PO Mapping and Attainments",
+      description: "IGSB organized 1 day In-house FDP on CO-PO Mapping and attainments for faculty members of IGSB and ICMS on 25th April 2023. Resource Person Dr. Anuradha Phadnis conducted the FDP in workshop mode.",
+      image: "/IGSB/Research/FDP/3FDP1.png",
+    },
+    {
+      id: 4,
+      title: "Translation of Investment-related Books into Regional Language",
+      description: "Dr Tatake has translated the famous books *Romancing the Balance Sheet* and *Flirting with the Stocks* into regional languages. These books simplify complex financial concepts for the common man.",
+      image: "/IGSB/Research/FDP/4FDP.png",
+    },
+  ];
+
+  const [currentMdpIndex, setCurrentMdpIndex] = useState(0);
+  const [currentFdpIndex, setCurrentFdpIndex] = useState(0);
+  const [isMdpHovered, setIsMdpHovered] = useState(false);
+  const [isFdpHovered, setIsFdpHovered] = useState(false);
+
+  const nextMdpSlide = () => {
+    if (!isMdpHovered) {
+      setCurrentMdpIndex((prevIndex) => (prevIndex + 1) % mdpItems.length);
+    }
+  };
+
+  const prevMdpSlide = () => {
+    setCurrentMdpIndex((prevIndex) => (prevIndex - 1 + mdpItems.length) % mdpItems.length);
+  };
+
+  const nextFdpSlide = () => {
+    if (!isFdpHovered) {
+      setCurrentFdpIndex((prevIndex) => (prevIndex + 1) % fdpItems.length);
+    }
+  };
+
+  const prevFdpSlide = () => {
+    setCurrentFdpIndex((prevIndex) => (prevIndex - 1 + fdpItems.length) % fdpItems.length);
+  };
+
+  // Auto slide effect with hover pause
+  useEffect(() => {
+    const mdpInterval = setInterval(() => {
+      nextMdpSlide();
+    }, 8000);
+
+    const fdpInterval = setInterval(() => {
+      nextFdpSlide();
+    }, 8000);
+
+    return () => {
+      clearInterval(mdpInterval);
+      clearInterval(fdpInterval);
+    };
+  }, [isMdpHovered, isFdpHovered]);
 
   return (
-    <>
-      <Head>
-        <title>IGSB Research</title>
-        <meta
-          name="description"
-          content="IGSB Research, MDP, FDP, Conferences, Publications, Resource Person Information."
-        />
-      </Head>
+    <div className="w-full bg-white">
+      {/* SCHOLAR QUOTE CTA */}
+      <section className="w-full bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] text-white py-12 px-6 xl:py-8 xl:px-16 text-center border-b border-gray-200">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">
+          Research is seeing what everybody else has seen, and thinking what nobody else has thought.
+        </h1>
+        <p className="text-xl opacity-90">
+          Our institution fosters a strong culture of innovation, inquiry, and impactful research.
+        </p>
+      </section>
 
-      <div className="min-h-screen bg-gray-50 ">
-        <div className="relative w-full h-[40vh] sm:h-[50vh] lg:h-[65vh]">
-          <Image
-            src="/ResearchBanner1.jpg"
-            alt="Placement Banner"
-            fill
-            priority
-            className="object-cover"
-          />
+      {/* TOP PHD HOLDERS */}
+      <section className="w-full py-12 px-6 xl:py-12 xl:px-16 bg-gray-50">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 pb-12  text-center">
+          Our Top PhD Holders
+        </h2>
+
+        <div className="space-y-24">
+          {phdHolders.map((phd, index) => (
+            <div
+              key={index}
+              className="
+                w-full
+                rounded-3xl
+                p-6 md:p-8 lg:p-10
+                bg-gradient-to-r from-[#10404A] to-[#1F6D71]
+                shadow-xl
+              "
+            >
+              <PhdCard phd={phd} index={index} />
+            </div>
+          ))}
         </div>
-        <div className="max-w-7xl mx-auto px-6 py-16 lg:px-8 ">
-          {/* ===========================
-              🔷 PAGE HEADER
-          ============================ */}
-          <div className="text-center py-10">
-            <h1 className="text-2xl md:text-4xl font-bold text-secondary mb-4">
-              IGSB Research & Development Centre
-            </h1>
-            <p className="text-md md:text-lg text-gray-600 max-w-3xl mx-auto">
-              Explore research initiatives, publications, academic development
-              programmes, and scholarly contributions of IGSB.
-            </p>
-          </div>
+      </section>
 
-          {/* ===========================
-              🔷 TABS
-          ============================ */}
-          <div className="flex flex-wrap justify-center gap-3 py-12">
-            {[
-              // { id: "researchCentre", label: "IGSB Research Centre" },
-              { id: "mdp", label: "MDP" },
-              { id: "fdp", label: "FDP" },
-              { id: "research", label: "Research" },
-              { id: "conference", label: "Conference" },
-              { id: "publications", label: "Publications" },
-              { id: "resourcePerson", label: "Resource Person" },
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                  activeTab === tab.id
-                    ? "bg-secondary text-white shadow-md"
-                    : "bg-white text-gray-700 border border-gray-300 hover:border-secondary hover:text-secondary"
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+      {/* MDP HIGHLIGHTS SECTION */}
+      <section className="w-full py-12 px-6 xl:py-8 xl:px-16 bg-gray-50 ">
+        <div className="">
+          {/* Heading - Left aligned */}
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-8 md:mb-12 text-center">
+            Management Development Programmes (MDP) 
+          </h2>
 
-          {/* ===========================
-              🔷 TAB CONTENT
-          ============================ */}
-          <div>
-            {/* ===================== RESEARCH CENTRE ===================== */}
-
-            {/* ===================== MDP ===================== */}
-            {activeTab === "mdp" && (
-              <div className="bg-white px-6 py-16 rounded-2xl shadow-lg space-y-12 mb-12">
-                {/* INTRO */}
-                <section className="space-y-4 text-lg">
-                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center mb-8">
-                    Management Development Programmes (MDP)
-                  </h2>
-
-                  <p className="text-md md:text-lg text-gray-700 text-justify leading-relaxed">
-                    Management Development Program [MDP] Cell of IGSB focuses on
-                    skill improvement, interaction ability, confidence building,
-                    competence, and capacity of managing projects in a
-                    cross-cultural environment.
-                  </p>
-
-                  <p className="text-md md:text-lg text-gray-700 text-justify leading-relaxed">
-                    Management Development Program cell of IGSB will aim at the
-                    managerial development within a structured scenario &
-                    synergetic system of organizational behavior with value
-                    addition to recognize functional areas such as:
-                  </p>
-
-                  <ul className="list-disc ml-6 text-md md:text-lg text-gray-700">
-                    <li>
-                      Develop effective training programs based on experiential
-                      learning models.
-                    </li>
-                    <li>
-                      Maximize individual potential of students through soft
-                      skills training.
-                    </li>
-                    <li>
-                      Personality Grooming (Communication, Presentation Skills,
-                      Team Dynamics)
-                    </li>
-                    <li>Finance for Non-Finance</li>
-                    <li>
-                      Personal Effectiveness for Corporates & Academic Capacity
-                      Building
-                    </li>
-                    <li>
-                      Assessment Centre (360° review of aptitude, personality,
-                      teamwork)
-                    </li>
-                    <li>Financial Literacy Campaign</li>
-                  </ul>
-
-                  <p className="text-md md:text-lg text-gray-700 font-semibold mt-4">
-                    HIGHLIGHTS OF THE MDP CELL
-                  </p>
-                  <ul className="list-disc ml-6 text-md md:text-lg text-gray-700">
-                    <li>Tailor made programs</li>
-                    <li>Certified Trainers</li>
-                    <li>Reading material</li>
-                    <li>Online Pre and Post Training Assessments</li>
-                    <li>Certification</li>
-                    <li>Consultancy Projects/MDP conducted</li>
-                  </ul>
-                </section>
-
-                {/* 1 - Development Centre */}
-                <section className="space-y-4">
-                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
-                    1. Development Centre
-                  </h3>
-                  <p className="text-md md:text-lg text-gray-700 text-justify">
-                    Dr. Priyanka Darekar conducted a Developmental Centre for an
-                    established Insurance company at Mumbai on 23 to 25th
-                    January 2023.The assignment involved: Assessing employees'
-                    competencies on prescribed tool matrix; giving feedback;
-                    Consolidation of observations, interpretation and
-                    preparation of reports and developing Individual Development
-                    Plans
-                  </p>
-
-                  <div className="w-full h-64 rounded-2xl overflow-hidden shadow">
-                    <img
-                      src="/IGSB/Research/MDP/1MDP.png"
-                      alt="Development Centre"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </section>
-
-                {/* 2 - External Evaluator */}
-                <section className="space-y-4">
-                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
-                    2. External Evaluator for the HR Capability Program
-                  </h3>
-
-                  <p className="text-md md:text-lg text-gray-700 text-justify">
-                    Dr. Anuradha Phadnis, undertook an MDP assignment as an
-                    External Evaluator for the HR capability program of a
-                    large-scale retail client; Reliance Retails- HR Academy (Via
-                    V-Mentors) for Capabilities Assessment of Senior HR
-                    Professionals for Pan India from 10th July 2023 till 25th
-                    September 2023.The evaluation process consisted of an
-                    assessment of solutions provided by HR solutions for the
-                    Article and Case Study provided to them to solve on a Grade
-                    point scale for around 80 HR professionals.
-                  </p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="h-64 rounded-2xl overflow-hidden shadow">
-                      <img
-                        src="/IGSB/Research/MDP/2MDP1.png"
-                        alt="HR Capability Program 1"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="h-64 rounded-2xl overflow-hidden shadow">
-                      <img
-                        src="/IGSB/Research/MDP/2MDP2.png"
-                        alt="HR Capability Program 2"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                </section>
-
-                {/* 3 - Mentor for Reliance Retail */}
-                <section className="space-y-4">
-                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
-                    3. Mentor for Reliance Retail's Capability-Building Program
-                  </h3>
-
-                  <p className="text-md md:text-lg text-gray-700 text-justify">
-                    Dr. Anuradha Phadnis and Dr. Priyanka Darekar had been
-                    assigned as a Mentor for Reliance Retail's prestigious
-                    capability-building program. It was a skill development
-                    program that nurtured and groomed the next set of HR leaders
-                    in the organization, and they were a part of the mentoring
-                    team for the Business Impact projects. Dr. Anuradha mentored
-                    2 groups and Dr. Priyanka mentored 6 Groups.
-                  </p>
-                  <p className="text-md md:text-lg text-gray-700 text-justify">
-                    Their journey of the participants closed with a Business
-                    Impact project that they had identified based on the
-                    learnings and business needs which were facilitated by the
-                    Mentors. The mentoring consultancy was carried out in the
-                    month of August and September 2023.
-                  </p>
-                </section>
-
-                {/* 4 - Pre & Post Psychometric Assessment */}
-                <section className="space-y-4">
-                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
-                    4. Pre and Post Psychometric Assessment for VNL Constrotech
-                    Pvt Ltd
-                  </h3>
-
-                  <p className="text-md md:text-lg text-gray-700 text-justify">
-                    Dr. Priyanka Darekar completed the pre and post psychometric
-                    assessment for VNL Constrotech Pvt Ltd for their Sales,
-                    Negotiation and Presentation Skills Training in June 2024.
-                    The assessments were backed by development of Individual
-                    development plan for VNL Constrotech Pvt Ltd.
-                  </p>
-
-                  <div className="w-full h-106 rounded-2xl overflow-hidden shadow">
-                    <img
-                      src="/IGSB/Research/MDP/3MDP.png"
-                      alt="Psychometric Assessment"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </section>
-
-                {/* 5 - Mentor for Reliance Retail (second) */}
-                <section className="space-y-4">
-                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
-                    5. Mentor for Reliance Retail's Capability-Building Program
-                  </h3>
-
-                  <p className="text-md md:text-lg text-gray-700 text-justify">
-                    Dr. Pallavi Sajanapwar and Dr. Priyanka Darekar had been
-                    assigned as a Mentor for Reliance Retail's prestigious
-                    capability-building program. It was a skill development
-                    program that nurtured and groomed the next set of HR leaders
-                    in the organization, and they were a part of the mentoring
-                    team for the Business Impact projects.
-                  </p>
-                  <p className="text-md md:text-lg text-gray-700 text-justify">
-                    Their journey of the participants closed with a Business
-                    Impact project that they had identified based on the
-                    learnings and business needs which were facilitated by the
-                    Mentors. The mentoring consultancy was carried out in the
-                    month of September and October 2024.
-                  </p>
-
-                  <div className="w-full h-auto rounded-2xl overflow-hidden shadow">
-                    <img
-                      src="/IGSB/Research/MDP/4MDP.png"
-                      alt="Mentor Program"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </section>
-
-                {/* 6 - Aerospace & Consumer Goods Development Centre */}
-                <section className="space-y-4">
-                  <h3 className="text-2xl md:text-4xl font-bold text-secondary">
-                    6. Development Centre for a Diversified Contract
-                    Manufacturing Company
-                  </h3>
-
-                  <p className="text-md md:text-lg text-gray-700 text-justify">
-                    Dr. Priyanka Darekar was appointed as an Assessor for
-                    conducting development centre for senior leadership team of
-                    a leading SEZ for diversified contract manufacturing company
-                    providing vertically integrated product solutions across the
-                    Aerospace and Consumer Goods industries. The assignment was
-                    conducted in the duration Jan to March 2025.
-                  </p>
-                  <p className="text-md md:text-lg text-gray-700 text-justify">
-                    The assignment involved: Assessing employees' competencies
-                    on prescribed tool matrix; giving feedback; Consolidation of
-                    observations, interpretation and preparation of reports and
-                    developing Individual Development Plans.
-                  </p>
-
-                  <div className="w-full h-106 rounded-2xl overflow-hidden shadow">
-                    <img
-                      src="/IGSB/Research/MDP/5MDP.jpg"
-                      alt="Manufacturing Development Centre"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </section>
-              </div>
-            )}
-
-            {/* ===================== FDP ===================== */}
-            {activeTab === "fdp" && (
-              <div className="bg-white px-6 py-16 rounded-2xl shadow-lg space-y-16 mb-12">
-                {/* 1 */}
-                <section className="space-y-6">
-                  <h3 className="text-2xl md:text-4xl font-bold text-secondary text-left">
-                    1-Day In-House FDP: Overview of NBA, OBE & BLOOMS TAXONOMY
-                  </h3>
-
-                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
-                    IGSB organized 1-day FDP program on Overview of NBA, OBE &
-                    BLOOMS TAXONOMY on 28th March 2024. The course was delivered
-                    by Dr. Pallavi Sajanapwar, starting with basics of deep
-                    understanding of NBA, OBE overview to faculty members. The
-                    sessions were interactive. Outcome-based education policy
-                    and information related CO.PO, PSE, PEO were introduced from
-                    its core. The history, evolution, various tools which are
-                    available for OBE and BLOOMS TAXONOMY were discussed.
-                  </p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="h-64 rounded-2xl overflow-hidden shadow">
-                      <img
-                        src="/IGSB/Research/FDP/1FDP.jpg"
-                        alt="FDP Image 1"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="h-64 rounded-2xl overflow-hidden shadow">
-                      <img
-                        src="/IGSB/Research/FDP/1FDP2.jpg"
-                        alt="FDP Image 2"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                </section>
-
-                {/* 2 */}
-                <section className="space-y-6">
-                  <h3 className="text-2xl md:text-4xl font-bold text-secondary text-left">
-                    1-Day In-House FDP: Sectorial & Industry Analysis Using
-                    Strategic Models
-                  </h3>
-
-                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
-                    IGSB's IQAC organized a one-day FDP on "Sectorial and
-                    Industry Analysis using Strategic models" for all Faculty
-                    members.
-                  </p>
-
-                  <div className="w-full max-w-7xl mx-auto h-106 rounded-2xl overflow-hidden shadow">
-                    <img
-                      src="/IGSB/Research/FDP/2FDP.jpg"
-                      alt="Sectorial FDP"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </section>
-
-                {/* 3 */}
-                <section className="space-y-6">
-                  <h3 className="text-2xl md:text-4xl font-bold text-secondary text-left">
-                    1-Day In-House FDP: CO-PO Mapping and Attainments
-                  </h3>
-
-                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
-                    "IGSB organized 1 day In-house FDP on CO-PO Mapping and
-                    attainments for faculty members of IGSB and ICMS on 25th
-                    April 2023. Resource Person Dr. Anuradha Phadnis conducted
-                    the FDP in workshop mode, which facilitated the participants
-                    to get hands on experience on the FDP topic".
-                  </p>
-
-                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
-                    Indira Global School of Business aims to be a preferred
-                    center of academic excellence and thus demands innovative
-                    approach towards capacity building of faculty and students.
-                    Faculty members at IGSB forms a good mix of industry and
-                    academia experience, thus promoting an excellent learning
-                    environment for management students.
-                  </p>
-
-                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
-                    To ensure that students are benefited from the faculty
-                    expertise, it is our ongoing endeavor to invest in capacity
-                    building. At IGSB we provide opportunities for faculty to
-                    engage in knowledge- sharing sessions and industry
-                    consultation.
-                  </p>
-
-                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
-                    Dr. Virendra Tatake has been actively involved in Financial
-                    Awareness Programs through the Aarthbodh Initiative of IGSB.
-                  </p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {[1, 2, 3, 4, 5, 6].map((i) => (
-                      <div
-                        key={i}
-                        className="h-64 rounded-2xl overflow-hidden shadow"
-                      >
-                        <img
-                          src={`/IGSB/Research/FDP/3FDP${i}.png`}
-                          alt={`CO-PO FDP Image ${i}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </section>
-                <section className="space-y-6">
-                  <h3 className="text-2xl md:text-4xl font-bold text-secondary text-left">
-                    Translation of Investment-related Books into Regional
-                    Language
-                  </h3>
-
-                  <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
-                    Dr Tatake has translated the famous books *Romancing the
-                    Balance Sheet* and *Flirting with the Stocks* into regional
-                    languages. These books simplify complex financial concepts
-                    for the common man.
-                  </p>
-
-                  <div className="mx-auto h-64 rounded-2xl overflow-hidden ">
-                    <img
-                      src="/IGSB/Research/FDP/4FDP.png"
-                      alt="Book Translation FDP"
-                      className="w-auto h-full object-contain"
-                    />
-                  </div>
-                </section>
-              </div>
-            )}
-
-            {/* ===================== RESEARCH ===================== */}
-            {activeTab === "research" && (
-              <div className="bg-white px-6 py-16 rounded-2xl shadow-lg space-y-10 mb-12">
-                <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
-                  Research & Innovation
-                </h2>
-
-                <p className="text-md md:text-lg text-gray-700 leading-relaxed text-justify">
-                  Education is considered to be a catalyst in change management and it is possible because of its ability to anticipate future trends and equip human resources with the required skills. Academic institutes should shoulder the responsibility to drive the market trends and provide necessary consultation to the industry for sustainable growth.
-
-Research plays a vital role in grooming a teacher with contemporary skills and empowering learners with the wisdom to face future challenges. IGSB has consistently attempted to align its institutional growth and pivoted on research for a sustainable future. Faculty members in IGSB try to develop research acumen through persistent participation in research activities by publishing papers in reputed journals and working on research projects and other allied research activities.
+          {/* Two Column Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+            {/* Left Column - Static Content */}
+            <div className="bg-gradient-to-r from-[#10404A] to-[#1F6D71] rounded-3xl shadow-xl p-6 md:p-8 lg:p-10">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-6">
+                About Our MDP Cell
+              </h3>
+              
+              <div className="space-y-3 md:space-y-4">
+                <p className="text-white text-sm md:text-base lg:text-lg leading-relaxed">
+                  Management Development Program [MDP] Cell of IGSB focuses on skill improvement, interaction ability, confidence building, competence, and capacity of managing projects in a cross-cultural environment.
                 </p>
 
-                <div className="overflow-x-auto">
-                  <table className="w-full border border-gray-300 text-gray-700">
-                    <thead className="bg-secondary text-white">
-                      <tr>
-                        <th className="p-3 border">Sr.No</th>
-                        <th className="p-3 border">Description</th>
-                        <th className="p-3 border">
-                          No. Of Resources / Publications
-                        </th>
-                        <th className="p-3 border">Resource Person</th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <tr>
-                        <td className="p-3 border text-center">1</td>
-                        <td className="p-3 border">Ph.D Guide</td>
-                        <td className="p-3 border text-center">1</td>
-                        <td className="p-3 border">Dr. Virendra Tatake</td>
-                      </tr>
-
-                      <tr>
-                        <td className="p-3 border text-center">2</td>
-                        <td className="p-3 border">Ph.D Faculty</td>
-                        <td className="p-3 border text-center">5</td>
-                        <td className="p-3 border space-y-1">
-                          <p>Dr. Virendra Tatake</p>
-                          <p>Dr. Priyanka Darekar</p>
-                          <p>Dr. Aatish Zagade</p>
-                          <p>Dr. Anuradha Phadnis</p>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td className="p-3 border text-center">3</td>
-                        <td className="p-3 border">Book Publications</td>
-                        <td className="p-3 border text-center">14</td>
-                        <td className="p-3 border space-y-1">
-                          <p>Dr. Virendra Tatake</p>
-                          <p>Dr. Priyanka Darekar</p>
-                          <p>Dr. Aatish Zagade</p>
-                          <p>Dr. Supriya Desai</p>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td className="p-3 border text-center">4</td>
-                        <td className="p-3 border">
-                          Research Paper – National
-                        </td>
-                        <td className="p-3 border text-center">9</td>
-                        <td className="p-3 border space-y-1">
-                          <p>Dr. Aatish Zagade</p>
-                          <p>Dr. Priyanka Darekar</p>
-                          <p>Dr. Supriya Desai</p>
-                          <p>Prof. Nilam Naidu</p>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td className="p-3 border text-center">5</td>
-                        <td className="p-3 border">
-                          Research Paper – International
-                        </td>
-                        <td className="p-3 border text-center">8</td>
-                        <td className="p-3 border space-y-1">
-                          <p>Dr. Aatish Zagade</p>
-                          <p>Dr. Priyanka Darekar</p>
-                          <p>Dr. Supriya Desai</p>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td className="p-3 border text-center">6</td>
-                        <td className="p-3 border">
-                          Research Paper – UGC CARE
-                        </td>
-                        <td className="p-3 border text-center">13</td>
-                        <td className="p-3 border space-y-1">
-                          <p>Dr. Virendra Tatake</p>
-                          <p>Dr. Aatish Zagade</p>
-                          <p>Dr. Priyanka Darekar</p>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td className="p-3 border text-center">7</td>
-                        <td className="p-3 border">Research Paper – SCOPUS</td>
-                        <td className="p-3 border text-center">6</td>
-                        <td className="p-3 border space-y-1">
-                          <p>Dr. Aatish Zagade</p>
-                          <p>Dr. Priyanka Darekar</p>
-                          <p>Dr. Supriya Desai</p>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td className="p-3 border text-center">8</td>
-                        <td className="p-3 border">Research Paper – ABDC</td>
-                        <td className="p-3 border text-center">1</td>
-                        <td className="p-3 border">Dr. Aatish Zagade</td>
-                      </tr>
-
-                      <tr>
-                        <td className="p-3 border text-center">9</td>
-                        <td className="p-3 border">Blogs</td>
-                        <td className="p-3 border text-center">15</td>
-                        <td className="p-3 border space-y-1">
-                          <p>Dr. Aatish Zagade</p>
-                          <p>Dr. Priyanka Darekar</p>
-                          <p>Dr. Supriya Desai</p>
-                          <p>Prof. Nilam Naidu</p>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                <p className="text-white text-sm md:text-base lg:text-lg leading-relaxed">
+                  The MDP cell aims at managerial development within a structured scenario & synergetic system of organizational behavior with value addition to recognize functional areas such as:
+                </p>
+                
+                <ul className="space-y-1.5 md:space-y-2 text-white text-sm md:text-base lg:text-lg">
+                  <li className="flex items-start">
+                    <span className="text-[#FF8B61] mr-2 md:mr-3 flex-shrink-0">•</span>
+                    <span>Develop effective training programs based on experiential learning models</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#FF8B61] mr-2 md:mr-3 flex-shrink-0">•</span>
+                    <span>Maximize individual potential through soft skills training</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#FF8B61] mr-2 md:mr-3 flex-shrink-0">•</span>
+                    <span>Personality Grooming (Communication, Presentation Skills, Team Dynamics)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#FF8B61] mr-2 md:mr-3 flex-shrink-0">•</span>
+                    <span>Finance for Non-Finance professionals</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#FF8B61] mr-2 md:mr-3 flex-shrink-0">•</span>
+                    <span>Personal Effectiveness for Corporates & Academic Capacity Building</span>
+                  </li>
+                </ul>
               </div>
-            )}
+            </div>
 
-            {/* ===================== CONFERENCE ===================== */}
-            {activeTab === "conference" && (
-              <div className="bg-white px-6 py-16 rounded-2xl shadow-lg space-y-12 mb-12">
-                {/* AY 24-25 */}
-                <section className="space-y-4">
-                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
-                    Academic Year 2024–25
-                  </h2>
+            {/* Right Column - Carousel */}
+            <div className="bg-white rounded-3xl shadow-xl p-6 md:p-8 lg:p-10">
+              <div className="h-full flex flex-col">
+                {/* Carousel Content */}
+                <div 
+                  className="flex-1 relative min-h-[400px]"
+                  onMouseEnter={() => setIsMdpHovered(true)}
+                  onMouseLeave={() => setIsMdpHovered(false)}
+                >
+                  <div className="relative h-full">
+                    {/* Carousel Items - Stacked vertically */}
+                    <div className="relative h-full">
+                      {/* Current Slide - Text at top */}
+                      <div className="mb-4 md:mb-6">
+                        <div className="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80 text-white rounded-full text-xs md:text-sm font-semibold mb-3 md:mb-4">
+                          MDP Highlight {mdpItems[currentMdpIndex].id}
+                        </div>
+                        <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-slate-900">
+                          {mdpItems[currentMdpIndex].title}
+                        </h3>
+                      </div>
+                      
+                      <div className="flex-1 overflow-y-auto mb-4 md:mb-6 max-h-[120px] md:max-h-[140px]">
+                        <p className="text-gray-700 text-sm md:text-base lg:text-lg leading-relaxed">
+                          {mdpItems[currentMdpIndex].description}
+                        </p>
+                      </div>
 
-                  <p className="text-md md:text-lg text-gray-700 text-justify">
-                    <strong>Fintech for inclusivity and sustainability</strong>
-                    <br />
-                    This conference was organized at IGSB to promote student
-                    research activity. The conference saw a wonderful response
-                    with 35 students participating and presenting research
-                    papers on "Fintech for Inclusivity and Sustainability". The
-                    inauguration was done by CMA Sagar Malpure, Chairperson,
-                    ICMAI PCA Chapter. Valuable inputs were given by Prof.
-                    Chetan Wakalkar (Academic Advisor - IGI) and Dr. Virendra
-                    Tatake (Director - IGSB). The program successfully showcased
-                    multiple dimensions of Fintech and encouraged student
-                    researchers.
-                  </p>
-
-                  <div className="w-full max-w-7xl mx-auto h-130 rounded-2xl overflow-hidden shadow">
-                    <img
-                      src="/IGSB/Research/Conference/C1.jpg"
-                      alt="Conference 2024–25"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </section>
-
-                {/* AY 23-24 */}
-                <section className="space-y-4">
-                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
-                    Academic Year 2023–24
-                  </h2>
-
-                  <p className="text-md md:text-lg text-gray-700 text-justify">
-                    <strong>
-                      India's Growth Story Amidst Global Challenges
-                    </strong>
-                    <br />
-                    Team Indira celebrated a National Conference in association
-                    with ICMAI - PCA Chapter. The theme was "India's Growth
-                    Story Amidst Global Challenges". A total of 57 researchers
-                    participated and presented research papers, contributing to
-                    a rich academic discourse.
-                  </p>
-
-                  <div className="w-full max-w-7xl mx-auto h-130 rounded-2xl overflow-hidden shadow">
-                    <img
-                      src="/IGSB/Research/Conference/C2.jpg"
-                      alt="Conference 2023–24"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </section>
-
-                {/* AY 22-23 */}
-                <section className="space-y-4">
-                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
-                    Academic Year 2022–23
-                  </h2>
-
-                  <p className="text-md md:text-lg text-gray-700 text-justify">
-                    <strong>
-                      National Conference in Association with The Institute of
-                      Cost Accountants of India PCA
-                    </strong>
-                    <br />A national conference on "Advancements in Business and
-                    Management Sciences: Embracing Change, Sustainability &
-                    Transformation" was organised by IGSB on 11th January 2023
-                    in association with The Institute of Cost Accountants of
-                    India, PCA Chapter. The objective was to provide a platform
-                    for budding and experienced researchers to discuss topics of
-                    sustainability, growth and transformation. Notable guests
-                    and speakers provided insights aligned with the conference
-                    theme.
-                  </p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="h-64 rounded-2xl overflow-hidden shadow">
-                      <img
-                        src="/IGSB/Research/Conference/C3.jpeg"
-                        alt="Conference 2022–23 Image 1"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="h-64 rounded-2xl overflow-hidden shadow">
-                      <img
-                        src="/IGSB/Research/Conference/C4.jpeg"
-                        alt="Conference 2022–23 Image 2"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                </section>
-              </div>
-            )}
-
-            {/* ===================== PUBLICATIONS ===================== */}
-            {activeTab === "publications" && (
-              <div className="bg-white px-6 py-16 rounded-2xl shadow-lg space-y-16 mb-12">
-                {/* Faculty Publications */}
-                <section className="space-y-10">
-                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
-                    Faculty Publications
-                  </h2>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Ph.D Guide
-                    </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Faculty with Ph.D
-                    </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Book Publications
-                    </div>
-
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      National Journals
-                    </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      International Journals
-                    </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      UGC Care
-                    </div>
-
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Scopus
-                    </div>
-                    {/* <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      ABDC
-                    </div>
-
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Conference Proceedings
-                    </div> */}
-                  </div>
-                </section>
-
-                {/* Institute Publications */}
-                <section className="space-y-10">
-                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
-                    Institute Publications
-                  </h2>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {/* Existing Items */}
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Campus Drone
-                    </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Campus Herald
-                    </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Management Research Monograph
-                    </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Analysi - Case Booklet
-                    </div>
-
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Conference Proceedings
-                    </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Blog
-                    </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Patent
-                    </div>
-                  </div>
-                </section>
-              </div>
-            )}
-
-            {/* ===================== RESOURCE PERSON ===================== */}
-            {activeTab === "resourcePerson" && (
-              <div className="bg-white px-6 py-16 rounded-2xl shadow-lg space-y-20 mb-12">
-                {/* 1 */}
-                <section className="space-y-6">
-                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
-                    Session Chair — International Conference (Tashkent)
-                  </h2>
-                  <div className="flex justify-between items-center gap-5">
-                    <p className="text-md md:text-lg text-gray-700 text-justify">
-                      Dr. Priyanka Darekar served as a Session Chair at 4th
-                      International Conference on Technological Advancements in
-                      Computational Sciences, Amity University, Tashkent City,
-                      Street Labzak, Building-70, 100028, Uzbekistan. She
-                      facilitated the scholarly presentations and discussions,
-                      and contributing to the smooth conduct of the
-                      international academic event.
-                    </p>
-
-                    <div className="w-full h-auto rounded-2xl overflow-hidden shadow">
-                      <Image
-                        src="/placeholder.jpg"
-                        height={720}
-                        width={1280}
-                        className="w-full h-full object-cover bg-gray-400"
-                        alt="Session Chain Tashkent"
-                      ></Image>
-                    </div>
-                  </div>
-                </section>
-
-                {/* 2 */}
-                <section className="space-y-6">
-                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
-                    FDPs Conducted as Resource Person
-                  </h2>
-
-                  <p className="text-md md:text-lg text-gray-700 text-justify">
-                    Dr. Anuradha Phadnis conducted 1 Day Faculty Development
-                    Program at Sinhgad Institute of Management, Pune, Vadagon
-                    (BK) for Faculty Members on the Topic: "How to prepare
-                    course file and CO PO mapping for NAAC Preparation " on
-                    Tuesday 17th Oct 2023.
-                  </p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <div
-                        key={i}
-                        // Ensure the parent enforces the shape
-                        className="relative h-48 rounded-xl overflow-hidden shadow"
-                      >
-                        <Image
-                          src={`/IGSB/Research/ResourcePerson/2RP${i}.jpeg`}
-                          alt={`FDP Resource Person ${i}`}
-                          // 1. Set explicit width/height (keep this as you had it, it helps aspect ratio)
-                          height={720}
-                          width={1280}
-                          // 2. IMPORTANT: Tell Next.js how wide the image actually is in the viewport
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                          // 3. Optional: Bump quality if it looks compressed
-                          quality={85}
-                          // 4. Styles
-                          className="w-full h-full object-cover"
-
-                          // 5. Debugging (Optional): If it STILL looks bad, uncomment the line below.
-                          // If this fixes it, the issue is definitely Next.js optimization logic.
-                          // unoptimized={true}
+                      {/* Image at bottom */}
+                      <div className="mt-4 md:mt-6 rounded-xl md:rounded-2xl overflow-hidden shadow-lg">
+                        <img
+                          src={mdpItems[currentMdpIndex].image}
+                          alt={mdpItems[currentMdpIndex].title}
+                          className="w-full h-48 md:h-56 object-cover"
                         />
                       </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Indicators */}
+                <div className="flex justify-center mt-6 md:mt-8">
+                  <div className="flex space-x-1.5 md:space-x-2">
+                    {mdpItems.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentMdpIndex(idx)}
+                        className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
+                          idx === currentMdpIndex 
+                            ? 'bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80 w-6 md:w-8' 
+                            : 'bg-gray-300 hover:bg-gray-400'
+                        }`}
+                      />
                     ))}
                   </div>
-                </section>
-
-                {/* 3 */}
-                <section className="space-y-6">
-                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
-                    Guest Speaker at Government College for Women, Cluster
-                    University, Srinagar
-                  </h2>
-
-                  <p className="text-md md:text-lg text-gray-700 text-justify">
-                    Dr. Priyanka Darekar conducted was invited as a Guest
-                    Speaker at the Government College for Women, Cluster
-                    University, Srinagar. She delivered a session on "Career
-                    Planning" for the Students of Post Graduate department of
-                    Computer Science on 25th May 2023. The students were
-                    enlightened on topics like Contemporary practices in CV
-                    Writing, creating and using professional social media
-                    profiles, latest industry trends in Recruitment and
-                    selection.
-                  </p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="h-64 rounded-xl overflow-hidden shadow">
-                      <img
-                        src="/IGSB/Research/ResourcePerson/3RP1.jpeg"
-                        alt="Guest Speaker Session Image 1"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-
-                    <div className="h-64 rounded-xl overflow-hidden shadow">
-                      <img
-                        src="/IGSB/Research/ResourcePerson/3RP2.jpeg"
-                        alt="Guest Speaker Session Image 2"
-                        className="w-full h-full object-cover object-top"
-                      />
-                    </div>
-                  </div>
-                </section>
-
-                {/* 4 */}
-                <section className="space-y-6">
-                  <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
-                    Aarthbodh Forum — Initiatives by Dr. Tatake
-                  </h2>
-
-                  {/* sub 1 */}
-                  <div className="space-y-3">
-                    <h3 className="text-xl md:text-4xl font-semibold text-secondary">
-                      1. Conducting Investment Awareness Programs at Reputed
-                      Educational Institutes:
-                    </h3>
-                    <p className="text-md md:text-lg text-gray-700 text-justify">
-                      IGSB Aarthbodh Forum is very keen in creating financial
-                      awareness amongst the young generation. Dr Tatake has been
-                      conducting investment awareness sessions for post-graduate
-                      and undergraduate students for past 10 years. He has
-                      cleared the Series V A Certification Examination of NISM
-                      (National Institute of Securities Market) in the year 2005
-                      and has been doing the CEP (Continuous Education Program)
-                      as per the rules every three years. By virtue of the same
-                      he is able to update the new developments in the field of
-                      investments easily. He shares the same with the students
-                      through such sessions.
-                    </p>
-                    <div className="w-106 h-64 rounded-xl overflow-hidden shadow">
-                      <img
-                        src="/IGSB/Research/ResourcePerson/4RP1.png"
-                        alt="Investment Awareness Program"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-
-                  {/* sub 2 */}
-                  <div className="space-y-3">
-                    <h3 className="text-xl md:text-4xl font-semibold text-secondary">
-                      2. Writing articles in daily newspapers and magazines
-                    </h3>
-                    <p className="text-md md:text-lg text-gray-700 text-justify">
-                      Dr Tatake has been an avid writer and loves to educate
-                      people on financial topics through his prolific writing
-                      skills. He has is an editor in regional newspapers and
-                      magazines for past 20 years.He is able to reach the rural
-                      and semi-urban areas of interior Maharashtra to create
-                      financial awareness amongst through these articles.
-                    </p>
-                    <div className="w-106 h-64 rounded-xl overflow-hidden shadow">
-                      <img
-                        src="/IGSB/Research/ResourcePerson/4RP2.png"
-                        alt="Newspaper Articles"
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                  </div>
-
-                  {/* sub 3 */}
-                  <div className="space-y-3">
-                    <h3 className="text-xl md:text-4xl font-semibold text-secondary">
-                      3. Conducting programs on Radio
-                    </h3>
-                    <p className="text-md md:text-lg text-gray-700 text-justify">
-                      Radio is an effective tool to reach out to youngsters and
-                      can be entertaining to educate people through engaging
-                      programs.Dr Tatake has conducted programs on All India
-                      Radio, Pune and on Community Radio Channel of Savitribai
-                      Phule Pune University (Vidyavani ) to create financial
-                      awareness amongst the general public.
-                    </p>
-                    <div className="w-106 h-64 rounded-xl overflow-hidden shadow">
-                      <img
-                        src="/IGSB/Research/ResourcePerson/4RP3.png"
-                        alt="Radio Programs"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                </section>
+                </div>
               </div>
-            )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FDP HIGHLIGHTS SECTION */}
+      <section className="w-full py-12 px-6 xl:py-8 xl:px-16 bg-gray-50 text-center">
+        <div className="">
+          {/* Heading - Left aligned */}
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-8 md:mb-12">
+            Faculty Development Programmes (FDP) 
+          </h2>
+
+          {/* Two Column Layout - Reversed for FDP */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+            {/* Left Column - Carousel */}
+            <div className="bg-white rounded-3xl shadow-xl p-6 md:p-8 lg:p-10">
+              <div className="h-full flex flex-col">
+                {/* Carousel Content */}
+                <div 
+                  className="flex-1 relative min-h-[400px]"
+                  onMouseEnter={() => setIsFdpHovered(true)}
+                  onMouseLeave={() => setIsFdpHovered(false)}
+                >
+                  <div className="relative h-full">
+                    {/* Carousel Items - Stacked vertically */}
+                    <div className="relative h-full">
+                      {/* Current Slide - Text at top */}
+                      <div className="mb-4 md:mb-6">
+                        <div className="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80 text-white rounded-full text-xs md:text-sm font-semibold mb-3 md:mb-4">
+                          FDP Highlight {fdpItems[currentFdpIndex].id}
+                        </div>
+                        <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-slate-900">
+                          {fdpItems[currentFdpIndex].title}
+                        </h3>
+                      </div>
+                      
+                      <div className="flex-1 overflow-y-auto mb-4 md:mb-6 max-h-[120px] md:max-h-[140px]">
+                        <p className="text-gray-700 text-sm md:text-base lg:text-lg leading-relaxed">
+                          {fdpItems[currentFdpIndex].description}
+                        </p>
+                      </div>
+
+                      {/* Image at bottom */}
+                      <div className="mt-4 md:mt-6 rounded-xl md:rounded-2xl overflow-hidden shadow-lg">
+                        <img
+                          src={fdpItems[currentFdpIndex].image}
+                          alt={fdpItems[currentFdpIndex].title}
+                          className="w-full h-48 md:h-56 object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Indicators */}
+                <div className="flex justify-center mt-6 md:mt-8">
+                  <div className="flex space-x-1.5 md:space-x-2">
+                    {fdpItems.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentFdpIndex(idx)}
+                        className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
+                          idx === currentFdpIndex 
+                            ? 'bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80 w-6 md:w-8' 
+                            : 'bg-gray-300 hover:bg-gray-400'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Static Content */}
+            <div className="bg-gradient-to-l from-[#10404A] to-[#1F6D71] rounded-3xl shadow-xl p-6 md:p-8 lg:p-10">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-6">
+                About Our FDP Initiatives
+              </h3>
+              
+              <div className="space-y-3 md:space-y-4">
+                <p className="text-white text-sm md:text-base lg:text-lg leading-relaxed">
+                  Faculty Development Programmes at IGSB are designed to enhance teaching methodologies, research capabilities, and industry-academia collaboration among our faculty members.
+                </p>
+
+                <p className="text-white text-sm md:text-base lg:text-lg leading-relaxed">
+                  Our FDP initiatives focus on:
+                </p>
+                
+                <ul className="space-y-1.5 md:space-y-2 text-white text-sm md:text-base lg:text-lg">
+                  <li className="flex items-start">
+                    <span className="text-[#FF8B61] mr-2 md:mr-3 flex-shrink-0">•</span>
+                    <span>Upgrading pedagogical skills and modern teaching techniques</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#FF8B61] mr-2 md:mr-3 flex-shrink-0">•</span>
+                    <span>Enhancing research methodology and publication skills</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#FF8B61] mr-2 md:mr-3 flex-shrink-0">•</span>
+                    <span>Curriculum development and outcome-based education implementation</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#FF8B61] mr-2 md:mr-3 flex-shrink-0">•</span>
+                    <span>Industry-relevant skill development and case study development</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#FF8B61] mr-2 md:mr-3 flex-shrink-0">•</span>
+                    <span>Technology integration in teaching and learning processes</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#FF8B61] mr-2 md:mr-3 flex-shrink-0">•</span>
+                    <span>Professional ethics and academic leadership development</span>
+                  </li>
+                </ul>
+
+                <div className="mt-4 md:mt-6 p-3 md:p-4 bg-gradient-to-r from-[#10404A]/10 to-[#1F6D71]/10 rounded-lg md:rounded-xl">
+                  <p className="text-white text-sm md:text-base lg:text-lg font-medium">
+                    <span className="text-[#FF8B61] font-bold">Impact:</span> Our FDPs have significantly improved faculty performance, research output, and student learning outcomes across all departments.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+/* ================= PhD Card Component ================= */
+
+function PhdCard({ phd, index }) {
+  const [activeStudentIndex, setActiveStudentIndex] = useState(null);
+  const isEven = index % 2 === 1;
+
+  return (
+    <div
+      className={`
+        flex flex-col md:flex-row items-center gap-6
+        ${isEven ? "md:flex-row-reverse" : ""}
+      `}
+    >
+      {/* IMAGE SECTION — 1/3 */}
+      <div className="w-full md:w-1/3 flex justify-center">
+        <img
+          src="/boy.png"
+          alt={phd.name}
+          className="
+            w-40 h-40 md:w-84 md:h-84
+            rounded-full object-cover
+            border-4 border-[#ffb088]
+            shadow-md
+          "
+        />
+      </div>
+
+      {/* CONTENT SECTION — 2/3 */}
+      <div className="w-full md:w-2/3">
+        <div
+          className="
+            bg-[#3aafa9]
+            rounded-2xl
+            p-6 md:p-7 lg:p-8
+            shadow-xl
+            text-white
+          "
+        >
+          <h3 className="text-2xl md:text-3xl font-extrabold mb-1">
+            {phd.name}
+          </h3>
+
+          <p className="text-white/90 font-medium text-lg mb-2">
+            {phd.designation}
+          </p>
+
+          <p className="text-white/95 text-lg mb-3">
+            <span className="font-semibold text-white/90">
+              Research Expertise:
+            </span>{" "}
+            {phd.expertise}
+          </p>
+
+          <p className="text-white/90 text-lg leading-relaxed mb-5">
+            {phd.description}
+          </p>
+
+          {/* SUBTLE DIVIDER */}
+          <div className="w-12 h-[2px] bg-[#ffb088] rounded-full mb-5" />
+
+          {/* STUDENTS */}
+          <h4 className="uppercase tracking-widest text-xs font-semibold mb-3 text-white/90">
+            PhD Scholars Guided
+          </h4>
+
+          <div className="flex -space-x-3">
+            {phd.students.map((student, idx) => (
+              <div
+                key={idx}
+                className="relative hover:z-20"
+                onMouseEnter={() => setActiveStudentIndex(idx)}
+                onMouseLeave={() => setActiveStudentIndex(null)}
+              >
+                <img
+                  src="/boy.png"
+                  alt={student.name}
+                  className="
+                    w-10 h-10 md:w-11 md:h-11
+                    rounded-full object-cover
+                    border-2 border-[#10404A]
+                    cursor-pointer
+                  "
+                />
+
+                {activeStudentIndex === idx && (
+                  <div
+                    className="
+                      absolute bottom-full left-1/2 -translate-x-1/2 mb-3
+                      bg-white text-black
+                      px-3 py-2 rounded-lg
+                      text-sm shadow-xl whitespace-nowrap z-30
+                    "
+                  >
+                    {student.name}
+                    <div
+                      className="
+                        absolute left-1/2 -translate-x-1/2 top-full
+                        w-0 h-0
+                        border-l-[6px] border-r-[6px] border-t-[6px]
+                        border-l-transparent border-r-transparent
+                        border-t-white
+                      "
+                    />
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

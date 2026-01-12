@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { HiMenuAlt2, HiX } from "react-icons/hi";
+import { HiX } from "react-icons/hi";
 import { TbExternalLink } from "react-icons/tb";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { Menu } from "lucide-react";
@@ -14,276 +14,75 @@ const dropdownContent = {
     title: "About Us",
     sections: [
       {
-        title: "About Us",
-        items: [
-          {
-            label: "Shree Chanakya Education Society",
-            link: "/about/chanakya-edu#about-sces",
-          },
-
-          // {
-          //   label: "Indira Group of Institutes ",
-          //   link: "/about/chanakya-edu#about-campus",
-          // },
-          {
-            label: "Indira Global School of Business",
-            link: "/about/chanakya-edu#about-igsb",
-          },
-          {
-            label: "Chairperson's Profile & Chief Mentor-IGI",
-            link: "/about/chanakya-edu#about-chairperson",
-          },
-          {
-            label: "Director's Message",
-            link: "/about/chanakya-edu#about-director",
-          },
-          {
-            label: "Vision & Mission",
-            link: "/about/chanakya-edu#about-vision",
-          },
-          // {
-          //   label: "Recognition / Affiliation",
-          //   link: "/about/chanakya-edu#about-recognition",  if needed later
-          // },
-          {
-            label: "Human Capital / Intellectual Capital",
-            link: "/humancapital",
-          },
-          {
-            label: "Facilities",
-            link: "/facilities",
-          },
-        ],
-      },
-
-      {
-        title: "Governance",
-        items: [
-          {
-            label: "Board of Governance",
-            link: "/about/governance",
-          },
-
-          {
-            label: "Committee's",
-            link: "/about/committee",
-          },
-          {
-            label: "Cell's",
-            link: "/about/cell",
-          },
-          {
-            label: "Research & Consultancy",
-            link: "/about/Research",
-          },
-          {
-            label: "Institutions Innovation Council (IIC)",
-            link: "/about/IIC",
-          },
-          {
-            label: "Mandatory Disclosure",
-            link: "/MandatoryDisclosure.pdf",
-          },
-        ],
+        label: "About IGSB",
+        link: "/about/chanakya-edu"
       },
       {
-        title: "Student Committees",
-        items: [
-          {
-            label: "Student Grievance Redressal Committee",
-            link: "/campus-life/student-committees#student-grievance-redressal-committee",
-          },
-          {
-            label: "Anti Ragging Committee",
-            link: "/campus-life/student-committees#anti-ragging-committee",
-          },
-          {
-            label: "Anti Ragging Squad",
-            link: "/campus-life/student-committees#anti-ragging-squad",
-          },
-          {
-            label: "Student Welfare Council",
-            link: "/campus-life/student-committees#students-welfare-council",
-          },
-          {
-            label: "Student Counsellor",
-            link: "/campus-life/student-committees#student-counsellor",
-          },
-          // {
-          //   label: "Event Committee",
-          //   link: "/campus-life/student-committees#event-committee", // If needed later
-          // },
-          {
-            label: "Online Grievance Redressal Mechanism",
-            link: `https://forms.office.com/pages/responsepage.aspx?id=Q_oIpAgyHUCWj_ew96nH5GqgRKaPsvhHsV5PWUUqBe1UQzlUNDZDTE0zMlZUTjVCUU40VjAwUFU3Qy4u`, // If added later
-          },
-        ],
+        label: "Leaders Desk",
+        link: "/leadersdesk"
       },
-    ],
+      {
+        label: "Governance",
+        link: "/about/governance"
+      },
+      {
+        label: "Student Committees",
+        link: "/campus-life/student-committees"
+      },
+      {
+        label: "Mandatory Disclosure",
+        link: "/MandatoryDisclosure.pdf"
+      }
+    ]
   },
 
   campusLife: {
     title: "Campus Life",
     sections: [
       {
-        title: "Events & Activities",
-        items: [
-          {
-            label: "Students Engagement",
-            link: "/campus-life/student-engagement",
-          },
-          {
-            label: "Students Certifications",
-            link: "/campus-life/student-certifications",
-          },
-          {
-            label: "Student Induction",
-            link: "/campus-life/student-induction",
-          },
-          {
-            label: "Student Achievements",
-            link: "/campus-life/student-achievements",
-          },
-          {
-            label: "Facilities",
-            link: "/facilities",
-          },
-          // {
-          //   label: "Industry Institution Interaction",
-          //   link: "/campus-life/icem-awards",
-          // },
-          // {
-          //   label: "Professional Associations",
-          //   link: "/campus-life/academics",
-          // },
-        ],
+        label: "Student Induction",
+        link: "/campus-life/student-induction"
       },
       {
-        title: "Professional Associations",
-        items: [
-          {
-            label: "NISM",
-            link: "/campus-life/nism",
-          },
-          {
-            label: "NHRD",
-            link: "/campus-life/nhrd",
-          },
-          {
-            label: "C414",
-            link: "/campus-life/c414",
-          },
-        ],
+        label: "Student Interaction",
+        link: "/campus-life/student-interaction"
       },
-    ],
+      {
+        label: "Facilities",
+        link: "/facilities"
+      },
+      {
+        label: "Events",
+        link: "/campus-life/events"
+      },
+      {
+        label: "Sports",
+        link: "/campus-life/sports"
+      },
+      {
+        label: "Canteen",
+        link: "/campus-life/canteen"
+      },
+      {
+        label: "Nature and Peace",
+        link: "/campus-life/nature-peace"
+      }
+    ]
   },
+
   programs: {
     title: "Programs & Admission",
     sections: [
       {
-        title: "MBA",
-        items: [
-          {
-            label: "Marketing Management",
-            link: "/programs/mba?spec=marketing",
-          },
-          {
-            label: "Finance Management",
-            link: "/programs/mba?spec=finance",
-          },
-          {
-            label: "Human Resource Management",
-            link: "/programs/mba?spec=hr",
-          },
-          {
-            label: "Operations & Supply Chain Management",
-            link: "/programs/mba?spec=operations",
-          },
-          {
-            label: "Bussiness Analytics",
-            link: "/programs/mba?spec=ba",
-          },
-        ],
+        label: "MBA",
+        link: "/programs/mba"
       },
       {
-        title: "PHD",
-        items: [
-          { label: "Research Center", link: "/programs/phd" },
-          {
-            label: "Marketing Management",
-            link: "/programs/phd",
-          },
-          {
-            label: "Finance Management",
-            link: "/programs/phd",
-          },
-          {
-            label: "Human Resource Management",
-            link: "/programs/phd",
-          },
-          // {
-          //   label: "Operations & Supply Chain Management",
-          //   link: "/programs/phd?spec=operations",
-          // },
-          {
-            label: "Bussiness Analytics",
-            link: "/programs/phd",
-          },
-        ],
-      },
-    ],
-  },
-
-  placement: {
-    title: "Placement",
-    sections: [
-      {
-        items: [
-          "Placement Team",
-          "Our Recruiters",
-          "Placed Students",
-          "Placement Policy",
-        ],
-      },
-    ],
-  },
-
-  accreditation: {
-    title: "Accreditation",
-    sections: [
-      {
-        title: "NAAC",
-        items: [
-          "SSR reports year wise",
-          "Criteria wise Details",
-          "AQAR reports",
-          "NAAC Certificate",
-        ],
-      },
-      {
-        title: "IQAC",
-        items: [
-          "IQAC Committee",
-          "IQAC Notices",
-          "MOMS & Actions",
-          "IQAC Formats",
-          "Best Practices",
-          "Distinctive Practice",
-        ],
-      },
-      {
-        title: "Reports & Others",
-        items: [
-          "SPPU Annual Report",
-          "Code of Conduct",
-          "NIRF",
-          "Financial Statements",
-          "Soft Skills & Aptitude",
-          "Reports",
-        ],
-      },
-    ],
-  },
+        label: "PhD",
+        link: "/programs/phd"
+      }
+    ]
+  }
 };
 
 const Navbar = () => {
@@ -293,8 +92,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
 
-  // ✅ Refs to manage hover timers and outside clicks (no flicker)
-  const dropdownTimeoutRef = useRef(null);
+  const dropdownRef = useRef(null);
   const navbarRef = useRef(null);
   const modalRef = useRef(null);
 
@@ -302,179 +100,147 @@ const Navbar = () => {
   const toggleModal = () => setIsModalOpen(!isModalOpen);
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
-  // === Hover Handlers (fixed flicker) ===
-  const handleMouseEnter = (dropdownName) => {
-    if (dropdownTimeoutRef.current) {
-      clearTimeout(dropdownTimeoutRef.current);
-      dropdownTimeoutRef.current = null;
-    }
-    setActiveDropdown(dropdownName);
-  };
-
-  const handleMouseLeave = () => {
-    if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
-    dropdownTimeoutRef.current = setTimeout(() => {
-      setActiveDropdown(null);
-    }, 180);
-  };
-
-  // === Close dropdown if click outside ===
+  // Handle click outside to close dropdown
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target) &&
+          navbarRef.current && !navbarRef.current.contains(event.target)) {
         setActiveDropdown(null);
       }
     };
-    document.addEventListener("pointerdown", handleClickOutside);
-    return () => {
-      document.removeEventListener("pointerdown", handleClickOutside);
-      if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
-    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Close modal when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        isModalOpen &&
-        modalRef.current &&
-        !modalRef.current.contains(event.target)
-      ) {
+    const handleClickOutsideModal = (event) => {
+      if (isModalOpen && modalRef.current && !modalRef.current.contains(event.target)) {
         setIsModalOpen(false);
       }
     };
 
-    document.addEventListener("pointerdown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("pointerdown", handleClickOutside);
-    };
+    document.addEventListener("mousedown", handleClickOutsideModal);
+    return () => document.removeEventListener("mousedown", handleClickOutsideModal);
   }, [isModalOpen]);
+
+  const toggleDropdown = (dropdownName) => {
+    setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
+  };
 
   const toggleMobileDropdown = (dropdownName) => {
     setMobileDropdown(mobileDropdown === dropdownName ? null : dropdownName);
   };
 
-  const renderDropdownContent = (content) => (
-    <div className="max-w-8xl px-8 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 animate-in fade-in-0 zoom-in-95 duration-300 bg-secondary">
-      {content.sections.map((section, index) => (
-        <div key={index}>
-          {section.title ? (
-            <h3 className="text-lg font-semibold text-gray-100 mb-4">
-              {section.title}
-            </h3>
-          ) : null}
-          <ul className="space-y-4 text-gray-200 text-sm">
-            {section.items.map((item, itemIndex) => (
-              <li
-                key={itemIndex}
-                className="flex justify-between items-center border-b border-white pb-2 group"
+  // Render compact dropdown for desktop
+  const renderCompactDropdown = (content) => (
+    <div 
+      ref={dropdownRef}
+      className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-secondary rounded-lg shadow-xl border border-gray-200 min-w-[240px] z-50 animate-in fade-in-0 zoom-in-95 duration-200 overflow-hidden"
+    >
+      <div className="py-2">
+        {content.sections.map((section, index) => (
+          <div key={index} className="relative">
+            {section.link && (
+              <Link
+                href={section.link}
+                className="flex items-center justify-between px-4 py-3 text-sm text-white hover:bg-white/10 transition-colors duration-200 group border-b border-white/20 last:border-b-0"
+                onClick={() => setActiveDropdown(null)}
               >
-                {item.link ? (
+                <span className="font-medium">{section.label}</span>
+                <TbExternalLink className="text-white/70 text-xs transition-transform duration-200 group-hover:translate-x-1 group-hover:scale-110" />
+              </Link>
+            )}
+            
+            {/* For sections with nested items */}
+            {section.items && !section.title && (
+              <div>
+                <div className="px-4 py-2 text-xs font-semibold text-white/80 uppercase tracking-wider border-b border-white/20">
+                  {section.label}
+                </div>
+                {section.items.map((item, itemIndex) => (
                   <Link
+                    key={itemIndex}
                     href={item.link}
-                    className="font-semibold flex justify-between items-center w-full text-gray-200 hover:text-primary transition-all duration-200 group-hover:translate-x-1"
+                    className="flex items-center justify-between px-6 py-3 text-sm text-white hover:bg-white/10 transition-colors duration-200 group border-b border-white/20 last:border-b-0"
                     onClick={() => setActiveDropdown(null)}
                   >
-                    <span>{item.label || item}</span>
-                    <TbExternalLink className="font-semibold text-gray-900-900 transition-transform duration-200 group-hover:scale-110" />
+                    <span className="font-medium">{item.label}</span>
+                    <TbExternalLink className="text-white/70 text-xs transition-transform duration-200 group-hover:translate-x-1 group-hover:scale-110" />
                   </Link>
-                ) : (
-                  <div className="font-semibold flex justify-between items-center w-full text-gray-600">
-                    <span>{item.label || item}</span>
-                    <TbExternalLink className="text-gray-400 opacity-50" />
-                  </div>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
-  );
-
-  // Add these state variables
-const [isMdMenuOpen, setIsMdMenuOpen] = useState(false);
-const [mdDropdown, setMdDropdown] = useState(null);
-
-// Add these functions
-const toggleMdMenu = () => {
-  setIsMdMenuOpen(!isMdMenuOpen);
-  if (mdDropdown) setMdDropdown(null);
-};
-
-const toggleMdDropdown = (key) => {
-  setMdDropdown(mdDropdown === key ? null : key);
-};
-
-// Helper function for MD dropdown rendering
-const renderMdDropdown = (content, key) => {
-  if (!content) return null;
-  
-  return (
-    <div className="space-y-1 py-2 animate-in fade-in-0 slide-in-from-top-2 duration-300">
-      {content.map((item, index) => (
-        <div key={index} className="animate-in fade-in-0 slide-in-from-right-2"
-             style={{ animationDelay: `${index * 50}ms` }}>
-          {item.subtitle ? (
-            <div className="pt-2 pb-1">
-              <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-4">
-                {item.subtitle}
-              </h4>
-            </div>
-          ) : item.href ? (
-            <Link
-              href={item.href}
-              onClick={() => {
-                setIsMdMenuOpen(false);
-                setMdDropdown(null);
-              }}
-              className="block px-4 py-2 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded transition-all duration-200 hover:translate-x-1"
-            >
-              {item.label}
-            </Link>
-          ) : (
-            <p className="px-4 py-2 text-sm text-gray-700">{item.label}</p>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-};
-
-  const renderMobileDropdown = (content, dropdownName) => (
-    <div className="bg-gray-50 rounded-lg mt-2 overflow-hidden animate-in fade-in-0 slide-in-from-top-2 duration-300">
-      {content.sections.map((section, index) => (
-        <div key={index} className="border-t border-gray-200 first:border-t-0">
-          {section.title && (
-            <h4 className="font-semibold text-secondary px-4 py-2 bg-gray-100">
-              {section.title}
-            </h4>
-          )}
-          <ul className="space-y-1">
-            {section.items.map((item, itemIndex) => (
-              <li
-                key={itemIndex}
-                className="animate-in fade-in-0 slide-in-from-left-2 duration-300"
-                style={{ animationDelay: `${itemIndex * 50}ms` }}
-              >
-                {item.link ? (
+                ))}
+              </div>
+            )}
+            
+            {/* For MBA/PhD sections with title */}
+            {section.title && (
+              <div>
+                <div className="px-4 py-2 text-xs font-semibold text-white/80 uppercase tracking-wider border-t border-white/20 first:border-t-0 border-b border-white/20">
+                  {section.title}
+                </div>
+                {section.items.map((item, itemIndex) => (
                   <Link
+                    key={itemIndex}
                     href={item.link}
-                    className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center justify-between px-6 py-3 text-sm text-white hover:bg-white/10 transition-colors duration-200 group border-b border-white/20 last:border-b-0"
+                    onClick={() => setActiveDropdown(null)}
                   >
-                    <span>{item.label || item}</span>
-                    <TbExternalLink className="text-gray-1000 text-xs transition-transform duration-200 hover:scale-110" />
+                    <span className="font-medium">{item.label}</span>
+                    <TbExternalLink className="text-white/70 text-xs transition-transform duration-200 group-hover:translate-x-1 group-hover:scale-110" />
                   </Link>
-                ) : (
-                  <div className="flex items-center justify-between px-4 py-2 text-sm text-gray-1000">
-                    <span>{item.label || item}</span>
-                    <TbExternalLink className="text-gray-400 text-xs" />
-                  </div>
-                )}
-              </li>
-            ))}
-          </ul>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
+  // Render mobile dropdown
+  const renderMobileDropdown = (content, dropdownName) => (
+    <div className="bg-secondary/10 rounded-lg mt-1 overflow-hidden animate-in fade-in-0 slide-in-from-top-2 duration-200">
+      {content.sections.map((section, index) => (
+        <div key={index}>
+          {/* Simple link sections */}
+          {section.link && (
+            <Link
+              href={section.link}
+              className="flex items-center justify-between px-4 py-3 text-sm text-gray-700 hover:bg-secondary/20 transition-colors duration-200 border-b border-secondary/20 last:border-b-0"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <span className="font-medium">{section.label}</span>
+              <TbExternalLink className="text-secondary text-xs transition-transform duration-200 hover:translate-x-1 hover:scale-110" />
+            </Link>
+          )}
+          
+          {/* Nested items sections */}
+          {section.items && (
+            <div>
+              {section.label && !section.title && (
+                <div className="px-4 py-2 text-xs font-semibold text-secondary uppercase tracking-wider bg-secondary/10 border-b border-secondary/20">
+                  {section.label}
+                </div>
+              )}
+              {section.title && (
+                <div className="px-4 py-2 text-xs font-semibold text-secondary uppercase tracking-wider bg-secondary/10 border-b border-secondary/20">
+                  {section.title}
+                </div>
+              )}
+              {section.items.map((item, itemIndex) => (
+                <Link
+                  key={itemIndex}
+                  href={item.link}
+                  className="flex items-center justify-between px-6 py-3 text-sm text-gray-700 hover:bg-secondary/20 transition-colors duration-200 border-b border-secondary/20 last:border-b-0"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <span className="font-medium">{item.label}</span>
+                  <TbExternalLink className="text-secondary text-xs transition-transform duration-200 hover:translate-x-1 hover:scale-110" />
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       ))}
     </div>
@@ -485,9 +251,9 @@ const renderMdDropdown = (content, key) => {
       {/* ===== NAVBAR ===== */}
       <nav
         ref={navbarRef}
-        className="w-full h-[12vh] flex justify-between bg-white text-black shadow-sm font-sans fixed top-0 left-0 right-0 z-50" // Changed from sticky to fixed
+        className="w-full h-[12vh] flex justify-between bg-white text-black shadow-sm font-sans fixed top-0 left-0 right-0 z-50"
       >
-        {/* Left: Logo - 80% width on mobile */}
+        {/* Left: Logo */}
         <div className="w-[29%] lg:w-[25%] xl:w-[30%] h-full flex items-center justify-start md:pl-0 md:justify-center">
           <Link href="/">
             <Image
@@ -495,7 +261,7 @@ const renderMdDropdown = (content, key) => {
               alt="Logo"
               height={300}
               width={300}
-              className="w-auto cursor-pointer object-contain transition-transform duration-300 "
+              className="w-auto cursor-pointer object-contain transition-transform duration-300"
               priority
               fetchPriority="high"
               unoptimized={true}
@@ -504,11 +270,20 @@ const renderMdDropdown = (content, key) => {
         </div>
 
         {/* Right Section - Desktop */}
-        <div className="hidden md:flex w-[70%]  h-full flex-col">
+        <div className="hidden md:flex w-[70%] h-full flex-col">
           {/* Top Bar */}
-          <div className="flex justify-end w-full h-[45%] text-[0.75rem] lg:text-sm ">
+          <div className="flex justify-end w-full h-[45%] text-[0.75rem] lg:text-sm">
             <div className="flex gap-2 lg:gap-4">
               <div className="flex items-center gap-2 md:gap-2 lg:gap-4 font-semibold">
+             
+                <Link
+                  href="/"
+                  className="relative inline-block group hover:text-primary transition-colors duration-200"
+                >
+                  Home
+                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+                </Link>
+                   <span className="text-secondary">|</span>
                 <a
                   href="https://rapid.grayquest.com/iudp-master"
                   target="_blank"
@@ -516,13 +291,7 @@ const renderMdDropdown = (content, key) => {
                   className="relative inline-block group hover:text-secondary transition-colors duration-200"
                 >
                   Pay Fee
-                  {/* AQUA UNDERLINE — your original version */}
-                  <span
-                    className="absolute left-0 -bottom-1 h-[6px] w-full 
-               scale-x-0 bg-primary opacity-70 
-               transition-transform duration-300 
-               origin-left group-hover:scale-x-100"
-                  ></span>
+                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
                 </a>
 
                 <span className="text-secondary">|</span>
@@ -533,13 +302,7 @@ const renderMdDropdown = (content, key) => {
                   className="relative inline-block group hover:text-secondary transition-colors duration-200"
                 >
                   ERP Login
-                  {/* AQUA UNDERLINE */}
-                  <span
-                    className="absolute left-0 -bottom-1 h-[6px] w-full 
-               scale-x-0 bg-primary opacity-70 
-               transition-transform duration-300 
-               origin-left group-hover:scale-x-100"
-                  ></span>
+                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
                 </a>
 
                 <span className="text-secondary">|</span>
@@ -550,37 +313,16 @@ const renderMdDropdown = (content, key) => {
                   className="relative inline-block group hover:text-secondary transition-colors duration-200"
                 >
                   Superset
-                  {/* AQUA UNDERLINE */}
-                  <span
-                    className="absolute left-0 -bottom-1 h-[6px] w-full 
-               scale-x-0 bg-primary opacity-70 
-               transition-transform duration-300 
-               origin-left group-hover:scale-x-100"
-                  ></span>
+                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
                 </a>
 
                 <span className="text-secondary">|</span>
-                {/* <a
-                  href="https://lc-icem-sumedh.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors duration-200"
-                >
-                  Leaving Certificate
-                </a> */}
-
                 <Link
                   href="/contact"
                   className="relative inline-block group hover:text-primary transition-colors duration-200"
                 >
                   Contact Us
-                  {/* AQUA UNDERLINE */}
-                  <span
-                    className="absolute left-0 -bottom-1 h-[6px] w-full 
-               scale-x-0 bg-primary opacity-70 
-               transition-transform duration-300 
-               origin-left group-hover:scale-x-100"
-                  ></span>
+                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
                 </Link>
                 <span className="text-secondary">|</span>
                 <Link
@@ -588,31 +330,12 @@ const renderMdDropdown = (content, key) => {
                   className="relative inline-block group hover:text-primary transition-colors duration-200"
                 >
                   Blogs
-                  {/* AQUA UNDERLINE */}
-                  <span
-                    className="absolute left-0 -bottom-1 h-[6px] w-full 
-               scale-x-0 bg-primary opacity-70 
-               transition-transform duration-300 
-               origin-left group-hover:scale-x-100"
-                  ></span>
+                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
                 </Link>
-                  <span className="text-secondary">|</span>
-
-                <Link
-                  href="/leadersdesk"
-                  className="relative inline-block group hover:text-primary transition-colors duration-200"
-                >
-                  Leaders Desk
-                  {/* AQUA UNDERLINE */}
-                  <span
-                    className="absolute left-0 -bottom-1 h-[6px] w-full 
-               scale-x-0 bg-primary opacity-70 
-               transition-transform duration-300 
-               origin-left group-hover:scale-x-100"
-                  ></span>
-                </Link>
+           
               </div>
-              {/* Buttons */}
+              
+              {/* Enquire Now Button */}
               <div className="flex justify-center items-center">
                 <button
                   onClick={toggleModal}
@@ -624,82 +347,95 @@ const renderMdDropdown = (content, key) => {
             </div>
           </div>
 
-          {/* Bottom Nav Links */}
-          <div className="flex  justify-end items-center gap-2 md:gap-2 lg:gap-5 h-[55%] text-[0.74rem] 
- lg:text-sm font-bold lg:font-bold whitespace-nowrap ">
-            <div
-              className="flex  h-full  items-center px-2 lg:px-3 gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
-              onPointerEnter={() => handleMouseEnter("aboutUs")}
-              onPointerLeave={handleMouseLeave}
-            >
-              <span className="relative">
-                About Us
-                {/* AQUA UNDERLINE */}
-                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary  opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-              </span>
-              {/* <FiChevronDown
-                className={`w-3 h-3 transition-transform duration-300 ${
-                  activeDropdown === "aboutUs" ? "rotate-180" : ""
-                }`}
-              /> */}
+          {/* Bottom Nav Links with Dropdowns */}
+          <div className="flex justify-end items-center gap-2 md:gap-2 lg:gap-5 h-[55%] text-[0.74rem] lg:text-sm font-bold lg:font-bold whitespace-nowrap relative">
+            {/* About Us with dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => toggleDropdown("aboutUs")}
+                className="flex h-full items-center px-2 lg:px-3 gap-1 hover:text-secondary transition-all duration-200 group"
+              >
+                <span className="relative">
+                  About Us
+                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+                </span>
+                <FiChevronDown
+                  className={`w-3 h-3 transition-transform duration-200 ${
+                    activeDropdown === "aboutUs" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              
+              {/* About Us Dropdown */}
+              {activeDropdown === "aboutUs" && renderCompactDropdown(dropdownContent.aboutUs)}
             </div>
-            <div
-              className="flex items-center gap-1  md:px-2  cursor-pointer hover:text-secondary transition-all duration-200 group"
-              onPointerEnter={() => handleMouseEnter("campusLife")}
-              onPointerLeave={handleMouseLeave}
-            >
-              <span className="relative">
-                Campus Life
-                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-              </span>
-              {/* <FiChevronDown
-                className={`w-3 h-3 transition-transform duration-300 ${
-                  activeDropdown === "campusLife" ? "rotate-180" : ""
-                }`}
-              /> */}
+
+            {/* Campus Life with dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => toggleDropdown("campusLife")}
+                className="flex items-center gap-1 md:px-2 hover:text-secondary transition-all duration-200 group"
+              >
+                <span className="relative">
+                  Campus Life
+                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+                </span>
+                <FiChevronDown
+                  className={`w-3 h-3 transition-transform duration-200 ${
+                    activeDropdown === "campusLife" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              
+              {/* Campus Life Dropdown */}
+              {activeDropdown === "campusLife" && renderCompactDropdown(dropdownContent.campusLife)}
             </div>
-            <div
-              className="flex items-center gap-1 px-2 lg:px-3  cursor-pointer hover:text-secondary transition-all duration-200 group"
-              onPointerEnter={() => handleMouseEnter("programs")}
-              onPointerLeave={handleMouseLeave}
-            >
-              <span className="relative">
-                Programs & Admission
-                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-              </span>
-              {/* <FiChevronDown
-                className={`w-3 h-3 transition-transform duration-300 ${
-                  activeDropdown === "programs" ? "rotate-180" : ""
-                }`}
-              /> */}
+
+            {/* Programs & Admission with dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => toggleDropdown("programs")}
+                className="flex items-center gap-1 px-2 lg:px-3 hover:text-secondary transition-all duration-200 group"
+              >
+                <span className="relative">
+                  Programs & Admission
+                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+                </span>
+                <FiChevronDown
+                  className={`w-3 h-3 transition-transform duration-200 ${
+                    activeDropdown === "programs" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              
+              {/* Programs & Admission Dropdown */}
+              {activeDropdown === "programs" && renderCompactDropdown(dropdownContent.programs)}
             </div>
+
+            {/* Single Links (no dropdown) */}
             <Link
               href="/placement"
-              className="hover:text-secondary px-2 lg:px-3   transition-colors duration-200 group"
+              className="hover:text-secondary px-2 lg:px-3 transition-colors duration-200 group"
             >
               <span className="relative">
                 Placement
                 <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
               </span>
             </Link>
-            {/* <Link
-              href="/nism"
-              className="hover:text-secondary  px-5  transition-colors duration-200 group"
-            >
-              NISM
-            </Link> */}
+            
             <Link
               href="/alumni"
-              className="hover:text-secondary px-2 lg:px-3   transition-colors duration-200 group"
+              className="hover:text-secondary px-2 lg:px-3 transition-colors duration-200 group"
             >
               <span className="relative">
                 Alumni
                 <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
               </span>
             </Link>
+            
             <Link
               href="/research"
-              className="hover:text-secondary px-2 lg:px-3   transition-colors duration-200 group"
+              className="hover:text-secondary px-2 lg:px-3 transition-colors duration-200 group"
             >
               <span className="relative">
                 Research
@@ -718,17 +454,6 @@ const renderMdDropdown = (content, key) => {
             <Menu size={28} />
           </button>
         </div>
-
-        {/* Dropdown Menu - Desktop */}
-        {activeDropdown && (
-          <div
-            onPointerEnter={() => handleMouseEnter(activeDropdown)}
-            onPointerLeave={handleMouseLeave}
-            className="absolute top-full left-0 w-full backdrop-blur-sm bg-white shadow-xl border-t border-black z-50 hidden md:block animate-in fade-in-0 slide-in-from-top-2 duration-300"
-          >
-            {renderDropdownContent(dropdownContent[activeDropdown])}
-          </div>
-        )}
       </nav>
 
       {/* Add padding to main content to account for fixed navbar */}
@@ -739,7 +464,7 @@ const renderMdDropdown = (content, key) => {
         <>
           {/* Overlay */}
           <div
-            className="md:hidden fixed inset-0 bg-transparent backdrop-blur-md bg-opacity-50 z-40 animate-in fade-in-0 duration-300"
+            className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 animate-in fade-in-0 duration-300"
             onClick={toggleMobileMenu}
           />
 
@@ -751,11 +476,11 @@ const renderMdDropdown = (content, key) => {
             style={{ maxHeight: "85vh" }}
           >
             {/* Header with Close Button */}
-            <div className="flex justify-between items-center p-4 border-b border-black">
+            <div className="flex justify-between items-center p-4 border-b border-gray-200">
               <h2 className="text-base font-semibold text-gray-900">Menu</h2>
               <button
                 onClick={toggleMobileMenu}
-                className="text-gray-1000 hover:text-gray-700 transition-all duration-300 hover:scale-110"
+                className="text-gray-700 hover:text-gray-900 transition-all duration-300 hover:scale-110"
               >
                 <HiX size={22} />
               </button>
@@ -767,7 +492,7 @@ const renderMdDropdown = (content, key) => {
               style={{ maxHeight: "calc(85vh - 60px)" }}
             >
               <div className="p-3 space-y-0">
-                {/* 🔹 Quick Links Dropdown */}
+                {/* Quick Links Dropdown */}
                 <div className="border-b border-gray-200">
                   <button
                     onClick={() => toggleMobileDropdown("quickLinks")}
@@ -784,7 +509,7 @@ const renderMdDropdown = (content, key) => {
                   </button>
 
                   {mobileDropdown === "quickLinks" && (
-                    <div className="bg-gray-50 rounded-lg mt-1 overflow-hidden animate-in fade-in-0 slide-in-from-top-2 duration-300">
+                    <div className="bg-gray-50 rounded-lg mt-1 overflow-hidden animate-in fade-in-0 slide-in-from-top-2 duration-200">
                       <ul className="space-y-1 text-xs font-medium text-gray-700">
                         {[
                           {
@@ -815,20 +540,12 @@ const renderMdDropdown = (content, key) => {
                           >
                             <a
                               href={item.href}
-                              target={
-                                item.href.startsWith("http")
-                                  ? "_blank"
-                                  : "_self"
-                              }
-                              rel={
-                                item.href.startsWith("http")
-                                  ? "noopener noreferrer"
-                                  : ""
-                              }
+                              target={item.href.startsWith("http") ? "_blank" : "_self"}
+                              rel={item.href.startsWith("http") ? "noopener noreferrer" : ""}
                               className="flex items-center justify-between px-4 py-2 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
                             >
                               {item.label}
-                              <TbExternalLink className="text-gray-1000 text-xs transition-transform duration-200 hover:scale-110" />
+                              <TbExternalLink className="text-gray-900 text-xs transition-transform duration-200 hover:scale-110" />
                             </a>
                           </li>
                         ))}
@@ -837,7 +554,7 @@ const renderMdDropdown = (content, key) => {
                   )}
                 </div>
 
-                {/* 🔹 About Us */}
+                {/* About Us */}
                 <div className="border-b border-gray-200">
                   <button
                     onClick={() => toggleMobileDropdown("aboutUs")}
@@ -856,7 +573,7 @@ const renderMdDropdown = (content, key) => {
                     renderMobileDropdown(dropdownContent.aboutUs, "aboutUs")}
                 </div>
 
-                {/* 🔹 Campus Life */}
+                {/* Campus Life */}
                 <div className="border-b border-gray-200">
                   <button
                     onClick={() => toggleMobileDropdown("campusLife")}
@@ -872,13 +589,10 @@ const renderMdDropdown = (content, key) => {
                     </span>
                   </button>
                   {mobileDropdown === "campusLife" &&
-                    renderMobileDropdown(
-                      dropdownContent.campusLife,
-                      "campusLife"
-                    )}
+                    renderMobileDropdown(dropdownContent.campusLife, "campusLife")}
                 </div>
 
-                {/* 🔹 Programs & Admission */}
+                {/* Programs & Admission */}
                 <div className="border-b border-gray-200">
                   <button
                     onClick={() => toggleMobileDropdown("programs")}
@@ -897,7 +611,7 @@ const renderMdDropdown = (content, key) => {
                     renderMobileDropdown(dropdownContent.programs, "programs")}
                 </div>
 
-                {/* 🔹 Single Links */}
+                {/* Single Links */}
                 {[
                   { label: "Placement", href: "/placement" },
                   { label: "Alumni", href: "/alumni" },
@@ -910,20 +624,20 @@ const renderMdDropdown = (content, key) => {
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.label}
-                      <TbExternalLink className="text-gray-1000 text-xs transition-transform duration-200 hover:scale-110" />
+                      <TbExternalLink className="text-gray-900 text-xs transition-transform duration-200 hover:scale-110" />
                     </Link>
                   </div>
                 ))}
               </div>
 
-              {/* 🔹 Compact Enquire Now Button */}
+              {/* Compact Enquire Now Button */}
               <div className="p-3 border-t border-gray-200 bg-gray-50">
                 <button
                   onClick={() => {
                     toggleModal();
                     setIsMobileMenuOpen(false);
                   }}
-                  className="w-full bg-gradient-to-r from-[#278da4] to-[#003c84] text-gray-100 py-2 text-sm font-semibold rounded-md hover:from-[#278da4]/90 hover:to-[#003c84]/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  className="w-full bg-gradient-to-r from-[#278da4] to-[#003c84] text-white py-2 text-sm font-semibold rounded-md hover:from-[#278da4]/90 hover:to-[#003c84]/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 >
                   Enquire Now
                 </button>
@@ -934,40 +648,39 @@ const renderMdDropdown = (content, key) => {
       )}
 
       {/* ===== Helpline Drawer ===== */}
-      <div
-        className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-all duration-500 ease-in-out z-50 ${
-          isHelplineOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="bg-primary text-gray-100 p-4 flex justify-between items-center">
-          <h3 className="text-lg font-bold">Admissions Helpline</h3>
-          <button
+      {isHelplineOpen && (
+        <>
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-40 animate-in fade-in-0 duration-300"
             onClick={toggleHelpline}
-            className="hover:scale-110 transition-transform duration-300"
+          />
+          <div
+            className="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 animate-in slide-in-from-right duration-300"
           >
-            <HiX size={24} />
-          </button>
-        </div>
+            <div className="bg-primary text-white p-4 flex justify-between items-center">
+              <h3 className="text-lg font-bold">Admissions Helpline</h3>
+              <button
+                onClick={toggleHelpline}
+                className="hover:scale-110 transition-transform duration-300"
+              >
+                <HiX size={24} />
+              </button>
+            </div>
 
-        <div className="p-6 text-gray-800 space-y-6 overflow-y-auto h-full">
-          <div className="animate-in fade-in-0 slide-in-from-right-2 duration-500">
-            <p className="text-sm text-gray-600">
-              For more information give a miss call on
-            </p>
-            <div className="bg-blue-50 p-4 rounded-lg mt-2 transition-all duration-300 hover:shadow-md">
-              <p className="text-2xl font-bold text-primary text-center">
-                1800 267 1999
-              </p>
+            <div className="p-6 text-gray-800 space-y-6 overflow-y-auto h-full">
+              <div className="animate-in fade-in-0 slide-in-from-right-2 duration-500">
+                <p className="text-sm text-gray-600">
+                  For more information give a miss call on
+                </p>
+                <div className="bg-blue-50 p-4 rounded-lg mt-2 transition-all duration-300 hover:shadow-md">
+                  <p className="text-2xl font-bold text-primary text-center">
+                    1800 267 1999
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {isHelplineOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 animate-in fade-in-0 duration-300"
-          onClick={toggleHelpline}
-        />
+        </>
       )}
 
       {/* ===== APPLY NOW MODAL ===== */}

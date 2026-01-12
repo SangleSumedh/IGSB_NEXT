@@ -12,7 +12,7 @@ import OldPage from "./OldPage";
 // --- CONFIGURATION ---
 const GLOBE_RADIUS = 2;
 const AUTO_ROTATE_SPEED = 0.5;
-const CAROUSEL_INTERVAL = 5000; // 5 Seconds
+const CAROUSEL_INTERVAL = 10000; // 5 Seconds
 
 // --- ASSETS & DATA ---
 const EARTH_DAY_TEXTURE =
@@ -312,103 +312,141 @@ export default function AlumniPage() {
 
   return (
     <>
-      {/* UPDATED WRAPPER: 
-        Added 'lg:h-screen' to force full viewport height on desktop.
-      */}
-      <div className="w-full bg-white flex flex-col-reverse lg:flex-row  overflow-hidden relative lg:h-[84vh]">
-        {/* --- LEFT SECTION --- */}
-        {/* Added 'lg:h-full' and 'z-10' to ensure it stays on top and fills height */}
-        <div className="w-full lg:w-1/3 p-6 md:p-8 flex flex-col justify-evenly z-10 relative lg:h-full">
-          <div className="mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tighter text-[#10404A] mb-3">
-              GLOBAL REACH
+      {/* UPDATED HERO SECTION - More Cohesive Design */}
+      <div className="w-full bg-white flex flex-col-reverse lg:flex-row overflow-hidden relative lg:h-[84vh]">
+        {/* --- LEFT SECTION - Enhanced with Hero Elements --- */}
+        <div className="w-full lg:w-2/5 p-6 md:p-8 lg:p-12 flex flex-col justify-center z-10 relative lg:h-full bg-gradient-to-r from-white via-white/95 to-transparent">
+          {/* Hero Title Section */}
+          <div className="mb-8 lg:mb-12">
+            {/* Decorative Element */}
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-1 bg-[#fb7035] rounded-full"></div>
+              <span className="text-xs font-semibold tracking-widest text-[#10404A] uppercase">
+                Global Network
+              </span>
+            </div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight text-[#10404A] mb-4 leading-tight">
+              Where Our <span className="text-[#fb7035]">Alumni</span>
+              <br />
+              Shape The World
             </h1>
-            <p className="text-slate-600 text-xs md:text-sm max-w-lg font-medium leading-relaxed">
-              IGSB Alumni are leading innovation in 45 countries.
+
+            <p className="text-slate-700 text-sm md:text-base max-w-lg font-medium leading-relaxed">
+              IGSB alumni are pioneering innovation across 45 countries,
+              transforming industries and driving global change from Silicon
+              Valley to Singapore.
             </p>
+
+            {/* Stats Bar */}
+            {/* <div className="flex gap-6 mb-8">
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-[#10404A]">45+</span>
+                <span className="text-xs text-slate-500">Countries</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-[#10404A]">2000+</span>
+                <span className="text-xs text-slate-500">Alumni</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-[#10404A]">85%</span>
+                <span className="text-xs text-slate-500">Leadership Roles</span>
+              </div>
+            </div> */}
           </div>
 
-          <div className="w-full max-w-lg bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden transition-all duration-500">
-            <div className="h-20 bg-[#10404A] relative">
+          {/* Alumni Card - Updated Design */}
+          <div className="w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:scale-[1.01]">
+            {/* Card Header with Gradient */}
+            <div className="h-20 bg-gradient-to-r from-[#10404A] to-[#1a5c6a] relative">
               <div className="absolute -bottom-8 left-6">
-                <img
-                  src={selectedAlumni.img}
-                  alt={selectedAlumni.name}
-                  className="w-16 h-16 rounded-full border-4 border-white object-cover shadow-md bg-slate-200"
-                />
+                <div className="relative">
+                  <img
+                    src={selectedAlumni.img}
+                    alt={selectedAlumni.name}
+                    className="w-16 h-16 rounded-full border-4 border-white object-cover shadow-lg bg-slate-200"
+                  />
+                  {/* Active Status Dot */}
+                  <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full border-2 border-white"></div>
+                </div>
               </div>
-              <div className="absolute bottom-3 right-4 bg-white p-1.5 rounded-md shadow-sm">
+              <div className="absolute bottom-3 right-4 bg-white/90 backdrop-blur-sm p-2 rounded-lg shadow-md">
                 <img
                   src={selectedAlumni.companyLogo}
                   alt="Logo"
-                  className="h-5 w-auto object-contain"
+                  className="h-6 w-auto object-contain"
                 />
               </div>
             </div>
 
             <div className="pt-10 px-6 pb-6">
               <div className="mb-1">
-                <h2 className="text-xl font-bold text-slate-800 leading-none">
-                  {selectedAlumni.name}
-                </h2>
-                <p className="text-[#fb7035] font-semibold text-xs mt-1">
-                  {selectedAlumni.role}
-                </p>
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h2 className="text-xl font-bold text-slate-800 leading-none">
+                      {selectedAlumni.name}
+                    </h2>
+                    <p className="text-[#fb7035] font-semibold text-xs mt-1">
+                      {selectedAlumni.role}
+                    </p>
+                  </div>
+                  {/* Location Badge */}
+                  <div className="flex items-center text-slate-600 text-xs bg-slate-50 px-2 py-1 rounded-full">
+                    <svg
+                      className="w-3 h-3 mr-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      ></path>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      ></path>
+                    </svg>
+                    {selectedAlumni.location}
+                  </div>
+                </div>
               </div>
 
-              <div className="flex items-center text-slate-500 text-xs mb-4">
-                <svg
-                  className="w-3 h-3 mr-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  ></path>
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  ></path>
-                </svg>
-                {selectedAlumni.location}
-              </div>
-
-              <p className="text-slate-600 text-xs leading-relaxed italic mb-4 bg-slate-50 p-2 rounded border border-slate-100">
+              <p className="text-slate-600 text-sm leading-relaxed mb-4 mt-3 bg-gradient-to-r from-slate-50 to-white p-3 rounded-lg border border-slate-100">
                 "{selectedAlumni.bio}"
               </p>
 
-              <div className="border-t border-slate-100 pt-3 flex gap-4">
+              {/* Company & Status */}
+              <div className="border-t border-slate-100 pt-4 flex gap-6">
                 <div className="flex flex-col">
-                  <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">
+                  <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider mb-1">
                     Company
                   </span>
-                  <span className="text-slate-800 text-xs font-medium">
+                  <span className="text-slate-800 text-sm font-semibold">
                     {selectedAlumni.company}
                   </span>
                 </div>
-                <div className="flex flex-col pl-4 border-l border-slate-100">
-                  <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">
-                    Status
+                <div className="flex flex-col">
+                  <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider mb-1">
+                    Batch
                   </span>
-                  <span className="text-emerald-600 text-xs font-medium flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    Active
+                  <span className="text-slate-800 text-sm font-semibold">
+                    2018
                   </span>
                 </div>
+                
               </div>
             </div>
 
             {/* Progress Bar for Auto-Rotate */}
-            <div className="w-full h-1 bg-white mt-0">
+            <div className="w-full h-1 bg-slate-100">
               <div
                 key={selectedAlumni.id}
-                className="h-full bg-[#fb7035]"
+                className="h-full bg-gradient-to-r from-[#fb7035] to-orange-400"
                 style={{
                   width: "100%",
                   animation: isPaused
@@ -417,44 +455,59 @@ export default function AlumniPage() {
                 }}
               ></div>
             </div>
-            <style jsx>{`
-              @keyframes progress {
-                from {
-                  width: 0%;
-                }
-                to {
-                  width: 100%;
-                }
-              }
-            `}</style>
           </div>
+
+          {/* Navigation Dots */}
+          <div className="flex justify-center gap-2 mt-6">
+            {ALUMNI_LOCATIONS.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? "bg-[#fb7035] w-6"
+                    : "bg-slate-300 hover:bg-slate-400"
+                }`}
+                aria-label={`View alumni ${index + 1}`}
+              />
+            ))}
+          </div>
+
+         
         </div>
 
-        {/* --- RIGHT SECTION (Globe) --- */}
-        {/* UPDATED:
-            - h-[50vh] for mobile (half screen)
-            - lg:h-full to fill the screen on desktop
-            - lg:absolute logic kept to ensure it sits behind/beside correctly 
-        */}
+        {/* --- RIGHT SECTION (Globe) - Enhanced with Overlay --- */}
         <div
-          className="w-full h-[50vh] lg:h-full lg:w-2/3 bg-white relative cursor-move lg:absolute lg:right-0 lg:top-0 lg:bottom-0"
+          className="w-full h-[50vh] lg:h-full lg:w-3/5 relative cursor-move lg:absolute lg:right-0 lg:top-0 lg:bottom-0"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
+          {/* Gradient Overlay for Cohesion */}
+          <div className="absolute inset-0 bg-gradient-to-l from-white/20 via-transparent to-transparent z-10 pointer-events-none lg:block hidden"></div>
+
+          {/* Decorative Background Pattern */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(251,112,53,0.05)_0%,transparent_50%)] pointer-events-none"></div>
+
           <Canvas camera={{ position: [0, 0, 6.5], fov: 45 }}>
             <color attach="background" args={["#fff"]} />
             <fog attach="fog" args={["#f8fafc", 5, 12]} />
-            <ambientLight intensity={1.5} />
+            <ambientLight intensity={1.8} color="#ffffff" />
             <directionalLight
               position={[5, 5, 5]}
-              intensity={2}
+              intensity={1.5}
               color="#ffffff"
               castShadow
             />
-            <pointLight
-              position={[-5, -5, -5]}
+            <directionalLight
+              position={[-5, -3, -5]}
               intensity={0.5}
-              color="#ffffff"
+              color="#4da6ff"
+            />
+            <pointLight
+              position={[0, 0, -8]}
+              intensity={0.3}
+              color="#fb7035"
+              distance={12}
             />
 
             <Suspense fallback={<Loader />}>
@@ -476,8 +529,29 @@ export default function AlumniPage() {
             />
           </Canvas>
 
-          <div className="absolute top-0 left-0 h-full w-32 pointer-events-none hidden lg:block"></div>
+          {/* Globe Controls Info */}
+          <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-lg shadow-lg text-xs text-slate-600 hidden lg:block">
+            <div className="flex items-center gap-2">
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
+                />
+              </svg>
+              <span>Drag to rotate globe • Click pins for details</span>
+            </div>
+          </div>
         </div>
+
+        {/* Hero Divider Line */}
+        <div className="absolute left-2/5 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-slate-200 to-transparent hidden lg:block z-20"></div>
       </div>
 
       <AlumniSpotlight />
@@ -487,7 +561,7 @@ export default function AlumniPage() {
       <div className="w-full bg-white border-t border-slate-200">
         <button
           onClick={() => setShowMemoryLane(!showMemoryLane)}
-          className="w-full py-8 flex flex-col items-center justify-center  transition-colors duration-300 group cursor-pointer outline-none"
+          className="w-full py-8 flex flex-col items-center justify-center transition-colors duration-300 group cursor-pointer outline-none"
         >
           <div className="flex items-center gap-3 text-[#10404A] group-hover:text-[#fb7035] transition-colors">
             <h3 className="text-lg font-bold tracking-wide uppercase">
@@ -526,6 +600,17 @@ export default function AlumniPage() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes progress {
+          from {
+            width: 0%;
+          }
+          to {
+            width: 100%;
+          }
+        }
+      `}</style>
     </>
   );
 }

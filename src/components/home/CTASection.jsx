@@ -38,7 +38,7 @@ export default function CTASection() {
   };
 
   return (
-    <div className="relative  w-full bg-gradient-to-r from-[#10404A] via-[#10404A] to-[#FF8B61] text-white shadow-xl overflow-hidden mt-5 pt-2 md:pt-0">
+    <div className="relative  w-full bg-gradient-to-r from-[#10404A] via-[#10404A] to-[#FF8B61] text-white shadow-xl overflow-hidden  pt-2 md:pt-0">
       <div className="grid grid-cols-1 md:grid-cols-8">
 
         {/* --- TESTIMONIALS (SHORTER CARD) --- */}

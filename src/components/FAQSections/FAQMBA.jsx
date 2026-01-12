@@ -984,7 +984,7 @@ export default function FAQMBA() {
                   className={`w-full text-left px-5 py-4 rounded-lg transition-all duration-200 font-medium flex items-center justify-between group ${
                     active === tab
                       ? "bg-[#ff8b61] text-white shadow-md transform translate-x-1"
-                      : "text-slate-300 hover:bg-white/10 hover:text-white"
+                      : "text-white hover:bg-white/10 hover:text-white"
                   }`}
                 >
                   <span className="truncate mr-2">{tab}</span>

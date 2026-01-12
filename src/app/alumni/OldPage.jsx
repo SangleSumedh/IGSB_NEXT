@@ -603,7 +603,7 @@ export default function Alumni() {
     <>
       
 
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen ">
         {/* <div className="relative w-full h-[40vh] sm:h-[50vh] lg:h-[65vh]">
           <Image
             src="/NISMBanner1.jpg"
@@ -613,7 +613,7 @@ export default function Alumni() {
             className="object-cover object-center"
           />
         </div> */}
-        <div className="max-w-full mx-auto px-4  md:px-8 space-y-12">
+        <div className="max-w-full mx-auto px-4  md:px-8 md:py-12 space-y-12">
           {/* ✅ Header Section */}
           
 

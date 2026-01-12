@@ -596,11 +596,13 @@ const renderMdDropdown = (content, key) => {
                origin-left group-hover:scale-x-100"
                   ></span>
                 </Link>
+                  <span className="text-secondary">|</span>
+
                 <Link
                   href="/leadersdesk"
                   className="relative inline-block group hover:text-primary transition-colors duration-200"
                 >
-                  Leaders
+                  Leaders Desk
                   {/* AQUA UNDERLINE */}
                   <span
                     className="absolute left-0 -bottom-1 h-[6px] w-full 

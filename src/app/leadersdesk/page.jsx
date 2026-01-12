@@ -29,44 +29,284 @@ const leaders = [
   },
 ];
 
-// Faculty Data
-const teachingStaff = [
-  { name: "Dr. Virendra Vasant Tatake", image: "/Faculty/Dr-Virendra-Tatake.jpg" },
-  { name: "Dr. Pallavi Shrirang Sajanapwar", image: "/Faculty/Dr_Pallavi_Sajanapawar.png" },
-  { name: "Dr. Aatish Dilip Zagade", image: "/Faculty/Dr-Aatish-Zagade.jpg" },
-  { name: "Dr. Anuradha Samarth Phadnis", image: "/Faculty/Dr_Anuraddha_Phadnis_1.jpg" },
-  { name: "Dr. Priyanka Rohan Darekar", image: "/Faculty/Dr_Priyanka_Darekar_New.png" },
-  { name: "Dr. Aniruddha Vilas Thuse", image: "/Faculty/Dr_Anirudha_Thus_New.png" },
-  { name: "Dr. Poonam Avinash Wani", image: "/Faculty/Dr_Poonam_Wani_New.png" },
-  { name: "Dr. Prashant Dubey", image: "/Faculty/Dr-Prashan-Dubey.jpg" },
-  { name: "Dr. Ashish Krishna Vyas", image: "/Faculty/Dr_Ashish-Vyas.png" },
-  { name: "Dr. Neha Chaudhry", image: "/Faculty/Neha-Chaudhry-New-img.png" },
-  { name: "Prof. Nilam Naidu", image: "/Faculty/Prof_Nilam_Naidu_New.png" },
-  { name: "Ms. Rutuja Rajendra Mote", image: "/Faculty/Ms_Rutuja_Mote_New.png" },
-  { name: "Ms. Ruchika Rajendra Motegaonkar", image: "/Faculty/Ms_Ruchika_Motegaonkar_New.png" },
-  { name: "Ms. Prajakta Dattatray Kshirsagar", image: "/Faculty/Ms_Prajakta_Kshirsagar_New.png" },
-  { name: "Ms. Radha Sunil Nair", image: "/Faculty/Ms_Radha_Nair_New.png" },
-  { name: "Mr. Amit Vijay Kulkarni", image: "/Faculty/Mr_Amit_Kulkarni_New.png" },
-  { name: "Ms. Pragati Dharmendra Deokar", image: "/Faculty/Ms_Pragati_Deokar_New.png" },
-  { name: "Ms. Aishwarya Prakash Patil", image: "/Faculty/Ms_Aishwarya_Patil_New.png" },
-  { name: "Ms. Manisha Sanjay Malode", image: "/Faculty/Ms_Manisha_Malode_New.png" },
-  { name: "Mr. Piyush Suresh Bhosale", image: "/Faculty/Mr_Piyush_Bhosale_New.png" },
-];
+// Combined Faculty and Staff Data
+const allStaff = [
+  // Teaching Staff
+  {
+    name: "Dr. Virendra Vasant Tatake",
+    role: "Director",
+    expertise: "Finance",
+    image: "/Faculty/Dr-Virendra-Tatake.jpg",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Pallavi Shrirang Sajanapwar",
+    role: "Dean Academics and Research",
+    expertise: "Marketing and General Management",
+    image: "/Faculty/Dr_Pallavi_Sajanapawar.png",
+    type: "teaching",
+  },
+  {
+    name: "Dr. Aatish Dilip Zagade",
+    role: "Deputy Director",
+    expertise: "Human Resource & Marketing Management",
+    image: "/Faculty/Dr-Aatish-Zagade.jpg",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Anuradha Samarth Phadnis",
+    role: "Associate Professor",
+    subRole: "IQAC Head",
+    expertise:
+      "Human Resources Management, Marketing Management and General Management",
+    image: "/Faculty/Dr_Anuraddha_Phadnis_1.jpg",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Priyanka Rohan Darekar",
+    role: "Associate Professor",
+    subRole: "Learning Facilitator (Human Resources)",
+    expertise: "Human Resource & General Management",
+    image: "/Faculty/Dr_Priyanka_Darekar_New.png",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Aniruddha Vilas Thuse",
+    role: "Associate Professor",
+    expertise: "Financial Management",
+    image: "/Faculty/Dr_Anirudha_Thus_New.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Poonam Avinash Wani",
+    role: "Assistant Professor",
+    subRole: "Learning Facilitator (Finance)",
+    expertise: "Financial & Marketing Management",
+    image: "/Faculty/Dr_Poonam_Wani_New.png",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Prashant Dubey",
+    role: "Assistant Professor",
+    subRole: "Learning Facilitator (Marketing)",
+    expertise: "Marketing & Financial Management",
+    image: "/Faculty/Dr-Prashan-Dubey.jpg",
+    type: "teaching",
+  },
+  {
+    name: "Mr. Mahesh Ganpatrao Bhagat",
+    role: "Assistant Professor",
+    subRole:
+      "Chief Exam Officer (IGSB) / Learning Facilitator Operations & Supply Chain Management",
+    expertise: "Human Resource Management",
+    image: "/Faculty/Prof-Mahesh-Bhagat.jpg",
+    type: "teaching",
+  },
+  {
+    name: "Dr. Ashish Krishna Vyas",
+    role: "Assistant Professor",
+    expertise: "Human Resource Management",
+    image: "/Faculty/Dr_Ashish-Vyas.png",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Neha Chaudhry",
+    role: "Assistant Professor",
+    subRole: "Finance Management",
+    image: "/Faculty/Neha-Chaudhry-New-img.png",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Mr. Jayant Arun Joshi",
+    role: "Deputy Director Corporate Relations, Assistant Professor",
+    subRole: "Placement Coordinator",
+    expertise: "Marketing & Financial Management",
+    image: "/Faculty/Prof-Jayant-Joshi.jpg",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mr. Amol Kundalik Ankush",
+    role: "Assistant Professor",
+    subRole: "Event Coordinator",
+    expertise: "Marketing & Operations Managment",
+    image: "/Faculty/Prof-Amol-Ankush.jpg",
+    type: "teaching",
+  },
+  {
+    name: "Ms. Girija Deepak Shirurkar",
+    role: "Assistant Professor",
+    expertise: "Human Resource Management and General Management",
+    image: "/Faculty/Prof-Girija-Shirurkar.jpg",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Mrs. Snehal Ganesh Masurkar",
+    role: "Assistant Professor",
+    expertise: "Marketing & Human Resource Management",
+    image: "/Faculty/Prof_Snehal_Masulkar_New.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mrs. Chhaya Shivkumar Bodkurwar",
+    role: "Assistant Professor",
+    expertise: "Business Analytics",
+    image: "/Faculty/Prof-chhaya-bodkurwar.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mrs. Siddhi Sanjay Dhoble",
+    role: "Assistant Professor",
+    expertise: "Finance",
+    image: "/Faculty/Ms-Siddhi-Dhoble.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mrs. Neha Shah",
+    role: "Assistant Professor",
+    expertise: "Banking & Finance",
+    image: "/Faculty/Neha-Shah-Img.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mr. Neelesh Madhukar Atre",
+    role: "Professor of Practice",
+    expertise: "Marketing Management",
+    image: "/Faculty/Mr-Neelesh-Atre.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mr. Santosh Vitthalrao Dagade",
+    role: "Librarian",
+    expertise: "Library and Information Science",
+    image: "/Faculty/Santosh-Dagade.jpg",
+    type: "teaching",
+  },
 
-const nonTeachingStaff = [
-  { name: "Ms. Shubhangi Sanjay Phadtare", image: "/Faculty/Ms_Shubhangi_Phadtare_New.png" },
-  { name: "Ms. Kajal Pradip Pawar", image: "/Faculty/Ms_Kajal_Pawar_New.png" },
-  { name: "Mr. Dhiraj Vitthal Patil", image: "/Faculty/Mr_Dhiraj_Patil_New.png" },
-  { name: "Ms. Snehal Dilip Ubhe", image: "/Faculty/Ms_Snehal_Ubhe_New.png" },
+  // Non-Teaching Staff
+  {
+    name: "Mr. Yogesh Dilip Gheware",
+    role: "Office Superintendent",
+    expertise: "MBA (HR)",
+    image: "/Faculty/Yogesh-Gheware.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Dinesh Vilas Khodke",
+    role: "System Administrator",
+    expertise: "MBA (HR)",
+    subRole: "Microsoft certified Professional",
+    image: "/Faculty/Dinesh-Khodke.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Nilesh Govind Yedre",
+    role: "Account Officer",
+    expertise: "MBA (Finance)",
+    subRole: "Diploma in Taxation Law",
+    image: "/Faculty/Nilesh-Yendre.jpg",
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Ashish Bhimrao Jadhav",
+    role: "Junior Clerk",
+    expertise: "BBA",
+    image: "/Faculty/Ashish-Jadhav.jpg",
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Jagannath Dhanaji Kadam",
+    role: "Senior Clerk",
+    expertise: "BA",
+    image: "/Faculty/Jagannath-Kadam.jpg",
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Bhagavan Shivaji Patil",
+    role: "Senior Admin Officer",
+    image: "/Faculty/Jiban-Murikal.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Balasaheb Chhaburao Shinde",
+    role: "Admin Officer",
+    image: "/Faculty/Balasaheb-Shinde.jpg",
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Solomon Sanjay Gaikwad",
+    role: "Social Media Manager",
+    expertise:
+      "Branding Officer with 7 years of media experience in Mass Communication & Journalism",
+    subRole: "BA Journalism and Mass Communication",
+    image: "/Faculty/Solomon-Gaikwad.jpg",
+    linkedin: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Rohan Ravindra Shinde",
+    role: "IT Lab Assistant",
+    expertise: "BCA, MCA",
+    image: "/Faculty/Rohan-Shinde.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Vaibhav Bhimrao Jadhav",
+    role: "Executive Assistant",
+    image: "/Faculty/Mr.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Amit Shashikant Kothari",
+    role: "coming soon",
+    image: "/Faculty/Mr.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
 ];
 
 export default function LeadersDeskPage() {
+  const [showAllStaff, setShowAllStaff] = useState(false);
   const [showFaculties, setShowFaculties] = useState(false);
-  const [showAllTeaching, setShowAllTeaching] = useState(false);
-  const [showAllNonTeaching, setShowAllNonTeaching] = useState(false);
 
-  const displayedTeaching = showAllTeaching ? teachingStaff : teachingStaff.slice(0, 12);
-  const displayedNonTeaching = showAllNonTeaching ? nonTeachingStaff : nonTeachingStaff.slice(0, 12);
+  const displayedStaff = showAllStaff ? allStaff : allStaff.slice(0, 20);
 
   return (
     <section className="w-full py-12 px-6 xl:py-8 xl:px-16 bg-white">
@@ -161,167 +401,170 @@ export default function LeadersDeskPage() {
         ))}
       </div>
 
-      {/* FACULTY DROPDOWN SECTION */}
-      <div className="border-t border-gray-200 pt-12">
+      {/* STAFF DROPDOWN SECTION */}
+      <div className="border-t border-b border-slate-200">
         {/* Dropdown Toggle Button */}
-        <div className="flex justify-center mb-12">
-          <button
-            onClick={() => setShowFaculties(!showFaculties)}
-            className="
-              flex items-center justify-between
-              px-8 py-4
-              bg-gradient-to-r from-[#10404A] to-[#1F6D71]
-              text-white
-              rounded-2xl
-              shadow-lg
-              hover:shadow-xl
-              transition-all duration-300
-              w-full max-w-2xl
-            "
-          >
-            <span className="text-xl md:text-2xl font-bold">
-              Our Faculty Members
-            </span>
-            <span className="text-2xl">
-              {showFaculties ? "−" : "+"}
-            </span>
-          </button>
-        </div>
+        <button
+          onClick={() => setShowFaculties(!showFaculties)}
+          className="w-full py-8 flex flex-col items-center justify-center transition-colors duration-300 group cursor-pointer outline-none"
+        >
+          <div className="flex items-center gap-3 text-[#10404A] group-hover:text-[#fb7035] transition-colors">
+            <h3 className="text-lg font-bold tracking-wide uppercase">
+              Our Faculty & Staff
+            </h3>
+            <svg
+              className={`w-5 h-5 transition-transform duration-500 ${
+                showFaculties ? "rotate-180" : "rotate-0"
+              }`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2.5"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </div>
+          <p className="text-xs text-slate-400 mt-2 font-medium tracking-widest opacity-80 group-hover:opacity-100">
+            CLICK TO EXPAND DIRECTORY
+          </p>
+        </button>
 
-        {/* Faculty Content (Hidden by default) */}
-        {showFaculties && (
-          <div className="space-y-16">
-            {/* Teaching Staff Section */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center">
-                Teaching Staff
-              </h2>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {displayedTeaching.map((faculty, index) => (
-                  <div
-                    key={index}
-                    className="
-                      bg-white
-                      rounded-xl
-                      shadow-md
-                      border border-gray-200
-                      overflow-hidden
-                      hover:shadow-lg
-                      transition-shadow duration-300
-                    "
-                  >
-                    {/* Faculty Image */}
-                    <div className="h-48 overflow-hidden">
-                      <img
-                        src={faculty.image}
-                        alt={faculty.name}
-                        className="w-full h-full object-cover"
-                      />
+        {/* Staff Content with Animation */}
+        <div
+          className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
+            showFaculties ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+          }`}
+        >
+          <div className="overflow-hidden">
+            <div className="bg-white  py-12">
+              {/* Combined Staff Section */}
+              <div className="mb-16">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                  {displayedStaff.map((person, index) => (
+                    <div
+                      key={index}
+                      className="
+                        bg-whiteC
+                        rounded-xl
+                        shadow-md
+                        border border-gray-200
+                        overflow-hidden
+                        hover:shadow-lg
+                        transition-shadow duration-300
+                        flex flex-col
+                        h-full
+                      "
+                    >
+                      {/* Staff Image - Increased height */}
+                      <div className="h-84 overflow-hidden bg-gray-100">
+                        <img
+                          src={person.image}
+                          alt={person.name}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      
+                      {/* Staff Info */}
+                      <div className="p-4 flex flex-col flex-grow">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-1 line-clamp-2 min-h-[3.5rem]">
+                          {person.name}
+                        </h3>
+                        <p className="text-sm font-medium text-[#10404A] mb-1">
+                          {person.role}
+                        </p>
+                        {person.subRole && (
+                          <p className="text-xs text-gray-600 mb-2">
+                            {person.subRole}
+                          </p>
+                        )}
+                        {person.expertise && (
+                          <p className="text-xs text-gray-600 line-clamp-2 mb-3 flex-grow">
+                            {person.expertise}
+                          </p>
+                        )}
+                        
+                        {/* Type Badge */}
+                        <div className="mb-3">
+                          <span className={`
+                            inline-block px-2 py-1 text-xs font-semibold rounded-full
+                            ${person.type === 'teaching' 
+                              ? 'bg-blue-100 text-blue-800' 
+                              : 'bg-green-100 text-green-800'}
+                          `}>
+                            {person.type === 'teaching' ? 'Teaching' : 'Non-Teaching'}
+                          </span>
+                        </div>
+                        
+                        {/* Social Links */}
+                        <div className="flex gap-2 mt-auto">
+                          {person.linkedin && (
+                            <button 
+                              className="text-gray-400 hover:text-[#0077B5] transition-colors p-1"
+                              aria-label="LinkedIn profile"
+                            >
+                              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                              </svg>
+                            </button>
+                          )}
+                          {person.website && (
+                            <button 
+                              className="text-gray-400 hover:text-[#10404A] transition-colors p-1"
+                              aria-label="Website"
+                            >
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                              </svg>
+                            </button>
+                          )}
+                        </div>
+                      </div>
                     </div>
-                    
-                    {/* Faculty Info */}
-                    <div className="p-4">
-                      <h3 className="text-lg font-semibold text-gray-900 truncate">
-                        {faculty.name}
-                      </h3>
-                      <p className="text-sm text-gray-600 mt-1">
-                        {faculty.name.toLowerCase().includes("dr.") || faculty.name.toLowerCase().includes("dr ") 
-                          ? "PhD Faculty" 
-                          : faculty.name.toLowerCase().includes("prof.") || faculty.name.toLowerCase().includes("prof ")
-                            ? "Professor"
-                            : "Faculty Member"}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Show More/Less Button for Teaching Staff */}
-              {teachingStaff.length > 12 && (
-                <div className="flex justify-center mt-8">
-                  <button
-                    onClick={() => setShowAllTeaching(!showAllTeaching)}
-                    className="
-                      px-6 py-3
-                      bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80
-                      text-white
-                      rounded-full
-                      font-semibold
-                      hover:shadow-lg
-                      transition-all duration-300
-                    "
-                  >
-                    {showAllTeaching ? "Show Less" : `Show More (+${teachingStaff.length - 12})`}
-                  </button>
+                  ))}
                 </div>
-              )}
-            </div>
 
-            {/* Non-Teaching Staff Section */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center">
-                Non-Teaching Staff
-              </h2>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {displayedNonTeaching.map((staff, index) => (
-                  <div
-                    key={index}
-                    className="
-                      bg-white
-                      rounded-xl
-                      shadow-md
-                      border border-gray-200
-                      overflow-hidden
-                      hover:shadow-lg
-                      transition-shadow duration-300
-                    "
-                  >
-                    {/* Staff Image */}
-                    <div className="h-48 overflow-hidden">
-                      <img
-                        src={staff.image}
-                        alt={staff.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    
-                    {/* Staff Info */}
-                    <div className="p-4">
-                      <h3 className="text-lg font-semibold text-gray-900 truncate">
-                        {staff.name}
-                      </h3>
-                      <p className="text-sm text-gray-600 mt-1">
-                        Non-Teaching Staff
-                      </p>
-                    </div>
+                {/* Show More/Less Button for All Staff */}
+                {allStaff.length > 20 && (
+                  <div className="flex justify-center mt-10">
+                    <button
+                      onClick={() => setShowAllStaff(!showAllStaff)}
+                      className="
+                        px-8 py-3
+                        bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80
+                        text-white
+                        rounded-full
+                        font-semibold
+                        hover:shadow-lg
+                        transition-all duration-300
+                        flex items-center gap-2
+                      "
+                    >
+                      {showAllStaff ? (
+                        <>
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                          </svg>
+                          Show Less
+                        </>
+                      ) : (
+                        <>
+                          Show More (+{allStaff.length - 20})
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </>
+                      )}
+                    </button>
                   </div>
-                ))}
+                )}
               </div>
-
-              {/* Show More/Less Button for Non-Teaching Staff */}
-              {nonTeachingStaff.length > 12 && (
-                <div className="flex justify-center mt-8">
-                  <button
-                    onClick={() => setShowAllNonTeaching(!showAllNonTeaching)}
-                    className="
-                      px-6 py-3
-                      bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80
-                      text-white
-                      rounded-full
-                      font-semibold
-                      hover:shadow-lg
-                      transition-all duration-300
-                    "
-                  >
-                    {showAllNonTeaching ? "Show Less" : `Show More (+${nonTeachingStaff.length - 12})`}
-                  </button>
-                </div>
-              )}
             </div>
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

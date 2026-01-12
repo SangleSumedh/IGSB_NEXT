@@ -1,10 +1,630 @@
-import { Suspense } from "react";
-import MBAComponent from "./MBAContent";
+"use client";
 
-export default function MBAPage() {
+import React, { useRef, useState } from "react";
+import FAQSection from "@/components/FAQSections/FAQMBA";
+import Image from "next/image";
+import RecruitersSection from "@/components/home/RecruiterSection";
+import CTASection from "@/components/home/CTASection";
+import ApplyForm from "@/components/home/ApplyForm";
+import MBAOverview from "@/components/programs/MBAOverview";
+import FormSection from "@/components/home/FormSection";
+import MBASpecializations from "@/components/programs/MBASpecialisations";
+import NewCTA from "@/components/home/NewCTA";
+
+const mbaData = {
+  marketing: {
+    title: "Marketing Management (MKT)",
+    overview:
+      "This specialization equips students with cutting-edge skills in digital marketing, branding, consumer behavior, sales strategy, market research, and product management. Students learn to understand markets, create value-driven campaigns, and build strong customer relationships, developing into innovative marketers ready to compete in fast-changing global markets.  ",
+    structure: [
+      "Marketing Management & Consumer Behaviour",
+      "Digital Marketing & Social Media Strategy",
+      "Brand Management & Integrated Marketing Communications",
+      "Sales & Distribution Management",
+      "Strategic Marketing & Marketing Analytics",
+    ],
+    highlights: [
+      {
+        title: "Strategic Marketing Expertise",
+        text: "Develop a profound understanding of market dynamics, consumer insights, and competitive strategy to make informed, impactful marketing decisions.",
+      },
+      {
+        title: "Digital-First Approach",
+        text: "Gain hands-on experience with the latest digital marketing tools and analytics platforms, preparing you for the evolving landscape of online consumer engagement.",
+      },
+      {
+        title: "Industry Interface",
+        text: "Learn from industry experts and work on live projects with leading brands, bridging the gap between theory and practical marketing challenges.",
+      },
+    ],
+  },
+
+  finance: {
+    title: "Finance Management (FIN)",
+    overview:
+      "The finance specialization develops strong analytical and strategic decision-making skills in financial planning, investment analysis, corporate finance, banking, risk management, and capital markets. Students learn to interpret financial data, evaluate opportunities, and drive sustainable financial growth, preparing them for diverse roles in the financial sector.",
+    structure: [
+      "Corporate Finance & Financial Statement Analysis",
+      "Investment Analysis & Portfolio Management",
+      "Financial Markets & Institutions",
+      "International Finance & Risk Management",
+      "Mergers, Acquisitions & Corporate Valuation",
+    ],
+    highlights: [
+      {
+        title: "Analytical Rigor",
+        text: "Build quantitative and analytical skills essential for modelling, valuation, and investment decision-making.",
+      },
+      {
+        title: "Market-Ready Skills",
+        text: "Gain practical exposure using financial databases, tools, and simulations.",
+      },
+      {
+        title: "Strategic Perspective",
+        text: "Understand the strategic role of finance in budgeting, governance, and corporate decision-making.",
+      },
+    ],
+  },
+
+  hr: {
+    title: "Human Resource Management (HR)",
+    overview:
+      "The HR specialization prepares students to manage people, culture, and organizational development with strategic insight. Students learn talent acquisition, performance management, employee engagement, HR analytics, and labor laws, enabling them to build high-performing workplaces and lead transformational people practices in dynamic business environments.",
+    structure: [
+      "Talent Management & Acquisition",
+      "Organizational Behaviour & Development",
+      "Performance Management Systems & Compensation",
+      "Employment Laws & Labor Relations",
+      "HR Analytics & Strategic HRM",
+    ],
+    highlights: [
+      {
+        title: "Strategic HR Partnering",
+        text: "Align HR strategies with business goals for talent-driven growth",
+      },
+      {
+        title: "People Analytics",
+        text: "Use data for evidence-based decisions in hiring, retention, and performance.",
+      },
+      {
+        title: "Leadership in Change Management",
+        text: "Develop the ability to drive organizational transformation and employee engagement.",
+      },
+    ],
+  },
+
+  operations: {
+    title: "Operations and Supply Chain Management (OSCM)",
+    overview:
+      "Focused on efficiency and value creation, this specialization trains students in logistics, process optimization, supply chain strategy, project management, quality systems, and technology-enabled operations. Graduates gain the expertise to streamline operations, reduce costs, and manage complex supply networks in a competitive global business landscape.",
+    structure: [
+      "Operations Strategy & Supply Chain Management",
+      "Logistics & Transportation Management",
+      "Project Management & Quality Control",
+      "Procurement & Sourcing Strategies",
+      "Analytics for Operations & Decision Modelling",
+    ],
+    highlights: [
+      {
+        title: "End-to-End Supply Chain View",
+        text: "Understand sourcing, production, logistics, distribution, and last-mile operations.",
+      },
+      {
+        title: "Quantitative Problem-Solving",
+        text: "Learn forecasting, optimization, and ERP tools for real-world problem solving.",
+      },
+      {
+        title: "Global Perspective",
+        text: "Explore international logistics, trade regulations, and risk mitigation strategies",
+      },
+    ],
+  },
+  ba: {
+    title: "Business Analytics (BA)",
+    overview: "Coming soon",
+    structure: ["Coming soon"],
+    highlights: [
+      {
+        title: "Coming Soon",
+        text: "Coming Soon",
+      },
+      {
+        title: "Coming Soon",
+        text: "Coming Soon",
+      },
+      {
+        title: "Coming Soon",
+        text: "Coming Soon",
+      },
+    ],
+  },
+};
+
+const highlights = [
+  {
+    title: "Duration",
+    desc: "2 Years (4 Semesters)",
+    icon: (
+      <svg
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-8 h-8"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Credit System",
+    desc: "Choice Based Credit System (CBCS)",
+    icon: (
+      <svg
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-8 h-8"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Methodology",
+    desc: "Outcome Based Education (OBE)",
+    icon: (
+      <svg
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-8 h-8"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Degree",
+    desc: "Affiliated to SPPU",
+    icon: (
+      <svg
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-8 h-8"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.499 5.24 50.534 50.534 0 00-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Pedagogy",
+    desc: "Experiential & Case-based Learning",
+    icon: (
+      <svg
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-8 h-8"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Internship",
+    desc: "Industry exposure with leading firms",
+    icon: (
+      <svg
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-8 h-8"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Placements",
+    desc: "Track record with top MNCs",
+    icon: (
+      <svg
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-8 h-8"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Eligibility",
+    desc: "Click to see criteria",
+    action: true, // Special flag for clickable item
+    icon: (
+      <svg
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-8 h-8"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+    ),
+  },
+];
+
+export default function MBAContent() {
+  const faqRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const applyRef = useRef(null);
+
+  const scrollToApply = () => {
+    applyRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  // Highlight Marquee Hover Effect
+  const marqueeRef = useRef(null);
+
+  React.useEffect(() => {
+    const marquee = marqueeRef.current;
+    if (!marquee) return;
+
+    const cards = marquee.querySelectorAll(".highlight-card");
+
+    cards.forEach((card) => {
+      card.addEventListener("mouseenter", () => {
+        marquee.style.animationPlayState = "paused";
+        card.classList.add("scale-up");
+      });
+
+      card.addEventListener("mouseleave", () => {
+        marquee.style.animationPlayState = "running";
+        card.classList.remove("scale-up");
+      });
+    });
+  }, []);
+
+  const scrollToFAQ = () => {
+    faqRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const commonCareers = [
+    "Brand Manager",
+    "Digital Marketing Manager",
+    "Market Research Analyst",
+    "Sales Manager",
+    "Product Manager",
+    "Media Planner",
+    "CRM Manager",
+    "Head of Marketing",
+    "Financial Analyst",
+    "Investment Banker",
+    "Risk Manager",
+    "HR Business Partner",
+    "Talent Acquisition Manager",
+    "Operations Manager",
+    "Supply Chain Analyst",
+    "Business Development Manager",
+    "Project Manager",
+    "Strategy Consultant",
+  ];
+
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
+
+  const handleBrochureDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/IGSB/programmes/IGSB-Prospectus-Final.pdf";
+    link.download = "IGSB-Brochure.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const mbaHighlightImages = [
+    "/Programs/MBA/MBA1.jpg",
+    "/Programs/MBA/MBA2.jpg",
+    "/Programs/MBA/MBA3.jpg",
+  ];
+
   return (
-    <Suspense fallback={<div className="py-20 text-center">Loading...</div>}>
-      <MBAComponent />
-    </Suspense>
+    <div className="w-full bg-white text-white">
+      {/* HERO SECTION */}
+      <div className="relative w-full overflow-hidden h-[60vh] md:h-[75vh] flex items-center">
+        <div className="absolute inset-0">
+          <Image
+            src="/IGSB/Programmes/Banner.jpg"
+            alt="MBA Program"
+            fill
+            className="object-cover object-center scale-105 opacity-90"
+          />
+        </div>
+
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent z-10" />
+
+        <div className="relative px-6 md:px-12 lg:px-20 z-20">
+          <div className="max-w-3xl text-white text-sm md:text-lg">
+            <h2 className="text-2xl  md:text-4xl font-bold leading-snug">
+              2-Year Master of Business Administration (MBA)
+            </h2>
+
+            <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
+              This rigorous programme is designed to develop strategic thinkers
+              and future business leaders. It combines core management
+              principles with deep specialization, fostering analytical prowess,
+              leadership qualities, and an ethical mindset to drive
+              organizational success in a complex global economy.
+            </p>
+
+            <div className="flex gap-4 mt-6">
+              <button
+                onClick={toggleModal}
+                className="bg-secondary text-white px-6 py-2 rounded-lg"
+              >
+                Enquire Now
+              </button>
+              <button
+                onClick={handleBrochureDownload}
+                className="bg-secondary text-white px-6 py-2 rounded-lg"
+              >
+                Download Brochure
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
+      </div>
+
+      {/* INFO SECTION */}
+      <div className="w-full bg-[#10404A] text-white py-12">
+        <div className="max-w-full mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6 items-center  ">
+            {highlights.map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center space-y-2 group "
+              >
+                {/* Icon Container */}
+                <div className="p-3 bg-white/5 rounded-lg border border-[#3aafa9]/30 text-[#FF8B61] group-hover:bg-[#FF8B61] group-hover:text-[#10404A] transition-colors duration-300">
+                  {item.icon}
+                </div>
+
+                {/* Content */}
+                <div>
+                  <h4 className="font-bold text-lg text-white mb-1 tracking-wide">
+                    {item.title}
+                  </h4>
+
+                  {item.action ? (
+                    <p
+                      onClick={scrollToFAQ}
+                      className="text-slate-300 text-sm leading-relaxed cursor-pointer hover:text-[#FF8B61] underline decoration-[#FF8B61] underline-offset-4 transition-colors"
+                    >
+                      {item.desc}
+                    </p>
+                  ) : (
+                    <p className="text-slate-300 text-sm leading-relaxed">
+                      {item.desc}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <MBAOverview />
+
+      <div ref={faqRef}>
+        <FAQSection />
+      </div>
+      {/* ==============================
+          STRUCTURE: ALL 4 IN ONE SECTION
+          ============================== */}    
+      <MBASpecializations scrollToApply={scrollToApply} />
+
+      <FormSection />
+
+      {/* ==============================
+          PROGRAM HIGHLIGHTS MARQUEE
+      ============================== */}
+      <section className="w-full bg-slate-50 py-20 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-6 mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#10404a] mb-6 tracking-tight">
+            Programme Highlights
+          </h2>
+          {/* <div className="h-1.5 w-24 bg-[#ff8b61] mx-auto rounded-full"></div> */}
+        </div>
+
+        <div className="relative w-full overflow-visible">
+          {/* We duplicate the data array twice ([...data, ...data]) 
+             to ensure the marquee loops seamlessly without visual gaps.
+          */}
+          <div ref={marqueeRef} className="highlights-marquee flex px-4">
+            {[...Object.keys(mbaData)]
+              .flatMap((key) => mbaData[key].highlights)
+              .flatMap((item) => [item, item]) // Duplicated for smooth loop
+              .map((highlight, index) => (
+                <div
+                  key={index}
+                  className="highlight-card-wrapper mr-8 flex-shrink-0 py-4" // Added py-4 to allow space for hover shadow
+                >
+                  <div className="highlight-card w-[280px] md:w-[320px] bg-white rounded-2xl shadow-sm border border-slate-200 transition-all duration-300 relative overflow-hidden group">
+                    {/* Decorative Top Gradient (Matches Specialization Cards) */}
+                    <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#10404a] via-[#3aafa9] to-[#ff8b61] opacity-80 group-hover:opacity-100 transition-opacity z-10"></div>
+
+                    {/* IMAGE */}
+                    <div className="relative w-full h-48 overflow-hidden">
+                      <Image
+                        src={mbaHighlightImages[index % 3]}
+                        alt={highlight.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      {/* Gradient Overlay for text readability if needed, though mostly for style here */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+
+                    {/* TEXT */}
+                    <div className="p-6 relative bg-white">
+                      <h3 className="font-bold text-[#10404a] text-md mb-3 leading-tight group-hover:text-[#3aafa9] transition-colors">
+                        {highlight.title}
+                      </h3>
+                      <p className="text-slate-600 text-sm leading-relaxed line-clamp-2">
+                        {highlight.text}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+
+        <style jsx>{`
+          @keyframes marqueeScrollHighlights {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              /* If you duplicate content once (2 sets total), move -50%. 
+                 If you have many items, you might need to adjust based on width.
+                 For typical marquee, -50% assumes 2 identical sets.
+              */
+              transform: translateX(-50%);
+            }
+          }
+
+          .highlights-marquee {
+            /* Slower speed (60s) for better readability */
+            animation: marqueeScrollHighlights 80s linear infinite;
+            width: max-content;
+            will-change: transform;
+          }
+
+          /* Pause animation on hover */
+          .highlights-marquee:hover {
+            animation-play-state: paused;
+          }
+
+          .highlight-card-wrapper {
+            perspective: 1000px;
+          }
+
+          .highlight-card {
+            will-change: transform, box-shadow;
+            transform-origin: center center;
+          }
+
+          /* Hover Effect: 
+             Scale up + Vertical Lift + Deep Shadow 
+             (Replaces the previous mint background color)
+          */
+          .highlight-card:hover {
+            transform: scale(1.02) translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #3aafa9;
+            z-index: 10;
+          }
+        `}</style>
+      </section>
+
+      {/* APPLY FORM AT THE END */}
+      {/* ============================
+     CAREER OPPORTUNITIES + APPLY FORM (SIDE BY SIDE)
+============================ */}
+      {/* <div className="max-w-7xl mx-auto px-6 py-16 text-black grid grid-cols-1 md:grid-cols-2 gap-12">
+       
+        <div className="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+          <h2 className="text-3xl font-bold text-secondary mb-4">
+            Career Opportunities
+          </h2>
+
+          <p className="text-gray-700 mb-6">
+            This programme opens pathways to impactful leadership and management
+            roles:
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {commonCareers.map((career, index) => (
+              <p key={index} className="text-gray-800 flex items-center gap-2">
+                ➜ <span>{career}</span>
+              </p>
+            ))}
+          </div>
+        </div>
+
+        <div
+          ref={applyRef}
+          className="bg-white scroll-mt-15 rounded-xl shadow-md border border-gray-200"
+        >
+          <ApplyForm />
+        </div>
+      </div> */}
+
+      <NewCTA />
+      <CTASection />
+
+      {/* MODAL */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60]">
+          <div className="bg-white w-[90%] md:w-[680px]  rounded-lg shadow-lg relative max-h-[90vh] overflow-y-auto">
+            <button
+              onClick={toggleModal}
+              className="absolute top-3 right-3 text-2xl"
+            >
+              ×
+            </button>
+
+            <ApplyForm />
+          </div>
+        </div>
+      )}
+    </div>
   );
 }

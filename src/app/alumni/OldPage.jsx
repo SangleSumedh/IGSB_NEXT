@@ -682,7 +682,7 @@ export default function Alumni() {
                   Alumni Interaction Sessions
                 </h2>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
                   {interactionCards.map((card, i) => (
                     <div
                       key={i}
@@ -786,7 +786,7 @@ export default function Alumni() {
                 </h2>
 
                 {/* Show Limited Data */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
                   {achievementCards
                     .slice(
                       0,

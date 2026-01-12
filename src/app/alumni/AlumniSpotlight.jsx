@@ -72,14 +72,16 @@ export default function AlumniSpotlight() {
             </h3>
           </div>
 
-          <div className="flex justify-evenly items-center pb-8 px-8">
+          <div className="flex gap-4 justify-between items-center  px-8">
             {/* PHOTO */}
-            <div className="relative shrink-0 mr-6">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
+            <div className="relative  mr-6">
+              <div className="w-24 h-32 rounded-r-full overflow-hidden border-4 border-white shadow-lg">
                 <img
-                  src={current.img}
+                  src={
+                    "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                  }
                   alt={current.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
             </div>
@@ -104,12 +106,21 @@ export default function AlumniSpotlight() {
                 </p>
               </div>
             </div>
+            <div className="relative shrink-0">
+              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                <img
+                  src={current.img}
+                  alt={"Company LOGO"}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
 
           {/* QUOTE */}
-          <div className="bg-[#10404A] p-4 text-center flex justify-between items-center">
-            <p className="text-white/80 text-xs italic">"{current.quote}"</p>
-            <div className="flex gap-4 ">
+          <div className="bg-[#3aafa9] p-4 text-center flex justify-between items-center">
+            <p className="text-[white]/80 text-xs italic">"{current.quote}"</p>
+            <div className="flex gap-2 ">
               <button
                 onClick={prevSlide}
                 className="p-4 rounded-full border border-white/40 text-white hover:bg-[#FF8B61] hover:text-[#10404A] hover:border-[#FF8B61] transition-all duration-300"

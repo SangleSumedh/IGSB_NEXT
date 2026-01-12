@@ -122,15 +122,15 @@ const actions = [
 
 export default function ContributionSection() {
   return (
-    <section className="w-full py-12  px-6 md:px-16">
+    <section className="w-full py-16 px-6 md:px-16 bg-white">
       <div className="max-w-full mx-auto">
         {/* Title Section */}
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-8 space-y-4">
           <h2 className="text-4xl font-bold text-[#10404A] tracking-tight">
             HOW YOU CAN CONTRIBUTE
           </h2>
-          <div className="w-20 h-1 bg-[#fb7035] mx-auto rounded-full"></div>
-          <p className="text-slate-500 max-w-2xl mx-auto">
+          <div className="w-20 h-1 bg-[#FF8B61] mx-auto rounded-full"></div>
+          <p className="text-[#10404A]/70 max-w-2xl mx-auto">
             Your journey doesn't end when you graduate. Here are the most
             impactful ways to stay connected and give back to the IGSB
             community.
@@ -142,21 +142,44 @@ export default function ContributionSection() {
           {actions.map((item, index) => (
             <div
               key={index}
-              className="group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+              className="
+                group bg-[#10404A] p-8 rounded-2xl
+                border border-[#10404A]/15
+                shadow-sm
+                hover:shadow-xl hover:-translate-y-1
+                transition-all duration-300 cursor-pointer
+              "
             >
               <div className="flex flex-col items-center text-center space-y-4">
-                {/* Icon Container with Hover Effect */}
-                <div className="w-16 h-16 rounded-full bg-slate-50 text-[#10404A] flex items-center justify-center group-hover:bg-[#fb7035] group-hover:text-white transition-colors duration-300">
+                {/* Icon */}
+                <div
+                  className="
+                    w-16 h-16 rounded-full
+                    bg-[white]
+                    text-gray-900
+                    border-4 border-[#FF8B61]
+                    hover:border-4 hover:border-white
+                    flex items-center justify-center
+                    group-hover:bg-[#FF8B61]
+                    group-hover:text-[#10404A]
+                    transition-colors duration-300
+                  "
+                >
                   {item.icon}
                 </div>
 
-                <h3 className="text-xl font-bold text-slate-800 group-hover:text-[#10404A] transition-colors">
+                <h3
+                  className="
+                    text-lg font-bold
+                    text-white
+                    group-hover:text-[#FF8B61]
+                    transition-colors
+                  "
+                >
                   {item.title}
                 </h3>
 
-                {/* <p className="text-slate-500 text-sm leading-relaxed">
-                  {item.desc}
-                </p> */}
+                {/* Description intentionally hidden as before */}
               </div>
             </div>
           ))}

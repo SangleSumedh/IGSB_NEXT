@@ -284,7 +284,6 @@ const Loader = () => (
   </Html>
 );
 
-// --- MAIN PAGE ---
 export default function AlumniPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -305,25 +304,26 @@ export default function AlumniPage() {
 
   // Handle Manual Selection
   const handleManualSelect = (data) => {
-    // Find index of clicked data
     const index = ALUMNI_LOCATIONS.findIndex((a) => a.id === data.id);
     if (index !== -1) {
       setCurrentIndex(index);
-      // Optional: Pause carousel when user manually clicks interaction?
-      // setIsPaused(true);
     }
   };
 
   return (
     <>
-      <div className="w-full bg-white flex flex-col lg:flex-row overflow-hidden relative">
-        {/* --- LEFT SECTION: 1/3 Width --- */}
-        <div className="w-full lg:w-1/3 p-6 md:p-8  flex flex-col justify-center z-5 relative border-r border-slate-100 shadow-sm  backdrop-blur-sm lg:bg-white lg:backdrop-blur-none">
+      {/* UPDATED WRAPPER: 
+        Added 'lg:h-screen' to force full viewport height on desktop.
+      */}
+      <div className="w-full bg-white flex flex-col-reverse lg:flex-row  overflow-hidden relative lg:h-[84vh]">
+        {/* --- LEFT SECTION --- */}
+        {/* Added 'lg:h-full' and 'z-10' to ensure it stays on top and fills height */}
+        <div className="w-full lg:w-1/3 p-6 md:p-8 flex flex-col justify-evenly z-10 relative lg:h-full">
           <div className="mb-8">
             <h1 className="text-3xl md:text-4xl font-bold tracking-tighter text-[#10404A] mb-3">
               GLOBAL REACH
             </h1>
-            <p className="text-slate-600 text-xs md:text-sm max-w-lg  font-medium leading-relaxed">
+            <p className="text-slate-600 text-xs md:text-sm max-w-lg font-medium leading-relaxed">
               IGSB Alumni are leading innovation in 45 countries.
             </p>
           </div>
@@ -407,7 +407,7 @@ export default function AlumniPage() {
             {/* Progress Bar for Auto-Rotate */}
             <div className="w-full h-1 bg-white mt-0">
               <div
-                key={selectedAlumni.id} // Reset animation on change
+                key={selectedAlumni.id}
                 className="h-full bg-[#fb7035]"
                 style={{
                   width: "100%",
@@ -430,14 +430,19 @@ export default function AlumniPage() {
           </div>
         </div>
 
-        {/* --- RIGHT SECTION: 2/3 Width --- */}
+        {/* --- RIGHT SECTION (Globe) --- */}
+        {/* UPDATED:
+            - h-[50vh] for mobile (half screen)
+            - lg:h-full to fill the screen on desktop
+            - lg:absolute logic kept to ensure it sits behind/beside correctly 
+        */}
         <div
-          className="w-full min-h-[50vh] lg:h-auto lg:w-2/3 bg-white relative cursor-move lg:absolute lg:right-0 lg:top-0 lg:bottom-0"
+          className="w-full h-[50vh] lg:h-full lg:w-2/3 bg-white relative cursor-move lg:absolute lg:right-0 lg:top-0 lg:bottom-0"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <Canvas camera={{ position: [0, 0, 5.5], fov: 45 }}>
-            <color attach="background" args={["#f8fafc"]} />
+          <Canvas camera={{ position: [0, 0, 6.5], fov: 45 }}>
+            <color attach="background" args={["#fff"]} />
             <fog attach="fog" args={["#f8fafc", 5, 12]} />
             <ambientLight intensity={1.5} />
             <directionalLight
@@ -477,10 +482,12 @@ export default function AlumniPage() {
 
       <AlumniSpotlight />
       <ContributionSection />
-      <div className="w-full bg-slate-50 border-t border-slate-200">
+
+      {/* Memory Lane Section */}
+      <div className="w-full bg-white border-t border-slate-200">
         <button
           onClick={() => setShowMemoryLane(!showMemoryLane)}
-          className="w-full py-8 flex flex-col items-center justify-center hover:bg-slate-100 transition-colors duration-300 group cursor-pointer outline-none"
+          className="w-full py-8 flex flex-col items-center justify-center  transition-colors duration-300 group cursor-pointer outline-none"
         >
           <div className="flex items-center gap-3 text-[#10404A] group-hover:text-[#fb7035] transition-colors">
             <h3 className="text-lg font-bold tracking-wide uppercase">
@@ -507,15 +514,13 @@ export default function AlumniPage() {
           </p>
         </button>
 
-        {/* Accordion Animation Wrapper */}
         <div
           className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
             showMemoryLane ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
           }`}
         >
           <div className="overflow-hidden">
-            <div className="p-8 border-t border-slate-100 bg-white shadow-inner">
-              {/* The Old Page Component */}
+            <div className=" border-t border-slate-100 bg-white shadow-inner">
               <OldPage />
             </div>
           </div>

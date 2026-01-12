@@ -1,0 +1,2147 @@
+Navbar Old 
+
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { HiMenuAlt2, HiX } from "react-icons/hi";
+import { TbExternalLink } from "react-icons/tb";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { Menu } from "lucide-react";
+import ApplyForm from "./home/ApplyForm";
+
+const dropdownContent = {
+  aboutUs: {
+    title: "About Us",
+    sections: [
+      {
+        title: "About Us",
+        items: [
+          {
+            label: "Shree Chanakya Education Society",
+            link: "/about/chanakya-edu#about-sces",
+          },
+
+          // {
+          //   label: "Indira Group of Institutes ",
+          //   link: "/about/chanakya-edu#about-campus",
+          // },
+          {
+            label: "Indira Global School of Business",
+            link: "/about/chanakya-edu#about-igsb",
+          },
+          {
+            label: "Chairperson's Profile & Chief Mentor-IGI",
+            link: "/about/chanakya-edu#about-chairperson",
+          },
+          {
+            label: "Director's Message",
+            link: "/about/chanakya-edu#about-director",
+          },
+          {
+            label: "Vision & Mission",
+            link: "/about/chanakya-edu#about-vision",
+          },
+          // {
+          //   label: "Recognition / Affiliation",
+          //   link: "/about/chanakya-edu#about-recognition",  if needed later
+          // },
+          {
+            label: "Human Capital / Intellectual Capital",
+            link: "/humancapital",
+          },
+          {
+            label: "Facilities",
+            link: "/facilities",
+          },
+        ],
+      },
+
+      {
+        title: "Governance",
+        items: [
+          {
+            label: "Board of Governance",
+            link: "/about/governance",
+          },
+
+          {
+            label: "Committee's",
+            link: "/about/committee",
+          },
+          {
+            label: "Cell's",
+            link: "/about/cell",
+          },
+          {
+            label: "Research & Consultancy",
+            link: "/about/Research",
+          },
+          {
+            label: "Institutions Innovation Council (IIC)",
+            link: "/about/IIC",
+          },
+          {
+            label: "Mandatory Disclosure",
+            link: "/MandatoryDisclosure.pdf",
+          },
+        ],
+      },
+      {
+        title: "Student Committees",
+        items: [
+          {
+            label: "Student Grievance Redressal Committee",
+            link: "/campus-life/student-committees#student-grievance-redressal-committee",
+          },
+          {
+            label: "Anti Ragging Committee",
+            link: "/campus-life/student-committees#anti-ragging-committee",
+          },
+          {
+            label: "Anti Ragging Squad",
+            link: "/campus-life/student-committees#anti-ragging-squad",
+          },
+          {
+            label: "Student Welfare Council",
+            link: "/campus-life/student-committees#students-welfare-council",
+          },
+          {
+            label: "Student Counsellor",
+            link: "/campus-life/student-committees#student-counsellor",
+          },
+          // {
+          //   label: "Event Committee",
+          //   link: "/campus-life/student-committees#event-committee", // If needed later
+          // },
+          {
+            label: "Online Grievance Redressal Mechanism",
+            link: `https://forms.office.com/pages/responsepage.aspx?id=Q_oIpAgyHUCWj_ew96nH5GqgRKaPsvhHsV5PWUUqBe1UQzlUNDZDTE0zMlZUTjVCUU40VjAwUFU3Qy4u`, // If added later
+          },
+        ],
+      },
+    ],
+  },
+
+  campusLife: {
+    title: "Campus Life",
+    sections: [
+      {
+        title: "Events & Activities",
+        items: [
+          {
+            label: "Students Engagement",
+            link: "/campus-life/student-engagement",
+          },
+          {
+            label: "Students Certifications",
+            link: "/campus-life/student-certifications",
+          },
+          {
+            label: "Student Induction",
+            link: "/campus-life/student-induction",
+          },
+          {
+            label: "Student Achievements",
+            link: "/campus-life/student-achievements",
+          },
+          {
+            label: "Facilities",
+            link: "/facilities",
+          },
+          // {
+          //   label: "Industry Institution Interaction",
+          //   link: "/campus-life/icem-awards",
+          // },
+          // {
+          //   label: "Professional Associations",
+          //   link: "/campus-life/academics",
+          // },
+        ],
+      },
+      {
+        title: "Professional Associations",
+        items: [
+          {
+            label: "NISM",
+            link: "/campus-life/nism",
+          },
+          {
+            label: "NHRD",
+            link: "/campus-life/nhrd",
+          },
+          {
+            label: "C414",
+            link: "/campus-life/c414",
+          },
+        ],
+      },
+    ],
+  },
+  programs: {
+    title: "Programs & Admission",
+    sections: [
+      {
+        title: "MBA",
+        items: [
+          {
+            label: "Marketing Management",
+            link: "/programs/mba?spec=marketing",
+          },
+          {
+            label: "Finance Management",
+            link: "/programs/mba?spec=finance",
+          },
+          {
+            label: "Human Resource Management",
+            link: "/programs/mba?spec=hr",
+          },
+          {
+            label: "Operations & Supply Chain Management",
+            link: "/programs/mba?spec=operations",
+          },
+          {
+            label: "Bussiness Analytics",
+            link: "/programs/mba?spec=ba",
+          },
+        ],
+      },
+      {
+        title: "PHD",
+        items: [
+          { label: "Research Center", link: "/programs/phd" },
+          {
+            label: "Marketing Management",
+            link: "/programs/phd",
+          },
+          {
+            label: "Finance Management",
+            link: "/programs/phd",
+          },
+          {
+            label: "Human Resource Management",
+            link: "/programs/phd",
+          },
+          // {
+          //   label: "Operations & Supply Chain Management",
+          //   link: "/programs/phd?spec=operations",
+          // },
+          {
+            label: "Bussiness Analytics",
+            link: "/programs/phd",
+          },
+        ],
+      },
+    ],
+  },
+
+  placement: {
+    title: "Placement",
+    sections: [
+      {
+        items: [
+          "Placement Team",
+          "Our Recruiters",
+          "Placed Students",
+          "Placement Policy",
+        ],
+      },
+    ],
+  },
+
+  accreditation: {
+    title: "Accreditation",
+    sections: [
+      {
+        title: "NAAC",
+        items: [
+          "SSR reports year wise",
+          "Criteria wise Details",
+          "AQAR reports",
+          "NAAC Certificate",
+        ],
+      },
+      {
+        title: "IQAC",
+        items: [
+          "IQAC Committee",
+          "IQAC Notices",
+          "MOMS & Actions",
+          "IQAC Formats",
+          "Best Practices",
+          "Distinctive Practice",
+        ],
+      },
+      {
+        title: "Reports & Others",
+        items: [
+          "SPPU Annual Report",
+          "Code of Conduct",
+          "NIRF",
+          "Financial Statements",
+          "Soft Skills & Aptitude",
+          "Reports",
+        ],
+      },
+    ],
+  },
+};
+
+const Navbar = () => {
+  const [isHelplineOpen, setIsHelplineOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileDropdown, setMobileDropdown] = useState(null);
+
+  // ✅ Refs to manage hover timers and outside clicks (no flicker)
+  const dropdownTimeoutRef = useRef(null);
+  const navbarRef = useRef(null);
+  const modalRef = useRef(null);
+
+  const toggleHelpline = () => setIsHelplineOpen(!isHelplineOpen);
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
+  // === Hover Handlers (fixed flicker) ===
+  const handleMouseEnter = (dropdownName) => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
+    }
+    setActiveDropdown(dropdownName);
+  };
+
+  const handleMouseLeave = () => {
+    if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 180);
+  };
+
+  // === Close dropdown if click outside ===
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        setActiveDropdown(null);
+      }
+    };
+    document.addEventListener("pointerdown", handleClickOutside);
+    return () => {
+      document.removeEventListener("pointerdown", handleClickOutside);
+      if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isModalOpen &&
+        modalRef.current &&
+        !modalRef.current.contains(event.target)
+      ) {
+        setIsModalOpen(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("pointerdown", handleClickOutside);
+    };
+  }, [isModalOpen]);
+
+  const toggleMobileDropdown = (dropdownName) => {
+    setMobileDropdown(mobileDropdown === dropdownName ? null : dropdownName);
+  };
+
+  const renderDropdownContent = (content) => (
+    <div className="max-w-8xl px-8 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 animate-in fade-in-0 zoom-in-95 duration-300 bg-secondary">
+      {content.sections.map((section, index) => (
+        <div key={index}>
+          {section.title ? (
+            <h3 className="text-lg font-semibold text-gray-100 mb-4">
+              {section.title}
+            </h3>
+          ) : null}
+          <ul className="space-y-4 text-gray-200 text-sm">
+            {section.items.map((item, itemIndex) => (
+              <li
+                key={itemIndex}
+                className="flex justify-between items-center border-b border-white pb-2 group"
+              >
+                {item.link ? (
+                  <Link
+                    href={item.link}
+                    className="font-semibold flex justify-between items-center w-full text-gray-200 hover:text-primary transition-all duration-200 group-hover:translate-x-1"
+                    onClick={() => setActiveDropdown(null)}
+                  >
+                    <span>{item.label || item}</span>
+                    <TbExternalLink className="font-semibold text-gray-900-900 transition-transform duration-200 group-hover:scale-110" />
+                  </Link>
+                ) : (
+                  <div className="font-semibold flex justify-between items-center w-full text-gray-600">
+                    <span>{item.label || item}</span>
+                    <TbExternalLink className="text-gray-400 opacity-50" />
+                  </div>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+
+  // Add these state variables
+const [isMdMenuOpen, setIsMdMenuOpen] = useState(false);
+const [mdDropdown, setMdDropdown] = useState(null);
+
+// Add these functions
+const toggleMdMenu = () => {
+  setIsMdMenuOpen(!isMdMenuOpen);
+  if (mdDropdown) setMdDropdown(null);
+};
+
+const toggleMdDropdown = (key) => {
+  setMdDropdown(mdDropdown === key ? null : key);
+};
+
+// Helper function for MD dropdown rendering
+const renderMdDropdown = (content, key) => {
+  if (!content) return null;
+  
+  return (
+    <div className="space-y-1 py-2 animate-in fade-in-0 slide-in-from-top-2 duration-300">
+      {content.map((item, index) => (
+        <div key={index} className="animate-in fade-in-0 slide-in-from-right-2"
+             style={{ animationDelay: `${index * 50}ms` }}>
+          {item.subtitle ? (
+            <div className="pt-2 pb-1">
+              <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-4">
+                {item.subtitle}
+              </h4>
+            </div>
+          ) : item.href ? (
+            <Link
+              href={item.href}
+              onClick={() => {
+                setIsMdMenuOpen(false);
+                setMdDropdown(null);
+              }}
+              className="block px-4 py-2 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded transition-all duration-200 hover:translate-x-1"
+            >
+              {item.label}
+            </Link>
+          ) : (
+            <p className="px-4 py-2 text-sm text-gray-700">{item.label}</p>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+  const renderMobileDropdown = (content, dropdownName) => (
+    <div className="bg-gray-50 rounded-lg mt-2 overflow-hidden animate-in fade-in-0 slide-in-from-top-2 duration-300">
+      {content.sections.map((section, index) => (
+        <div key={index} className="border-t border-gray-200 first:border-t-0">
+          {section.title && (
+            <h4 className="font-semibold text-secondary px-4 py-2 bg-gray-100">
+              {section.title}
+            </h4>
+          )}
+          <ul className="space-y-1">
+            {section.items.map((item, itemIndex) => (
+              <li
+                key={itemIndex}
+                className="animate-in fade-in-0 slide-in-from-left-2 duration-300"
+                style={{ animationDelay: `${itemIndex * 50}ms` }}
+              >
+                {item.link ? (
+                  <Link
+                    href={item.link}
+                    className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <span>{item.label || item}</span>
+                    <TbExternalLink className="text-gray-1000 text-xs transition-transform duration-200 hover:scale-110" />
+                  </Link>
+                ) : (
+                  <div className="flex items-center justify-between px-4 py-2 text-sm text-gray-1000">
+                    <span>{item.label || item}</span>
+                    <TbExternalLink className="text-gray-400 text-xs" />
+                  </div>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+
+  return (
+    <>
+      {/* ===== NAVBAR ===== */}
+      <nav
+        ref={navbarRef}
+        className="w-full h-[12vh] flex justify-between bg-white text-black shadow-sm font-sans fixed top-0 left-0 right-0 z-50" // Changed from sticky to fixed
+      >
+        {/* Left: Logo - 80% width on mobile */}
+        <div className="w-[29%] lg:w-[25%] xl:w-[30%] h-full flex items-center justify-start md:pl-0 md:justify-center">
+          <Link href="/">
+            <Image
+              src="/Logo.png"
+              alt="Logo"
+              height={300}
+              width={300}
+              className="w-auto cursor-pointer object-contain transition-transform duration-300 "
+              priority
+              fetchPriority="high"
+              unoptimized={true}
+            />
+          </Link>
+        </div>
+
+        {/* Right Section - Desktop */}
+        <div className="hidden md:flex w-[70%]  h-full flex-col">
+          {/* Top Bar */}
+          <div className="flex justify-end w-full h-[45%] text-[0.75rem] lg:text-sm ">
+            <div className="flex gap-2 lg:gap-4">
+              <div className="flex items-center gap-2 md:gap-2 lg:gap-4 font-semibold">
+                <a
+                  href="https://rapid.grayquest.com/iudp-master"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative inline-block group hover:text-secondary transition-colors duration-200"
+                >
+                  Pay Fee
+                  {/* AQUA UNDERLINE — your original version */}
+                  <span
+                    className="absolute left-0 -bottom-1 h-[6px] w-full 
+               scale-x-0 bg-primary opacity-70 
+               transition-transform duration-300 
+               origin-left group-hover:scale-x-100"
+                  ></span>
+                </a>
+
+                <span className="text-secondary">|</span>
+                <a
+                  href="http://220.226.204.21/login.aspx/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative inline-block group hover:text-secondary transition-colors duration-200"
+                >
+                  ERP Login
+                  {/* AQUA UNDERLINE */}
+                  <span
+                    className="absolute left-0 -bottom-1 h-[6px] w-full 
+               scale-x-0 bg-primary opacity-70 
+               transition-transform duration-300 
+               origin-left group-hover:scale-x-100"
+                  ></span>
+                </a>
+
+                <span className="text-secondary">|</span>
+                <a
+                  href="https://app.joinsuperset.com/join/#/signup/student/placements/621c7653-bdeb-4ee2-bb72-765e5d1d9635"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative inline-block group hover:text-secondary transition-colors duration-200"
+                >
+                  Superset
+                  {/* AQUA UNDERLINE */}
+                  <span
+                    className="absolute left-0 -bottom-1 h-[6px] w-full 
+               scale-x-0 bg-primary opacity-70 
+               transition-transform duration-300 
+               origin-left group-hover:scale-x-100"
+                  ></span>
+                </a>
+
+                <span className="text-secondary">|</span>
+                {/* <a
+                  href="https://lc-icem-sumedh.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors duration-200"
+                >
+                  Leaving Certificate
+                </a> */}
+
+                <Link
+                  href="/contact"
+                  className="relative inline-block group hover:text-primary transition-colors duration-200"
+                >
+                  Contact Us
+                  {/* AQUA UNDERLINE */}
+                  <span
+                    className="absolute left-0 -bottom-1 h-[6px] w-full 
+               scale-x-0 bg-primary opacity-70 
+               transition-transform duration-300 
+               origin-left group-hover:scale-x-100"
+                  ></span>
+                </Link>
+                <span className="text-secondary">|</span>
+                <Link
+                  href="/blogs"
+                  className="relative inline-block group hover:text-primary transition-colors duration-200"
+                >
+                  Blogs
+                  {/* AQUA UNDERLINE */}
+                  <span
+                    className="absolute left-0 -bottom-1 h-[6px] w-full 
+               scale-x-0 bg-primary opacity-70 
+               transition-transform duration-300 
+               origin-left group-hover:scale-x-100"
+                  ></span>
+                </Link>
+                  <span className="text-secondary">|</span>
+
+                <Link
+                  href="/leadersdesk"
+                  className="relative inline-block group hover:text-primary transition-colors duration-200"
+                >
+                  Leaders Desk
+                  {/* AQUA UNDERLINE */}
+                  <span
+                    className="absolute left-0 -bottom-1 h-[6px] w-full 
+               scale-x-0 bg-primary opacity-70 
+               transition-transform duration-300 
+               origin-left group-hover:scale-x-100"
+                  ></span>
+                </Link>
+              </div>
+              {/* Buttons */}
+              <div className="flex justify-center items-center">
+                <button
+                  onClick={toggleModal}
+                  className="bg-[#10404A] hover:!bg-[#fc7116] h-[80%] hover:text-gray-800 text-gray-50 px-6 rounded-bl-sm text-sm font-semibold relative overflow-hidden transition-all duration-300"
+                >
+                  <span>Enquire Now</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Nav Links */}
+          <div className="flex  justify-end items-center gap-2 md:gap-2 lg:gap-5 h-[55%] text-[0.74rem] 
+ lg:text-sm font-bold lg:font-bold whitespace-nowrap ">
+            <div
+              className="flex  h-full  items-center px-2 lg:px-3 gap-1 cursor-pointer hover:text-secondary transition-all duration-200 group"
+              onPointerEnter={() => handleMouseEnter("aboutUs")}
+              onPointerLeave={handleMouseLeave}
+            >
+              <span className="relative">
+                About Us
+                {/* AQUA UNDERLINE */}
+                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary  opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+              </span>
+              {/* <FiChevronDown
+                className={`w-3 h-3 transition-transform duration-300 ${
+                  activeDropdown === "aboutUs" ? "rotate-180" : ""
+                }`}
+              /> */}
+            </div>
+            <div
+              className="flex items-center gap-1  md:px-2  cursor-pointer hover:text-secondary transition-all duration-200 group"
+              onPointerEnter={() => handleMouseEnter("campusLife")}
+              onPointerLeave={handleMouseLeave}
+            >
+              <span className="relative">
+                Campus Life
+                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+              </span>
+              {/* <FiChevronDown
+                className={`w-3 h-3 transition-transform duration-300 ${
+                  activeDropdown === "campusLife" ? "rotate-180" : ""
+                }`}
+              /> */}
+            </div>
+            <div
+              className="flex items-center gap-1 px-2 lg:px-3  cursor-pointer hover:text-secondary transition-all duration-200 group"
+              onPointerEnter={() => handleMouseEnter("programs")}
+              onPointerLeave={handleMouseLeave}
+            >
+              <span className="relative">
+                Programs & Admission
+                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+              </span>
+              {/* <FiChevronDown
+                className={`w-3 h-3 transition-transform duration-300 ${
+                  activeDropdown === "programs" ? "rotate-180" : ""
+                }`}
+              /> */}
+            </div>
+            <Link
+              href="/placement"
+              className="hover:text-secondary px-2 lg:px-3   transition-colors duration-200 group"
+            >
+              <span className="relative">
+                Placement
+                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+              </span>
+            </Link>
+            {/* <Link
+              href="/nism"
+              className="hover:text-secondary  px-5  transition-colors duration-200 group"
+            >
+              NISM
+            </Link> */}
+            <Link
+              href="/alumni"
+              className="hover:text-secondary px-2 lg:px-3   transition-colors duration-200 group"
+            >
+              <span className="relative">
+                Alumni
+                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+              </span>
+            </Link>
+            <Link
+              href="/research"
+              className="hover:text-secondary px-2 lg:px-3   transition-colors duration-200 group"
+            >
+              <span className="relative">
+                Research
+                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary rounded-md opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+              </span>
+            </Link>
+          </div>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden w-[20%] flex items-center justify-center pr-4">
+          <button
+            onClick={toggleMobileMenu}
+            className="text-gray-700 hover:text-primary transition-all duration-300 hover:scale-110"
+          >
+            <Menu size={28} />
+          </button>
+        </div>
+
+        {/* Dropdown Menu - Desktop */}
+        {activeDropdown && (
+          <div
+            onPointerEnter={() => handleMouseEnter(activeDropdown)}
+            onPointerLeave={handleMouseLeave}
+            className="absolute top-full left-0 w-full backdrop-blur-sm bg-white shadow-xl border-t border-black z-50 hidden md:block animate-in fade-in-0 slide-in-from-top-2 duration-300"
+          >
+            {renderDropdownContent(dropdownContent[activeDropdown])}
+          </div>
+        )}
+      </nav>
+
+      {/* Add padding to main content to account for fixed navbar */}
+      <div className="pt-[12vh]"></div>
+
+      {/* Mobile Menu - Slides from bottom to top */}
+      {isMobileMenuOpen && (
+        <>
+          {/* Overlay */}
+          <div
+            className="md:hidden fixed inset-0 bg-transparent backdrop-blur-md bg-opacity-50 z-40 animate-in fade-in-0 duration-300"
+            onClick={toggleMobileMenu}
+          />
+
+          {/* Mobile Menu Panel */}
+          <div
+            className={`md:hidden fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl z-50 transform transition-all duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)] ${
+              isMobileMenuOpen ? "translate-y-0" : "translate-y-full"
+            }`}
+            style={{ maxHeight: "85vh" }}
+          >
+            {/* Header with Close Button */}
+            <div className="flex justify-between items-center p-4 border-b border-black">
+              <h2 className="text-base font-semibold text-gray-900">Menu</h2>
+              <button
+                onClick={toggleMobileMenu}
+                className="text-gray-1000 hover:text-gray-700 transition-all duration-300 hover:scale-110"
+              >
+                <HiX size={22} />
+              </button>
+            </div>
+
+            {/* Scrollable Content */}
+            <div
+              className="overflow-y-auto"
+              style={{ maxHeight: "calc(85vh - 60px)" }}
+            >
+              <div className="p-3 space-y-0">
+                {/* 🔹 Quick Links Dropdown */}
+                <div className="border-b border-gray-200">
+                  <button
+                    onClick={() => toggleMobileDropdown("quickLinks")}
+                    className="w-full flex justify-between items-center py-3 text-left font-medium text-gray-900 text-sm hover:text-primary transition-all duration-200"
+                  >
+                    <span>Quick Links</span>
+                    <span className="text-lg transition-transform duration-300">
+                      {mobileDropdown === "quickLinks" ? (
+                        <FiChevronUp className="w-4 h-4" />
+                      ) : (
+                        <FiChevronDown className="w-4 h-4" />
+                      )}
+                    </span>
+                  </button>
+
+                  {mobileDropdown === "quickLinks" && (
+                    <div className="bg-gray-50 rounded-lg mt-1 overflow-hidden animate-in fade-in-0 slide-in-from-top-2 duration-300">
+                      <ul className="space-y-1 text-xs font-medium text-gray-700">
+                        {[
+                          {
+                            label: "Pay Fee",
+                            href: "https://rapid.grayquest.com/iudp-master",
+                          },
+                          {
+                            label: "ERP Login",
+                            href: "http://220.226.204.21/login.aspx/",
+                          },
+                          {
+                            label: "Superset",
+                            href: "https://app.joinsuperset.com/join/#/signup/student/placements/621c7653-bdeb-4ee2-bb72-765e5d1d9635",
+                          },
+                          {
+                            label: "Contact Us",
+                            href: "/contact",
+                          },
+                          {
+                            label: "Blogs",
+                            href: "/blogs",
+                          },
+                        ].map((item, index) => (
+                          <li
+                            key={index}
+                            className="animate-in fade-in-0 slide-in-from-left-2 duration-300"
+                            style={{ animationDelay: `${index * 50}ms` }}
+                          >
+                            <a
+                              href={item.href}
+                              target={
+                                item.href.startsWith("http")
+                                  ? "_blank"
+                                  : "_self"
+                              }
+                              rel={
+                                item.href.startsWith("http")
+                                  ? "noopener noreferrer"
+                                  : ""
+                              }
+                              className="flex items-center justify-between px-4 py-2 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
+                            >
+                              {item.label}
+                              <TbExternalLink className="text-gray-1000 text-xs transition-transform duration-200 hover:scale-110" />
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+
+                {/* 🔹 About Us */}
+                <div className="border-b border-gray-200">
+                  <button
+                    onClick={() => toggleMobileDropdown("aboutUs")}
+                    className="w-full flex justify-between items-center py-3 text-left font-medium text-gray-900 text-sm hover:text-primary transition-all duration-200"
+                  >
+                    <span>About Us</span>
+                    <span className="text-lg transition-transform duration-300">
+                      {mobileDropdown === "aboutUs" ? (
+                        <FiChevronUp className="w-4 h-4" />
+                      ) : (
+                        <FiChevronDown className="w-4 h-4" />
+                      )}
+                    </span>
+                  </button>
+                  {mobileDropdown === "aboutUs" &&
+                    renderMobileDropdown(dropdownContent.aboutUs, "aboutUs")}
+                </div>
+
+                {/* 🔹 Campus Life */}
+                <div className="border-b border-gray-200">
+                  <button
+                    onClick={() => toggleMobileDropdown("campusLife")}
+                    className="w-full flex justify-between items-center py-3 text-left font-medium text-gray-900 text-sm hover:text-primary transition-all duration-200"
+                  >
+                    <span>Campus Life</span>
+                    <span className="text-lg transition-transform duration-300">
+                      {mobileDropdown === "campusLife" ? (
+                        <FiChevronUp className="w-4 h-4" />
+                      ) : (
+                        <FiChevronDown className="w-4 h-4" />
+                      )}
+                    </span>
+                  </button>
+                  {mobileDropdown === "campusLife" &&
+                    renderMobileDropdown(
+                      dropdownContent.campusLife,
+                      "campusLife"
+                    )}
+                </div>
+
+                {/* 🔹 Programs & Admission */}
+                <div className="border-b border-gray-200">
+                  <button
+                    onClick={() => toggleMobileDropdown("programs")}
+                    className="w-full flex justify-between items-center py-3 text-left font-medium text-gray-900 text-sm hover:text-primary transition-all duration-200"
+                  >
+                    <span>Programs & Admission</span>
+                    <span className="text-lg transition-transform duration-300">
+                      {mobileDropdown === "programs" ? (
+                        <FiChevronUp className="w-4 h-4" />
+                      ) : (
+                        <FiChevronDown className="w-4 h-4" />
+                      )}
+                    </span>
+                  </button>
+                  {mobileDropdown === "programs" &&
+                    renderMobileDropdown(dropdownContent.programs, "programs")}
+                </div>
+
+                {/* 🔹 Single Links */}
+                {[
+                  { label: "Placement", href: "/placement" },
+                  { label: "Alumni", href: "/alumni" },
+                  { label: "Research", href: "/research" },
+                ].map((item, index) => (
+                  <div key={index} className="border-b border-gray-200">
+                    <Link
+                      href={item.href}
+                      className="flex items-center justify-between py-3 text-sm font-medium text-gray-900 hover:text-primary transition-all duration-200 hover:translate-x-1"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                      <TbExternalLink className="text-gray-1000 text-xs transition-transform duration-200 hover:scale-110" />
+                    </Link>
+                  </div>
+                ))}
+              </div>
+
+              {/* 🔹 Compact Enquire Now Button */}
+              <div className="p-3 border-t border-gray-200 bg-gray-50">
+                <button
+                  onClick={() => {
+                    toggleModal();
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="w-full bg-gradient-to-r from-[#278da4] to-[#003c84] text-gray-100 py-2 text-sm font-semibold rounded-md hover:from-[#278da4]/90 hover:to-[#003c84]/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                >
+                  Enquire Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* ===== Helpline Drawer ===== */}
+      <div
+        className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-all duration-500 ease-in-out z-50 ${
+          isHelplineOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="bg-primary text-gray-100 p-4 flex justify-between items-center">
+          <h3 className="text-lg font-bold">Admissions Helpline</h3>
+          <button
+            onClick={toggleHelpline}
+            className="hover:scale-110 transition-transform duration-300"
+          >
+            <HiX size={24} />
+          </button>
+        </div>
+
+        <div className="p-6 text-gray-800 space-y-6 overflow-y-auto h-full">
+          <div className="animate-in fade-in-0 slide-in-from-right-2 duration-500">
+            <p className="text-sm text-gray-600">
+              For more information give a miss call on
+            </p>
+            <div className="bg-blue-50 p-4 rounded-lg mt-2 transition-all duration-300 hover:shadow-md">
+              <p className="text-2xl font-bold text-primary text-center">
+                1800 267 1999
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {isHelplineOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 animate-in fade-in-0 duration-300"
+          onClick={toggleHelpline}
+        />
+      )}
+
+      {/* ===== APPLY NOW MODAL ===== */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60] animate-in fade-in-0 duration-300">
+          <div ref={modalRef} className="max-w-4xl">
+            <ApplyForm />
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Navbar;
+
+
+------------------------------------------------------------------------------
+
+Leader's Desk
+
+
+"use client";
+
+import React, { useState } from "react";
+
+const leaders = [
+  {
+    name: "Chairperson's Message",
+    title: "Chairperson",
+    image: "/boy.png",
+    message:
+      "At our institution, we believe education is the foundation of a progressive society. Our goal is to empower students with knowledge, values, and skills that prepare them to lead with confidence and integrity. We are committed to fostering innovation, discipline, and excellence in every learner.",
+    reverse: false,
+  },
+  {
+    name: "Managing Director's Message",
+    title: "Managing Director",
+    image: "/boy.png",
+    message:
+      "Our focus has always been on bridging the gap between academics and industry. Through modern infrastructure, industry-oriented curriculum, and experienced faculty, we strive to create professionals who are adaptable, skilled, and future-ready.",
+    reverse: true,
+  },
+  {
+    name: "Principal's Message",
+    title: "Principal",
+    image: "/boy.png",
+    message:
+      "We aim to nurture a culture of curiosity, research, and continuous learning. By encouraging critical thinking and ethical responsibility, we prepare students not only for successful careers but also for meaningful contributions to society.",
+    reverse: false,
+  },
+];
+
+// Combined Faculty and Staff Data
+const allStaff = [
+  // Teaching Staff
+  {
+    name: "Dr. Virendra Vasant Tatake",
+    role: "Director",
+    expertise: "Finance",
+    image: "/Faculty/Dr-Virendra-Tatake.jpg",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Pallavi Shrirang Sajanapwar",
+    role: "Dean Academics and Research",
+    expertise: "Marketing and General Management",
+    image: "/Faculty/Dr_Pallavi_Sajanapawar.png",
+    type: "teaching",
+  },
+  {
+    name: "Dr. Aatish Dilip Zagade",
+    role: "Deputy Director",
+    expertise: "Human Resource & Marketing Management",
+    image: "/Faculty/Dr-Aatish-Zagade.jpg",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Anuradha Samarth Phadnis",
+    role: "Associate Professor",
+    subRole: "IQAC Head",
+    expertise:
+      "Human Resources Management, Marketing Management and General Management",
+    image: "/Faculty/Dr_Anuraddha_Phadnis_1.jpg",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Priyanka Rohan Darekar",
+    role: "Associate Professor",
+    subRole: "Learning Facilitator (Human Resources)",
+    expertise: "Human Resource & General Management",
+    image: "/Faculty/Dr_Priyanka_Darekar_New.png",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Aniruddha Vilas Thuse",
+    role: "Associate Professor",
+    expertise: "Financial Management",
+    image: "/Faculty/Dr_Anirudha_Thus_New.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Poonam Avinash Wani",
+    role: "Assistant Professor",
+    subRole: "Learning Facilitator (Finance)",
+    expertise: "Financial & Marketing Management",
+    image: "/Faculty/Dr_Poonam_Wani_New.png",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Prashant Dubey",
+    role: "Assistant Professor",
+    subRole: "Learning Facilitator (Marketing)",
+    expertise: "Marketing & Financial Management",
+    image: "/Faculty/Dr-Prashan-Dubey.jpg",
+    type: "teaching",
+  },
+  {
+    name: "Mr. Mahesh Ganpatrao Bhagat",
+    role: "Assistant Professor",
+    subRole:
+      "Chief Exam Officer (IGSB) / Learning Facilitator Operations & Supply Chain Management",
+    expertise: "Human Resource Management",
+    image: "/Faculty/Prof-Mahesh-Bhagat.jpg",
+    type: "teaching",
+  },
+  {
+    name: "Dr. Ashish Krishna Vyas",
+    role: "Assistant Professor",
+    expertise: "Human Resource Management",
+    image: "/Faculty/Dr_Ashish-Vyas.png",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Neha Chaudhry",
+    role: "Assistant Professor",
+    subRole: "Finance Management",
+    image: "/Faculty/Neha-Chaudhry-New-img.png",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Mr. Jayant Arun Joshi",
+    role: "Deputy Director Corporate Relations, Assistant Professor",
+    subRole: "Placement Coordinator",
+    expertise: "Marketing & Financial Management",
+    image: "/Faculty/Prof-Jayant-Joshi.jpg",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mr. Amol Kundalik Ankush",
+    role: "Assistant Professor",
+    subRole: "Event Coordinator",
+    expertise: "Marketing & Operations Managment",
+    image: "/Faculty/Prof-Amol-Ankush.jpg",
+    type: "teaching",
+  },
+  {
+    name: "Ms. Girija Deepak Shirurkar",
+    role: "Assistant Professor",
+    expertise: "Human Resource Management and General Management",
+    image: "/Faculty/Prof-Girija-Shirurkar.jpg",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Mrs. Snehal Ganesh Masurkar",
+    role: "Assistant Professor",
+    expertise: "Marketing & Human Resource Management",
+    image: "/Faculty/Prof_Snehal_Masulkar_New.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mrs. Chhaya Shivkumar Bodkurwar",
+    role: "Assistant Professor",
+    expertise: "Business Analytics",
+    image: "/Faculty/Prof-chhaya-bodkurwar.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mrs. Siddhi Sanjay Dhoble",
+    role: "Assistant Professor",
+    expertise: "Finance",
+    image: "/Faculty/Ms-Siddhi-Dhoble.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mrs. Neha Shah",
+    role: "Assistant Professor",
+    expertise: "Banking & Finance",
+    image: "/Faculty/Neha-Shah-Img.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mr. Neelesh Madhukar Atre",
+    role: "Professor of Practice",
+    expertise: "Marketing Management",
+    image: "/Faculty/Mr-Neelesh-Atre.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mr. Santosh Vitthalrao Dagade",
+    role: "Librarian",
+    expertise: "Library and Information Science",
+    image: "/Faculty/Santosh-Dagade.jpg",
+    type: "teaching",
+  },
+
+  // Non-Teaching Staff
+  {
+    name: "Mr. Yogesh Dilip Gheware",
+    role: "Office Superintendent",
+    expertise: "MBA (HR)",
+    image: "/Faculty/Yogesh-Gheware.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Dinesh Vilas Khodke",
+    role: "System Administrator",
+    expertise: "MBA (HR)",
+    subRole: "Microsoft certified Professional",
+    image: "/Faculty/Dinesh-Khodke.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Nilesh Govind Yedre",
+    role: "Account Officer",
+    expertise: "MBA (Finance)",
+    subRole: "Diploma in Taxation Law",
+    image: "/Faculty/Nilesh-Yendre.jpg",
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Ashish Bhimrao Jadhav",
+    role: "Junior Clerk",
+    expertise: "BBA",
+    image: "/Faculty/Ashish-Jadhav.jpg",
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Jagannath Dhanaji Kadam",
+    role: "Senior Clerk",
+    expertise: "BA",
+    image: "/Faculty/Jagannath-Kadam.jpg",
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Bhagavan Shivaji Patil",
+    role: "Senior Admin Officer",
+    image: "/Faculty/Jiban-Murikal.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Balasaheb Chhaburao Shinde",
+    role: "Admin Officer",
+    image: "/Faculty/Balasaheb-Shinde.jpg",
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Solomon Sanjay Gaikwad",
+    role: "Social Media Manager",
+    expertise:
+      "Branding Officer with 7 years of media experience in Mass Communication & Journalism",
+    subRole: "BA Journalism and Mass Communication",
+    image: "/Faculty/Solomon-Gaikwad.jpg",
+    linkedin: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Rohan Ravindra Shinde",
+    role: "IT Lab Assistant",
+    expertise: "BCA, MCA",
+    image: "/Faculty/Rohan-Shinde.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Vaibhav Bhimrao Jadhav",
+    role: "Executive Assistant",
+    image: "/Faculty/Mr.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Amit Shashikant Kothari",
+    role: "coming soon",
+    image: "/Faculty/Mr.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
+];
+
+export default function LeadersDeskPage() {
+  const [showAllStaff, setShowAllStaff] = useState(false);
+  const [showFaculties, setShowFaculties] = useState(false);
+
+  const displayedStaff = showAllStaff ? allStaff : allStaff.slice(0, 20);
+
+  return (
+    <section className="w-full bg-white">
+      {/* PAGE HEADING - Full width with gradient */}
+      <div className="w-full py-16 bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] shadow-lg mb-12">
+        <div className="container mx-auto px-6 xl:px-16 text-center">
+          {/* Main heading */}
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white">
+            Leader&apos;s Desk
+          </h1>
+
+          {/* Accent divider */}
+          <div className="mx-auto mt-5 mb-6 w-16 h-[3px] rounded-full bg-white" />
+
+          {/* Description */}
+          <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
+            Messages from the leadership that guide our vision, values, and
+            commitment to excellence.
+          </p>
+        </div>
+      </div>
+
+      {/* CONTENT SECTION - With padding */}
+      <div className=" px-6 xl:px-16 py-12 xl:py-8">
+        {/* LEADER SECTIONS */}
+        <div className="space-y-12 mb-20">
+          {leaders.map((leader, index) => (
+            <div
+              key={index}
+              className={`
+                w-full
+                rounded-3xl
+                p-6 md:p-8 lg:p-10
+                bg-gradient-to-r from-[#10404A] to-[#1F6D71]
+                shadow-xl
+              `}
+            >
+              <div
+                className={`
+                  flex flex-col md:flex-row items-center gap-6
+                  ${leader.reverse ? "md:flex-row-reverse" : ""}
+                `}
+              >
+                {/* IMAGE SECTION — 1/3 */}
+                <div className="w-full md:w-1/3 flex justify-center">
+                  <div className="relative">
+                    <img
+                      src={leader.image}
+                      alt={leader.title}
+                      className="
+                        w-40 h-40 md:w-84 md:h-84
+                        rounded-full object-cover
+                        border-4 border-[#ffb088]
+                        shadow-md
+                      "
+                    />
+                  </div>
+                </div>
+
+                {/* CONTENT SECTION — 2/3 */}
+                <div className="w-full md:w-2/3">
+                  <div
+                    className="
+                      bg-[#3aafa9]
+                      rounded-2xl
+                      p-6 md:p-7 lg:p-8
+                      shadow-xl
+                      text-white
+                    "
+                  >
+                    <h3 className="text-2xl md:text-3xl font-extrabold mb-1">
+                      {leader.name}
+                    </h3>
+
+                    <p className="text-white/90 font-medium text-lg mb-2">
+                      {leader.title}
+                    </p>
+
+                    {/* SUBTLE DIVIDER */}
+                    <div className="w-12 h-[2px] bg-[#ffb088] rounded-full mb-5" />
+
+                    <p className="text-white/90 text-lg leading-relaxed">
+                      {leader.message}
+                    </p>
+
+                    {/* SIGNATURE AREA */}
+                    <div className="mt-6 pt-4 border-t border-white/20">
+                      <p className="text-white/80 text-sm italic">
+                        Leading with vision, inspiring with action
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* STAFF DROPDOWN SECTION */}
+        <div className="border-t border-b border-slate-200">
+          {/* Dropdown Toggle Button */}
+          <button
+            onClick={() => setShowFaculties(!showFaculties)}
+            className="w-full py-8 flex flex-col items-center justify-center transition-colors duration-300 group cursor-pointer outline-none"
+          >
+            <div className="flex items-center gap-3 text-[#10404A] group-hover:text-[#fb7035] transition-colors">
+              <h3 className="text-lg font-bold tracking-wide uppercase">
+                Our Faculty & Staff
+              </h3>
+              <svg
+                className={`w-5 h-5 transition-transform duration-500 ${
+                  showFaculties ? "rotate-180" : "rotate-0"
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+            <p className="text-xs text-slate-400 mt-2 font-medium tracking-widest opacity-80 group-hover:opacity-100">
+              CLICK TO EXPAND DIRECTORY
+            </p>
+          </button>
+
+          {/* Staff Content with Animation */}
+          <div
+            className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
+              showFaculties ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+            }`}
+          >
+            <div className="overflow-hidden">
+              <div className="bg-white py-12">
+                {/* Combined Staff Section */}
+                <div className="mb-16">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                    {displayedStaff.map((person, index) => (
+                      <div
+                        key={index}
+                        className="
+                          bg-white
+                          rounded-xl
+                          shadow-md
+                          border border-gray-200
+                          overflow-hidden
+                          hover:shadow-lg
+                          transition-shadow duration-300
+                          flex flex-col
+                          h-full
+                        "
+                      >
+                        {/* Staff Image - Increased height */}
+                        <div className="h-84 overflow-hidden bg-gray-100">
+                          <img
+                            src={person.image}
+                            alt={person.name}
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                        
+                        {/* Staff Info */}
+                        <div className="p-4 flex flex-col flex-grow">
+                          <h3 className="text-lg font-semibold text-gray-900 mb-1 line-clamp-2 min-h-[3.5rem]">
+                            {person.name}
+                          </h3>
+                          <p className="text-sm font-medium text-[#10404A] mb-1">
+                            {person.role}
+                          </p>
+                          {person.subRole && (
+                            <p className="text-xs text-gray-600 mb-2">
+                              {person.subRole}
+                            </p>
+                          )}
+                          {person.expertise && (
+                            <p className="text-xs text-gray-600 line-clamp-2 mb-3 flex-grow">
+                              {person.expertise}
+                            </p>
+                          )}
+                          
+                          {/* Type Badge */}
+                          <div className="mb-3">
+                            <span className={`
+                              inline-block px-2 py-1 text-xs font-semibold rounded-full
+                              ${person.type === 'teaching' 
+                                ? 'bg-blue-100 text-blue-800' 
+                                : 'bg-green-100 text-green-800'}
+                            `}>
+                              {person.type === 'teaching' ? 'Teaching' : 'Non-Teaching'}
+                            </span>
+                          </div>
+                          
+                          {/* Social Links */}
+                          <div className="flex gap-2 mt-auto">
+                            {person.linkedin && (
+                              <button 
+                                className="text-gray-400 hover:text-[#0077B5] transition-colors p-1"
+                                aria-label="LinkedIn profile"
+                              >
+                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                              </button>
+                            )}
+                            {person.website && (
+                              <button 
+                                className="text-gray-400 hover:text-[#10404A] transition-colors p-1"
+                                aria-label="Website"
+                              >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                </svg>
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Show More/Less Button for All Staff */}
+                  {allStaff.length > 20 && (
+                    <div className="flex justify-center mt-10">
+                      <button
+                        onClick={() => setShowAllStaff(!showAllStaff)}
+                        className="
+                          px-8 py-3
+                          bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80
+                          text-white
+                          rounded-full
+                          font-semibold
+                          hover:shadow-lg
+                          transition-all duration-300
+                          flex items-center gap-2
+                        "
+                      >
+                        {showAllStaff ? (
+                          <>
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                            </svg>
+                            Show Less
+                          </>
+                        ) : (
+                          <>
+                            Show More (+{allStaff.length - 20})
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+} 
+
+
+----------------------------------------------------------------------------
+
+New LeadersDesk
+
+"use client";
+
+import React, { useState } from "react";
+
+const leaders = [
+  {
+    name: "Chairperson's Message",
+    title: "Chairperson",
+    image: "/boy.png",
+    message:
+      "At our institution, we believe education is the foundation of a progressive society. Our goal is to empower students with knowledge, values, and skills that prepare them to lead with confidence and integrity. We are committed to fostering innovation, discipline, and excellence in every learner.",
+    reverse: false,
+  },
+  {
+    name: "Managing Director's Message",
+    title: "Managing Director",
+    image: "/boy.png",
+    message:
+      "Our focus has always been on bridging the gap between academics and industry. Through modern infrastructure, industry-oriented curriculum, and experienced faculty, we strive to create professionals who are adaptable, skilled, and future-ready.",
+    reverse: true,
+  },
+  {
+    name: "Principal's Message",
+    title: "Principal",
+    image: "/boy.png",
+    message:
+      "We aim to nurture a culture of curiosity, research, and continuous learning. By encouraging critical thinking and ethical responsibility, we prepare students not only for successful careers but also for meaningful contributions to society.",
+    reverse: false,
+  },
+];
+
+// Combined Faculty and Staff Data
+const allStaff = [
+  // Teaching Staff
+  {
+    name: "Dr. Virendra Vasant Tatake",
+    role: "Director",
+    expertise: "Finance",
+    image: "/Faculty/Dr-Virendra-Tatake.jpg",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Pallavi Shrirang Sajanapwar",
+    role: "Dean Academics and Research",
+    expertise: "Marketing and General Management",
+    image: "/Faculty/Dr_Pallavi_Sajanapawar.png",
+    type: "teaching",
+  },
+  {
+    name: "Dr. Aatish Dilip Zagade",
+    role: "Deputy Director",
+    expertise: "Human Resource & Marketing Management",
+    image: "/Faculty/Dr-Aatish-Zagade.jpg",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Anuradha Samarth Phadnis",
+    role: "Associate Professor",
+    subRole: "IQAC Head",
+    expertise:
+      "Human Resources Management, Marketing Management and General Management",
+    image: "/Faculty/Dr_Anuraddha_Phadnis_1.jpg",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Priyanka Rohan Darekar",
+    role: "Associate Professor",
+    subRole: "Learning Facilitator (Human Resources)",
+    expertise: "Human Resource & General Management",
+    image: "/Faculty/Dr_Priyanka_Darekar_New.png",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Aniruddha Vilas Thuse",
+    role: "Associate Professor",
+    expertise: "Financial Management",
+    image: "/Faculty/Dr_Anirudha_Thus_New.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Poonam Avinash Wani",
+    role: "Assistant Professor",
+    subRole: "Learning Facilitator (Finance)",
+    expertise: "Financial & Marketing Management",
+    image: "/Faculty/Dr_Poonam_Wani_New.png",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Prashant Dubey",
+    role: "Assistant Professor",
+    subRole: "Learning Facilitator (Marketing)",
+    expertise: "Marketing & Financial Management",
+    image: "/Faculty/Dr-Prashan-Dubey.jpg",
+    type: "teaching",
+  },
+  {
+    name: "Mr. Mahesh Ganpatrao Bhagat",
+    role: "Assistant Professor",
+    subRole:
+      "Chief Exam Officer (IGSB) / Learning Facilitator Operations & Supply Chain Management",
+    expertise: "Human Resource Management",
+    image: "/Faculty/Prof-Mahesh-Bhagat.jpg",
+    type: "teaching",
+  },
+  {
+    name: "Dr. Ashish Krishna Vyas",
+    role: "Assistant Professor",
+    expertise: "Human Resource Management",
+    image: "/Faculty/Dr_Ashish-Vyas.png",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Dr. Neha Chaudhry",
+    role: "Assistant Professor",
+    subRole: "Finance Management",
+    image: "/Faculty/Neha-Chaudhry-New-img.png",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Mr. Jayant Arun Joshi",
+    role: "Deputy Director Corporate Relations, Assistant Professor",
+    subRole: "Placement Coordinator",
+    expertise: "Marketing & Financial Management",
+    image: "/Faculty/Prof-Jayant-Joshi.jpg",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mr. Amol Kundalik Ankush",
+    role: "Assistant Professor",
+    subRole: "Event Coordinator",
+    expertise: "Marketing & Operations Managment",
+    image: "/Faculty/Prof-Amol-Ankush.jpg",
+    type: "teaching",
+  },
+  {
+    name: "Ms. Girija Deepak Shirurkar",
+    role: "Assistant Professor",
+    expertise: "Human Resource Management and General Management",
+    image: "/Faculty/Prof-Girija-Shirurkar.jpg",
+    linkedin: true,
+    website: true,
+    type: "teaching",
+  },
+  {
+    name: "Mrs. Snehal Ganesh Masurkar",
+    role: "Assistant Professor",
+    expertise: "Marketing & Human Resource Management",
+    image: "/Faculty/Prof_Snehal_Masulkar_New.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mrs. Chhaya Shivkumar Bodkurwar",
+    role: "Assistant Professor",
+    expertise: "Business Analytics",
+    image: "/Faculty/Prof-chhaya-bodkurwar.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mrs. Siddhi Sanjay Dhoble",
+    role: "Assistant Professor",
+    expertise: "Finance",
+    image: "/Faculty/Ms-Siddhi-Dhoble.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mrs. Neha Shah",
+    role: "Assistant Professor",
+    expertise: "Banking & Finance",
+    image: "/Faculty/Neha-Shah-Img.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mr. Neelesh Madhukar Atre",
+    role: "Professor of Practice",
+    expertise: "Marketing Management",
+    image: "/Faculty/Mr-Neelesh-Atre.png",
+    linkedin: true,
+    type: "teaching",
+  },
+  {
+    name: "Mr. Santosh Vitthalrao Dagade",
+    role: "Librarian",
+    expertise: "Library and Information Science",
+    image: "/Faculty/Santosh-Dagade.jpg",
+    type: "teaching",
+  },
+
+  // Non-Teaching Staff
+  {
+    name: "Mr. Yogesh Dilip Gheware",
+    role: "Office Superintendent",
+    expertise: "MBA (HR)",
+    image: "/Faculty/Yogesh-Gheware.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Dinesh Vilas Khodke",
+    role: "System Administrator",
+    expertise: "MBA (HR)",
+    subRole: "Microsoft certified Professional",
+    image: "/Faculty/Dinesh-Khodke.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Nilesh Govind Yedre",
+    role: "Account Officer",
+    expertise: "MBA (Finance)",
+    subRole: "Diploma in Taxation Law",
+    image: "/Faculty/Nilesh-Yendre.jpg",
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Ashish Bhimrao Jadhav",
+    role: "Junior Clerk",
+    expertise: "BBA",
+    image: "/Faculty/Ashish-Jadhav.jpg",
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Jagannath Dhanaji Kadam",
+    role: "Senior Clerk",
+    expertise: "BA",
+    image: "/Faculty/Jagannath-Kadam.jpg",
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Bhagavan Shivaji Patil",
+    role: "Senior Admin Officer",
+    image: "/Faculty/Jiban-Murikal.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Balasaheb Chhaburao Shinde",
+    role: "Admin Officer",
+    image: "/Faculty/Balasaheb-Shinde.jpg",
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Solomon Sanjay Gaikwad",
+    role: "Social Media Manager",
+    expertise:
+      "Branding Officer with 7 years of media experience in Mass Communication & Journalism",
+    subRole: "BA Journalism and Mass Communication",
+    image: "/Faculty/Solomon-Gaikwad.jpg",
+    linkedin: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Rohan Ravindra Shinde",
+    role: "IT Lab Assistant",
+    expertise: "BCA, MCA",
+    image: "/Faculty/Rohan-Shinde.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Vaibhav Bhimrao Jadhav",
+    role: "Executive Assistant",
+    image: "/Faculty/Mr.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
+  {
+    name: "Mr. Amit Shashikant Kothari",
+    role: "coming soon",
+    image: "/Faculty/Mr.jpg",
+    linkedin: true,
+    website: true,
+    type: "non-teaching",
+  },
+];
+
+export default function LeadersDeskPage() {
+  const [showAllStaff, setShowAllStaff] = useState(false);
+  const [showFaculties, setShowFaculties] = useState(false);
+
+  const displayedStaff = showAllStaff ? allStaff : allStaff.slice(0, 20);
+
+  return (
+    <section className="w-full py-12 px-6 xl:py-8 xl:px-16 bg-white">
+      {/* PAGE HEADING */}
+      <div className="mb-20 text-center relative">
+        {/* Main heading */}
+        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900">
+          Leader&apos;s Desk
+        </h1>
+
+        {/* Accent divider */}
+        <div className="mx-auto mt-5 mb-6 w-16 h-[3px] rounded-full bg-[#FF8B61]" />
+
+        {/* Description */}
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          Messages from the leadership that guide our vision, values, and
+          commitment to excellence.
+        </p>
+      </div>
+
+      {/* LEADER SECTIONS */}
+      <div className="space-y-24 mb-20">
+        {leaders.map((leader, index) => (
+          <div
+            key={index}
+            className={`
+              w-full
+              rounded-3xl
+              p-6 md:p-8 lg:p-10
+              bg-gradient-to-r from-[#10404A] to-[#1F6D71]
+              shadow-xl
+            `}
+          >
+            <div
+              className={`
+                flex flex-col md:flex-row items-center gap-6
+                ${leader.reverse ? "md:flex-row-reverse" : ""}
+              `}
+            >
+              {/* IMAGE SECTION — 1/3 */}
+              <div className="w-full md:w-1/3 flex justify-center">
+                <div className="relative">
+                  <img
+                    src={leader.image}
+                    alt={leader.title}
+                    className="
+                      w-40 h-40 md:w-84 md:h-84
+                      rounded-full object-cover
+                      border-4 border-[#ffb088]
+                      shadow-md
+                    "
+                  />
+                </div>
+              </div>
+
+              {/* CONTENT SECTION — 2/3 */}
+              <div className="w-full md:w-2/3">
+                <div
+                  className="
+                    bg-[#3aafa9]
+                    rounded-2xl
+                    p-6 md:p-7 lg:p-8
+                    shadow-xl
+                    text-white
+                  "
+                >
+                  <h3 className="text-2xl md:text-3xl font-extrabold mb-1">
+                    {leader.name}
+                  </h3>
+
+                  <p className="text-white/90 font-medium text-lg mb-2">
+                    {leader.title}
+                  </p>
+
+                  {/* SUBTLE DIVIDER */}
+                  <div className="w-12 h-[2px] bg-[#ffb088] rounded-full mb-5" />
+
+                  <p className="text-white/90 text-lg leading-relaxed">
+                    {leader.message}
+                  </p>
+
+                  {/* SIGNATURE AREA */}
+                  <div className="mt-6 pt-4 border-t border-white/20">
+                    <p className="text-white/80 text-sm italic">
+                      Leading with vision, inspiring with action
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* STAFF DROPDOWN SECTION */}
+      <div className="border-t border-b border-slate-200">
+        {/* Dropdown Toggle Button */}
+        <button
+          onClick={() => setShowFaculties(!showFaculties)}
+          className="w-full py-8 flex flex-col items-center justify-center transition-colors duration-300 group cursor-pointer outline-none"
+        >
+          <div className="flex items-center gap-3 text-[#10404A] group-hover:text-[#fb7035] transition-colors">
+            <h3 className="text-lg font-bold tracking-wide uppercase">
+              Our Faculty & Staff
+            </h3>
+            <svg
+              className={`w-5 h-5 transition-transform duration-500 ${
+                showFaculties ? "rotate-180" : "rotate-0"
+              }`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2.5"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </div>
+          <p className="text-xs text-slate-400 mt-2 font-medium tracking-widest opacity-80 group-hover:opacity-100">
+            CLICK TO EXPAND DIRECTORY
+          </p>
+        </button>
+
+        {/* Staff Content with Animation */}
+        <div
+          className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
+            showFaculties ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+          }`}
+        >
+          <div className="overflow-hidden">
+            <div className="bg-white  py-12">
+              {/* Combined Staff Section */}
+              <div className="mb-16">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                  {displayedStaff.map((person, index) => (
+                    <div
+                      key={index}
+                      className="
+                        bg-whiteC
+                        rounded-xl
+                        shadow-md
+                        border border-gray-200
+                        overflow-hidden
+                        hover:shadow-lg
+                        transition-shadow duration-300
+                        flex flex-col
+                        h-full
+                      "
+                    >
+                      {/* Staff Image - Increased height */}
+                      <div className="h-84 overflow-hidden bg-gray-100">
+                        <img
+                          src={person.image}
+                          alt={person.name}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      
+                      {/* Staff Info */}
+                      <div className="p-4 flex flex-col flex-grow">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-1 line-clamp-2 min-h-[3.5rem]">
+                          {person.name}
+                        </h3>
+                        <p className="text-sm font-medium text-[#10404A] mb-1">
+                          {person.role}
+                        </p>
+                        {person.subRole && (
+                          <p className="text-xs text-gray-600 mb-2">
+                            {person.subRole}
+                          </p>
+                        )}
+                        {person.expertise && (
+                          <p className="text-xs text-gray-600 line-clamp-2 mb-3 flex-grow">
+                            {person.expertise}
+                          </p>
+                        )}
+                        
+                        {/* Type Badge */}
+                        <div className="mb-3">
+                          <span className={`
+                            inline-block px-2 py-1 text-xs font-semibold rounded-full
+                            ${person.type === 'teaching' 
+                              ? 'bg-blue-100 text-blue-800' 
+                              : 'bg-green-100 text-green-800'}
+                          `}>
+                            {person.type === 'teaching' ? 'Teaching' : 'Non-Teaching'}
+                          </span>
+                        </div>
+                        
+                        {/* Social Links */}
+                        <div className="flex gap-2 mt-auto">
+                          {person.linkedin && (
+                            <button 
+                              className="text-gray-400 hover:text-[#0077B5] transition-colors p-1"
+                              aria-label="LinkedIn profile"
+                            >
+                              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                              </svg>
+                            </button>
+                          )}
+                          {person.website && (
+                            <button 
+                              className="text-gray-400 hover:text-[#10404A] transition-colors p-1"
+                              aria-label="Website"
+                            >
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                              </svg>
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Show More/Less Button for All Staff */}
+                {allStaff.length > 20 && (
+                  <div className="flex justify-center mt-10">
+                    <button
+                      onClick={() => setShowAllStaff(!showAllStaff)}
+                      className="
+                        px-8 py-3
+                        bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80
+                        text-white
+                        rounded-full
+                        font-semibold
+                        hover:shadow-lg
+                        transition-all duration-300
+                        flex items-center gap-2
+                      "
+                    >
+                      {showAllStaff ? (
+                        <>
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                          </svg>
+                          Show Less
+                        </>
+                      ) : (
+                        <>
+                          Show More (+{allStaff.length - 20})
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

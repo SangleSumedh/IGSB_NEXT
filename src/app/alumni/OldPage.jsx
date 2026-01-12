@@ -601,16 +601,10 @@ export default function Alumni() {
 
   return (
     <>
-      <Head>
-        <title>IGSB Alumni Network</title>
-        <meta
-          name="description"
-          content="Connect with IGSB alumni and stay updated with our alumni network."
-        />
-      </Head>
+      
 
       <div className="min-h-screen bg-gray-50">
-        <div className="relative w-full h-[40vh] sm:h-[50vh] lg:h-[65vh]">
+        {/* <div className="relative w-full h-[40vh] sm:h-[50vh] lg:h-[65vh]">
           <Image
             src="/NISMBanner1.jpg"
             alt="Alumni Banner"
@@ -618,18 +612,10 @@ export default function Alumni() {
             priority
             className="object-cover object-center"
           />
-        </div>
-        <div className="max-w-7xl mx-auto px-4  md:px-8 space-y-12">
+        </div> */}
+        <div className="max-w-full mx-auto px-4  md:px-8 space-y-12">
           {/* ✅ Header Section */}
-          <div className="text-center py-8">
-            <h1 className="text-2xl md:text-4xl font-bold text-secondary mb-4">
-              IGSB Alumni Network
-            </h1>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              Stay connected with your alma mater and fellow alumni. Join our
-              growing network of successful professionals.
-            </p>
-          </div>
+          
 
           {/* ✅ Tabs */}
           <div className="flex flex-wrap justify-center gap-3">

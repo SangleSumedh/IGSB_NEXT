@@ -7,6 +7,7 @@ import { OrbitControls, Html } from "@react-three/drei";
 import * as THREE from "three";
 import ContributionSection from "./ContributionPage";
 import AlumniSpotlight from "./AlumniSpotlight";
+import OldPage from "./OldPage";
 
 // --- CONFIGURATION ---
 const GLOBE_RADIUS = 2;
@@ -287,6 +288,7 @@ const Loader = () => (
 export default function AlumniPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [showMemoryLane, setShowMemoryLane] = useState(false);
 
   const selectedAlumni = ALUMNI_LOCATIONS[currentIndex];
 
@@ -318,16 +320,15 @@ export default function AlumniPage() {
         {/* --- LEFT SECTION: 1/3 Width --- */}
         <div className="w-full lg:w-1/3 p-6 md:p-8  flex flex-col justify-center z-5 relative border-r border-slate-100 shadow-sm  backdrop-blur-sm lg:bg-white lg:backdrop-blur-none">
           <div className="mb-8">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tighter text-[#10404A] mb-3">
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tighter text-[#10404A] mb-3">
               GLOBAL REACH
             </h1>
-            <p className="text-slate-600 text-xs md:text-sm max-w-xs border-l-4 border-[#fb7035] pl-4 font-medium leading-relaxed">
-              IGSB Alumni are leading innovation in 45 countries. Click the
-              globe to explore.
+            <p className="text-slate-600 text-xs md:text-sm max-w-lg  font-medium leading-relaxed">
+              IGSB Alumni are leading innovation in 45 countries.
             </p>
           </div>
 
-          <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden transition-all duration-500">
+          <div className="w-full max-w-lg bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden transition-all duration-500">
             <div className="h-20 bg-[#10404A] relative">
               <div className="absolute -bottom-8 left-6">
                 <img
@@ -476,6 +477,50 @@ export default function AlumniPage() {
 
       <AlumniSpotlight />
       <ContributionSection />
+      <div className="w-full bg-slate-50 border-t border-slate-200">
+        <button
+          onClick={() => setShowMemoryLane(!showMemoryLane)}
+          className="w-full py-8 flex flex-col items-center justify-center hover:bg-slate-100 transition-colors duration-300 group cursor-pointer outline-none"
+        >
+          <div className="flex items-center gap-3 text-[#10404A] group-hover:text-[#fb7035] transition-colors">
+            <h3 className="text-lg font-bold tracking-wide uppercase">
+              Revisit Memory Lane
+            </h3>
+            <svg
+              className={`w-5 h-5 transition-transform duration-500 ${
+                showMemoryLane ? "rotate-180" : "rotate-0"
+              }`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2.5"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </div>
+          <p className="text-xs text-slate-400 mt-2 font-medium tracking-widest opacity-80 group-hover:opacity-100">
+            CLICK TO EXPAND ARCHIVE
+          </p>
+        </button>
+
+        {/* Accordion Animation Wrapper */}
+        <div
+          className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
+            showMemoryLane ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+          }`}
+        >
+          <div className="overflow-hidden">
+            <div className="p-8 border-t border-slate-100 bg-white shadow-inner">
+              {/* The Old Page Component */}
+              <OldPage />
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

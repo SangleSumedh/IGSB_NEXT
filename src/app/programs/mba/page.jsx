@@ -374,10 +374,13 @@ export default function MBAContent() {
   return (
     <div className="w-full bg-white text-white">
       {/* HERO SECTION */}
-      <MBASlider handleBrochureDownload={handleBrochureDownload} toggleModal={toggleModal} />
+      <MBASlider
+        handleBrochureDownload={handleBrochureDownload}
+        toggleModal={toggleModal}
+      />
 
       {/* INFO SECTION – Pillars Style */}
-      <div className="w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] text-white py-14 px-6 md:px-16">
+      <div className="w-full bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] text-white py-14 px-6 md:px-16">
         <div className="w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8 justify-items-center">
             {highlights.map((item, index) => (
@@ -443,7 +446,6 @@ export default function MBAContent() {
         </div>
 
         <div className="relative w-full overflow-visible">
-          
           <div ref={marqueeRef} className="highlights-marquee flex px-4">
             {[...Object.keys(mbaData)]
               .flatMap((key) => mbaData[key].highlights)
@@ -571,7 +573,10 @@ export default function MBAContent() {
 
       {/* MODAL */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60]" onClick={() =>setIsModalOpen(false)}>
+        <div
+          className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60]"
+          onClick={() => setIsModalOpen(false)}
+        >
           <div className="bg-white w-[90%] md:w-[680px]  rounded-lg shadow-lg relative max-h-[90vh] overflow-y-auto">
             <button
               onClick={toggleModal}

@@ -24,7 +24,7 @@ const pillars = [
 
 export default function PHDSpecs() {
   return (
-    <section className="w-full bg-gradient-to-r from-[#10404A] to-[#10404A] px-6 md:px-16 py-8 text-white">
+    <section className="w-full bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] px-6 md:px-16 py-8 text-white">
       <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-8">
         {/* LEFT SIDE: HEADING */}
         <div className="lg:w-[50%] text-left space-y-2 flex flex-col justify-evenly gap-2">
@@ -32,7 +32,7 @@ export default function PHDSpecs() {
             Ph.D Specialization offered in:
           </h3>
           <h2 className="text-4xl md:text-4xl xl:text-5xl font-extrabold text-white tracking-tight">
-            <span className=" text-primary">IGSB</span> Research Centre
+            <span className=" text-white">IGSB</span> Research Centre
           </h2>
           <h3 className="text-xl font-light text-white/90 italic">
             We strongly encourage multidisciplinary research.

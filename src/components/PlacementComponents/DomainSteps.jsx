@@ -8,18 +8,27 @@ import {
   FaCogs,
   FaCertificate,
   FaListUl,
+  // New icons for the certificates
+  FaGlobe,
+  FaHandshake,
+  FaFileInvoiceDollar,
+  FaShieldAlt,
+  FaDatabase,
+  FaTrophy,
+  FaProjectDiagram,
+  FaClipboardCheck,
 } from "react-icons/fa";
-
 const DomainSteps = () => {
-  const domains = [
+const domains = [
     {
       title: "Marketing",
       clipart: "/placement/marketing.png",
       icon: <FaBullhorn />,
-      // Orange for high energy
-      // color: "bg-[#f9712f]",
-      // accentBorder: "border-[#f9712f]",
-      certs: ["Digital Marketing", "Sales & Negotiation"],
+      // UPDATE 1: Changed 'certs' to an array of objects with icons
+      certs: [
+        { title: "Digital Marketing", icon: <FaGlobe /> },
+        { title: "Sales & Negotiation", icon: <FaHandshake /> },
+      ],
       topics: [
         "Marketing and Brand Outreach",
         "Marketing Research and Competitive Analysis",
@@ -31,10 +40,10 @@ const DomainSteps = () => {
       title: "Finance",
       clipart: "/placement/finance.png",
       icon: <FaChartLine />,
-      // Dark Teal for trust and stability
-      // color: "bg-[#10404a]",
-      // accentBorder: "border-[#10404a]",
-      certs: ["Financial Modelling", "Risk & Portfolio Management"],
+      certs: [
+        { title: "Financial Modelling", icon: <FaFileInvoiceDollar /> },
+        { title: "Risk & Portfolio Mgmt", icon: <FaShieldAlt /> },
+      ],
       topics: [
         "Banking Financial Services and Insurance",
         "Investment Analytics",
@@ -46,10 +55,10 @@ const DomainSteps = () => {
       title: "Human Resources",
       clipart: "/placement/hr.png",
       icon: <FaUsers />,
-      // Bright Teal for approachability
-      // color: "bg-[#00a49e]",
-      // accentBorder: "border-[#00a49e]",
-      certs: ["HRIMS", "Performance & Talent Management"],
+      certs: [
+        { title: "HRIMS", icon: <FaDatabase /> },
+        { title: "Talent Management", icon: <FaTrophy /> },
+      ],
       topics: [
         "Talent Acquisition",
         "HR Analytics",
@@ -62,10 +71,10 @@ const DomainSteps = () => {
       title: "OSCM",
       clipart: "/placement/oscm.png",
       icon: <FaCogs />,
-      // Reusing Dark Teal for consistency and professionalism
-      // color: "bg-[#10404a]",
-      // accentBorder: "border-[#10404a]",
-      certs: ["Six Sigma", "Project & Quality Management"],
+      certs: [
+        { title: "Six Sigma", icon: <FaProjectDiagram /> },
+        { title: "Project & Quality", icon: <FaClipboardCheck /> },
+      ],
       topics: [
         "Inventory Management",
         "Logistics and Transportation",
@@ -101,7 +110,7 @@ return (
                     className={`
                       relative p-6 lg:p-8 shadow-xl
                       border-t-4 border-[#00a49e]
-                      w-full rounded-xl 
+                      w-full rounded-md 
                       text-left
                       transition-transform duration-300 hover:-translate-y-2
                       bg-gradient-to-r from-[#10404A] to-[#1F6D71]
@@ -110,7 +119,7 @@ return (
                     <div className="relative">
                       {/* Header: Icon + Title */}
                       <h3 className="text-2xl font-bold uppercase tracking-wider text-white mb-6 flex items-center gap-4">
-                        <span className="text-3xl text-[#f9712f] bg-[#1A5F64] p-3 rounded-lg">
+                        <span className="text-3xl text-[#f9712f] bg-[#1A5F64] p-3 rounded-md shadow-md flex items-center justify-center">
                           {domain.icon}
                         </span>
                         {domain.title}
@@ -119,18 +128,25 @@ return (
                       {/* Body Content */}
                       <div className="space-y-6 text-sm text-white/90">
                         {/* Certifications Block */}
-                        <div className="bg-[#0A2E36] p-4 rounded-lg border border-[#00a49e]/30 shadow-sm">
+                        <div className="bg-[#0A2E36] p-4 rounded-md border border-[#00a49e]/30 shadow-sm">
                           <div className="flex items-center gap-2 font-bold text-base mb-3 text-[#f9712f]">
                             <FaCertificate className="text-lg" />
                             <span className="text-white">Certifications</span>
                           </div>
+                          
+                          {/* UPDATE 2: Updated mapping logic for icons */}
                           <div className="flex flex-wrap gap-3">
                             {domain.certs.map((cert, i) => (
                               <span
                                 key={i}
-                                className="text-xs font-medium bg-[#00a49e] text-white px-3 py-1.5 rounded-full shadow-sm"
+                                className="flex items-center gap-2 text-xs font-medium bg-[#00a49e] text-white px-3 py-1.5 rounded-md shadow-sm hover:bg-[#008f8a] transition-colors"
                               >
-                                {cert}
+                                {/* The Logo/Icon */}
+                                <span className="text-white/80 text-sm">
+                                  {cert.icon}
+                                </span>
+                                {/* The Title */}
+                                <span>{cert.title}</span>
                               </span>
                             ))}
                           </div>
@@ -144,11 +160,12 @@ return (
                           </div>
                           <ul className="space-y-2 text-base">
                             {domain.topics.map((topic, i) => (
-                              <li key={i} className="flex items-center gap-3 text-white/90">
+                              <li
+                                key={i}
+                                className="flex items-center gap-3 text-white/90"
+                              >
                                 {/* Dot Bullet */}
-                                <span
-                                  className="w-2 h-2 flex-shrink-0 rounded-full bg-[#f9712f]"
-                                ></span>
+                                <span className="w-2 h-2 flex-shrink-0 rounded-md bg-[#f9712f]"></span>
                                 {topic}
                               </li>
                             ))}

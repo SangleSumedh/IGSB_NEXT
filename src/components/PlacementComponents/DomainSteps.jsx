@@ -6,9 +6,7 @@ import {
   FaChartLine,
   FaUsers,
   FaCogs,
-  FaCertificate,
   FaListUl,
-  // New icons for the certificates
   FaGlobe,
   FaHandshake,
   FaFileInvoiceDollar,
@@ -17,22 +15,23 @@ import {
   FaTrophy,
   FaProjectDiagram,
   FaClipboardCheck,
+  FaCheckCircle
 } from "react-icons/fa";
+
 const DomainSteps = () => {
-const domains = [
+  const domains = [
     {
       title: "Marketing",
       clipart: "/placement/marketing.png",
       icon: <FaBullhorn />,
-      // UPDATE 1: Changed 'certs' to an array of objects with icons
       certs: [
         { title: "Digital Marketing", icon: <FaGlobe /> },
         { title: "Sales & Negotiation", icon: <FaHandshake /> },
       ],
       topics: [
         "Marketing and Brand Outreach",
-        "Marketing Research and Competitive Analysis",
-        "Customer Relation Management (CRM Tool)",
+        "Marketing Research & Analysis",
+        "Customer Relation Management",
         "Marketing Mix Modelling",
       ],
     },
@@ -45,9 +44,9 @@ const domains = [
         { title: "Risk & Portfolio Mgmt", icon: <FaShieldAlt /> },
       ],
       topics: [
-        "Banking Financial Services and Insurance",
+        "Banking Financial Services",
         "Investment Analytics",
-        "Financial Planning and Analysis",
+        "Financial Planning & Analysis",
         "Budgeting and Forecasting",
       ],
     },
@@ -62,9 +61,8 @@ const domains = [
       topics: [
         "Talent Acquisition",
         "HR Analytics",
-        "Human Resources Business Partner",
-        "Retention and Attrition Analytics",
-        "Employee Engagement and Performance Analytics",
+        "HR Business Partner",
+        "Retention & Attrition Analytics",
       ],
     },
     {
@@ -84,8 +82,8 @@ const domains = [
     },
   ];
 
-return (
-    <section className="bg-gray-50 py-20 min-h-screen font-sans">
+  return (
+    <section className="bg-slate-50 py-20 font-sans overflow-hidden">
       <div className="max-w-full mx-auto px-4 sm:px-6">
         <div className="space-y-24">
           {domains.map((domain, index) => {
@@ -108,69 +106,68 @@ return (
                 >
                   <div
                     className={`
-                      relative p-6 lg:p-8 shadow-xl
-                      border-t-4 border-[#00a49e]
-                      w-full rounded-md 
-                      text-left
+                      relative p-8 shadow-2xl rounded-2xl
+                      /* CHANGED: Solid Dark Teal background to match IRP Header */
+                      bg-[#10404A]
+                      /* CHANGED: Accent Border to Light Teal */
+                      border-t-8 border-[#3AAFA9]
+                      w-full text-left
                       transition-transform duration-300 hover:-translate-y-2
-                      bg-gradient-to-r from-[#10404A] to-[#1F6D71]
                     `}
                   >
                     <div className="relative">
-                      {/* Header: Icon + Title */}
-                      <h3 className="text-2xl font-bold uppercase tracking-wider text-white mb-6 flex items-center gap-4">
-                        <span className="text-3xl text-[#f9712f] bg-[#1A5F64] p-3 rounded-md shadow-md flex items-center justify-center">
+                      {/* --- Header: Icon + Title --- */}
+                      <h3 className="text-xl font-bold uppercase tracking-wider text-white mb-8 flex items-center gap-4">
+                        {/* CHANGED: Icon container is now Light Teal to match buttons */}
+                        <span className="text-xl text-black bg-white p-4 rounded-full shadow-lg flex items-center border-4 border-orange-500 justify-center">
                           {domain.icon}
                         </span>
                         {domain.title}
                       </h3>
 
-                      {/* Body Content */}
-                      <div className="space-y-6 text-sm text-white/90">
-                        {/* Certifications Block */}
-                        <div className="bg-[#0A2E36] p-4 rounded-md border border-[#00a49e]/30 shadow-sm">
-                          <div className="flex items-center gap-2 font-bold text-base mb-3 text-[#f9712f]">
-                            <FaCertificate className="text-lg" />
-                            <span className="text-white">Certifications</span>
+                      {/* --- Body Content --- */}
+                      <div className="space-y-8">
+                        
+                        {/* 1. Topics List */}
+                        <div>
+                          <div className="flex items-center gap-2 font-bold text-lg mb-4 text-[#3AAFA9] uppercase tracking-wide">
+                            <FaListUl className="text-xl" />
+                            <span>Core Modules</span>
                           </div>
-                          
-                          {/* UPDATE 2: Updated mapping logic for icons */}
-                          <div className="flex flex-wrap gap-3">
-                            {domain.certs.map((cert, i) => (
-                              <span
-                                key={i}
-                                className="flex items-center gap-2 text-xs font-medium bg-[#00a49e] text-white px-3 py-1.5 rounded-md shadow-sm hover:bg-[#008f8a] transition-colors"
-                              >
-                                {/* The Logo/Icon */}
-                                <span className="text-white/80 text-sm">
-                                  {cert.icon}
-                                </span>
-                                {/* The Title */}
-                                <span>{cert.title}</span>
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Topics List */}
-                        <div className="mt-4">
-                          <div className="flex items-center gap-2 font-bold text-base mb-2 text-[#00a49e]">
-                            <FaListUl className="text-lg text-[#f9712f] " />
-                            <span className="text-white">Key Topics</span>
-                          </div>
-                          <ul className="space-y-2 text-base">
+                          <ul className="space-y-3 grid grid-cols-1 sm:grid-cols-2 ">
                             {domain.topics.map((topic, i) => (
-                              <li
-                                key={i}
-                                className="flex items-center gap-3 text-white/90"
-                              >
-                                {/* Dot Bullet */}
-                                <span className="w-2 h-2 flex-shrink-0 rounded-md bg-[#f9712f]"></span>
+                              <li key={i} className="flex items-start gap-3 text-white text-base ">
+                                <FaCheckCircle className="mt-1 text-[#3AAFA9] shrink-0" />
                                 {topic}
                               </li>
                             ))}
                           </ul>
                         </div>
+
+                        {/* 2. Certifications Block (Styled like the IRP Buttons) */}
+                        <div className="pt-6 border-t border-white/10">
+                          <p className="font-bold text-sm text-white/60 uppercase tracking-widest mb-4">
+                            Specialized Certifications
+                          </p>
+                          
+                          <div className="flex flex-wrap gap-4">
+                            {domain.certs.map((cert, i) => (
+                              <div
+                                key={i}
+                                /* CHANGED: Styled to look like the "Aptitude/Technical" buttons */
+                                className="flex items-center gap-3 bg-[#3AAFA9] text-white px-5 py-3 rounded- shadow-md hover:bg-[#2b9d97] transition-all duration-300 cursor-default"
+                              >
+                                {/* The Logo/Icon */}
+                                <span className="text-xl">
+                                  {cert.icon}
+                                </span>
+                                {/* The Title */}
+                                <span className="font-bold text-sm">{cert.title}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
                       </div>
                     </div>
                   </div>
@@ -183,11 +180,16 @@ return (
                         ${isCardLeft ? "lg:pl-16" : "lg:pr-16"}
                     `}
                 >
-                  <img
-                    src={domain.clipart}
-                    alt={`${domain.title} illustration`}
-                    className="max-w-full h-auto max-h-[350px] object-contain drop-shadow-lg transition-transform duration-500 hover:scale-105"
-                  />
+                  <div className="relative">
+                    {/* Optional: A subtle glow behind the image matching the teal theme */}
+                    <div className="absolute inset-0 bg-[#3AAFA9]/20 blur-3xl rounded-full scale-75"></div>
+                    
+                    <img
+                      src={domain.clipart}
+                      alt={`${domain.title} illustration`}
+                      className="relative z-10 max-w-full h-auto max-h-[400px] object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
                 </div>
               </div>
             );

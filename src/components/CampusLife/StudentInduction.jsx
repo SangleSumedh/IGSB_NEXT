@@ -2,205 +2,147 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { studentInduction } from "@/static/campuslife/student-inductions.js";
+import { FaCircle, FaCalendarAlt, FaMicrophone } from "react-icons/fa";
 
 /* ============================================================
-   Mini Card (for short, image-only induction items)
+   Timeline Item Component
+   - Replaces the old Card
+   - Implements the "Node -> Pill Title -> Content" layout
    ============================================================ */
-function MiniInductionCard({ item }) {
+function TimelineItem({ item, index, isLast }) {
   return (
-    <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition">
-      {/* Image or fallback */}
-      {item.images && item.images.length > 0 ? (
-        <div className="relative w-full h-48">
-          <Image
-            src={item.images[0]}
-            alt={item.title}
-            fill
-            className="object-cover"
-          />
-        </div>
-      ) : (
-        <div className="w-full h-48 bg-gray-100 flex items-center justify-center text-gray-500">
-          No Image
-        </div>
+    <div className={`relative pl-8 sm:pl-12 ${!isLast ? "pb-12" : "pb-0"}`}>
+      
+      {/* 1. VERTICAL CONNECTING LINE (The "Path") */}
+      {!isLast && (
+        <div className="absolute left-[11px] sm:left-[15px] top-4 h-full w-[2px] bg-gray-200"></div>
       )}
 
-      <div className="p-4">
-        <h3 className="text-lg font-semibold text-secondary line-clamp-2">
-          {item.title}
-        </h3>
+      {/* 2. THE "PLANET" MARKER (Left Icon) */}
+      <div className="absolute left-0 top-1 w-6 h-6 sm:w-8 sm:h-8 bg-blue-500 rounded-full border-4 border-white shadow-md z-10 flex items-center justify-center">
+        <div className="w-2 h-2 bg-white rounded-full" />
+      </div>
+
+      {/* 3. THE CONTENT AREA */}
+      <div className="flex flex-col space-y-4">
+        
+        {/* A. The "Pill" Title (Matches the reference image style) */}
+        <div className="bg-[#1e293b] text-white py-3 px-6 rounded-r-full rounded-bl-xl shadow-lg self-start inline-block max-w-full sm:max-w-2xl transform transition hover:-translate-y-1">
+          <h3 className="text-lg sm:text-xl font-bold tracking-wide uppercase">
+            {item.title}
+          </h3>
+        </div>
+
+        {/* B. The Body Content (Description, Images, Sessions) */}
+        <div className="bg-white border-l-4 border-blue-500 pl-4 sm:pl-6 py-2 space-y-6">
+          
+          {/* Description */}
+          {item.description?.length > 0 && (
+            <div className="text-gray-700 leading-relaxed space-y-3">
+              {item.description.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
+          )}
+
+          {/* Objective Box */}
+          {item.objective && (
+            <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+              <h4 className="font-bold text-blue-800 mb-2 text-sm uppercase">Objective</h4>
+              {Array.isArray(item.objective) ? (
+                <ul className="list-disc pl-5 space-y-1 text-gray-700 text-sm">
+                  {item.objective.map((obj, i) => <li key={i}>{obj}</li>)}
+                </ul>
+              ) : (
+                <p className="text-gray-700 text-sm">{item.objective}</p>
+              )}
+            </div>
+          )}
+
+          {/* SESSIONS (If available) */}
+          {item.sessions && item.sessions.length > 0 && (
+            <div className="space-y-4 mt-4">
+              {item.sessions.map((session, idx) => {
+                 const imageForSession = item.images?.[idx];
+                 return (
+                  <div key={idx} className="bg-gray-50 rounded-xl p-4 border border-gray-200 flex flex-col lg:flex-row gap-6">
+                    <div className="flex-1 space-y-2">
+                       <h5 className="font-bold text-lg text-gray-800 flex items-center gap-2">
+                          <FaMicrophone className="text-blue-500" />
+                          {session.title}
+                       </h5>
+                       {session.speaker && (
+                         <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded font-semibold">
+                           {session.speaker}
+                         </span>
+                       )}
+                       <p className="text-sm text-gray-600 leading-relaxed">{session.description}</p>
+                    </div>
+                    {/* Session Image */}
+                    {imageForSession && (
+                      <div className="lg:w-48 h-32 relative rounded-lg overflow-hidden flex-shrink-0 shadow-sm">
+                        <Image src={imageForSession} alt={session.title} fill className="object-cover" />
+                      </div>
+                    )}
+                  </div>
+                 )
+              })}
+            </div>
+          )}
+
+          {/* IMAGE GALLERY (For items without sessions) */}
+          {(!item.sessions || item.sessions.length === 0) && item.images?.length > 0 && (
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4">
+              {item.images.slice(0, 4).map((img, i) => (
+                <div key={i} className="relative h-40 w-full rounded-lg overflow-hidden shadow border border-gray-200 group">
+                  <Image 
+                    src={img} 
+                    alt="Event" 
+                    fill 
+                    className="object-cover transition duration-500 group-hover:scale-110" 
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+          
+        </div>
       </div>
     </div>
   );
 }
 
 /* ============================================================
-   Full Induction Card (renders description, objective, topics, images)
-   ============================================================ */
-export function InductionCard({ item }) {
-  return (
-    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 space-y-6">
-      {/* Title */}
-      <h2 className="text-2xl font-semibold text-secondary leading-snug">
-        {item.title}
-      </h2>
-
-      {/* Description */}
-      {item.description?.length > 0 && (
-        <div className="space-y-4 text-gray-700 leading-relaxed text-[1.05rem]">
-          {item.description.map((para, idx) => (
-            <p key={idx}>{para}</p>
-          ))}
-        </div>
-      )}
-
-      {/* ================================
-          Sessions With Side-By-Side Images
-         ================================ */}
-      {item.sessions && item.sessions.length > 0 && (
-        <div className="space-y-6">
-          <h4 className="font-semibold text-secondary text-xl">Sessions</h4>
-
-          {item.sessions.map((session, idx) => {
-            const imageForSession = item.images?.[idx];
-
-            return (
-              <div
-                key={idx}
-                className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 bg-gray-50 border border-gray-200 rounded-xl shadow-sm"
-              >
-                {/* LEFT: Session Details */}
-                <div className="space-y-2 col-span-2">
-                  <h5 className="text-xl font-semibold text-secondary">
-                    {session.title}
-                  </h5>
-
-                  {session.speaker && (
-                    <p className="text-sm font-medium text-gray-600">
-                      {session.speaker}
-                    </p>
-                  )}
-
-                  <p className="text-gray-700 leading-relaxed">
-                    {session.description}
-                  </p>
-                </div>
-
-                {/* RIGHT: Session Image */}
-                {imageForSession && (
-                  <div>
-                    {imageForSession ? (
-                      <div className="relative w-full h-56 rounded-lg overflow-hidden border border-gray-300 shadow">
-                        <Image
-                          src={imageForSession}
-                          alt={session.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    ) : (
-                      <div className="w-full h-56 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500">
-                        No Image
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      )}
-
-      {/* Objective */}
-      {item.objective && (
-        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-          <h4 className="font-semibold text-secondary mb-2">Objective</h4>
-
-          {Array.isArray(item.objective) ? (
-            <ul className="list-disc pl-6 space-y-1 text-gray-700">
-              {item.objective.map((obj, idx) => (
-                <li key={idx}>{obj}</li>
-              ))}
-            </ul>
-          ) : (
-            <p className="text-gray-700">{item.objective}</p>
-          )}
-        </div>
-      )}
-
-      {/* Topics */}
-      {item.topics?.length > 0 && (
-        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-          <h4 className="font-semibold text-secondary mb-2">Topics Covered</h4>
-          <ul className="list-disc pl-6 space-y-1 text-gray-700">
-            {item.topics.map((topic, idx) => (
-              <li key={idx}>{topic}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {/* Images (ONLY for items WITH NO sessions) */}
-      {!item.sessions && item.images?.length > 0 && (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
-          {item.images.slice(0, 6).map((img, idx) => (
-            <div
-              key={idx}
-              className="relative w-full h-60 rounded-xl overflow-hidden shadow-md border border-gray-200"
-            >
-              <Image src={img} alt={item.title} fill className="object-cover" />
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
-
-/* ============================================================
-   Main Component – Smart Auto Layout
+   Main Component
    ============================================================ */
 export default function StudentInduction() {
   const YEARS = Object.keys(studentInduction);
   const [selectedYear, setSelectedYear] = useState(YEARS[0]);
-
   const yearData = studentInduction[selectedYear];
 
-  // Detect mini cards (simple, image-only)
-  function isMini(item) {
-    return (
-      (!item.description || item.description.length === 0) &&
-      (!item.objective || item.objective.length === 0) &&
-      (!item.topics || item.topics.length === 0) &&
-      item.images &&
-      item.images.length <= 1
-    );
-  }
-
-  const miniItems = yearData.filter(isMini);
-  const fullItems = yearData.filter((item) => !isMini(item));
-
   return (
-    <div className="space-y-12 w-full">
-      {/* Header */}
-      <div className="pb-6 border-b">
-        {/* Title */}
-        <h1 className="text-3xl font-semibold text-secondary mb-4">
-          Student Induction Program
-        </h1>
+    <div className="w-full">
+      
+      {/* --- Header & Year Selector --- */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 border-b pb-6">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">Student Induction</h1>
+          <p className="text-gray-500 mt-1">Your Journey Starts Here</p>
+        </div>
 
-        {/* Buttons */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+        {/* Year Tabs */}
+        <div className="flex flex-wrap gap-2">
           {YEARS.map((year) => (
             <button
               key={year}
-              className={`px-4 py-2 rounded-lg border text-sm text-center
-          ${
-            selectedYear === year
-              ? "bg-secondary text-white border-secondary shadow"
-              : "bg-white text-secondary border-gray-300 hover:bg-gray-100"
-          }`}
               onClick={() => setSelectedYear(year)}
+              className={`
+                px-5 py-2 rounded-full text-sm font-semibold transition-all
+                ${selectedYear === year 
+                  ? "bg-blue-600 text-white shadow-md ring-2 ring-blue-600 ring-offset-2" 
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                }
+              `}
             >
               {year}
             </button>
@@ -208,26 +150,22 @@ export default function StudentInduction() {
         </div>
       </div>
 
-      {/* Renderer */}
-      <div className="space-y-12">
-        {/* Full Cards */}
-        {fullItems.length > 0 && (
-          <div className="space-y-12">
-            {fullItems.map((item, idx) => (
-              <InductionCard key={idx} item={item} />
-            ))}
-          </div>
-        )}
-
-        {/* Mini Cards Grid */}
-        {miniItems.length > 0 && (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {miniItems.map((item, idx) => (
-              <MiniInductionCard key={idx} item={item} />
-            ))}
-          </div>
+      {/* --- Timeline Flow --- */}
+      <div className="max-w-full mx-auto">
+        {yearData && yearData.length > 0 ? (
+            yearData.map((item, idx) => (
+            <TimelineItem 
+                key={idx} 
+                item={item} 
+                index={idx} 
+                isLast={idx === yearData.length - 1} 
+            />
+            ))
+        ) : (
+            <div className="text-center text-gray-500 py-12">No data found for {selectedYear}</div>
         )}
       </div>
+
     </div>
   );
 }

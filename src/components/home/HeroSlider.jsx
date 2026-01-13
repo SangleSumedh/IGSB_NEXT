@@ -5,10 +5,10 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const HeroSlider = () => {
-  const desktopImages = ["/Home/IGSBbannerH1.jpg", "/Home/IGSBBannerH2.jpg"];
+  const desktopImages = ["/Home/IGSBBannerH4.jpg","/Home/IGSBBannerH5.jpg"];
   const mobileImages = [
-    "/Home/IGSBBannerH1.jpg",
-    "/Home/IGSBBannerH2.jpg",
+    "/Home/IGSBBannerH4.jpg",
+    "/Home/IGSBBannerH5.jpg",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,6 +40,38 @@ const HeroSlider = () => {
     <div className="relative w-full">
       <div className="relative w-full overflow-hidden">
         {/* ---------------- DESKTOP ---------------- */}
+
+         <div className="w-full h-[4vh] bg-white border-b border-gray-200 flex items-center overflow-hidden relative">
+        <div className="relative font-semibold text-xs sm:text-sm px-4 sm:px-8 py-2 clip-ribbon-left z-10 bg-secondary text-white">
+          SPOTLIGHT
+        </div>
+
+        <div className="flex-1 overflow-hidden whitespace-nowrap">
+          <div className="flex animate-seamlessMarquee font-semibold text-sm py-2 text-secondary">
+            <span className="mr-12">
+              Important Notice: Inter-Se-Merit List for ILS ACAP Admission for
+              A.Y. 2025–26
+            </span>
+            <span className="mr-12">
+              Admission Advertisement for ILS / ACAP MBA (MB06976) – IGSB 2025–26
+            </span>
+            <span className="mr-12">
+              MBA Admission Alert: DTE Code for IGSB is *MB6976*
+            </span>
+            <span className="mr-12">
+              AICTE Approved | Affiliated to SPPU
+            </span>
+
+            {/* duplicate for seamless loop */}
+            <span className="mr-12">
+              Important Notice: Inter-Se-Merit List for ILS ACAP Admission for
+              A.Y. 2025–26
+            </span>
+          </div>
+        </div>
+
+        <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-primary to-transparent" />
+      </div>
         <div className="hidden md:block relative w-full">
           {/* height provider */}
           <Image
@@ -50,6 +82,8 @@ const HeroSlider = () => {
             height={700}
             priority
           />
+
+          
 
           {desktopImages.map((img, i) => (
             <div
@@ -110,6 +144,8 @@ const HeroSlider = () => {
             </button>
           </div>
         </div>
+
+         
 
         {/* ---------------- MOBILE ---------------- */}
         <div className="block md:hidden relative w-full">

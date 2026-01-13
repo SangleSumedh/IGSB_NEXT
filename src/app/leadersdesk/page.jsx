@@ -11,20 +11,21 @@ const leaders = [
       "At our institution, we believe education is the foundation of a progressive society. Our goal is to empower students with knowledge, values, and skills that prepare them to lead with confidence and integrity. We are committed to fostering innovation, discipline, and excellence in every learner.",
     reverse: false,
   },
-  {
-    name: "Managing Director's Message",
-    title: "Managing Director",
-    image: "/Home/ShashiSir1.jpg",
-    message:
-      "Our focus has always been on bridging the gap between academics and industry. Through modern infrastructure, industry-oriented curriculum, and experienced faculty, we strive to create professionals who are adaptable, skilled, and future-ready.",
-    reverse: true,
-  },
+ 
   {
     name: "Principal's Message",
     title: "Principal",
     image: "/Home/DrVirendraTatake.jpg",
     message:
       "We aim to nurture a culture of curiosity, research, and continuous learning. By encouraging critical thinking and ethical responsibility, we prepare students not only for successful careers but also for meaningful contributions to society.",
+    reverse: true,
+  },
+   {
+    name: "Managing Director's Message",
+    title: "Managing Director",
+    image: "/Home/ShashiSir1.jpg",
+    message:
+      "Our focus has always been on bridging the gap between academics and industry. Through modern infrastructure, industry-oriented curriculum, and experienced faculty, we strive to create professionals who are adaptable, skilled, and future-ready.",
     reverse: false,
   },
 ];
@@ -406,7 +407,7 @@ export default function LeadersDeskPage() {
         </div>
 
         {/* STAFF DROPDOWN SECTION */}
-        <div className="border-t border-b border-slate-200">
+        <div className="border-t border-b border-slate-200 ">
           {/* Dropdown Toggle Button */}
           <button
             onClick={() => setShowFaculties(!showFaculties)}
@@ -444,15 +445,15 @@ export default function LeadersDeskPage() {
             }`}
           >
             <div className="overflow-hidden">
-              <div className="bg-white py-12">
+              <div className="bg-[#1F6D71] px-6 py-12 rounded-md">
                 {/* Combined Staff Section */}
                 <div className="mb-16">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {displayedStaff.map((person, index) => (
                       <div
                         key={index}
                         className="
-                          bg-white
+                          bg-[#3aafa9]
                           rounded-xl
                           shadow-md
                           border border-gray-200
@@ -464,7 +465,7 @@ export default function LeadersDeskPage() {
                         "
                       >
                         {/* Staff Image - Increased height */}
-                        <div className="h-84 overflow-hidden bg-gray-100">
+                        <div className="h-84 xl:h-108 overflow-hidden bg-gray-50">
                           <img
                             src={person.image}
                             alt={person.name}
@@ -474,58 +475,65 @@ export default function LeadersDeskPage() {
                         
                         {/* Staff Info */}
                         <div className="p-4 flex flex-col flex-grow">
-                          <h3 className="text-lg font-semibold text-gray-900 mb-1 line-clamp-2 min-h-[3.5rem]">
+                          <h3 className="text-lg font-semibold text-white mb-1 line-clamp-2 min-h-[3.5rem]">
                             {person.name}
                           </h3>
-                          <p className="text-sm font-medium text-[#10404A] mb-1">
+                          <p className="text-sm font-medium text-white mb-1">
                             {person.role}
                           </p>
                           {person.subRole && (
-                            <p className="text-xs text-gray-600 mb-2">
+                            <p className="text-xs text-white mb-2">
                               {person.subRole}
                             </p>
                           )}
                           {person.expertise && (
-                            <p className="text-xs text-gray-600 line-clamp-2 mb-3 flex-grow">
+                            <p className="text-xs text-white line-clamp-2 mb-3 flex-grow">
                               {person.expertise}
                             </p>
                           )}
-                          
+
+
+                         <div className="w-full flex items-center justify-between mt-auto">
+  <div>
+    <span className={`
+      inline-block px-2 py-1 text-xs font-semibold rounded-full
+      ${person.type === 'teaching' 
+        ? 'bg-[#fb7035] text-white' 
+        : 'bg-[#fb7035] text-white'}
+    `}>
+      {person.type === 'teaching' ? 'Teaching' : 'Non-Teaching'}
+    </span>
+  </div>
+  
+  <div className="flex gap-2">
+    {person.linkedin && (
+      <button 
+        className="text-white hover:text-[#0077B5] transition-colors p-1"
+        aria-label="LinkedIn profile"
+      >
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </button>
+    )}
+    {person.website && (
+      <button 
+        className="text-white hover:text-[#10404A] transition-colors p-1"
+        aria-label="Website"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+        </svg>
+      </button>
+    )}
+  </div>
+</div>
                           {/* Type Badge */}
-                          <div className="mb-3">
-                            <span className={`
-                              inline-block px-2 py-1 text-xs font-semibold rounded-full
-                              ${person.type === 'teaching' 
-                                ? 'bg-blue-100 text-blue-800' 
-                                : 'bg-green-100 text-green-800'}
-                            `}>
-                              {person.type === 'teaching' ? 'Teaching' : 'Non-Teaching'}
-                            </span>
-                          </div>
+                        
                           
                           {/* Social Links */}
-                          <div className="flex gap-2 mt-auto">
-                            {person.linkedin && (
-                              <button 
-                                className="text-gray-400 hover:text-[#0077B5] transition-colors p-1"
-                                aria-label="LinkedIn profile"
-                              >
-                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                </svg>
-                              </button>
-                            )}
-                            {person.website && (
-                              <button 
-                                className="text-gray-400 hover:text-[#10404A] transition-colors p-1"
-                                aria-label="Website"
-                              >
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                                </svg>
-                              </button>
-                            )}
-                          </div>
+                      
+
                         </div>
                       </div>
                     ))}

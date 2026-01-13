@@ -5,6 +5,8 @@ import Image from "next/image";
 // import FAQSection from "@/components/FAQSections/FAQMBA";
 import CTASection from "@/components/home/CTASection";
 import RecruitersSection from "@/components/home/RecruiterSection";
+import PillarsSection from "@/components/home/Pillar";
+import PHDSpecs from "@/components/programs/PHDSpecialisations";
 
 export default function PHD() {
   // const faqRef = useRef(null);
@@ -71,69 +73,74 @@ export default function PHD() {
       {/* ===================================================
           ABOUT RESEARCH CENTRE
       =================================================== */}
-      <section className="bg-white px-4 sm:px-8 py-8  space-y-6 max-w-7xl mx-auto mt-12 shadow-sm">
-        <h2 className="text-2xl md:text-4xl font-bold text-secondary text-left">
-          About IGSB Research Centre
-        </h2>
+      <section className="bg-white px-8 md:px-16 max-w-full mx-auto py-12 shadow-sm space-y-8">
+        <div className=" grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+          {/* --- LEFT SIDE: TEXT (3/5 or 60%) --- */}
+          <div className="lg:col-span-3 space-y-6">
+            <h2 className="text-2xl md:text-4xl font-bold text-secondary text-left">
+              About IGSB Research Centre
+            </h2>
 
-        <div className="space-y-4 text-justify text-md md:text-lg text-gray-700">
-          <p>
-            Indira Global School of Business (IGSB) is recognized by AICTE and UGC, and is affiliated with Savitribai Phule Pune University (SPPU). It was established with a clear vision to develop globally-oriented researchers capable of driving sustainable growth in the evolving international business landscape. Over the years, IGSB has emerged as a premier B-School in Pune, offering MBA programs. From the academic year 2025–26, IGSB also offers Doctoral Programs in Management.
-          </p>
+            <div className="space-y-4 text-justify text-md md:text-lg text-gray-700">
+              <p>
+                Indira Global School of Business (IGSB) is recognized by AICTE
+                and UGC, and is affiliated with Savitribai Phule Pune University
+                (SPPU). It was established with a clear vision to develop
+                globally-oriented researchers capable of driving sustainable
+                growth in the evolving international business landscape. Over
+                the years, IGSB has emerged as a premier B-School in Pune,
+                offering MBA programs. From the academic year 2025–26, IGSB also
+                offers Doctoral Programs in Management.
+              </p>
 
-          <p>
-            The IGSB Research Center (PGRC) is a recognized Ph.D. Research Center, affiliated with SPPU, and is dedicated to fostering advanced research in the field of management. The Doctoral Programme in Management plays a pivotal role in nurturing future scholars, academicians, and industry researchers by encouraging rigorous inquiry and innovation across various management domains.
-          </p>
+              <p>
+                The IGSB Research Center (PGRC) is a recognized Ph.D. Research
+                Center, affiliated with SPPU, and is dedicated to fostering
+                advanced research in the field of management. The Doctoral
+                Programme in Management plays a pivotal role in nurturing future
+                scholars, academicians, and industry researchers by encouraging
+                rigorous inquiry and innovation across various management
+                domains.
+              </p>
 
-          <p>
-            The aim of the IGSB Research Center is to cultivate a vibrant research ecosystem that promotes scholarly inquiry, critical thinking, and innovation in management. The Center is committed to contributing to the advancement of knowledge by supporting high-quality doctoral research, encouraging interdisciplinary collaboration, and addressing contemporary business and societal challenges through evidence-based insights.
-          </p>
+              <p>
+                The aim of the IGSB Research Center is to cultivate a vibrant
+                research ecosystem that promotes scholarly inquiry, critical
+                thinking, and innovation in management. The Center is committed
+                to contributing to the advancement of knowledge by supporting
+                high-quality doctoral research, encouraging interdisciplinary
+                collaboration, and addressing contemporary business and societal
+                challenges through evidence-based insights.
+              </p>
+            </div>
+          </div>
 
-          <p className="font-semibold">Ph.D. specialization offered in:</p>
-
-          <ul className="list-disc ml-6">
-            <li>Finance and Accounting</li>
-            <li>Human Resource Management</li>
-            <li>Marketing</li>
-            <li>General Management</li>
-            <li>Organizational Behaviour, Operations & Decision Sciences. Public Systems, Strategy, Innovation and Management in Education</li>
-            
-          </ul>
-
-          <p>We strongly encourage multidisciplinary research.</p>
+          {/* --- RIGHT SIDE: IMAGE (2/5 or 40%) --- */}
+          <div className="lg:col-span-2 h-full min-h-[300px] relative rounded-2xl overflow-hidden shadow-lg border border-gray-100 group">
+            <Image
+              src="/Programs/ResearchCentre.png"
+              alt="IGSB Research Centre"
+              fill
+              className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            />
+            {/* Optional Overlay for better integration */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+          </div>
         </div>
+
+        {/* Specializations Component remains below */}
       </section>
-
-      {/* ===================================================
-          ADMISSION DETAILS
-      =================================================== */}
-      <section className="bg-white px-4 md:px-8 py-8 rounded-none space-y-6 max-w-7xl mx-auto mt-12 shadow-sm ">
-        <h2 className="text-3xl font-bold text-secondary text-left">
-          Admission Details
-        </h2>
-
-        <p className="text-gray-700 text-justify text-md md:text-lg">
-          Admissions to the Ph.D. program are conducted strictly as per SPPU
-          norms and guidelines. Vacancy details are announced as per university
-          timelines before each admission cycle.
-        </p>
-
-        <p className="text-gray-700 text-justify">
-          <strong>SPPU Circulars:</strong> The Research Center ensures complete
-          transparency and provides all official SPPU circulars related to Ph.D.
-          admissions and procedure.
-        </p>
-      </section>
+      <PHDSpecs />
 
       {/* ===================================================
           PHD GUIDES
       =================================================== */}
-      <section className="bg-white px-6 md:px-8  py-8  space-y-6 max-w-7xl mx-auto mt-12  ">
+      <section className="bg-white px-6 md:px-16  py-8  space-y-6 max-w-full mx-auto mt-12  ">
         <h2 className="text-3xl font-bold text-secondary text-left">
           Recognized Ph.D. Guides
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {[
             [
               "Dr. Virendra Tatake",
@@ -183,33 +190,138 @@ export default function PHD() {
       </section>
 
       {/* ===================================================
-          RESEARCH ACTIVITIES
+          COMBINED: RESEARCH ACTIVITIES & ADMISSION NEWS
       =================================================== */}
-      <section className="bg-white mb-16 px-4 md:px-8 py-8 rounded-none flex justify-between items-center gap-10 space-y-6 max-w-7xl mx-auto mt-12 shadow-sm ">
-        <div className="flex flex-col min-w-3xl items-left  gap-y-5 justify-between">
-          <h2 className="text-2xl md:text-4xl font-bold text-secondary ">
-            Research Centre Activities
-          </h2>
+      <section className="w-full bg-white py-16 px-4 md:px-8 lg:px-16 border-t border-slate-100">
+        <div className="max-w-[1800px] mx-auto grid grid-cols-1 xl:grid-cols-12 gap-10 items-stretch">
+          {/* --- LEFT SIDE: RESEARCH ACTIVITIES (Span 8) --- */}
+          <div className="xl:col-span-8 flex flex-col">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#10404a] mb-8">
+              Research Centre Activities
+            </h2>
 
-          <p className="text-gray-700 max-w-xl text-justify">
-            On 5th June 2025, the IGSB Research Centre organized a guidance
-            session led by <strong>Dr. Abhijit Chandratreya</strong>, Deputy
-            Director (PGRC), IIMP. The workshop aimed to provide guidance on
-            doctoral entrance eligibility, research orientation, purpose of
-            Ph.D., and its professional relevance.
-          </p>
+            {/* Activities Content Card */}
+            <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 lg:p-8 flex flex-col lg:flex-row gap-8 h-full">
+              {/* Text Content */}
+              <div className="flex-1 space-y-6 text-justify">
+                <p className="text-slate-700 text-lg leading-relaxed">
+                  On 5th June 2025, the IGSB Research Centre organized a
+                  guidance session led by{" "}
+                  <strong>Dr. Abhijit Chandratreya</strong>, Deputy Director
+                  (PGRC), IIMP. The workshop aimed to provide guidance on
+                  doctoral entrance eligibility, research orientation, purpose
+                  of Ph.D., and its professional relevance.
+                </p>
+                <p className="text-slate-700 text-lg leading-relaxed">
+                  The session also focused on building an academic research
+                  mindset, ethical considerations, and publication standards.
+                </p>
+              </div>
 
-          <p className="text-gray-700 max-w-xl text-justify">
-            The session also focused on building an academic research mindset,
-            ethical considerations, and publication standards.
-          </p>
-        </div>
-        <div className="rounded-2xl max-w-3xl overflow-hidden shadow">
-          <img
-            src="/IGSB/Research/IGSBRC/Activities.png"
-            alt="IGSB Research Centre Session"
-            className="w-full h-auto object-cover"
-          />
+              {/* Event Image */}
+              <div className="lg:w-2/5 flex-shrink-0">
+                <div className="relative h-64 lg:h-full min-h-[250px] w-full rounded-xl overflow-hidden shadow-lg group">
+                  <img
+                    src="/IGSB/Research/IGSBRC/Activities.png"
+                    alt="IGSB Research Centre Session"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 text-white text-xs font-semibold bg-[#fb7035] px-2 py-1 rounded">
+                    Workshop 2025
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* --- RIGHT SIDE: ADMISSION DETAILS (News Flash) (Span 4) --- */}
+          <div className="xl:col-span-4 flex flex-col">
+            {/* Alignment Spacer to align with Left Header (approx height of header + subheader) */}
+            <div className="hidden xl:block h-[116px]"></div>
+
+            <div className="bg-white rounded-xl shadow-xl border-t-4 border-[#3aafa9] overflow-hidden flex flex-col h-full">
+              {/* Header */}
+              <div className="bg-[#10404a] p-6 flex items-center justify-between text-white flex-shrink-0">
+                <h3 className="text-xl font-bold flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    className="w-6 h-6 text-[#3aafa9]"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+                    />
+                  </svg>
+                  News Flash
+                </h3>
+                <span className="animate-pulse w-2 h-2 rounded-full bg-red-500"></span>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 relative flex flex-col flex-grow">
+                <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-20 pointer-events-none"></div>
+
+                <div className="relative z-10 flex flex-col gap-6 flex-grow">
+                  {/* Admission Details */}
+                  <div>
+                    <h4 className="font-bold text-[#fb7035] text-sm uppercase tracking-wide mb-2">
+                      Admission Details
+                    </h4>
+                    <p className="text-slate-600 text-sm leading-relaxed text-justify mb-4">
+                      Admissions to the Ph.D. program are conducted strictly as
+                      per{" "}
+                      <span className="font-bold text-[#10404a]">
+                        SPPU norms and guidelines
+                      </span>
+                      . Vacancy details are announced as per university
+                      timelines before each admission cycle.
+                    </p>
+
+                    <div className="p-3 bg-slate-50 border-l-2 border-[#10404a] rounded-r text-xs text-slate-500 italic">
+                      The Research Center ensures complete transparency for all
+                      official procedures.
+                    </div>
+                  </div>
+
+                  <div className="flex-grow"></div>
+
+                  {/* Download Action */}
+                  <div className="pt-4 mt-auto">
+                    <a
+                      href="/Programs/PHDSPPU.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full group relative flex items-center justify-center gap-3 bg-[#10404a] text-white py-4 rounded-lg hover:bg-[#0c3139] shadow-lg shadow-[#10404a]/20 transition-all duration-300 transform hover:-translate-y-1"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
+                        stroke="currentColor"
+                        className="w-5 h-5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+                        />
+                      </svg>
+                      <span className="font-bold text-sm tracking-wide">
+                        Download SPPU Circular
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -419,30 +419,34 @@ export default function MBAContent() {
         <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
       </div>
 
-      {/* INFO SECTION */}
-      <div className="w-full bg-[#10404A] text-white py-12">
-        <div className="max-w-full mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6 items-center  ">
+      {/* INFO SECTION – Pillars Style */}
+      <div className="w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] text-white py-14 px-6 md:px-16">
+        <div className="w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8 justify-items-center">
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center text-center space-y-2 group "
+                className="flex items-start gap-4 w-full max-w-[280px]"
               >
-                {/* Icon Container */}
-                <div className="p-3 bg-white/5 rounded-lg border border-[#3aafa9]/30 text-[#FF8B61] group-hover:bg-[#FF8B61] group-hover:text-[#10404A] transition-colors duration-300">
-                  {item.icon}
+                {/* ICON CIRCLE */}
+                <div className="shrink-0 relative w-14 h-14">
+                  <div className="absolute inset-0 rounded-full bg-white border-3 border-[#FF8B61] flex items-center justify-center">
+                    <div className="text-slate-800">{item.icon}</div>
+                  </div>
                 </div>
 
-                {/* Content */}
-                <div>
-                  <h4 className="font-bold text-lg text-white mb-1 tracking-wide">
+                {/* TEXT */}
+                <div className="space-y-1">
+                  <h4 className="font-bold text-lg leading-tight tracking-wide">
                     {item.title}
                   </h4>
 
                   {item.action ? (
                     <p
                       onClick={scrollToFAQ}
-                      className="text-slate-300 text-sm leading-relaxed cursor-pointer hover:text-[#FF8B61] underline decoration-[#FF8B61] underline-offset-4 transition-colors"
+                      className="text-slate-300 text-sm leading-relaxed cursor-pointer
+                           hover:text-[#FF8B61] underline decoration-[#FF8B61]
+                           underline-offset-4 transition-colors"
                     >
                       {item.desc}
                     </p>
@@ -465,7 +469,7 @@ export default function MBAContent() {
       </div>
       {/* ==============================
           STRUCTURE: ALL 4 IN ONE SECTION
-          ============================== */}    
+          ============================== */}
       <MBASpecializations scrollToApply={scrollToApply} />
 
       <FormSection />

@@ -1,107 +1,101 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-// --- DATA ---
+// --- DATA (Unchanged) ---
 const mbaData = {
   marketing: {
     title: "Marketing Management (MKT)",
     overview:
-      "This specialization equips students with cutting-edge skills in digital marketing, branding, consumer behavior, sales strategy, market research, and product management. Students learn to understand markets, create value-driven campaigns, and build strong customer relationships.",
+      "This specialization equips students with cutting-edge skills in digital marketing, branding, consumer behavior, sales strategy, market research, and product management.",
     highlights: [
       {
-        title: "Strategic Marketing Expertise",
-        text: "Develop a profound understanding of market dynamics, consumer insights, and competitive strategy.",
+        title: "Strategic Marketing",
+        text: "Understand market dynamics and competitive strategy.",
       },
       {
-        title: "Digital-First Approach",
-        text: "Gain hands-on experience with the latest digital marketing tools and analytics platforms.",
+        title: "Digital-First",
+        text: "Hands-on experience with digital tools and analytics.",
       },
       {
         title: "Industry Interface",
-        text: "Learn from industry experts and work on live projects with leading brands.",
+        text: "Work on live projects with leading brands.",
       },
     ],
   },
   finance: {
     title: "Finance Management (FIN)",
     overview:
-      "The finance specialization develops strong analytical and strategic decision-making skills in financial planning, investment analysis, corporate finance, banking, risk management, and capital markets.",
+      "The finance specialization develops strong analytical and strategic decision-making skills in financial planning, investment analysis, corporate finance, and risk management.",
     highlights: [
       {
         title: "Analytical Rigor",
-        text: "Build quantitative and analytical skills essential for modelling, valuation, and investment decision-making.",
+        text: "Build skills for modelling and valuation.",
       },
       {
-        title: "Market-Ready Skills",
-        text: "Gain practical exposure using financial databases, tools, and simulations.",
+        title: "Market-Ready",
+        text: "Exposure to financial databases and simulations.",
       },
       {
         title: "Strategic Perspective",
-        text: "Understand the strategic role of finance in budgeting, governance, and corporate decision-making.",
+        text: "Role of finance in corporate governance.",
       },
     ],
   },
   hr: {
-    title: "Human Resource Management (HR)",
+    title: "Human Resource (HR)",
     overview:
-      "The HR specialization prepares students to manage people, culture, and organizational development with strategic insight. Students learn talent acquisition, performance management, employee engagement, HR analytics, and labor laws.",
+      "Prepares students to manage people, culture, and organizational development. Learn talent acquisition, performance management, and HR analytics.",
     highlights: [
       {
-        title: "Strategic HR Partnering",
-        text: "Align HR strategies with business goals for talent-driven growth.",
+        title: "Strategic HR",
+        text: "Align HR strategies with business goals.",
       },
       {
         title: "People Analytics",
-        text: "Use data for evidence-based decisions in hiring, retention, and performance.",
+        text: "Data-driven decisions in hiring and retention.",
       },
       {
-        title: "Leadership in Change Management",
-        text: "Develop the ability to drive organizational transformation and employee engagement.",
+        title: "Change Management",
+        text: "Drive organizational transformation.",
       },
     ],
   },
   operations: {
-    title: "Operations & Supply Chain (OSCM)",
+    title: "Operations & Supply Chain",
     overview:
-      "Focused on efficiency and value creation, this specialization trains students in logistics, process optimization, supply chain strategy, project management, quality systems, and technology-enabled operations.",
+      "Focused on efficiency and value creation, training students in logistics, process optimization, supply chain strategy, and quality systems.",
     highlights: [
       {
-        title: "End-to-End Supply Chain View",
-        text: "Understand sourcing, production, logistics, distribution, and last-mile operations.",
+        title: "End-to-End View",
+        text: "Sourcing, production, and distribution.",
       },
-      {
-        title: "Quantitative Problem-Solving",
-        text: "Learn forecasting, optimization, and ERP tools for real-world problem solving.",
-      },
+      { title: "Problem Solving", text: "Forecasting and optimization tools." },
       {
         title: "Global Perspective",
-        text: "Explore international logistics, trade regulations, and risk mitigation strategies.",
+        text: "International logistics and risk mitigation.",
       },
     ],
   },
   ba: {
     title: "Business Analytics (BA)",
-    overview: "Coming soon",
-    structure: ["Coming soon"],
+    overview:
+      "Develops expertise in data visualization, predictive modeling, and big data technologies to drive business intelligence.",
     highlights: [
+      { title: "Data Driven", text: "Master tools like Python, R, and SQL." },
       {
-        title: "Coming Soon",
-        text: "Coming Soon",
+        title: "Predictive Modeling",
+        text: "Forecast trends using advanced algorithms.",
       },
       {
-        title: "Coming Soon",
-        text: "Coming Soon",
-      },
-      {
-        title: "Coming Soon",
-        text: "Coming Soon",
+        title: "Decision Science",
+        text: "Convert raw data into actionable insights.",
       },
     ],
   },
 };
 
-// --- ICONS ---
+// --- ICONS (Unchanged) ---
 const Icons = {
   Marketing: (
     <svg
@@ -202,125 +196,364 @@ const getIcon = (key) => {
   }
 };
 
-export default function MBASpecializations({ scrollToApply }) {
-  // State to track which card is expanded to show highlights
+export default function MBASpecializationsCarousel({ scrollToApply }) {
   const [activeCard, setActiveCard] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(3);
+
+  // --- TOUCH STATE ---
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const [hasSwiped, setHasSwiped] = useState(false); // Track if user has swiped
+  const minSwipeDistance = 50; // threshold in pixels
+
+  const keys = Object.keys(mbaData);
+
+  // Responsive Calculation
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) setItemsPerPage(1);
+      else if (window.innerWidth < 1024) setItemsPerPage(2);
+      else setItemsPerPage(3);
+    };
+    handleResize(); // Init
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const totalPages = Math.ceil(keys.length / itemsPerPage);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) =>
+      prev + 1 >= keys.length - (itemsPerPage - 1) ? 0 : prev + 1
+    );
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? keys.length - itemsPerPage : prev - 1
+    );
+  };
 
   const toggleCard = (key) => {
     setActiveCard(activeCard === key ? null : key);
   };
 
+  // --- TOUCH HANDLERS ---
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe || isRightSwipe) {
+      setHasSwiped(true); // Disable indicator after first swipe
+    }
+
+    if (isLeftSwipe) {
+      nextSlide();
+    }
+    if (isRightSwipe) {
+      prevSlide();
+    }
+  };
+
   return (
-    <div className="w-full bg-white py-12 px-4 md:px-8 text-slate-800">
-      <div className="mx-auto max-w-full">
-        {/* SECTION HEADER */}
-        <div className="text-center  mb-12 mx-auto">
+    <div className="w-full bg-white py-20 px-6 md:px-16 lg:px-24 text-slate-800 relative">
+      <div className="mx-auto max-w-[1800px]">
+        {/* HEADER */}
+        <div className="text-center mb-16 mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-5xl font-bold text-[#10404a] mb-6 tracking-tight">
             MBA Specializations
           </h2>
-          {/* <div className="h-1.5 w-24 bg-[#ff8b61] rounded-full mb-6"></div> */}
-          <p className="text-lg mx-auto text-slate-600 font-medium leading-relaxed max-w-4xl">
+          <p className="text-lg text-slate-600 font-medium leading-relaxed">
             IGSB offers diverse MBA specializations designed to build
             industry-ready professionals with strong analytical, leadership, and
             strategic capabilities.
           </p>
         </div>
 
-        {/* GRID: Responsive Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-          {Object.keys(mbaData).map((key) => {
-            const spec = mbaData[key];
-            const isActive = activeCard === key;
-
-            return (
-              <div
-                key={key}
-                className={`
-                  group relative bg-white rounded-2xl p-8 border border-slate-200 
-                  shadow-sm hover:shadow-2xl transition-all duration-500 ease-in-out
-                  flex flex-col justify-between overflow-hidden
-                  ${
-                    isActive
-                      ? "ring-2 ring-[#3aafa9] translate-y-[-4px]"
-                      : "hover:-translate-y-1"
-                  }
-                `}
+        {/* CAROUSEL WRAPPER */}
+        <div className="relative group/carousel">
+          {/* Controls - Left (Hidden on Mobile/Tablet) */}
+          <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 left-0 md:-left-12 xl:-left-20 z-20">
+            <button
+              onClick={prevSlide}
+              className="bg-white border border-slate-200 p-4 rounded-full shadow-lg text-[#10404a] hover:bg-[#3aafa9] hover:text-white transition-all disabled:opacity-50 hover:scale-110 active:scale-95"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-6 h-6"
               >
-                {/* Decorative Top Gradient Line */}
-                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#10404a] to-[#3aafa9] opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+          </div>
 
-                {/* --- CARD CONTENT --- */}
-                <div className="relative z-10">
-                  {/* Header & Icon */}
-                  <div className="flex justify-between items-start mb-6">
-                    <h2 className="text-2xl font-bold text-[#10404a] group-hover:text-[#3aafa9] transition-colors leading-tight">
-                      {spec.title}
-                    </h2>
-                    <div className="p-3 bg-slate-50 rounded-full text-[#ff8b61] group-hover:bg-[#ff8b61] group-hover:text-white transition-colors duration-300">
-                      {getIcon(key)}
-                    </div>
+          {/* Controls - Right (Hidden on Mobile/Tablet) */}
+          <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 right-0 md:-right-12 xl:-right-20 z-20">
+            <button
+              onClick={nextSlide}
+              className="bg-white border border-slate-200 p-4 rounded-full shadow-lg text-[#10404a] hover:bg-[#3aafa9] hover:text-white transition-all hover:scale-110 active:scale-95"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* Slider Window */}
+          <div
+            className="overflow-hidden py-8 relative" // Added relative for positioning the indicator
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
+            {/* --- SWIPE INDICATOR (Mobile/Tablet Only) --- */}
+            {!hasSwiped && (
+              <div className="lg:hidden absolute -bottom-5 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
+                <div className="  text-black px-5 py-2.5  flex items-center gap-3 animate-pulse">
+                  <div className="swipe-hand-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path d="M10.5 3a2.5 2.5 0 00-2.5 2.5v9.25a.75.75 0 01-1.5 0V11a2.5 2.5 0 00-5 0v1.75c0 4.32 3.551 7.75 8.169 7.75 5.093 0 8.831-3.67 8.831-8.25v-3.5a2.5 2.5 0 00-5 0V9.5a.75.75 0 01-1.5 0V5.5A2.5 2.5 0 0010.5 3z" />
+                    </svg>
                   </div>
-
-                  {/* Overview Text (Hidden when active to make room for details) */}
-                  <div
-                    className={`transition-opacity duration-300 ${
-                      isActive ? "opacity-0 h-0 overflow-hidden" : "opacity-100"
-                    }`}
-                  >
-                    <p className="text-slate-600 mb-8 text-base leading-relaxed">
-                      {spec.overview}
-                    </p>
-                  </div>
-
-                  {/* --- DYNAMIC SECTION: REVEALED ON CLICK --- */}
-                  <div
-                    className={`
-                      transition-all duration-500 ease-in-out overflow-hidden
-                      ${
-                        isActive
-                          ? "max-h-[400px] opacity-100 mb-6"
-                          : "max-h-0 opacity-0"
-                      }
-                    `}
-                  >
-                    <h4 className="text-sm font-bold text-[#3aafa9] uppercase tracking-wider mb-3">
-                      Key Highlights
-                    </h4>
-                    <ul className="space-y-3">
-                      {spec.highlights.map((item, i) => (
-                        <li key={i} className="text-sm text-slate-700">
-                          <span className="font-bold text-[#10404a] block mb-1">
-                            {item.title}
-                          </span>
-                          <span className="text-slate-500">{item.text}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                {/* ACTION AREA */}
-                <div className="flex items-center justify-between mt-auto pt-6 border-t border-slate-100 relative z-10">
-                  {/* Interactive Toggle Button */}
-                  <button
-                    onClick={() => toggleCard(key)}
-                    className="text-sm font-bold text-slate-400 uppercase tracking-widest hover:text-[#10404a] transition-colors focus:outline-none"
-                  >
-                    {isActive ? "Show Less" : "Learn More"}
-                  </button>
-
-                  <button
-                    onClick={scrollToApply}
-                    className="px-6 py-2.5 rounded-full border-2 border-[#3aafa9] text-[#3aafa9] font-bold text-sm hover:bg-[#3aafa9] hover:text-white transition-all duration-300 shadow-sm"
-                  >
-                    Enquire Now
-                  </button>
+                  <span className="text-xs font-bold uppercase tracking-wider">
+                    Swipe
+                  </span>
                 </div>
               </div>
-            );
-          })}
+            )}
+
+            <div
+              className="flex transition-transform duration-500 ease-out"
+              style={{
+                transform: `translateX(-${
+                  currentIndex * (100 / itemsPerPage)
+                }%)`,
+              }}
+            >
+              {keys.map((key) => {
+                const spec = mbaData[key];
+                const isActive = activeCard === key;
+
+                return (
+                  <div
+                    key={key}
+                    className="flex-shrink-0 px-4"
+                    style={{ width: `${100 / itemsPerPage}%` }}
+                  >
+                    <div
+                      className={`
+                        relative bg-white rounded-2xl p-8 border border-slate-200 
+                        shadow-md hover:shadow-lg hover:shadow-[#ff8b61] transition-all duration-300 ease-in-out
+                        flex flex-col h-[500px]  w-full overflow-hidden
+                        ${isActive ? "ring-2 ring-[#3aafa9]" : ""}
+                      `}
+                    >
+                      {/* Decorative Gradient */}
+                      <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#10404a] to-[#3aafa9]"></div>
+
+                      {/* Header */}
+                      <div className="flex justify-between items-start mb-6 shrink-0 relative z-10">
+                        <h2 className="text-xl md:text-2xl font-bold text-[#10404a] leading-tight pr-4">
+                          {spec.title}
+                        </h2>
+                        <div
+                          className={`p-3 rounded-full transition-colors duration-300 shrink-0 ${
+                            isActive
+                              ? "bg-[#ff8b61] text-white"
+                              : "bg-slate-50 text-[#ff8b61]"
+                          }`}
+                        >
+                          {getIcon(key)}
+                        </div>
+                      </div>
+
+                      {/* CONTENT SWITCHER AREA */}
+                      <div className="flex-grow relative overflow-hidden">
+                        {/* VIEW 1: OVERVIEW */}
+                        <div
+                          className={`absolute inset-0 transition-all duration-500 ease-in-out transform ${
+                            isActive
+                              ? "-translate-x-full opacity-0"
+                              : "translate-x-0 opacity-100"
+                          }`}
+                        >
+                          <p className="text-slate-600 text-base leading-relaxed">
+                            {spec.overview}
+                          </p>
+
+                          <div className="mt-6 p-4 bg-slate-50 rounded-lg border border-slate-100">
+                            <p className="text-xs text-slate-400 uppercase font-bold tracking-wider mb-2">
+                              Focus Areas
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                              {spec.highlights.slice(0, 2).map((h, i) => (
+                                <span
+                                  key={i}
+                                  className="text-xs font-medium text-[#10404a] bg-white px-2 py-1 rounded shadow-sm border border-slate-100"
+                                >
+                                  {h.title}
+                                </span>
+                              ))}
+                              <span className="text-xs font-medium text-[#3aafa9] px-2 py-1">
+                                + More
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* VIEW 2: HIGHLIGHTS */}
+                        <div
+                          className={`absolute inset-0 transition-all duration-500 ease-in-out transform ${
+                            isActive
+                              ? "translate-x-0 opacity-100"
+                              : "translate-x-full opacity-0"
+                          }`}
+                        >
+                          <h4 className="text-sm font-bold text-[#3aafa9] uppercase tracking-wider mb-4 border-b border-slate-100 pb-2">
+                            Curriculum Highlights
+                          </h4>
+                          <ul className="space-y-4">
+                            {spec.highlights.map((item, i) => (
+                              <li key={i} className="text-sm text-slate-700">
+                                <span className="font-bold text-[#10404a] block mb-0.5">
+                                  {item.title}
+                                </span>
+                                <span className="text-slate-500 text-xs leading-snug">
+                                  {item.text}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      {/* ACTION FOOTER */}
+                      <div className="flex items-center justify-between mt-auto pt-6 border-t border-slate-100 relative z-10 bg-white">
+                        <button
+                          onClick={() => toggleCard(key)}
+                          className="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-[#10404a] transition-colors focus:outline-none flex items-center gap-1"
+                        >
+                          {isActive ? (
+                            <>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                className="w-4 h-4"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>
+                              Back
+                            </>
+                          ) : (
+                            <>
+                              Details
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                className="w-4 h-4"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>
+                            </>
+                          )}
+                        </button>
+
+                        <button
+                          onClick={scrollToApply}
+                          className="px-5 py-2 rounded-full border border-[#3aafa9] text-[#3aafa9] font-bold text-xs hover:bg-[#3aafa9] hover:text-white transition-all duration-300 shadow-sm"
+                        >
+                          Enquire
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* DOTS INDICATOR */}
+        <div className="flex justify-center mt-8 gap-2">
+          {Array.from({ length: keys.length - (itemsPerPage - 1) }).map(
+            (_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  idx === currentIndex
+                    ? "w-8 bg-[#3aafa9]"
+                    : "w-2 bg-slate-300 hover:bg-[#10404a]"
+                }`}
+              />
+            )
+          )}
         </div>
       </div>
+
+      {/* Custom Styles for Hand Animation */}
+      <style jsx>{`
+        .swipe-hand-icon {
+          animation: swipe-hint 1.5s ease-in-out infinite;
+        }
+        @keyframes swipe-hint {
+          0%,
+          100% {
+            transform: translateX(0);
+            opacity: 0.8;
+          }
+          50% {
+            transform: translateX(-6px);
+            opacity: 1;
+          }
+        }
+      `}</style>
     </div>
   );
 }

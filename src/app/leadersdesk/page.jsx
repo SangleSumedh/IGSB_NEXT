@@ -6,7 +6,7 @@ const leaders = [
   {
     name: "Chairperson's Message",
     title: "Chairperson",
-    image: "/boy.png",
+    image: "/Home/TaritaMam.jpg",
     message:
       "At our institution, we believe education is the foundation of a progressive society. Our goal is to empower students with knowledge, values, and skills that prepare them to lead with confidence and integrity. We are committed to fostering innovation, discipline, and excellence in every learner.",
     reverse: false,
@@ -14,7 +14,7 @@ const leaders = [
   {
     name: "Managing Director's Message",
     title: "Managing Director",
-    image: "/boy.png",
+    image: "/Home/ShashiSir1.jpg",
     message:
       "Our focus has always been on bridging the gap between academics and industry. Through modern infrastructure, industry-oriented curriculum, and experienced faculty, we strive to create professionals who are adaptable, skilled, and future-ready.",
     reverse: true,
@@ -22,7 +22,7 @@ const leaders = [
   {
     name: "Principal's Message",
     title: "Principal",
-    image: "/boy.png",
+    image: "/Home/DrVirendraTatake.jpg",
     message:
       "We aim to nurture a culture of curiosity, research, and continuous learning. By encouraging critical thinking and ethical responsibility, we prepare students not only for successful careers but also for meaningful contributions to society.",
     reverse: false,
@@ -360,7 +360,7 @@ export default function LeadersDeskPage() {
                         w-40 h-40 md:w-84 md:h-84
                         rounded-full object-cover
                         border-4 border-[#ffb088]
-                        shadow-md
+                        shadow-md object-top
                       "
                     />
                   </div>

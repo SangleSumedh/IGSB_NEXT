@@ -10,23 +10,14 @@ export default function Research() {
 
   return (
     <>
-  
-
-      <div className="min-h-screen bg-white ">
+      <div className="min-h-screen bg-white">
         
-        <div className="max-w-7xl mx-auto px-6 py-2 lg:px-8 ">
-          {/* ===========================
-              🔷 PAGE HEADER
-          ============================ */}
-      
-
+        <div className="w-full px-6 py-12 xl:px-16 xl:py-8">
           {/* ===========================
               🔷 TABS
           ============================ */}
           <div className="flex flex-wrap justify-center gap-3 py-12">
             {[
-              // { id: "researchCentre", label: "IGSB Research Centre" },
-          
               { id: "research", label: "Research" },
               { id: "conference", label: "Conference" },
               { id: "publications", label: "Publications" },
@@ -50,14 +41,6 @@ export default function Research() {
               🔷 TAB CONTENT
           ============================ */}
           <div>
-            {/* ===================== RESEARCH CENTRE ===================== */}
-
-            {/* ===================== MDP ===================== */}
-  
-
-            {/* ===================== FDP ===================== */}
-    
-
             {/* ===================== RESEARCH ===================== */}
             {activeTab === "research" && (
               <div className="bg-white px-6 py-16 rounded-2xl shadow-lg space-y-10 mb-12">
@@ -215,7 +198,7 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
                     researchers.
                   </p>
 
-                  <div className="w-full max-w-7xl mx-auto h-130 rounded-2xl overflow-hidden shadow">
+                  <div className="w-full h-96 rounded-2xl overflow-hidden shadow">
                     <img
                       src="/IGSB/Research/Conference/C1.jpg"
                       alt="Conference 2024–25"
@@ -242,7 +225,7 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
                     a rich academic discourse.
                   </p>
 
-                  <div className="w-full max-w-7xl mx-auto h-130 rounded-2xl overflow-hidden shadow">
+                  <div className="w-full h-96 rounded-2xl overflow-hidden shadow">
                     <img
                       src="/IGSB/Research/Conference/C2.jpg"
                       alt="Conference 2023–24"
@@ -326,13 +309,6 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
                     <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
                       Scopus
                     </div>
-                    {/* <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      ABDC
-                    </div>
-
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Conference Proceedings
-                    </div> */}
                   </div>
                 </section>
 
@@ -343,7 +319,6 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
                   </h2>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {/* Existing Items */}
                     <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
                       Campus Drone
                     </div>
@@ -379,25 +354,27 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
                   <h2 className="text-2xl md:text-4xl font-bold text-secondary text-center">
                     Session Chair — International Conference (Tashkent)
                   </h2>
-                  <div className="flex justify-between items-center gap-5">
-                    <p className="text-md md:text-lg text-gray-700 text-justify">
-                      Dr. Priyanka Darekar served as a Session Chair at 4th
-                      International Conference on Technological Advancements in
-                      Computational Sciences, Amity University, Tashkent City,
-                      Street Labzak, Building-70, 100028, Uzbekistan. She
-                      facilitated the scholarly presentations and discussions,
-                      and contributing to the smooth conduct of the
-                      international academic event.
-                    </p>
+                  <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
+                    <div className="lg:w-1/2">
+                      <p className="text-md md:text-lg text-gray-700 text-justify">
+                        Dr. Priyanka Darekar served as a Session Chair at 4th
+                        International Conference on Technological Advancements in
+                        Computational Sciences, Amity University, Tashkent City,
+                        Street Labzak, Building-70, 100028, Uzbekistan. She
+                        facilitated the scholarly presentations and discussions,
+                        and contributing to the smooth conduct of the
+                        international academic event.
+                      </p>
+                    </div>
 
-                    <div className="w-full h-auto rounded-2xl overflow-hidden shadow">
+                    <div className="lg:w-1/2 w-full h-64 lg:h-80 rounded-2xl overflow-hidden shadow">
                       <Image
                         src="/placeholder.jpg"
                         height={720}
                         width={1280}
                         className="w-full h-full object-cover bg-gray-400"
                         alt="Session Chain Tashkent"
-                      ></Image>
+                      />
                     </div>
                   </div>
                 </section>
@@ -420,25 +397,16 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
                     {[1, 2, 3, 4, 5].map((i) => (
                       <div
                         key={i}
-                        // Ensure the parent enforces the shape
                         className="relative h-48 rounded-xl overflow-hidden shadow"
                       >
                         <Image
                           src={`/IGSB/Research/ResourcePerson/2RP${i}.jpeg`}
                           alt={`FDP Resource Person ${i}`}
-                          // 1. Set explicit width/height (keep this as you had it, it helps aspect ratio)
                           height={720}
                           width={1280}
-                          // 2. IMPORTANT: Tell Next.js how wide the image actually is in the viewport
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                          // 3. Optional: Bump quality if it looks compressed
                           quality={85}
-                          // 4. Styles
                           className="w-full h-full object-cover"
-
-                          // 5. Debugging (Optional): If it STILL looks bad, uncomment the line below.
-                          // If this fixes it, the issue is definitely Next.js optimization logic.
-                          // unoptimized={true}
                         />
                       </div>
                     ))}
@@ -491,7 +459,7 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
 
                   {/* sub 1 */}
                   <div className="space-y-3">
-                    <h3 className="text-xl md:text-4xl font-semibold text-secondary">
+                    <h3 className="text-xl md:text-3xl font-semibold text-secondary">
                       1. Conducting Investment Awareness Programs at Reputed
                       Educational Institutes:
                     </h3>
@@ -508,7 +476,7 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
                       investments easily. He shares the same with the students
                       through such sessions.
                     </p>
-                    <div className="w-106 h-64 rounded-xl overflow-hidden shadow">
+                    <div className="w-full h-64 rounded-xl overflow-hidden shadow">
                       <img
                         src="/IGSB/Research/ResourcePerson/4RP1.png"
                         alt="Investment Awareness Program"
@@ -519,7 +487,7 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
 
                   {/* sub 2 */}
                   <div className="space-y-3">
-                    <h3 className="text-xl md:text-4xl font-semibold text-secondary">
+                    <h3 className="text-xl md:text-3xl font-semibold text-secondary">
                       2. Writing articles in daily newspapers and magazines
                     </h3>
                     <p className="text-md md:text-lg text-gray-700 text-justify">
@@ -530,7 +498,7 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
                       and semi-urban areas of interior Maharashtra to create
                       financial awareness amongst through these articles.
                     </p>
-                    <div className="w-106 h-64 rounded-xl overflow-hidden shadow">
+                    <div className="w-full h-64 rounded-xl overflow-hidden shadow">
                       <img
                         src="/IGSB/Research/ResourcePerson/4RP2.png"
                         alt="Newspaper Articles"
@@ -541,7 +509,7 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
 
                   {/* sub 3 */}
                   <div className="space-y-3">
-                    <h3 className="text-xl md:text-4xl font-semibold text-secondary">
+                    <h3 className="text-xl md:text-3xl font-semibold text-secondary">
                       3. Conducting programs on Radio
                     </h3>
                     <p className="text-md md:text-lg text-gray-700 text-justify">
@@ -552,7 +520,7 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
                       Phule Pune University (Vidyavani ) to create financial
                       awareness amongst the general public.
                     </p>
-                    <div className="w-106 h-64 rounded-xl overflow-hidden shadow">
+                    <div className="w-full h-64 rounded-xl overflow-hidden shadow">
                       <img
                         src="/IGSB/Research/ResourcePerson/4RP3.png"
                         alt="Radio Programs"

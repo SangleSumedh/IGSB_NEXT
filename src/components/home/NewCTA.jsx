@@ -15,7 +15,7 @@ function NewCTA() {
   return (
     <div className="w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] text-white shadow-xl overflow-hidden">
       {/* MOBILE FIRST */}
-      <div className="flex flex-col md:grid md:grid-cols-8 md:h-[40vh]">
+      <div className="flex flex-col md:grid md:grid-cols-12 md:h-[40vh]">
         {/* LEFT VECTOR */}
         <div
           className="
@@ -76,9 +76,9 @@ function NewCTA() {
         </div>
 
         {/* RIGHT IMAGE — HIDDEN ON MOBILE */}
-        <div className="hidden md:block md:col-span-4 h-full w-full">
+        <div className="hidden md:block md:col-span-8 h-full w-full">
           <img
-            src="/Home/igsb_grid.jpg"
+            src="/Home/IGSBGrid1.png"
             alt="IGSB Campus"
             onError={handleImageError}
             className="

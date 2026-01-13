@@ -5,10 +5,10 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const HeroSlider = () => {
-  const desktopImages = ["/banners/IGSB_banner1.jpg", "/Home/BANNER2.jpg"];
+  const desktopImages = ["/Home/IGSBBannerH1.jpg", "/Home/IGSBBannerH2.jpg"];
   const mobileImages = [
-    "/banners/IGSB_banner1.jpg",
-    "/banners/IGSB_banner2.jpg",
+    "/Home/IGSBBannerH1.jpg",
+    "/Home/IGSBBannerH2.jpg",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -73,17 +73,41 @@ const HeroSlider = () => {
             </div>
           ))}
 
-          {/* Dots */}
-          <div className="absolute bottom-6 right-6 flex gap-2 z-30">
-            {desktopImages.map((_, i) => (
-              <div
-                key={i}
-                onClick={() => handleDotClick(i)}
-                className={`h-2 rounded-sm cursor-pointer transition-all ${
-                  currentIndex === i ? "w-8 bg-[#10404A]" : "w-2 bg-[#10404A]"
-                }`}
-              />
-            ))}
+          {/* Navigation Controls - Centered at bottom */}
+          <div className="absolute  bottom-[-8] left-40 transform -translate-x-1/2 flex items-center gap-4 z-30">
+            {/* Previous Button */}
+            <button
+              onClick={handlePrev}
+              className="w-10 h-10 flex items-center justify-center    text-secondary hover:text-primary transition-all duration-300  hover:shadow-xl"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft size={24} />
+            </button>
+
+            {/* Dots */}
+            <div className="flex gap-2">
+              {desktopImages.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => handleDotClick(i)}
+                  className={`rounded-full cursor-pointer transition-all duration-300 ${
+                    currentIndex === i 
+                      ? "w-8 h-2 bg-[#10404A]" 
+                      : "w-2 h-2 bg-[#10404A]"
+                  }`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Next Button */}
+            <button
+              onClick={handleNext}
+              className="w-10 h-10 flex items-center justify-center  text-secondary hover:text-primary transition-all duration-300  hover:shadow-xl"
+              aria-label="Next slide"
+            >
+              <ChevronRight size={24} />
+            </button>
           </div>
         </div>
 
@@ -119,6 +143,43 @@ const HeroSlider = () => {
               />
             </div>
           ))}
+
+          {/* Mobile Navigation Controls - Centered at bottom */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center gap-3 z-30">
+            {/* Previous Button */}
+            <button
+              onClick={handlePrev}
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-white/80 hover:bg-white text-secondary hover:text-primary transition-all duration-300 shadow-md"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft size={18} />
+            </button>
+
+            {/* Dots */}
+            <div className="flex gap-1.5">
+              {mobileImages.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => handleDotClick(i)}
+                  className={`rounded-full cursor-pointer transition-all duration-300 ${
+                    currentIndex === i 
+                      ? "w-6 h-1.5 bg-[#10404A]" 
+                      : "w-1.5 h-1.5 bg-white/70 hover:bg-white"
+                  }`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Next Button */}
+            <button
+              onClick={handleNext}
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-white/80 hover:bg-white text-secondary hover:text-primary transition-all duration-300 shadow-md"
+              aria-label="Next slide"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
         </div>
       </div>
     </div>

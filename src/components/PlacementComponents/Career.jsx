@@ -106,7 +106,7 @@ const Career = () => {
    C667,170 733,170 800,100
    C867,30 933,30 1000,100
    C1067,170 1133,170 1200,100"
-                stroke="#3aafa9"
+                stroke="#fc7116"
                 strokeWidth="4"
                 fill="none"
                 strokeDasharray="10 10" // Dashed line styling
@@ -143,14 +143,16 @@ const Career = () => {
                       ${isTop ? "top-[60%]" : "bottom-[60%]"}
                     `}
                   >
-                    <div className="text-secondary text-3xl mb-3">
+                    <div className=" text-[#fc7116] text-3xl mb-3">
                       {step.icon}
                     </div>
                     <h3 className="font-bold text-lg leading-tight mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-xs text-gray-50
-                  leading-relaxed">
+                    <p
+                      className="text-xs text-gray-50
+                  leading-relaxed"
+                    >
                       {step.desc}
                     </p>
                   </motion.div>
@@ -161,7 +163,7 @@ const Career = () => {
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2 + 0.5, type: "spring" }}
-                    className={`w-12 h-12 rounded-full  bg-[#3aafa9] border-4 border-[#052c34] shadow-[0_0_20px_rgba(58,175,169,0.6)] z-20 flex items-center justify-center text-white font-bold text-lg
+                    className={`w-12 h-12 rounded-full   bg-[#fc7116] border-4 border-[#052c34] shadow-[0_0_20px_rgba(252,113,22,0.6)] z-20 flex items-center justify-center text-white font-bold text-lg
                       absolute top-1/2 -translate-y-1/2
                       ${
                         index === 1 || index === 2 ? "-mt-16" : ""

@@ -268,11 +268,11 @@ export default function MBASpecializationsCarousel({ scrollToApply }) {
   };
 
   return (
-    <div className="w-full bg-white py-20 px-6 md:px-16 lg:px-24 text-slate-800 relative">
+    <div className="w-full bg-white py-12 px-6 md:px-12 lg:px-16 text-slate-800 relative">
       <div className="mx-auto max-w-[1800px]">
         {/* HEADER */}
         <div className="text-center mb-16 mx-auto max-w-4xl">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#10404a] mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#10404a] mb-6 tracking-light">
             MBA Specializations
           </h2>
           <p className="text-lg text-slate-600 font-medium leading-relaxed">
@@ -285,10 +285,10 @@ export default function MBASpecializationsCarousel({ scrollToApply }) {
         {/* CAROUSEL WRAPPER */}
         <div className="relative group/carousel">
           {/* Controls - Left (Hidden on Mobile/Tablet) */}
-          <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 left-0 md:-left-12 xl:-left-20 z-20">
+          <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 left-0 md:-left-12 xl:-left-14 z-20">
             <button
               onClick={prevSlide}
-              className="bg-white border border-slate-200 p-4 rounded-full shadow-lg text-[#10404a] hover:bg-[#3aafa9] hover:text-white transition-all disabled:opacity-50 hover:scale-110 active:scale-95"
+              className="bg-primary border border-slate-200 p-4 rounded-full shadow-lg text-white hover:bg-[#3aafa9] hover:text-white transition-all disabled:opacity-50 hover:scale-110 active:scale-95"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -308,10 +308,10 @@ export default function MBASpecializationsCarousel({ scrollToApply }) {
           </div>
 
           {/* Controls - Right (Hidden on Mobile/Tablet) */}
-          <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 right-0 md:-right-12 xl:-right-20 z-20">
+          <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 right-0 md:-right-12 xl:-right-14 z-20">
             <button
               onClick={nextSlide}
-              className="bg-white border border-slate-200 p-4 rounded-full shadow-lg text-[#10404a] hover:bg-[#3aafa9] hover:text-white transition-all hover:scale-110 active:scale-95"
+              className="bg-primary border border-slate-200 p-4 rounded-full shadow-lg text-white hover:bg-[#3aafa9] hover:text-white transition-all hover:scale-110 active:scale-95"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -378,25 +378,24 @@ export default function MBASpecializationsCarousel({ scrollToApply }) {
                   >
                     <div
                       className={`
-                        relative bg-white rounded-2xl p-8 border border-slate-200 
+                        relative bg-secondary rounded-2xl p-8 border border-slate-200 
                         shadow-md hover:shadow-lg hover:shadow-[#ff8b61] transition-all duration-300 ease-in-out
                         flex flex-col h-[500px]  w-full overflow-hidden
-                        ${isActive ? "ring-2 ring-[#3aafa9]" : ""}
                       `}
                     >
                       {/* Decorative Gradient */}
-                      <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#10404a] to-[#3aafa9]"></div>
+                      <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#ff8b61] to-[#3aafa9]"></div>
 
                       {/* Header */}
                       <div className="flex justify-between items-start mb-6 shrink-0 relative z-10">
-                        <h2 className="text-xl md:text-2xl font-bold text-[#10404a] leading-tight pr-4">
+                        <h2 className="text-xl md:text-2xl font-bold text-white leading-tight pr-4">
                           {spec.title}
                         </h2>
                         <div
                           className={`p-3 rounded-full transition-colors duration-300 shrink-0 ${
                             isActive
-                              ? "bg-[#ff8b61] text-white"
-                              : "bg-slate-50 text-[#ff8b61]"
+                              ? "bg-[#ff8b61] text-white border-3 border-white"
+                              : "bg-slate-50 text-[#ff8b61] border-3 border-[#ff8b61]"
                           }`}
                         >
                           {getIcon(key)}
@@ -413,19 +412,19 @@ export default function MBASpecializationsCarousel({ scrollToApply }) {
                               : "translate-x-0 opacity-100"
                           }`}
                         >
-                          <p className="text-slate-600 text-base leading-relaxed">
+                          <p className="text-slate-50 text-base leading-relaxed">
                             {spec.overview}
                           </p>
 
-                          <div className="mt-6 p-4 bg-slate-50 rounded-lg border border-slate-100">
-                            <p className="text-xs text-slate-400 uppercase font-bold tracking-wider mb-2">
+                          <div className="mt-6 p-4  rounded-lg border border-slate-100">
+                            <p className="text-xs text-slate-100 uppercase font-bold tracking-wider mb-2">
                               Focus Areas
                             </p>
                             <div className="flex flex-wrap gap-2">
                               {spec.highlights.slice(0, 2).map((h, i) => (
                                 <span
                                   key={i}
-                                  className="text-xs font-medium text-[#10404a] bg-white px-2 py-1 rounded shadow-sm border border-slate-100"
+                                  className="text-xs font-medium text-[#10404a] bg-primary px-2 py-1 rounded shadow-sm border border-slate-100"
                                 >
                                   {h.title}
                                 </span>
@@ -450,11 +449,11 @@ export default function MBASpecializationsCarousel({ scrollToApply }) {
                           </h4>
                           <ul className="space-y-4">
                             {spec.highlights.map((item, i) => (
-                              <li key={i} className="text-sm text-slate-700">
-                                <span className="font-bold text-[#10404a] block mb-0.5">
+                              <li key={i} className="text-sm text-slate-100">
+                                <span className="font-bold text-slate-100 block mb-0.5">
                                   {item.title}
                                 </span>
-                                <span className="text-slate-500 text-xs leading-snug">
+                                <span className="text-slate-200 text-xs leading-snug">
                                   {item.text}
                                 </span>
                               </li>
@@ -464,10 +463,10 @@ export default function MBASpecializationsCarousel({ scrollToApply }) {
                       </div>
 
                       {/* ACTION FOOTER */}
-                      <div className="flex items-center justify-between mt-auto pt-6 border-t border-slate-100 relative z-10 bg-white">
+                      <div className="flex items-center justify-between mt-auto pt-6 border-t border-slate-100 relative z-10 ">
                         <button
                           onClick={() => toggleCard(key)}
-                          className="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-[#10404a] transition-colors focus:outline-none flex items-center gap-1"
+                          className="text-xs font-bold text-slate-200 uppercase tracking-widest hover:text-white transition-colors focus:outline-none flex items-center gap-1"
                         >
                           {isActive ? (
                             <>

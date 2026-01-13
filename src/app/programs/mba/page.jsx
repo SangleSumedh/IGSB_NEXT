@@ -10,6 +10,7 @@ import MBAOverview from "@/components/programs/MBAOverview";
 import FormSection from "@/components/home/FormSection";
 import MBASpecializations from "@/components/programs/MBASpecialisations";
 import NewCTA from "@/components/home/NewCTA";
+import MBASlider from "@/components/programs/MBASlider";
 
 const mbaData = {
   marketing: {
@@ -373,51 +374,7 @@ export default function MBAContent() {
   return (
     <div className="w-full bg-white text-white">
       {/* HERO SECTION */}
-      <div className="relative w-full overflow-hidden h-[60vh] md:h-[75vh] flex items-center">
-        <div className="absolute inset-0">
-          <Image
-            src="/IGSB/Programmes/Banner.jpg"
-            alt="MBA Program"
-            fill
-            className="object-cover object-center scale-105 opacity-90"
-          />
-        </div>
-
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent z-10" />
-
-        <div className="relative px-6 md:px-12 lg:px-20 z-20">
-          <div className="max-w-3xl text-white text-sm md:text-lg">
-            <h2 className="text-2xl  md:text-4xl font-bold leading-snug">
-              2-Year Master of Business Administration (MBA)
-            </h2>
-
-            <p className="mt-4 text-white/80 leading-relaxed max-w-2xl">
-              This rigorous programme is designed to develop strategic thinkers
-              and future business leaders. It combines core management
-              principles with deep specialization, fostering analytical prowess,
-              leadership qualities, and an ethical mindset to drive
-              organizational success in a complex global economy.
-            </p>
-
-            <div className="flex gap-4 mt-6">
-              <button
-                onClick={toggleModal}
-                className="bg-secondary text-white px-6 py-2 rounded-lg"
-              >
-                Enquire Now
-              </button>
-              <button
-                onClick={handleBrochureDownload}
-                className="bg-secondary text-white px-6 py-2 rounded-lg"
-              >
-                Download Brochure
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-black/60 to-transparent" />
-      </div>
+      <MBASlider handleBrochureDownload={handleBrochureDownload} toggleModal={toggleModal} />
 
       {/* INFO SECTION – Pillars Style */}
       <div className="w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] text-white py-14 px-6 md:px-16">
@@ -472,7 +429,7 @@ export default function MBAContent() {
           ============================== */}
       <MBASpecializations scrollToApply={scrollToApply} />
 
-      <FormSection />
+      <FormSection ref={applyRef} />
 
       {/* ==============================
           PROGRAM HIGHLIGHTS MARQUEE
@@ -486,13 +443,11 @@ export default function MBAContent() {
         </div>
 
         <div className="relative w-full overflow-visible">
-          {/* We duplicate the data array twice ([...data, ...data]) 
-             to ensure the marquee loops seamlessly without visual gaps.
-          */}
+          
           <div ref={marqueeRef} className="highlights-marquee flex px-4">
             {[...Object.keys(mbaData)]
               .flatMap((key) => mbaData[key].highlights)
-              .flatMap((item) => [item, item]) // Duplicated for smooth loop
+              .flatMap((item) => [item]) // Duplicated for smooth loop
               .map((highlight, index) => (
                 <div
                   key={index}
@@ -611,12 +566,12 @@ export default function MBAContent() {
         </div>
       </div> */}
 
-      <NewCTA />
+      {/* <NewCTA /> */}
       <CTASection />
 
       {/* MODAL */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60]">
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60]" onClick={() =>setIsModalOpen(false)}>
           <div className="bg-white w-[90%] md:w-[680px]  rounded-lg shadow-lg relative max-h-[90vh] overflow-y-auto">
             <button
               onClick={toggleModal}

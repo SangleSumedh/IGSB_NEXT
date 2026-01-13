@@ -1,6 +1,6 @@
 "use client";
 
-import { Book, BookAIcon, BookAudio } from "lucide-react";
+import { ArrowBigDown, ArrowBigDownDashIcon, Book, BookAIcon, BookAudio } from "lucide-react";
 import React, { useState } from "react";
 import { FaHandPointUp } from "react-icons/fa";
 import { TbPointerUp } from "react-icons/tb";
@@ -713,16 +713,16 @@ export default function FAQMBA() {
                 className="border border-slate-200 rounded-lg overflow-hidden"
               >
                 <details className="group" open={index === 0}>
-                  <summary className="flex justify-between items-center p-4 cursor-pointer bg-slate-50 hover:bg-slate-100 transition-colors">
-                    <h4 className="font-semibold text-[#10404a] text-lg">
+                  <summary className="flex justify-between items-center p-4 cursor-pointer bg-[#3aafa9] hover:bg-secondary transition-colors">
+                    <h4 className="font-semibold text-white text-lg">
                       {title}
                     </h4>
-                    <span className="transition-transform group-open:rotate-180 text-[#10404a]">
-                      ▼
+                    <span className="transition-transform group-open:rotate-180 text-white">
+                      <ArrowBigDownDashIcon className="w-6 h-6" />
                     </span>
                   </summary>
 
-                  <div className="p-5 pt-3 space-y-3 bg-white border-t border-slate-100 text-justify">
+                  <div className="p-5 pt-3 space-y-3 bg-white border-t border-slate-800 text-justify">
                     {items.map((item, i) => {
                       // NEW: Handle items with icons
                       if (typeof item === "object" && item.icon) {
@@ -939,7 +939,7 @@ export default function FAQMBA() {
               {/* Accordion Header */}
               <button
                 onClick={() => setActive(active === tab ? "" : tab)}
-                className={`w-full text-left px-6 py-4 font-bold text-lg flex justify-between items-center transition-all ${
+                className={`w-full text-left px-6 py-4 font-bold text-md flex justify-between items-center transition-all ${
                   active === tab
                     ? "bg-[#10404a] text-white"
                     : "bg-white text-[#10404a] hover:bg-slate-50"
@@ -951,7 +951,7 @@ export default function FAQMBA() {
                     active === tab ? "rotate-180" : ""
                   }`}
                 >
-                  ▼
+                  <ArrowBigDownDashIcon className="w-6 h-6" />
                 </span>
               </button>
 

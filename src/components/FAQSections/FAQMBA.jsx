@@ -970,7 +970,7 @@ export default function FAQMBA() {
           {/* LEFT MENU (Sidebar) */}
           <nav className="col-span-3 bg-[#3aafa9] rounded-xl shadow-xl p-2 border border-[#3aafa9]/20 sticky top-24">
             <div className="p-4 mb-2">
-              <h3 className="font-bold text-slate-800 text-2xl tracking-wide">
+              <h3 className="font-extrabold text-white text-2xl md:text-3xl tracking-wide">
                 Quick Links
               </h3>
               <div className="h-1 w-12 bg-[#ff8b61] mt-2 rounded-full"></div>

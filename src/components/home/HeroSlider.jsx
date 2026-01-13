@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const HeroSlider = () => {
-  const desktopImages = ["/Home/IGSBBannerH1.jpg", "/Home/IGSBBannerH2.jpg"];
+  const desktopImages = ["/Home/IGSBbannerH1.jpg", "/Home/IGSBBannerH2.jpg"];
   const mobileImages = [
     "/Home/IGSBBannerH1.jpg",
     "/Home/IGSBBannerH2.jpg",

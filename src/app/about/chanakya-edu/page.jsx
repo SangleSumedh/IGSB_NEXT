@@ -62,48 +62,67 @@ const ChanakyaEdu = () => {
       </div>
 
       {/* Main Container */}
-      <div className=" px-6 py-12 space-y-20">
+      <div className="px-6 xl:px-16 py-8 xl:py-12 space-y-20">
         {/* About IGSB Section */}
         <section id="about-igsb" className="relative scroll-mt-[15vh]">
           <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg">
             <h2 className="text-2xl md:text-4xl font-bold text-secondary mb-6">
               About Indira Global School of Business
             </h2>
-            <div className="text-gray-700 leading-relaxed text-md md:text-lg text-justify space-y-6">
-              <p>
-                About Indira Global School of Business (IGSB) has been
-                established with the explicit vision to train managers with a
-                global perspective who can provide sustainable impetus to growing
-                international business. IGSB has established its presence in Pune
-                as a premier B- School offering MBA (MBA and MBA - Services
-                Management) affiliated to Savitribai Phule Pune University and
-                approved by AICTE, New Delhi. As a driving philosophy, the
-                belief is that the emerging global environment has created a
-                scenario where managers have to face greater situational
-                challenges, predict and handle the vagaries of the market and
-                provide sustainable strategic solutions to corporate issues. The
-                current global economy has created an environment where managers
-                have to face greater situational challenges; predict and handle
-                the impulses of the market and provide quality service
-                management. Such an environment requires professional graduates
-                not only armed with the necessary knowledge but also the
-                confidence of facing extreme competition with greater
-                articulation.
-              </p>
-              <p>
-                The IGSB campus is located imposingly adjoining the Mumbai-Pune
-                Expressway, on a beautiful site amidst open fields and clusters
-                of large trees in a beautiful, green valley which gives a sense
-                of endless space to the quest of mind and soul. The
-                infrastructure is dynamic in nature because of our constant
-                attempt to maintain pace with the development opportunities
-                available to us. Our infrastructure acts as a facilitator for the
-                effective delivery of our curriculum and nurtures the quest for
-                knowledge. The MBA programs (MBA and MBA - Services Management)
-                at IGSB equip students with fresh insights and alternative ways
-                of thinking, helping them to succeed in highly unpredictable and
-                non-linear conditions, making global leaders out of them.
-              </p>
+            
+            <div className="flex flex-col lg:flex-row gap-8">
+              {/* Text Content */}
+              <div className="lg:w-2/3">
+                <div className="text-gray-700 leading-relaxed text-md md:text-lg text-justify space-y-6">
+                  <p>
+                    About Indira Global School of Business (IGSB) has been
+                    established with the explicit vision to train managers with a
+                    global perspective who can provide sustainable impetus to growing
+                    international business. IGSB has established its presence in Pune
+                    as a premier B- School offering MBA (MBA and MBA - Services
+                    Management) affiliated to Savitribai Phule Pune University and
+                    approved by AICTE, New Delhi. As a driving philosophy, the
+                    belief is that the emerging global environment has created a
+                    scenario where managers have to face greater situational
+                    challenges, predict and handle the vagaries of the market and
+                    provide sustainable strategic solutions to corporate issues. The
+                    current global economy has created an environment where managers
+                    have to face greater situational challenges; predict and handle
+                    the impulses of the market and provide quality service
+                    management. Such an environment requires professional graduates
+                    not only armed with the necessary knowledge but also the
+                    confidence of facing extreme competition with greater
+                    articulation.
+                  </p>
+                  <p>
+                    The IGSB campus is located imposingly adjoining the Mumbai-Pune
+                    Expressway, on a beautiful site amidst open fields and clusters
+                    of large trees in a beautiful, green valley which gives a sense
+                    of endless space to the quest of mind and soul. The
+                    infrastructure is dynamic in nature because of our constant
+                    attempt to maintain pace with the development opportunities
+                    available to us. Our infrastructure acts as a facilitator for the
+                    effective delivery of our curriculum and nurtures the quest for
+                    knowledge. The MBA programs (MBA and MBA - Services Management)
+                    at IGSB equip students with fresh insights and alternative ways
+                    of thinking, helping them to succeed in highly unpredictable and
+                    non-linear conditions, making global leaders out of them.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Campus Image */}
+              <div className="lg:w-1/3">
+                <div className="relative h-full w-full rounded-xl overflow-hidden shadow-lg">
+                  <Image
+                    src="/Home/IGSB.jpg"
+                    alt="IGSB Campus"
+                    width={600}
+                    height={400}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>

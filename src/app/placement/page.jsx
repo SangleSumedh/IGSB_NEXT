@@ -14,6 +14,7 @@ import PlacementIndustryVisit from "@/components/PlacementComponents/PlacementIn
 import PlacementCell from "@/components/PlacementComponents/PlacementCell";
 import RecruiterPlacement from "@/components/PlacementComponents/RecruiterPlacement";
 import DomainSteps from "@/components/PlacementComponents/DomainSteps";
+import PuzzleSkills from "@/components/PlacementComponents/PuzzleSection";
 
 export default function Placement() {
   return (
@@ -28,6 +29,7 @@ export default function Placement() {
         <CASsection />
         {/* <Upskilling /> */}
         <DomainSteps />
+        <PuzzleSkills />
         <PlacementRecords />
         {/* <PlacementOrientation /> */}
         {/* <PlacementIndustryVisit /> */}

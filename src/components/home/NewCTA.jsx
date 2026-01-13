@@ -15,7 +15,7 @@ function NewCTA() {
   return (
     <div className="w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] text-white shadow-xl overflow-hidden">
       {/* MOBILE FIRST */}
-      <div className="flex flex-col md:grid md:grid-cols-12 md:h-[40vh]">
+      <div className="flex flex-col md:grid md:grid-cols-12 ">
         {/* LEFT VECTOR */}
         <div
           className="
@@ -44,9 +44,8 @@ function NewCTA() {
             text-center
             px-4 py-6
             gap-4
+            md:col-span-3
             
-            md:col-span-2
-            xl:h-[80%]
           "
         >
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-tight max-w-xs">
@@ -76,16 +75,15 @@ function NewCTA() {
         </div>
 
         {/* RIGHT IMAGE — HIDDEN ON MOBILE */}
-        <div className="hidden md:block md:col-span-8 h-full w-full">
+        <div className="hidden md:block md:col-span-7 h-full w-full">
           <img
-            src="/Home/IGSBGrid1.png"
+            src="/Home/IGSBGrid2.png"
             alt="IGSB Campus"
             onError={handleImageError}
             className="
               w-full h-full
               object-cover object-center
               opacity-85
-              scale-[1.02]
               [mask-image:linear-gradient(to_right,transparent,black_15%)]
               [-webkit-mask-image:linear-gradient(to_right,transparent,black_15%)]
             "

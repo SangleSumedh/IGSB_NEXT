@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import SectorAnalyticsCard from "./SectoralDistribution";
 
 /* ---------------- DATA ---------------- */
 
@@ -46,7 +47,7 @@ const RecruiterPlacement = () => {
       {/* 1. The Split Grid Background Logic */}
       <div className="hidden lg:grid grid-cols-[80%_20%] min-h-[600px]">
         {/* LEFT COL: Cyan Background + Content */}
-        <div className="relative bg-[#3aafa9] py-16 pl-4 pr-16 xl:pl-20 xl:pr-38 flex flex-col justify-center">
+        <div className="relative bg-secondary py-16 pl-4 pr-16 xl:pl-20 xl:pr-38 flex flex-col justify-center">
           {/* Header Text */}
           <div className="relative z-10 mb-10">
             <h2 className="text-2xl xl:text-4xl font-extrabold text-white mb-6">
@@ -103,32 +104,30 @@ const RecruiterPlacement = () => {
 /* ---------------- SUB COMPONENTS ---------------- */
 
 const OrangeCard = () => (
-  <div className="bg-[#ff712d] md:h-[500px] rounded-2xl p-8 shadow-2xl relative overflow-hidden text-white">
-    {/* Background Glow */}
-    <div className="absolute top-0 right-0 w-40 h-40 bg-white/20 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+  <div className="bg-primary md:h-[520px] rounded-3xl p-8 shadow-2xl relative overflow-hidden text-white flex flex-col">
+    
+    {/* Ambient Glow */}
+    <div className="absolute top-0 right-0 w-48 h-48 bg-white/20 rounded-full blur-[90px] -mr-20 -mt-20 pointer-events-none"></div>
 
-    <h3 className="text-2xl font-bold mb-4 border-b-2 border-white/30 pb-4">
-      Why Recruiters Choose Us
-    </h3>
-
-    <div className="space-y-4 text-white/90 leading-relaxed text-sm">
-      <p>
-        We prepare students not just for jobs, but for careers. Our
-        industry-integrated curriculum ensures that every graduate hits the
-        ground running.
+    {/* Header */}
+    <div className="mb-6">
+      <p className="text-xs uppercase tracking-widest text-white/70 mb-2">
+        Placement Insights
       </p>
-      <ul className="list-disc list-inside space-y-2 mt-4 font-medium">
-        <li>Corporate Mentorship Programs</li>
-        <li>Live Projects & Internships</li>
-        <li>Soft Skills & Aptitude Training</li>
-      </ul>
+      <h3 className="text-2xl font-bold leading-tight">
+        Sector-wise Analytics
+      </h3>
     </div>
 
-    <button className="mt-8 w-full bg-white text-[#ff712d] font-bold py-3 px-6 rounded-lg shadow-md hover:bg-gray-100 hover:scale-[1.02] transition-all">
-      Contact Placement Cell
-    </button>
+    {/* Analytics Container */}
+    <div className="bg-white/95 rounded-2xl  shadow-lg backdrop-blur-sm">
+      <SectorAnalyticsCard />
+    </div>
+
+    
   </div>
 );
+
 
 const LogoItem = ({ src }) => (
   <div className="bg-white rounded-lg p-2 h-16 xl:h-20 flex items-center justify-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">

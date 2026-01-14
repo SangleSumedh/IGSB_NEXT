@@ -80,16 +80,14 @@ export default function Impact() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-gradient-to-r
-      from-[#10404A]
-      to-[#1F6D71] py-2 overflow-hidden" // Main Background: Dark Slate
+      className="relative bg-white py-2" 
     >
-      <div className="max-w-9xl mx-auto px-6 flex flex-col xl:flex-row items-center justify-between gap-6">
+      <div className="max-w-full mx-auto px-6 flex flex-col xl:flex-row items-center justify-between gap-6">
         {/* LEFT SIDE: Text & Cards */}
         <div className="w-full xl:w-3/5 z-10">
           {/* Section Title */}
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-10 uppercase tracking-wide pl-4">
-            Career Outcomes That Speak for Themselves
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary mb-10 uppercase tracking-wide pl-4">
+            Career Outcomes That <span className="text-primary">Speak</span> for Themselves
           </h2>
 
           {/* Stats Cards Grid - Updated for 4 items */}
@@ -105,8 +103,8 @@ export default function Impact() {
                 className="flex flex-col h-full rounded-xl overflow-hidden shadow-xl transform transition-transform hover:scale-105 opacity-0 group"
               >
                 {/* Top Half: Fixed Height */}
-                <div className="bg-white py-3 px-2 text-center h-22 flex items-center justify-center shrink-0">
-                  <h3 className="text-3xl lg:text-4xl font-extrabold text-[#ff885b]">
+                <div className="bg-[#3aafa9] py-3 px-2 text-center h-22 flex items-center justify-center shrink-0">
+                  <h3 className="text-3xl lg:text-4xl font-extrabold text-white">
                     {counts[index].toFixed(stat.decimal)}
                     {stat.suffix}
                   </h3>
@@ -114,7 +112,7 @@ export default function Impact() {
 
                 {/* Bottom Half: Fills remaining space */}
                 {/* FIX 2: Add 'flex-grow' and centering classes */}
-                <div className="flex-grow flex items-center justify-center bg-[#3aafa9] py-3 px-2 text-center border-t-2 border-[#3aafa9] group-hover:bg-[#2b3740] transition-colors duration-300">
+                <div className="flex-grow flex items-center justify-center bg-secondary py-3 px-2 text-center border-t-2 border-secondary group-hover:bg-[#3aafa9] transition-colors duration-300">
                   <p className="text-white font-bold text-base uppercase tracking-wider">
                     {stat.label}
                   </p>
@@ -125,11 +123,11 @@ export default function Impact() {
         </div>
 
         {/* RIGHT SIDE: Graduate Image */}
-        <div className="w-full xl:w-2/5 flex justify-center xl:justify-end relative z-0 mt-8 xl:mt-0 -mr-6 xl:-mr-12">
+        <div className="w-full xl:w-2/5 flex justify-center xl:justify-end relative z-50 -mt-8 xl:-mt-24 -mr-6 xl:-mr-12">
           <img
             src="/graduation.png"
             alt="Graduate Student"
-            className="w-full max-w-[300px] xl:max-w-full object-contain drop-shadow-2xl"
+            className="w-full max-w-[300px] xl:max-w-full  drop-shadow-2xl"
           />
         </div>
       </div>

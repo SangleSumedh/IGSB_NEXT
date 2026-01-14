@@ -5,8 +5,9 @@ import Image from "next/image";
 // import FAQSection from "@/components/FAQSections/FAQMBA";
 import CTASection from "@/components/home/CTASection";
 import RecruitersSection from "@/components/home/RecruiterSection";
-import PillarsSection from "@/components/home/Pillar";
 import PHDSpecs from "@/components/programs/PHDSpecialisations";
+import { FileText, Calendar, Info } from "lucide-react";
+import FormSection from "@/components/home/FormSection";
 
 export default function PHD() {
   // const faqRef = useRef(null);
@@ -132,11 +133,204 @@ export default function PHD() {
         <PHDSpecs />
       </section>
 
+      <section className="w-full bg-white py-16 px-4 md:px-8 lg:px-12 border-t border-slate-100">
+        <div className="max-w-[1800px] mx-auto grid grid-cols-1 xl:grid-cols-12 gap-10 items-stretch">
+          {/* --- LEFT SIDE: RESEARCH CENTRE ACTIVITIES (Span 8) --- */}
+          <div className="xl:col-span-8 flex flex-col">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#10404a] mb-8">
+              Research Centre Activities
+            </h2>
+
+            {/* Activities Content Card */}
+            <div className="bg-secondary text-white border border-slate-100 rounded-2xl p-6 lg:p-8 flex flex-col lg:flex-row gap-8 h-full shadow-sm hover:shadow-md transition-shadow duration-300">
+              {/* Text Content */}
+              <div className="flex-1 space-y-6">
+                {/* Event Meta Box */}
+                <div className="bg-[#3aa6a9] p-4 rounded-lg border border-slate-200 shadow-sm flex gap-4 items-start">
+                  <div className="bg-[#eef2f6] p-2 rounded-full border-3 border-primary text-slate-800">
+                    {/* Calendar Icon */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect
+                        x="3"
+                        y="4"
+                        width="18"
+                        height="18"
+                        rx="2"
+                        ry="2"
+                      ></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm text-white font-bold uppercase tracking-wide mb-1">
+                      Workshop Details
+                    </p>
+                    <p className=" font-medium text-sm">
+                      <span className="">Date:</span> 5th June 2025
+                    </p>
+                    <p className=" font-medium text-sm mt-1">
+                      <span className="">Speaker:</span> Dr. Abhijit
+                      Chandratreya{" "}
+                      <span className=" text-xs">
+                        (Deputy Director, PGRC, IIMP)
+                      </span>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-4  text-lg leading-relaxed text-justify">
+                  <p>
+                    The IGSB Research Centre organized a comprehensive guidance
+                    session aiming to provide clarity on doctoral entrance
+                    eligibility, research orientation, the purpose of a Ph.D.,
+                    and its professional relevance.
+                  </p>
+                  <p>
+                    The workshop was instrumental in building an academic
+                    research mindset among aspirants, focusing heavily on
+                    ethical considerations and high-quality publication
+                    standards required in modern academia.
+                  </p>
+                </div>
+              </div>
+
+              {/* Event Image */}
+              <div className="lg:w-2/5 flex-shrink-0">
+                <div className="relative h-64 lg:h-full min-h-[300px] w-full rounded-xl overflow-hidden shadow-lg group">
+                  <img
+                    src="/IGSB/Research/IGSBRC/Activities.png"
+                    alt="IGSB Research Centre Guidance Session"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <span className="bg-[#fb7035] text-xs font-bold px-2 py-1 rounded mb-2 inline-block">
+                      2025
+                    </span>
+                    <p className="font-semibold text-sm">
+                      Research Guidance Session
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* --- RIGHT SIDE: ADMISSION DETAILS (News Flash) (Span 4) --- */}
+          <div className="xl:col-span-4 flex flex-col">
+            {/* Alignment Spacer to align with Left Header (approx height of header + subheader) */}
+            {/* <div className="hidden xl:block h-[116px]"></div> */}
+
+            <div className="bg-white rounded-xl text-slate-50 overflow-hidden flex flex-col h-full">
+              {/* Header */}
+              <div className="bg-[#10404a] p-6 flex items-center justify-between text-white flex-shrink-0">
+                <h3 className="text-xl font-bold flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    className="w-6 h-6 text-[#3aafa9]"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+                    />
+                  </svg>
+                  News Flash
+                </h3>
+                <span className="animate-pulse w-2 h-2 rounded-full bg-[#fb7035]"></span>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 relative flex flex-col flex-grow bg-[#3aa6a9]">
+                {/* <div className="absolute inset-0  pointer-events-none"></div> */}
+
+                <div className="relative z-10 flex flex-col gap-6 flex-grow">
+                  {/* Admission Details Text */}
+                  <div>
+                    <h4 className="font-bold text-sm uppercase tracking-wide mb-3">
+                      General Guidelines
+                    </h4>
+                    <p className=" text-sm leading-relaxed text-justify mb-4">
+                      Admissions to the Ph.D. program are conducted strictly as
+                      per{" "}
+                      <span className="font-bold text-primary">
+                        SPPU norms and guidelines
+                      </span>
+                      . Vacancy details are announced as per university
+                      timelines before each admission cycle.
+                    </p>
+
+                    <div className=" text-xs text-slate-100 italic">
+                      "The Research Center ensures complete transparency
+                      regarding all official circulars."
+                    </div>
+                  </div>
+
+                  <div className="flex-grow"></div>
+
+                  {/* Download Action */}
+                  <div className="pt-4 mt-auto">
+                    <a
+                      href="/Programs/PHDSPPU.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full group relative flex items-center justify-center gap-3 bg-[#10404a] text-white py-4 rounded-lg hover:bg-[#0c3139] shadow-lg shadow-[#10404a]/20 transition-all duration-300 transform hover:-translate-y-1"
+                    >
+                      {/* File Text Icon */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                      </svg>
+                      <span className="font-bold text-sm tracking-wide">
+                        View SPPU Circulars
+                      </span>
+                    </a>
+                    <p className="text-xs text-center text-slate-50 mt-3">
+                      Official PDF Document • Updated 2025
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===================================================
           PHD GUIDES
       =================================================== */}
-      <section className="bg-white px-6 md:px-16  py-8  space-y-6 max-w-full mx-auto mt-12  ">
-        <h2 className="text-3xl font-bold text-secondary text-left">
+      <section className="bg-secondary px-6 md:px-16  py-8  space-y-6 max-w-full mx-auto   ">
+        <h2 className="text-3xl font-bold text-white text-left">
           Recognized Ph.D. Guides
         </h2>
 
@@ -170,9 +364,9 @@ export default function PHD() {
           ].map(([name, field, img], i) => (
             <div
               key={i}
-              className="bg-secondary text-white border border-gray-300 rounded-xl  p-4 text-center space-y-2"
+              className="bg-[#33a6a9] text-white border border-gray-300 rounded-xl  p-4 text-center space-y-2"
             >
-              <div className="w-full rounded-lg overflow-hidden border-2 border-primary">
+              <div className="w-full rounded-lg overflow-hidden">
                 <Image
                   src={img}
                   alt={name}
@@ -183,67 +377,17 @@ export default function PHD() {
               </div>
 
               <h2 className="font-semibold  pt-2">{name}</h2>
-              <p className="text-primary text-sm">{field}</p>
+              <p className="text-white text-sm">{field}</p>
             </div>
           ))}
         </div>
       </section>
-
-      {/* ===================================================
-          ADMISSION DETAILS
-      =================================================== */}
-      <section className="bg-white px-4 md:px-8 py-8 rounded-none space-y-6 max-w-7xl mx-auto mt-12 shadow-sm ">
-        <h2 className="text-3xl font-bold text-secondary text-left">
-          Admission Details
-        </h2>
-
-        <p className="text-gray-700 text-justify text-md md:text-lg">
-          Admissions to the Ph.D. program are conducted strictly as per SPPU
-          norms and guidelines. Vacancy details are announced as per university
-          timelines before each admission cycle.
-        </p>
-
-        <p className="text-gray-700 text-justify">
-          <strong>SPPU Circulars:</strong> The Research Center ensures complete
-          transparency and provides all official SPPU circulars related to Ph.D.
-          admissions and procedure.
-        </p>
-      </section>
-      {/* ===================================================
-          RESEARCH ACTIVITIES
-      =================================================== */}
-      <section className="bg-white mb-16 px-4 md:px-8 py-8 rounded-none flex justify-between items-center gap-10 space-y-6 max-w-7xl mx-auto mt-12 shadow-sm ">
-        <div className="flex flex-col min-w-3xl items-left  gap-y-5 justify-between">
-          <h2 className="text-2xl md:text-4xl font-bold text-secondary ">
-            Research Centre Activities
-          </h2>
-
-          <p className="text-gray-700 max-w-xl text-justify">
-            On 5th June 2025, the IGSB Research Centre organized a guidance
-            session led by <strong>Dr. Abhijit Chandratreya</strong>, Deputy
-            Director (PGRC), IIMP. The workshop aimed to provide guidance on
-            doctoral entrance eligibility, research orientation, purpose of
-            Ph.D., and its professional relevance.
-          </p>
-
-          <p className="text-gray-700 max-w-xl text-justify">
-            The session also focused on building an academic research mindset,
-            ethical considerations, and publication standards.
-          </p>
-        </div>
-        <div className="rounded-2xl max-w-3xl overflow-hidden shadow">
-          <img
-            src="/IGSB/Research/IGSBRC/Activities.png"
-            alt="IGSB Research Centre Session"
-            className="w-full h-auto object-cover"
-          />
-        </div>
-      </section>
-
       {/* ===================================================
           OPTIONAL CTA + FAQ
       =================================================== */}
-      <RecruitersSection />
+      {/* <RecruitersSection />
+       */}
+      <FormSection />
       <CTASection />
 
       {/* ===================================================

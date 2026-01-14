@@ -8,7 +8,7 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
   const slides = [
     {
       id: 1,
-      image: "/Programs/marketing1.jpg", // Replace with your actual image paths
+      image: "/Programs/updatedmarketing.jpg", // Replace with your actual image paths
       title: "Specialization in Marketing Management",
       description:
         "Master the complexities of global finance. Our curriculum focuses on investment analysis, corporate finance, and risk management to prepare you for high-stakes financial roles.",
@@ -17,6 +17,27 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
       id: 2,
       image: "/Programs/finance1.jpg", // Replace with your actual image paths
       title: "Specialization in Financial Management",
+      description:
+        "Master the complexities of global finance. Our curriculum focuses on investment analysis, corporate finance, and risk management to prepare you for high-stakes financial roles.",
+    },
+    {
+      id: 3,
+      image: "/Programs/Logistic.png", // Replace with your actual image paths
+      title: "Specialization in Logistics Management",
+      description:
+        "Master the complexities of global finance. Our curriculum focuses on investment analysis, corporate finance, and risk management to prepare you for high-stakes financial roles.",
+    },
+    {
+      id: 4,
+      image: "/Programs/hr1.jpg", // Replace with your actual image paths
+      title: "Specialization in Human Resource Management",
+      description:
+        "Master the complexities of global finance. Our curriculum focuses on investment analysis, corporate finance, and risk management to prepare you for high-stakes financial roles.",
+    },
+    {
+      id: 5,
+      image: "/Programs/ba1.jpg", // Replace with your actual image paths
+      title: "Specialization in Business Analytics",
       description:
         "Master the complexities of global finance. Our curriculum focuses on investment analysis, corporate finance, and risk management to prepare you for high-stakes financial roles.",
     },
@@ -88,8 +109,8 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
           />
 
           {/* Multi-layer Gradient Overlay for Better Text Readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-10" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40 z-10" />
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40 z-10" /> */}
 
           {/* Content Overlay */}
           <div className="absolute inset-0 flex items-center justify-start z-20">

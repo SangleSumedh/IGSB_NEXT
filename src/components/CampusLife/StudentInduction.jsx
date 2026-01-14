@@ -1,227 +1,217 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { studentInduction } from "@/static/campuslife/student-inductions.js"; // Adjust path if needed
-import { FaMicrophone } from "react-icons/fa";
+import { studentInduction } from "@/static/campuslife/student-inductions.js";
+import { MemoryLane } from "@/components/CampusLife/MemoryLane";
+import { FaMicrophone, FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-/* ============================================================
-   COMPONENT: OldPage (Tabbed Interface)
-   ============================================================ */
-function OldPage() {
-  // 1. Get all keys & slice to get the past 3 years
-  const allYears = Object.keys(studentInduction);
-  const pastYearsKeys = allYears.slice(1, 4);
-
-  // 2. State for the currently active tab (defaults to the first past year)
-  const [activeTab, setActiveTab] = useState(pastYearsKeys[0]);
-
-  if (pastYearsKeys.length === 0) return null;
-
-  // Helper to get data for the currently selected year
-  const activeContent = studentInduction[activeTab]?.[0];
+const ContinuousCarousel = ({ images }) => {
+  // If you don't have a list of images, use a default list or the one passed in.
+  // Ideally, define this outside or pass it as a prop.
+  const carouselImages = images || [
+    "/placement/hr.png",
+    "/placement/marketing.png", // Add your other image paths here
+    "/placement/hr.png", // Duplicate strictly for smooth looping if list is short
+    "/placement/marketing.png",
+  ];
 
   return (
-    <div className="py-8 px-4 md:px-8 bg-slate-50/50">
-      
-      {/* --- TABS ROW (Scrollable on mobile) --- */}
-      <div className="flex flex-wrap gap-3 mb-8 border-b border-slate-200 pb-4">
-        {pastYearsKeys.map((yearKey) => {
-          const isActive = activeTab === yearKey;
-          return (
-            <button
-              key={yearKey}
-              onClick={() => setActiveTab(yearKey)}
-              className={`
-                px-5 py-2.5 rounded-md text-sm font-bold transition-all duration-200 border
-                ${
-                  isActive
-                    ? "bg-[#10404A] text-white border-[#10404A] shadow-md"
-                    : "bg-white text-[#10404A] border-slate-300 hover:bg-slate-100 hover:border-slate-400"
-                }
-              `}
-            >
-              {yearKey}
-            </button>
-          );
-        })}
+    <div className="relative w-full h-full overflow-hidden">
+      {/* The "Film Strip" 
+         - animate-scroll: A custom animation defined in tailwind.config or inline style below.
+         - Flex row to stack images side-by-side.
+      */}
+      <div 
+        className="flex h-full w-[200%] animate-carousel-scroll"
+      >
+        {/* Render the list TWICE to create the infinite loop illusion */}
+        {[...carouselImages, ...carouselImages].map((src, i) => (
+          <div key={i} className="relative w-full h-full shrink-0">
+             <Image 
+                src={src} 
+                alt="Carousel Item" 
+                fill 
+                className="object-cover" 
+             />
+             {/* Gradient Overlay for depth (Optional) */}
+             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+          </div>
+        ))}
       </div>
 
-      {/* --- CONTENT AREA (Changes based on active tab) --- */}
-      {activeContent ? (
-        <div className="bg-white rounded-xl p-6 md:p-8 border border-slate-200 shadow-sm animate-in fade-in zoom-in-95 duration-300">
-          
-          {/* Header of Content */}
-          <div className="mb-6">
-            <h3 className="text-xl md:text-2xl font-bold text-[#10404A]">
-              {activeContent.title}
-            </h3>
-          </div>
-
-          {/* Description Text */}
-          <div className="space-y-4 text-slate-600 leading-relaxed text-sm md:text-base">
-            {activeContent.description?.map((para, i) => (
-              <p key={i}>{para}</p>
-            ))}
-          </div>
-
-          {/* Image Grid */}
-          {activeContent.images && activeContent.images.length > 0 && (
-            <div className="mt-8 pt-6 border-t border-slate-100">
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">
-                Highlights Gallery
-              </h4>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {activeContent.images.slice(0, 4).map((img, i) => (
-                  <div
-                    key={i}
-                    className="relative h-32 md:h-40 rounded-lg overflow-hidden group shadow-sm bg-slate-100 border border-slate-200"
-                  >
-                    <Image
-                      src={img}
-                      alt={`Memory ${i}`}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      ) : (
-        <div className="text-center text-slate-400 py-12 italic">
-          No content available for this year.
-        </div>
-      )}
+      {/* INLINE STYLE FOR ANIMATION 
+        (Alternatively add to tailwind.config.js: keyframes: { scroll: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } } } )
+      */}
+      <style jsx>{`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-carousel-scroll {
+          animation: scroll 15s linear infinite;
+        }
+      `}</style>
     </div>
   );
-}
+};
+/* ============================================================
+   HELPER: Calculate Curve Indentation (Pure Logic)
+   ============================================================ */
+const getCurveIndent = (index, totalItems) => {
+  const centerIndex = Math.floor(totalItems / 2);
+  const distanceFromCenter = Math.abs(index - centerIndex);
+  const shiftLevel = Math.max(0, centerIndex - distanceFromCenter);
+
+  // Curve Depth values (pixels)
+  // Center items get pushed 110px, edges get 0px
+  const indentValues = ["0px", "40px", "85px", "110px"];
+
+  return indentValues[shiftLevel] || "0px";
+};
 
 /* ============================================================
-   COMPONENT: MemoryLane (The Wrapper Accordion)
+   COMPONENT: Expandable Card (Fixed Content Logic)
    ============================================================ */
-function MemoryLane() {
-  const [showMemoryLane, setShowMemoryLane] = useState(false);
+function ExpandableTimelineCard({ item, index, indentValue, isCardsOnRight, isOpen, onToggle }) {
+ ;
+
+  // LOGIC:
+  // 1. Layout & Border
+  const layoutClass = isCardsOnRight
+    ? "lg:ml-[var(--indent)] border-l-0"
+    : "lg:mr-[var(--indent)] border-r-0";
+
+  // 2. Text Alignment & Header Orientation
+  const contentFlex = isCardsOnRight ? "flex-row" : "flex-row-reverse";
+  const textAlign = isCardsOnRight ? "text-left" : "text-right";
+  const bubbleSpacing = isCardsOnRight ? "mr-4" : "ml-4";
+
+  // 3. Session Card Orientation (Mirrors the header)
+  // Right Cards: Text Left, Image Right
+  // Left Cards: Image Left, Text Right
+  const sessionFlex = isCardsOnRight ? "flex-row" : "flex-row-reverse";
+  const sessionTitleJustify = isCardsOnRight ? "justify-start" : "justify-end";
 
   return (
-    <div className="w-full bg-white border-t border-slate-200 mt-16">
-      {/* Toggle Button */}
+    <div
+      style={{ "--indent": indentValue }}
+      className={`w-full lg:w-[calc(100%-var(--indent))] mb-2 last:mb-0 relative z-10 transition-all duration-500 ease-in-out ${layoutClass}
+      ${!isCardsOnRight ? "self-end" : "self-start"}`}
+    >
+      {/* --- HEADER --- */}
       <button
-        onClick={() => setShowMemoryLane(!showMemoryLane)}
-        className="w-full py-8 flex flex-col items-center justify-center transition-colors duration-300 group cursor-pointer outline-none hover:bg-slate-50"
+        onClick={onToggle}
+        className={`w-full py-3 px-4 rounded-xl shadow-sm transition-all duration-300 
+          flex items-center justify-between group
+          ${
+            isOpen
+              ? "bg-[#10404A] text-white border-[#FF8B61] shadow-lg scale-[1.02]"
+              : "bg-white text-gray-700 border-[#10404A] hover:border-[#FF8B61] hover:shadow-md hover:bg-gray-50"
+          }
+        `}
       >
-        <div className="flex items-center gap-3 text-[#10404A] group-hover:text-[#fb7035] transition-colors">
-          <h3 className="text-lg font-bold tracking-wide uppercase">
-            Revisit Memory Lane
-          </h3>
-          <svg
-            className={`w-5 h-5 transition-transform duration-500 ${
-              showMemoryLane ? "rotate-180" : "rotate-0"
-            }`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        <div className={`flex items-center w-full ${contentFlex}`}>
+          {/* Bubble */}
+          <div
+            className={`
+              shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold border-2 transition-colors
+              ${
+                isOpen
+                  ? "bg-[#FF8B61] text-white border-white"
+                  : "bg-white text-[#10404A] border-[#10404A]"
+              }
+              ${bubbleSpacing}
+          `}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2.5"
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-        </div>
-        <p className="text-xs text-slate-400 mt-2 font-medium tracking-widest opacity-80 group-hover:opacity-100 transition-opacity">
-          CLICK TO EXPAND ARCHIVE
-        </p>
-      </button>
-
-      {/* Collapsible Area */}
-      <div
-        className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
-          showMemoryLane ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-        }`}
-      >
-        <div className="overflow-hidden">
-          <div className="border-t border-slate-100 bg-white shadow-inner">
-            <OldPage />
+            {index + 1}
           </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
-/* ============================================================
-   HELPER: TimelineItem (Current Year Items - Unchanged)
-   ============================================================ */
-function TimelineItem({ item, index, isLast }) {
-  return (
-    <div className={`relative pl-8 sm:pl-12 ${!isLast ? "pb-12" : "pb-0"}`}>
-      {!isLast && (
-        <div className="absolute left-[11px] sm:left-[15px] top-4 h-full w-[2px] bg-gray-200"></div>
-      )}
-      <div className="absolute left-0 top-1 w-6 h-6 sm:w-8 sm:h-8 bg-blue-500 rounded-full border-4 border-white shadow-md z-10 flex items-center justify-center">
-        <div className="w-2 h-2 bg-white rounded-full" />
-      </div>
-
-      <div className="flex flex-col space-y-4">
-        <div className="bg-[#1e293b] text-white py-3 px-6 rounded-r-full rounded-bl-xl shadow-lg self-start inline-block max-w-full sm:max-w-2xl transform transition hover:-translate-y-1">
-          <h3 className="text-lg sm:text-xl font-bold tracking-wide uppercase">
+          {/* Title */}
+          <h3
+            className={`text-sm sm:text-base font-bold uppercase tracking-wide truncate flex-1 ${textAlign}`}
+          >
             {item.title}
           </h3>
-        </div>
 
-        <div className="bg-white border-l-4 border-blue-500 pl-4 sm:pl-6 py-2 space-y-6">
+          {/* Chevron */}
+          <div className={`shrink-0 ${isCardsOnRight ? "ml-3" : "mr-3"}`}>
+            {isOpen ? (
+              <FaChevronUp className="text-[#FF8B61]" />
+            ) : (
+              <FaChevronDown className="text-gray-400 group-hover:text-[#FF8B61]" />
+            )}
+          </div>
+        </div>
+      </button>
+
+      {/* --- EXPANDED BODY --- */}
+      <div
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${
+          isOpen ? "max-h-[1000px] opacity-100 mt-2" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div
+          className={`bg-slate-50 rounded-xl p-4 border border-slate-200 ${textAlign}`}
+        >
+          {/* Main Description */}
           {item.description?.length > 0 && (
-            <div className="text-gray-700 leading-relaxed space-y-3">
+            <div className="mb-4 space-y-2">
               {item.description.map((para, i) => (
-                <p key={i}>{para}</p>
+                <p
+                  key={i}
+                  className="text-slate-600 text-xs sm:text-sm leading-relaxed"
+                >
+                  {para}
+                </p>
               ))}
             </div>
           )}
 
-          {item.objective && (
-            <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-              <h4 className="font-bold text-blue-800 mb-2 text-sm uppercase">
-                Objective
-              </h4>
-              {Array.isArray(item.objective) ? (
-                <ul className="list-disc pl-5 space-y-1 text-gray-700 text-sm">
-                  {item.objective.map((obj, i) => (
-                    <li key={i}>{obj}</li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="text-gray-700 text-sm">{item.objective}</p>
-              )}
-            </div>
-          )}
-
+          {/* Sessions List */}
           {item.sessions && item.sessions.length > 0 && (
-            <div className="space-y-4 mt-4">
+            <div className="space-y-3">
+              <h4
+                className={`font-bold text-[#10404A] text-[10px] uppercase border-b border-slate-200 pb-1 mb-2 ${textAlign}`}
+              >
+                Highlights
+              </h4>
+
               {item.sessions.map((session, idx) => {
                 const imageForSession = item.images?.[idx];
                 return (
                   <div
                     key={idx}
-                    className="bg-gray-50 rounded-xl p-4 border border-gray-200 flex flex-col lg:flex-row gap-6"
+                    className={`bg-white p-2 rounded-lg border border-slate-100 flex gap-3 shadow-sm ${sessionFlex}`}
                   >
-                    <div className="flex-1 space-y-2">
-                      <h5 className="font-bold text-lg text-gray-800 flex items-center gap-2">
-                        <FaMicrophone className="text-blue-500" />
-                        {session.title}
+                    {/* Text Section */}
+                    <div className="flex-1 min-w-0">
+                      <h5
+                        className={`font-bold text-[#FF8B61] text-xs flex items-center gap-2 mb-1 ${sessionTitleJustify}`}
+                      >
+                        <FaMicrophone className="w-3 h-3 shrink-0" />
+                        <span className="truncate">{session.title}</span>
                       </h5>
+
                       {session.speaker && (
-                        <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded font-semibold">
-                          {session.speaker}
-                        </span>
+                        <div
+                          className={`mb-1 ${
+                            isCardsOnRight ? "text-left" : "text-right"
+                          }`}
+                        >
+                          <span className="text-[9px] bg-blue-50 text-blue-800 px-1.5 py-0.5 rounded-full inline-block font-medium">
+                            {session.speaker}
+                          </span>
+                        </div>
                       )}
-                      <p className="text-sm text-gray-600 leading-relaxed">
+
+                      <p className="text-[10px] text-slate-500 line-clamp-2">
                         {session.description}
                       </p>
                     </div>
+
+                    {/* Image Section */}
                     {imageForSession && (
-                      <div className="lg:w-48 h-32 relative rounded-lg overflow-hidden flex-shrink-0 shadow-sm">
+                      <div className="w-16 h-12 sm:w-20 sm:h-14 relative rounded overflow-hidden shrink-0 bg-slate-100">
                         <Image
                           src={imageForSession}
                           alt={session.title}
@@ -236,19 +226,24 @@ function TimelineItem({ item, index, isLast }) {
             </div>
           )}
 
+          {/* Fallback Gallery (if no sessions but images exist) */}
           {(!item.sessions || item.sessions.length === 0) &&
             item.images?.length > 0 && (
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4">
-                {item.images.slice(0, 4).map((img, i) => (
+              <div
+                className={`grid grid-cols-3 gap-2 mt-2 ${
+                  isCardsOnRight ? "" : "direction-rtl"
+                }`}
+              >
+                {item.images.slice(0, 3).map((img, i) => (
                   <div
                     key={i}
-                    className="relative h-40 w-full rounded-lg overflow-hidden shadow border border-gray-200 group"
+                    className="relative h-16 rounded overflow-hidden shadow-sm"
                   >
                     <Image
                       src={img}
-                      alt="Event"
+                      alt="Gallery"
                       fill
-                      className="object-cover transition duration-500 group-hover:scale-110"
+                      className="object-cover"
                     />
                   </div>
                 ))}
@@ -261,40 +256,111 @@ function TimelineItem({ item, index, isLast }) {
 }
 
 /* ============================================================
-   Main Component
+   MAIN COMPONENT
    ============================================================ */
 export default function StudentInduction() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const handleToggle = (index) => {
+    // If I click the card that is ALREADY open, close it (set to null).
+    // Otherwise, set the new index.
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
   const YEARS = Object.keys(studentInduction);
   const currentYearData = studentInduction[YEARS[0]];
 
+  const chunkSize = 7;
+  const chunks = [];
+  if (currentYearData) {
+    for (let i = 0; i < currentYearData.length; i += chunkSize) {
+      chunks.push(currentYearData.slice(i, i + chunkSize));
+    }
+  }
+
   return (
     <div className="w-full bg-white pb-0">
+      {/* --- HERO HEADER --- */}
       <div className="bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] py-8 px-4 text-center text-white">
-        <h1 className="text-3xl md:text-3xl lg:text-4xl font-bold mb-3 leading-tight">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-2 leading-tight tracking-tight">
           Your Journey Starts Here
         </h1>
-        <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
-          Welcome to IGSB. Step into your transformation and discover excellence.
+        <p className="text-base text-white/90 max-w-2xl mx-auto font-light">
+          Welcome to IGSB. Step into your transformation.
         </p>
       </div>
 
-      <div className="max-w-full mx-auto px-4 md:px-8 py-12">
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-8 pl-4 border-l-8 border-[#FF8B61]">
-            {YEARS[0]}
-          </h2>
-          {currentYearData && currentYearData.length > 0 ? (
-            currentYearData.map((item, idx) => (
-              <TimelineItem
-                key={idx}
-                item={item}
-                index={idx}
-                isLast={idx === currentYearData.length - 1}
-              />
-            ))
-          ) : (
-            <div className="text-center text-gray-500 py-12">No data found</div>
-          )}
+      <div className="max-w-full mx-auto px-4 md:px-8 py-8">
+        <h2 className="text-2xl font-bold text-[#10404A] mb-8 border-l-8 border-[#FF8B61] pl-4 ">
+          Metamorphosis
+        </h2>
+
+        {/* --- SNAKE LAYOUT RENDER --- */}
+        <div className="space-y-12">
+          {chunks.map((chunk, chunkIndex) => {
+            // Layout Logic:
+            // Chunk 0 (Even): Circle Left | Cards Right
+            // Chunk 1 (Odd):  Cards Left  | Circle Right
+            const isCircleLeft = chunkIndex % 2 === 0;
+            const isCardsOnRight = isCircleLeft; // Alias for clarity
+
+            
+            return (
+              <div key={chunkIndex} className="relative w-full">
+                <div
+                  className={`flex items-center justify-center ${
+                    isCircleLeft ? "flex-row" : "flex-row-reverse"
+                  }`}
+                >
+                  {/* A. THE HALF CIRCLE IMAGE PLACEHOLDER */}
+                  <div
+                    className={`hidden lg:block absolute top-1/2 -translate-y-1/2 z-0
+                    ${isCircleLeft ? "left-0" : "right-0"}
+                  `}
+                  >
+                    <div
+                      className={`
+                        relative w-[300px] h-[500px] bg-slate-200 overflow-hidden shadow-inner
+                        ${
+                          isCircleLeft
+                            ? "rounded-r-[250px] rounded-l-none" // Semi-circle facing right
+                            : "rounded-l-[250px] rounded-r-none" // Semi-circle facing left
+                        }
+                      `}
+                    >
+                      {/* PLACEHOLDER IMAGE */}
+                      <ContinuousCarousel />
+                      {/* Overlay Gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 pointer-events-none"></div>
+                    </div>
+                  </div>
+
+                  {/* B. THE CARDS STACK */}
+                  <div className="w-full lg:w-[60%] flex flex-col justify-center z-10 relative">
+                    {chunk.map((item, itemIdx) => {
+                      const globalIndex = chunkIndex * chunkSize + itemIdx;
+
+                      // Calculate Curve Indentation
+                      const indentValue = getCurveIndent(itemIdx, chunk.length);
+
+                      return (
+                        <ExpandableTimelineCard
+                          key={globalIndex}
+                          item={item}
+                          index={globalIndex}
+                          indentValue={indentValue}
+                          isCardsOnRight={isCardsOnRight}
+                          isOpen={openIndex === globalIndex}
+                          // "Here is the remote control to change the channel"
+                          onToggle={() => handleToggle(globalIndex)}
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 

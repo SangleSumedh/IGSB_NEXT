@@ -43,29 +43,21 @@ const dropdownContent = {
         label: "Student Induction",
         link: "/campus-life/student-induction"
       },
+      // {
+      //   label: "Student Interaction",
+      //   link: "/campus-life/student-interaction"
+      // },
+      // {
+      //   label: "Facilities",
+      //   link: "/facilities"
+      // },
       {
-        label: "Student Interaction",
-        link: "/campus-life/student-interaction"
+        label: "Events",
+        link: "/Campus/Events"
       },
       {
         label: "Facilities",
-        link: "/facilities"
-      },
-      {
-        label: "Events",
-        link: "/campus-life/events"
-      },
-      {
-        label: "Sports",
-        link: "/campus-life/sports"
-      },
-      {
-        label: "Canteen",
-        link: "/campus-life/canteen"
-      },
-      {
-        label: "Nature and Peace",
-        link: "/campus-life/nature-peace"
+        link: "/Campus/Nature"
       }
     ]
   },
@@ -398,7 +390,7 @@ const Navbar = () => {
                 className="flex items-center gap-1 px-2 lg:px-3 hover:text-secondary transition-all duration-200 group"
               >
                 <span className="relative">
-                  Programs & Admission
+                  Programee & Admission
                   <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
                 </span>
                 <FiChevronDown

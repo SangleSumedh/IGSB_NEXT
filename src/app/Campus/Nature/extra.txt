@@ -1,0 +1,148 @@
+  <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-emerald-900 mb-4">
+              Campus in Harmony with Nature
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Experience the perfect blend of academic excellence and natural tranquility
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {natureImages.map((image) => (
+              <div key={image.id} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative h-64 bg-gradient-to-br from-emerald-100 to-teal-100">
+                  {/* Placeholder for image - Replace with actual Image component */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+                    <div className="w-full h-full bg-gradient-to-br from-emerald-200 to-teal-200 rounded-lg flex items-center justify-center">
+                      <span className="text-5xl mb-2">🌿</span>
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-emerald-900/90 to-transparent text-white transform translate-y-0 group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="font-semibold text-lg">{image.name}</h3>
+                  <p className="text-sm opacity-90">{image.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-emerald-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-emerald-900 mb-4">
+              Why Nature Matters in Education
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              Studies show that learning in natural surroundings enhances creativity, 
+              reduces stress, and improves cognitive function
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1">
+                <div className="flex items-start space-x-4">
+                  <div className="text-4xl">{feature.icon}</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-emerald-800 mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="p-6">
+              <div className="text-4xl font-bold text-emerald-700 mb-2">70%</div>
+              <div className="text-gray-600">Green Cover</div>
+            </div>
+            <div className="p-6">
+              <div className="text-4xl font-bold text-emerald-700 mb-2">5+</div>
+              <div className="text-gray-600">Meditation Zones</div>
+            </div>
+            <div className="p-6">
+              <div className="text-4xl font-bold text-emerald-700 mb-2">24/7</div>
+              <div className="text-gray-600">Fresh Air</div>
+            </div>
+            <div className="p-6">
+              <div className="text-4xl font-bold text-emerald-700 mb-2">∞</div>
+              <div className="text-gray-600">Inspiration</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-emerald-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-emerald-900 mb-4">
+              What Our Community Says
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
+                <div className="mb-4">
+                  <span className="text-3xl text-emerald-500">"</span>
+                </div>
+                <p className="text-gray-700 italic mb-4">{testimonial.text}</p>
+                <p className="font-semibold text-emerald-800">{testimonial.author}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 md:p-12 shadow-2xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Experience Campus Tranquility
+            </h2>
+            <p className="text-emerald-100 mb-8 max-w-2xl mx-auto text-lg">
+              Visit our campus to experience firsthand how nature enhances the learning environment
+            </p>
+            <button className="bg-white text-emerald-700 font-bold px-8 py-3 rounded-full hover:bg-emerald-50 transition-colors duration-300 shadow-lg hover:shadow-xl">
+              Schedule a Campus Visit
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Image Placeholder Instructions */}
+      <div className="bg-gray-100 p-8 rounded-xl max-w-4xl mx-auto my-16">
+        <h3 className="text-2xl font-bold text-gray-800 mb-4">📸 Image Guidelines</h3>
+        <p className="text-gray-600 mb-4">
+          Replace placeholder images with actual campus photos. Recommended images:
+        </p>
+        <ul className="list-disc pl-5 text-gray-600 space-y-2">
+          <li>Campus aerial view showing greenery</li>
+          <li>Students studying in garden areas</li>
+          <li>Morning/evening campus shots</li>
+          <li>Pathways surrounded by trees</li>
+          <li>Modern buildings with green backdrop</li>
+          <li>Meditation/yoga zones</li>
+        </ul>
+        <p className="mt-4 text-sm text-gray-500">
+          Recommended size: 800x600px, WebP format for optimal performance
+        </p>
+      </div>

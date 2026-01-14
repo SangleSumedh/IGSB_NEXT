@@ -40,8 +40,9 @@ const HeroSlider = () => {
     <div className="relative w-full">
       <div className="relative w-full overflow-hidden">
         {/* ---------------- DESKTOP ---------------- */}
-
+{/* 
          <div className="w-full h-[4vh] bg-white border-b border-gray-200 flex items-center overflow-hidden relative">
+          
         <div className="relative font-semibold text-xs sm:text-sm px-4 sm:px-8 py-2 clip-ribbon-left z-10 bg-secondary text-white">
           SPOTLIGHT
         </div>
@@ -62,7 +63,7 @@ const HeroSlider = () => {
               AICTE Approved | Affiliated to SPPU
             </span>
 
-            {/* duplicate for seamless loop */}
+
             <span className="mr-12">
               Important Notice: Inter-Se-Merit List for ILS ACAP Admission for
               A.Y. 2025–26
@@ -71,7 +72,9 @@ const HeroSlider = () => {
         </div>
 
         <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-primary to-transparent" />
-      </div>
+      </div> */}
+
+      
         <div className="hidden md:block relative w-full">
           {/* height provider */}
           <Image

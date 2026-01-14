@@ -129,11 +129,11 @@ const ChanakyaEdu = () => {
         
         {/* SCES Section */}
         <section id="about-sces" className="relative scroll-mt-[15vh]">
-          <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg">
-            <h2 className="text-2xl md:text-4xl font-bold text-secondary mb-6">
+          <div className="bg-gradient-to-r from-[#10404A] to-[#1F6D71] p-6 md:p-8 rounded-xl shadow-lg">
+            <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
               Shree Chanakya Education Society (SCES)
             </h2>
-            <p className="text-gray-700 leading-relaxed text-md md:text-lg text-justify">
+            <p className="text-white leading-relaxed text-md md:text-lg text-justify">
               The Shree Chanakya Education Society (SCES) was established in
               February 1994, under the visionary leadership of Dr. Tarita
               Shankar, with the aim of providing top quality post-graduate
@@ -170,11 +170,11 @@ const ChanakyaEdu = () => {
 
         {/* Board of Trustees Section */}
         <section id="about-trustees" className="relative scroll-mt-[15vh]">
-          <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg">
-            <h2 className="text-2xl md:text-4xl font-bold text-secondary mb-2">
+          <div className="bg-gradient-to-r from-[#10404A] to-[#1F6D71] p-6 md:p-8 rounded-xl shadow-lg">
+            <h2 className="text-2xl md:text-4xl font-bold text-white mb-2">
               Board of Trustees
             </h2>
-            <p className="text-gray-600 text-md md:text-lg mb-8 md:mb-10">
+            <p className="text-white text-md md:text-lg mb-8 md:mb-10">
               Managing Committee Members/Trustees of 'Shree Chanakya Education Society'
             </p>
 
@@ -182,7 +182,7 @@ const ChanakyaEdu = () => {
               {trustees.map((person, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-secondary group flex flex-col"
+                  className="bg-[#3aafa9] rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-secondary group flex flex-col"
                 >
                   {/* Image Container */}
                   <div className="w-full h-54 bg-gray-100 flex items-center justify-center text-gray-400 rounded-t-xl group-hover:bg-gray-50 transition-colors overflow-hidden">
@@ -198,10 +198,10 @@ const ChanakyaEdu = () => {
                   </div>
 
                   <div className="p-3 flex-grow flex flex-col">
-                    <h4 className="font-bold text-gray-800 text-xs md:text-sm group-hover:text-secondary transition-colors line-clamp-2">
+                    <h4 className="font-bold text-white text-xs md:text-sm group-hover:text-secondary transition-colors line-clamp-2">
                       {person.name}
                     </h4>
-                    <p className="text-gray-600 mt-1 text-xs flex-grow">{person.role}</p>
+                    <p className="text-white mt-1 text-xs flex-grow">{person.role}</p>
                   </div>
                 </div>
               ))}

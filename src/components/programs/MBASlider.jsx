@@ -8,38 +8,40 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
   const slides = [
     {
       id: 1,
-      image: "/Programs/updatedmarketing.jpg", // Replace with your actual image paths
-      title: "Specialization in Marketing Management",
+      image: "/Programs/finance2.jpg", // Replace with your actual image paths
+      title: "Marketing Skills Built on Insight and Impact. ",
       description:
-        "Master the complexities of global finance. Our curriculum focuses on investment analysis, corporate finance, and risk management to prepare you for high-stakes financial roles.",
+        "Develop data-driven, consumer-centric marketing leaders skilled in brand strategy, digital marketing, and growth across traditional and emerging business platforms. ",
     },
     {
       id: 2,
-      image: "/Programs/finance1.jpg", // Replace with your actual image paths
-      title: "Specialization in Financial Management",
+      // Replace with your actual image paths
+      image: "/Programs/marketing2.jpg",
+      title: "Where Numbers Shape Strategic Decisions. ",
       description:
-        "Master the complexities of global finance. Our curriculum focuses on investment analysis, corporate finance, and risk management to prepare you for high-stakes financial roles.",
+        "Build expertise in financial analysis, corporate finance, investment strategy, and risk management for leadership roles in global financial environments. ",
     },
+
     {
       id: 3,
-      image: "/Programs/Logistic.png", // Replace with your actual image paths
-      title: "Specialization in Logistics Management",
+      image: "/Programs/hr2.jpg", // Replace with your actual image paths
+      title: "Transforming Talent into Organizational Strength.",
       description:
-        "Master the complexities of global finance. Our curriculum focuses on investment analysis, corporate finance, and risk management to prepare you for high-stakes financial roles.",
+        "Develop strategic HR leaders skilled in talent management, organizational development, and workforce analytics. ",
     },
     {
       id: 4,
-      image: "/Programs/hr1.jpg", // Replace with your actual image paths
-      title: "Specialization in Human Resource Management",
+      image: "/Programs/Logistic.png", // Replace with your actual image paths
+      title: "Driving Efficiency Across Global Value Chains.",
       description:
-        "Master the complexities of global finance. Our curriculum focuses on investment analysis, corporate finance, and risk management to prepare you for high-stakes financial roles.",
+        "Gain expertise in operations strategy, supply chain optimization, logistics, and process excellence across complex business ecosystems.",
     },
     {
       id: 5,
-      image: "/Programs/ba1.jpg", // Replace with your actual image paths
-      title: "Specialization in Business Analytics",
+      image: "/Programs/ba2.jpg", // Replace with your actual image paths
+      title: "Transforming Data into Business Intelligence.",
       description:
-        "Master the complexities of global finance. Our curriculum focuses on investment analysis, corporate finance, and risk management to prepare you for high-stakes financial roles.",
+        "Master analytical frameworks, predictive modeling, and data-driven decision-making to lead in analytics-driven organizations.",
     },
   ];
 
@@ -64,8 +66,6 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
-
-  
 
   return (
     <div
@@ -177,7 +177,7 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
             }}
             className={`transition-all duration-300 rounded-full backdrop-blur-sm ${
               currentIndex === i
-                ? "w-8 h-2 bg-secondary shadow-lg"
+                ? "w-8 h-2 bg-[#3aa6a9] shadow-lg"
                 : "w-2 h-2 bg-white/50 hover:bg-white/80"
             }`}
             aria-label={`Go to slide ${i + 1}`}

@@ -10,6 +10,7 @@ import {
   Settings,
   LineChart,
   ArrowRight,
+  CheckCircle2,
 } from "lucide-react";
 
 /* ---------------- CUSTOM FINANCE ICON ---------------- */
@@ -95,34 +96,44 @@ const specializations = [
 export default function ProgrammesSection() {
   const router = useRouter();
   const [activeIndex, setActiveIndex] = useState(0);
-
-  // 1. STATE: Track the current delay (default 5000ms)
+  // NEW STATE: Track text expansion
+  const [isExpanded, setIsExpanded] = useState(false);
   const [delay, setDelay] = useState(5000);
 
   const activeSpec = specializations[activeIndex];
 
-  // 2. EFFECT: Use setTimeout to handle variable delays
+  // 1. EFFECT: Reset expansion when slide changes
+  useEffect(() => {
+    setIsExpanded(false);
+  }, [activeIndex]);
+
+  // 2. EFFECT: Auto-rotation
   useEffect(() => {
     const timer = setTimeout(() => {
       setActiveIndex((prev) => (prev + 1) % specializations.length);
-      // After an auto-rotation, always reset speed to normal (5s)
       setDelay(5000);
     }, delay);
 
     return () => clearTimeout(timer);
-  }, [activeIndex, delay]); // Re-runs whenever index changes (manual or auto)
+  }, [activeIndex, delay]);
 
-  // 3. HANDLER: Manual select sets a long delay (10s)
+  // 3. HANDLER: Manual select
   const handleManualSelect = (index) => {
     setActiveIndex(index);
-    setDelay(10000); // Pause for 10 seconds before resuming auto-rotation
+    setDelay(10000);
+  };
+
+  // 4. HANDLER: Read More toggle
+  const handleReadMore = () => {
+    setIsExpanded(!isExpanded);
+    // Pause auto-rotation for longer if user is reading
+    setDelay(10000);
   };
 
   return (
     <section className="relative w-full bg-white font-sans">
-      
       {/* DESKTOP LAYOUT - LG AND ABOVE */}
-      <div className="hidden lg:block relative lg:h-[95vh] overflow-hidden flex items-center">
+      <div className="hidden lg:block relative lg:h-[95vh] flex-1 items-center">
         {/* IMAGE AT BOTTOM LEFT */}
         <div className="absolute bottom-0 left-0 lg:w-[45vw] xl:w-[50vw] h-[80vh] z-20 pointer-events-none">
           <Image
@@ -136,7 +147,7 @@ export default function ProgrammesSection() {
 
         {/* LEFT SIDE: CIRCLE INTERFACE */}
         <div className="absolute -bottom-10 lg:left-10 xl:left-16 lg:w-[40vw] lg:h-[40vw] xl:w-[45vw] xl:h-[45vw]">
-          <div className="relative w-full h-full rounded-full border-4 border-[#fc7116] z-10">
+          <div className="relative w-full h-full rounded-full border-4 border-[#fc7116] z-0">
             {specializations.map((spec, index) => {
               const radian = (spec.angle * Math.PI) / 180;
               const left = 50 + 50 * Math.cos(radian);
@@ -205,9 +216,9 @@ export default function ProgrammesSection() {
         </div>
 
         {/* RIGHT SIDE: INFO CARD */}
-        <div className="absolute  right-0 top-0 w-full lg:w-[40%] xl:w-1/3 h-[90%] flex items-center justify-center lg:p-4 xl:p-8 z-40 pointer-events-none">
-          <div className="pointer-events-auto max-w-lg w-full">
-            <div className="bg-[white/90] backdrop-blur-xl border border-white/20 shadow-2xl rounded-3xl lg:p-8 xl:p-12 relative overflow-hidden transition-all duration-500">
+        <div className="absolute right-0 top-0 w-full lg:w-[45%] xl:w-[40%] h-[95%] flex items-center justify-center lg:pr-8 xl:pr-16 z-40 pointer-events-none max-w-md xl:max-w-lg">
+          <div className="pointer-events-auto w-full max-w-xl">
+            <div className="bg-[white/90] backdrop-blur-xl border border-white/20 shadow-2xl rounded-3xl lg:p-8 xl:p-10 relative overflow-hidden transition-all duration-500">
               {/* Decorative Background Icon */}
               <div className="absolute -right-6 -top-6 opacity-10 rotate-12 scale-150">
                 <RenderIcon
@@ -222,28 +233,88 @@ export default function ProgrammesSection() {
                 key={activeIndex}
                 className="relative z-10 animate-in fade-in slide-in-from-bottom-4 duration-500"
               >
-                <div className="flex items-center gap-3 mb-4 text-orange-600">
+                {/* Header Tag */}
+                <div className="flex items-center gap-3 mb-3 text-orange-600">
                   <RenderIcon spec={activeSpec} size={20} />
                   <span className="text-sm font-bold tracking-wider uppercase">
                     MBA Specializations
                   </span>
                 </div>
 
-                <h2 className="lg:text-2xl xl:text-3xl font-extrabold text-[#10404A] mb-4 xl:mb-6 leading-tight">
+                {/* Title */}
+                <h2 className="lg:text-2xl xl:text-3xl font-extrabold text-[#10404A] mb-3 leading-tight">
                   {activeSpec.title}
                 </h2>
 
-                <p className="text-slate-600 lg:text-sm xl:text-lg lg:leading-snug xl:leading-relaxed mb-6 xl:mb-8 lg:line-clamp-8 xl:line-clamp-10">
+                {/* Description - Logic Updated */}
+                <p
+                  className={`text-slate-600 lg:text-sm xl:text-lg lg:leading-snug xl:leading-relaxed mb-4 transition-all duration-300 ${
+                    isExpanded ? "" : "line-clamp-3"
+                  }`}
+                >
                   {activeSpec.description}
                 </p>
 
+                {/* Read More Button - Functionality Updated */}
                 <button
-                  onClick={() => router.push("/programs/mba")}
-                  className="group flex items-center gap-2 bg-[#10404A] text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300"
+                  onClick={handleReadMore}
+                  className="group inline-flex items-center gap-2 text-sm font-bold text-[#fc7116] hover:text-orange-700 transition-colors mb-8 cursor-pointer"
                 >
-                  Enquire Now
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  {isExpanded ? "Read Less" : "Read More"}
+                  <ArrowRight
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                      isExpanded ? "-rotate-90" : "group-hover:translate-x-1"
+                    }`}
+                  />
                 </button>
+
+                {/* 3 Highlight Blocks */}
+                <div className="grid grid-cols-3 gap-3">
+                  {/* Block 1 */}
+                  <div className="bg-orange-50/80 border border-orange-100 rounded-xl p-3 flex flex-col items-start gap-2">
+                    <div className="bg-white p-1.5 rounded-full shadow-sm text-orange-600">
+                      <CheckCircle2 size={16} />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-[#10404A] text-xs uppercase tracking-wide mb-1">
+                        Scope
+                      </h4>
+                      <p className="text-[10px] xl:text-xs text-slate-500 leading-tight">
+                        High industry demand.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Block 2 */}
+                  <div className="bg-orange-50/80 border border-orange-100 rounded-xl p-3 flex flex-col items-start gap-2">
+                    <div className="bg-white p-1.5 rounded-full shadow-sm text-orange-600">
+                      <LineChart size={16} />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-[#10404A] text-xs uppercase tracking-wide mb-1">
+                        Growth
+                      </h4>
+                      <p className="text-[10px] xl:text-xs text-slate-500 leading-tight">
+                        Fast career track.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Block 3 */}
+                  <div className="bg-orange-50/80 border border-orange-100 rounded-xl p-3 flex flex-col items-start gap-2">
+                    <div className="bg-white p-1.5 rounded-full shadow-sm text-orange-600">
+                      <Users size={16} />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-[#10404A] text-xs uppercase tracking-wide mb-1">
+                        Roles
+                      </h4>
+                      <p className="text-[10px] xl:text-xs text-slate-500 leading-tight">
+                        Leadership positions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -252,22 +323,18 @@ export default function ProgrammesSection() {
 
       {/* MOBILE/TABLET LAYOUT - BELOW LG */}
       <div className="lg:hidden w-full px-6 py-12">
-        {/* HEADING FOR BELOW LG SCREENS */}
         <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#10404A] mb-3">
             MBA Specializations
           </h2>
- 
         </div>
 
-        {/* TREE STRUCTURE */}
         <div className="flex flex-col gap-6">
           {specializations.map((spec, index) => {
             const isActive = index === activeIndex;
 
             return (
               <div key={index} className="relative flex gap-4">
-                {/* Vertical line */}
                 {index !== specializations.length - 1 && (
                   <span className="absolute left-6 top-14 h-full w-px bg-orange-300" />
                 )}
@@ -297,7 +364,6 @@ export default function ProgrammesSection() {
                   />
                 </button>
 
-                {/* Text */}
                 <div className="pt-2 flex-1">
                   <h4
                     className={`font-bold text-base cursor-pointer ${
@@ -310,16 +376,24 @@ export default function ProgrammesSection() {
 
                   {isActive && (
                     <>
-                      <p className="text-sm text-slate-600 mt-2 line-clamp-4">
+                      <p
+                        className={`text-sm text-slate-600 mt-2 transition-all duration-300 ${
+                          isExpanded ? "" : "line-clamp-4"
+                        }`}
+                      >
                         {spec.description}
                       </p>
 
                       <button
-                        onClick={() => router.push("/programs/mba")}
+                        onClick={handleReadMore}
                         className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange-600 hover:text-orange-700"
                       >
-                        Read More
-                        <ArrowRight className="w-4 h-4" />
+                        {isExpanded ? "Read Less" : "Read More"}
+                        <ArrowRight
+                          className={`w-4 h-4 transition-transform duration-300 ${
+                            isExpanded ? "-rotate-90" : "translate-x-0"
+                          }`}
+                        />
                       </button>
                     </>
                   )}

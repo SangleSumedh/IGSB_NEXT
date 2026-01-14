@@ -199,7 +199,7 @@ const interactionCards = [
 const achievementCards = [
   // ✅ Existing 23 Cards — unchanged
   {
-    img: "/IGSB/Alumni/AlumniAchievements/PK1214.png",
+    img: "/IGSB/Alumni/AlumniAchievements/prashantKhatrabad.jpg",
     name: "Prashant C Katrabad",
     batch: "2012-14",
     position: "AVP - Lead Business Analyst",
@@ -215,7 +215,7 @@ const achievementCards = [
     awards: "Ace Award winner",
   },
   {
-    img: "/IGSB/Alumni/AlumniAchievements/SK1314.png",
+    img: "/IGSB/Alumni/AlumniAchievements/sridharkadam.jpg",
     name: "Sridhar Kadam",
     batch: "2013-14",
     position: "Regional Lead",
@@ -231,7 +231,7 @@ const achievementCards = [
     awards: "Awarded for best Inventory Management",
   },
   {
-    img: "/IGSB/Alumni/AlumniAchievements/JD1214.png",
+    img: "/IGSB/Alumni/AlumniAchievements/jyotiDhanwani.jpg",
     name: "Jyoti Dhanwani",
     batch: "2012-14",
     position: "Head of People & Culture Business Partner",
@@ -682,7 +682,7 @@ export default function Alumni() {
                   Alumni Interaction Sessions
                 </h2>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
                   {interactionCards.map((card, i) => (
                     <div
                       key={i}
@@ -786,7 +786,7 @@ export default function Alumni() {
                 </h2>
 
                 {/* Show Limited Data */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
                   {achievementCards
                     .slice(
                       0,

@@ -2,16 +2,12 @@
 
 import React, { useRef, useState } from "react";
 import FAQSection from "@/components/FAQSections/FAQMBA";
-import Image from "next/image";
-import RecruitersSection from "@/components/home/RecruiterSection";
-import CTASection from "@/components/home/CTASection";
 import ApplyForm from "@/components/home/ApplyForm";
 import MBAOverview from "@/components/programs/MBAOverview";
 import FormSection from "@/components/home/FormSection";
 import MBASpecializations from "@/components/programs/MBASpecialisations";
-import NewCTA from "@/components/home/NewCTA";
 import MBASlider from "@/components/programs/MBASlider";
-import JobProfiles from "@/components/programs/JobProfiles";
+import ProgramCTA from "@/components/programs/ProgramCTA";
 
 const mbaData = {
   marketing: {
@@ -423,6 +419,16 @@ export default function MBAContent() {
         </div>
       </div>
 
+      <div className="text-center px-4 sm:px-6 lg:px-8 py-12  bg-gradient-to-r from-[#ff8b61] via-[#10404a] to-[#10404a]  border-b border-[#3aafa9]/30 pb-8">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+          Department of <span className="">MBA</span>
+        </h2>
+        <p className="text-slate-100  mx-auto text-lg max-w-7xl font-light leading-relaxed">
+          Empowering future innovators with technical excellence, research, and
+          hands-on business experience.
+        </p>
+      </div>
+
       <MBAOverview />
 
       <div ref={faqRef}>
@@ -433,7 +439,7 @@ export default function MBAContent() {
 
       <FormSection ref={applyRef} />
 
-      <JobProfiles />
+      {/* <JobProfiles /> */}
       {/* ==============================
           PROGRAM HIGHLIGHTS MARQUEE
       ============================== */}
@@ -472,7 +478,8 @@ export default function MBAContent() {
       </div> */}
 
       {/* <NewCTA /> */}
-      <CTASection />
+      {/* <CTASection /> */}
+      <ProgramCTA />
 
       {/* MODAL */}
       {isModalOpen && (

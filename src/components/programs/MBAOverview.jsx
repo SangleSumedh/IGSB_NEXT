@@ -85,7 +85,7 @@ export default function MBAOverview() {
               <div className="flex items-center gap-2 mb-6">
                 <Info size={24} />
                 <h3 className="text-xl font-semibold">
-                  News Flash (To be added here)
+                  News Flash
                 </h3>
               </div>
               <ul className="space-y-4">
@@ -98,10 +98,7 @@ export default function MBAOverview() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 pt-6 border-t border-white/20 text-xs text-slate-200/80 italic">
-                * Institutes may stipulate additional criteria like SGPA/CGPA or
-                graduation discipline requirements.
-              </div>
+                
             </div>
           </div>
         </div>

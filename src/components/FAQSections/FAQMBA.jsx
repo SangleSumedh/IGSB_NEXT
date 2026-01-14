@@ -916,18 +916,9 @@ export default function FAQMBA() {
   };
 
   return (
-    <section className="w-full bg-gradient-to-b from-[#10404a] to-[#1d676b] ">
+    <section className="w-full bg-gradient-to-b from-[#10404a] to-[#1d676b] py-8">
       <div className=" mx-auto ">
         {/* HEADER */}
-        <div className="text-center px-4 sm:px-6 lg:px-8 py-12 mb-12 bg-gradient-to-r from-[#ff8b61] via-[#10404a] to-[#10404a]  border-b border-[#3aafa9]/30 pb-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-            Department of <span className="">MBA</span>
-          </h2>
-          <p className="text-slate-100  mx-auto text-lg max-w-7xl font-light leading-relaxed">
-            Empowering future innovators with technical excellence, research,
-            and hands-on business experience.
-          </p>
-        </div>
 
         {/* ================= MOBILE VIEW (Accordion Layout) ================= */}
         <div className="lg:hidden space-y-4 px-4 sm:px-6 lg:px-8 py-8">
@@ -998,8 +989,6 @@ export default function FAQMBA() {
 
           {/* RIGHT CONTENT (Main Display) */}
           <div className="col-span-9 bg-white rounded-xl shadow-2xl p-10 border border-slate-200 min-h-[600px] relative">
-           
-
             <h3 className="text-3xl font-bold text-[#10404a] mb-8 pb-4 border-b border-slate-100">
               {active}
             </h3>

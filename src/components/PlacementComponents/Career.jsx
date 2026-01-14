@@ -60,10 +60,22 @@ const Career = () => {
   ];
 
   return (
-    <section className="bg-[#10404A] text-white py-16 lg:py-24 overflow-hidden">
-      <div className="max-w-9xl mx-auto px-4 sm:px-6 relative">
+    <section className="bg-white text-secondary overflow-hidden">
+      <div className="py-8 px-4 text-center text-white">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-2 leading-tight text-secondary tracking-tight">
+          An Ecosystem Designed for{" "}
+          <span className="text-primary">Real Careers</span>
+        </h1>
+        <p className="text-base text-secondary max-w-3xl mx-auto font-light">
+          IGSB offers a structured placement ecosystem focused on industry-ready
+          MBA careers. Through strong corporate partnerships, expert mentorship,
+          and hands-on exposure, students graduate with the skills required for
+          long-term success
+        </p>
+      </div>
+      <div className="max-w-full mx-auto px-4 sm:px-6 relative mt-16 mb-15 ">
         {/* ================= HEADER ================= */}
-        <div className="text-center mb-16 lg:mb-24">
+        {/* <div className="text-center mb-16 lg:mb-24">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +97,7 @@ const Career = () => {
             expert mentorship, and hands-on exposure, students graduate with the
             skills required for long-term success.
           </motion.p>
-        </div>
+        </div> */}
 
         {/* ================= DESKTOP TIMELINE (Horizontal Wave) ================= */}
         <div className="hidden lg:block relative h-[500px]">
@@ -106,7 +118,7 @@ const Career = () => {
    C667,170 733,170 800,100
    C867,30 933,30 1000,100
    C1067,170 1133,170 1200,100"
-                stroke="#fc7116"
+                stroke="#FF8B61"
                 strokeWidth="4"
                 fill="none"
                 strokeDasharray="10 10" // Dashed line styling
@@ -139,18 +151,18 @@ const Career = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2, duration: 0.5 }}
-                    className={`absolute w-full max-w-[220px] p-5 rounded-xl md:rounded-3xl bg-[#3aafa9] backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors
+                    className={`absolute w-full max-w-[220px] p-5 rounded-xl md:rounded-3xl bg-secondary backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors
                       ${isTop ? "top-[60%]" : "bottom-[60%]"}
                     `}
                   >
-                    <div className=" text-[#fc7116] text-3xl mb-3">
+                    <div className=" text-primary text-3xl mb-3">
                       {step.icon}
                     </div>
-                    <h3 className="font-bold text-lg leading-tight mb-2">
+                    <h3 className="font-bold text-lg leading-tight mb-2 text-white">
                       {step.title}
                     </h3>
                     <p
-                      className="text-xs text-gray-50
+                      className="text-xs text-white
                   leading-relaxed"
                     >
                       {step.desc}
@@ -163,7 +175,7 @@ const Career = () => {
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2 + 0.5, type: "spring" }}
-                    className={`w-12 h-12 rounded-full   bg-[#fc7116] border-4 border-[#052c34] shadow-[0_0_20px_rgba(252,113,22,0.6)] z-20 flex items-center justify-center text-white font-bold text-lg
+                    className={`w-12 h-12 rounded-full   bg-primary border-4 border-[#052c34] shadow-[0_0_20px_rgba(252,113,22,0.6)] z-20 flex items-center justify-center text-white font-bold text-lg
                       absolute top-1/2 -translate-y-1/2
                       ${
                         index === 1 || index === 2 ? "-mt-16" : ""

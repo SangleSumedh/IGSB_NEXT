@@ -916,12 +916,12 @@ export default function FAQMBA() {
   };
 
   return (
-    <section className="w-full bg-gradient-to-b from-[#10404a] to-[#1d676b] py-12">
-      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-gradient-to-b from-[#10404a] to-[#1d676b] ">
+      <div className=" mx-auto ">
         {/* HEADER */}
-        <div className="text-center mb-12 border-b border-[#3aafa9]/30 pb-8">
+        <div className="text-center px-4 sm:px-6 lg:px-8 py-12 mb-12 bg-gradient-to-r from-[#ff8b61] via-[#10404a] to-[#10404a]  border-b border-[#3aafa9]/30 pb-8">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-            Department of <span className="text-[#ff8b61]">MBA</span>
+            Department of <span className="">MBA</span>
           </h2>
           <p className="text-slate-100  mx-auto text-lg max-w-7xl font-light leading-relaxed">
             Empowering future innovators with technical excellence, research,
@@ -930,7 +930,7 @@ export default function FAQMBA() {
         </div>
 
         {/* ================= MOBILE VIEW (Accordion Layout) ================= */}
-        <div className="lg:hidden space-y-4">
+        <div className="lg:hidden space-y-4 px-4 sm:px-6 lg:px-8 py-8">
           {tabs.map((tab) => (
             <div
               key={tab}
@@ -966,14 +966,14 @@ export default function FAQMBA() {
         </div>
 
         {/* ================= DESKTOP VIEW (Sidebar + Content) ================= */}
-        <div className="hidden lg:grid grid-cols-12 gap-8 items-start">
+        <div className="hidden lg:grid grid-cols-12 gap-8 pb-8 items-start px-4 sm:px-6 lg:px-8">
           {/* LEFT MENU (Sidebar) */}
           <nav className="col-span-3 bg-[#3aafa9] rounded-xl shadow-xl p-2 border border-[#3aafa9]/20 sticky top-24">
             <div className="p-4 mb-2">
               <h3 className="font-extrabold text-white text-2xl md:text-3xl tracking-wide">
                 MBA Overview
               </h3>
-              <div className="h-1 w-12 bg-   mt-2 rounded-full"></div>
+              <div className="h-1 w-12 bg-[#ff8b61] mt-2 rounded-full"></div>
             </div>
 
             <div className="space-y-1">
@@ -998,8 +998,7 @@ export default function FAQMBA() {
 
           {/* RIGHT CONTENT (Main Display) */}
           <div className="col-span-9 bg-white rounded-xl shadow-2xl p-10 border border-slate-200 min-h-[600px] relative">
-            {/* Top decorative bar */}
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#10404a] via-[#3aafa9] to-[#3aafa9] rounded-t-xl"></div>
+           
 
             <h3 className="text-3xl font-bold text-[#10404a] mb-8 pb-4 border-b border-slate-100">
               {active}

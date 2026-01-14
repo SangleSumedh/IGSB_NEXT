@@ -11,6 +11,7 @@ import FormSection from "@/components/home/FormSection";
 import MBASpecializations from "@/components/programs/MBASpecialisations";
 import NewCTA from "@/components/home/NewCTA";
 import MBASlider from "@/components/programs/MBASlider";
+import JobProfiles from "@/components/programs/JobProfiles";
 
 const mbaData = {
   marketing: {
@@ -432,106 +433,10 @@ export default function MBAContent() {
 
       <FormSection ref={applyRef} />
 
+      <JobProfiles />
       {/* ==============================
           PROGRAM HIGHLIGHTS MARQUEE
       ============================== */}
-      <section className="w-full bg-slate-50 py-20 overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-6 mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#10404a] mb-6 tracking-tight">
-            Programme Highlights
-          </h2>
-          {/* <div className="h-1.5 w-24 bg-[#ff8b61] mx-auto rounded-full"></div> */}
-        </div>
-
-        <div className="relative w-full overflow-visible">
-          <div ref={marqueeRef} className="highlights-marquee flex px-4">
-            {[...Object.keys(mbaData)]
-              .flatMap((key) => mbaData[key].highlights)
-              .flatMap((item) => [item]) // Duplicated for smooth loop
-              .map((highlight, index) => (
-                <div
-                  key={index}
-                  className="highlight-card-wrapper mr-8 flex-shrink-0 py-4" // Added py-4 to allow space for hover shadow
-                >
-                  <div className="highlight-card w-[280px] md:w-[320px] bg-white rounded-2xl shadow-sm border border-slate-200 transition-all duration-300 relative overflow-hidden group">
-                    {/* Decorative Top Gradient (Matches Specialization Cards) */}
-                    <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#10404a] via-[#3aafa9] to-[#ff8b61] opacity-80 group-hover:opacity-100 transition-opacity z-10"></div>
-
-                    {/* IMAGE */}
-                    <div className="relative w-full h-48 overflow-hidden">
-                      <Image
-                        src={mbaHighlightImages[index % 3]}
-                        alt={highlight.title}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      {/* Gradient Overlay for text readability if needed, though mostly for style here */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    </div>
-
-                    {/* TEXT */}
-                    <div className="p-6 relative bg-white">
-                      <h3 className="font-bold text-[#10404a] text-md mb-3 leading-tight group-hover:text-[#3aafa9] transition-colors">
-                        {highlight.title}
-                      </h3>
-                      <p className="text-slate-600 text-sm leading-relaxed line-clamp-2">
-                        {highlight.text}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-          </div>
-        </div>
-
-        <style jsx>{`
-          @keyframes marqueeScrollHighlights {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              /* If you duplicate content once (2 sets total), move -50%. 
-                 If you have many items, you might need to adjust based on width.
-                 For typical marquee, -50% assumes 2 identical sets.
-              */
-              transform: translateX(-50%);
-            }
-          }
-
-          .highlights-marquee {
-            /* Slower speed (60s) for better readability */
-            animation: marqueeScrollHighlights 80s linear infinite;
-            width: max-content;
-            will-change: transform;
-          }
-
-          /* Pause animation on hover */
-          .highlights-marquee:hover {
-            animation-play-state: paused;
-          }
-
-          .highlight-card-wrapper {
-            perspective: 1000px;
-          }
-
-          .highlight-card {
-            will-change: transform, box-shadow;
-            transform-origin: center center;
-          }
-
-          /* Hover Effect: 
-             Scale up + Vertical Lift + Deep Shadow 
-             (Replaces the previous mint background color)
-          */
-          .highlight-card:hover {
-            transform: scale(1.02) translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-              0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border-color: #3aafa9;
-            z-index: 10;
-          }
-        `}</style>
-      </section>
 
       {/* APPLY FORM AT THE END */}
       {/* ============================

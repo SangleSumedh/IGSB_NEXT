@@ -46,7 +46,7 @@ const RecruiterPlacement = () => {
       {/* 1. The Split Grid Background Logic */}
       <div className="hidden lg:grid grid-cols-[80%_20%] min-h-[600px]">
         {/* LEFT COL: Cyan Background + Content */}
-        <div className="relative bg-[#3aafa9] py-16 pl-4 pr-16 xl:pl-20 xl:pr-38 flex flex-col justify-center">
+        <div className="relative bg-secondary py-16 pl-4 pr-16 xl:pl-20 xl:pr-38 flex flex-col justify-center">
           {/* Header Text */}
           <div className="relative z-10 mb-10">
             <h2 className="text-2xl xl:text-4xl font-extrabold text-white mb-6">
@@ -103,7 +103,7 @@ const RecruiterPlacement = () => {
 /* ---------------- SUB COMPONENTS ---------------- */
 
 const OrangeCard = () => (
-  <div className="bg-[#ff712d] md:h-[500px] rounded-2xl p-8 shadow-2xl relative overflow-hidden text-white">
+  <div className="bg-primary md:h-[500px] rounded-2xl p-8 shadow-2xl relative overflow-hidden text-white">
     {/* Background Glow */}
     <div className="absolute top-0 right-0 w-40 h-40 bg-white/20 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
 
@@ -111,7 +111,7 @@ const OrangeCard = () => (
       Why Recruiters Choose Us
     </h3>
 
-    <div className="space-y-4 text-white/90 leading-relaxed text-sm">
+    <div className="space-y-4 text-white leading-relaxed text-sm">
       <p>
         We prepare students not just for jobs, but for careers. Our
         industry-integrated curriculum ensures that every graduate hits the

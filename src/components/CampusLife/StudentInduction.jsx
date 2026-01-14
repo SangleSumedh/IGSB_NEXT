@@ -5,6 +5,55 @@ import { studentInduction } from "@/static/campuslife/student-inductions.js";
 import { MemoryLane } from "@/components/CampusLife/MemoryLane";
 import { FaMicrophone, FaChevronDown, FaChevronUp } from "react-icons/fa";
 
+const ContinuousCarousel = ({ images }) => {
+  // If you don't have a list of images, use a default list or the one passed in.
+  // Ideally, define this outside or pass it as a prop.
+  const carouselImages = images || [
+    "/placement/hr.png",
+    "/placement/marketing.png", // Add your other image paths here
+    "/placement/hr.png", // Duplicate strictly for smooth looping if list is short
+    "/placement/marketing.png",
+  ];
+
+  return (
+    <div className="relative w-full h-full overflow-hidden">
+      {/* The "Film Strip" 
+         - animate-scroll: A custom animation defined in tailwind.config or inline style below.
+         - Flex row to stack images side-by-side.
+      */}
+      <div 
+        className="flex h-full w-[200%] animate-carousel-scroll"
+      >
+        {/* Render the list TWICE to create the infinite loop illusion */}
+        {[...carouselImages, ...carouselImages].map((src, i) => (
+          <div key={i} className="relative w-full h-full shrink-0">
+             <Image 
+                src={src} 
+                alt="Carousel Item" 
+                fill 
+                className="object-cover" 
+             />
+             {/* Gradient Overlay for depth (Optional) */}
+             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+          </div>
+        ))}
+      </div>
+
+      {/* INLINE STYLE FOR ANIMATION 
+        (Alternatively add to tailwind.config.js: keyframes: { scroll: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } } } )
+      */}
+      <style jsx>{`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-carousel-scroll {
+          animation: scroll 15s linear infinite;
+        }
+      `}</style>
+    </div>
+  );
+};
 /* ============================================================
    HELPER: Calculate Curve Indentation (Pure Logic)
    ============================================================ */
@@ -217,7 +266,7 @@ export default function StudentInduction() {
     // Otherwise, set the new index.
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
   };
-  
+
   const YEARS = Object.keys(studentInduction);
   const currentYearData = studentInduction[YEARS[0]];
 
@@ -255,6 +304,7 @@ export default function StudentInduction() {
             const isCircleLeft = chunkIndex % 2 === 0;
             const isCardsOnRight = isCircleLeft; // Alias for clarity
 
+            
             return (
               <div key={chunkIndex} className="relative w-full">
                 <div
@@ -279,12 +329,7 @@ export default function StudentInduction() {
                       `}
                     >
                       {/* PLACEHOLDER IMAGE */}
-                      <Image
-                        src="/placement/hr.png"
-                        alt="Visual"
-                        fill
-                        className="object-cover opacity-80 hover:scale-105 transition-transform duration-700"
-                      />
+                      <ContinuousCarousel />
                       {/* Overlay Gradient */}
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 pointer-events-none"></div>
                     </div>

@@ -11,12 +11,12 @@ import OldPage from "./OldPage";
 
 // --- CONFIGURATION ---
 const GLOBE_RADIUS = 2;
-const AUTO_ROTATE_SPEED = 0.5;
+const AUTO_ROTATE_SPEED = 0.9;
 const CAROUSEL_INTERVAL = 10000; // 5 Seconds
 
 // --- ASSETS & DATA ---
 const EARTH_DAY_TEXTURE =
-  "https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg";
+  "/textures/earth2k.jpg"; // High-res Earth texture
 
 const ALUMNI_LOCATIONS = [
   {

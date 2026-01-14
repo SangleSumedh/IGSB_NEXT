@@ -163,7 +163,7 @@ const highlights = [
   },
   {
     title: "Credit System",
-    desc: "Choice Based Credit System (CBCS)",
+    desc: "Choice Based Credits",
     icon: (
       <svg
         fill="none"
@@ -182,7 +182,7 @@ const highlights = [
   },
   {
     title: "Methodology",
-    desc: "Outcome Based Education (OBE)",
+    desc: "Outcome Based Education",
     icon: (
       <svg
         fill="none"
@@ -201,7 +201,7 @@ const highlights = [
   },
   {
     title: "Degree",
-    desc: "Affiliated to SPPU",
+    desc: "SPPU-Affiliated MBA",
     icon: (
       <svg
         fill="none"
@@ -220,7 +220,7 @@ const highlights = [
   },
   {
     title: "Pedagogy",
-    desc: "Experiential & Case-based Learning",
+    desc: "Experiential Learning Model",
     icon: (
       <svg
         fill="none"
@@ -239,7 +239,7 @@ const highlights = [
   },
   {
     title: "Internship",
-    desc: "Industry exposure with leading firms",
+    desc: "Industry Exposure Programme",
     icon: (
       <svg
         fill="none"
@@ -258,7 +258,7 @@ const highlights = [
   },
   {
     title: "Placements",
-    desc: "Track record with top MNCs",
+    desc: "Strong Placement Record",
     icon: (
       <svg
         fill="none"
@@ -277,7 +277,7 @@ const highlights = [
   },
   {
     title: "Eligibility",
-    desc: "Click to see criteria",
+    desc: "Admission Criteria",
     action: true, // Special flag for clickable item
     icon: (
       <svg
@@ -380,7 +380,7 @@ export default function MBAContent() {
       />
 
       {/* INFO SECTION – Pillars Style */}
-      <div className="w-full bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] text-white py-14 px-6 md:px-16">
+      <div className="w-full bg-gradient-to-r from-[white] via-[white] to text-slate-900 py-14 px-6 md:px-16">
         <div className="w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8 justify-items-center">
             {highlights.map((item, index) => (
@@ -404,14 +404,14 @@ export default function MBAContent() {
                   {item.action ? (
                     <p
                       onClick={scrollToFAQ}
-                      className="text-slate-300 text-sm leading-relaxed cursor-pointer
+                      className="text-slate-700 text-sm leading-relaxed cursor-pointer
                            hover:text-[#FF8B61] underline decoration-[#FF8B61]
                            underline-offset-4 transition-colors"
                     >
                       {item.desc}
                     </p>
                   ) : (
-                    <p className="text-slate-300 text-sm leading-relaxed">
+                    <p className="text-slate-700 text-sm leading-relaxed">
                       {item.desc}
                     </p>
                   )}
@@ -427,9 +427,7 @@ export default function MBAContent() {
       <div ref={faqRef}>
         <FAQSection />
       </div>
-      {/* ==============================
-          STRUCTURE: ALL 4 IN ONE SECTION
-          ============================== */}
+
       <MBASpecializations scrollToApply={scrollToApply} />
 
       <FormSection ref={applyRef} />

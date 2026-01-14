@@ -66,22 +66,20 @@ export default function AlumniSpotlight() {
         {/* CARD */}
         <div className="bg-[#3aafa9] shadow-2xl rounded-2xl w-full max-w-xl overflow-hidden relative min-h-[280px]">
           {/* NAME */}
-          <div className="w-full text-center pt-8 pb-4">
+          <div className="w-full text-center py-4">
             <h3 className="text-2xl font-black text-[#fff] tracking-widest uppercase">
               {current.name}
             </h3>
           </div>
 
-          <div className="flex gap-4 justify-between items-center  px-8">
+          <div className="flex gap-4 justify-between items-center">
             {/* PHOTO */}
             <div className="relative  mr-6">
               <div className="w-24 h-32 rounded-r-full overflow-hidden border-4 border-white shadow-lg">
                 <img
-                  src={
-                    "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
-                  }
+                  src={current.img}
                   alt={current.name}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-right"
                 />
               </div>
             </div>
@@ -106,12 +104,14 @@ export default function AlumniSpotlight() {
                 </p>
               </div>
             </div>
-            <div className="relative shrink-0">
+            <div className="relative shrink-0 mr-6">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
                 <img
-                  src={current.img}
+                  src={
+                    "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                  }
                   alt={"Company LOGO"}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>
@@ -120,18 +120,24 @@ export default function AlumniSpotlight() {
           {/* QUOTE */}
           <div className="bg-[#3aafa9] p-4 text-center flex justify-between items-center">
             <p className="text-[white]/80 text-xs italic">"{current.quote}"</p>
-            <div className="flex gap-2 ">
+            <div className="flex gap-3">
+              {/* Prev */}
               <button
                 onClick={prevSlide}
-                className="p-4 rounded-full border border-white/40 text-white hover:bg-[#FF8B61] hover:text-[#10404A] hover:border-[#FF8B61] transition-all duration-300"
+                className="
+      w-12 h-12 flex items-center justify-center rounded-full 
+      bg-white text-[#10404A] shadow-md
+      hover:bg-[#FF8B61] hover:text-white hover:shadow-lg
+      transition-all duration-300 ease-in-out transform hover:-translate-y-1
+    "
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  strokeWidth={1.5}
+                  strokeWidth={2.5}
                   stroke="currentColor"
-                  className="w-3 h-3"
+                  className="w-5 h-5"
                 >
                   <path
                     strokeLinecap="round"
@@ -141,17 +147,23 @@ export default function AlumniSpotlight() {
                 </svg>
               </button>
 
+              {/* Next */}
               <button
                 onClick={nextSlide}
-                className="p-4 rounded-full border border-white/40 text-white hover:bg-[#FF8B61] hover:text-[#10404A] hover:border-[#FF8B61] transition-all duration-300"
+                className="
+      w-12 h-12 flex items-center justify-center rounded-full 
+      bg-white text-[#10404A] shadow-md
+      hover:bg-[#FF8B61] hover:text-white hover:shadow-lg
+      transition-all duration-300 ease-in-out transform hover:-translate-y-1
+    "
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  strokeWidth={1.5}
+                  strokeWidth={2.5}
                   stroke="currentColor"
-                  className="w-3 h-3"
+                  className="w-5 h-5"
                 >
                   <path
                     strokeLinecap="round"

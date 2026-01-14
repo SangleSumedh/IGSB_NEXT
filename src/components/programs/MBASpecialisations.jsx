@@ -120,7 +120,6 @@ export default function ProgrammesSection() {
 
   return (
     <section className="relative w-full bg-white font-sans">
-      
       {/* DESKTOP LAYOUT - LG AND ABOVE */}
       <div className="hidden lg:block relative lg:h-[95vh] overflow-hidden flex items-center">
         {/* IMAGE AT BOTTOM LEFT */}
@@ -166,8 +165,8 @@ export default function ProgrammesSection() {
                       ${
                         isActive
                           ? `
-                              bg-orange-600 text-white
-                              border-4 border-orange-200
+                              bg-[#ff8b61] text-white
+                              border-4 border-[#ff8b61]
                               shadow-[0_0_0_0_rgba(252,113,22,0.6)]
                               animate-[pulseBorder_2s_ease-in-out_infinite]
                             `
@@ -213,7 +212,7 @@ export default function ProgrammesSection() {
                 <RenderIcon
                   spec={activeSpec}
                   size={180}
-                  className="text-orange-600"
+                  className="text-[#ff8b61]"
                 />
               </div>
 
@@ -222,7 +221,7 @@ export default function ProgrammesSection() {
                 key={activeIndex}
                 className="relative z-10 animate-in fade-in slide-in-from-bottom-4 duration-500"
               >
-                <div className="flex items-center gap-3 mb-4 text-orange-600">
+                <div className="flex items-center gap-3 mb-4 text-[#ff8b61]">
                   <RenderIcon spec={activeSpec} size={20} />
                   <span className="text-sm font-bold tracking-wider uppercase">
                     MBA Specializations
@@ -237,13 +236,13 @@ export default function ProgrammesSection() {
                   {activeSpec.description}
                 </p>
 
-                <button
+                {/* <button
                   onClick={() => router.push("/programs/mba")}
                   className="group flex items-center gap-2 bg-[#10404A] text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300"
                 >
                   Enquire Now
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
@@ -257,7 +256,6 @@ export default function ProgrammesSection() {
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#10404A] mb-3">
             MBA Specializations
           </h2>
- 
         </div>
 
         {/* TREE STRUCTURE */}
@@ -269,7 +267,7 @@ export default function ProgrammesSection() {
               <div key={index} className="relative flex gap-4">
                 {/* Vertical line */}
                 {index !== specializations.length - 1 && (
-                  <span className="absolute left-6 top-14 h-full w-px bg-orange-300" />
+                  <span className="absolute left-6 top-14 h-full w-px bg-[#ff8b61]" />
                 )}
 
                 <button
@@ -281,8 +279,8 @@ export default function ProgrammesSection() {
                     transition-all duration-300
                     ${
                       isActive
-                        ? "bg-orange-600 text-white scale-110"
-                        : "bg-white border-2 border-orange-500 text-slate-800"
+                        ? "bg-[#ff8b61] text-white scale-110"
+                        : "bg-white border-2 border-[#ff8b61] text-slate-800"
                     }
                   `}
                 >
@@ -301,7 +299,7 @@ export default function ProgrammesSection() {
                 <div className="pt-2 flex-1">
                   <h4
                     className={`font-bold text-base cursor-pointer ${
-                      isActive ? "text-orange-600" : "text-slate-900"
+                      isActive ? "text-[#ff8b61]" : "text-slate-900"
                     }`}
                     onClick={() => handleManualSelect(index)}
                   >
@@ -316,7 +314,7 @@ export default function ProgrammesSection() {
 
                       <button
                         onClick={() => router.push("/programs/mba")}
-                        className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange-600 hover:text-orange-700"
+                        className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[#ff8b61] hover:text-orange-700"
                       >
                         Read More
                         <ArrowRight className="w-4 h-4" />

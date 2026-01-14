@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const actions = [
   {
     title: "Guest Sessions",
@@ -121,8 +123,42 @@ const actions = [
 ];
 
 export default function ContributionSection() {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedInterests, setSelectedInterests] = useState([]);
+
+  // Open modal and pre-select the card clicked
+  const handleOpen = (item) => {
+    setSelectedInterests([item.title]);
+    setShowModal(true);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+    setSelectedInterests([]);
+  };
+
+  // Add or remove interests from the array
+  const handleInterestToggle = (title) => {
+    if (selectedInterests.includes(title)) {
+      setSelectedInterests(selectedInterests.filter((i) => i !== title));
+    } else {
+      setSelectedInterests([...selectedInterests, title]);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (selectedInterests.length === 0) {
+      alert("Please select at least one area of interest.");
+      return;
+    }
+    // Logic to send form data goes here
+    alert(`Inquiry sent for: ${selectedInterests.join(", ")}`);
+    handleClose();
+  };
+
   return (
-    <section className="w-full py-16 px-6 md:px-16 bg-white">
+    <section className="w-full py-16 px-6 md:px-16 bg-white relative">
       <div className="max-w-full mx-auto">
         {/* Title Section */}
         <div className="text-center mb-8 space-y-4">
@@ -142,16 +178,17 @@ export default function ContributionSection() {
           {actions.map((item, index) => (
             <div
               key={index}
+              onClick={() => handleOpen(item)}
               className="
                 group bg-[#10404A] p-8 rounded-2xl
                 border border-[#10404A]/15
                 shadow-sm
                 hover:shadow-xl hover:-translate-y-1
                 transition-all duration-300 cursor-pointer
+                h-full flex flex-col justify-between
               "
             >
               <div className="flex flex-col items-center text-center space-y-4">
-                {/* Icon */}
                 <div
                   className="
                     w-16 h-16 rounded-full
@@ -168,23 +205,176 @@ export default function ContributionSection() {
                   {item.icon}
                 </div>
 
-                <h3
-                  className="
-                    text-lg font-bold
-                    text-white
-                    group-hover:text-[#FF8B61]
-                    transition-colors
-                  "
-                >
+                <h3 className="text-lg font-bold text-white group-hover:text-[#FF8B61] transition-colors">
                   {item.title}
                 </h3>
-
-                {/* Description intentionally hidden as before */}
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Modal Form Overlay */}
+      {showModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          onClick={handleClose}
+        >
+          <div
+            className="bg-white rounded-2xl w-full max-w-4xl shadow-2xl overflow-hidden relative max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="bg-[#10404A] p-6 flex justify-between items-center sticky top-0 z-10">
+              <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                Get Involved
+              </h3>
+              <button
+                onClick={handleClose}
+                className="text-white/70 hover:text-[#FF8B61] transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-8">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-[#10404A] mb-1">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#FF8B61] focus:border-transparent outline-none transition-all"
+                    placeholder="e.g. Rahul Sharma"
+                  />
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-[#10404A] mb-1">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#FF8B61] focus:border-transparent outline-none transition-all"
+                      placeholder="rahul@example.com"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-[#10404A] mb-1">
+                      Phone
+                    </label>
+                    <input
+                      type="tel"
+                      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#FF8B61] focus:border-transparent outline-none transition-all"
+                      placeholder="+91 98765 43210"
+                    />
+                  </div>
+                </div>
+
+                {/* Multiple Selection Section */}
+                <div>
+                  <label className="block text-sm font-medium text-[#10404A] mb-2">
+                    Areas of Interest (Select all that apply)
+                  </label>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {actions.map((action, idx) => {
+                      const isSelected = selectedInterests.includes(
+                        action.title
+                      );
+                      return (
+                        <div
+                          key={idx}
+                          onClick={() => handleInterestToggle(action.title)}
+                          className={`
+                            flex items-center space-x-3 p-3 rounded-lg border cursor-pointer transition-all
+                            ${
+                              isSelected
+                                ? "bg-[#10404A]/5 border-[#10404A] shadow-sm"
+                                : "bg-white border-gray-200 hover:border-[#FF8B61]"
+                            }
+                          `}
+                        >
+                          <div
+                            className={`
+                              w-5 h-5 rounded border flex items-center justify-center transition-colors
+                              ${
+                                isSelected
+                                  ? "bg-[#10404A] border-[#10404A]"
+                                  : "bg-white border-gray-300"
+                              }
+                            `}
+                          >
+                            {isSelected && (
+                              <svg
+                                className="w-3.5 h-3.5 text-white"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={3}
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M4.5 12.75l6 6 9-13.5"
+                                />
+                              </svg>
+                            )}
+                          </div>
+                          <span
+                            className={`text-sm ${
+                              isSelected
+                                ? "font-semibold text-[#10404A]"
+                                : "text-gray-600"
+                            }`}
+                          >
+                            {action.title}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-[#10404A] mb-1">
+                    Message (Optional)
+                  </label>
+                  <textarea
+                    rows={3}
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#FF8B61] focus:border-transparent outline-none transition-all resize-none"
+                    placeholder="Any specific details you'd like to share..."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full py-3 px-6 bg-[#FF8B61] hover:bg-[#e67a50] text-[#10404A] font-bold rounded-lg transition-colors duration-300 mt-2"
+                >
+                  Submit Interest
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

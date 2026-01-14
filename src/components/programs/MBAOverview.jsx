@@ -31,78 +31,62 @@ export default function MBAOverview() {
   ];
 
   return (
-    <section className="w-full bg-slate-50 py-16 text-slate-800">
+    <section className="w-full bg-white py-16 text-slate-900">
       <div className="max-w-full mx-auto px-4 md:px-8">
         {/* Header Section - Synced with NHRD/NISM UI */}
-        <div className="text-left mb-12 ">
-          <h1 className="text-2xl lg:text-4xl font-bold text-slate-900 leading-tight">
-            Master of Business Administration
-            <span className="text-secondary"> (MBA) </span>
-            Programme Structure (Will be updated soon)
-          </h1>
-          <p className="text-lg text-secondary mt-2">
-            Affiliated to Savitribai Phule Pune University (SPPU).
-          </p>
-        </div>
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Philosophy & Learning */}
           <div className="lg:col-span-7 space-y-8">
+            <div className="text-left mb-12 ">
+              <h1 className="text-2xl lg:text-4xl font-extrabold text-slate-800 leading-tight">
+                Master of Business Administration
+                <span className=""> (MBA) </span>
+                Programme Structure
+              </h1>
+              {/* <p className="text-lg text-secondary mt-2">
+            Affiliated to Savitribai Phule Pune University (SPPU).
+          </p> */}
+            </div>
             <div className="space-y-6 text-lg leading-relaxed text-slate-700 text-justify">
               <p className="">
-                The new MBA programme offered by SPPU from this year, is an
-                Outcome Based Education and Outcome Based Assessment programme.
-                The outcome based education implies there is a performer
-                (student) and the focus is on performance of the students, not
-                the activity or task to be performed. The new curriculum takes
-                MBA programme to the next level. The programme can be completed
-                in four semesters and the curriculum is based on Choice Based
-                Credit and Grading System. The syllabus offers wide choice for
-                students to opt for various courses based on their interest,
-                aptitude and career goals. The programme enables a student to
-                obtain a degree by accumulating the required number of credits
-                prescribed for the course. The programme has well defined five
-                Programme Educational Objectives (PEOs), ten Programme Outcomes
-                (POs) and Programme Specific outcomes (PSOs) for the
-                specialization courses.
+                The SPPU MBA programme is a four-semester, AICTE-aligned degree
+                offers a flexible, career-oriented curriculum. Students can
+                customize their academic journey by selecting courses aligned
+                with their career goals, aptitude, and industry interests.
               </p>
 
               <p>
-                The Choice Based Credit System provides the students with an
-                academically rich, highly flexible, learning system, blended
-                with abundant provision for skill development and a practical
-                orientation. The curriculum, in addition to regular courses, is
-                equipped with various types of courses to cater to the different
-                intellectual level of students. Foundation courses are for those
-                students who are seeking basic abilities of that subject like
-                accounting, economics etc. Enrichment courses are courses for
-                students who want to go beyond the syllabus and in areas of
-                their interest. And Alternative study credit courses are courses
-                for students who want to do independent study of their choice in
-                the field of management through innovative/live projects, online
-                courses like MOOCs etc.
+                The CBCGS framework combines academic depth with practical skill
+                development, integrating foundation, enrichment, and alternative
+                credit courses. Foundation courses strengthen core management
+                knowledge such as accounting, economics, and business
+                fundamentals, while enrichment courses allow students to explore
+                advanced and specialized areas. Alternative credit options
+                encourage independent learning through live projects, MOOCs, and
+                industry-based assignments, enhancing experiential learning.
               </p>
 
               <p>
-                In case of specialization, students has the option of choosing
-                only one specialisation from the given list. Also the assessment
-                process is outcome based assessment. Outcome based assessment
-                asks teachers to first identify what it is that we expect
-                students to be able to do once they have completed a course.
+                Students choose one focused MBA specialization, supported by an
+                outcome-based assessment system that measures practical
+                application, analytical ability, and real-world business
+                readiness, ensuring graduates are professionally competent and
+                industry-ready.
               </p>
-
-              
             </div>
           </div>
 
           {/* Right Column: Specializations & Sticky Guidelines */}
           <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-24">
             {/* Guidelines Section */}
-            <div className="bg-secondary text-white rounded-2xl p-8 shadow-lg">
+            <div className="bg-gradient-to-br from-[#10404A] to-[#3aa6a9] text-white rounded-2xl p-8 shadow-lg">
               <div className="flex items-center gap-2 mb-6">
                 <Info size={24} />
-                <h3 className="text-xl font-semibold">News Flash (To be added here)</h3>
+                <h3 className="text-xl font-semibold">
+                  News Flash (To be added here)
+                </h3>
               </div>
               <ul className="space-y-4">
                 {guidelines.map((line, idx) => (

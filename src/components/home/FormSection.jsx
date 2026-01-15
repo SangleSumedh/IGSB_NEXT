@@ -8,24 +8,24 @@ import { usePathname } from "next/navigation";
 
 /* ---------------- RECRUITER DATA ---------------- */
 
-const LOGO_COUNT = 44;
+const LOGO_COUNT = 46;
 const EXCLUDED_INDICES = [35, 37];
 
 const generateLogos = () =>
   Array.from({ length: LOGO_COUNT }, (_, i) => {
     const index = i + 1;
     if (EXCLUDED_INDICES.includes(index)) return null;
-    return `/IGSB/logos/logo${index}.webp`;
+    return `/logos/${index}.jpg`;
   }).filter(Boolean);
 
 export default function FormSection() {
   const pathname = usePathname();
   const logos = generateLogos();
 
-  const third = Math.ceil(logos.length / 3);
-  const row1 = logos.slice(0, third);
-  const row2 = logos.slice(third, third * 2);
-  const row3 = logos.slice(third * 2);
+  /* ---------------- FIXED MARQUEE SPLIT ---------------- */
+  const row1 = logos.slice(0, 12);   // 1–12
+  const row2 = logos.slice(12, 23);  // 13–23
+  const row3 = logos.slice(23);      // 24–46
 
   const pageContent = {
     "/": {
@@ -53,7 +53,7 @@ export default function FormSection() {
         {/* ================= LEFT ================= */}
         <div className="relative overflow-hidden bg-gradient-to-r from-[#10404A] to-[#1F6D71]">
 
-          {/* TEXT (keeps padding) */}
+          {/* TEXT */}
           <div className="relative z-10 pt-12 pb-6 px-20 text-center">
             <h2 className="text-3xl font-extrabold text-white mb-4">
               {headline}
@@ -63,7 +63,7 @@ export default function FormSection() {
             </p>
           </div>
 
-          {/* MARQUEES — FULL WIDTH */}
+          {/* MARQUEES */}
           <div className="relative z-10 space-y-10 py-6">
 
             {/* ROW 1 → Right to Left */}

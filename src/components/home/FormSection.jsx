@@ -24,8 +24,8 @@ export default function FormSection() {
 
   /* ---------------- FIXED MARQUEE SPLIT ---------------- */
   const row1 = logos.slice(0, 12);   // 1–12
-  const row2 = logos.slice(12, 23);  // 13–23
-  const row3 = logos.slice(23);      // 24–46
+  const row2 = logos.slice(12, 22);  // 13–23
+  const row3 = logos.slice(24);      // 24–46
 
   const pageContent = {
     "/": {

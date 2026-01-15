@@ -240,7 +240,7 @@ const examList = [
 ];
 
 const sectionContent = {
-  "MBA Programme Structure (Detailed)": {
+  "MBA Programme Structure ": {
     type: "accordion",
     content: {
       "Types of Courses in CBCS": [

@@ -5,11 +5,17 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
 
-gsap.registerPlugin(ScrollTrigger);
-ScrollTrigger.normalizeScroll(true); // ✅ CRITICAL FIX
+// ❌ REMOVED GLOBAL REGISTRATION FROM HERE
 
 export default function Page() {
   useEffect(() => {
+    // ✅ MOVED REGISTRATION INSIDE USEEFFECT
+    // This ensures it only runs on the client-side (browser)
+    if (typeof window !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.normalizeScroll(true);
+    }
+
     /* ================= LENIS ================= */
     const lenis = new Lenis({
       duration: 1.2,
@@ -39,10 +45,11 @@ export default function Page() {
     /* ================= MOBILE ORDER ================= */
     const handleMobileLayout = () => {
       const isMobile = window.matchMedia("(max-width: 768px)").matches;
+      // Added safety check for empty arrays
       const leftItems = gsap.utils.toArray(".arch__left .arch__info");
       const rightItems = gsap.utils.toArray(".arch__right .img-wrapper");
 
-      if (isMobile) {
+      if (leftItems.length && isMobile) {
         leftItems.forEach((item, i) => (item.style.order = i * 2));
         rightItems.forEach((item, i) => (item.style.order = i * 2 + 1));
       } else {
@@ -69,15 +76,17 @@ export default function Page() {
         const arch = document.querySelector(".arch");
         const left = document.querySelector(".arch__left");
 
+        // Safety check if DOM elements exist
+        if (!arch || !left) return;
+
         const mainTimeline = gsap.timeline({
           scrollTrigger: {
             trigger: arch,
             start: "top top",
-            end: () =>
-              "+=" + (left.scrollHeight - window.innerHeight), // ✅ MATCH HEIGHT
+            end: () => "+=" + (left.scrollHeight - window.innerHeight),
             pin: ".arch__right-pin",
             pinSpacing: true,
-            scrub: 0.6, // ✅ smoother scrub
+            scrub: 0.6,
             anticipatePin: 1,
             invalidateOnRefresh: true,
           },
@@ -133,6 +142,8 @@ export default function Page() {
       window.removeEventListener("resize", handleResize);
       ScrollTrigger.killAll();
       lenis.destroy();
+      // Optional: Revert global scroll normalization if navigating away
+      // ScrollTrigger.normalizeScroll(false);
     };
   }, []);
 

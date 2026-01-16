@@ -9,6 +9,7 @@ import ScrollCrushWrapper from "../ScrollCrushWrapper";
 import ArambhaSection from "./ArambhaSection";
 import { roadmapData } from "./roadmapdata";
 import { arambhData } from "./arambhdata";
+import ArambhaSectionMobile from "./ArambhSectionMobile";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -84,7 +85,7 @@ export default function RoadmapSection() {
     <div className="bg-[#050110] text-white">
       <div
         ref={containerRef}
-        className="relative h-screen overflow-hidden bg-gradient-to-b from-[#0f0524] to-[#050110]"
+        className="relative h-screen bg-gradient-to-b from-[#0f0524] to-[#050110]"
       >
         <div className="max-w-full mx-auto h-full flex px-10">
           {/* LEFT */}
@@ -116,8 +117,6 @@ export default function RoadmapSection() {
 
           {/* RIGHT */}
           <div className="w-2/4 relative overflow-hidden">
-          
-
             <div ref={rightSideRef} className="pt-[5vh] pb-[5vh]">
               {roadmapData.map((item, i) => (
                 <div
@@ -189,7 +188,15 @@ export default function RoadmapSection() {
       </div>
 
       <div className="">
-        <ArambhaSection data={arambhData} />
+        <div className="hidden md:block">
+          <ArambhaSection data={arambhData} />
+        </div>
+
+        {/* MOBILE  (fix this later while making it responsive)*/}
+        <div className="block md:hidden">
+          <ArambhaSectionMobile data={arambhData} />
+          
+        </div>
       </div>
     </div>
   );

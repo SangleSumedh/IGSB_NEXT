@@ -13,11 +13,8 @@ export default function ArambhaSection({ data = [] }) {
         className="relative h-screen overflow-hidden bg-gradient-to-b from-[#0f0524] to-[#050110]"
       >
         <div className="max-w-full mx-auto h-full flex px-10">
-
           {/* LEFT — TIMELINE (same as Metamorphosis RIGHT) */}
           <div className="w-2/4 relative overflow-hidden">
-           
-
             <div ref={rightSideRef} className="pt-[5vh] pb-[5vh]">
               {data.map((item, i) => (
                 <div
@@ -52,9 +49,7 @@ export default function ArambhaSection({ data = [] }) {
                         />
                       </div>
 
-                      <p className="text-gray-400">
-                        {item.designation}
-                      </p>
+                      <p className="text-gray-400">{item.designation}</p>
                     </div>
 
                     {/* RIGHT: IMAGE */}
@@ -81,9 +76,7 @@ export default function ArambhaSection({ data = [] }) {
 
           {/* RIGHT — CONTENT (same as Metamorphosis LEFT) */}
           <div className="w-2/4 flex flex-col justify-center px-8 ml-10">
-            <h1 className="text-5xl font-black uppercase mb-6">
-              Arambha
-            </h1>
+            <h1 className="text-5xl font-black uppercase mb-6">Arambha</h1>
 
             <p className="text-gray-400 mb-10 max-w-md">
               The beginning of momentum, where ideas take their first real form.
@@ -97,7 +90,6 @@ export default function ArambhaSection({ data = [] }) {
               />
             </div>
           </div>
-
         </div>
       </div>
     </div>

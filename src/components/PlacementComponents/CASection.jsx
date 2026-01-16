@@ -1,4 +1,4 @@
-import { RotateCcw, Target, Users, Briefcase } from "lucide-react";
+import { Target, Users } from "lucide-react";
 
 export default function CASsection() {
   return (
@@ -26,66 +26,24 @@ export default function CASsection() {
               industry-ready leaders. It focuses on building aptitude, business
               communication, and digital presence.
             </p>
-            <div className="mt-8 pt-8 border-t border-white/10">
-              <span className="inline-flex items-center text-[#f15a24] font-semibold">
-                Learn more →
-              </span>
-            </div>
           </div>
 
-          {/* 360° Opportunities */}
-          <div className="bg-white rounded-2xl p-10 shadow-xl border border-gray-100">
-            <div className="flex items-center mb-10">
-              <div className="bg-gradient-to-r from-[#f15a24]/10 to-orange-100 p-4 rounded-2xl mr-6">
-                <RotateCcw className="w-12 h-12 text-[#f15a24]" />
-              </div>
-              <div>
-                <span className="text-5xl font-bold text-gray-900">360°</span>
-                <p className="text-gray-600 mt-2">Career Opportunities</p>
-              </div>
-            </div>
-            <div className="space-y-6">
-              {["Internships", "SIP TO PPO", "Industrial visits"].map(
-                (item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center p-4 rounded-xl hover:bg-gray-50 transition-colors"
-                  >
-                    <div className="w-3 h-3 bg-[#f15a24] rounded-full mr-4"></div>
-                    <span className="text-xl font-semibold text-gray-800">
-                      {item}
-                    </span>
-                  </div>
-                )
-              )}
-            </div>
+          {/* Image 1 */}
+          <div className="relative flex items-center justify-center rounded-2xl p-6 bg-transparent ">
+            <img
+              src="3602.png"
+              alt="360 Degree Academic & Professional Foundation"
+              className="max-h-80 w-auto object-contain"
+            />
           </div>
-          {/* Additional Opportunities */}
-          <div className="bg-white rounded-2xl p-10 shadow-xl border border-gray-100">
-            <div className="flex items-center mb-10">
-              <div className="bg-gradient-to-r from-[#f15a24]/10 to-orange-100 p-4 rounded-2xl mr-6">
-                <Briefcase className="w-12 h-12 text-[#f15a24]" />
-              </div>
-              <div>
-                <span className="text-5xl font-bold text-gray-900">100%</span>
-                <p className="text-gray-600 mt-2">Placement Support</p>
-              </div>
-            </div>
-            <div className="space-y-6">
-              {["Mock Interviews", "Resume Building", "Network Access"].map(
-                (item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center p-4 rounded-xl hover:bg-gray-50 transition-colors"
-                  >
-                    <div className="w-3 h-3 bg-[#f15a24] rounded-full mr-4"></div>
-                    <span className="text-xl font-semibold text-gray-800">
-                      {item}
-                    </span>
-                  </div>
-                )
-              )}
-            </div>
+
+          {/* Image 2 */}
+          <div className="relative flex items-center justify-center rounded-2xl p-6 bg-transparent ">
+            <img
+              src="3601.png"
+              alt="360 Degree Academic & Professional Foundation"
+              className="max-h-80 w-auto object-contain"
+            />
           </div>
 
           {/* IRP Card */}
@@ -108,11 +66,6 @@ export default function CASsection() {
               initiative designed to prepare students for the real-world demands
               of the corporate world through hands-on training and mentorship.
             </p>
-            <div className="mt-8 pt-8 border-t border-white/10">
-              <span className="inline-flex items-center text-[#f15a24] font-semibold">
-                Learn more →
-              </span>
-            </div>
           </div>
         </div>
       </div>

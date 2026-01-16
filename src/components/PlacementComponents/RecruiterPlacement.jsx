@@ -7,14 +7,14 @@ import SectorAnalyticsCard from "./SectoralDistribution";
 
 /* ---------------- DATA ---------------- */
 
-const LOGO_COUNT = 44;
-const EXCLUDED_INDICES = [35, 37];
+const LOGO_COUNT = 46;
+const EXCLUDED_LOGOS = [4];
 
 const generateLogos = () =>
   Array.from({ length: LOGO_COUNT }, (_, i) => {
     const index = i + 1;
-    if (EXCLUDED_INDICES.includes(index)) return null;
-    return `/IGSB/logos/logo${index}.webp`;
+    if (EXCLUDED_LOGOS.includes(index)) return null;
+    return `/placementlogos/${index}.jpg`;
   }).filter(Boolean);
 
 /* ---------------- COMPONENT ---------------- */
@@ -120,7 +120,7 @@ const OrangeCard = () => (
     </div>
 
     {/* Analytics Container */}
-    <div className="bg-white/95 rounded-2xl  shadow-lg backdrop-blur-sm">
+    <div className="bg-white/95 rounded-2xl  shadow-lg backdrop-blur-sm ">
       <SectorAnalyticsCard />
     </div>
 

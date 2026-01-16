@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import StudentInduction from "@/components/CampusLife/StudentInduction";
+import RoadmapSection from "@/components/CampusLife/StudentInduction";
+import { MemoryLane } from "@/components/CampusLife/MemoryLane";
 
 export default function StudentInductionPage() {
   return (
@@ -8,7 +9,8 @@ export default function StudentInductionPage() {
       
       {/* Page Content */}
       <div className="max-w-full mx-auto ">
-        <StudentInduction />
+        <RoadmapSection />
+        <MemoryLane />
       </div>
     </div>
   );

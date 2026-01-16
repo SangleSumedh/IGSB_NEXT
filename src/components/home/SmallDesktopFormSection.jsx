@@ -5,14 +5,14 @@ import Image from "next/image";
 import { Phone } from "lucide-react";
 import ApplyForm from "./ApplyForm";
 
-/* ---------------- RECRUITER CONTENT ---------------- */
+/* ---------------- CONTENT ---------------- */
 
 const pageContent = {
   headline: "Trusted by Industry, Defined by Outcomes",
   body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of graduate performance and professional readiness.",
 };
 
-/* ---------------- RECRUITER LOGOS ---------------- */
+/* ---------------- LOGOS ---------------- */
 
 const LOGO_COUNT = 44;
 const EXCLUDED_INDICES = [35, 37];
@@ -21,13 +21,18 @@ const generateLogos = () =>
   Array.from({ length: LOGO_COUNT }, (_, i) => {
     const index = i + 1;
     if (EXCLUDED_INDICES.includes(index)) return null;
-    return `/IGSB/logos/logo${index}.webp`;
+    return `/logos/${index}.jpg`;
   }).filter(Boolean);
 
 /* ================= COMPONENT ================= */
 
 export default function SmallDesktopFormSection() {
   const logos = generateLogos();
+
+  /* ---------- FIXED SPLIT (USER PREFERENCE) ---------- */
+  const row1 = logos.slice(0, 12);
+  const row2 = logos.slice(12, 22);
+  const row3 = logos.slice(22);
 
   return (
     <section className="block xl:hidden w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71]">
@@ -36,7 +41,7 @@ export default function SmallDesktopFormSection() {
         {/* ================= LEFT CONTENT ================= */}
         <div className="flex flex-col items-center text-center gap-10">
 
-          {/* HEADLINE + BODY */}
+          {/* TEXT */}
           <div className="max-w-3xl space-y-4">
             <h2 className="text-2xl md:text-3xl font-extrabold text-white">
               {pageContent.headline}
@@ -46,39 +51,41 @@ export default function SmallDesktopFormSection() {
             </p>
           </div>
 
-          {/* RECRUITER MARQUEES */}
+          {/* ================= MARQUEES (ALWAYS 3) ================= */}
           <div className="w-full space-y-8">
-            {/* ROW 1 */}
+
+            {/* ROW 1 → Left */}
             <div className="overflow-hidden">
               <div className="marquee marquee-left gap-6">
-                {[...logos, ...logos].map((logo, i) => (
+                {[...row1, ...row1].map((logo, i) => (
                   <LogoItem key={`r1-${i}`} src={logo} />
                 ))}
               </div>
             </div>
 
-            {/* ROW 2 */}
+            {/* ROW 2 → Right */}
             <div className="overflow-hidden">
               <div className="marquee marquee-right gap-6">
-                {[...logos, ...logos].map((logo, i) => (
+                {[...row2, ...row2].map((logo, i) => (
                   <LogoItem key={`r2-${i}`} src={logo} />
                 ))}
               </div>
             </div>
 
-            {/* ROW 3 — ONLY lg → xl */}
-            <div className="overflow-hidden hidden lg:block xl:hidden">
+            {/* ROW 3 → Left */}
+            <div className="overflow-hidden">
               <div className="marquee marquee-left gap-6">
-                {[...logos, ...logos].map((logo, i) => (
+                {[...row3, ...row3].map((logo, i) => (
                   <LogoItem key={`r3-${i}`} src={logo} />
                 ))}
               </div>
             </div>
+
           </div>
         </div>
 
         {/* ================= RIGHT FORM ================= */}
-        <div className="flex justify-center lg:justify-center">
+        <div className="flex justify-center">
           <div className="w-full max-w-[420px] bg-[#ff885b] text-white rounded-xl shadow-2xl p-5">
             <h2 className="text-xl text-center font-bold mb-4">
               Admission Form

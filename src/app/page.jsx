@@ -20,6 +20,7 @@ import SmallDesktopFormSection from "@/components/home/SmallDesktopFormSection";
 import NewCTA from "@/components/home/NewCTA";
 import Training from "@/components/home/Training";
 import FactSection from "@/components/home/FactSection";
+import ProgramCTA from "@/components/programs/ProgramCTA";
 import Road from "@/components/home/Road";
 import NewEvent from "@/components/home/NewEvent";
 
@@ -37,7 +38,6 @@ export default function HomePage() {
         {/* ===== FORMS (RESPONSIVE) ===== */}
         <FormSection />                {/* xl and above */}
         <SmallDesktopFormSection />    {/* lg → xl */}
-
         <Phd />
         <FactSection />
         <Training />
@@ -56,6 +56,7 @@ export default function HomePage() {
         {/* <CarSection /> */}
         <CTASection />
         <NewEvent />
+        
       </ScrollCrushWrapper>
 
       {/* <InstagramMosaic /> */}

@@ -398,7 +398,7 @@ body {
 .full-width-container {
   width: 100vw;
   position: relative;
-  background-color: #4300FF;
+  background-color: #3aafa9;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
@@ -427,11 +427,13 @@ body {
 }
 
 .arch__info {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   padding: 0 20px;
 }
+
 
 .arch__info .content {
   width: 100%;
@@ -477,13 +479,14 @@ body {
 
 /* ================= RIGHT (IMAGES – 60%) ================= */
 
-.arch__right {
+.arch__right-pin {
   position: relative;
   height: 100vh;
   width: 60%;
   max-width: 800px;
   padding-right: 40px;
 }
+
 
 .img-wrapper {
   position: absolute;
@@ -610,4 +613,11 @@ body {
   .img-wrapper {
     height: 280px;
   }
+}
+
+
+.chanakya-video {
+  margin: 20px 0 24px;
+  width: 320px;
+  border-radius: 16px;
 }

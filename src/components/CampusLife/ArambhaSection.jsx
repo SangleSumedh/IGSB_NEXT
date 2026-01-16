@@ -16,7 +16,7 @@ export default function ArambhaSection({ data = [] }) {
 
           {/* LEFT — TIMELINE (same as Metamorphosis RIGHT) */}
           <div className="w-2/4 relative overflow-hidden">
-            <div className="absolute left-10 top-0 bottom-0 border-l-2 border-dashed border-[#3aafa9]" />
+           
 
             <div ref={rightSideRef} className="pt-[5vh] pb-[5vh]">
               {data.map((item, i) => (

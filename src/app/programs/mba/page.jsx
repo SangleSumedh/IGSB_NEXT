@@ -5,6 +5,7 @@ import FAQSection from "@/components/FAQSections/FAQMBA";
 import ApplyForm from "@/components/home/ApplyForm";
 import MBAOverview from "@/components/programs/MBAOverview";
 import FormSection from "@/components/home/FormSection";
+import SmallDesktopFormSection from "@/components/home/SmallDesktopFormSection"; // LG → XL
 import MBASpecializations from "@/components/programs/MBASpecialisations";
 import MBASlider from "@/components/programs/MBASlider";
 import ProgramCTA from "@/components/programs/ProgramCTA";
@@ -438,6 +439,7 @@ export default function MBAContent() {
       <MBASpecializations scrollToApply={scrollToApply} />
 
       <FormSection ref={applyRef} />
+      <SmallDesktopFormSection ref={applyRef} />
 
       {/* <JobProfiles /> */}
       {/* ==============================

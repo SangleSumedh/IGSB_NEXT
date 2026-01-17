@@ -5,10 +5,17 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
 
-gsap.registerPlugin(ScrollTrigger);
+// ❌ REMOVED GLOBAL REGISTRATION FROM HERE
 
 export default function Page() {
   useEffect(() => {
+    // ✅ MOVED REGISTRATION INSIDE USEEFFECT
+    // This ensures it only runs on the client-side (browser)
+    if (typeof window !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.normalizeScroll(true);
+    }
+
     /* ================= LENIS ================= */
     const lenis = new Lenis({
       duration: 1.2,
@@ -18,12 +25,16 @@ export default function Page() {
       touchMultiplier: 2,
     });
 
-    function raf(time) {
-      lenis.raf(time);
-      ScrollTrigger.update();
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
+    // ✅ Prevent momentum snap on stop
+    lenis.options.infinite = false;
+
+    lenis.on("scroll", ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
 
     /* ================= Z-INDEX ================= */
     document.querySelectorAll(".img-wrapper").forEach((el) => {
@@ -34,10 +45,11 @@ export default function Page() {
     /* ================= MOBILE ORDER ================= */
     const handleMobileLayout = () => {
       const isMobile = window.matchMedia("(max-width: 768px)").matches;
+      // Added safety check for empty arrays
       const leftItems = gsap.utils.toArray(".arch__left .arch__info");
       const rightItems = gsap.utils.toArray(".arch__right .img-wrapper");
 
-      if (isMobile) {
+      if (leftItems.length && isMobile) {
         leftItems.forEach((item, i) => (item.style.order = i * 2));
         rightItems.forEach((item, i) => (item.style.order = i * 2 + 1));
       } else {
@@ -49,7 +61,7 @@ export default function Page() {
     let resizeTimeout;
     const handleResize = () => {
       clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(handleMobileLayout, 100);
+      resizeTimeout = setTimeout(handleMobileLayout, 150);
     };
 
     handleMobileLayout();
@@ -57,17 +69,26 @@ export default function Page() {
 
     /* ================= GSAP ================= */
     const imgs = gsap.utils.toArray(".img-wrapper img");
-    const bgColors = ["#362F4F", "#5B23FF", "#008BFF", "#E4FF30"];
+    const bgColors = ["#ed731d", "#3aafa9", "#0F2A5F", "#AC3C25", "#3aafa9"];
 
     ScrollTrigger.matchMedia({
       "(min-width: 769px)": () => {
+        const arch = document.querySelector(".arch");
+        const left = document.querySelector(".arch__left");
+
+        // Safety check if DOM elements exist
+        if (!arch || !left) return;
+
         const mainTimeline = gsap.timeline({
           scrollTrigger: {
-            trigger: ".arch",
+            trigger: arch,
             start: "top top",
-            end: "bottom bottom",
-            pin: ".arch__right",
-            scrub: true,
+            end: () => "+=" + (left.scrollHeight - window.innerHeight),
+            pin: ".arch__right-pin",
+            pinSpacing: true,
+            scrub: 0.6,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
           },
         });
 
@@ -83,22 +104,18 @@ export default function Page() {
 
           const tl = gsap.timeline();
 
-          tl.to(
-            ".full-width-container",
-            {
-              backgroundColor: bgColors[index],
-              duration: 1.5,
-              ease: "power2.inOut",
-            },
-            0
-          )
+          tl.to(".full-width-container", {
+            backgroundColor: bgColors[index],
+            duration: 1.5,
+            ease: "power2.inOut",
+          })
             .to(
               currentImage,
               {
                 clipPath: "inset(0px 0px 100%)",
                 objectPosition: "0px 60%",
                 duration: 1.5,
-                ease: "none",
+                ease: "power1.out",
               },
               0
             )
@@ -107,7 +124,7 @@ export default function Page() {
               {
                 objectPosition: "0px 40%",
                 duration: 1.5,
-                ease: "none",
+                ease: "power1.out",
               },
               0
             );
@@ -115,38 +132,18 @@ export default function Page() {
           mainTimeline.add(tl);
         });
       },
+    });
 
-      "(max-width: 768px)": () => {
-        gsap.set(imgs, { objectPosition: "0px 60%" });
-
-        imgs.forEach((image, index) => {
-          gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: image,
-                start: "top-=70% top+=50%",
-                end: "bottom+=200% bottom",
-                scrub: true,
-              },
-            })
-            .to(image, {
-              objectPosition: "0px 30%",
-              duration: 5,
-              ease: "none",
-            })
-            .to(".full-width-container", {
-              backgroundColor: bgColors[index],
-              duration: 1.5,
-              ease: "power2.inOut",
-            });
-        });
-      },
+    ScrollTrigger.config({
+      autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
     });
 
     return () => {
       window.removeEventListener("resize", handleResize);
       ScrollTrigger.killAll();
       lenis.destroy();
+      // Optional: Revert global scroll normalization if navigating away
+      // ScrollTrigger.normalizeScroll(false);
     };
   }, []);
 
@@ -154,35 +151,67 @@ export default function Page() {
     <>
       {/* ================= HEADING ================= */}
       <div className="w-full py-12 bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] shadow-lg">
-        <div className="max-w-7xl mx-auto px-6 xl:px-16 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white">
-            Campus Events & Activities
-          </h1>
-          <div className="mx-auto mt-4 mb-4 w-16 h-[3px] rounded-full bg-white" />
-          <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Experience the vibrant life at our campus through exciting events,
-            workshops, and cultural celebrations that shape our community spirit.
-          </p>
+        <div className="max-w-7xl mx-auto px-6 xl:px-16 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-white">
+              Campus Events & Activities
+            </h1>
+            <p className="mt-3 text-white/90 max-w-xl">
+              Celebrating culture, creativity, leadership, and student life
+              through memorable campus events.
+            </p>
+          </div>
+
+          <div className="hidden md:block">
+            <video
+              src="/chanu/chanudancev1.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              width="220"
+              height="220"
+              className="rounded-xl object-cover shadow-lg"
+            />
+          </div>
         </div>
       </div>
 
       {/* ================= GSAP SECTION ================= */}
       <div className="full-width-container">
         <div className="arch">
-          {/* LEFT */}
           <div className="arch__left">
             {[
-              "Gusto Cultural Fest",
-              "B.Parliament Debate",
-              "Navratri Celebrations",
-              "Sunidhi Live Concert",
-            ].map((title, i) => (
+              {
+                title: "Gusto Cultural Fest",
+                desc: "A vibrant cultural festival showcasing dance, music, art, and student creativity.",
+              },
+              {
+                title: "B.Parliament Debate",
+                desc: "An intellectual platform encouraging critical thinking, leadership, and debate skills.",
+              },
+              {
+                title: "Navratri Celebrations",
+                desc: "Traditional festivities filled with Garba, Dandiya, and cultural togetherness.",
+              },
+              {
+                title: "Sunidhi Live Concert",
+                desc: "A high-energy musical evening featuring a live performance by Sunidhi Chauhan.",
+              },
+              {
+                title: "Sunidhi Live Concert",
+                desc: "An unforgettable night of music, rhythm, and campus-wide celebration.",
+              },
+              {
+                title: "Sunidhi Live Concert",
+                desc: "Bringing students together through music, joy, and shared memories.",
+              },
+            ].map((event, i) => (
               <div className="arch__info" key={i}>
                 <div className="content">
-                  <h2 className="header">{title}</h2>
-                  <p className="desc">
-                    Replace this text with event-specific content.
-                  </p>
+                  <h2 className="header">{event.title}</h2>
+                  <p className="desc">{event.desc}</p>
                   <a className="link" href="#">
                     <span>View Gallery</span>
                   </a>
@@ -191,18 +220,21 @@ export default function Page() {
             ))}
           </div>
 
-          {/* RIGHT */}
-          <div className="arch__right">
-            {[
-              "/events/gusto.jpg",
-              "/events/BParak.jpg",
-              "/events/Navratri.JPG",
-              "/events/Sunnidhi.jpg",
-            ].map((src, i) => (
-              <div className="img-wrapper" data-index={4 - i} key={i}>
-                <img src={src} alt={`event-${i}`} />
-              </div>
-            ))}
+          <div className="arch__right-pin">
+            <div className="arch__right">
+              {[
+                "/events/gusto.jpg",
+                "/events/BParak.jpg",
+                "/events/Navratri.JPG",
+                "/events/Sunnidhi.jpg",
+                "/events/Navratri.JPG",
+                "/events/Sunnidhi.jpg",
+              ].map((src, i) => (
+                <div className="img-wrapper" data-index={6 - i} key={i}>
+                  <img src={src} alt={`event-${i}`} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

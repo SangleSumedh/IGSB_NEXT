@@ -1,0 +1,491 @@
+https://dribbble.com/shots/24151946-NFT-Roadmap
+
+
+
+/* ============================================================
+   GSAP ARCH SCROLL SECTION
+============================================================ */
+
+/* Wrapper that breaks out of container */
+.full-width-container {
+  width: 100vw;
+  position: relative;
+  background-color: #4300FF;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-top: 10px; /* tight spacing after heading */
+}
+
+/* Main layout */
+.arch {
+  display: flex;
+  gap: 80px;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ================= LEFT (TEXT – 40%) ================= */
+
+.arch__left {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  min-width: 400px;
+  padding-left: 40px;
+}
+
+.arch__info {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.arch__info .content {
+  width: 100%;
+  max-width: 500px;
+}
+
+.header {
+  font-family: "Outfit", sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.desc {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  letter-spacing: -0.36px;
+  margin-bottom: 32px;
+  line-height: 1.6;
+  max-width: 450px;
+}
+
+.link {
+  text-decoration: none;
+  padding: 16px 24px;
+  color: #121212;
+  border-radius: 40px;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  background: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.link:hover {
+  transform: translateY(-2px);
+}
+
+/* ================= RIGHT (IMAGES – 60%) ================= */
+
+.arch__right {
+  position: relative;
+  height: 100vh;
+  width: 60%;
+  max-width: 800px;
+  padding-right: 40px;
+}
+
+.img-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 600px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 1200px) {
+  .arch {
+    gap: 60px;
+    max-width: 1200px;
+  }
+
+  .img-wrapper {
+    height: 550px;
+  }
+}
+
+@media (max-width: 900px) {
+  .arch {
+    gap: 40px;
+    padding: 0 30px;
+  }
+
+  .header {
+    font-size: 42px;
+  }
+
+  .img-wrapper {
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .full-width-container {
+    left: 0;
+    right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    padding-top: 40px;
+  }
+
+  .arch {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .arch__left,
+  .arch__right {
+    width: 100%;
+    min-width: auto;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .arch__right {
+    height: auto;
+  }
+
+  .img-wrapper {
+    position: static;
+    transform: none;
+    height: 400px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .arch__info {
+    height: auto;
+    padding: 30px 0;
+    min-height: 70vh;
+  }
+
+  .arch__info .content {
+    max-width: 100%;
+  }
+
+  .desc {
+    color: rgba(18, 18, 18, 0.8);
+  }
+}
+
+@media (max-width: 560px) {
+  .arch {
+    gap: 15px;
+    padding: 0 15px;
+  }
+
+  .img-wrapper {
+    height: 320px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+  }
+
+  .header {
+    font-size: 36px;
+  }
+
+  .desc {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .img-wrapper {
+    height: 280px;
+  }
+}
+
+
+/* ================= RIGHT LAYERS ================= */
+.right-layer {
+  position: absolute;
+  inset: 0;
+}
+
+/* ================= STACKED IMAGES ================= */
+.stack-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  z-index: 6;
+}
+
+.stack-full {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.stack-row {
+  display: flex;
+  gap: 16px;
+}
+
+.stack-row img {
+  width: 50%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* ================= VIDEO ================= */
+.chanakya-video {
+  margin-top: 28px;
+  width: 320px;
+  border-radius: 16px;
+}
+
+
+/* ================= LEFT GRID (SECOND SCROLL) ================= */
+
+.arch__grid {
+  height: 100vh;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.arch__grid-full img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.arch__grid-row {
+  display: flex;
+  gap: 20px;
+}
+
+.arch__grid-row img {
+  width: 50%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+  
+"use client";
+
+import React, { useEffect } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import Lenis from "@studio-freight/lenis";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Page() {
+  useEffect(() => {
+    /* ================= LENIS ================= */
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+      smoothTouch: true,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      ScrollTrigger.update();
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    /* ================= Z-INDEX ================= */
+    document.querySelectorAll(".img-wrapper").forEach((el) => {
+      const order = el.getAttribute("data-index");
+      if (order) el.style.zIndex = order;
+    });
+
+    /* ================= GSAP ================= */
+    const imgs = gsap.utils.toArray(".img-wrapper img");
+    const bgColors = ["#362F4F", "#5B23FF", "#008BFF", "#E4FF30"];
+
+    ScrollTrigger.matchMedia({
+      "(min-width: 769px)": () => {
+        const mainTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".arch",
+            start: "top top",
+            end: "bottom bottom",
+            pin: ".arch__right",
+            scrub: true,
+          },
+        });
+
+        gsap.set(imgs, {
+          clipPath: "inset(0)",
+          objectPosition: "0px 0%",
+        });
+
+        imgs.forEach((_, index) => {
+          const currentImage = imgs[index];
+          const nextImage = imgs[index + 1];
+          if (!nextImage) return;
+
+          const tl = gsap.timeline();
+
+          /* =================
+             SCROLL 1
+             Text + Video
+          ================= */
+          tl.to({}, { duration: 1 });
+
+          /* =================
+             SCROLL 2
+             Left Grid
+          ================= */
+          tl.to({}, { duration: 1 });
+
+          /* =================
+             SCROLL 3
+             RIGHT IMAGE + BG
+             (UNCHANGED LOGIC)
+          ================= */
+          tl.to(
+            ".full-width-container",
+            {
+              backgroundColor: bgColors[index],
+              duration: 1.5,
+              ease: "power2.inOut",
+            },
+            0
+          )
+            .to(
+              currentImage,
+              {
+                clipPath: "inset(0px 0px 100%)",
+                objectPosition: "0px 60%",
+                duration: 1.5,
+                ease: "none",
+              },
+              0
+            )
+            .to(
+              nextImage,
+              {
+                objectPosition: "0px 40%",
+                duration: 1.5,
+                ease: "none",
+              },
+              0
+            );
+
+          mainTimeline.add(tl);
+        });
+      },
+    });
+
+    return () => {
+      ScrollTrigger.killAll();
+      lenis.destroy();
+    };
+  }, []);
+
+  const events = [
+    "Gusto Cultural Fest",
+    "B.Parliament Debate",
+    "Navratri Celebrations",
+    "Sunidhi Live Concert",
+  ];
+
+  const images = [
+    "/events/gusto.jpg",
+    "/events/BParak.jpg",
+    "/events/Navratri.JPG",
+    "/events/Sunnidhi.jpg",
+  ];
+
+  return (
+    <>
+      {/* ================= GSAP SECTION ================= */}
+      <div className="full-width-container">
+        <div className="arch">
+          {/* ================= LEFT ================= */}
+          <div className="arch__left">
+            {events.map((title, i) => (
+              <React.Fragment key={i}>
+                {/* TEXT + VIDEO */}
+                <div className="arch__info">
+                  <div className="content">
+                    <h2 className="header">{title}</h2>
+                    <p className="desc">
+                      Replace this text with event-specific content.
+                    </p>
+
+                    <video
+                      className="chanakya-video"
+                      src="/chanu/chanudancev1.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
+                  </div>
+                </div>
+
+                {/* GRID — SECOND SCROLL */}
+                <div className="arch__grid">
+                  <div className="arch__grid-full">
+                    <img src={images[i]} alt="" />
+                  </div>
+                  <div className="arch__grid-row">
+                    <img src={images[i]} alt="" />
+                    <img src={images[i]} alt="" />
+                  </div>
+                </div>
+              </React.Fragment>
+            ))}
+          </div>
+
+          {/* ================= RIGHT (UNCHANGED) ================= */}
+          <div className="arch__right">
+            {images.map((src, i) => (
+              <div className="img-wrapper" data-index={4 - i} key={i}>
+                <img src={src} alt="" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+

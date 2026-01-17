@@ -137,7 +137,8 @@ export default function ProgrammesSection() {
   };
 
   return (
-    <section className="relative w-full bg-white font-sans">
+    <section className="relative w-full bg-white font-sans overflow-hidden">
+
       {/* DESKTOP LAYOUT - LG AND ABOVE */}
       <div className="hidden lg:block relative lg:h-[95vh] flex-1 items-center">
         {/* IMAGE AT BOTTOM LEFT */}
@@ -153,7 +154,7 @@ export default function ProgrammesSection() {
 
         {/* LEFT SIDE: CIRCLE INTERFACE */}
         <div className="absolute -bottom-10 lg:left-10 xl:left-16 lg:w-[40vw] lg:h-[40vw] xl:w-[45vw] xl:h-[45vw]">
-          <div className="relative w-full h-full rounded-full border-4 border-[#fc7116] z-0">
+          <div className="relative w-full h-full rounded-full border-4 border-[#fc7116]">
             {specializations.map((spec, index) => {
               const radian = (spec.angle * Math.PI) / 180;
               const left = 50 + 50 * Math.cos(radian);

@@ -7,8 +7,8 @@ import Image from "next/image";
 ========================= */
 const facilities = [
   {
-    title: "Sports Facilities",
-    name: "Sports",
+    title: "Sports",
+    // name: "Sports",
     chanakyaImage: "/chanu/chanuSports1.png",
     images: [
       "/NEWFacilities/Sports1.JPG",
@@ -22,7 +22,7 @@ const facilities = [
   },
   {
     title: "Library",
-    name: "Library",
+    // name: "Library",
     chanakyaImage: "/chanu/chanakya.png",
     images: [
       "/NEWFacilities/Lib4.jpg",
@@ -36,7 +36,7 @@ const facilities = [
   },
   {
     title: "Canteen",
-    name: "Canteen",
+    // name: "Canteen",
     chanakyaImage: "/chanu/chanuCanteen.png",
     images: [
       "/NEWFacilities/Canteen2.JPG",
@@ -50,7 +50,7 @@ const facilities = [
   },
   {
     title: "Academics",
-    name: "Academics",
+    // name: "Academics",
     chanakyaImage: "/chanu/chanuAcademics.png",
     images: [
       "/NEWFacilities/Lab5.jpg",
@@ -64,7 +64,7 @@ const facilities = [
   },
   {
     title: "Gym",
-    name: "Gym",
+    // name: "Gym",
     chanakyaImage: "/chanu/chanuGym.png",
     images: [
       "/NEWFacilities/Gym3.webp",
@@ -78,7 +78,7 @@ const facilities = [
   },
   {
     title: "Hostel",
-    name: "Hostel",
+    // name: "Hostel",
     chanakyaImage: "/chanu/chanuHostel.png",
     singleImage: "/NEWFacilities/FacilitiesHostel.jpg",
     description1:
@@ -88,7 +88,7 @@ const facilities = [
   },
   {
     title: "Transport",
-    name: "Transport",
+    // name: "Transport",
     chanakyaImage: "/chanu/chanu7.png",
     singleImage: "/NEWFacilities/Transport.webp",
     description1:
@@ -98,7 +98,7 @@ const facilities = [
   },
   {
     title: "Nature and Peace",
-    name: "Nature and Peace",
+    // name: "Nature and Peace",
     chanakyaImage: "/chanu/chanumeditatingp2.png",
     images: [
       "/NEWFacilities/Lab5.jpg",
@@ -130,14 +130,18 @@ function FacilitySection({ data, index }) {
 
       <div className="relative z-10 w-full px-6 py-12 xl:px-16 xl:py-8">
         {/* HEADING */}
-        <div className={`mb-10 flex ${isOdd ? "justify-start" : "justify-end"}`}>
-          <div>
-            <h2 className={`text-3xl font-semibold ${isOdd ? "text-gray-900" : "text-white"}`}>
-              {data.title}
-            </h2>
-            <div className={`mt-2 w-20 h-[2px] bg-[#fc7116] ${isOdd ? "ml-0" : "ml-auto"}`} />
-          </div>
-        </div>
+<div className="mb-10 flex justify-start">
+  <div>
+    <h2
+      className={`text-6xl font-semibold ${
+        isOdd ? "text-gray-900" : "text-white"
+      }`}
+    >
+      {data.title}
+    </h2>
+    <div className="mt-3 w-20 h-[2px] bg-[#fc7116]  ml-0 " />
+  </div>
+</div>
 
         <div className={`relative flex flex-col lg:flex-row gap-8 ${!isOdd ? "lg:flex-row-reverse" : ""}`}>
           {/* IMAGES */}

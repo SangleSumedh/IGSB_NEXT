@@ -6,7 +6,7 @@ export default function PlacementHero() {
     <div className="relative w-full h-auto ">
       <div className="relative w-full overflow-hidden">
         <Image
-          src="/placement4.jpg"
+          src="/placement/plcementbannerfinal.jpg"
           alt="Placement Banner"
           priority
           className="w-full h-auto "

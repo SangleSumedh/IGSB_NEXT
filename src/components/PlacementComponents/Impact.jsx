@@ -74,29 +74,19 @@ export default function Impact() {
   };
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative pt-4 overflow-hidden min-h-[500px]"
-    >
+    <section ref={sectionRef} className="relative w-full min-h-[800px] ">
       {/* ➤ BACKGROUND IMAGE */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 h-full">
         <img
-          src="/placementbanner233.jpg"
+          src="/placement/impact2.jpg"
           alt="Background"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover pointer-none::select-none "
         />
-        <div className="absolute inset-0" />
       </div>
 
-      {/* ➤ CONTENT CONTAINER */}
-      {/* 👇 KEY CHANGES HERE:
-         1. Removed 'mr-10' from default -> Added 'md:mr-10' (Restores your desktop margin)
-         2. Added 'mx-4' for mobile (gives side breathing room on phone)
-         3. Changed 'mb-30 pb-30' -> 'mb-10 pb-10' for mobile -> 'md:mb-30 md:pb-30' for desktop
-      */}
-      <div className="relative z-10 w-full max-w-3xl mx-auto px-2 py-2  md:mx-auto md:mr-10 mb-10 pb-10 md:mb-30 md:pb-30">
+      <div className="relative inset-0 z-10 w-full max-w-7xl mx-auto px-2 py-2 md:mx-auto md:pt-10">
         {/* Section Title */}
-        <div className="text-center mb-5">
+        <div className="text-center md:mt-5 md:mb-5">
           <h2 className="text-xl md:text-xl lg:text-2xl font-bold text-secondary uppercase tracking-wide">
             Career Outcomes That <span className="text-primary">Speak</span> for
             Themselves
@@ -104,24 +94,32 @@ export default function Impact() {
         </div>
 
         {/* Stats Cards Grid */}
-        <div className="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-4 gap-2">
+        {/* CHANGED: gap-4 to gap-3 for tighter mobile view, kept md:gap-6 */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 ">
           {statsConfig.map((stat, index) => (
             <div
               key={index}
               ref={(el) => (animatedCardsRef.current[index] = el)}
-              className="flex flex-col h-full rounded-lg overflow-hidden shadow-md transform transition-transform hover:scale-102 opacity-0 group"
+              className="flex flex-col h-full rounded-xl overflow-hidden shadow-xl transform transition-transform hover:scale-105 opacity-0 group"
             >
-              {/* Top Half */}
-              <div className="bg-[#3aafa9] md:py-3 md:px-3 text-center h-10 flex items-center justify-center shrink-0">
-                <h3 className="text-xl lg:text-2xl font-bold text-white">
+              {/* CHANGES MADE HERE:
+                  1. Padding: 'p-2' (mobile) -> 'md:px-6 md:py-6 lg:py-3' (desktop)
+                  2. Height: 'h-14' (mobile compact) -> 'md:h-20' (desktop)
+              */}
+              <div className="bg-[#3aafa9] p-2 md:px-6 md:py-6 lg:py-3 lg:px-2 text-center h-14 md:h-20 flex items-center justify-center shrink-0">
+                {/* Font size: text-lg (mobile) -> md:text-3xl (desktop) */}
+                <h3 className="text-lg md:text-3xl xl:text-5xl font-extrabold text-white">
                   {counts[index].toFixed(stat.decimal)}
                   {stat.suffix}
                 </h3>
               </div>
 
-              {/* Bottom Half */}
-              <div className="flex-grow flex items-center justify-center bg-secondary py-2 px-3 text-center border-t-2 border-secondary group-hover:bg-[#3aafa9] transition-colors duration-300">
-                <p className="text-white font-bold text-xs uppercase tracking-wider">
+              {/* CHANGES MADE HERE:
+                  1. Padding: 'py-2 px-1' (mobile) -> 'md:py-3 md:px-2' (desktop)
+              */}
+              <div className="flex-grow flex items-center justify-center bg-secondary py-2 px-1 md:py-3 md:px-2 text-center border-t-2 border-secondary group-hover:bg-[#3aafa9] transition-colors duration-300">
+                {/* Font size: text-xs (mobile) -> text-md (desktop) */}
+                <p className="text-white font-bold uppercase tracking-wider p-1 md:p-3 text-xs md:text-lg leading-tight">
                   {stat.label}
                 </p>
               </div>

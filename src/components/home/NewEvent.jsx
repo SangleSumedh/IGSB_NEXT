@@ -14,7 +14,7 @@ const eventList = [
       "/newEvents/IDA1.jpg",
       "/newEvents/IDA2.jpg",
       "/newEvents/IDA7.jpg",
-      "/newEvents/IDA12.jpg",
+      "/newEvents/IDA12.JPG",
       "/newEvents/IDA11.jpg",
     ],
     backdrop: "/Home/events/event1backdrop.png",

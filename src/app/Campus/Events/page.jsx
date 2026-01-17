@@ -164,7 +164,7 @@ export default function EventsPage() {
             <div className="arch__right">
               {[
                 "/newEvents/BParak.jpg",
-                "/newEvents/IWA1.JPG",
+                "/newEvents/IWA1.jpg",
                 "/newEvents/Gusto1.jpg",
                 "/newEvents/Navratri1.JPG",
                 "/newEvents/Splash6.jpg",

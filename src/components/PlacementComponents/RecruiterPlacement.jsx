@@ -102,30 +102,23 @@ const RecruiterPlacement = () => {
 /* ---------------- SUB COMPONENTS ---------------- */
 
 const OrangeCard = () => (
-  <div className=" md:h-[600px] rounded-3xl  h-400px relative overflow-hidden text-white flex flex-col">
-    {/* Analytics Container */}
-    <div className=" ">
-      <div className="relative z-20">
-        <div
-          className="absolute"
-        >
-          <div className="bg-[#ff885b] text-white rounded-xl  p-5">
-            <h2 className="text-xl text-center font-bold mb-4">
-              Admission Form
-            </h2>
+ 
+  <div className="w-full rounded-3xl relative overflow-hidden text-white flex flex-col shadow-2xl">
+    
+    <div className="bg-[#ff885b] text-white rounded-xl p-5 h-full w-full">
+      <h2 className="text-xl text-center font-bold mb-4">
+        Admission Form
+      </h2>
 
-            <ApplyForm variant="modal" />
+      <ApplyForm variant="modal" />
 
-            <div className="text-center mt-4">
-              <p className="font-semibold flex justify-center gap-2 text-sm">
-                Or Give us a call <Phone size={14} /> +91 0000000000
-              </p>
-              <p className="text-xs opacity-90 mt-1">
-                The Support Centre is Available 24/7
-              </p>
-            </div>
-          </div>
-        </div>
+      <div className="text-center mt-4">
+        <p className="font-semibold flex justify-center gap-2 text-sm">
+          Or Give us a call <Phone size={14} /> +91 0000000000
+        </p>
+        <p className="text-xs opacity-90 mt-1">
+          The Support Centre is Available 24/7
+        </p>
       </div>
     </div>
   </div>

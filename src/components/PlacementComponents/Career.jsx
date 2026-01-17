@@ -74,30 +74,6 @@ const Career = () => {
         </p>
       </div>
       <div className="max-w-full mx-auto px-4 sm:px-6 relative mt-16 mb-15 ">
-        {/* ================= HEADER ================= */}
-        {/* <div className="text-center mb-16 lg:mb-24">
-          <motion.h2
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-extrabold mb-6"
-          >
-            An Ecosystem Designed for{" "}
-            <span className="text-[#ff712d]">Real Careers</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed"
-          >
-            IGSB offers a structured placement ecosystem focused on
-            industry-ready MBA careers. Through strong corporate partnerships,
-            expert mentorship, and hands-on exposure, students graduate with the
-            skills required for long-term success.
-          </motion.p>
-        </div> */}
 
         {/* ================= DESKTOP TIMELINE (Horizontal Wave) ================= */}
         <div className="hidden lg:block relative h-[500px]">
@@ -209,7 +185,7 @@ const Career = () => {
         {/* ================= MOBILE TIMELINE (Vertical) ================= */}
         <div className="block lg:hidden relative pl-4">
           {/* Vertical Line */}
-          <div className="absolute left-[27px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#ff712d] to-transparent"></div>
+          <div className="absolute left-[40px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#ff712d] to-transparent"></div>
 
           <div className="space-y-10">
             {steps.map((step, index) => (
@@ -227,7 +203,7 @@ const Career = () => {
                 </div>
 
                 {/* CONTENT CARD */}
-                <div className="bg-white/5 border border-white/10 p-5 rounded-xl w-full">
+                <div className="bg-secondary border border-white/10 p-5 rounded-xl w-full">
                   <h3 className="text-xl font-bold text-[#ff712d] mb-2">
                     {step.title}
                   </h3>

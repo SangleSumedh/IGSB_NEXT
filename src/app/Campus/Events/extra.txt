@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { eventsData } from "@/static/eventsData";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,7 +84,7 @@ export default function EventsPage() {
                 duration: 1.5,
                 ease: "power1.out",
               },
-              0,
+              0
             )
             .to(
               nextImage,
@@ -94,7 +93,7 @@ export default function EventsPage() {
                 duration: 1.5,
                 ease: "power1.out",
               },
-              0,
+              0
             );
 
           mainTimeline.add(tl);
@@ -127,16 +126,19 @@ export default function EventsPage() {
             </p>
           </div>
 
-        <div className="hidden md:block">
-  <img
-    src="/chanu/ChanuNew/02.gif"
-    alt="Chanu animation"
-    width={220}
-    height={220}
-    className="rounded-xl object-cover "
-  />
-</div>
-
+          <div className="hidden md:block">
+            <video
+              src="/chanu/chanudancev1.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              width="220"
+              height="220"
+              className="rounded-xl object-cover shadow-lg"
+            />
+          </div>
         </div>
       </div>
 
@@ -145,13 +147,44 @@ export default function EventsPage() {
         <div className="arch">
           {/* LEFT */}
           <div className="arch__left">
-            {eventsData.map((event) => (
-              <div className="arch__info" key={event.id}>
+            {[
+              {
+                title: "Gusto",
+                desc: "A vibrant cultural festival showcasing dance, music, art, and student creativity.",
+                link: "/gallery/gusto",
+              },
+              {
+                title: "Indira Diversity Awards",
+                desc: "Recognizing excellence, inclusion, and leadership across diverse communities.",
+                link: "/gallery/indira-diversity-awards",
+              },
+              {
+                title: "Navratri Celebrations",
+                desc: "Traditional festivities filled with Garba, Dandiya, and cultural togetherness.",
+                link: "/gallery/navratri",
+              },
+              {
+                title: "Indira Women Achievers Awards",
+                desc: "Celebrating inspiring women and their achievements across domains.",
+                link: "/gallery/indira-women-achievers",
+              },
+              {
+                title: "Splash",
+                desc: "An energetic campus celebration filled with music, joy, and student spirit.",
+                link: "/gallery/splash",
+              },
+              {
+                title: "Chanakya Sports Complex",
+                desc: "Promoting teamwork, fitness, and competitive spirit through sports.",
+                link: "/gallery/chanakya-sports",
+              },
+            ].map((event, i) => (
+              <div className="arch__info" key={i}>
                 <div className="content">
                   <h2 className="header">{event.title}</h2>
-                  <p className="desc">{event.description}</p>
+                  <p className="desc">{event.desc}</p>
 
-                  <Link href={`/Campus/Events/gallery/${event.id}`} className="link">
+                  <Link href={event.link} className="link">
                     <span>View Gallery</span>
                   </Link>
                 </div>
@@ -163,12 +196,12 @@ export default function EventsPage() {
           <div className="arch__right-pin">
             <div className="arch__right">
               {[
-                "/newEvents/BParak.jpg",
-                "/newEvents/IWA1.jpg",
-                "/newEvents/Gusto1.jpg",
-                "/newEvents/Navratri1.JPG",
-                "/newEvents/Splash6.jpg",
-  
+                "/events/gusto.jpg",
+                "/events/BParak.jpg",
+                "/events/Navratri.JPG",
+                "/events/Sunnidhi.jpg",
+                "/events/Navratri.JPG",
+                "/events/Sunnidhi.jpg",
               ].map((src, i) => (
                 <div className="img-wrapper" data-index={6 - i} key={i}>
                   <img src={src} alt={`event-${i}`} />

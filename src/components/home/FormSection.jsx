@@ -141,7 +141,7 @@ const LogoItem = ({ src }) => (
       alt="Recruiter Logo"
       width={120}
       height={60}
-      className="object-contain max-w-[80%] max-h-[70%]"
+      className="object-cover max-w-[80%] max-h-[70%]"
     />
   </div>
 );

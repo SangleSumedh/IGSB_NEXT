@@ -42,8 +42,8 @@ const specializations = [
     roles: [
       "Brand Manager / Assistant Brand Manager",
       "Digital Marketing Manager / Specialist",
-      "Growth / Performance Marketing Manager",
-      "Marketing Analytics / Consumer Insights",
+      "Growth Marketing / Performance Marketing Manager",
+      "Marketing Analytics Specialist / Consumer Insights Manager",
       "Product Marketing Manager",
     ],
   },
@@ -98,7 +98,7 @@ const specializations = [
     roles: [
       "Business / Data Analyst",
       "Data Scientist / Machine Learning Analyst",
-      "BI Analyst / Consultant",
+      "BI (Business Intelligence) Analyst / Consultant",
       "Analytics Consultant / Strategy Analyst",
       "Customer / Marketing Analytics Specialist",
     ],

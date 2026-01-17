@@ -9,25 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function EventsPage() {
   useEffect(() => {
-    /* ================= LENIS ================= */
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true,
-      smoothTouch: true,
-      touchMultiplier: 2,
-    });
-
-    // ✅ Prevent momentum snap on stop
-    lenis.options.infinite = false;
-
-    lenis.on("scroll", ScrollTrigger.update);
-
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-
-    gsap.ticker.lagSmoothing(0);
+    if (typeof window === "undefined") return;
 
     /* ================= Z-INDEX ================= */
     document.querySelectorAll(".img-wrapper").forEach((el) => {
@@ -38,11 +20,10 @@ export default function EventsPage() {
     /* ================= MOBILE ORDER ================= */
     const handleMobileLayout = () => {
       const isMobile = window.matchMedia("(max-width: 768px)").matches;
-      // Added safety check for empty arrays
       const leftItems = gsap.utils.toArray(".arch__left .arch__info");
       const rightItems = gsap.utils.toArray(".arch__right .img-wrapper");
 
-      if (leftItems.length && isMobile) {
+      if (isMobile) {
         leftItems.forEach((item, i) => (item.style.order = i * 2));
         rightItems.forEach((item, i) => (item.style.order = i * 2 + 1));
       } else {
@@ -62,9 +43,6 @@ export default function EventsPage() {
       "(min-width: 769px)": () => {
         const arch = document.querySelector(".arch");
         const left = document.querySelector(".arch__left");
-
-        // Safety check if DOM elements exist
-        if (!arch || !left) return;
 
         const mainTimeline = gsap.timeline({
           scrollTrigger: {
@@ -130,7 +108,6 @@ export default function EventsPage() {
     return () => {
       window.removeEventListener("resize", handleMobileLayout);
       ScrollTrigger.killAll();
-      lenis.destroy();
     };
   }, []);
 
@@ -166,7 +143,7 @@ export default function EventsPage() {
       </div>
 
       {/* ================= GSAP SECTION ================= */}
-      <div className="full-width-container events-desktop-only">
+      <div className="full-width-container">
         <div className="arch">
           {/* LEFT */}
           <div className="arch__left">

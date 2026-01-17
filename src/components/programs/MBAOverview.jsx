@@ -9,6 +9,7 @@ import {
   ArrowRightCircle,
   Info,
   Users,
+  LightbulbIcon,
 } from "lucide-react";
 
 export default function MBAOverview() {
@@ -82,11 +83,15 @@ export default function MBAOverview() {
           <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-24">
             {/* Guidelines Section */}
             <div className="bg-gradient-to-br from-[#10404A] to-[#3aa6a9] text-white rounded-2xl p-8 shadow-lg relative overflow-hidden">
-              {/* Optional: Background Ping Effect for extra annoyance/visibility */}
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-white opacity-10 rounded-full animate-pulse pointer-events-none" />
+              {/* Lightbulb Icon Overlay */}
+              <LightbulbIcon
+                size={48}
+                className="absolute top-4 right-4 text-orange-400 opacity-80 drop-shadow-[0_0_10px_rgba(251,146,60,0.6)] animate-pulse pointer-events-none"
+              />
+              
 
               {/* Header with Flash Animation */}
-              <div className="flex items-center gap-3 mb-6 animate-pulse text-yellow-300">
+              <div className="flex items-center gap-3 mb-6 animate-pulse text-orange-500">
                 <Info size={28} className="shrink-0" />
                 <h3 className="text-xl font-bold uppercase tracking-wide">
                   News Flash
@@ -96,7 +101,7 @@ export default function MBAOverview() {
               <ul className="space-y-4">
                 {guidelines.map((line, idx) => (
                   <li key={idx} className="flex gap-3 items-start text-sm">
-                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-yellow-300 shrink-0 shadow-[0_0_8px_rgba(253,224,71,0.6)]" />
+                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-orange-500 shrink-0 shadow-[0_0_8px_rgba(253,224,71,0.6)]" />
                     <p className="text-slate-100 leading-relaxed font-medium">
                       {line}
                     </p>

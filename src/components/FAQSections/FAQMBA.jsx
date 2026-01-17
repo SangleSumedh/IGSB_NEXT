@@ -695,7 +695,7 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
 
 // ================== MAIN COMPONENT ==================
 export default function FAQMBA() {
-  const [active, setActive] = useState("MBA Programme Structure (Detailed)");
+  const [active, setActive] = useState("MBA Programme Structure ");
 
   const tabs = Object.keys(sectionContent);
 

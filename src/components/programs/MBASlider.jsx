@@ -137,13 +137,12 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
                 >
                   {slide.description}
                 </p>
-
                 {/* Action Buttons */}
                 <div
-                  className={`absolute bottom-6 right-6 flex gap-3 md:gap-4 transform transition-all duration-700 delay-300 z-40 ${
+                  className={`mt-6 flex flex-wrap gap-3 sm:gap-4 transform transition-all duration-700 delay-300 ${
                     index === currentIndex
-                      ? "opacity-100"
-                      : "opacity-0 pointer-events-none"
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-8 opacity-0"
                   }`}
                 >
                   <button
@@ -152,6 +151,7 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
                   >
                     Download Brochure
                   </button>
+
                   <button
                     onClick={toggleModal}
                     className="px-6 sm:px-7 py-2.5 sm:py-3 bg-white hover:bg-white text-gray-700 hover:text-gray-900 font-semibold text-sm sm:text-base rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95"
@@ -159,6 +159,8 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
                     Enquire Now
                   </button>
                 </div>
+
+                {/* Action Buttons */}
               </div>
             </div>
           </div>
@@ -166,7 +168,7 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
       ))}
 
       {/* Dots Indicator with Better Styling */}
-      <div className="absolute bottom-6 left-6 z-30 flex gap-2 md:gap-3">
+      <div className="absolute bottom-6 right-6 z-30 flex gap-2 md:gap-3">
         {slides.map((_, i) => (
           <button
             key={i}
@@ -177,7 +179,7 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
             }}
             className={`transition-all duration-300 rounded-full backdrop-blur-sm ${
               currentIndex === i
-                ? "w-8 h-2 bg-[#3aa6a9] shadow-lg"
+                ? "w-8 h-2 bg-primary shadow-lg"
                 : "w-2 h-2 bg-white/50 hover:bg-white/80"
             }`}
             aria-label={`Go to slide ${i + 1}`}

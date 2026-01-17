@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { eventsData } from "@/static/eventsData";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,7 +84,7 @@ export default function EventsPage() {
                 duration: 1.5,
                 ease: "power1.out",
               },
-              0,
+              0
             )
             .to(
               nextImage,
@@ -94,7 +93,7 @@ export default function EventsPage() {
                 duration: 1.5,
                 ease: "power1.out",
               },
-              0,
+              0
             );
 
           mainTimeline.add(tl);
@@ -148,13 +147,44 @@ export default function EventsPage() {
         <div className="arch">
           {/* LEFT */}
           <div className="arch__left">
-            {eventsData.map((event) => (
-              <div className="arch__info" key={event.id}>
+            {[
+              {
+                title: "Gusto",
+                desc: "A vibrant cultural festival showcasing dance, music, art, and student creativity.",
+                link: "/gallery/gusto",
+              },
+              {
+                title: "Indira Diversity Awards",
+                desc: "Recognizing excellence, inclusion, and leadership across diverse communities.",
+                link: "/gallery/indira-diversity-awards",
+              },
+              {
+                title: "Navratri Celebrations",
+                desc: "Traditional festivities filled with Garba, Dandiya, and cultural togetherness.",
+                link: "/gallery/navratri",
+              },
+              {
+                title: "Indira Women Achievers Awards",
+                desc: "Celebrating inspiring women and their achievements across domains.",
+                link: "/gallery/indira-women-achievers",
+              },
+              {
+                title: "Splash",
+                desc: "An energetic campus celebration filled with music, joy, and student spirit.",
+                link: "/gallery/splash",
+              },
+              {
+                title: "Chanakya Sports Complex",
+                desc: "Promoting teamwork, fitness, and competitive spirit through sports.",
+                link: "/gallery/chanakya-sports",
+              },
+            ].map((event, i) => (
+              <div className="arch__info" key={i}>
                 <div className="content">
                   <h2 className="header">{event.title}</h2>
-                  <p className="desc">{event.description}</p>
+                  <p className="desc">{event.desc}</p>
 
-                  <Link href={`/Campus/Events/gallery/${event.id}`} className="link">
+                  <Link href={event.link} className="link">
                     <span>View Gallery</span>
                   </Link>
                 </div>

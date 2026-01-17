@@ -127,19 +127,16 @@ export default function EventsPage() {
             </p>
           </div>
 
-          <div className="hidden md:block">
-            <video
-              src="/chanu/chanudancev1.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              width="220"
-              height="220"
-              className="rounded-xl object-cover shadow-lg"
-            />
-          </div>
+        <div className="hidden md:block">
+  <img
+    src="/chanu/ChanuNew/02.gif"
+    alt="Chanu animation"
+    width={220}
+    height={220}
+    className="rounded-xl object-cover "
+  />
+</div>
+
         </div>
       </div>
 
@@ -166,12 +163,12 @@ export default function EventsPage() {
           <div className="arch__right-pin">
             <div className="arch__right">
               {[
-                "/events/gusto.jpg",
-                "/events/BParak.jpg",
-                "/events/Navratri.JPG",
-                "/events/Sunnidhi.jpg",
-                "/events/Navratri.JPG",
-                "/events/Sunnidhi.jpg",
+                "/newEvents/BParak.jpg",
+                "/newEvents/IWA1.JPG",
+                "/newEvents/Gusto1.jpg",
+                "/newEvents/Navratri1.JPG",
+                "/newEvents/Splash6.jpg",
+  
               ].map((src, i) => (
                 <div className="img-wrapper" data-index={6 - i} key={i}>
                   <img src={src} alt={`event-${i}`} />

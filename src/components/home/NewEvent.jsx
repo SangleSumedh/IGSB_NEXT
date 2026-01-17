@@ -24,7 +24,7 @@ const eventList = [
     images: [
       "/newEvents/IWA2.jpg",
       "/newEvents/IWA7.jpg",
-      "/newEvents/IWA3.jpg",
+      "/newEvents/IWA11.jpg",
       "/newEvents/IWA8.jpg",
       "/newEvents/IWA6.jpg",
     ],
@@ -45,9 +45,9 @@ const eventList = [
     images: [
       "/newEvents/Navratri5.JPG",
       "/newEvents/Navratri2.JPG",
-      "/newEvents/Navratri3.JPG",
-      "/newEvents/Navratri6.JPG",
       "/newEvents/Navratri4.JPG",
+      "/newEvents/Navratri6.JPG",
+      "/newEvents/Navratri3.JPG",
     ],
   },
   {

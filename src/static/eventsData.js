@@ -1,6 +1,41 @@
 export const eventsData = [
-  {
+    {
     id: 1,
+    title: "Indira Diversity Awards",
+    description:
+      "Recognizing excellence, inclusion, and leadership across diverse communities.",
+    link: "/gallery/indira-diversity-awards",
+    images: [
+      "/newEvents/BParak.jpg",
+      "/newEvents/IDA1.jpg",
+      "/newEvents/IDA2.jpg",
+      // "/newEvents/IDA5.jpg",
+      // "/newEvents/IDA6.jpg",
+      // "/newEvents/IDA7.jpg",
+      // "/newEvents/IDA11.jpg",
+ 
+    ],
+  },
+  {
+    id: 2,
+    title: "Indira Women Achievers Awards",
+    description:
+      "Celebrating inspiring women and their achievements across domains.",
+    link: "/gallery/indira-women-achievers",
+    images: [
+      "/newEvents/IWA5.jpg",
+      // "/newEvents/IWA3.jpg",
+      // "/newEvents/IWA6.jpg",
+      // "/newEvents/IWA7.jpg",
+      // "/newEvents/IWA8.jpg",
+      // "/newEvents/IWA9.jpg",
+      // "/newEvents/IWA10.jpg",
+      // "/newEvents/IWA11.jpg",
+      // "/newEvents/IWA12.jpg",
+    ],
+  },
+  {
+    id: 3,
     title: "Gusto",
     description:
       "A vibrant cultural festival showcasing dance, music, art, and student creativity.",
@@ -9,18 +44,9 @@ export const eventsData = [
       "/events/gusto.jpg",
     ],
   },
+  
   {
-    id: 2,
-    title: "Indira Diversity Awards",
-    description:
-      "Recognizing excellence, inclusion, and leadership across diverse communities.",
-    link: "/gallery/indira-diversity-awards",
-    images: [
-      "/events/BParak.jpg",
-    ],
-  },
-  {
-    id: 3,
+    id: 4,
     title: "Navratri Celebrations",
     description:
       "Traditional festivities filled with Garba, Dandiya, and cultural togetherness.",
@@ -29,16 +55,7 @@ export const eventsData = [
       "/events/Navratri.JPG",
     ],
   },
-  {
-    id: 4,
-    title: "Indira Women Achievers Awards",
-    description:
-      "Celebrating inspiring women and their achievements across domains.",
-    link: "/gallery/indira-women-achievers",
-    images: [
-      "/events/Sunnidhi.jpg",
-    ],
-  },
+  
   {
     id: 5,
     title: "Splash",
@@ -49,17 +66,5 @@ export const eventsData = [
       "/events/Navratri.JPG",
     ],
   },
-  {
-    id: 6,
-    title: "Chanakya Sports Complex",
-    description:
-      "Promoting teamwork, fitness, and competitive spirit through sports.",
-    link: "/gallery/chanakya-sports",
-    images: [
-      "/events/Sunnidhi.jpg",
-      "/events/Chanakya1.jpg",
-      "/events/Chanakya2.jpg",
-      "/events/Chanakya3.jpg",
-    ],
-  },
+ 
 ];

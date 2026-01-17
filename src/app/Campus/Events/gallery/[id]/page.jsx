@@ -36,7 +36,7 @@ export default async function GalleryPage({ params }) {
                 <img
                   src={img}
                   alt={`${event.title} image ${i + 1}`}
-                  className="w-full h-64 object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-64 object-cover object-top transition-transform duration-500 hover:scale-105"
                 />
               </div>
             ))}

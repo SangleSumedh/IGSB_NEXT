@@ -7,9 +7,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Impact() {
+  // ➤ Updated Config with 4 items
   const statsConfig = [
     { target: 21, label: "Highest Package", suffix: " LPA", decimal: 0 },
-    { target: 8.16, label: "Average Package", suffix: " LPA", decimal: 2 },
+    { target: 8.16, label: "Average Package", suffix: " LPA", decimal: 2 }, // Changed to 2 decimals for precision
     { target: 650, label: "Recruiting Companies", suffix: "+", decimal: 0 },
     { target: 100, label: "Placement Assistance", suffix: "%", decimal: 0 },
   ];
@@ -19,6 +20,7 @@ export default function Impact() {
   const animatedCardsRef = useRef([]);
   const hasAnimatedRef = useRef(false);
 
+  // ➤ Trigger animations
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
@@ -36,6 +38,7 @@ export default function Impact() {
     });
   }, []);
 
+  // ➤ Count animation logic
   const animateNumbers = () => {
     const duration = 2000;
     const frameRate = 30;
@@ -59,6 +62,7 @@ export default function Impact() {
     });
   };
 
+  // ➤ GSAP Card Reveal Animation
   const animateCards = () => {
     gsap.fromTo(
       animatedCardsRef.current,
@@ -68,7 +72,7 @@ export default function Impact() {
         y: 0,
         duration: 0.8,
         ease: "power3.out",
-        stagger: 0.15,
+        stagger: 0.15, // Slightly faster stagger for 4 cards
       }
     );
   };
@@ -76,58 +80,59 @@ export default function Impact() {
   return (
     <section
       ref={sectionRef}
-      className="relative pt-4 overflow-hidden min-h-[500px]"
+      className="relative bg-white" 
     >
-      {/* ➤ BACKGROUND IMAGE */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/placementbanner233.jpg"
-          alt="Background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0" />
-      </div>
-
-      {/* ➤ CONTENT CONTAINER */}
-      {/* 👇 KEY CHANGES HERE:
-         1. Removed 'mr-10' from default -> Added 'md:mr-10' (Restores your desktop margin)
-         2. Added 'mx-4' for mobile (gives side breathing room on phone)
-         3. Changed 'mb-30 pb-30' -> 'mb-10 pb-10' for mobile -> 'md:mb-30 md:pb-30' for desktop
-      */}
-      <div className="relative z-10 w-full max-w-3xl mx-auto px-2 py-2  md:mx-auto md:mr-10 mb-10 pb-10 md:mb-30 md:pb-30">
-        
-        {/* Section Title */}
-        <div className="text-center mb-5">
-          <h2 className="text-xl md:text-xl lg:text-2xl font-bold text-secondary uppercase tracking-wide">
-            Career Outcomes That <span className="text-primary">Speak</span> for
-            Themselves
+      <div className="max-w-full mx-auto px-6 flex flex-col xl:flex-row items-center justify-between gap-8">
+        {/* LEFT SIDE: Text & Cards */}
+        <div className="w-full xl:w-3/5 z-10">
+          {/* Section Title */}
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary mb-10 uppercase tracking-wide pl-4">
+            Career Outcomes That <span className="text-primary">Speak</span> for Themselves
           </h2>
+
+
+
+          {/* Stats Cards Grid - Updated for 4 items */}
+          {/* Stats Cards Grid */}
+          <div className="grid grid-cols-4 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+            {statsConfig.map((stat, index) => (
+              <div
+                key={index}
+                ref={(el) => (animatedCardsRef.current[index] = el)}
+                // FIX 1: Add 'flex flex-col h-full'
+                // 'h-full' makes it fill the grid cell height.
+                // 'flex-col' lets us control the height of children.
+                className="flex flex-col h-full rounded-xl overflow-hidden shadow-xl transform transition-transform hover:scale-105 opacity-0 group"
+              >
+                {/* Top Half: Fixed Height */}
+                <div className="bg-[#3aafa9] px-6 py-12 lg:py-3 lg:px-2 text-center h-15 md:h-22 flex items-center justify-center shrink-0">
+                  <h3 className="text-2xl md:text-4xl font-extrabold text-white">
+                    {counts[index].toFixed(stat.decimal)}
+                    {stat.suffix}
+                  </h3>
+                </div>
+
+                {/* Bottom Half: Fills remaining space */}
+                {/* FIX 2: Add 'flex-grow' and centering classes */}
+                <div className="flex-grow flex items-center justify-center bg-secondary py-3 px-2 text-center border-t-2 border-secondary group-hover:bg-[#3aafa9] transition-colors duration-300">
+                  <p className="text-white font-bold text-base uppercase tracking-wider">
+                    {stat.label}
+                  </p>
+                </div>
+
+
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Stats Cards Grid */}
-        <div className="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-4 gap-2">
-          {statsConfig.map((stat, index) => (
-            <div
-              key={index}
-              ref={(el) => (animatedCardsRef.current[index] = el)}
-              className="flex flex-col h-full rounded-lg overflow-hidden shadow-md transform transition-transform hover:scale-102 opacity-0 group"
-            >
-              {/* Top Half */}
-              <div className="bg-[#3aafa9] md:py-3 md:px-3 text-center h-10 flex items-center justify-center shrink-0">
-                <h3 className="text-xl lg:text-2xl font-bold text-white">
-                  {counts[index].toFixed(stat.decimal)}
-                  {stat.suffix}
-                </h3>
-              </div>
-
-              {/* Bottom Half */}
-              <div className="flex-grow flex items-center justify-center bg-secondary py-2 px-3 text-center border-t-2 border-secondary group-hover:bg-[#3aafa9] transition-colors duration-300">
-                <p className="text-white font-bold text-xs uppercase tracking-wider">
-                  {stat.label}
-                </p>
-              </div>
-            </div>
-          ))}
+        {/* RIGHT SIDE: Graduate Image */}
+        <div className="w-full xl:w-2/5 flex justify-center xl:justify-end relative z-50 -mt-8 xl:-mt-24 -mr-6 xl:-mr-20">
+          <img
+            src="/abha3.png"
+            alt="Graduate Student"
+            className="w-full max-w-[400px] xl:max-w-full   pointer-events-none"
+          />
         </div>
       </div>
     </section>

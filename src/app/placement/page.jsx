@@ -26,11 +26,12 @@ export default function Placement() {
         {/* <RecruitersSection /> */}
         <RecruiterPlacement />
         <Career />
+         <PlacementRecords />
         <CASsection />
         {/* <Upskilling /> */}
         <DomainSteps />
         <PuzzleSkills />
-        <PlacementRecords />
+       
         {/* <PlacementOrientation /> */}
         {/* <PlacementIndustryVisit /> */}
         {/* <PlacementCell /> */}

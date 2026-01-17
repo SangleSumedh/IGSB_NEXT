@@ -389,10 +389,14 @@ body {
   will-change: left, transform;
 }
 
-
 /* ============================================================
    GSAP ARCH SCROLL SECTION
 ============================================================ */
+
+/* Global navbar offset (adjust if navbar height changes) */
+:root {
+  --navbar-offset: 72px;
+}
 
 /* Wrapper that breaks out of container */
 .full-width-container {
@@ -403,17 +407,38 @@ body {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  padding-top: 10px; /* tight spacing after heading */
+  padding-top: 24px; /* breathing space below heading */
+}
+
+/* =============================
+   DESKTOP / XL SPACING FIX
+   ============================= */
+@media (min-width: 1024px) {
+  .full-width-container {
+    padding-left: 72px;
+    padding-right: 72px;
+  }
+}
+
+/* =============================
+   REMOVE SIDE GAP BELOW LG
+   ============================= */
+@media (max-width: 1023px) {
+  .full-width-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 /* Main layout */
 .arch {
   display: flex;
-  gap: 80px;
+  gap: 72px;
   justify-content: space-between;
+  align-items: center; /* vertical centering feel */
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 32px;
 }
 
 /* ================= LEFT (TEXT – 40%) ================= */
@@ -433,7 +458,6 @@ body {
   align-items: center;
   padding: 0 20px;
 }
-
 
 .arch__info .content {
   width: 100%;
@@ -479,21 +503,22 @@ body {
 
 /* ================= RIGHT (IMAGES – 60%) ================= */
 
+/* Pin wrapper offset so image never touches navbar */
 .arch__right-pin {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - var(--navbar-offset));
+  margin-top: var(--navbar-offset);
   width: 60%;
   max-width: 800px;
-  padding-right: 40px;
+  padding-right: 32px;
 }
-
 
 .img-wrapper {
   position: absolute;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  height: 600px;
+  height: clamp(420px, 45vh, 520px); /* FIXED IMAGE SIZE */
   width: 100%;
   border-radius: 20px;
   overflow: hidden;
@@ -504,7 +529,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
 }
 
 /* ============================================================
@@ -513,12 +538,12 @@ body {
 
 @media (max-width: 1200px) {
   .arch {
-    gap: 60px;
+    gap: 56px;
     max-width: 1200px;
   }
 
   .img-wrapper {
-    height: 550px;
+    height: 480px;
   }
 }
 
@@ -533,7 +558,7 @@ body {
   }
 
   .img-wrapper {
-    height: 500px;
+    height: 460px;
   }
 }
 
@@ -615,9 +640,17 @@ body {
   }
 }
 
-
 .chanakya-video {
   margin: 20px 0 24px;
   width: 320px;
   border-radius: 16px;
+}
+
+/* ======================================
+   HIDE EVENTS SECTION BELOW LG
+====================================== */
+@media (max-width: 1023px) {
+  .events-desktop-only {
+    display: none;
+  }
 }

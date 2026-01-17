@@ -1,34 +1,15 @@
 "use client";
 
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import Lenis from "@studio-freight/lenis";
 
 gsap.registerPlugin(ScrollTrigger);
-ScrollTrigger.normalizeScroll(true); // ✅ CRITICAL FIX
 
-export default function Page() {
+export default function EventsPage() {
   useEffect(() => {
-    /* ================= LENIS ================= */
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true,
-      smoothTouch: true,
-      touchMultiplier: 2,
-    });
-
-    // ✅ Prevent momentum snap on stop
-    lenis.options.infinite = false;
-
-    lenis.on("scroll", ScrollTrigger.update);
-
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-
-    gsap.ticker.lagSmoothing(0);
+    if (typeof window === "undefined") return;
 
     /* ================= Z-INDEX ================= */
     document.querySelectorAll(".img-wrapper").forEach((el) => {
@@ -51,14 +32,8 @@ export default function Page() {
       }
     };
 
-    let resizeTimeout;
-    const handleResize = () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(handleMobileLayout, 150);
-    };
-
     handleMobileLayout();
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleMobileLayout);
 
     /* ================= GSAP ================= */
     const imgs = gsap.utils.toArray(".img-wrapper img");
@@ -72,14 +47,15 @@ export default function Page() {
         const mainTimeline = gsap.timeline({
           scrollTrigger: {
             trigger: arch,
+            scroller: document.documentElement,
             start: "top top",
-            end: () =>
-              "+=" + (left.scrollHeight - window.innerHeight), // ✅ MATCH HEIGHT
+            end: () => "+=" + (left.scrollHeight - window.innerHeight),
             pin: ".arch__right-pin",
+            pinType: "transform",
             pinSpacing: true,
-            scrub: 0.6, // ✅ smoother scrub
+            scrub: 0.6,
             anticipatePin: 1,
-            invalidateOnRefresh: true,
+            invalidateOnRefresh: false,
           },
         });
 
@@ -126,13 +102,12 @@ export default function Page() {
     });
 
     ScrollTrigger.config({
-      autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
+      ignoreMobileResize: true,
     });
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", handleMobileLayout);
       ScrollTrigger.killAll();
-      lenis.destroy();
     };
   }, []);
 
@@ -168,47 +143,56 @@ export default function Page() {
       </div>
 
       {/* ================= GSAP SECTION ================= */}
-      <div className="full-width-container">
+      <div className="full-width-container events-desktop-only">
         <div className="arch">
+          {/* LEFT */}
           <div className="arch__left">
             {[
               {
-                title: "Gusto Cultural Fest",
+                title: "Gusto",
                 desc: "A vibrant cultural festival showcasing dance, music, art, and student creativity.",
+                link: "/gallery/gusto",
               },
               {
-                title: "B.Parliament Debate",
-                desc: "An intellectual platform encouraging critical thinking, leadership, and debate skills.",
+                title: "Indira Diversity Awards",
+                desc: "Recognizing excellence, inclusion, and leadership across diverse communities.",
+                link: "/gallery/indira-diversity-awards",
               },
               {
                 title: "Navratri Celebrations",
                 desc: "Traditional festivities filled with Garba, Dandiya, and cultural togetherness.",
+                link: "/gallery/navratri",
               },
               {
-                title: "Sunidhi Live Concert",
-                desc: "A high-energy musical evening featuring a live performance by Sunidhi Chauhan.",
+                title: "Indira Women Achievers Awards",
+                desc: "Celebrating inspiring women and their achievements across domains.",
+                link: "/gallery/indira-women-achievers",
               },
               {
-                title: "Sunidhi Live Concert",
-                desc: "An unforgettable night of music, rhythm, and campus-wide celebration.",
+                title: "Splash",
+                desc: "An energetic campus celebration filled with music, joy, and student spirit.",
+                link: "/gallery/splash",
               },
               {
-                title: "Sunidhi Live Concert",
-                desc: "Bringing students together through music, joy, and shared memories.",
+                title: "Chanakya Sports Complex",
+                desc: "Promoting teamwork, fitness, and competitive spirit through sports.",
+                link: "/gallery/chanakya-sports",
               },
             ].map((event, i) => (
               <div className="arch__info" key={i}>
                 <div className="content">
                   <h2 className="header">{event.title}</h2>
                   <p className="desc">{event.desc}</p>
-                  <a className="link" href="#">
+
+                  <Link href={event.link} className="link">
                     <span>View Gallery</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}
           </div>
 
+          {/* RIGHT */}
           <div className="arch__right-pin">
             <div className="arch__right">
               {[

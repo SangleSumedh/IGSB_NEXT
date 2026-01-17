@@ -7,10 +7,10 @@ export default function ArambhaSection({ data = [] }) {
   const rightSideRef = useRef(null);
 
   return (
-    <div className="bg-[#050110] text-white">
+    <div className="bg-[#3aafa9]">
       <div
         ref={containerRef}
-        className="relative h-screen overflow-hidden bg-gradient-to-b from-[#0f0524] to-[#050110]"
+        className="relative h-screen overflow-hidden bg-[#3aafa9]"
       >
         <div className="max-w-full mx-auto h-full flex px-10">
           {/* LEFT — TIMELINE (same as Metamorphosis RIGHT) */}
@@ -26,14 +26,14 @@ export default function ArambhaSection({ data = [] }) {
                   {/* CARD — IDENTICAL */}
                   <div
                     className="relative flex items-stretch
-                               bg-white/5 backdrop-blur-xl
+                               bg-secondary 
                                border border-white/10
                                rounded-2xl overflow-hidden
                                hover:bg-white/10 transition-colors duration-300"
                   >
                     {/* LEFT: TEXT */}
                     <div className="relative z-10 w-3/5 p-6 space-y-2 max-w-lg">
-                      <span className="text-sm uppercase tracking-wider text-purple-400">
+                      <span className="text-sm uppercase tracking-wider text-white">
                         {item.topic}
                       </span>
 
@@ -41,7 +41,7 @@ export default function ArambhaSection({ data = [] }) {
                         {item.name}
                       </h3>
 
-                      <div className="w-24 h-10 bg-white/10 rounded-md flex items-center justify-center">
+                      <div className="w-24 h-10 bg-white rounded-md flex items-center justify-center">
                         <img
                           src={item.companyLogo}
                           alt="Company logo"
@@ -76,9 +76,9 @@ export default function ArambhaSection({ data = [] }) {
 
           {/* RIGHT — CONTENT (same as Metamorphosis LEFT) */}
           <div className="w-2/4 flex flex-col justify-center px-8 ml-10">
-            <h1 className="text-5xl font-black uppercase mb-6">Arambha</h1>
+            <h1 className="text-5xl font-extrabold text-secondary uppercase mb-6">Arambha</h1>
 
-            <p className="text-gray-400 mb-10 max-w-md">
+            <p className="text-white mb-10 max-w-md text-2xl">
               The beginning of momentum, where ideas take their first real form.
             </p>
 

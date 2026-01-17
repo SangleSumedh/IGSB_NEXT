@@ -131,11 +131,10 @@ export default function RoadmapSection() {
 <div
   className="ml-10 relative flex items-stretch
     /* GLASS EFFECT */
-    bg-white/5 backdrop-blur-md
+    bg-[#3aafa9]
     /* BORDER: Very subtle, lights up slightly on hover */
     border border-white/10 hover:border-orange-400/30
     rounded-2xl overflow-hidden
-    /* SHADOW: Soft dark shadow for depth */
     shadow-md
     transition-all duration-300 group"
 >
@@ -143,24 +142,24 @@ export default function RoadmapSection() {
   <div className="relative z-10 w-1/2 p-6 flex flex-col justify-center gap-3">
     
     {/* Topic: Modern "Pill" Badge Style */}
-    <span className="w-fit text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-400/10 px-3 py-1 rounded-full border border-orange-400/20">
+    <span className="w-fit text-xs font-bold uppercase tracking-widest text-white  px-3 py-1 rounded-full border border-white">
       {item.topic}
     </span>
 
     {/* Name: Turns Orange on Hover */}
-    <h3 className="text-3xl font-bold text-white group-hover:text-orange-400 transition-colors duration-300">
+    <h3 className="text-3xl font-bold text-white group-hover:text-white transition-colors duration-300">
       {item.name}
     </h3>
 
     {/* Designation: Clean Gray */}
-    <p className="text-gray-300 font-medium text-sm border-l-2 border-orange-400/50 pl-3">
+    <p className="text-white font-medium text-sm border-l-2 border-white pl-3">
       {item.designation}
     </p>
 
     {/* Company Logo: Clean White Box for visibility */}
     <div
       className="w-28 h-12 bg-white rounded-lg mt-2
-      flex items-center justify-center shadow-lg p-2 opacity-30 group-hover:opacity-100 transition-opacity"
+      flex items-center justify-center shadow-lg p-2 "
     >
       <img
         src={item.companyLogo}
@@ -173,10 +172,13 @@ export default function RoadmapSection() {
   {/* RIGHT: FULL-BLEED IMAGE (50% Width) */}
   <div className="absolute right-0 top-0 h-full w-1/2">
     {/* Image: Slight zoom on hover */}
+    <span className="absolute top-2 right-2 bg-white/40 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm">
+      {item.date}
+    </span>
     <img
       src={item.image}
       alt={item.name}
-      className="w-full h-full object-cover group-hover:grayscale-0 "
+      className="w-full h-full object-cover "
     />
 
     {/* FADE OVERLAY: Matches your Dark Teal Background (#10404A) */}

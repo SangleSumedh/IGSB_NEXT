@@ -3,26 +3,27 @@
 import React from "react";
 import { roadmapData } from "./roadmapdata";
 import { arambhData } from "./arambhdata";
+import ArambhaSectionMobile from "./ArambhSectionMobile";
 
 export default function RoadmapSectionMobile() {
   return (
-    <div className="bg-[#050110] text-white px-4 py-16">
+    <div className="bg-gradient-to-r from-[#10404A] to-[#1F6D71] text-white px-4 py-16">
 
       {/* TITLE */}
-      <h1 className="text-4xl font-black uppercase mb-4">
+      <h1 className="text-4xl font-black uppercase mb-4 text-[#082328]">
         Metamorphosis
       </h1>
 
-      <p className="text-gray-400 mb-10">
+      <p className="text-white mb-10">
         Experience the journey through our planned phases.
       </p>
 
       {/* IMAGE */}
-      <div className="mb-12">
+      <div className=" w-100">
         <img
-          src="/chanu/chanucute.png"
+          src="/chanu/chanuhand2.png"
           alt="Metamorphosis visual"
-          className="w-full h-auto rounded-2xl object-cover"
+          className="w-full h-auto rounded-2xl object-contain"
         />
       </div>
 
@@ -32,7 +33,7 @@ export default function RoadmapSectionMobile() {
           <div
             key={i}
             className="
-              relative bg-white/5 backdrop-blur-xl
+              relative bg-[#3aafa9] backdrop-blur-xl
               border border-white/10
               rounded-2xl overflow-hidden
             "
@@ -55,7 +56,7 @@ export default function RoadmapSectionMobile() {
 
             {/* TEXT */}
             <div className="p-4 space-y-2">
-              <span className="text-xs uppercase tracking-wider text-purple-400">
+              <span className="text-xs font-bold uppercase tracking-wider text-secondary">
                 {item.topic}
               </span>
 
@@ -71,13 +72,15 @@ export default function RoadmapSectionMobile() {
                 />
               </div>
 
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-white">
                 {item.designation}
               </p>
             </div>
           </div>
+
         ))}
       </div>
+         <ArambhaSectionMobile data={arambhData} />
 
     </div>
   );

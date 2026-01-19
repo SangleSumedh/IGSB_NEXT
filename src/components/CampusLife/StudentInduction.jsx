@@ -3,12 +3,9 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import Lenis from "@studio-freight/lenis";
-import { Store, FolderOpen, Gamepad2, Trophy, Calendar } from "lucide-react";
-import ScrollCrushWrapper from "../ScrollCrushWrapper";
-import ArambhaSection from "./ArambhaSection";
 import { roadmapData } from "./roadmapdata";
 import { arambhData } from "./arambhdata";
+import ArambhaSection from "./ArambhaSection";
 import ArambhaSectionMobile from "./ArambhSectionMobile";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -18,67 +15,45 @@ export default function RoadmapSection() {
   const rightSideRef = useRef(null);
 
   useEffect(() => {
-    /* ---------------- LENIS SETUP ---------------- */
-    const lenis = new Lenis({
-      duration: 1.1,
-      smoothWheel: true,
-      smoothTouch: false,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    /* 🔥 CONNECT LENIS TO SCROLLTRIGGER */
-    ScrollTrigger.scrollerProxy(document.body, {
-      scrollTop(value) {
-        if (arguments.length) {
-          lenis.scrollTo(value, { immediate: true });
-        } else {
-          return window.scrollY;
-        }
-      },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
-    });
-
-    lenis.on("scroll", ScrollTrigger.update);
-    ScrollTrigger.refresh();
-
-    /* ---------------- GSAP LOGIC ---------------- */
+    /* ---------------- GSAP CONTEXT ---------------- */
     const ctx = gsap.context(() => {
       const rightSide = rightSideRef.current;
-      if (!rightSide) return;
+      const container = containerRef.current;
 
-      const scrollDistance = rightSide.scrollHeight - window.innerHeight;
+      if (!rightSide || !container) return;
 
-      gsap.to(rightSide, {
-        y: -scrollDistance,
-        ease: "none",
-        scrollTrigger: {
-          trigger: containerRef.current,
+      // 1. Calculate dynamic distance
+      // We wrap this in a function so ScrollTrigger can re-call it on resize
+      const getScrollDistance = () =>
+        rightSide.scrollHeight - window.innerHeight;
 
-          end: () => `+=${scrollDistance}`,
-          pin: true,
-          scrub: true,
-          anticipatePin: 1,
+      // 2. THE FIX: Use fromTo() for absolute control
+      gsap.fromTo(
+        rightSide,
+        {
+          y: 0, // Force start position
         },
-      });
-    }, containerRef);
+        {
+          y: () => -getScrollDistance(), // Dynamic end position
+          ease: "none",
+          immediateRender: false, // Wait for trigger
+          scrollTrigger: {
+            trigger: container,
+            start: "top top",
+            end: () => `+=${getScrollDistance()}`,
+            pin: true,
+            scrub: 1, // 1s lag for smoothness
+            anticipatePin: 1,
 
-    return () => {
-      ctx.revert();
-      lenis.destroy();
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
+            // 3. Robustness Settings
+            invalidateOnRefresh: true, // Recalculate values on resize
+            fastScrollEnd: true, // Prevents glitching on super-fast scrolls
+          },
+        },
+      );
+    }, containerRef); // Scope selectors to this component
+
+    return () => ctx.revert(); // Cleanup
   }, []);
 
   return (
@@ -89,9 +64,9 @@ export default function RoadmapSection() {
       >
         <div className="max-w-full mx-auto h-full flex px-10">
           {/* LEFT */}
-          <div className="w-2/4 flex flex-col justify-center px-8">
+          <div className="relative z-0 w-2/4 flex flex-col px-8 mt-20">
             <h1 className="text-5xl lg:text-6xl font-black uppercase mb-6 tracking-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-orange-400 to-orange-400">
+              <span className="bg-clip-text text-transparent bg-[#082328]">
                 Metamorphosis
               </span>
             </h1>
@@ -99,27 +74,25 @@ export default function RoadmapSection() {
             <p className="text-white mb-10 max-w-md text-2xl">
               Experience the journey through our planned phases.
             </p>
+            {/* THE LIGHT SOURCE */}
 
+            <div className="absolute top-0 -left-64 w-[800px] h-[800px] bg-[#3aafa9] rounded-full blur-[180px] z-[-1] pointer-events-none"></div>
             {/* Image */}
-            <div className="relative w-100 h-100">
+            <div className="relative w-150 h-120 max-w-md ">
               <img
-                src="/chanu/chanucute.png"
+                src="/chanu/chanuhand2.png"
                 alt="Metamorphosis visual"
-                className="w-full h-full object-cover rounded-2xl
-                 "
+                className="w-full h-full object-contain "
               />
-
-              {/* Subtle glow */}
-              {/* <div
-                className="absolute inset-0 rounded-2xl
-                    bg-purple-500/20 blur-2xl -z-10"
-              /> */}
             </div>
           </div>
 
           {/* RIGHT */}
           <div className="w-2/4 relative overflow-hidden">
-            <div ref={rightSideRef} className="pt-[5vh] pb-[5vh]">
+            <div
+              ref={rightSideRef}
+              className="pt-[5vh] pb-[5vh] will-change-transform"
+            >
               {roadmapData.map((item, i) => (
                 <div
                   key={i}
@@ -128,70 +101,40 @@ export default function RoadmapSection() {
                   }`}
                 >
                   {/* CARD */}
-<div
-  className="ml-10 relative flex items-stretch
-    /* GLASS EFFECT */
-    bg-[#3aafa9]
-    /* BORDER: Very subtle, lights up slightly on hover */
-    border border-white/10 hover:border-orange-400/30
-    rounded-2xl overflow-hidden
-    shadow-md
-    transition-all duration-300 group"
->
-  {/* LEFT: TEXT CONTENT (50% Width to keep text close to image) */}
-  <div className="relative z-10 w-1/2 p-6 flex flex-col justify-center gap-3">
-    
-    {/* Topic: Modern "Pill" Badge Style */}
-    <span className="w-fit text-xs font-bold uppercase tracking-widest text-white  px-3 py-1 rounded-full border border-white">
-      {item.topic}
-    </span>
+                  <div className="ml-10 relative flex items-stretch bg-[#3aafa9] border border-white/10 hover:border-orange-400/30 rounded-2xl overflow-hidden shadow-md transition-all duration-300 group">
+                    {/* TEXT CONTENT */}
+                    <div className="relative z-10 w-1/2 p-6 flex flex-col justify-center gap-3">
+                      <span className="w-fit text-xs font-bold uppercase tracking-widest text-secondary px-3 py-1 rounded-full border border-secondary">
+                        {item.topic}
+                      </span>
+                      <h3 className="text-3xl font-bold text-secondary transition-colors duration-300">
+                        {item.name}
+                      </h3>
+                      <p className="text-white font-medium text-sm border-l-2 border-white pl-3">
+                        {item.designation}
+                      </p>
+                      <div className="w-28 h-12 bg-white rounded-lg mt-2 flex items-center justify-center shadow-lg p-2">
+                        <img
+                          src={item.companyLogo}
+                          alt="Company logo"
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    </div>
 
-    {/* Name: Turns Orange on Hover */}
-    <h3 className="text-3xl font-bold text-white group-hover:text-white transition-colors duration-300">
-      {item.name}
-    </h3>
-
-    {/* Designation: Clean Gray */}
-    <p className="text-white font-medium text-sm border-l-2 border-white pl-3">
-      {item.designation}
-    </p>
-
-    {/* Company Logo: Clean White Box for visibility */}
-    <div
-      className="w-28 h-12 bg-white rounded-lg mt-2
-      flex items-center justify-center shadow-lg p-2 "
-    >
-      <img
-        src={item.companyLogo}
-        alt="Company logo"
-        className="w-full h-full object-contain"
-      />
-    </div>
-  </div>
-
-  {/* RIGHT: FULL-BLEED IMAGE (50% Width) */}
-  <div className="absolute right-0 top-0 h-full w-1/2">
-    {/* Image: Slight zoom on hover */}
-    <span className="absolute top-2 right-2 bg-white/40 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm">
-      {item.date}
-    </span>
-    <img
-      src={item.image}
-      alt={item.name}
-      className="w-full h-full object-cover "
-    />
-
-    {/* FADE OVERLAY: Matches your Dark Teal Background (#10404A) */}
-    <div
-      className="absolute inset-0
-        bg-gradient-to-l
-                 from-transparent
-                 via-[#050110]/20
-                 to-[#050110]/50"
-      
-    />
-  </div>
-</div>
+                    {/* IMAGE CONTENT */}
+                    <div className="absolute right-0 top-0 h-full w-1/2">
+                      <span className="absolute top-2 right-2 bg-white/40 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm z-20">
+                        {item.date}
+                      </span>
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#050110]/20 to-[#050110]/50" />
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -203,8 +146,6 @@ export default function RoadmapSection() {
         <div className="hidden md:block">
           <ArambhaSection data={arambhData} />
         </div>
-
-        {/* MOBILE  (fix this later while making it responsive)*/}
         <div className="block md:hidden">
           <ArambhaSectionMobile data={arambhData} />
         </div>

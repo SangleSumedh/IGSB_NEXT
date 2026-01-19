@@ -25,30 +25,10 @@ const InfoCard = ({ title, icon: Icon, text, imageSrc }) => {
         </div>
 
         {/* Body Text with Toggle */}
-        <div className="relative">
-          <p
-            className={`text-sm leading-snug opacity-90 text-secondary transition-all duration-300 ${
-              isExpanded ? "" : "line-clamp-3" 
-            }`}
-          >
+        <div className="relative text-justify leading-snug">
+          <p>
             {text}
           </p>
-
-          {/* Toggle Button */}
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="mt-2 text-xs font-bold text-orange-400 hover:text-orange-300 flex items-center gap-1 uppercase tracking-wider"
-          >
-            {isExpanded ? (
-              <>
-                Read Less <ChevronUp size={14} />
-              </>
-            ) : (
-              <>
-                Read More <ChevronDown size={14} />
-              </>
-            )}
-          </button>
         </div>
       </div>
 

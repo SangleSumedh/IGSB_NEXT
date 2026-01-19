@@ -402,7 +402,7 @@ body {
 .full-width-container {
   width: 100vw;
   position: relative;
-  background-color: #3aafa9;
+  background-color: #1B2D5C;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
@@ -654,3 +654,6 @@ body {
     display: none;
   }
 }
+
+
+

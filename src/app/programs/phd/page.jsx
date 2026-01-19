@@ -6,7 +6,13 @@ import Image from "next/image";
 import CTASection from "@/components/home/CTASection";
 import RecruitersSection from "@/components/home/RecruiterSection";
 import PHDSpecs from "@/components/programs/PHDSpecialisations";
-import { FileText, Calendar, Info } from "lucide-react";
+import {
+  FileText,
+  Calendar,
+  Info,
+  Calendar1,
+  CalendarCheck,
+} from "lucide-react";
 import FormSection from "@/components/home/FormSection";
 import SmallDesktopFormSection from "@/components/home/SmallDesktopFormSection"; // LG → XL
 import ProgramCTA from "@/components/programs/ProgramCTA";
@@ -50,8 +56,11 @@ export default function PHD() {
             Ph.D. Research Centre in Indira Global School of Business
           </h1>
           <p className="mt-4 text-white/90 max-w-2xl leading-relaxed">
-            Advancing Research. Inspiring Innovation. Developing Future Leaders
-            in Academics and Industry.
+            A UGC-recognized Ph.D. research center dedicated to high-impact
+            academic research and innovation in business and management.
+            Supported by expert faculty, industry partnerships, and global
+            scholarly standards, we prepare researchers for leadership in
+            academia, policy, and corporate strategy.
           </p>
 
           <div className="flex gap-4 mt-6">
@@ -76,57 +85,52 @@ export default function PHD() {
           ABOUT RESEARCH CENTRE
       =================================================== */}
       <section className="bg-white max-w-full mx-auto mt-12 shadow-sm space-y-8">
-        <div className="px-8 grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+        <div className="px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* --- LEFT SIDE: TEXT (3/5 or 60%) --- */}
-          <div className="lg:col-span-3 space-y-6">
+          <div className="lg:col-span-7 space-y-6">
             <h2 className="text-2xl md:text-4xl font-bold text-secondary text-left">
               About IGSB Research Centre
             </h2>
 
-            <div className="space-y-4 text-justify text-md md:text-lg text-gray-700">
+            <div className="space-y-4 text-justify text-md md:text-lg text-gray-700 ">
               <p>
-                Indira Global School of Business (IGSB) is recognized by AICTE
-                and UGC, and is affiliated with Savitribai Phule Pune University
-                (SPPU). It was established with a clear vision to develop
-                globally-oriented researchers capable of driving sustainable
-                growth in the evolving international business landscape. Over
-                the years, IGSB has emerged as a premier B-School in Pune,
-                offering MBA programs. From the academic year 2025–26, IGSB also
-                offers Doctoral Programs in Management.
+                Indira Global School of Business (IGSB) is an AICTE-approved,
+                UGC-recognized institution affiliated with Savitribai Phule Pune
+                University (SPPU). Established to advance globally relevant
+                management education and research, IGSB has emerged as a leading
+                B-School in Pune, offering industry-aligned MBA programmes. From
+                the academic year 2025–26, IGSB also offers Doctoral Programmes
+                in Management.
               </p>
 
               <p>
                 The IGSB Research Center (PGRC) is a recognized Ph.D. Research
-                Center, affiliated with SPPU, and is dedicated to fostering
-                advanced research in the field of management. The Doctoral
-                Programme in Management plays a pivotal role in nurturing future
-                scholars, academicians, and industry researchers by encouraging
-                rigorous inquiry and innovation across various management
-                domains.
+                Centre under SPPU, committed to promoting advanced, high-impact
+                research in management studies. The Doctoral Programme in
+                Management is designed to develop future academicians,
+                researchers, and industry experts through rigorous research
+                methodology and scholarly inquiry.
               </p>
 
               <p>
-                The aim of the IGSB Research Center is to cultivate a vibrant
-                research ecosystem that promotes scholarly inquiry, critical
-                thinking, and innovation in management. The Center is committed
-                to contributing to the advancement of knowledge by supporting
-                high-quality doctoral research, encouraging interdisciplinary
-                collaboration, and addressing contemporary business and societal
-                challenges through evidence-based insights.
+                The Research Center fosters a robust research ecosystem that
+                encourages interdisciplinary research, innovation, and
+                evidence-based solutions to contemporary business and societal
+                challenges, contributing meaningfully to academic knowledge and
+                professional practice.
               </p>
             </div>
           </div>
 
           {/* --- RIGHT SIDE: IMAGE (2/5 or 40%) --- */}
-          <div className="lg:col-span-2 h-full min-h-[300px] relative rounded-2xl overflow-hidden shadow-lg border border-gray-100 group">
+          <div className="lg:col-span-5 h-full min-h-[300px] relative  overflow-hidden  group">
             <Image
               src="/Programs/ResearchCentre.png"
               alt="IGSB Research Centre"
               fill
-              className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+              className="object-contain object-center transition-transform duration-700 group-hover:scale-105"
             />
             {/* Optional Overlay for better integration */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
           </div>
         </div>
 
@@ -135,104 +139,87 @@ export default function PHD() {
       </section>
 
       <section className="w-full bg-white py-16 px-4 md:px-8 lg:px-12 border-t border-slate-100">
-  <div className="max-w-[1800px] mx-auto">
-    {/* --- FULL WIDTH: RESEARCH CENTRE ACTIVITIES --- */}
-    <div className="flex flex-col">
-      <h2 className="text-3xl md:text-4xl font-bold text-[#10404a] mb-8">
-        Research Centre Activities
-      </h2>
+        <div className="max-w-[1800px] mx-auto">
+          {/* --- FULL WIDTH: RESEARCH CENTRE ACTIVITIES --- */}
+          <div className="flex flex-col">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#10404a] mb-8">
+              Research Centre Activities
+            </h2>
 
-      {/* Activities Content Card */}
-      <div className="bg-secondary text-white border border-slate-100 rounded-2xl p-6 lg:p-8 flex flex-col lg:flex-row gap-8 shadow-sm hover:shadow-md transition-shadow duration-300">
-        {/* Text Content */}
-        <div className="flex-1 space-y-6">
-          {/* Event Meta Box */}
-          <div className="bg-[#3aa6a9] p-4 rounded-lg border border-slate-200 shadow-sm flex gap-4 items-center">
-            <div className="bg-[#eef2f6] p-2 rounded-full border-3 border-primary text-slate-800">
-              {/* Calendar Icon */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                <line x1="16" y1="2" x2="16" y2="6" />
-                <line x1="8" y1="2" x2="8" y2="6" />
-                <line x1="3" y1="10" x2="21" y2="10" />
-              </svg>
-            </div>
+            {/* Activities Content Card */}
+            <div className="bg-white text-slate-800   flex flex-col lg:flex-row gap-8  transition-shadow duration-300">
+              {/* Text Content */}
+              <div className="flex-1 space-y-6">
+                {/* Event Meta Box */}
+                <div className="bg-[#3aa6a9] p-4 rounded-lg border border-slate-200 shadow-sm flex gap-4 items-center">
+                  <div className="bg-[#eef2f6] p-2 rounded-full border-3 border-primary text-slate-800">
+                    <CalendarCheck />
+                  </div>
 
-            <div>
-              <p className="text-sm text-white font-bold uppercase tracking-wide mb-1">
-                Workshop Details
-              </p>
-              <p className="font-medium text-sm">
-                <span>Date:</span> 5th June 2025
-              </p>
-              <p className="font-medium text-sm mt-1">
-                <span>Speaker:</span> Dr. Abhijit Chandratreya{" "}
-                <span className="text-xs">
-                  (Deputy Director, PGRC, IIMP)
-                </span>
-              </p>
-            </div>
-          </div>
+                  <div className="text-white">
+                    <p className="text-sm text-white font-bold uppercase tracking-wide mb-1">
+                      Workshop Details
+                    </p>
+                    <p className="font-medium text-sm">
+                      <span>Date:</span> 5th June 2025
+                    </p>
+                    <p className="font-medium text-sm mt-1">
+                      <span>Speaker:</span> Dr. Abhijit Chandratreya{" "}
+                      <span className="text-xs">
+                        (Deputy Director, PGRC, IIMP)
+                      </span>
+                    </p>
+                  </div>
+                </div>
 
-          {/* Description */}
-          <div className="space-y-4 text-lg leading-relaxed text-justify">
-            <p>
-              The IGSB Research Centre organized a comprehensive guidance
-              session aiming to provide clarity on doctoral entrance
-              eligibility, research orientation, the purpose of a Ph.D.,
-              and its professional relevance.
-            </p>
-            <p>
-              The workshop was instrumental in building an academic
-              research mindset among aspirants, focusing heavily on
-              ethical considerations and high-quality publication
-              standards required in modern academia.
-            </p>
-          </div>
-        </div>
+                {/* Description */}
+                <div className="space-y-4 text-lg leading-relaxed text-justify">
+                  <p>
+                    The IGSB Research Centre organized a comprehensive guidance
+                    session aiming to provide clarity on doctoral entrance
+                    eligibility, research orientation, the purpose of a Ph.D.,
+                    and its professional relevance.
+                  </p>
+                  <p>
+                    The workshop was instrumental in building an academic
+                    research mindset among aspirants, focusing heavily on
+                    ethical considerations and high-quality publication
+                    standards required in modern academia.
+                  </p>
+                </div>
+              </div>
 
-        {/* Event Image */}
-        <div className="lg:w-2/5 flex-shrink-0">
-          <div className="relative h-64 lg:h-full min-h-[300px] w-full rounded-xl overflow-hidden shadow-lg group">
-            <img
-              src="/IGSB/Research/IGSBRC/Activities.png"
-              alt="IGSB Research Centre Guidance Session"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
+              {/* Event Image */}
+              <div className="lg:w-2/5 flex-shrink-0">
+                <div className="relative h-64 lg:h-full min-h-[300px] w-full rounded-xl overflow-hidden shadow-lg group">
+                  <img
+                    src="/IGSB/Research/IGSBRC/Activities.png"
+                    alt="IGSB Research Centre Guidance Session"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
 
-            {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
-            <div className="absolute bottom-4 left-4 text-white">
-              <span className="bg-[#fb7035] text-xs font-bold px-2 py-1 rounded mb-2 inline-block">
-                2025
-              </span>
-              <p className="font-semibold text-sm">
-                Research Guidance Session
-              </p>
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <span className="bg-[#fb7035] text-xs font-bold px-2 py-1 rounded mb-2 inline-block">
+                      2025
+                    </span>
+                    <p className="font-semibold text-sm">
+                      Research Guidance Session
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+      </section>
 
       {/* ===================================================
           PHD GUIDES
       =================================================== */}
-      <section className="bg-secondary px-6 md:px-16  py-8  space-y-6 max-w-full mx-auto   ">
+      <section className="bg-secondary px-6 md:px-16  py-8  space-y-6 max-w-full mx-auto  mb-10 ">
         <h2 className="text-3xl font-bold text-white text-left">
           Recognized Ph.D. Guides
         </h2>
@@ -267,7 +254,7 @@ export default function PHD() {
           ].map(([name, field, img], i) => (
             <div
               key={i}
-              className="bg-[#33a6a9] text-white border border-gray-300 rounded-xl  p-4 text-center space-y-2"
+              className="bg-[#33a6a9] text-white  rounded-xl  p-4 text-center space-y-2"
             >
               <div className="w-full rounded-lg overflow-hidden">
                 <Image
@@ -293,7 +280,7 @@ export default function PHD() {
       <FormSection />
       <SmallDesktopFormSection />
       {/* <CTASection /> */}
-        <ProgramCTA />
+      <ProgramCTA />
       {/* ===================================================
           ENQUIRY MODAL
       =================================================== */}

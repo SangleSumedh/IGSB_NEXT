@@ -325,6 +325,15 @@ const Navbar = () => {
                   <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
                 </Link>
            
+                {/* <span className="text-secondary">|</span>
+                <Link
+                  href="/Campus/Induction"
+                  className="relative inline-block group hover:text-primary transition-colors duration-200"
+                >
+                  Induction
+                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+                </Link> */}
+           
               </div>
               
               {/* Enquire Now Button */}

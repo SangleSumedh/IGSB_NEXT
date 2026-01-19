@@ -38,7 +38,7 @@ export default function EventsPage() {
 
     /* ================= GSAP ================= */
     const imgs = gsap.utils.toArray(".img-wrapper img");
-    const bgColors = ["#7A2638", "#1E3A5F", "#0F2A5F", "#AC3C25", "#3aafa9"];
+    const bgColors = ["#7A2638", "#1E3A5F", "#3A1F1A", "#2F3A12", "#3aafa9"];
 
     ScrollTrigger.matchMedia({
       "(min-width: 769px)": () => {
@@ -166,7 +166,7 @@ export default function EventsPage() {
     {/* div3 (tall right) */}
     <div className="col-span-2 row-span-4 col-start-5 relative overflow-hidden">
       <img
-        src="/newEvents/IDA12.jpg"
+        src="/newEvents/IDA12.JPG"
         alt="Event 3"
         className="h-full w-full object-cover object-top"
       />

@@ -257,7 +257,7 @@ const highlights = [
   },
   {
     title: "Placements",
-    desc: "350+ Recruiting Partners",
+    desc: "650+ Recruiting Partners",
     icon: (
       <svg
         fill="none"

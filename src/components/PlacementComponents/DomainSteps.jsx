@@ -83,123 +83,93 @@ const DomainSteps = () => {
   ];
 
   return (
-    <section className="bg-[#2b9d97] py-20 font-sans overflow-hidden">
+    <section className="bg-[#2b9d97] py-20 font-sans">
       <div className="max-w-full mx-auto px-4 sm:px-6">
-        <div className="">
+        
+        {/* GRID CONTAINER: 1 column mobile, 2 columns desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {domains.map((domain, index) => {
-            const isCardLeft = index % 2 === 0;
-
             return (
               <div
                 key={index}
-                className={`
-                  relative flex flex-col md:items-stretch w-full gap-4 lg:gap-0
-                  ${isCardLeft ? "lg:flex-row" : "lg:flex-row-reverse"}
-                `}
+                className="w-full group relative z-10 h-full"
               >
-                {/* ================= SECTION 1: CONTENT CARD ================= */}
                 <div
                   className={`
-                        w-full lg:w-1/2 group relative z-10
-                        ${isCardLeft ? "lg:pr-8" : "lg:pl-8"}
-                    `}
-                >
-                  <div
-                    className={`
-                      relative p-4 shadow-2xl rounded-2xl
-                      /* CHANGED: White Card for clean contrast */
+                      relative p-6 md:p-8 h-full shadow-2xl rounded-2xl
                       bg-white
-                      /* CHANGED: Border is now a darker shade of the section teal */
                       border-t-8 border-primary
-                      w-full text-left
+                      flex flex-col
                       transition-transform duration-300 hover:-translate-y-2 overflow-hidden
                     `}
-                  >
-                    <div className="absolute -top-6 -right-6 text-[10rem] text-secondary opacity-[0.07] pointer-events-none rotate-12 select-none z-0 ">
-                      {domain.icon}
-                    </div>
-                    <div className="relative">
-                      {/* --- Header: Icon + Title --- */}
-                      <h3 className="text-xl font-extrabold uppercase tracking-wider mb-8 flex items-center gap-4 text-primary">
-                        {/* ICON: Dark Teal bg, White Icon */}
-                        <span className="text-xl text-white bg-secondary p-4 rounded-full shadow-lg flex items-center justify-center">
-                          {domain.icon}
-                        </span>
-                        {domain.title}
-                      </h3>
+                >
+                  {/* ================= BACKGROUND IMAGE (Watermark) ================= */}
+                  <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
+                    <img 
+                      src={domain.clipart} 
+                      alt="" 
+                      className="w-3/4 h-3/4 object-contain opacity-10 grayscale-[50%]"
+                    />
+                  </div>
 
-                      {/* --- Body Content --- */}
-                      <div className="space-y-3">
-                        {/* 1. Topics List */}
-                        <div>
-                          <div className="flex items-center gap-2 font-bold text-lg mb-4 text-secondary uppercase tracking-wide">
-                            <FaListUl className="text-xl" />
-                            <span>Core Modules</span>
-                          </div>
-                          <ul className="space-y-3 grid grid-cols-1 sm:grid-cols-2">
-                            {domain.topics.map((topic, i) => (
-                              <li
-                                key={i}
-                                // Text is now dark gray for readability
-                                className="flex items-start gap-3 text-gray-600 font-medium"
-                              >
-                                {/* Checkmark is the Brand Teal */}
-                                <FaCheckCircle className="mt-1 text-secondary shrink-0" />
-                                {topic}
-                              </li>
-                            ))}
-                          </ul>
+                  {/* ================= CONTENT (z-10 to sit above image) ================= */}
+                  <div className="relative z-10">
+                    {/* --- Header: Icon + Title --- */}
+                    <h3 className="text-xl font-extrabold uppercase tracking-wider mb-8 flex items-center gap-4 text-primary">
+                      <span className="text-xl text-white bg-secondary p-4 rounded-full shadow-lg flex items-center justify-center">
+                        {domain.icon}
+                      </span>
+                      {domain.title}
+                    </h3>
+
+                    {/* --- Body Content --- */}
+                    <div className="space-y-6 flex-grow">
+                      {/* 1. Topics List */}
+                      <div>
+                        <div className="flex items-center gap-2 font-bold text-lg mb-4 text-secondary uppercase tracking-wide">
+                          <FaListUl className="text-xl" />
+                          <span>Core Modules</span>
                         </div>
+                        
+                        {/* CHANGED: Grid layout for topics (2 columns on sm+ screens) */}
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
+                          {domain.topics.map((topic, i) => (
+                            <li
+                              key={i}
+                              className="flex items-start gap-2 text-gray-700 font-semibold text-sm"
+                            >
+                              <FaCheckCircle className="mt-1 text-secondary shrink-0" />
+                              <span className="bg-white/60 backdrop-blur-sm rounded px-1 leading-snug">
+                                {topic}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
-                        {/* 2. Certifications Block */}
-                        <div className="pt-6 border-t border-gray-200">
-                          <p className="font-bold text-sm text-secondary uppercase tracking-widest mb-4">
-                            Professional Certifications
-                          </p>
+                      {/* 2. Certifications Block */}
+                      <div className="pt-6 border-t border-gray-200 mt-auto">
+                        <p className="font-bold text-sm text-secondary uppercase tracking-widest mb-4">
+                          Professional Certifications
+                        </p>
 
-                          <div className="flex flex-wrap gap-4">
-                            {domain.certs.map((cert, i) => (
-                              <div
-                                key={i}
-                                // Buttons: Light Gray bg with Dark Text (Subtle)
-                                className="flex items-center gap-3 bg-gray-100 text-gray-700 px-5 py-3 rounded- shadow-md hover:bg-[#e0f2f1] hover:text-[#00695c] transition-all duration-300 cursor-default"
-                              >
-                                <span className="text-xl text-secondary">
-                                  {cert.icon}
-                                </span>
-                                <span className="font-bold text-sm">
-                                  {cert.title}
-                                </span>
-                              </div>
-                            ))}
-                          </div>
+                        <div className="flex flex-wrap gap-3">
+                          {domain.certs.map((cert, i) => (
+                            <div
+                              key={i}
+                              className="flex items-center gap-2 bg-gray-50/90 border border-gray-200 text-gray-700 px-4 py-2 rounded shadow-sm hover:bg-[#e0f2f1] hover:text-[#00695c] transition-all duration-300 cursor-default backdrop-blur-sm"
+                            >
+                              <span className="text-lg text-secondary">
+                                {cert.icon}
+                              </span>
+                              <span className="font-bold text-xs">
+                                {cert.title}
+                              </span>
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                {/* ================= SECTION 2: CLIPART IMAGE (FIXED) ================= */}
-                {/* ================= SECTION 2: CLIPART IMAGE (RESPONSIVE FIXED) ================= */}
-                <div
-                  className={`
-    /* Mobile: Relative (stacks normally), visible, restricted height */
-    relative w-full h-64 mt-8
-    
-    /* Desktop: Absolute (floats to side), full height */
-    lg:absolute lg:top-0 lg:bottom-0 lg:w-1/2 lg:h-auto lg:mt-0
-
-    /* Side positioning logic (Desktop only) */
-    ${isCardLeft ? "lg:right-0 lg:pl-16" : "lg:left-0 lg:pr-16"}
-  `}
-                >
-                  <div className="relative h-full w-full flex items-center justify-center">
-                    <img
-                      src={domain.clipart}
-                      alt={`${domain.title} illustration`}
-                      /* Adjusted to fit container height on mobile */
-                      className="relative z-10 max-w-full h-full lg:max-h-[400px] object-contain"
-                    />
                   </div>
                 </div>
               </div>

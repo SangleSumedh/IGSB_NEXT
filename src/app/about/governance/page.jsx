@@ -507,17 +507,22 @@ export default function GovernanceAndCommittees() {
   return (
     <div className="w-full bg-white text-gray-800">
       {/* Gradient Heading Section */}
-      <div className="w-full py-16 bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] shadow-lg">
-        <div className="container mx-auto px-6 xl:px-16 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white">
-            Governance & Committees
-          </h1>
-          <div className="mx-auto mt-5 mb-6 w-16 h-[3px] rounded-full bg-white" />
-          <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive framework of leadership, committees, and cells guiding our institution
-          </p>
-        </div>
-      </div>
+     <div className="w-full py-16 bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] shadow-lg">
+  <div className="container mx-auto px-6 xl:px-16 text-center">
+    {/* Main heading with animation */}
+    <h1 className="text-4xl md:text-5xl font-extrabold text-white animate-fade-up">
+      Governance & Committees
+    </h1>
+
+    {/* Accent divider with animation */}
+    <div className="mx-auto mt-5 mb-6 w-16 h-[3px] rounded-full bg-white animate-fade-up animation-delay-100" />
+
+    {/* Description with animation */}
+    <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed animate-fade-up animation-delay-200">
+      Comprehensive framework of leadership, committees, and cells guiding our institution
+    </p>
+  </div>
+</div>
 
       {/* Tab Navigation */}
       <div className="px-6 xl:px-16 py-6 bg-white border-b border-gray-200">

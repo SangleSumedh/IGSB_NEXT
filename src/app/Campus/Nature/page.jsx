@@ -213,17 +213,22 @@ export default function FacilitiesPage() {
     <section className="relative bg-white">
       {/* HERO */}
       <div className="w-full py-16 bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] shadow-lg">
-        <div className="max-w-7xl mx-auto px-6 xl:px-16 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white">
-            Life @ IGSB
-          </h1>
-          <div className="mx-auto mt-5 mb-6 w-16 h-[3px] rounded-full bg-[#fc7116]" />
-          <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Explore the facilities and vibrant campus life that shape learning,
-            growth, and community at IGSB.
-          </p>
-        </div>
-      </div>
+  <div className="max-w-7xl mx-auto px-6 xl:px-16 text-center">
+    {/* Main heading with animation */}
+    <h1 className="text-4xl md:text-5xl font-extrabold text-white animate-fade-up">
+      Life @ IGSB
+    </h1>
+
+    {/* Accent divider with animation (note: using #fc7116 color as in your original) */}
+    <div className="mx-auto mt-5 mb-6 w-16 h-[3px] rounded-full bg-[#fc7116] animate-fade-up animation-delay-100" />
+
+    {/* Description with animation */}
+    <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed animate-fade-up animation-delay-200">
+      Explore the facilities and vibrant campus life that shape learning,
+      growth, and community at IGSB.
+    </p>
+  </div>
+</div>
 
       {facilities.map((item, index) => (
         <FacilitySection key={index} data={item} index={index} />

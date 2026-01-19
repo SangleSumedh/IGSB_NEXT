@@ -6,7 +6,7 @@ const leaders = [
   {
     name: "Chairperson's Message",
     title: "Chairperson",
-    image: "/Home/TaritaMam.jpg",
+    image: "/Home/TS.jpg",
     message:
       "At our institution, we believe education is the foundation of a progressive society. Our goal is to empower students with knowledge, values, and skills that prepare them to lead with confidence and integrity. We are committed to fostering innovation, discipline, and excellence in every learner.",
     reverse: false,
@@ -15,7 +15,7 @@ const leaders = [
   {
     name: "Principal's Message",
     title: "Principal",
-    image: "/Home/DrVirendraTatake.jpg",
+    image: "/Home/TakdakeSir.jpg",
     message:
       "We aim to nurture a culture of curiosity, research, and continuous learning. By encouraging critical thinking and ethical responsibility, we prepare students not only for successful careers but also for meaningful contributions to society.",
     reverse: true,
@@ -23,7 +23,7 @@ const leaders = [
    {
     name: "Managing Director's Message",
     title: "Managing Director",
-    image: "/Home/ShashiSir1.jpg",
+    image: "/Home/ShashiSir2.jpg",
     message:
       "Our focus has always been on bridging the gap between academics and industry. Through modern infrastructure, industry-oriented curriculum, and experienced faculty, we strive to create professionals who are adaptable, skilled, and future-ready.",
     reverse: false,
@@ -312,23 +312,23 @@ export default function LeadersDeskPage() {
   return (
     <section className="w-full bg-white">
       {/* PAGE HEADING - Full width with gradient */}
-      <div className="w-full py-16 bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] shadow-lg mb-12">
-        <div className="container mx-auto px-6 xl:px-16 text-center">
-          {/* Main heading */}
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white">
-            Leader&apos;s Desk
-          </h1>
+   <div className="w-full py-16 bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] shadow-lg mb-12">
+  <div className="container mx-auto px-6 xl:px-16 text-center">
+    {/* Main heading with animation */}
+    <h1 className="text-4xl md:text-5xl font-extrabold text-white animate-fade-up">
+      Leader&apos;s Desk
+    </h1>
 
-          {/* Accent divider */}
-          <div className="mx-auto mt-5 mb-6 w-16 h-[3px] rounded-full bg-white" />
+    {/* Accent divider with animation */}
+    <div className="mx-auto mt-5 mb-6 w-16 h-[3px] rounded-full bg-white animate-fade-up animation-delay-100" />
 
-          {/* Description */}
-          <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Messages from the leadership that guide our vision, values, and
-            commitment to excellence.
-          </p>
-        </div>
-      </div>
+    {/* Description with animation */}
+    <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed animate-fade-up animation-delay-200">
+      Messages from the leadership that guide our vision, values, and
+      commitment to excellence.
+    </p>
+  </div>
+</div>
 
       {/* CONTENT SECTION - With padding */}
       <div className=" px-6 xl:px-16 py-12 xl:py-8">

@@ -45,21 +45,21 @@ const ChanakyaEdu = () => {
     <div className="w-full bg-white text-gray-800">
       {/* Main Content with padding */}
       <div className="w-full py-16 bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] shadow-lg">
-        <div className="container mx-auto px-6 xl:px-16 text-center">
-          {/* Main heading */}
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white">
-            About Us
-          </h1>
+  <div className="container mx-auto px-6 xl:px-16 text-center">
+    {/* Main heading with animation */}
+    <h1 className="text-4xl md:text-5xl font-extrabold text-white animate-fade-up">
+      About Us
+    </h1>
 
-          {/* Accent divider */}
-          <div className="mx-auto mt-5 mb-6 w-16 h-[3px] rounded-full bg-white" />
+    {/* Accent divider with animation */}
+    <div className="mx-auto mt-5 mb-6 w-16 h-[3px] rounded-full bg-white animate-fade-up animation-delay-200" />
 
-          {/* Description */}
-          <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Explore our institution's legacy, leadership, and commitment to excellence
-          </p>
-        </div>
-      </div>
+    {/* Description with animation */}
+    <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed animate-fade-up animation-delay-300">
+      Explore our institution's legacy, leadership, and commitment to excellence
+    </p>
+  </div>
+</div>
 
       {/* Main Container */}
       <div className="px-6 xl:px-16 py-8 xl:py-12 space-y-20">

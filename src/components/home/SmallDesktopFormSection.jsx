@@ -30,9 +30,10 @@ export default function SmallDesktopFormSection() {
   const logos = generateLogos();
 
   /* ---------- FIXED SPLIT (USER PREFERENCE) ---------- */
-  const row1 = logos.slice(0, 12);
-  const row2 = logos.slice(12, 22);
-  const row3 = logos.slice(22);
+  /* ---------------- FIXED MARQUEE SPLIT ---------------- */
+  const row1 = logos.slice(0, 12);   // 1–12
+  const row2 = logos.slice(12, 23);  // 13–23
+  const row3 = logos.slice(23);      // 24–46
 
   return (
     <section className="block xl:hidden w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71]">

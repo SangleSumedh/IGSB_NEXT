@@ -153,14 +153,17 @@ export default function Page() {
   return (
     <div className="w-full bg-white">
       {/* SCHOLAR QUOTE CTA */}
-      <section className="w-full bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] text-white py-12 px-6 xl:py-8 xl:px-16 text-center border-b border-gray-200">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">
-          Research is seeing what everybody else has seen, and thinking what nobody else has thought.
-        </h1>
-        <p className="text-xl opacity-90">
-          Our institution fosters a strong culture of innovation, inquiry, and impactful research.
-        </p>
-      </section>
+   <section className="w-full bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] text-white py-12 px-6 xl:py-8 xl:px-16 text-center border-b border-gray-200">
+  {/* Main heading with animation */}
+  <h1 className="text-3xl md:text-4xl font-bold mb-4 animate-fade-up">
+    Research is seeing what everybody else has seen, and thinking what nobody else has thought.
+  </h1>
+  
+  {/* Description with animation */}
+  <p className="text-xl opacity-90 animate-fade-up animation-delay-100">
+    Our institution fosters a strong culture of innovation, inquiry, and impactful research.
+  </p>
+</section>
 
       {/* TOP PHD HOLDERS */}
       <section className="w-full py-12 px-6 xl:py-12 xl:px-16 bg-gray-50">

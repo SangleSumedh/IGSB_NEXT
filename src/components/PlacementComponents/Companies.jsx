@@ -54,7 +54,7 @@ const Companies = () => {
           {/* ✅ Center Circle Badge (hidden on mobile) */}
           <div className="hidden sm:block absolute top-[49%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
             <div className="w-28 h-28 md:w-40 md:h-40 rounded-full bg-[linear-gradient(145deg,_#278da4_0%,_#003c84_90%)] text-white flex flex-col items-center justify-center shadow-xl border-[4px] border-[#D4AF37]">
-              <p className="text-lg md:text-2xl font-bold">350+</p>
+              <p className="text-lg md:text-2xl font-bold">650+</p>
               <p className="text-xs md:text-base font-medium">Corporates</p>
             </div>
           </div>

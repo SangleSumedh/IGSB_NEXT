@@ -1,32 +1,32 @@
 export const roadmapData = [
-  // ===================== 11 SEPTEMBER =====================
-  // {
-  //   topic: "Campus to Corporate",
-  //   name: "Mr. Prasad Narayan",
-  //   designation: "Vice President",
-  //   company: "Leapfrog",
-  //   date: "10th September 2025",
-  //   image: "/IGSB/student-induction/induction25-1.png",
-  //   companyLogo: "/placementlogos/1.jpg",
-  // },
-  // {
-  //   topic: "Meet Your Mentors",
-  //   name: "Mr. Prasad Narayan",
-  //   designation: "Vice President",
-  //   company: "Leapfrog",
-  //   date: "10th September 2025",
-  //   image: "/IGSB/student-induction/induction25-1.png",
-  //   companyLogo: "/placementlogos/1.jpg",
-  // },
-  // {
-  //   topic: "Sahaj Yoga Meditation",
-  //   name: "Mr. Dhanesh Paradkar",
-  //   designation: "Vice President",
-  //   company: "Vodafone UK",
-  //   date: "10th September 2025",
-  //   image: "/IGSB/student-induction/induction25-1.png",
-  //   companyLogo: "/placementlogos/1.jpg",
-  // },
+  
+  {
+    topic: "Campus to Corporate",
+    name: "Mr. Prasad Narayan",
+    designation: "Vice President",
+    company: "Leapfrog",
+    date: "10th September 2025",
+    image: "/IGSB/student-induction/induction25-1.png",
+    companyLogo: "/placementlogos/1.jpg",
+  },
+  {
+    topic: "Meet Your Mentors",
+    name: "Mr. Prasad Narayan",
+    designation: "Vice President",
+    company: "Leapfrog",
+    date: "10th September 2025",
+    image: "/IGSB/student-induction/induction25-1.png",
+    companyLogo: "/placementlogos/1.jpg",
+  },
+  {
+    topic: "Sahaj Yoga Meditation",
+    name: "Mr. Dhanesh Paradkar",
+    designation: "Vice President",
+    company: "Vodafone UK",
+    date: "10th September 2025",
+    image: "/IGSB/student-induction/induction25-1.png",
+    companyLogo: "/placementlogos/1.jpg",
+  },
   
   {
     topic: "India 10 on 10",

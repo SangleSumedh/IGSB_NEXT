@@ -31,7 +31,7 @@ export default function CASsection() {
           {/* Image 1 */}
           <div className="relative flex items-center justify-center rounded-2xl p-6 bg-transparent ">
             <img
-              src="3602.png"
+              src="/placement/3601.png"
               alt="360 Degree Academic & Professional Foundation"
               className="max-h-80 w-auto object-contain"
             />
@@ -40,7 +40,7 @@ export default function CASsection() {
           {/* Image 2 */}
           <div className="relative flex items-center justify-center rounded-2xl p-6 bg-transparent ">
             <img
-              src="3601.png"
+              src="/placement/3602.png"
               alt="360 Degree Academic & Professional Foundation"
               className="max-h-80 w-auto object-contain"
             />

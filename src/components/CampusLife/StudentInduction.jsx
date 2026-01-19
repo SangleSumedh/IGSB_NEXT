@@ -1,155 +1,147 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import React, { useState } from "react";
 import { roadmapData } from "./roadmapdata";
 import { arambhData } from "./arambhdata";
 import ArambhaSection from "./ArambhaSection";
 import ArambhaSectionMobile from "./ArambhSectionMobile";
 
-gsap.registerPlugin(ScrollTrigger);
-
 export default function RoadmapSection() {
-  const containerRef = useRef(null);
-  const rightSideRef = useRef(null);
+  const CARDS_PER_SLIDE = 3;
 
-  useEffect(() => {
-    /* ---------------- GSAP CONTEXT ---------------- */
-    const ctx = gsap.context(() => {
-      const rightSide = rightSideRef.current;
-      const container = containerRef.current;
+  // split roadmap data into slides of 3
+  const slides = [];
+  for (let i = 0; i < roadmapData.length; i += CARDS_PER_SLIDE) {
+    slides.push(roadmapData.slice(i, i + CARDS_PER_SLIDE));
+  }
 
-      if (!rightSide || !container) return;
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-      // 1. Calculate dynamic distance
-      // We wrap this in a function so ScrollTrigger can re-call it on resize
-      const getScrollDistance = () =>
-        rightSide.scrollHeight - window.innerHeight;
-
-      // 2. THE FIX: Use fromTo() for absolute control
-      gsap.fromTo(
-        rightSide,
-        {
-          y: 0, // Force start position
-        },
-        {
-          y: () => -getScrollDistance(), // Dynamic end position
-          ease: "none",
-          immediateRender: false, // Wait for trigger
-          scrollTrigger: {
-            trigger: container,
-            start: "top top",
-            end: () => `+=${getScrollDistance()}`,
-            pin: true,
-            scrub: 1, // 1s lag for smoothness
-            anticipatePin: 1,
-
-            // 3. Robustness Settings
-            invalidateOnRefresh: true, // Recalculate values on resize
-            fastScrollEnd: true, // Prevents glitching on super-fast scrolls
-          },
-        },
-      );
-    }, containerRef); // Scope selectors to this component
-
-    return () => ctx.revert(); // Cleanup
-  }, []);
+  const prev = () => setCurrentSlide((s) => Math.max(s - 1, 0));
+  const next = () => setCurrentSlide((s) => Math.min(s + 1, slides.length - 1));
 
   return (
-    <div className="bg-[#050110] text-white">
-      <div
-        ref={containerRef}
-        className="relative h-screen bg-gradient-to-r from-[#10404A] to-[#1F6D71]"
-      >
-        <div className="max-w-full mx-auto h-full flex px-10">
+    <div className="text-white">
+      {/* ================= METAMORPHOSIS ================= */}
+      <section className="min-h-screen bg-white">
+        <div className="max-w-full mx-auto min-h-screen flex px-6 py-12">
           {/* LEFT */}
-          <div className="relative z-0 w-2/4 flex flex-col px-8 mt-20">
-            <h1 className="text-5xl lg:text-6xl font-black uppercase mb-6 tracking-tight">
+          <div className="relative w-2/4 flex flex-col">
+            <h1 className="text-5xl lg:text-5xl font-black uppercase mb-6">
               <span className="bg-clip-text text-transparent bg-[#082328]">
                 Metamorphosis
               </span>
             </h1>
 
-            <p className="text-white mb-10 max-w-md text-2xl">
+            <p className="text-secondary mb-10 max-w-md text-xl">
               Experience the journey through our planned phases.
             </p>
-            {/* THE LIGHT SOURCE */}
 
-            <div className="absolute top-0 -left-64 w-[800px] h-[800px] bg-[#3aafa9] rounded-full blur-[180px] z-[-1] pointer-events-none"></div>
+            {/* Glow */}
+            <div className="absolute top-0 -left-64 w-[700px] h-[700px]  rounded-full blur-[160px] -z-10" />
+
             {/* Image */}
-            <div className="relative w-150 h-120 max-w-md ">
+            <div className="relative w-[300px] max-w-full">
               <img
                 src="/chanu/chanuhand2.png"
                 alt="Metamorphosis visual"
-                className="w-full h-full object-contain "
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
 
-          {/* RIGHT */}
-          <div className="w-2/4 relative overflow-hidden">
-            <div
-              ref={rightSideRef}
-              className="pt-[5vh] pb-[5vh] will-change-transform"
-            >
-              {roadmapData.map((item, i) => (
-                <div
-                  key={i}
-                  className={`mb-[5vh] last:mb-0 ${
-                    i === 0 ? "-mt-[5vh] pt-5" : ""
-                  }`}
-                >
-                  {/* CARD */}
-                  <div className="ml-10 relative flex items-stretch bg-[#3aafa9] border border-white/10 hover:border-orange-400/30 rounded-2xl overflow-hidden shadow-md transition-all duration-300 group">
-                    {/* TEXT CONTENT */}
-                    <div className="relative z-10 w-1/2 p-6 flex flex-col justify-center gap-3">
-                      <span className="w-fit text-xs font-bold uppercase tracking-widest text-secondary px-3 py-1 rounded-full border border-secondary">
-                        {item.topic}
-                      </span>
-                      <h3 className="text-3xl font-bold text-secondary transition-colors duration-300">
-                        {item.name}
-                      </h3>
-                      <p className="text-white font-medium text-sm border-l-2 border-white pl-3">
-                        {item.designation}
-                      </p>
-                      <div className="w-28 h-12 bg-white rounded-lg mt-2 flex items-center justify-center shadow-lg p-2">
-                        <img
-                          src={item.companyLogo}
-                          alt="Company logo"
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                    </div>
+          {/* RIGHT – CAROUSEL */}
+          <div className="w-2/4 flex flex-col mb-10">
+            {/* Viewport */}
+            <div className="overflow-hidden">
+              <div
+                className="flex transition-transform duration-500 ease-out"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {slides.map((slide, slideIndex) => (
+                  <div
+                    key={slideIndex}
+                    className="min-w-full flex flex-col gap-4 px-6"
+                  >
+                    {slide.map((item, i) => (
+                      <div
+                        key={i}
+                        className="relative ml-6 flex bg-secondary
+                                   border border-white/10 rounded-xl
+                                   overflow-hidden shadow-sm
+                                   min-h-[180px]"
+                      >
+                        {/* TEXT */}
+                        <div className="w-[55%] p-4 flex flex-col justify-center gap-2">
+                          <span className="text-[10px] font-bold uppercase tracking-widest text-white">
+                            {item.topic}
+                          </span>
 
-                    {/* IMAGE CONTENT */}
-                    <div className="absolute right-0 top-0 h-full w-1/2">
-                      <span className="absolute top-2 right-2 bg-white/40 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm z-20">
-                        {item.date}
-                      </span>
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#050110]/20 to-[#050110]/50" />
-                    </div>
+                          <h3 className="text-xl font-bold text-white leading-tight">
+                            {item.name}
+                          </h3>
+
+                          <p className="text-xs text-white border-l-2 border-white pl-2">
+                            {item.designation}
+                          </p>
+
+                          <div className="w-24 h-9 bg-white rounded-md flex items-center justify-center p-1">
+                            <img
+                              src={item.companyLogo}
+                              alt="Company logo"
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
+                        </div>
+
+                        {/* IMAGE */}
+                        <div className="absolute right-0 top-0 h-full w-[45%]">
+                          <span
+                            className="absolute top-1 right-1 bg-white/40 backdrop-blur-sm
+                                           text-white text-[10px] px-2 py-0.5 rounded-full z-10"
+                          >
+                            {item.date}
+                          </span>
+
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            className="w-full h-full object-cover"
+                          />
+
+                          <div
+                            className="absolute inset-0 bg-gradient-to-l
+                                          from-transparent via-[#050110]/20 to-[#050110]/50"
+                          />
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+
+            {/* Controls */}
+            <div className="flex justify-center gap-4 mt-6">
+              <button
+                onClick={prev}
+                disabled={currentSlide === 0}
+                className="px-4 py-2 rounded-full bg-secondary disabled:opacity-30"
+              >
+                ← Prev
+              </button>
+
+              <button
+                onClick={next}
+                disabled={currentSlide === slides.length - 1}
+                className="px-4 py-2 rounded-full bg-secondary disabled:opacity-30"
+              >
+                Next →
+              </button>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="">
-        <div className="hidden md:block">
-          <ArambhaSection data={arambhData} />
-        </div>
-        <div className="block md:hidden">
-          <ArambhaSectionMobile data={arambhData} />
-        </div>
-      </div>
+      </section>
     </div>
   );
 }

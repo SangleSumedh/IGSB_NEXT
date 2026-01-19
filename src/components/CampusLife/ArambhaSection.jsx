@@ -1,93 +1,110 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 
-export default function ArambhaSection({ data = [] }) {
-  const containerRef = useRef(null);
-  const rightSideRef = useRef(null);
-
+export default function ArambhaSection() {
   return (
-    <div className="bg-[#3aafa9]">
-      <div
-        ref={containerRef}
-        className="relative h-screen overflow-hidden bg-[#3aafa9]"
-      >
-        <div className="max-w-full mx-auto h-full flex ">
-          {/* LEFT — TIMELINE (same as Metamorphosis RIGHT) */}
-          <div className="w-2/4 relative overflow-hidden">
-            <div ref={rightSideRef} className="pt-[5vh] pb-[5vh]">
-              {data.map((item, i) => (
-                <div
-                  key={i}
-                  className={`mb-[5vh] last:mb-0 ${
-                    i === 0 ? "-mt-[5vh] pt-5" : ""
-                  }`}
-                >
-                  {/* CARD — IDENTICAL */}
-                  <div
-                    className="relative flex items-stretch
-                               bg-secondary 
-                               border border-white/10
-                               rounded-2xl overflow-hidden
-                               hover:bg-white/10 transition-colors duration-300"
-                  >
-                    {/* LEFT: TEXT */}
-                    <div className="relative z-10 w-3/5 p-6 space-y-2 max-w-lg">
-                      <span className="text-sm uppercase tracking-wider text-white">
-                        {item.topic}
-                      </span>
+    <div className="min-h-screen bg-[#3aafa9]">
+      <div className="relative h-screen overflow-hidden bg-[#3aafa9]">
+        <div className="max-w-full mx-auto h-full flex flex-col lg:flex-row">
+          {/* LEFT — TIMELINE & GALLERY SECTION (swapped from right) */}
+          <div className="w-full lg:w-2/4 flex flex-col justify-center px-6 lg:px-12 py-8 lg:py-0">
+            {/* CARD 1: DESCRIPTION */}
+            <div className="mb-8 lg:mb-12">
+              <div className="relative bg-transparent border border-secondary/50 rounded-2xl overflow-hidden hover:bg-white/5 transition-all duration-300">
+                <div className="p-6 md:p-8">
+                  <p className="text-white text-base md:text-lg leading-relaxed text-justify">
+                    <span className="font-semibold text-white/90">
+                      Arambha: Induction Program 2024
+                    </span>{" "}
+                    at Indira Global School of Business marked the beginning
+                    of the MBA journey for the 2024–26 batch. Conducted from{" "}
+                    <span className="font-medium text-white/90">
+                      10th to 21st September 2024
+                    </span>
+                    , the program was designed to ease students into academic
+                    and professional life while introducing them to IGSB&apos;s
+                    culture, curriculum, and industry expectations.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-                      <h3 className="text-2xl font-bold text-white">
-                        {item.name}
-                      </h3>
-
-                      <div className="w-24 h-10 bg-white rounded-md flex items-center justify-center">
-                        <img
-                          src={item.companyLogo}
-                          alt="Company logo"
-                          className="w-full h-full object-center rounded-md"
-                        />
-                      </div>
-
-                      <p className="text-gray-400">{item.designation}</p>
+            {/* CARD 2: GALLERY */}
+            <div className="bg-secondary rounded-2xl">
+              <div className="relative bg-transparent border border-secondary/50 rounded-2xl overflow-hidden hover:bg-white/5 transition-all duration-300">
+                <div className="p-4 md:p-6">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[120px] md:auto-rows-[150px]">
+                    {/* Main Large Image */}
+                    <div className="relative col-span-2 row-span-2 rounded-xl overflow-hidden border border-white/20 hover:border-white/40 transition-colors">
+                      <Image
+                        src="/IGSB/student-induction/induction25-15.png"
+                        alt="Main induction event"
+                        fill
+                        className="object-cover hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                      />
                     </div>
 
-                    {/* RIGHT: IMAGE */}
-                    <div className="absolute right-0 top-0 h-full w-2/5 ">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="w-full h-full object-cover"
+                    {/* Sidebar Image */}
+                    <div className="relative col-span-2 md:col-span-1 row-span-2 rounded-xl overflow-hidden border border-white/20 hover:border-white/40 transition-colors">
+                      <Image
+                        src="/IGSB/student-induction/induction25-16.png"
+                        alt="Sidebar induction"
+                        fill
+                        className="object-cover hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 50vw, 25vw"
                       />
+                    </div>
 
-                      <div
-                        className="absolute inset-0
-                                   bg-gradient-to-l
-                                   from-transparent
-                                   via-[#050110]/40
-                                   to-[#050110]/90"
+                    {/* Twin Image 1 */}
+                    <div className="relative col-span-2 md:col-span-1 row-span-1 rounded-xl overflow-hidden border border-white/20 hover:border-white/40 transition-colors">
+                      <Image
+                        src="/IGSB/student-induction/induction25-13.png"
+                        alt="Induction activity 1"
+                        fill
+                        className="object-cover hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                      />
+                    </div>
+
+                    {/* Twin Image 2 */}
+                    <div className="relative col-span-2 md:col-span-1 row-span-1 rounded-xl overflow-hidden border border-white/20 hover:border-white/40 transition-colors">
+                      <Image
+                        src="/IGSB/student-induction/induction25-12.png"
+                        alt="Induction activity 2"
+                        fill
+                        className="object-cover hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 50vw, 25vw"
                       />
                     </div>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
 
-          {/* RIGHT — CONTENT (same as Metamorphosis LEFT) */}
-          <div className="w-2/4 flex flex-col justify-center px-8 ml-10">
-            <h1 className="text-5xl font-extrabold text-secondary uppercase mb-6">Arambha</h1>
+          {/* RIGHT — CONTENT SECTION (swapped from left) */}
+          <div className="w-full lg:w-2/4 flex flex-col justify-center px-6 lg:px-12 py-8 lg:py-0">
+            <div className="max-w-lg mx-auto lg:mx-0">
+              <h1 className="text-4xl md:text-5xl font-extrabold text-secondary uppercase mb-6">
+                Arambha
+              </h1>
 
-            <p className="text-white mb-10 max-w-md text-2xl">
-              The beginning of momentum, where ideas take their first real form.
-            </p>
+              <p className="text-white mb-8 md:mb-10 text-lg md:text-2xl leading-relaxed">
+                The beginning of momentum, where ideas take their first real form.
+              </p>
 
-            <div className="relative w-150 h-125">
-              <img
-                src="/chanu/chanuleft.png"
-                alt="Arambha visual"
-                className="w-full h-full object-contain rounded-2xl"
-              />
+              <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px]">
+                <Image
+                  src="/chanu/chanuleft.png"
+                  alt="Arambha visual"
+                  fill
+                  className="object-contain rounded-2xl"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>

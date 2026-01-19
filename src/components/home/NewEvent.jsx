@@ -60,16 +60,7 @@ const eventList = [
       "/newEvents/Splash5.jpg",
     ],
   },
-  {
-    title: "Ganpati Aarti",
-    images: [
-      "/newEvents/GanpatiAartiImg.png",
-      "/newEvents/GanpatiAartiImg.png",
-      "/newEvents/GanpatiAartiImg.png",
-      "/newEvents/GanpatiAartiImg.png",
-      "/newEvents/GanpatiAartiImg.png",
-    ],
-  },
+  
 ];
 
 export default function NewEvent() {

@@ -35,9 +35,9 @@ const Career = () => {
     },
     {
       id: 3,
-      title: "Corporate Recruitment",
-      desc: "Active partnerships with leading national and multinational companies enable on-campus recruitment and placement opportunities.",
-      icon: <FaHandshake />,
+      title: "Career Development",
+      desc: "Focused training in aptitude, communication, and executive presence ensures students are confident, competent, and placement ready.",
+      icon: <FaRocket />,
     },
     {
       id: 4,
@@ -47,9 +47,9 @@ const Career = () => {
     },
     {
       id: 5,
-      title: "Career Development",
-      desc: "Focused training in aptitude, communication, and executive presence ensures students are confident, competent, and placement ready.",
-      icon: <FaRocket />,
+      title: "Corporate Recruitment",
+      desc: "Active partnerships with leading national and multinational companies enable on-campus recruitment and placement opportunities.",
+      icon: <FaHandshake />,
     },
     {
       id: 6,
@@ -74,7 +74,6 @@ const Career = () => {
         </p>
       </div>
       <div className="max-w-full mx-auto px-4 sm:px-6 relative mt-16 mb-15 ">
-
         {/* ================= DESKTOP TIMELINE (Horizontal Wave) ================= */}
         <div className="hidden lg:block relative h-[500px]">
           {/* THE CURVED LINE (SVG) */}
@@ -119,7 +118,7 @@ const Career = () => {
               return (
                 <div
                   key={step.id}
-                  className="relative flex flex-col items-center justify-center h-full"
+                  className=" relative flex flex-col items-center justify-center h-full"
                 >
                   {/* CARD CONTENT */}
                   <motion.div
@@ -127,7 +126,7 @@ const Career = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2, duration: 0.5 }}
-                    className={`absolute w-full max-w-[220px] p-5 rounded-xl md:rounded-3xl bg-secondary backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors
+                    className={`absolute w-full max-w-[220px] p-5 rounded-xl md:rounded-3xl bg-secondary backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors h-[240px]
                       ${isTop ? "top-[60%]" : "bottom-[60%]"}
                     `}
                   >
@@ -139,7 +138,7 @@ const Career = () => {
                     </h3>
                     <p
                       className="text-xs text-white
-                  leading-relaxed"
+                  leading-relaxed line-clamp-5"
                     >
                       {step.desc}
                     </p>

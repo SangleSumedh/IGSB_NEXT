@@ -494,3 +494,124 @@ export default function Page() {
 -----------------------------------------------------------------------------------------
 
 https://stthomas.ac.in/student-induction-programmes/?utm_source=chatgpt.com
+
+
+
+
+
+
+
+new ----------------------------------
+
+       <style jsx>{`
+    /* LEFT BIG TRIANGLE */
+    .hero-col-1::before {
+      content: "";
+      position: absolute;
+      top: 8.4vw;
+      left: 8.1vw;
+      width: 37vw;
+      height: 38vw;
+      background-image: url("/newEvents/IDA1.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      transform: rotate(-45deg);
+    }
+
+    /* TOP WIDE IMAGE */
+    .hero-row-1::before {
+      content: "";
+      position: absolute;
+      top: -12vw;
+      left: -18vw;
+      width: 70vw;
+      height: 44vw;
+      background-image: url("/newEvents/IDA1.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      transform: rotate(-45deg);
+    }
+
+    /* MIDDLE RIGHT LARGE IMAGE */
+    .hero-row-2-img::before {
+      content: "";
+      position: absolute;
+      top: -8vw;
+      left: -48vw;
+      width: 125vw;
+      height: 125vw;
+      background-image: url("/newEvents/IDA1.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      transform: rotate(-45deg);
+    }
+
+    /* CENTER DIAMOND (slightly smaller) */
+    .hero-center-img::before {
+      content: "";
+      position: absolute;
+      top: 10vw;
+      left: 10vw;
+      width: 32vw;
+      height: 33vw;
+      background-image: url("/newEvents/IDA1.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      transform: rotate(-45deg);
+    }
+
+    /* RIGHT BIG TRIANGLE — BIGGER + VISIBLE */
+    .hero-row-3::before {
+  content: "";
+  position: absolute;
+  top: -6vw;        /* move up so top tip is covered */
+  left: -6vw;     /* move left so right tip is covered */
+  width: 70vw;     /* much wider to span diagonal */
+  height: 70vw;    /* much taller to span diagonal */
+  background-image: url("/newEvents/IDA1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: rotate(-45deg);
+}
+
+    /* Optional seam protection */
+    .hero-col-1,
+    .hero-row-1,
+    .hero-row-2-img,
+    .hero-center-img,
+    .hero-row-3 {
+      outline: 1px solid transparent;
+    }
+  `}</style>
+
+
+      <div className="relative overflow-hidden h-[88vh] bg-white">
+  {/* Center Absolute Heading */}
+  <h1 className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center text-white text-[4vw] font-extrabold tracking-wide">
+    The Campus Beat
+  </h1>
+
+  {/* Rotated container */}
+  <div className="absolute top-[-20vw] left-[-8vw] flex items-end h-[100vw] w-[107vw] rotate-45">
+    {/* Column 1 (Left big triangle) */}
+    <div className="relative overflow-hidden w-[24%] h-[66vw] border-r-8 border-white hover:opacity-75 cursor-pointer hero-col-1" />
+
+    {/* Column 2 */}
+    <div className="flex flex-col-reverse w-[76%] h-[109.1vw]">
+      {/* Row 1 (Top wide) */}
+      <div className="relative overflow-hidden h-[48vw] border-t-8 border-white hover:opacity-75 cursor-pointer hero-row-1" />
+
+      {/* Row 2 */}
+      <div className="flex h-[36vw] border-t-8 border-white">
+        {/* Center diamond (smaller now) */}
+        <div className="relative overflow-hidden w-[26%] border-r-8 border-white hero-center-img" />
+
+        {/* Middle-right image (slightly smaller) */}
+        <div className="relative overflow-hidden w-[74%] border-l-8 border-white hover:opacity-75 cursor-pointer hero-row-2-img" />
+      </div>
+
+      {/* Row 3 (Bottom-right mirrored triangle — bigger) */}
+      <div className="relative overflow-hidden h-[25vw] hover:opacity-75 cursor-pointer hero-row-3" />
+    </div>
+  </div>
+  </div>

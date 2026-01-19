@@ -38,7 +38,7 @@ export default function EventsPage() {
 
     /* ================= GSAP ================= */
     const imgs = gsap.utils.toArray(".img-wrapper img");
-    const bgColors = ["#ed731d", "#3aafa9", "#0F2A5F", "#AC3C25", "#3aafa9"];
+    const bgColors = ["#7A2638", "#1E3A5F", "#0F2A5F", "#AC3C25", "#3aafa9"];
 
     ScrollTrigger.matchMedia({
       "(min-width: 769px)": () => {
@@ -115,30 +115,104 @@ export default function EventsPage() {
   return (
     <>
       {/* ================= HEADING ================= */}
-      <div className="w-full py-12 bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] shadow-lg">
-        <div className="max-w-7xl mx-auto px-6 xl:px-16 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white">
-              Campus Events & Activities
-            </h1>
-            <p className="mt-3 text-white/90 max-w-xl">
-              Celebrating culture, creativity, leadership, and student life
-              through memorable campus events.
-            </p>
-          </div>
+ <div className="w-full h-[88vh] bg-white relative">
 
-        <div className="hidden md:block">
-  <img
-    src="/chanu/ChanuNew/02.gif"
-    alt="Chanu animation"
-    width={220}
-    height={220}
-    className="rounded-xl object-cover "
-  />
+  {/* 🔤 Absolute overlay text */}
+  <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none">
+    <h2
+      className="
+        text-4xl md:text-6xl xl:text-8xl
+        font-extrabold
+        text-white
+        tracking-wide
+        drop-shadow-[0_6px_18px_rgba(0,0,0,0.9)]
+        [text-shadow:0_2px_8px_rgba(0,0,0,0.8)]
+      "
+    >
+      The Campus Beat
+    </h2>
+  </div>
+
+  {/* 🌑 Dark overlay for contrast */}
+  <div className="absolute inset-0 z-20 bg-black/30" />
+
+  {/* 🖼️ Image Grid */}
+  <div
+    className="
+      grid h-full w-full
+      grid-cols-6 grid-rows-6
+      gap-2
+      relative z-10
+    "
+  >
+    {/* div1 */}
+    <div className="col-span-2 row-span-2 relative overflow-hidden">
+      <img
+        src="/newEvents/IWA8.jpg"
+        alt="Event 1"
+        className="h-full w-full object-cover"
+      />
+    </div>
+
+    {/* div2 */}
+    <div className="col-span-2 row-span-2 col-start-3 relative overflow-hidden">
+      <img
+        src="/newEvents/IDA1.jpg"
+        alt="Event 2"
+        className="h-full w-full object-cover object-top"
+      />
+    </div>
+
+    {/* div3 (tall right) */}
+    <div className="col-span-2 row-span-4 col-start-5 relative overflow-hidden">
+      <img
+        src="/newEvents/IDA12.jpg"
+        alt="Event 3"
+        className="h-full w-full object-cover object-top"
+      />
+    </div>
+
+    {/* div5 (tall left) */}
+    <div className="col-span-2 row-span-4 row-start-3 relative overflow-hidden">
+      <img
+        src="/newEvents/IWA2.jpg"
+        alt="Event 5"
+        className="h-full w-full object-cover"
+      />
+    </div>
+
+    {/* div9 (center square) */}
+    <div className="col-span-2 row-span-2 col-start-3 row-start-3 relative overflow-hidden">
+      <img
+        src="/newEvents/Gusto4.jpg"
+        alt="Campus Beat"
+        className="h-full w-full object-cover"
+      />
+    </div>
+
+    {/* div7 */}
+    <div className="col-span-2 row-span-2 col-start-3 row-start-5 relative overflow-hidden">
+      <img
+        src="/newEvents/IWA12.jpg"
+        alt="Event 7"
+        className="h-full w-full object-cover"
+      />
+    </div>
+
+    {/* div8 */}
+    <div className="col-span-2 row-span-2 col-start-5 row-start-5 relative overflow-hidden">
+      <img
+        src="/newEvents/Splash6.jpg"
+        alt="Event 8"
+        className="h-full w-full object-cover object-top"
+      />
+    </div>
+  </div>
 </div>
 
-        </div>
-      </div>
+
+
+
 
       {/* ================= GSAP SECTION ================= */}
       <div className="full-width-container">

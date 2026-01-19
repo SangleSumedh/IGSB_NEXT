@@ -12,7 +12,7 @@ export default function ArambhaSection({ data = [] }) {
         ref={containerRef}
         className="relative h-screen overflow-hidden bg-[#3aafa9]"
       >
-        <div className="max-w-full mx-auto h-full flex px-10">
+        <div className="max-w-full mx-auto h-full flex ">
           {/* LEFT — TIMELINE (same as Metamorphosis RIGHT) */}
           <div className="w-2/4 relative overflow-hidden">
             <div ref={rightSideRef} className="pt-[5vh] pb-[5vh]">
@@ -82,11 +82,11 @@ export default function ArambhaSection({ data = [] }) {
               The beginning of momentum, where ideas take their first real form.
             </p>
 
-            <div className="relative w-100 h-100">
+            <div className="relative w-150 h-125">
               <img
-                src="/chanu/chanucute.png"
+                src="/chanu/chanuleft.png"
                 alt="Arambha visual"
-                className="w-full h-full object-cover rounded-2xl"
+                className="w-full h-full object-contain rounded-2xl"
               />
             </div>
           </div>

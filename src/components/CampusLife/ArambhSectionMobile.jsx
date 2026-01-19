@@ -2,41 +2,41 @@
 
 import React from "react";
 
-
-export default function ArambhaSectionMobile({ data = [] }) {
+export default function ArambhSectionMobile({ data = [] }) {
   return (
-    <div className="bg-[#050110] text-white px-4 py-16">
+    // Just a margin-top to separate it from the Metamorphosis section
+    <div className="mt-20 border-t border-white/20 pt-10">
 
-      {/* TITLE */}
-      <h1 className="text-4xl font-black uppercase mb-4">
+      {/* 1. TITLE (Matches parent H1 style) */}
+      <h1 className="text-4xl font-black uppercase mb-4 text-[#082328]">
         Arambha
       </h1>
 
-      <p className="text-gray-400 mb-10">
+      <p className="text-white mb-10">
         The beginning of momentum, where ideas take their first real form.
       </p>
 
-      {/* IMAGE */}
-      <div className="mb-12">
+      {/* 2. IMAGE (Matches parent Image style) */}
+      <div className="w-100 mb-10">
         <img
-          src="/chanu/chanucute.png"
+          src="/chanu/chanuleft.png"
           alt="Arambha visual"
-          className="w-full h-auto rounded-2xl object-cover"
+          className="w-full h-auto rounded-2xl object-contain"
         />
       </div>
 
-      {/* TIMELINE / CARDS */}
+      {/* 3. CARDS (Matches parent Card style exactly) */}
       <div className="space-y-6">
         {data.map((item, i) => (
           <div
             key={i}
             className="
-              relative bg-white/5 backdrop-blur-xl
+              relative bg-[#3aafa9] backdrop-blur-xl
               border border-white/10
               rounded-2xl overflow-hidden
             "
           >
-            {/* IMAGE */}
+            {/* CARD IMAGE */}
             <div className="relative h-48">
               <img
                 src={item.image}
@@ -52,13 +52,13 @@ export default function ArambhaSectionMobile({ data = [] }) {
               />
             </div>
 
-            {/* TEXT */}
+            {/* CARD TEXT */}
             <div className="p-4 space-y-2">
-              <span className="text-xs uppercase tracking-wider text-purple-400">
+              <span className="text-xs font-bold uppercase tracking-wider text-secondary">
                 {item.topic}
               </span>
 
-              <h3 className="text-xl font-bold">
+              <h3 className="text-xl font-bold text-white">
                 {item.name}
               </h3>
 
@@ -66,18 +66,17 @@ export default function ArambhaSectionMobile({ data = [] }) {
                 <img
                   src={item.companyLogo}
                   alt="Company logo"
-                  className="w-full h-full object-contain"
+                  className="w-20 h-8 rounded-md object-contain p-1"
                 />
               </div>
 
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-white">
                 {item.designation}
               </p>
             </div>
           </div>
         ))}
       </div>
-
     </div>
   );
 }

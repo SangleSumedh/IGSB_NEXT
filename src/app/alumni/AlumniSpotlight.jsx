@@ -1,34 +1,14 @@
-import React, { useState } from "react";
-
-const testimonials = [
-  {
-    id: 1,
-    name: "SARAH JENKINS",
-    role: "Senior Product Manager",
-    campus: "IGSB Pune",
-    img: "/boy.png",
-    quote: "Leading global teams started with the foundations I built here.",
-  },
-  {
-    id: 2,
-    name: "RAJ PATEL",
-    role: "Tech Lead",
-    campus: "IGSB Mumbai",
-    img: "/boy.png",
-    quote: "The technical exposure and mentorship were world-class.",
-  },
-  {
-    id: 3,
-    name: "CHEN WEI",
-    role: "Data Scientist",
-    campus: "IGSB Remote",
-    img: "/boy.png",
-    quote: "I use the analytical skills I learned every single day.",
-  },
-];
+import React, { useState, useEffect } from "react";
+import { testimonials } from "@/static/testimonials";
 
 export default function AlumniSpotlight() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  // Reset the "Read More" state whenever the slide changes
+  useEffect(() => {
+    setIsExpanded(false);
+  }, [currentIndex]);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
@@ -36,7 +16,7 @@ export default function AlumniSpotlight() {
 
   const prevSlide = () => {
     setCurrentIndex(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
     );
   };
 
@@ -45,19 +25,17 @@ export default function AlumniSpotlight() {
   return (
     <section className="w-full py-12 px-6 md:px-12 grid grid-cols-1 md:grid-cols-5 gap-16 items-center bg-[#10404A]">
       {/* LEFT SIDE */}
-      <div className="space-y-6 col-span-3 flex flex-col justify-evenly   ">
+      <div className="space-y-6 col-span-3 flex flex-col justify-evenly">
         <h2 className="text-4xl md:text-4xl font-bold text-white tracking-tight">
           SHAPING THE FUTURE{" "}
           <span className="text-[#FF8B61]">ONE LEADER AT A TIME</span>
         </h2>
 
         <p className="text-white/80 text-lg leading-relaxed max-w-5xl">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis
-          reiciendis iste porro hic! Enim, vel aliquid! Corrupti eaque esse
-          consequatur natus dolore, ab voluptatum asperiores! Minima provident
-          qui, iusto commodi rem molestias perspiciatis perferendis officia ea
-          similique, enim tempora excepturi rerum labore voluptatem blanditiis
-          possimus corporis tempore esse ad? Assumenda.
+          Our alumni are our greatest ambassadors. From leading multinational
+          corporations to driving innovation in startups, the graduates of
+          Indira Global Business School carry the legacy of excellence and
+          leadership across the globe.
         </p>
       </div>
 
@@ -74,18 +52,18 @@ export default function AlumniSpotlight() {
 
           <div className="flex gap-4 justify-between items-center">
             {/* PHOTO */}
-            <div className="relative  mr-6">
+            <div className="relative">
               <div className="w-24 h-32 rounded-r-full overflow-hidden border-4 border-white shadow-lg">
                 <img
                   src={current.img}
                   alt={current.name}
-                  className="w-full h-full object-cover object-right"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
 
             {/* INFO */}
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-2 flex-1 px-2">
               <div>
                 <span className="text-xs font-bold text-white/70 uppercase tracking-wider">
                   Designation
@@ -93,43 +71,53 @@ export default function AlumniSpotlight() {
                 <p className="text-lg font-semibold text-white leading-tight">
                   {current.role}
                 </p>
+                <p className="text-sm text-white/90">{current.company}</p>
               </div>
 
               <div>
                 <span className="text-xs font-bold text-white/70 uppercase tracking-wider">
-                  Campus
+                  Location
                 </span>
                 <p className="text-lg font-semibold text-white">
-                  {current.campus}
+                  {current.location}
                 </p>
               </div>
             </div>
+
+            {/* COMPANY LOGO */}
             <div className="relative shrink-0 mr-6">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
+              <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white">
                 <img
-                  src={
-                    "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
-                  }
-                  alt={"Company LOGO"}
-                  className="w-full h-full object-contain"
+                  src={current.companyLogo}
+                  alt={`${current.company} logo`}
+                  className="w-full h-full object-contain p-2"
                 />
               </div>
             </div>
           </div>
 
-          {/* QUOTE */}
-          <div className="bg-[#3aafa9] p-4 text-center flex justify-between items-center">
-            <p className="text-[white]/80 text-xs italic">"{current.quote}"</p>
-            <div className="flex gap-3">
+          {/* QUOTE / BIO SECTION */}
+          <div className="bg-[#3aafa9] p-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex-1">
+              <p
+                className={`text-[white]/90 text-sm italic ${isExpanded ? "" : "line-clamp-3"}`}
+              >
+                "{current.bio}"
+              </p>
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-white text-[10px] font-bold underline uppercase mt-1 opacity-80 hover:opacity-100 transition-opacity"
+              >
+                {isExpanded ? "Read Less" : "Read More"}
+              </button>
+            </div>
+
+            {/* BUTTONS - Positioned exactly as before */}
+            <div className="flex gap-3 shrink-0">
               {/* Prev */}
               <button
                 onClick={prevSlide}
-                className="
-      w-12 h-12 flex items-center justify-center rounded-full 
-      bg-white text-[#10404A] shadow-md
-      hover:bg-[#FF8B61] hover:text-white hover:shadow-lg
-      transition-all duration-300 ease-in-out transform hover:-translate-y-1
-    "
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-white text-[#10404A] shadow-md hover:bg-[#FF8B61] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -150,12 +138,7 @@ export default function AlumniSpotlight() {
               {/* Next */}
               <button
                 onClick={nextSlide}
-                className="
-      w-12 h-12 flex items-center justify-center rounded-full 
-      bg-white text-[#10404A] shadow-md
-      hover:bg-[#FF8B61] hover:text-white hover:shadow-lg
-      transition-all duration-300 ease-in-out transform hover:-translate-y-1
-    "
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-white text-[#10404A] shadow-md hover:bg-[#FF8B61] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -175,49 +158,6 @@ export default function AlumniSpotlight() {
             </div>
           </div>
         </div>
-
-        {/* NAV BUTTONS */}
-        {/* <div className="flex gap-4 mt-6">
-          <button
-            onClick={prevSlide}
-            className="p-4 rounded-full border border-white/40 text-white hover:bg-[#FF8B61] hover:text-[#10404A] hover:border-[#FF8B61] transition-all duration-300"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 19.5L8.25 12l7.5-7.5"
-              />
-            </svg>
-          </button>
-
-          <button
-            onClick={nextSlide}
-            className="p-4 rounded-full border border-white/40 text-white hover:bg-[#FF8B61] hover:text-[#10404A] hover:border-[#FF8B61] transition-all duration-300"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8.25 4.5l7.5 7.5-7.5 7.5"
-              />
-            </svg>
-          </button>
-        </div> */}
       </div>
     </section>
   );

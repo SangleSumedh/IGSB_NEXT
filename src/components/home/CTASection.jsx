@@ -8,7 +8,7 @@ import { ArrowBigUp } from "lucide-react";
    TESTIMONIALS DATA (REAL CONTENT)
 ====================================================== */
 const testimonials = [
-   {
+  {
     name: "Vikrant Kulkarni",
     branch: "Nayara Energy Limited",
     image: "/Home/Testimonials/Vikrant-Kulkarni.png",
@@ -29,14 +29,6 @@ const testimonials = [
     text:
       "I am fully satisfied with my decision to join Indira Global Business School. Excellent staff with exceptional support for academics and extra-curricular activities. Well-equipped infrastructure to meet the academic and accommodation requirements of students. The institute has one of the best ROIs amongst most MBA colleges, in terms of placements. I am placed with HDFC Ltd with more than a decent package for about a year now through campus placements and am very satisfied with my job.",
   },
-  // {
-  //   name: "Saurabh Kulkarni",
-  //   branch: "NielsenIQ",
-  //   image: "/Home/Testimonials/Saurabh-Kulkarni.png",
-  //   text:
-  //     "There are very few moments in one's life when one feels to be genuinely fortunate. Indira Global Business School is not just the B-School but an institution that helped me transform and create my own identity in corporate world. My Faculties and mentors were always a part of this beautiful journey with me, and helped me survive, succeed and shine. IGBS not only provides the students an armory of knowledge, but also develops industry requirement skills which helps as ultimate confidence booster.",
-  // },
- 
   {
     name: "Akshay Shirke",
     branch: "Amazon",
@@ -73,8 +65,12 @@ export default function CTASection() {
 
   const active = testimonials[activeIndex];
 
+  // ✅ UPDATED: smooth scroll to form section
   const handleDownload = () => {
-    alert("Downloading brochure...");
+    const el = document.getElementById("form-section");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (

@@ -45,7 +45,7 @@ export default function FormSection() {
   const { headline, body } = pageContent[pathname] || pageContent["/"];
 
   return (
-    <section className="relative w-full bg-white overflow-hidden">
+    <section id="form-section"  className=" relative w-full bg-white overflow-hidden  md:scroll-mt-32">
 
       {/* ================= XL AND ABOVE ================= */}
       <div className="hidden xl:grid grid-cols-[78%_22%] min-h-[600px]">

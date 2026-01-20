@@ -55,7 +55,7 @@ export default function RoadmapSection() {
                   </span>
                 </h1>
 
-                <p className="text-secondary mb-4 text-xl font-medium">
+                <p className="text-secondary mb-4 text-xl font-bold">
                  Unfolding Wings of Knowledge
                 </p>
 

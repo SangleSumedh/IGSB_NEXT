@@ -10,14 +10,21 @@ export default function ArambhaSection() {
         <div className="max-w-full mx-auto h-full flex flex-col lg:flex-row">
           {/* LEFT — TIMELINE & GALLERY SECTION (swapped from right) */}
           <div className="w-full lg:w-2/4 flex flex-col justify-center px-6 lg:px-12 py-8 lg:py-0">
-            {/* CARD 1: DESCRIPTION */} 
+            {/* CARD 1: DESCRIPTION */}
             <div className="mb-8 lg:mb-12">
               <div className="relative bg-transparent border border-gray-100/40 rounded-2xl overflow-hidden hover:bg-white/5 transition-all duration-300">
                 <div className="p-6 md:p-6">
                   <p className="text-white text-base md:text-lg leading-relaxed text-justify">
-                   The induction programme introduced participants to the institutional culture, SPPU curriculum, AICTE framework, and industry expectations. It featured foundation sessions about a variety of case study analysis across multiple domains. 
- 
-Holistic development was addressed through wellness sessions, universal human values discussions, and aptitude training aligned with placement readiness. It further enriched by industry expert interactions, alumni panel discussions, and a full-day leadership workshop on emotional intelligence, strategic thinking, and corporate readiness.
+                    The induction programme introduced participants to the
+                    institutional culture, SPPU curriculum, AICTE framework, and
+                    industry expectations. It featured foundation sessions about
+                    a variety of case study analysis across multiple domains.
+                    Holistic development was addressed through wellness
+                    sessions, universal human values discussions, and aptitude
+                    training aligned with placement readiness. It further
+                    enriched by industry expert interactions, alumni panel
+                    discussions, and a full-day leadership workshop on emotional
+                    intelligence, strategic thinking, and corporate readiness.
                   </p>
                 </div>
               </div>
@@ -85,7 +92,10 @@ Holistic development was addressed through wellness sessions, universal human va
               </h1>
 
               <p className="text-white mb-8 md:mb-10 text-md md:text-lg leading-relaxed">
-                <span className="font-bold">Arambha 2024</span> effectively laid a strong academic, professional, and ethical foundation, preparing students for a successful MBA journey and future corporate roles.
+                <span className="font-bold">Arambha 2024</span> effectively laid
+                a strong academic, professional, and ethical foundation,
+                preparing students for a successful MBA journey and future
+                corporate roles.
               </p>
 
               <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px]">

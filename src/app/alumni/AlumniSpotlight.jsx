@@ -23,101 +23,103 @@ export default function AlumniSpotlight() {
   const current = testimonials[currentIndex];
 
   return (
-    <section className="w-full py-12 px-6 md:px-12 grid grid-cols-1 md:grid-cols-5 gap-16 items-center bg-[#10404A]">
+    <section className="w-full py-12 px-6 md:px-12 grid grid-cols-1 md:grid-cols-6 gap-16 items-center bg-[#10404A]">
       {/* LEFT SIDE */}
       <div className="space-y-6 col-span-3 flex flex-col justify-evenly">
-        <h2 className="text-4xl md:text-4xl font-bold text-white tracking-tight">
-          SHAPING THE FUTURE{" "}
-          <span className="text-[#FF8B61]">ONE LEADER AT A TIME</span>
+        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+          Memories That Became{" "}
+          <span className="text-[#FF8B61]"> Milestones</span>
         </h2>
 
-        <p className="text-white/80 text-lg leading-relaxed max-w-5xl">
-          Our alumni are our greatest ambassadors. From leading multinational
-          corporations to driving innovation in startups, the graduates of
-          Indira Global Business School carry the legacy of excellence and
-          leadership across the globe.
+        <p className="text-white/80 text-xl leading-relaxed max-w-5xl">
+          A future-focused learning ecosystem that combines academic excellence,
+          holistic development, and a nurturing campus environment to support
+          lifelong growth.
         </p>
       </div>
 
       {/* RIGHT SIDE */}
-      <div className="flex flex-col items-end col-span-2">
-        {/* CARD */}
-        <div className="bg-[#3aafa9] shadow-2xl rounded-2xl w-full max-w-xl overflow-hidden relative min-h-[280px]">
-          {/* NAME */}
-          <div className="w-full text-center py-4">
-            <h3 className="text-2xl font-black text-[#fff] tracking-widest uppercase">
-              {current.name}
-            </h3>
-          </div>
+      <div className="flex flex-col items-center md:items-end col-span-1 md:col-span-3">
+        {/* CARD CONTAINER */}
+        {/* CHANGE: max-w-xl -> max-w-2xl (Wider card) */}
+        <div className="bg-[#3aafa9] shadow-2xl rounded-3xl w-full max-w-2xl overflow-hidden relative min-h-[300px] flex flex-col">
+          {/* TOP SECTION: Photo, Info, Logo */}
+          <div className="p-8 pb-4">
+            <div className="flex flex-col md:flex-row gap-6 items-center md:items-start justify-between">
+              {/* PHOTO & INFO GROUP */}
+              <div className="flex flex-col md:flex-row gap-6 items-center md:items-center flex-1">
+                {/* PHOTO */}
+                <div className="relative shrink-0">
+                  <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                    <img
+                      src={current.img}
+                      alt={current.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
 
-          <div className="flex gap-4 justify-between items-center">
-            {/* PHOTO */}
-            <div className="relative">
-              <div className="w-24 h-32 rounded-r-full overflow-hidden border-4 border-white shadow-lg">
-                <img
-                  src={current.img}
-                  alt={current.name}
-                  className="w-full h-full object-cover"
-                />
+                {/* INFO */}
+                <div className="text-center md:text-left space-y-1">
+                  <h3 className="text-2xl font-black text-white tracking-wide uppercase">
+                    {current.name}
+                  </h3>
+                  <div>
+                    <p className="text-lg font-semibold text-white/90 text-center leading-tight">
+                      {current.role}
+                    </p>
+                    <p className="text-lg font-bold text-white text-center">
+                      {current.company}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            {/* INFO */}
-            <div className="flex flex-col space-y-2 flex-1 px-2">
-              <div>
-                <span className="text-xs font-bold text-white/70 uppercase tracking-wider">
-                  Designation
-                </span>
-                <p className="text-lg font-semibold text-white leading-tight">
-                  {current.role}
-                </p>
-                <p className="text-sm text-white/90">{current.company}</p>
-              </div>
-
-              <div>
-                <span className="text-xs font-bold text-white/70 uppercase tracking-wider">
-                  Location
-                </span>
-                <p className="text-lg font-semibold text-white">
-                  {current.location}
-                </p>
-              </div>
-            </div>
-
-            {/* COMPANY LOGO */}
-            <div className="relative shrink-0 mr-6">
-              <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white">
-                <img
-                  src={current.companyLogo}
-                  alt={`${current.company} logo`}
-                  className="w-full h-full object-contain p-2"
-                />
+              {/* COMPANY LOGO (Moved to top right for better layout balance) */}
+              <div className="hidden md:block shrink-0">
+                <div className="w-20 h-20 rounded-xl overflow-hidden bg-white shadow-md flex items-center justify-center p-2">
+                  <img
+                    src={current.companyLogo}
+                    alt={`${current.company} logo`}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
               </div>
             </div>
           </div>
 
-          {/* QUOTE / BIO SECTION */}
-          <div className="bg-[#3aafa9] p-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          {/* DIVIDER */}
+          <div className="w-full h-px bg-white/20 mx-auto w-[90%]" />
+
+          {/* BOTTOM SECTION: Bio & Buttons */}
+          <div className="p-8 pt-6 flex flex-col md:flex-row justify-between items-end gap-6 mt-auto">
+            {/* BIO */}
             <div className="flex-1">
-              <p
-                className={`text-[white]/90 text-sm italic ${isExpanded ? "" : "line-clamp-3"}`}
-              >
-                "{current.bio}"
-              </p>
+              <div className="relative">
+                <span className="absolute -top-4 -left-2 text-6xl text-white/20 font-serif leading-none">
+                  “
+                </span>
+                <p
+                  className={`text-white text-[15px] leading-relaxed relative z-10 ${
+                    isExpanded ? "" : "line-clamp-3"
+                  }`}
+                >
+                  {current.bio}
+                </p>
+              </div>
               <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="text-white text-[10px] font-bold underline uppercase mt-1 opacity-80 hover:opacity-100 transition-opacity"
+                className="text-white text-xs font-bold underline uppercase mt-3 opacity-80 hover:opacity-100 transition-opacity"
               >
                 {isExpanded ? "Read Less" : "Read More"}
               </button>
             </div>
 
-            {/* BUTTONS - Positioned exactly as before */}
+            {/* CONTROLS */}
             <div className="flex gap-3 shrink-0">
-              {/* Prev */}
               <button
                 onClick={prevSlide}
-                className="w-12 h-12 flex items-center justify-center rounded-full bg-white text-[#10404A] shadow-md hover:bg-[#FF8B61] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white border border-white/30 hover:bg-white hover:text-[#3aafa9] transition-all duration-300"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -135,10 +137,9 @@ export default function AlumniSpotlight() {
                 </svg>
               </button>
 
-              {/* Next */}
               <button
                 onClick={nextSlide}
-                className="w-12 h-12 flex items-center justify-center rounded-full bg-white text-[#10404A] shadow-md hover:bg-[#FF8B61] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-white text-[#3aafa9] shadow-lg hover:bg-[#FF8B61] hover:text-white transition-all duration-300"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

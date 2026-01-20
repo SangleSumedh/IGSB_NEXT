@@ -8,7 +8,7 @@ import ArambhaSectionMobile from "./ArambhSectionMobile";
 
 export default function RoadmapSection() {
   const CARDS_PER_SLIDE = 3;
-  
+
   // split roadmap data into slides of 3
   const slides = [];
   for (let i = 0; i < roadmapData.length; i += CARDS_PER_SLIDE) {
@@ -104,13 +104,15 @@ export default function RoadmapSection() {
                             {item.designation}
                           </p>
 
-                          <div className="w-24 h-9 bg-white rounded-md flex items-center justify-center p-1">
-                            <img
-                              src={item.companyLogo}
-                              alt="Company logo"
-                              className="w-full h-full object-contain"
-                            />
-                          </div>
+                          {item.companyLogo && item.companyLogo.trim() !== "" && (
+                            <div className="w-24 h-9 bg-white rounded-md flex items-center justify-center ">
+                              <img
+                                src={item.companyLogo}
+                                alt="Company logo"
+                                className="w-full h-full rounded-md object-contain"
+                              />
+                            </div>
+                          )}
                         </div>
 
                         {/* IMAGE */}
@@ -147,9 +149,9 @@ export default function RoadmapSection() {
                   key={index}
                   onClick={() => setCurrentSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentSlide 
-                      ? 'bg-secondary w-8' 
-                      : 'bg-gray-300 hover:bg-gray-400'
+                    index === currentSlide
+                      ? "bg-secondary w-8"
+                      : "bg-gray-300 hover:bg-gray-400"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />

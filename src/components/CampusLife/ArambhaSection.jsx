@@ -12,7 +12,7 @@ export default function ArambhaSection() {
           <div className="w-full lg:w-2/4 flex flex-col justify-center px-6 lg:px-12 py-8 lg:py-0">
             {/* CARD 1: DESCRIPTION */} 
             <div className="mb-8 lg:mb-12">
-              <div className="relative bg-transparent border border-secondary/50 rounded-2xl overflow-hidden hover:bg-white/5 transition-all duration-300">
+              <div className="relative bg-transparent border border-gray-100/40 rounded-2xl overflow-hidden hover:bg-white/5 transition-all duration-300">
                 <div className="p-6 md:p-8">
                   <p className="text-white text-base md:text-lg leading-relaxed text-justify">
                     <span className="font-semibold text-white/90">
@@ -32,8 +32,8 @@ export default function ArambhaSection() {
             </div>
 
             {/* CARD 2: GALLERY */}
-            <div className="bg-secondary rounded-2xl">
-              <div className="relative bg-transparent border border-secondary/50 rounded-2xl overflow-hidden hover:bg-white/5 transition-all duration-300">
+            <div className="bg-gray-100/50 rounded-md">
+              <div className="relative bg-transparent border border-gray-100/40 rounded-md overflow-hidden hover:bg-white/5 transition-all duration-300">
                 <div className="p-4 md:p-6">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[120px] md:auto-rows-[150px]">
                     {/* Main Large Image */}

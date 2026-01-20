@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { roadmapData } from "./roadmapdata";
 import { arambhData } from "./arambhdata";
 import ArambhaSection from "./ArambhaSection";
@@ -8,7 +8,7 @@ import ArambhaSectionMobile from "./ArambhSectionMobile";
 
 export default function RoadmapSection() {
   const CARDS_PER_SLIDE = 3;
-
+  
   // split roadmap data into slides of 3
   const slides = [];
   for (let i = 0; i < roadmapData.length; i += CARDS_PER_SLIDE) {
@@ -16,15 +16,34 @@ export default function RoadmapSection() {
   }
 
   const [currentSlide, setCurrentSlide] = useState(0);
+  const autoPlayRef = useRef(null);
 
-  const prev = () => setCurrentSlide((s) => Math.max(s - 1, 0));
-  const next = () => setCurrentSlide((s) => Math.min(s + 1, slides.length - 1));
+  const prev = () => {
+    setCurrentSlide((s) => (s === 0 ? slides.length - 1 : s - 1));
+  };
+
+  const next = () => {
+    setCurrentSlide((s) => (s === slides.length - 1 ? 0 : s + 1));
+  };
+
+  // Auto-play functionality
+  useEffect(() => {
+    autoPlayRef.current = setInterval(() => {
+      setCurrentSlide((s) => (s === slides.length - 1 ? 0 : s + 1));
+    }, 3000); // Change slide every 3 seconds
+
+    return () => {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+      }
+    };
+  }, [slides.length]);
 
   return (
     <div className="text-white">
       {/* ================= METAMORPHOSIS ================= */}
       <section className="min-h-screen bg-white">
-        <div className="max-w-full mx-auto min-h-screen flex px-6 py-12">
+        <div className="max-w-full mx-auto min-h-screen flex px-6 py-5">
           {/* LEFT */}
           <div className="relative w-2/4 flex flex-col">
             <h1 className="text-5xl lg:text-5xl font-black uppercase mb-6">
@@ -38,7 +57,7 @@ export default function RoadmapSection() {
             </p>
 
             {/* Glow */}
-            <div className="absolute top-0 -left-64 w-[700px] h-[700px]  rounded-full blur-[160px] -z-10" />
+            <div className="absolute top-0 -left-64 w-[700px] h-[700px] bg-secondary rounded-full blur-[160px] -z-10" />
 
             {/* Image */}
             <div className="relative w-[300px] max-w-full">
@@ -51,7 +70,7 @@ export default function RoadmapSection() {
           </div>
 
           {/* RIGHT – CAROUSEL */}
-          <div className="w-2/4 flex flex-col mb-10">
+          <div className="w-2/4 flex flex-col mb-2">
             {/* Viewport */}
             <div className="overflow-hidden">
               <div
@@ -61,7 +80,7 @@ export default function RoadmapSection() {
                 {slides.map((slide, slideIndex) => (
                   <div
                     key={slideIndex}
-                    className="min-w-full flex flex-col gap-4 px-6"
+                    className="min-w-full flex flex-col gap-2 px-6"
                   >
                     {slide.map((item, i) => (
                       <div
@@ -121,23 +140,20 @@ export default function RoadmapSection() {
               </div>
             </div>
 
-            {/* Controls */}
-            <div className="flex justify-center gap-4 mt-6">
-              <button
-                onClick={prev}
-                disabled={currentSlide === 0}
-                className="px-4 py-2 rounded-full bg-secondary disabled:opacity-30"
-              >
-                ← Prev
-              </button>
-
-              <button
-                onClick={next}
-                disabled={currentSlide === slides.length - 1}
-                className="px-4 py-2 rounded-full bg-secondary disabled:opacity-30"
-              >
-                Next →
-              </button>
+            {/* Dots Only */}
+            <div className="flex justify-center gap-2 mt-6">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentSlide 
+                      ? 'bg-secondary w-8' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>

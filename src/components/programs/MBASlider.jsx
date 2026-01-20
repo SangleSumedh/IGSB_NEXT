@@ -212,20 +212,10 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
       <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 xl:bottom-10 xl:right-12 flex items-center gap-3 sm:gap-4 z-30">
         <button
           onClick={handlePrev}
-          className="rounded-full bg-primary hover:brightness-110 transition flex items-center justify-center"
-          style={{
-            width: "clamp(2.25rem, 3vw, 2.75rem)",
-            height: "clamp(2.25rem, 3vw, 2.75rem)",
-          }}
+          className="rounded-full bg-primary hover:brightness-110 transition flex items-center justify-center p-2"
           aria-label="Previous slide"
         >
-          <FaArrowLeft
-            className="text-white"
-            style={{
-              width: "clamp(1rem, 1.2vw, 1.125rem)",
-              height: "clamp(1rem, 1.2vw, 1.125rem)",
-            }}
-          />
+          <FaArrowLeft className="text-white w-5 h-5" />
         </button>
         {/* Dots Indicator */}
         <div className="flex items-center gap-1.5 sm:gap-2">
@@ -257,20 +247,10 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
         <div className="flex items-center gap-1.5 sm:gap-2">
           <button
             onClick={handleNext}
-            className="rounded-full bg-primary hover:brightness-110 transition flex items-center justify-center"
-            style={{
-              width: "clamp(2.25rem, 3vw, 2.75rem)",
-              height: "clamp(2.25rem, 3vw, 2.75rem)",
-            }}
+            className="rounded-full bg-primary hover:brightness-110 transition flex items-center justify-center p-2"
             aria-label="Next slide"
           >
-            <FaArrowRight
-              className="text-white"
-              style={{
-                width: "clamp(1rem, 1.2vw, 1.125rem)",
-                height: "clamp(1rem, 1.2vw, 1.125rem)",
-              }}
-            />
+            <FaArrowRight className="text-white w-5 h-5" />
           </button>
         </div>
       </div>

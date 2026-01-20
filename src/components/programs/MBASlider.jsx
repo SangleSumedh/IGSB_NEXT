@@ -77,9 +77,12 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
     >
       {/* ==========================================================
           RESPONSIVE HEIGHT PROVIDER
-          Different heights for different screen sizes
       ========================================================== */}
       <div className="relative w-full opacity-0 pointer-events-none">
+        {/* NOTE: I slightly reduced the min-height clamp from 22rem to 18rem. 
+           22rem is very tall for small mobiles, forcing extreme cropping. 
+           18rem is still substantial but allows a wider view of the image on narrow screens.
+        */}
         <Image
           src={slides[currentIndex].image}
           alt="spacer"
@@ -87,9 +90,9 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
           height={300}
           className="w-full h-auto"
           style={{
-            height: "clamp(22rem, 50vw, 38rem)",
-            minHeight: "22rem",
-            maxHeight: "38rem"
+            height: "clamp(18rem, 50vw, 38rem)", // Changed 22rem -> 18rem
+            minHeight: "18rem", // Changed 22rem -> 18rem
+            maxHeight: "38rem",
           }}
           priority
         />
@@ -105,30 +108,30 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
             index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         >
-          {/* Background Image */}
+          {/* Background Image - FIX APPLIED HERE */}
           <Image
             src={slide.image}
             alt={slide.title}
             fill
-            className="object-contain object-center"
+            // CHANGES MADE:
+            // 1. Removed inline styles for objectFit to avoid conflicts.
+            // 2. Used 'object-cover' to ensure the image fills the area without stretching.
+            // 3. Used 'object-right' specifically to anchor the image to the right side,
+            //    ensuring the main subject isn't cut off on mobile.
+            //    If you want it centered on desktop, change to: "object-cover object-right md:object-center"
+            className="object-cover object-right"
             priority={index === 0}
             sizes="100vw"
-            style={{
-              objectFit: "cover",
-              width: "100%",
-              height: "100%"
-            }}
           />
 
-          {/* Gradient Overlay for Better Text Readability */}
-          {/* <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent z-10" /> */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10" />
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent z-10" />
 
-          {/* Content Overlay - Responsive Positioning & Sizing */}
+          {/* Content Overlay */}
           <div className="absolute inset-0 flex items-center justify-start z-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
             <div className="w-full max-w-[90rem] mx-auto py-4 md:py-8 lg:py-12 xl:py-0">
               <div className="max-w-full lg:max-w-3xl xl:max-w-2xl">
-                {/* Title - Responsive Font Sizes */}
+                {/* Title */}
                 <h2
                   className={`font-bold text-white leading-tight tracking-tight transform transition-all duration-700 delay-100 ${
                     index === currentIndex
@@ -137,13 +140,13 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
                   }`}
                   style={{
                     fontSize: "clamp(1.5rem, 4vw, 3.5rem)",
-                    lineHeight: "clamp(1.8rem, 4.5vw, 4rem)"
+                    lineHeight: "clamp(1.8rem, 4.5vw, 4rem)",
                   }}
                 >
                   {slide.title}
                 </h2>
 
-                {/* Description - Responsive Font Sizes & Spacing */}
+                {/* Description */}
                 <div
                   className={`transform transition-all duration-700 delay-200 ${
                     index === currentIndex
@@ -151,7 +154,7 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
                       : "translate-y-8 opacity-0"
                   }`}
                   style={{
-                    marginTop: "clamp(0.75rem, 2vw, 1.5rem)"
+                    marginTop: "clamp(0.75rem, 2vw, 1.5rem)",
                   }}
                 >
                   <p
@@ -159,14 +162,14 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
                     style={{
                       fontSize: "clamp(0.875rem, 1.8vw, 1.125rem)",
                       lineHeight: "clamp(1.25rem, 2vw, 1.75rem)",
-                      maxWidth: "clamp(18rem, 40vw, 32rem)"
+                      maxWidth: "clamp(18rem, 40vw, 32rem)",
                     }}
                   >
                     {slide.description}
                   </p>
                 </div>
 
-                {/* Action Buttons - Responsive Sizing & Spacing */}
+                {/* Action Buttons */}
                 <div
                   className={`flex flex-wrap gap-3 sm:gap-4 transform transition-all duration-700 delay-300 ${
                     index === currentIndex
@@ -174,14 +177,14 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
                       : "translate-y-8 opacity-0"
                   }`}
                   style={{
-                    marginTop: "clamp(1.5rem, 3vw, 2.5rem)"
+                    marginTop: "clamp(1.5rem, 3vw, 2.5rem)",
                   }}
                 >
                   <button
                     onClick={handleBrochureDownload}
                     className="px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3 bg-primary hover:bg-white text-white hover:text-primary font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95"
                     style={{
-                      fontSize: "clamp(0.8125rem, 1.2vw, 1rem)"
+                      fontSize: "clamp(0.8125rem, 1.2vw, 1rem)",
                     }}
                   >
                     Download Brochure
@@ -191,7 +194,7 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
                     onClick={toggleModal}
                     className="px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3 bg-white hover:bg-white text-gray-700 hover:text-gray-900 font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95"
                     style={{
-                      fontSize: "clamp(0.8125rem, 1.2vw, 1rem)"
+                      fontSize: "clamp(0.8125rem, 1.2vw, 1rem)",
                     }}
                   >
                     Enquire Now
@@ -204,7 +207,7 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
       ))}
 
       {/* ==========================================================
-          CONTROLS - Responsive Positioning & Sizing
+          CONTROLS
       ========================================================== */}
       <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 xl:bottom-10 xl:right-12 flex items-center gap-3 sm:gap-4 z-30">
         {/* Dots Indicator */}
@@ -219,12 +222,14 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
                   : "bg-gray-300 hover:bg-gray-400"
               }`}
               style={{
-                width: currentIndex === i 
-                  ? "clamp(1.5rem, 2vw, 2.5rem)" 
-                  : "clamp(0.375rem, 0.5vw, 0.5rem)",
-                height: currentIndex === i 
-                  ? "clamp(0.25rem, 0.3vw, 0.375rem)" 
-                  : "clamp(0.375rem, 0.5vw, 0.5rem)"
+                width:
+                  currentIndex === i
+                    ? "clamp(1.5rem, 2vw, 2.5rem)"
+                    : "clamp(0.375rem, 0.5vw, 0.5rem)",
+                height:
+                  currentIndex === i
+                    ? "clamp(0.25rem, 0.3vw, 0.375rem)"
+                    : "clamp(0.375rem, 0.5vw, 0.5rem)",
               }}
               aria-label={`Go to slide ${i + 1}`}
             />
@@ -238,15 +243,15 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
             className="rounded-full bg-primary hover:brightness-110 transition flex items-center justify-center"
             style={{
               width: "clamp(2.25rem, 3vw, 2.75rem)",
-              height: "clamp(2.25rem, 3vw, 2.75rem)"
+              height: "clamp(2.25rem, 3vw, 2.75rem)",
             }}
             aria-label="Previous slide"
           >
-            <FaArrowLeft 
-              className="text-white" 
+            <FaArrowLeft
+              className="text-white"
               style={{
                 width: "clamp(1rem, 1.2vw, 1.125rem)",
-                height: "clamp(1rem, 1.2vw, 1.125rem)"
+                height: "clamp(1rem, 1.2vw, 1.125rem)",
               }}
             />
           </button>
@@ -256,15 +261,15 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
             className="rounded-full bg-primary hover:brightness-110 transition flex items-center justify-center"
             style={{
               width: "clamp(2.25rem, 3vw, 2.75rem)",
-              height: "clamp(2.25rem, 3vw, 2.75rem)"
+              height: "clamp(2.25rem, 3vw, 2.75rem)",
             }}
             aria-label="Next slide"
           >
-            <FaArrowRight 
-              className="text-white" 
+            <FaArrowRight
+              className="text-white"
               style={{
                 width: "clamp(1rem, 1.2vw, 1.125rem)",
-                height: "clamp(1rem, 1.2vw, 1.125rem)"
+                height: "clamp(1rem, 1.2vw, 1.125rem)",
               }}
             />
           </button>

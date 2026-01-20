@@ -52,13 +52,14 @@ const dropdownContent = {
       //   link: "/facilities"
       // },
       {
+        label: "Facilities",
+        link: "/Campus/Nature"
+      },
+      {
         label: "Events",
         link: "/Campus/Events"
       },
-      {
-        label: "Facilities",
-        link: "/Campus/Nature"
-      }
+      
     ]
   },
 

@@ -118,21 +118,21 @@ export default function EventsPage() {
  <div className="w-full h-[88vh] bg-white relative">
 
   {/* 🔤 Absolute overlay text */}
-  <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none">
-    <h2
-      className="
-        text-4xl md:text-6xl xl:text-8xl
-        font-extrabold
-        text-white
-        tracking-wide
-        drop-shadow-[0_6px_18px_rgba(0,0,0,0.9)]
-        [text-shadow:0_2px_8px_rgba(0,0,0,0.8)]
-      "
-    >
-      The Campus Beat
-    </h2>
-  </div>
-
+<div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none">
+  <h2
+    className="
+      text-4xl md:text-6xl xl:text-8xl
+      font-extrabold
+      text-white
+      tracking-wide
+      drop-shadow-[0_6px_18px_rgba(0,0,0,0.9)]
+      [text-shadow:0_2px_8px_rgba(0,0,0,0.8)]
+      animate-fade-up
+    "
+  >
+    Your Dream Campus Life
+  </h2>
+</div>
   {/* 🌑 Dark overlay for contrast */}
   <div className="absolute inset-0 z-20 bg-black/30" />
 

@@ -15,8 +15,7 @@ const AUTO_ROTATE_SPEED = 0.9;
 const CAROUSEL_INTERVAL = 10000; // 5 Seconds
 
 // --- ASSETS & DATA ---
-const EARTH_DAY_TEXTURE =
-  "/textures/earth2k.jpg"; // High-res Earth texture
+const EARTH_DAY_TEXTURE = "/textures/earth2k.jpg"; // High-res Earth texture
 
 const ALUMNI_LOCATIONS = [
   {
@@ -261,7 +260,7 @@ const Airplane = () => {
       planeRef.current.lookAt(
         radius * Math.sin(t + 0.1),
         Math.sin((t + 0.1) * 2.5) * 0.3,
-        radius * Math.cos(t + 0.1)
+        radius * Math.cos(t + 0.1),
       );
     }
   });

@@ -9,43 +9,31 @@ import {
 } from "lucide-react";
 
 const PHD_DOMAINS = [
-  {
-    title: "Marketing Management",
-    icon: PieChart,
-  },
-  {
-    title: "Finance Management",
-    icon: CircleDollarSign,
-  },
-  {
-    title: "Human Resource",
-    icon: Users,
-  },
-  {
-    title: "Business Analytics",
-    icon: LineChart,
-  },
+  { title: "Marketing Management", icon: PieChart },
+  { title: "Finance Management", icon: CircleDollarSign },
+  { title: "Human Resource", icon: Users },
+  { title: "Business Analytics", icon: LineChart },
 ];
 
 export default function PhdSection() {
   return (
-    <section className="w-full bg-white px-6 py-12 xl:px-16 xl:py-8">
+    <section className="w-full bg-white px-4 sm:px-6 py-12 xl:px-16 xl:py-8">
       <div className="w-full">
         {/* SECTION HEADING */}
-        <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 mb-10">
-          PhD RESEARCH PROGRAMMES
+        <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 mb-8">
+          PhD Research Programmes
         </h2>
 
-        {/* TEXT CONTENT — UNCHANGED */}
-        <div className="w-full space-y-2 mb-10">
-          <p className="text-gray-700 text-md md:text-lg leading-relaxed text-justify">
+        {/* TEXT CONTENT */}
+        <div className="w-full space-y-3 mb-10">
+          <p className="text-gray-700 text-sm sm:text-md md:text-lg leading-relaxed text-justify">
             Indira Global School of Business (IGSB) is an AICTE-approved,
             UGC-recognized institution affiliated with Savitribai Phule Pune
             University (SPPU) and is committed to advancing academic excellence,
             thought leadership, and high-impact management research.
           </p>
 
-          <p className="text-gray-700 text-md md:text-lg leading-relaxed text-justify">
+          <p className="text-gray-700 text-sm sm:text-md md:text-lg leading-relaxed text-justify">
             The IGSB Research Centre (PGRC) is a recognized Ph.D. Research Centre
             under SPPU. We promote original, methodologically rigorous research
             that contributes meaningfully to global academic literature, policy
@@ -60,7 +48,7 @@ export default function PhdSection() {
         </h2>
 
         {/* DOMAIN BLOCKS */}
-        <div className="grid grid-cols-2 gap-6 lg:grid-cols-4 xl:flex xl:justify-between">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4 xl:flex xl:justify-between">
           {PHD_DOMAINS.map((item, index) => {
             const Icon = item.icon;
 
@@ -72,24 +60,24 @@ export default function PhdSection() {
                   group
                   bg-[#10404A] hover:bg-[#14545f]
                   transition-all duration-300
-                  rounded-lg
-                  p-5
+                  rounded-xl
+                  p-4 sm:p-5
 
-                  /* Mobile + md → lg */
-                  flex items-center justify-between text-left gap-4
+                  /* MOBILE: vertical layout */
+                  flex flex-col items-center justify-center text-center gap-3
 
                   /* lg → xl */
                   lg:flex-col lg:items-center lg:gap-3
 
                   /* xl+ */
-                  xl:flex-row xl:items-center xl:justify-between
+                  xl:flex-row xl:items-center xl:justify-between xl:text-left
                 "
               >
                 {/* ICON */}
                 <div
                   className="
-                    w-11 h-11
-                    md:w-12 md:h-12
+                    w-12 h-12
+                    sm:w-13 sm:h-13
                     lg:w-14 lg:h-14
                     rounded-full
                     border-4 border-[#fb7035]
@@ -99,13 +87,13 @@ export default function PhdSection() {
                   "
                 >
                   <Icon
-                    size={18}
-                    className="text-black md:w-[20px] md:h-[20px] lg:w-[22px] lg:h-[22px]"
+                    size={20}
+                    className="text-black lg:w-[22px] lg:h-[22px]"
                   />
                 </div>
 
                 {/* TITLE */}
-                <h3 className="text-sm md:text-base lg:text-sm xl:text-base font-semibold text-white leading-tight">
+                <h3 className="text-xs sm:text-sm md:text-base lg:text-sm xl:text-base font-semibold text-white leading-tight">
                   {item.title}
                 </h3>
 
@@ -114,7 +102,7 @@ export default function PhdSection() {
                   size={18}
                   className="
                     text-white/60 group-hover:text-white transition
-                    lg:hidden xl:block
+                    hidden xl:block
                   "
                 />
               </Link>

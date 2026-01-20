@@ -23,6 +23,7 @@ import FactSection from "@/components/home/FactSection";
 import ProgramCTA from "@/components/programs/ProgramCTA";
 import Road from "@/components/home/Road";
 import NewEvent from "@/components/home/NewEvent";
+import Testimonials from "@/components/home/Testimonials";
 
 export default function HomePage() {
   return (
@@ -56,6 +57,7 @@ export default function HomePage() {
         {/* <CarSection /> */}
         <CTASection />
         <NewEvent />
+        <Testimonials />
         
       </ScrollCrushWrapper>
 

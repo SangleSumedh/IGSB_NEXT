@@ -38,7 +38,7 @@ export default function EventsPage() {
 
     /* ================= GSAP ================= */
     const imgs = gsap.utils.toArray(".img-wrapper img");
-    const bgColors = ["#7A2638", "#1E3A5F", "#3A1F1A", "#2F3A12", "#3aafa9"];
+    const bgColors = ["#7A2638", "#1E3A5F", "#3A1F1A", "#2F3A12", "#FF8C1A"];
 
     ScrollTrigger.matchMedia({
       "(min-width: 769px)": () => {
@@ -127,7 +127,7 @@ export default function EventsPage() {
       tracking-wide
       drop-shadow-[0_6px_18px_rgba(0,0,0,0.9)]
       [text-shadow:0_2px_8px_rgba(0,0,0,0.8)]
-      animate-fade-up
+      animate-fade-up text-center
     "
   >
     Your Dream Campus Life
@@ -215,7 +215,7 @@ export default function EventsPage() {
 
 
       {/* ================= GSAP SECTION ================= */}
-      <div className="full-width-container">
+      <div className="hidden lg:block full-width-container">
         <div className="arch">
           {/* LEFT */}
           <div className="arch__left">
@@ -242,6 +242,7 @@ export default function EventsPage() {
                 "/newEvents/Gusto1.jpg",
                 "/newEvents/Navratri1.JPG",
                 "/newEvents/Splash6.jpg",
+                "/newEvents/GanpatiAartiImg.png",
   
               ].map((src, i) => (
                 <div className="img-wrapper" data-index={6 - i} key={i}>
@@ -252,6 +253,73 @@ export default function EventsPage() {
           </div>
         </div>
       </div>
+
+
+      {/* ================= MOBILE / TABLET EVENTS CARDS ================= */}
+<div className="block lg:hidden bg-slate-50 py-10 px-4 sm:px-6">
+
+  <div className="max-w-5xl mx-auto space-y-10">
+    {eventsData.map((event, index) => (
+      <div
+        key={event.id}
+        className="
+          bg-white
+          rounded-2xl
+          overflow-hidden
+          shadow-md
+          flex flex-col
+        "
+      >
+        {/* IMAGE */}
+        <div className="relative w-full h-56 sm:h-64">
+          <img
+            src={
+              [
+                "/newEvents/BParak.jpg",
+                "/newEvents/IWA1.jpg",
+                "/newEvents/Gusto1.jpg",
+                "/newEvents/Navratri1.JPG",
+                "/newEvents/Splash6.jpg",
+                "/newEvents/GanpatiAartiImg.png",
+              ][index]
+            }
+            alt={event.title}
+            className="h-full w-full object-cover"
+          />
+        </div>
+
+        {/* CONTENT */}
+        <div className="p-5 sm:p-6">
+          <h3 className="text-xl sm:text-2xl font-bold text-[#10404A] mb-3">
+            {event.title}
+          </h3>
+
+          <p className="text-slate-600 text-base leading-relaxed mb-5">
+            {event.description}
+          </p>
+
+          <Link
+            href={`/Campus/Events/gallery/${event.id}`}
+            className="
+              inline-block
+              px-6 py-3
+              rounded-full
+              bg-[#FF8C1A]
+              text-white
+              font-semibold
+              text-sm
+              hover:opacity-90
+              transition
+            "
+          >
+            View Gallery
+          </Link>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+ 
     </>
   );
 }

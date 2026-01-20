@@ -96,10 +96,7 @@ export default function SmallDesktopFormSection() {
 
             <div className="text-center mt-4">
               <p className="font-semibold flex justify-center gap-2 text-sm">
-                Or Give us a call <Phone size={14} /> +91 0000000000
-              </p>
-              <p className="text-xs opacity-90 mt-1">
-                The Support Centre is Available 24/7
+                Or Give us a call <Phone size={14} /> +91 9657856103
               </p>
             </div>
           </div>
@@ -123,3 +120,5 @@ const LogoItem = ({ src }) => (
     />
   </div>
 );
+
+

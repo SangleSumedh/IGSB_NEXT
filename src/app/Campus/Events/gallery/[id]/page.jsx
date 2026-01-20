@@ -21,7 +21,7 @@ export default async function GalleryPage({ params }) {
           {/* HEADER */}
           <div className="mb-10 text-center">
             <h1 className="text-4xl font-bold text-gray-900">{event.title}</h1>
-            <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
+            <p className="mt-3 text-gray-600 max-w-7xl  mx-auto">
               {event.description}
             </p>
           </div>

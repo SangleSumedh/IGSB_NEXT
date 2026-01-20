@@ -432,7 +432,6 @@ body {
 /* ============================================================
    GSAP ARCH SCROLL SECTION
 ============================================================ */
-
 /* Global navbar offset (adjust if navbar height changes) */
 :root {
   --navbar-offset: 72px;
@@ -447,22 +446,22 @@ body {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  padding-top: 24px; /* breathing space below heading */
+  padding-top: 20px; /* reduced */
 }
 
 /* =============================
    DESKTOP / XL SPACING FIX
-   ============================= */
+============================= */
 @media (min-width: 1024px) {
   .full-width-container {
-    padding-left: 72px;
-    padding-right: 72px;
+    padding-left: 40px;   /* was 72px */
+    padding-right: 40px;  /* was 72px */
   }
 }
 
 /* =============================
    REMOVE SIDE GAP BELOW LG
-   ============================= */
+============================= */
 @media (max-width: 1023px) {
   .full-width-container {
     padding-left: 0;
@@ -473,12 +472,12 @@ body {
 /* Main layout */
 .arch {
   display: flex;
-  gap: 72px;
+  gap: 56px; /* slightly tighter */
   justify-content: space-between;
-  align-items: center; /* vertical centering feel */
-  max-width: 1400px;
+  align-items: center;
+  max-width: 1320px; /* tighter than 1400 */
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 20px; /* was 32px */
 }
 
 /* ================= LEFT (TEXT – 40%) ================= */
@@ -487,8 +486,8 @@ body {
   display: flex;
   flex-direction: column;
   width: 40%;
-  min-width: 400px;
-  padding-left: 40px;
+  min-width: 360px; /* was 400px */
+  padding-left: 0; /* was 40px */
 }
 
 .arch__info {
@@ -496,36 +495,36 @@ body {
   height: auto;
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 8px; /* was 0 20px */
 }
 
 .arch__info .content {
   width: 100%;
-  max-width: 500px;
+  max-width: 520px; /* slight bump for long text */
 }
 
 .header {
   font-family: "Outfit", sans-serif;
-  font-size: 48px;
+  font-size: 38px;
   font-weight: 800;
   letter-spacing: -1px;
   line-height: 1.1;
-  margin-bottom: 20px;
+  margin-bottom: 18px; /* tighter */
   color: #ffffff;
 }
 
 .desc {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: -0.36px;
-  margin-bottom: 32px;
+  margin-bottom: 28px; /* was 32px */
   line-height: 1.6;
-  max-width: 450px;
+  max-width: 500px; /* was 450px */
 }
 
 .link {
   text-decoration: none;
-  padding: 16px 24px;
+  padding: 14px 22px; /* slightly tighter */
   color: #121212;
   border-radius: 40px;
   display: inline-flex;
@@ -549,8 +548,8 @@ body {
   height: calc(100vh - var(--navbar-offset));
   margin-top: var(--navbar-offset);
   width: 60%;
-  max-width: 800px;
-  padding-right: 32px;
+  max-width: 760px; /* was 800px */
+  padding-right: 0; /* was 32px */
 }
 
 .img-wrapper {
@@ -558,7 +557,7 @@ body {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  height: clamp(420px, 45vh, 520px); /* FIXED IMAGE SIZE */
+  height: clamp(420px, 45vh, 520px);
   width: 100%;
   border-radius: 20px;
   overflow: hidden;
@@ -578,8 +577,8 @@ body {
 
 @media (max-width: 1200px) {
   .arch {
-    gap: 56px;
-    max-width: 1200px;
+    gap: 44px;
+    max-width: 1180px;
   }
 
   .img-wrapper {
@@ -589,8 +588,8 @@ body {
 
 @media (max-width: 900px) {
   .arch {
-    gap: 40px;
-    padding: 0 30px;
+    gap: 32px;
+    padding: 0 16px; /* was 30px */
   }
 
   .header {
@@ -609,13 +608,13 @@ body {
     margin-left: 0;
     margin-right: 0;
     width: 100%;
-    padding-top: 40px;
+    padding-top: 32px;
   }
 
   .arch {
     flex-direction: column;
-    gap: 20px;
-    padding: 0 20px;
+    gap: 18px;
+    padding: 0 16px;
   }
 
   .arch__left,
@@ -635,13 +634,13 @@ body {
     transform: none;
     height: 400px;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
   }
 
   .arch__info {
     height: auto;
-    padding: 30px 0;
-    min-height: 70vh;
+    padding: 24px 0;
+    min-height: 60vh;
   }
 
   .arch__info .content {
@@ -650,19 +649,20 @@ body {
 
   .desc {
     color: rgba(18, 18, 18, 0.8);
+    
   }
 }
 
 @media (max-width: 560px) {
   .arch {
-    gap: 15px;
-    padding: 0 15px;
+    gap: 14px;
+    padding: 0 12px;
   }
 
   .img-wrapper {
     height: 320px;
-    margin-bottom: 25px;
-    border-radius: 15px;
+    margin-bottom: 20px;
+    border-radius: 14px;
   }
 
   .header {
@@ -681,8 +681,8 @@ body {
 }
 
 .chanakya-video {
-  margin: 20px 0 24px;
-  width: 320px;
+  margin: 16px 0 20px; /* tighter */
+  width: 300px; /* slightly smaller */
   border-radius: 16px;
 }
 
@@ -694,6 +694,3 @@ body {
     display: none;
   }
 }
-
-
-

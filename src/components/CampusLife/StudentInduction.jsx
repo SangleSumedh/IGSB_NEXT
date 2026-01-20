@@ -6,6 +6,12 @@ import { arambhData } from "./arambhdata";
 import ArambhaSection from "./ArambhaSection";
 import ArambhaSectionMobile from "./ArambhSectionMobile";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import {
+  FaGraduationCap,
+  FaFeatherAlt,
+  FaBookOpen,
+} from "react-icons/fa";
+
 export default function RoadmapSection() {
   const CARDS_PER_SLIDE = 3;
 
@@ -128,9 +134,13 @@ export default function RoadmapSection() {
                                    border border-white/10 rounded-xl
                                    overflow-hidden shadow-sm
                                    min-h-[180px]"
+
+                                   
                       >
+
+                        
                         {/* TEXT */}
-                        <div className="w-[55%] p-4 flex flex-col justify-center gap-2">
+                        <div className="w-[50%] p-4 flex flex-col justify-center gap-2">
                           <span className="text-[10px] font-bold uppercase tracking-widest text-white">
                             {item.topic}
                           </span>
@@ -145,7 +155,7 @@ export default function RoadmapSection() {
 
                           {item.companyLogo &&
                             item.companyLogo.trim() !== "" && (
-                              <div className="w-24 h-9 bg-white rounded-md flex items-center justify-center ">
+                              <div className="w-25 h-15 bg-white rounded-md flex items-center justify-center ">
                                 <img
                                   src={item.companyLogo}
                                   alt="Company logo"
@@ -156,7 +166,7 @@ export default function RoadmapSection() {
                         </div>
 
                         {/* IMAGE */}
-                        <div className="absolute right-0 top-0 h-full w-[45%]">
+                        <div className="absolute right-0 top-0 h-full w-[48%]">
                           <span
                             className="absolute top-1 right-1 bg-white/40 backdrop-blur-sm
                                            text-white text-[10px] px-2 py-0.5 rounded-full z-10"

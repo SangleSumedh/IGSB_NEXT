@@ -14,26 +14,26 @@ const dropdownContent = {
     title: "About Us",
     sections: [
       {
-        label: "About IGSB",
-        link: "/about/chanakya-edu"
+        label: "Home IGSB",
+        link: "/",
       },
       {
         label: "Leaders Desk",
-        link: "/leadersdesk"
+        link: "/leadersdesk",
       },
       {
         label: "Governance",
-        link: "/about/governance"
+        link: "/about/governance",
       },
       {
         label: "Student Committees",
-        link: "/campus-life/student-committees"
+        link: "/campus-life/student-committees",
       },
       {
         label: "Mandatory Disclosure",
-        link: "/MandatoryDisclosure.pdf"
-      }
-    ]
+        link: "/MandatoryDisclosure.pdf",
+      },
+    ],
   },
 
   campusLife: {
@@ -41,7 +41,7 @@ const dropdownContent = {
     sections: [
       {
         label: "Student Induction",
-        link: "/campus-life/student-induction"
+        link: "/campus-life/student-induction",
       },
       // {
       //   label: "Student Interaction",
@@ -53,14 +53,13 @@ const dropdownContent = {
       // },
       {
         label: "Facilities",
-        link: "/Campus/Nature"
+        link: "/Campus/Nature",
       },
       {
         label: "Events",
-        link: "/Campus/Events"
+        link: "/Campus/Events",
       },
-      
-    ]
+    ],
   },
 
   programs: {
@@ -68,14 +67,14 @@ const dropdownContent = {
     sections: [
       {
         label: "MBA",
-        link: "/programs/mba"
+        link: "/programs/mba",
       },
       {
         label: "PhD",
-        link: "/programs/phd"
-      }
-    ]
-  }
+        link: "/programs/phd",
+      },
+    ],
+  },
 };
 
 const Navbar = () => {
@@ -96,8 +95,12 @@ const Navbar = () => {
   // Handle click outside to close dropdown
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target) &&
-          navbarRef.current && !navbarRef.current.contains(event.target)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target) &&
+        navbarRef.current &&
+        !navbarRef.current.contains(event.target)
+      ) {
         setActiveDropdown(null);
       }
     };
@@ -109,13 +112,18 @@ const Navbar = () => {
   // Close modal when clicking outside
   useEffect(() => {
     const handleClickOutsideModal = (event) => {
-      if (isModalOpen && modalRef.current && !modalRef.current.contains(event.target)) {
+      if (
+        isModalOpen &&
+        modalRef.current &&
+        !modalRef.current.contains(event.target)
+      ) {
         setIsModalOpen(false);
       }
     };
 
     document.addEventListener("mousedown", handleClickOutsideModal);
-    return () => document.removeEventListener("mousedown", handleClickOutsideModal);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutsideModal);
   }, [isModalOpen]);
 
   const toggleDropdown = (dropdownName) => {
@@ -128,7 +136,7 @@ const Navbar = () => {
 
   // Render compact dropdown for desktop
   const renderCompactDropdown = (content) => (
-    <div 
+    <div
       ref={dropdownRef}
       className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-secondary rounded-lg shadow-xl border border-gray-200 min-w-[240px] z-50 animate-in fade-in-0 zoom-in-95 duration-200 overflow-hidden"
     >
@@ -145,7 +153,7 @@ const Navbar = () => {
                 <TbExternalLink className="text-white/70 text-xs transition-transform duration-200 group-hover:translate-x-1 group-hover:scale-110" />
               </Link>
             )}
-            
+
             {/* For sections with nested items */}
             {section.items && !section.title && (
               <div>
@@ -165,7 +173,7 @@ const Navbar = () => {
                 ))}
               </div>
             )}
-            
+
             {/* For MBA/PhD sections with title */}
             {section.title && (
               <div>
@@ -207,7 +215,7 @@ const Navbar = () => {
               <TbExternalLink className="text-secondary text-xs transition-transform duration-200 hover:translate-x-1 hover:scale-110" />
             </Link>
           )}
-          
+
           {/* Nested items sections */}
           {section.items && (
             <div>
@@ -268,7 +276,6 @@ const Navbar = () => {
           <div className="flex justify-end w-full h-[45%] text-[0.75rem] lg:text-sm">
             <div className="flex gap-2 lg:gap-4">
               <div className="flex items-center gap-2 md:gap-2 lg:gap-4 font-semibold">
-             
                 <Link
                   href="/"
                   className="relative inline-block group hover:text-primary transition-colors duration-200"
@@ -276,7 +283,7 @@ const Navbar = () => {
                   Home
                   <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
                 </Link>
-                   <span className="text-secondary">|</span>
+                <span className="text-secondary">|</span>
                 <a
                   href="https://rapid.grayquest.com/iudp-master"
                   target="_blank"
@@ -325,7 +332,7 @@ const Navbar = () => {
                   Blogs
                   <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
                 </Link>
-           
+
                 {/* <span className="text-secondary">|</span>
                 <Link
                   href="/Campus/Induction"
@@ -334,9 +341,8 @@ const Navbar = () => {
                   Induction
                   <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
                 </Link> */}
-           
               </div>
-              
+
               {/* Enquire Now Button */}
               <div className="flex justify-center items-center">
                 <button
@@ -367,9 +373,10 @@ const Navbar = () => {
                   }`}
                 />
               </button>
-              
+
               {/* About Us Dropdown */}
-              {activeDropdown === "aboutUs" && renderCompactDropdown(dropdownContent.aboutUs)}
+              {activeDropdown === "aboutUs" &&
+                renderCompactDropdown(dropdownContent.aboutUs)}
             </div>
 
             {/* Campus Life with dropdown */}
@@ -388,9 +395,10 @@ const Navbar = () => {
                   }`}
                 />
               </button>
-              
+
               {/* Campus Life Dropdown */}
-              {activeDropdown === "campusLife" && renderCompactDropdown(dropdownContent.campusLife)}
+              {activeDropdown === "campusLife" &&
+                renderCompactDropdown(dropdownContent.campusLife)}
             </div>
 
             {/* Programs & Admission with dropdown */}
@@ -409,9 +417,10 @@ const Navbar = () => {
                   }`}
                 />
               </button>
-              
+
               {/* Programs & Admission Dropdown */}
-              {activeDropdown === "programs" && renderCompactDropdown(dropdownContent.programs)}
+              {activeDropdown === "programs" &&
+                renderCompactDropdown(dropdownContent.programs)}
             </div>
 
             {/* Single Links (no dropdown) */}
@@ -424,7 +433,7 @@ const Navbar = () => {
                 <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
               </span>
             </Link>
-            
+
             <Link
               href="/alumni"
               className="hover:text-secondary px-2 lg:px-3 transition-colors duration-200 group"
@@ -434,7 +443,7 @@ const Navbar = () => {
                 <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
               </span>
             </Link>
-            
+
             <Link
               href="/research"
               className="hover:text-secondary px-2 lg:px-3 transition-colors duration-200 group"
@@ -542,8 +551,16 @@ const Navbar = () => {
                           >
                             <a
                               href={item.href}
-                              target={item.href.startsWith("http") ? "_blank" : "_self"}
-                              rel={item.href.startsWith("http") ? "noopener noreferrer" : ""}
+                              target={
+                                item.href.startsWith("http")
+                                  ? "_blank"
+                                  : "_self"
+                              }
+                              rel={
+                                item.href.startsWith("http")
+                                  ? "noopener noreferrer"
+                                  : ""
+                              }
                               className="flex items-center justify-between px-4 py-2 hover:bg-gray-100 transition-all duration-200 hover:translate-x-1"
                             >
                               {item.label}
@@ -591,7 +608,10 @@ const Navbar = () => {
                     </span>
                   </button>
                   {mobileDropdown === "campusLife" &&
-                    renderMobileDropdown(dropdownContent.campusLife, "campusLife")}
+                    renderMobileDropdown(
+                      dropdownContent.campusLife,
+                      "campusLife",
+                    )}
                 </div>
 
                 {/* Programs & Admission */}
@@ -656,9 +676,7 @@ const Navbar = () => {
             className="fixed inset-0 bg-black bg-opacity-50 z-40 animate-in fade-in-0 duration-300"
             onClick={toggleHelpline}
           />
-          <div
-            className="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 animate-in slide-in-from-right duration-300"
-          >
+          <div className="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 animate-in slide-in-from-right duration-300">
             <div className="bg-primary text-white p-4 flex justify-between items-center">
               <h3 className="text-lg font-bold">Admissions Helpline</h3>
               <button

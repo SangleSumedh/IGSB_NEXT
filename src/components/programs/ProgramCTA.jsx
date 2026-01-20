@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { ArrowBigUp } from "lucide-react";
+
 const testimonials = [
   {
     name: "Vikrant Kulkarni",
@@ -47,6 +48,7 @@ const testimonials = [
     text: "My association with IGBS has been a wholesome experience of the business world. IGBS offers a sea of opportunities to explore your potential supported by a rich alumni network, industry association and best in class placement opportunity to shape your career.",
   },
 ];
+
 export default function CTASection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -74,12 +76,17 @@ export default function CTASection() {
     <div className="relative w-full bg-white text-slate-800 shadow-xl overflow-hidden pt-2 md:pt-0">
       <div className="grid grid-cols-1 md:grid-cols-8">
         {/* --- TESTIMONIALS --- */}
-        <div className="md:col-span-4 flex items-center justify-center p-2 md:p-4 bg-[#1F6D71]/50 md:bg-transparent">
-          <div className="p-4 md:p-3 rounded-xl border-2 border-[#3aafa9] max-w-xl w-full bg-white/10 backdrop-blur-sm md:bg-transparent">
+        <div className="md:col-span-4 flex flex-col justify-center items-center p-2 md:p-8 bg-[#1F6D71]/50 md:bg-transparent">
+          {/* New Title Section */}
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-slate-900 md:text-[#1F6D71] text-center tracking-tight">
+            Student Testimonials
+          </h2>
+
+          <div className="p-4 md:p-6 rounded-xl border-2 border-[#3aafa9] max-w-3xl w-full bg-white/10 backdrop-blur-sm md:bg-white md:shadow-lg">
             <div className="flex flex-col md:flex-col lg:flex-row items-center gap-5">
               {/* PROFILE */}
               <div className="flex flex-col items-center text-center min-w-[120px]">
-                <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-[#fb7035] overflow-hidden shadow mb-2">
+                <div className="relative w-14 h-14 md:w-20 md:h-20 rounded-full border-2 border-[#fb7035] overflow-hidden shadow-md mb-3">
                   <Image
                     src={active.image}
                     alt={active.name}
@@ -87,10 +94,10 @@ export default function CTASection() {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="font-semibold text-base leading-tight">
+                <h3 className="font-bold text-lg leading-tight text-slate-900">
                   {active.name}
                 </h3>
-                <p className="text-[0.8rem] text-slate-800/80">
+                <p className="text-sm font-medium text-slate-700">
                   {active.branch}
                 </p>
               </div>
@@ -98,20 +105,22 @@ export default function CTASection() {
               {/* TEXT AREA */}
               <div className="flex-1 text-center lg:text-left overflow-hidden">
                 <p
-                  className={`text-[0.8rem] lg:text-sm leading-relaxed text-slate-800/95 px-2 transition-all duration-300 ${isExpanded ? "" : "line-clamp-3 md:line-clamp-4"}`}
+                  className={`text-sm lg:text-[0.95rem] leading-relaxed text-slate-700 transition-all duration-300 ${
+                    isExpanded ? "" : "line-clamp-3 md:line-clamp-4"
+                  }`}
                 >
                   "{active.text}"
                 </p>
 
                 <button
                   onClick={() => setIsExpanded(!isExpanded)}
-                  className="text-[#fb7035] text-[10px] font-bold uppercase mt-1 hover:underline px-2"
+                  className="text-[#fb7035] text-xs font-bold uppercase mt-2 hover:underline tracking-wide"
                 >
                   {isExpanded ? "Read Less" : "Read More"}
                 </button>
 
                 {/* DOTS */}
-                <div className="flex justify-center lg:justify-start gap-1.5 mt-4 px-2">
+                <div className="flex justify-center lg:justify-start gap-1.5 mt-4">
                   {testimonials.map((_, i) => (
                     <button
                       key={i}
@@ -119,8 +128,9 @@ export default function CTASection() {
                       className={`h-1.5 rounded-full transition-all duration-300 ${
                         activeIndex === i
                           ? "w-6 bg-[#fb7035]"
-                          : "w-1.5 bg-slate-800/30"
+                          : "w-1.5 bg-slate-400"
                       }`}
+                      aria-label={`Go to testimonial ${i + 1}`}
                     />
                   ))}
                 </div>
@@ -130,10 +140,12 @@ export default function CTASection() {
         </div>
 
         {/* --- CTA --- */}
-        <div className="md:col-span-2 flex flex-col justify-center items-center text-center px-4 pt-8 pb-4 md:py-0 md:bg-secondary/10">
-          <h2 className="text-xl lg:text-3xl font-bold mb-4 leading-tight">
-            <span className="font-[baskerville-bt] italic">Ready to Lead?</span>
-            <span className="block text-lg lg:text-2xl mt-1">
+        <div className="md:col-span-3 flex flex-col justify-center items-center text-center px-4 pt-8 pb-4 md:py-0 md:bg-secondary/5">
+          <h2 className="text-xl lg:text-3xl font-bold mb-4 leading-tight text-slate-800">
+            <span className="font-[baskerville-bt] italic text-[#1F6D71]">
+              Ready to Lead?
+            </span>
+            <span className="block text-lg lg:text-xl mt-2 font-sans font-medium text-slate-600">
               Get the full details.
             </span>
           </h2>
@@ -143,11 +155,12 @@ export default function CTASection() {
             className="
               inline-flex items-center gap-2
               px-6 py-3
-              text-sm font-bold
+              text-sm font-bold uppercase tracking-wider
               text-white bg-[#fb7035]
-              rounded-full shadow-lg
-              hover:-translate-y-0.5
-              transition-all
+              rounded-full shadow-lg shadow-orange-500/30
+              hover:-translate-y-1 hover:shadow-xl
+              active:translate-y-0
+              transition-all duration-200
             "
           >
             <ArrowBigUp className="w-5 h-5" />
@@ -156,17 +169,18 @@ export default function CTASection() {
         </div>
 
         {/* --- GENTLEMAN --- */}
-        <div className="md:col-span-2 flex items-end justify-center relative h-44 md:h-full bg-white/5 md:bg-transparent overflow-visible">
+        <div className="md:col-span-1 flex items-end justify-center relative h-48 md:h-full bg-white/5 md:bg-transparent overflow-visible">
           <img
             src="/Home/suitman.png"
             alt="Gentleman"
             className="
-              h-[115%] md:h-[125%]
-              xl:w-[85%]
+              h-[90%] md:h-[125%]
+              w-auto
               object-contain object-bottom
               translate-y-2
-              opacity-95
+              opacity-100
               z-10
+              drop-shadow-xl
             "
           />
         </div>

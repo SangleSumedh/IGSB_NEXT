@@ -45,13 +45,15 @@ export default function FormSection() {
   const { headline, body } = pageContent[pathname] || pageContent["/"];
 
   return (
-    <section id="form-section"  className=" relative w-full bg-white overflow-hidden  md:scroll-mt-32">
-
+    <section
+      id="form-section"
+      className="relative w-full bg-gradient-to-r from-[#0f3d3e] via-[#1f6d71] to-[#2ea3a1] overflow-hidden md:scroll-mt-32"
+    >
       {/* ================= XL AND ABOVE ================= */}
       <div className="hidden xl:grid grid-cols-[78%_22%] min-h-[600px]">
 
         {/* ================= LEFT ================= */}
-        <div className="relative overflow-hidden bg-gradient-to-r from-[#10404A] to-[#1F6D71]">
+        <div className="relative overflow-hidden">
 
           {/* TEXT */}
           <div className="relative z-10 pt-12 pb-6 px-20 text-center">
@@ -97,18 +99,9 @@ export default function FormSection() {
         </div>
 
         {/* ================= RIGHT : FORM ================= */}
-        <div className="relative z-20">
-          <div
-            className="
-              absolute
-              top-1/2
-              -translate-y-1/2
-              right-[4%]
-              2xl:right-[36%]
-              w-[420px]
-            "
-          >
-            <div className="bg-[#ff885b] text-white rounded-xl shadow-2xl p-5">
+        <div className="relative z-20 flex items-center justify-end pr-12">
+          <div className="w-[420px]">
+            <div className="bg-[#ff885b]/95 backdrop-blur-sm text-white rounded-xl shadow-2xl p-5">
               <h2 className="text-xl text-center font-bold mb-4">
                 Admission Form
               </h2>
@@ -119,7 +112,6 @@ export default function FormSection() {
                 <p className="font-semibold flex justify-center gap-2 text-sm">
                   Or Give us a call <Phone size={14} /> +91 9657856103
                 </p>
-     
               </div>
             </div>
           </div>

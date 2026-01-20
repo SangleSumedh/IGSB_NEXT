@@ -9,23 +9,23 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
     {
       id: 1,
       image: "/Programs/marketing3.jpg",
-      title: "Where Numbers Shape Strategic Decisions.",
+      title: "Marketing Skills Built on Insight and Impact.",
       description:
-        "Build expertise in financial analysis, corporate finance, investment strategy, and risk management for leadership roles in global financial environments.",
+        "Become a data-driven, consumer-centric marketing leader skilled in brand strategy, digital marketing, and growth across traditional and emerging business platforms.",
     },
     {
       id: 2,
       image: "/Programs/finance3.jpg",
-      title: "Marketing Skills Built on Insight and Impact.",
+      title: "Finance Education Aligned with Global Business Needs",
       description:
-        "Develop data-driven, consumer-centric marketing leaders skilled in brand strategy, digital marketing, and growth across traditional and emerging business platforms.",
+        "Build expertise in financial analysis, corporate finance, investment strategy, and risk management for leadership roles in global financial environments. ",
     },
     {
       id: 3,
       image: "/Programs/hr2.jpg",
       title: "Transforming Talent into Organizational Strength.",
       description:
-        "Develop strategic HR leaders skilled in talent management, organizational development, and workforce analytics.",
+        "Excel at strategic HR leaders skilled in talent management, organizational development, and workforce analytics. ",
     },
     {
       id: 4,
@@ -37,9 +37,9 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
     {
       id: 5,
       image: "/Programs/ba2.jpg",
-      title: "Transforming Data into Business Intelligence.",
+      title: "Transforming Data into Business Intelligence. ",
       description:
-        "Master analytical frameworks, predictive modeling, and data-driven decision-making to lead in analytics-driven organizations.",
+        "Gain hands-on exposure to business analytics, statistical modelling, predictive analytics, and data-driven strategy to excel in analytics-led organizations.",
     },
   ];
 
@@ -210,6 +210,13 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
           CONTROLS
       ========================================================== */}
       <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 xl:bottom-10 xl:right-12 flex items-center gap-3 sm:gap-4 z-30">
+        <button
+          onClick={handlePrev}
+          className="rounded-full bg-primary hover:brightness-110 transition flex items-center justify-center p-2"
+          aria-label="Previous slide"
+        >
+          <FaArrowLeft className="text-white w-5 h-5" />
+        </button>
         {/* Dots Indicator */}
         <div className="flex items-center gap-1.5 sm:gap-2">
           {slides.map((_, i) => (
@@ -239,39 +246,11 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
         {/* Navigation Arrows */}
         <div className="flex items-center gap-1.5 sm:gap-2">
           <button
-            onClick={handlePrev}
-            className="rounded-full bg-primary hover:brightness-110 transition flex items-center justify-center"
-            style={{
-              width: "clamp(2.25rem, 3vw, 2.75rem)",
-              height: "clamp(2.25rem, 3vw, 2.75rem)",
-            }}
-            aria-label="Previous slide"
-          >
-            <FaArrowLeft
-              className="text-white"
-              style={{
-                width: "clamp(1rem, 1.2vw, 1.125rem)",
-                height: "clamp(1rem, 1.2vw, 1.125rem)",
-              }}
-            />
-          </button>
-
-          <button
             onClick={handleNext}
-            className="rounded-full bg-primary hover:brightness-110 transition flex items-center justify-center"
-            style={{
-              width: "clamp(2.25rem, 3vw, 2.75rem)",
-              height: "clamp(2.25rem, 3vw, 2.75rem)",
-            }}
+            className="rounded-full bg-primary hover:brightness-110 transition flex items-center justify-center p-2"
             aria-label="Next slide"
           >
-            <FaArrowRight
-              className="text-white"
-              style={{
-                width: "clamp(1rem, 1.2vw, 1.125rem)",
-                height: "clamp(1rem, 1.2vw, 1.125rem)",
-              }}
-            />
+            <FaArrowRight className="text-white w-5 h-5" />
           </button>
         </div>
       </div>

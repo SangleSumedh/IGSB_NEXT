@@ -1,16 +1,7 @@
 "use client";
 
 import React from "react";
-import {
-  CheckCircle2,
-  Layers,
-  Lightbulb,
-  Target,
-  ArrowRightCircle,
-  Info,
-  Users,
-  LightbulbIcon,
-} from "lucide-react";
+import { Info, LightbulbIcon } from "lucide-react";
 
 export default function MBAOverview() {
   const specializations = [
@@ -85,13 +76,12 @@ export default function MBAOverview() {
             <div className="bg-gradient-to-br from-[#10404A] to-[#3aa6a9] text-white rounded-2xl p-8 shadow-lg relative overflow-hidden">
               {/* Lightbulb Icon Overlay */}
               <LightbulbIcon
-                size={48}
-                className="absolute top-4 right-4 text-orange-400 opacity-80 drop-shadow-[0_0_10px_rgba(251,146,60,0.6)] animate-pulse pointer-events-none"
+                size={100}
+                className="absolute top-4 right-4 text-yellow-500 opacity-80 drop-shadow-[0_0_10px_rgba(251,146,60,0.6)] animate-pulse pointer-events-none"
               />
-              
 
               {/* Header with Flash Animation */}
-              <div className="flex items-center gap-3 mb-6 animate-pulse text-orange-500">
+              <div className="flex items-center gap-3 mb-6 animate-pulse text-white">
                 <Info size={28} className="shrink-0" />
                 <h3 className="text-xl font-bold uppercase tracking-wide">
                   News Flash
@@ -101,7 +91,7 @@ export default function MBAOverview() {
               <ul className="space-y-4">
                 {guidelines.map((line, idx) => (
                   <li key={idx} className="flex gap-3 items-start text-sm">
-                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-orange-500 shrink-0 shadow-[0_0_8px_rgba(253,224,71,0.6)]" />
+                    <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-white shrink-0 shadow-[0_0_8px_rgba(253,224,71,0.6)]" />
                     <p className="text-slate-100 leading-relaxed font-medium">
                       {line}
                     </p>

@@ -2,9 +2,16 @@
 
 import { useState } from "react";
 import { Target, Users, ChevronDown, ChevronUp } from "lucide-react";
+import Image from "next/image";
 
 // 1. Reusable Card Component to handle "Read More" logic
-const InfoCard = ({ title, icon: Icon, text, imageSrc }) => {
+const InfoCard = ({
+  title,
+  icon: Icon,
+  text,
+  imageSrc,
+  showSymbol = false,
+}) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   // Function to wrap specific text in bold
@@ -49,6 +56,32 @@ const InfoCard = ({ title, icon: Icon, text, imageSrc }) => {
         <div className="relative text-justify leading-snug">
           <p>{formatText(text)}</p>
         </div>
+
+        {showSymbol && (
+          <>
+            {/* Mobile version */}
+            <div className="absolute -top-2 -right-2 md:hidden z-20">
+              <Image
+                src="/placement/certificate.png"
+                alt="Certification Symbol"
+                width={50}
+                height={50}
+                className=""
+              />
+            </div>
+
+            {/* Desktop version - positioned outside card */}
+            <div className="hidden md:block absolute -bottom-3   right-0 translate-y-1/2 z-20">
+              <Image
+                src="/placement/certificate.png"
+                alt="Certification Symbol"
+                width={50}
+                height={50}
+                className=""
+              />
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
@@ -77,11 +110,12 @@ export default function CASsection() {
             </div>
           </div>
 
-          {/* CLDP Card */}
+          {/* CLDP Card with symbol */}
           <InfoCard
             title="Career Leadership Development Programme"
             icon={Target}
             text="The Career Leadership Development Programme (CLDP) accelerates MBA careers through specialised training and industry-recognised Professional Certifications. Focused on professional credibility and leadership readiness, CLDP prepares students for advanced corporate and managerial roles."
+            showSymbol={true} // Add this prop to show the symbol
           />
         </div>
       </div>

@@ -1,23 +1,35 @@
 import React from "react";
-import Image from "next/image";
+import ScrollCrushWrapper from "@/components/ScrollCrushWrapper";
+
+// Components
 import RoadmapSection from "@/components/CampusLife/StudentInduction";
-import { MemoryLane } from "@/components/CampusLife/MemoryLane";
 import RoadmapSectionMobile from "@/components/CampusLife/RoadmapSection";
+import { MemoryLane } from "@/components/CampusLife/MemoryLane";
+import ArambhaSection from "@/components/CampusLife/ArambhaSection";
+import ArambhaSectionMobile from "@/components/CampusLife/ArambhSectionMobile";
 
 export default function StudentInductionPage() {
   return (
-    <div className="">
-      {/* Page Content */}
-      <div className="max-w-full mx-auto ">
-        <div className="hidden md:block">
-          <RoadmapSection />
-        </div>
+    <div className="bg-white text-gray-900">
+      {/* DESKTOP VERSION with ScrollCrushWrapper */}
+      <div className="hidden md:block">
+        <ScrollCrushWrapper Hero={<RoadmapSection />}>
+          <div className="bg-white relative z-10">
+            <ArambhaSection />
+            <MemoryLane />
+          </div>
+        </ScrollCrushWrapper>
+      </div>
 
-        {/* MOBILE */}
-        <div className="block md:hidden">
+      {/* MOBILE VERSION - Simple stacked layout */}
+      <div className="block md:hidden">
+        <div className="w-full h-full relative">
           <RoadmapSectionMobile />
         </div>
-        <MemoryLane />
+        <div className="bg-white relative z-10">
+          <ArambhaSectionMobile />
+          <MemoryLane />
+        </div>
       </div>
     </div>
   );

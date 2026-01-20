@@ -42,16 +42,16 @@ export default function PHD() {
       =================================================== */}
       <div className="relative w-full h-[60vh] md:h-[75vh] flex items-center">
         <Image
-          src="/IGSB/Research/FDP/2FDP.jpg"
+          src="/IGSB/Programmes/PHDBanner1.jpg"
           alt="IGSB Research Centre"
           fill
           className="object-cover object-center opacity-90"
           priority
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" /> */}
 
-        <div className="relative max-w-6xl px-6 md:px-12 lg:px-20 z-20 text-white">
+        {/* <div className="relative max-w-6xl px-6 md:px-12 lg:px-20 z-20 text-white">
           <h1 className="text-2xl md:text-4xl font-bold leading-snug">
             Ph.D. Research Centre in Indira Global School of Business
           </h1>
@@ -78,7 +78,7 @@ export default function PHD() {
               Download Brochure
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* ===================================================

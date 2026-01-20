@@ -10,7 +10,7 @@ export default function ArambhaSection() {
         <div className="max-w-full mx-auto h-full flex flex-col lg:flex-row">
           {/* LEFT — TIMELINE & GALLERY SECTION (swapped from right) */}
           <div className="w-full lg:w-2/4 flex flex-col justify-center px-6 lg:px-12 py-8 lg:py-0">
-            {/* CARD 1: DESCRIPTION */}
+            {/* CARD 1: DESCRIPTION */} 
             <div className="mb-8 lg:mb-12">
               <div className="relative bg-transparent border border-secondary/50 rounded-2xl overflow-hidden hover:bg-white/5 transition-all duration-300">
                 <div className="p-6 md:p-8">

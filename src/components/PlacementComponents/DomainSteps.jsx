@@ -22,7 +22,7 @@ const DomainSteps = () => {
   const domains = [
     {
       title: "Marketing",
-      clipart: "/mii.png",
+      clipart: "/placement/marketing.png",
       icon: <FaBullhorn />,
       certs: [
         { title: "Digital Marketing", icon: <FaGlobe /> },
@@ -83,56 +83,58 @@ const DomainSteps = () => {
   ];
 
   return (
-    <section className="bg-[#2b9d97] py-20 font-sans">
+    <section className="bg-secondary py-10 font-sans">
       <div className="max-w-full mx-auto px-4 sm:px-6">
-        
         {/* GRID CONTAINER: 1 column mobile, 2 columns desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {domains.map((domain, index) => {
             return (
-              <div
-                key={index}
-                className="w-full group relative z-10 h-full"
-              >
+              <div key={index} className="w-full group relative z-10 h-full">
                 <div
                   className={`
-                      relative p-6 md:p-8 h-full shadow-2xl rounded-2xl
-                      bg-white
-                      border-t-8 border-primary
-                      flex flex-col
-                      transition-transform duration-300 hover:-translate-y-2 overflow-hidden
-                    `}
+            relative p-6 md:p-8 h-full shadow-2xl rounded-2xl
+            bg-white
+            border-t-8 border-primary
+            flex flex-col
+            transition-transform duration-300 hover:-translate-y-2 overflow-hidden
+          `}
                 >
-                  {/* ================= BACKGROUND IMAGE (Watermark) ================= */}
-                  <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
-                    <img 
-                      src={domain.clipart} 
-                      alt="" 
-                      className="w-3/4 h-3/4 object-contain opacity-10 grayscale-[50%]"
-                    />
-                  </div>
-
-                  {/* ================= CONTENT (z-10 to sit above image) ================= */}
-                  <div className="relative z-10">
+                   <div className="absolute -top-5 -right-2 z-0 pointer-events-none opacity-10">
+            <div className="relative">
+              {/* Large faded icon - can duplicate for layered effect */}
+              <div className="text-9xl rotate-12 text-secondary">
+                {domain.icon}
+              </div>
+              {/* Optional: Additional smaller icon for depth */}
+              <div className="absolute -top-2 -right-2 text-5xl rotate-45 opacity-30">
+                {domain.icon}
+              </div>
+            </div>
+          </div>
+                  {/* ================= MAIN CONTENT ================= */}
+                  <div className="relative z-10 flex-grow">
                     {/* --- Header: Icon + Title --- */}
-                    <h3 className="text-xl font-extrabold uppercase tracking-wider mb-8 flex items-center gap-4 text-primary">
-                      <span className="text-xl text-white bg-secondary p-4 rounded-full shadow-lg flex items-center justify-center">
-                        {domain.icon}
-                      </span>
-                      {domain.title}
-                    </h3>
+                    <div className="flex justify-between items-start mb-8">
+                      <div className="flex items-center gap-4">
+                        <span className="text-xl text-white bg-secondary p-4 rounded-full shadow-lg flex items-center justify-center">
+                          {domain.icon}
+                        </span>
+                        <h3 className="text-xl font-extrabold uppercase tracking-wider text-primary max-w-[70%]">
+                          {domain.title}
+                        </h3>
+                      </div>
+                    </div>
 
                     {/* --- Body Content --- */}
-                    <div className="space-y-6 flex-grow">
+                    <div className="space-y-6">
                       {/* 1. Topics List */}
                       <div>
                         <div className="flex items-center gap-2 font-bold text-lg mb-4 text-secondary uppercase tracking-wide">
                           <FaListUl className="text-xl" />
                           <span>Core Modules</span>
                         </div>
-                        
-                        {/* CHANGED: Grid layout for topics (2 columns on sm+ screens) */}
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
+
+                        <ul className="grid grid-cols-1 sm:grid-cols-1 gap-x-2 gap-y-2">
                           {domain.topics.map((topic, i) => (
                             <li
                               key={i}
@@ -146,30 +148,39 @@ const DomainSteps = () => {
                           ))}
                         </ul>
                       </div>
+                    </div>
 
-                      {/* 2. Certifications Block */}
-                      <div className="pt-6 border-t border-gray-200 mt-auto">
-                        <p className="font-bold text-sm text-secondary uppercase tracking-widest mb-4">
-                          Professional Certifications
-                        </p>
+                    {/* 2. Certifications Block */}
+                    <div className="pt-6 mt-6">
+                      <p className="font-bold text-sm text-secondary uppercase tracking-widest mb-4">
+                        Professional Certifications
+                      </p>
 
-                        <div className="flex flex-wrap gap-3">
-                          {domain.certs.map((cert, i) => (
-                            <div
-                              key={i}
-                              className="flex items-center gap-2 bg-gray-50/90 border border-gray-200 text-gray-700 px-4 py-2 rounded shadow-sm hover:bg-[#e0f2f1] hover:text-[#00695c] transition-all duration-300 cursor-default backdrop-blur-sm"
-                            >
-                              <span className="text-lg text-secondary">
-                                {cert.icon}
-                              </span>
-                              <span className="font-bold text-xs">
-                                {cert.title}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
+                      <div className="flex flex-wrap gap-3">
+                        {domain.certs.map((cert, i) => (
+                          <div
+                            key={i}
+                            className="flex items-center gap-2 bg-gray-50/90 border border-gray-200 text-gray-700 px-4 py-2 rounded shadow-sm hover:bg-[#e0f2f1] hover:text-[#00695c] transition-all duration-300 cursor-default backdrop-blur-sm"
+                          >
+                            <span className="text-lg text-secondary">
+                              {cert.icon}
+                            </span>
+                            <span className="font-bold text-xs">
+                              {cert.title}
+                            </span>
+                          </div>
+                        ))}
                       </div>
                     </div>
+                  </div>
+
+                  {/* ================= DECORATIVE IMAGE (Right Corner) ================= */}
+                  <div className="absolute right-4 bottom-4 z-0 pointer-events-none overflow-hidden">
+                    <img
+                      src={domain.clipart}
+                      alt=""
+                      className="h-60 w-auto object-contain grayscale hover:opacity-25 transition-opacity duration-300"
+                    />
                   </div>
                 </div>
               </div>

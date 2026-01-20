@@ -131,20 +131,20 @@ export default function Testimonials() {
                       {/* Quote Box */}
                       <div className="flex-1 flex flex-col justify-center mb-6">
                         <div className="relative">
-                          <FaQuoteLeft className="text-primary/20 text-2xl md:text-3xl absolute -top-2 -left-2" />
-                          <p className="text-gray-900 text-base md:text-lg leading-relaxed px-6 md:px-8 italic">
+                          <FaQuoteLeft className="text-white text-2xl md:text-3xl absolute -top-2 -left-2" />
+                          <p className="text-white text-base md:text-lg leading-relaxed px-6 md:px-8 italic">
                             {item.quote}
                           </p>
-                          <FaQuoteRight className="text-primary/20 text-2xl md:text-3xl absolute -bottom-2 -right-2" />
+                          <FaQuoteRight className="text-white text-2xl md:text-3xl absolute -bottom-2 -right-2" />
                         </div>
                       </div>
 
                       {/* Name and Position */}
                       <div className="border-t border-gray-100 pt-4">
-                        <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-1">
+                        <h3 className="text-lg md:text-xl font-bold text-white mb-1">
                           {item.name}
                         </h3>
-                        <p className="text-sm md:text-base text-gray-900 leading-tight">
+                        <p className="text-sm md:text-base text-white leading-tight">
                           {item.position}
                         </p>
                       </div>

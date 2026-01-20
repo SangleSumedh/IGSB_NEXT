@@ -151,7 +151,7 @@ export default function CTASection() {
             "
           >
             <ArrowBigUp className="w-5 h-5" />
-            Get in Touch
+            Download Brochure
           </button>
         </div>
 

@@ -31,17 +31,15 @@ export default function SmallDesktopFormSection() {
 
   /* ---------- FIXED SPLIT (USER PREFERENCE) ---------- */
   /* ---------------- FIXED MARQUEE SPLIT ---------------- */
-  const row1 = logos.slice(0, 12);   // 1–12
-  const row2 = logos.slice(12, 23);  // 13–23
-  const row3 = logos.slice(23);      // 24–46
+  const row1 = logos.slice(0, 12); // 1–12
+  const row2 = logos.slice(12, 23); // 13–23
+  const row3 = logos.slice(23); // 24–46
 
   return (
     <section className="block xl:hidden w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71]">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-
         {/* ================= LEFT CONTENT ================= */}
         <div className="flex flex-col items-center text-center gap-10">
-
           {/* TEXT */}
           <div className="max-w-3xl space-y-4">
             <h2 className="text-2xl md:text-3xl font-extrabold text-white">
@@ -54,7 +52,6 @@ export default function SmallDesktopFormSection() {
 
           {/* ================= MARQUEES (ALWAYS 3) ================= */}
           <div className="w-full space-y-8">
-
             {/* ROW 1 → Left */}
             <div className="overflow-hidden">
               <div className="marquee marquee-left gap-6">
@@ -81,12 +78,11 @@ export default function SmallDesktopFormSection() {
                 ))}
               </div>
             </div>
-
           </div>
         </div>
 
         {/* ================= RIGHT FORM ================= */}
-        <div className="flex justify-center">
+        <div className="flex justify-center " id="form-section">
           <div className="w-full max-w-[420px] bg-[#ff885b] text-white rounded-xl shadow-2xl p-5">
             <h2 className="text-xl text-center font-bold mb-4">
               Admission Form
@@ -101,7 +97,6 @@ export default function SmallDesktopFormSection() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
@@ -120,5 +115,3 @@ const LogoItem = ({ src }) => (
     />
   </div>
 );
-
-

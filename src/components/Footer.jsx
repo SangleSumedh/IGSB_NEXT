@@ -20,9 +20,9 @@ const Footer = () => {
           
           {/* ================= COLUMN 1: Logo & Address ================= */}
           <div className="space-y-6">
-            <div className="bg-white p-3 rounded-lg inline-block">
+            <div className="bg-transparent rounded-lg inline-block">
               <Image
-                src="/Logo.png"
+                src="/whitelogo.png"
                 alt="IGSB Logo"
                 width={250}
                 height={100}

@@ -13,19 +13,11 @@ export default function ArambhaSection() {
             {/* CARD 1: DESCRIPTION */} 
             <div className="mb-8 lg:mb-12">
               <div className="relative bg-transparent border border-gray-100/40 rounded-2xl overflow-hidden hover:bg-white/5 transition-all duration-300">
-                <div className="p-6 md:p-8">
+                <div className="p-6 md:p-6">
                   <p className="text-white text-base md:text-lg leading-relaxed text-justify">
-                    <span className="font-semibold text-white/90">
-                      Arambha: Induction Program 2024
-                    </span>{" "}
-                    at Indira Global School of Business marked the beginning
-                    of the MBA journey for the 2024–26 batch. Conducted from{" "}
-                    <span className="font-medium text-white/90">
-                      10th to 21st September 2024
-                    </span>
-                    , the program was designed to ease students into academic
-                    and professional life while introducing them to IGSB&apos;s
-                    culture, curriculum, and industry expectations.
+                   The induction programme introduced participants to the institutional culture, SPPU curriculum, AICTE framework, and industry expectations. It featured foundation sessions about a variety of case study analysis across multiple domains. 
+ 
+Holistic development was addressed through wellness sessions, universal human values discussions, and aptitude training aligned with placement readiness. It further enriched by industry expert interactions, alumni panel discussions, and a full-day leadership workshop on emotional intelligence, strategic thinking, and corporate readiness.
                   </p>
                 </div>
               </div>
@@ -88,12 +80,12 @@ export default function ArambhaSection() {
           {/* RIGHT — CONTENT SECTION (swapped from left) */}
           <div className="w-full lg:w-2/4 flex flex-col justify-center px-6 lg:px-12 py-8 lg:py-0">
             <div className="max-w-lg mx-auto lg:mx-0">
-              <h1 className="text-4xl md:text-5xl font-extrabold text-secondary uppercase mb-6 pt-8">
+              <h1 className="text-4xl md:text-5xl font-extrabold text-secondary uppercase mb-6 pt-10">
                 Arambha
               </h1>
 
-              <p className="text-white mb-8 md:mb-10 text-lg md:text-2xl leading-relaxed">
-                The beginning of momentum, where ideas take their first real form.
+              <p className="text-white mb-8 md:mb-10 text-md md:text-lg leading-relaxed">
+                <span className="font-bold">Arambha 2024</span> effectively laid a strong academic, professional, and ethical foundation, preparing students for a successful MBA journey and future corporate roles.
               </p>
 
               <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px]">

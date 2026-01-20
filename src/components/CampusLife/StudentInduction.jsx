@@ -56,32 +56,20 @@ export default function RoadmapSection() {
                 </h1>
 
                 <p className="text-secondary mb-4 text-xl font-medium">
-                  Experience the journey through our planned phases.
+                 Unfolding Wings of Knowledge
                 </p>
 
                 <div className="mb-8">
                   <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                    The MBA Induction Programme 2025 at Chanakya Campus is a
-                    thoughtfully designed initiative aimed at providing a
-                    vibrant and meaningful welcome for the new batch. Rooted in
-                    the theme{" "}
-                    <span className="font-semibold text-gray-800">
-                      “Metamorphosis – Unfolding Wings of Knowledge,”
-                    </span>{" "}
-                    the program marks the beginning of a transformative journey
-                    from student life to professional excellence.
+                    The MBA Induction Programme 2025 at Chanakya Campus is a structured academic initiative designed in alignment with AICTE guidelines to ensure a smooth transition into postgraduate management education. 
                   </p>
 
                   <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                    The induction schedule is meticulously structured to align
-                    with the guidelines of AICTE, ensuring holistic development
-                    and seamless integration into the academic and cultural
-                    fabric of the institution.
+                    It introduced students to the academic, cultural, and professional ecosystem of the institution through multiple modules and campus familiarization. They did team-building activities to form the foundation of holistic student development, while industry interactions and guest lectures provided early insights into real-world business practices. 
                   </p>
 
                   <p className="text-gray-700 text-sm leading-relaxed">
-                    A key highlight of the programme is its comprehensive
-                    coverage of essential modules prescribed by AICTE.
+                    The induction programme reflects the institution’s commitment to developing ethically grounded, industry-ready, and professionally competent management graduates.
                   </p>
 
                   <div className="mb-10 max-w-md mx-auto mt-5 ">
@@ -117,8 +105,7 @@ export default function RoadmapSection() {
               </div>
             </div>
 
-            {/* GLOW */}
-            <div className="absolute top-0 -left-64 w-[700px] h-[700px] bg-secondary/30 rounded-full blur-[160px] -z-10" />
+            
           </div>
 
           {/* RIGHT – CAROUSEL */}

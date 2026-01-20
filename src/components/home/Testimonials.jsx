@@ -97,7 +97,7 @@ export default function Testimonials() {
       className="py-4 md:py-8 pb-12 md:pb-16 lg:pb-20 bg-secondary"
       aria-labelledby="testimonials-title"
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto  px-4 md:px-6 lg:px-8">
         <div className="text-center mb-4 md:mb-8">
           <h2
             id="testimonials-title"
@@ -125,14 +125,14 @@ export default function Testimonials() {
             >
               {[...testimonials, testimonials[0]].map((item, index) => (
                 <div key={index} className="w-full flex-shrink-0 px-2">
-                  <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 h-auto min-h-[280px] md:min-h-[320px] flex flex-col md:flex-row gap-6 border border-gray-100">
+                  <div className="bg-[#3aafa9] rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 h-auto min-h-[280px] md:min-h-[320px] flex flex-col md:flex-row gap-6 border border-gray-100">
                     {/* Content Section - Left Side */}
                     <div className="flex-1 flex flex-col justify-center">
                       {/* Quote Box */}
                       <div className="flex-1 flex flex-col justify-center mb-6">
                         <div className="relative">
                           <FaQuoteLeft className="text-primary/20 text-2xl md:text-3xl absolute -top-2 -left-2" />
-                          <p className="text-gray-700 text-base md:text-lg leading-relaxed px-6 md:px-8 italic">
+                          <p className="text-gray-900 text-base md:text-lg leading-relaxed px-6 md:px-8 italic">
                             {item.quote}
                           </p>
                           <FaQuoteRight className="text-primary/20 text-2xl md:text-3xl absolute -bottom-2 -right-2" />
@@ -144,7 +144,7 @@ export default function Testimonials() {
                         <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-1">
                           {item.name}
                         </h3>
-                        <p className="text-sm md:text-base text-gray-600 leading-tight">
+                        <p className="text-sm md:text-base text-gray-900 leading-tight">
                           {item.position}
                         </p>
                       </div>

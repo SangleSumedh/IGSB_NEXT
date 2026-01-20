@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 /* ======================================================
-   EVENTS DATA (5 IMAGES PER EVENT)
+   EVENTS DATA
 ====================================================== */
 const eventList = [
   {
@@ -60,19 +60,47 @@ const eventList = [
       "/newEvents/Splash5.jpg",
     ],
   },
-  
 ];
+
+const SLIDE_DURATION = 6000; // 6 seconds
 
 export default function NewEvent() {
   const [activeEventIndex, setActiveEventIndex] = useState(0);
   const activeEvent = eventList[activeEventIndex];
+
+  /* ================= AUTO SLIDE ================= */
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setActiveEventIndex((prev) =>
+        prev === eventList.length - 1 ? 0 : prev + 1,
+      );
+    }, SLIDE_DURATION);
+
+    return () => clearTimeout(timer);
+  }, [activeEventIndex]);
+
+  const goPrev = () => {
+    setActiveEventIndex((prev) =>
+      prev === 0 ? eventList.length - 1 : prev - 1,
+    );
+  };
+
+  const goNext = () => {
+    setActiveEventIndex((prev) =>
+      prev === eventList.length - 1 ? 0 : prev + 1,
+    );
+  };
+
+  const goToIndex = (index) => {
+    setActiveEventIndex(index);
+  };
 
   return (
     <div className="bg-slate-50 py-6 sm:py-12 overflow-hidden font-sans">
       <div className="max-w-full mx-auto px-4 sm:px-16">
 
         {/* ================= HEADER ================= */}
-        <div className="mb-12 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+        <div className="mb-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
           <div className="max-w-4xl">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#10404A] mb-4">
               Life at IGSB
@@ -83,7 +111,6 @@ export default function NewEvent() {
             </p>
           </div>
 
-          {/* ✅ BACKDROP LOGIC — UNCHANGED */}
           {activeEvent.backdrop && (
             <div className="hidden lg:flex justify-end items-center relative w-[150px] h-[150px] opacity-80 mix-blend-multiply">
               <Image
@@ -91,48 +118,66 @@ export default function NewEvent() {
                 alt=""
                 aria-hidden="true"
                 fill
-                className="object-contain transition-opacity duration-500"
+                className="object-contain transition-opacity duration-700"
                 priority
               />
             </div>
           )}
         </div>
 
+        {/* ================= SINGLE EVENT ROW (MOBILE + MD–LG) ================= */}
+        <div className="flex lg:hidden items-center gap-4 mb-8">
+          <button
+            onClick={goPrev}
+            className="w-10 h-10 rounded-full bg-[#FF8C1A]/15 text-[#FF8C1A] flex items-center justify-center hover:bg-[#FF8C1A] hover:text-white transition"
+          >
+            <ChevronLeft size={20} />
+          </button>
+
+          <div className="flex-1 text-center text-base sm:text-lg font-semibold text-[#FF8C1A] truncate">
+            {activeEvent.title}
+          </div>
+
+          <button
+            onClick={goNext}
+            className="w-10 h-10 rounded-full bg-gradient-to-r from-[#FF8C1A] to-[#F2A900] text-white flex items-center justify-center hover:opacity-90 transition"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+
         {/* ================= MAIN GRID ================= */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
 
-          {/* LEFT NAV */}
-          <div className="lg:col-span-1">
+          {/* LEFT NAV (LG+ ONLY) */}
+          <div className="hidden lg:block lg:col-span-1">
+            {/* arrows */}
             <div className="flex gap-3 mb-6">
               <button
-                onClick={() =>
-                  setActiveEventIndex(Math.max(0, activeEventIndex - 1))
-                }
-                className="w-10 h-10 rounded-full bg-[#10404A]/10 text-[#10404A] flex items-center justify-center hover:bg-[#10404A] hover:text-white"
+                onClick={goPrev}
+                className="w-10 h-10 rounded-full bg-[#FF8C1A]/15 text-[#FF8C1A] flex items-center justify-center hover:bg-[#FF8C1A] hover:text-white transition"
               >
                 <ChevronLeft size={20} />
               </button>
+
               <button
-                onClick={() =>
-                  setActiveEventIndex(
-                    Math.min(eventList.length - 1, activeEventIndex + 1),
-                  )
-                }
-                className="w-10 h-10 rounded-full bg-[#10404A] text-white flex items-center justify-center hover:bg-[#fb7035]"
+                onClick={goNext}
+                className="w-10 h-10 rounded-full bg-gradient-to-r from-[#FF8C1A] to-[#F2A900] text-white flex items-center justify-center hover:opacity-90 transition"
               >
                 <ChevronRight size={20} />
               </button>
             </div>
 
+            {/* vertical list */}
             <div className="space-y-4">
               {eventList.map((event, index) => (
                 <div
                   key={index}
-                  onClick={() => setActiveEventIndex(index)}
-                  className={`cursor-pointer text-lg transition-all
+                  onClick={() => goToIndex(index)}
+                  className={`cursor-pointer text-lg transition-colors duration-300
                     ${
                       activeEventIndex === index
-                        ? "text-[#fb7035] translate-x-2 font-bold"
+                        ? "font-semibold text-[#FF8C1A]"
                         : "text-slate-500 hover:text-[#10404A]"
                     }`}
                 >
@@ -142,64 +187,133 @@ export default function NewEvent() {
             </div>
           </div>
 
-          {/* ================= IMAGE-ONLY BENTO GRID ================= */}
-          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-5 h-auto md:h-[600px]">
+          {/* ================= IMAGE GRIDS ================= */}
+          <div className="lg:col-span-3">
 
-            {/* LEFT COLUMN (2 images) */}
-            <div className="flex flex-col gap-5">
-              <div className="flex-1 relative rounded-3xl overflow-hidden shadow-xl">
+            {/* ===== MOBILE GRID (2–1–2) ===== */}
+            <div className="grid grid-cols-2 gap-4 md:hidden">
+
+              {/* row 1 */}
+              <div className="relative h-40 rounded-2xl overflow-hidden shadow-lg">
                 <Image
+                  key={activeEvent.images[1]}
                   src={activeEvent.images[1]}
                   alt={`${activeEvent.title} highlight`}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-opacity duration-700 ease-in-out"
                   priority
                 />
               </div>
 
-              <div className="h-48 relative rounded-3xl overflow-hidden shadow-xl">
+              <div className="relative h-40 rounded-2xl overflow-hidden shadow-lg">
                 <Image
+                  key={activeEvent.images[2]}
                   src={activeEvent.images[2]}
                   alt={`${activeEvent.title} moment`}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-opacity duration-700 ease-in-out"
                 />
               </div>
-            </div>
 
-            {/* CENTER TALL IMAGE */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <Image
-                src={activeEvent.images[0]}
-                alt={activeEvent.title}
-                fill
-                className="object-cover object-"
-                priority
-              />
-            </div>
-
-            {/* RIGHT COLUMN (2 images) */}
-            <div className="flex flex-col gap-5">
-              <div className="flex-1 relative rounded-3xl overflow-hidden shadow-xl">
+              {/* row 2 - full width */}
+              <div className="col-span-2 relative h-56 rounded-2xl overflow-hidden shadow-xl">
                 <Image
+                  key={activeEvent.images[0]}
+                  src={activeEvent.images[0]}
+                  alt={activeEvent.title}
+                  fill
+                  className="object-cover transition-opacity duration-700 ease-in-out"
+                  priority
+                />
+              </div>
+
+              {/* row 3 */}
+              <div className="relative h-40 rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  key={activeEvent.images[3]}
                   src={activeEvent.images[3]}
                   alt={`${activeEvent.title} activity`}
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-top transition-opacity duration-700 ease-in-out"
                 />
               </div>
 
-              <div className="h-48 relative rounded-3xl overflow-hidden shadow-xl">
+              <div className="relative h-40 rounded-2xl overflow-hidden shadow-lg">
                 <Image
+                  key={activeEvent.images[4]}
                   src={activeEvent.images[4]}
                   alt={`${activeEvent.title} celebration`}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-opacity duration-700 ease-in-out"
                 />
               </div>
             </div>
 
+            {/* ===== TABLET + DESKTOP BENTO GRID ===== */}
+            <div className="hidden md:grid md:grid-cols-3 gap-5 h-auto md:h-[500px]">
+
+              {/* LEFT COLUMN */}
+              <div className="flex flex-col gap-5">
+                <div className="flex-1 relative rounded-3xl overflow-hidden shadow-xl">
+                  <Image
+                    key={activeEvent.images[1]}
+                    src={activeEvent.images[1]}
+                    alt={`${activeEvent.title} highlight`}
+                    fill
+                    className="object-cover transition-opacity duration-700 ease-in-out"
+                    priority
+                  />
+                </div>
+
+                <div className="h-48 relative rounded-3xl overflow-hidden shadow-xl">
+                  <Image
+                    key={activeEvent.images[2]}
+                    src={activeEvent.images[2]}
+                    alt={`${activeEvent.title} moment`}
+                    fill
+                    className="object-cover transition-opacity duration-700 ease-in-out"
+                  />
+                </div>
+              </div>
+
+              {/* CENTER */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  key={activeEvent.images[0]}
+                  src={activeEvent.images[0]}
+                  alt={activeEvent.title}
+                  fill
+                  className="object-cover transition-opacity duration-700 ease-in-out"
+                  priority
+                />
+              </div>
+
+              {/* RIGHT COLUMN */}
+              <div className="flex flex-col gap-5">
+                <div className="flex-1 relative rounded-3xl overflow-hidden shadow-xl">
+                  <Image
+                    key={activeEvent.images[3]}
+                    src={activeEvent.images[3]}
+                    alt={`${activeEvent.title} activity`}
+                    fill
+                    className="object-cover object-top transition-opacity duration-700 ease-in-out"
+                  />
+                </div>
+
+                <div className="h-48 relative rounded-3xl overflow-hidden shadow-xl">
+                  <Image
+                    key={activeEvent.images[4]}
+                    src={activeEvent.images[4]}
+                    alt={`${activeEvent.title} celebration`}
+                    fill
+                    className="object-cover transition-opacity duration-700 ease-in-out"
+                  />
+                </div>
+              </div>
+
+            </div>
           </div>
+
         </div>
       </div>
     </div>

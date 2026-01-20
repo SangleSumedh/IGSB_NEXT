@@ -88,7 +88,7 @@ export default function ArambhaSection() {
           {/* RIGHT — CONTENT SECTION (swapped from left) */}
           <div className="w-full lg:w-2/4 flex flex-col justify-center px-6 lg:px-12 py-8 lg:py-0">
             <div className="max-w-lg mx-auto lg:mx-0">
-              <h1 className="text-4xl md:text-5xl font-extrabold text-secondary uppercase mb-6">
+              <h1 className="text-4xl md:text-5xl font-extrabold text-secondary uppercase mb-6 pt-8">
                 Arambha
               </h1>
 

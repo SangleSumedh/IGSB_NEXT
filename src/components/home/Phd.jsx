@@ -48,67 +48,78 @@ export default function PhdSection() {
         </h2>
 
         {/* DOMAIN BLOCKS */}
-        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4 xl:flex xl:justify-between">
-          {PHD_DOMAINS.map((item, index) => {
-            const Icon = item.icon;
+      {/* DOMAIN BLOCKS */}
+<div
+  className="
+    grid grid-cols-2 gap-4 sm:gap-6 
+    lg:grid-cols-4 lg:gap-2
 
-            return (
-              <Link
-                key={index}
-                href="/programs/phd"
-                className="
-                  group
-                  bg-[#10404A] hover:bg-[#14545f]
-                  transition-all duration-300
-                  rounded-xl
-                  p-4 sm:p-5
+    /* BIG DESKTOP: almost no white space */
+    xl:grid-cols-4 xl:gap-4
+  "
+>
+  {PHD_DOMAINS.map((item, index) => {
+    const Icon = item.icon;
 
-                  /* MOBILE: vertical layout */
-                  flex flex-col items-center justify-center text-center gap-3
+    return (
+      <Link
+        key={index}
+        href="/programs/phd"
+        className="
+          group
+          bg-[#10404A] hover:bg-[#14545f]
+          transition-all duration-300
+          rounded-xl
+          p-4 sm:p-5
 
-                  /* lg → xl */
-                  lg:flex-col lg:items-center lg:gap-3
+          /* MOBILE: vertical layout */
+          flex flex-col items-center justify-center text-center gap-3
 
-                  /* xl+ */
-                  xl:flex-row xl:items-center xl:justify-between xl:text-left
-                "
-              >
-                {/* ICON */}
-                <div
-                  className="
-                    w-12 h-12
-                    sm:w-13 sm:h-13
-                    lg:w-14 lg:h-14
-                    rounded-full
-                    border-4 border-[#fb7035]
-                    bg-white
-                    flex items-center justify-center
-                    shrink-0
-                  "
-                >
-                  <Icon
-                    size={20}
-                    className="text-black lg:w-[22px] lg:h-[22px]"
-                  />
-                </div>
+          /* lg → xl */
+          lg:flex-col lg:items-center lg:gap-3
 
-                {/* TITLE */}
-                <h3 className="text-xs sm:text-sm md:text-base lg:text-sm xl:text-base font-semibold text-white leading-tight">
-                  {item.title}
-                </h3>
-
-                {/* ARROW */}
-                <ArrowUpRight
-                  size={18}
-                  className="
-                    text-white/60 group-hover:text-white transition
-                    hidden xl:block
-                  "
-                />
-              </Link>
-            );
-          })}
+          /* xl+ */
+          xl:flex-row xl:items-center xl:justify-between xl:text-left
+          xl:w-full
+        "
+      >
+        {/* ICON */}
+        <div
+          className="
+            w-12 h-12
+            sm:w-13 sm:h-13
+            lg:w-14 lg:h-14
+            rounded-full
+            border-4 border-[#fb7035]
+            bg-white
+            flex items-center justify-center
+            shrink-0
+          "
+        >
+          <Icon
+            size={20}
+            className="text-black lg:w-[22px] lg:h-[22px]"
+          />
         </div>
+
+        {/* TITLE */}
+        <h3 className="text-xs sm:text-sm md:text-base lg:text-sm xl:text-base font-semibold text-white leading-tight">
+          {item.title}
+        </h3>
+
+        {/* ARROW */}
+        <ArrowUpRight
+          size={18}
+          className="
+            text-white/60 group-hover:text-white transition
+            hidden xl:block
+          "
+        />
+      </Link>
+    );
+  })}
+</div>
+
       </div>
     </section>
   );

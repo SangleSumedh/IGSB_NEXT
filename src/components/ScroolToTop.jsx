@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { ChevronUp } from "lucide-react";
-// import { ArrowUp } from "lucide-react";
-// import { MoveUp } from "lucide-react";
 
 export default function ScrollToTop({ lenis }) {
   const [show, setShow] = useState(false);
@@ -37,7 +35,12 @@ export default function ScrollToTop({ lenis }) {
   return (
     <button
       onClick={scrollTop}
-      className={` block fixed bottom-2 sm:bottom-28 right-4 sm:right-6 z-[999999] bg-[#10404A] text-white p-2 sm:p-4 rounded-full shadow-lg w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center
+      className={`block fixed bottom-2 sm:bottom-32 right-4 sm:right-5 z-[999999] 
+        bg-[#10404A] text-white 
+        p-2 sm:p-3 
+        rounded-full shadow-lg 
+        w-10 h-10 sm:w-12 sm:h-12 
+        flex items-center justify-center
         transition-all duration-500 
         ${
           show
@@ -46,7 +49,8 @@ export default function ScrollToTop({ lenis }) {
         }
       `}
     >
-      <ChevronUp size={22} />
+      {/* Smaller icon on desktop, same on mobile */}
+      <ChevronUp className="w-5 h-5 sm:w-[18px] sm:h-[18px]" />
     </button>
   );
 }

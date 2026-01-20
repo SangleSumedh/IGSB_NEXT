@@ -6,14 +6,14 @@ const testimonials = [
   {
     image: "/Home/RTestimonials/juspay.png",
     quote:
-      "ICEM’s emphasis on both technical excellence and practical application prepares students exceptionally well. Their graduates bring not just skills, but a solution-oriented mindset to Juspay.",
+      "IGSB’s emphasis on both managerial excellence and practical application prepares students exceptionally well. Their post graduates bring not just skills, but a solution-oriented mindset to Juspay.",
     name: "Dr. Shipra Pandit",
     position: "Director - HR, Juspay",
   },
   {
     image: "/Home/RTestimonials/mastercard.webp",
     quote:
-      "ICEM’s commitment to blending technical education with real-world readiness is evident in their students, who arrive well-prepared to contribute meaningfully from day one, making them a preferred choice for our campus recruitment.",
+      "IGSB’s commitment to blending technical education with real-world readiness is evident in their students, who arrive well-prepared to contribute meaningfully from day one, making them a preferred choice for our campus recruitment.",
     name: "Mr. Urvish Pandey",
     position:
       "India Head, University Relations & Early Talent Engagement – Mastercard",
@@ -21,42 +21,42 @@ const testimonials = [
   {
     image: "/Home/RTestimonials/ultra.webp",
     quote:
-      "ICEM has always provided us with trained mechanical engineers, and as an organization, we appreciate the college's efforts to prepare the students for the industry.",
+      "IGSB has always provided us with trained cohort, and as an organization, we appreciate the college's efforts to prepare the students for the industry.",
     name: "Dr. Rahul Bagale",
     position: "Vice President Human Resources – Ultra Corpotech Pvt Ltd",
   },
   {
     image: "/Home/RTestimonials/vascon.webp",
     quote:
-      "We have entered into an MOU with ICEM to actively support their endeavours in providing excellent job opportunities for civil engineering students. Our longstanding partnership of over a decade with ICEM will continue further to support the civil engineers.",
+      "We have entered into an MOU with IGSB to actively support their endeavours in providing excellent job opportunities for management students. Our longstanding partnership with IGSB will continue further to support their MBA cohort .",
     name: "Mr. Siddharth Moorthy",
     position: "Managing Director – Vascon Engineers",
   },
   {
     image: "/Home/RTestimonials/zinnov.png",
     quote:
-      "While conducting campus recruitment drives across the country, ICEM consistently emerges as the top choice due to their exceptional commitment to preparing students for their dream job offers.",
+      "While conducting campus recruitment drives across the country, IGSB consistently emerges as the top choice due to their exceptional commitment to preparing students for their dream job offers.",
     name: "Ms. Shilpi Mahar",
     position: "Associate Director – Zinnov",
   },
   {
     image: "/Home/RTestimonials/expleo.webp",
     quote:
-      "We appreciate the designed training programs by ICEM aimed at equipping core Mechanical Engineering students with the necessary skills to excel in the industry. These programs ensure that students emerge as industry-ready professionals",
+      "We appreciate the designed training programs by IGSB aimed at equipping core management students with the necessary skills to excel in the industry. These programs ensure that students emerge as industry-ready professionals",
     name: "Ms. Sumana Chakraborty",
     position: "General Manager, HR – Expleo Group",
   },
   {
     image: "/Home/RTestimonials/ey.png",
     quote:
-      "ICEM has been a part of Ready Engineers Programme for a long time. Their way of creating resources prepared specifically to meet the needs of students ensures a transformative experience that prepares them effectively for the corporate world.",
+      "IGSB has been a top choice since a long time. Their way of creating resources prepared specifically to meet the needs of students ensures a transformative experience that prepares them effectively for the corporate world.",
     name: "Mr. Sushant Kumar",
     position: "Assistant Director – Early Career Program, EY",
   },
   {
     image: "/Home/RTestimonials/philips.jpg",
     quote:
-      "We consistently find ICEM students to be proactive learners and strong team players—traits that resonate deeply with the culture of innovation and collaborative excellence at Philips.",
+      "We consistently find IGSB students to be proactive learners and strong team players—traits that resonate deeply with the culture of innovation and collaborative excellence at Philips.",
     name: "Mr. Vispi Karkaria",
     position: "Early Career Talent India - Philips",
   },
@@ -107,7 +107,7 @@ export default function Testimonials() {
           </h2>
           <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed">
             Our strongest endorsements come from our recruitment partners.
-            Discover why leading companies consistently choose ICEM graduates to
+            Discover why leading companies consistently choose IGSB graduates to
             drive their success.
           </p>
         </div>

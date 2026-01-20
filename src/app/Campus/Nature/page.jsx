@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 /* =========================
-   DATA
+   UPDATED DATA WITH NEW CONTENT
 ========================= */
 const facilities = [
   {
@@ -16,9 +16,9 @@ const facilities = [
       "/NEWFacilities/Sports9.JPG",
     ],
     description1:
-      "Our campus offers excellent sports facilities that encourage physical fitness, teamwork, and overall well-being among students.",
+      "The campus features modern sports facilities designed to support student fitness and overall wellness.",
     description2:
-      "The sports infrastructure is regularly maintained to provide a safe, energetic, and motivating environment.",
+      "Regularly maintained grounds provide a safe and energetic environment that complements academic rigor and enhances the MBA campus experience.",
   },
   {
     title: "Library",
@@ -30,9 +30,9 @@ const facilities = [
       "/NEWFacilities/Lib3.jpg",
     ],
     description1:
-      "The library provides a quiet and resource-rich environment that supports academic learning, research, and self-study.",
+      "With a wide range of academic resources and digital learning materials, the library supports MBA coursework, research initiatives, and faculty development.",
     description2:
-      "It offers a wide collection of books, journals, and digital resources for students and faculty.",
+      "The calm and structured environment promotes focused study and knowledge creation.",
   },
   {
     title: "Canteen",
@@ -44,9 +44,9 @@ const facilities = [
       "/NEWFacilities/Canteen3.JPG",
     ],
     description1:
-      "The campus canteen serves hygienic, nutritious, and affordable meals in a comfortable setting.",
+      "The campus canteen offers hygienic, nutritious, and affordable meals in a comfortable and student-friendly environment.",
     description2:
-      "It acts as a social space where students relax and interact during breaks.",
+      "Designed to support daily campus life, it follows food safety standards and caters to diverse dietary preferences.",
   },
   {
     title: "Academics",
@@ -54,13 +54,13 @@ const facilities = [
     chanakyaImage: "/chanu/chanuAcademics.png",
     images: [
       "/NEWFacilities/Lab5.jpg",
-      "/NEWFacilities/Lab2.jpg",
+      "/NEWFacilities/Lab7.jpg",
       "/NEWFacilities/Lab3.jpg",
     ],
     description1:
-      "Academic facilities are designed to foster innovation, critical thinking, and practical learning.",
+      "The academic ecosystem emphasizes industry-relevant curriculum, experienced faculty, and outcome-driven learning.",
     description2:
-      "Well-equipped classrooms and labs support a strong learning ecosystem.",
+      "With a focus on practical exposure, skill development, and academic excellence, the institution prepares students for professional success and higher education pathways.",
   },
   {
     title: "Gym",
@@ -72,9 +72,9 @@ const facilities = [
       "/NEWFacilities/Gym4.webp",
     ],
     description1:
-      "The gym is equipped with modern fitness equipment to promote physical health and active lifestyles.",
+      "The campus gym is equipped with modern fitness equipment to support student health, wellness, and physical fitness.",
     description2:
-      "Students are encouraged to maintain fitness as part of holistic development.",
+      "Designed for daily workouts and stress management, it promotes a balanced academic lifestyle through regular exercise and well-being initiatives.",
   },
   {
     title: "Hostel",
@@ -82,9 +82,9 @@ const facilities = [
     chanakyaImage: "/chanu/chanuHostel.png",
     singleImage: "/NEWFacilities/FacilitiesHostel.jpg",
     description1:
-      "The hostel provides a safe, comfortable, and disciplined residential environment for students.",
+      "The campus hostel offers secure, comfortable, and well-maintained residential facilities for students.",
     description2:
-      "It includes essential amenities that support both academic focus and personal well-being.",
+      "Designed to support academic focus and personal well-being, it provides a safe living environment with essential amenities and round-the-clock supervision.",
   },
   {
     title: "Transport",
@@ -92,9 +92,9 @@ const facilities = [
     chanakyaImage: "/chanu/chanu7.png",
     singleImage: "/NEWFacilities/Transport.webp",
     description1:
-      "The institute offers reliable transportation facilities connecting major routes and nearby areas.",
+      "The institution provides reliable and safe transportation facilities with well-connected routes for students and staff.",
     description2:
-      "It ensures safe and punctual travel for students and staff.",
+      "The transport system ensures convenient daily commuting, punctuality, and accessibility across key locations, supporting a seamless campus experience.",
   },
   {
     title: "Nature and Peace",
@@ -106,12 +106,11 @@ const facilities = [
       "/NEWFacilities/Lab3.jpg",
     ],
     description1:
-      "The green campus environment promotes calmness, focus, and mental well-being.",
+      "Set amidst a green and serene landscape, the campus offers a clean, pollution-free environment with fresh air and a low AQI.",
     description2:
-      "Natural surroundings create a peaceful atmosphere ideal for learning and reflection.",
+      "Surrounded by nature, landscaped gardens, and open spaces, the peaceful campus enhances focus, well-being, and holistic student development.",
   },
 ];
-
 
 /* =========================
    FACILITY SECTION
@@ -123,80 +122,102 @@ function FacilitySection({ data, index }) {
     <div className="relative w-full min-h-[80vh] overflow-hidden">
       {/* BACKGROUND */}
       {isOdd ? (
-        <div className="absolute left-0 top-[52%] bottom-0 w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] z-0" />
+        <div className="absolute left-0 top-[56%] bottom-0 w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] z-0" />
       ) : (
         <div className="absolute inset-0 bg-gradient-to-r from-[#10404A] to-[#1F6D71] z-0" />
       )}
 
       <div className="relative z-10 w-full px-6 py-12 xl:px-16 xl:py-8">
         {/* HEADING */}
-<div className="mb-10 flex justify-start">
-  <div>
-    <h2
-      className={`text-6xl font-semibold ${
-        isOdd ? "text-gray-900" : "text-white"
-      }`}
-    >
-      {data.title}
-    </h2>
-    <div className="mt-3 w-20 h-[2px] bg-[#fc7116]  ml-0 " />
-  </div>
-</div>
+        <div className="mb-10 flex justify-start">
+          <div>
+            <h2
+              className={`text-5xl md:text-6xl font-semibold ${
+                isOdd ? "text-gray-900" : "text-white"
+              }`}
+            >
+              {data.title}
+            </h2>
+            <div className="mt-3 w-20 h-[2px] bg-[#fc7116] ml-0" />
+          </div>
+        </div>
 
-        <div className={`relative flex flex-col lg:flex-row gap-8 ${!isOdd ? "lg:flex-row-reverse" : ""}`}>
-          {/* IMAGES */}
-          <div className="w-full lg:w-[70%]">
+        <div className={`relative flex flex-col lg:flex-row items-stretch gap-6 lg:gap-8 ${!isOdd ? "lg:flex-row-reverse" : ""}`}>
+          {/* IMAGES - Fixed height container */}
+          <div className="w-full lg:w-[70%] min-h-[400px]">
             {data.singleImage ? (
-              <div className="relative w-full h-[60vh]">
-                <Image src={data.singleImage} alt={data.name} fill className="object-cover rounded-sm" />
+              <div className="relative w-full h-[60vh] min-h-[400px]">
+                <Image 
+                  src={data.singleImage} 
+                  alt={data.title} 
+                  fill 
+                  className="object-cover rounded-sm" 
+                  sizes="(max-width: 768px) 100vw, 70vw"
+                />
               </div>
             ) : (
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="relative lg:col-span-2 h-[60vh]">
-                  <Image src={data.images[0]} alt={data.name} fill className="object-cover rounded-sm" />
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 h-full">
+                <div className="relative lg:col-span-2 h-[50vh] md:h-[60vh] min-h-[300px]">
+                  <Image 
+                    src={data.images[0]} 
+                    alt={`${data.title} 1`} 
+                    fill 
+                    className="object-cover rounded-sm" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 66vw, 46vw"
+                  />
                 </div>
-                <div className="flex flex-col gap-6 h-[60vh]">
-                  <div className="relative h-1/2">
-                    <Image src={data.images[1]} alt={data.name} fill className="object-cover rounded-sm" />
+                <div className="flex flex-col gap-4 lg:gap-6 h-[50vh] md:h-[60vh] min-h-[300px]">
+                  <div className="relative flex-1">
+                    <Image 
+                      src={data.images[1]} 
+                      alt={`${data.title} 2`} 
+                      fill 
+                      className="object-cover rounded-sm" 
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 23vw"
+                    />
                   </div>
-                  <div className="relative h-1/2">
-                    <Image src={data.images[2]} alt={data.name} fill className="object-cover rounded-sm" />
+                  <div className="relative flex-1">
+                    <Image 
+                      src={data.images[2]} 
+                      alt={`${data.title} 3`} 
+                      fill 
+                      className="object-cover rounded-sm" 
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 23vw"
+                    />
                   </div>
                 </div>
               </div>
             )}
           </div>
 
-          {/* TEXT + CHANAKYA IMAGE */}
-          <div
-            className={`w-full lg:w-[30%] flex flex-col items-center text-center ${
-              isOdd
-                ? "absolute lg:static left-0 right-0 top-[26%] translate-y-[-50%] lg:translate-y-0"
-                : "justify-center"
-            }`}
-          >
-            <h3 className={`text-xl font-semibold mb-3 ${isOdd ? "text-gray-900" : "text-white"}`}>
-              {data.name}
-            </h3>
+          {/* TEXT + CHANAKYA IMAGE - Now properly aligned */}
+          <div className={`w-full lg:w-[30%] flex flex-col ${isOdd ? "lg:justify-center" : "lg:justify-center"}`}>
+            <div className={` rounded-xl p-6 lg:p-8 flex-1 flex flex-col ${isOdd ? "lg:mt-0" : "lg:mb-0"}`}>
+              {/* Title removed since we have heading above */}
+              
+              {/* Description text with proper spacing */}
+              <div className="flex-1">
+                <p className={`text-base lg:text-md leading-relaxed mb-4 lg:mb-6 ${isOdd ? "text-gray-600" : "text-white/90"}`}>
+                  {data.description1}
+                </p>
 
-            <p className={`text-sm leading-relaxed mb-4 ${isOdd ? "text-gray-600" : "text-white/80"}`}>
-              {data.description1}
-            </p>
+                <p className={`text-base lg:text-md leading-relaxed ${isOdd ? "text-gray-600" : "text-white/90"}`}>
+                  {data.description2}
+                </p>
+              </div>
 
-            <p className={`text-sm leading-relaxed ${isOdd ? "text-gray-600" : "text-white/80"}`}>
-              {data.description2}
-            </p>
-
-            {/* CHANAKYA IMAGE */}
-            <div className="mt-auto pt-8">
-              <Image
-  src={data.chanakyaImage}
-  alt="Chanakya"
-  width={260}
-  height={260}
-  className="opacity-95"
-/>
-
+              {/* CHANAKYA IMAGE - Fixed at bottom */}
+              <div className="mt-8 pt-6 border-t border-white/10 flex justify-center">
+                <div className="relative w-48 h-48 lg:w-60 lg:h-60">
+                  <Image
+                    src={data.chanakyaImage}
+                    alt="Chanakya"
+                    fill
+                    className="object-contain opacity-95"
+                    sizes="(max-width: 768px) 192px, 240px"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -211,24 +232,25 @@ function FacilitySection({ data, index }) {
 export default function FacilitiesPage() {
   return (
     <section className="relative bg-white">
-      {/* HERO */}
+      {/* UPDATED HERO SECTION */}
       <div className="w-full py-16 bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] shadow-lg">
-  <div className="max-w-7xl mx-auto px-6 xl:px-16 text-center">
-    {/* Main heading with animation */}
-    <h1 className="text-4xl md:text-5xl font-extrabold text-white animate-fade-up">
-      Life @ IGSB
-    </h1>
+        <div className="max-w-7xl mx-auto px-6 xl:px-16 text-center">
+          {/* Updated Headline */}
+          <h1 className="text-4xl md:text-4xl lg:text-4xl font-extrabold text-white animate-fade-up">
+            An MBA Campus Designed for Growth and Innovation
+          </h1>
 
-    {/* Accent divider with animation (note: using #fc7116 color as in your original) */}
-    <div className="mx-auto mt-5 mb-6 w-16 h-[3px] rounded-full bg-[#fc7116] animate-fade-up animation-delay-100" />
+          {/* Accent divider */}
+          <div className="mx-auto mt-5 mb-6 w-16 h-[3px] rounded-full bg-[#fc7116] animate-fade-up animation-delay-100" />
 
-    {/* Description with animation */}
-    <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed animate-fade-up animation-delay-200">
-      Explore the facilities and vibrant campus life that shape learning,
-      growth, and community at IGSB.
-    </p>
-  </div>
-</div>
+          {/* Updated Paragraph */}
+          <p className="text-lg md:text-lg text-white/90 max-w-4xl mx-auto leading-relaxed animate-fade-up animation-delay-200">
+            Explore a dynamic business school campus offering advanced academic facilities, 
+            collaborative learning spaces, and a vibrant student ecosystem that prepares 
+            future leaders for global careers.
+          </p>
+        </div>
+      </div>
 
       {facilities.map((item, index) => (
         <FacilitySection key={index} data={item} index={index} />

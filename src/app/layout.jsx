@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
         <Loader isLoading={isLoading} />
 
         <Navbar />
-        {/* <ScrollToTop /> */}
+        <ScrollToTop />
         <FixedActionBar />
            <WhatsAppButton />
         {/* ✔ Wrap entire scrollable content with Lenis */}

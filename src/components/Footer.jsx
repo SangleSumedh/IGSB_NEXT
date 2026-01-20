@@ -91,7 +91,7 @@ const Footer = () => {
                     rounded-full
                     bg-white
                     border-2 border-[#FF8C1A]
-                    text-[#FF8C1A]
+                    text-secondary
                     hover:bg-[#FF8C1A]
                     hover:text-white
                     transition-all

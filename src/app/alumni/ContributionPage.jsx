@@ -21,25 +21,6 @@ const actions = [
     ),
   },
   {
-    title: "Be a Mentor",
-    desc: "Guide a student through their final year projects and career choices.",
-    icon: (
-      <svg
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className="w-8 h-8"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
-        />
-      </svg>
-    ),
-  },
-  {
     title: "Campus Visit",
     desc: "Drop by for a coffee and interact with faculty and peers.",
     icon: (
@@ -64,7 +45,7 @@ const actions = [
     ),
   },
   {
-    title: "Connect HR",
+    title: "HR Partnership",
     desc: "Help your organization discover talent at IGSB.",
     icon: (
       <svg
@@ -102,7 +83,26 @@ const actions = [
     ),
   },
   {
-    title: "Build Business",
+    title: "Mentorship",
+    desc: "Guide a student through their final year projects and career choices.",
+    icon: (
+      <svg
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-8 h-8"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Collaborate for business",
     desc: "Partner with IGSB Incubation Centre to grow your startup.",
     icon: (
       <svg
@@ -163,13 +163,13 @@ export default function ContributionSection() {
         {/* Title Section */}
         <div className="text-center mb-8 space-y-4">
           <h2 className="text-4xl font-bold text-[#10404A] tracking-tight">
-            HOW YOU CAN CONTRIBUTE
+            How can our alumina contribute?
           </h2>
           <div className="w-20 h-1 bg-[#FF8B61] mx-auto rounded-full"></div>
           <p className="text-[#10404A]/70 max-w-2xl mx-auto">
-            Your journey doesn't end when you graduate. Here are the most
-            impactful ways to stay connected and give back to the IGSB
-            community.
+            A strong alumni network thrives on shared knowledge, industry
+            collaboration, and active engagement. Here’s how you can continue to
+            contribute to the growth of the community.
           </p>
         </div>
 
@@ -297,7 +297,7 @@ export default function ContributionSection() {
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                     {actions.map((action, idx) => {
                       const isSelected = selectedInterests.includes(
-                        action.title
+                        action.title,
                       );
                       return (
                         <div

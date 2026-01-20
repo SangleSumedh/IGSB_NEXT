@@ -328,15 +328,14 @@ export default function AlumniPage() {
               </div>
 
               <h1 className="text-4xl text-center md:text-left xl:text-5xl font-bold tracking-tight text-[#10404A] mb-6 leading-[1.15]">
-                Where Our <span className="text-[#fb7035]">Alumni</span>
+                We Build <span className="text-[#fb7035]">Careers</span>
                 <br />
-                Shape The World
+                Without Borders
               </h1>
 
               <p className="text-center md:text-left text-slate-700 text-base max-w-md font-medium leading-relaxed">
-                IGSB alumni are pioneering innovation across 45 countries,
-                transforming industries and driving global change from Silicon
-                Valley to Singapore.
+                Alumni progress across global organizations, reflecting strong
+                career outcomes and international professional mobility.
               </p>
             </div>
 

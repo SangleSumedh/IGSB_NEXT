@@ -25,7 +25,7 @@ const Footer = () => {
             {/* Logo */}
             <div className="bg-white p-3 rounded-lg inline-block shadow-sm mx-auto md:mx-0">
               <Image
-                src="/Logo.png"
+                src="/whitelogo.png"
                 alt="IGSB Logo"
                 width={220}
                 height={90}

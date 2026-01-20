@@ -22,7 +22,7 @@ const DomainSteps = () => {
   const domains = [
     {
       title: "Marketing",
-      clipart: "/placement/marketing.png",
+      clipart: "/placement/M11.png",
       icon: <FaBullhorn />,
       certs: [
         { title: "Digital Marketing", icon: <FaGlobe /> },
@@ -37,7 +37,7 @@ const DomainSteps = () => {
     },
     {
       title: "Finance",
-      clipart: "/placement/finance.png",
+      clipart: "/placement/F11.png",
       icon: <FaChartLine />,
       certs: [
         { title: "Financial Modelling", icon: <FaFileInvoiceDollar /> },
@@ -52,7 +52,7 @@ const DomainSteps = () => {
     },
     {
       title: "Human Resources",
-      clipart: "/placement/hr.png",
+      clipart: "/placement/HR11.png",
       icon: <FaUsers />,
       certs: [
         { title: "HRIMS", icon: <FaDatabase /> },
@@ -67,7 +67,7 @@ const DomainSteps = () => {
     },
     {
       title: "OSCM",
-      clipart: "/placement/oscm.png",
+      clipart: "/placement/OSCM11.png",
       icon: <FaCogs />,
       certs: [
         { title: "Six Sigma", icon: <FaProjectDiagram /> },
@@ -99,18 +99,18 @@ const DomainSteps = () => {
             transition-transform duration-300 hover:-translate-y-2 overflow-hidden
           `}
                 >
-                   <div className="absolute -top-5 -right-2 z-0 pointer-events-none opacity-10">
-            <div className="relative">
-              {/* Large faded icon - can duplicate for layered effect */}
-              <div className="text-9xl rotate-12 text-secondary">
-                {domain.icon}
-              </div>
-              {/* Optional: Additional smaller icon for depth */}
-              <div className="absolute -top-2 -right-2 text-5xl rotate-45 opacity-30">
-                {domain.icon}
-              </div>
-            </div>
-          </div>
+                  <div className="absolute -top-5 -right-2 z-0 pointer-events-none opacity-10">
+                    <div className="relative">
+                      {/* Large faded icon - can duplicate for layered effect */}
+                      <div className="text-9xl rotate-12 text-secondary">
+                        {domain.icon}
+                      </div>
+                      {/* Optional: Additional smaller icon for depth */}
+                      <div className="absolute -top-2 -right-2 text-5xl rotate-45 opacity-30">
+                        {domain.icon}
+                      </div>
+                    </div>
+                  </div>
                   {/* ================= MAIN CONTENT ================= */}
                   <div className="relative z-10 flex-grow">
                     {/* --- Header: Icon + Title --- */}
@@ -175,11 +175,11 @@ const DomainSteps = () => {
                   </div>
 
                   {/* ================= DECORATIVE IMAGE (Right Corner) ================= */}
-                  <div className="absolute right-4 bottom-4 z-0 pointer-events-none overflow-hidden">
+                  <div className="hidden md:flex absolute right-13 bottom-8 z-0 pointer-events-none overflow-hidden">
                     <img
                       src={domain.clipart}
                       alt=""
-                      className="h-60 w-auto object-contain grayscale hover:opacity-25 transition-opacity duration-300"
+                      className="h-85 w-auto object-contain hover:opacity-25 transition-opacity duration-300"
                     />
                   </div>
                 </div>

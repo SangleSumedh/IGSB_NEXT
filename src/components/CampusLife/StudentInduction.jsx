@@ -5,7 +5,7 @@ import { roadmapData } from "./roadmapdata";
 import { arambhData } from "./arambhdata";
 import ArambhaSection from "./ArambhaSection";
 import ArambhaSectionMobile from "./ArambhSectionMobile";
-
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 export default function RoadmapSection() {
   const CARDS_PER_SLIDE = 3;
 
@@ -45,28 +45,67 @@ export default function RoadmapSection() {
       <section className="min-h-screen bg-white">
         <div className="max-w-full mx-auto min-h-screen flex px-6 py-5">
           {/* LEFT */}
-          <div className="relative w-2/4 flex flex-col">
-            <h1 className="text-5xl lg:text-5xl font-black uppercase mb-6">
-              <span className="bg-clip-text text-transparent bg-[#082328]">
-                Metamorphosis
-              </span>
-            </h1>
+          <div className="relative w-2/4 flex items-start">
+            <div className="flex w-full gap-1 items-start">
+              {/* LEFT — TEXT */}
+              <div className="flex-1 max-w-lg text-justify">
+                <h1 className="text-5xl lg:text-6xl font-black uppercase mb-6 leading-tight">
+                  <span className="bg-clip-text text-transparent bg-secondary">
+                    Metamorphosis
+                  </span>
+                </h1>
 
-            <p className="text-secondary mb-10 max-w-md text-xl">
-              Experience the journey through our planned phases.
-            </p>
+                <p className="text-secondary mb-4 text-xl font-bold">
+                 Unfolding Wings of Knowledge
+                </p>
 
-            {/* Glow */}
-            <div className="absolute top-0 -left-64 w-[700px] h-[700px] bg-secondary rounded-full blur-[160px] -z-10" />
+                <div className="mb-8">
+                  <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                    The MBA Induction Programme 2025 at Chanakya Campus is a structured academic initiative designed in alignment with AICTE guidelines to ensure a smooth transition into postgraduate management education. 
+                  </p>
 
-            {/* Image */}
-            <div className="relative w-[300px] max-w-full">
-              <img
-                src="/chanu/chanuhand2.png"
-                alt="Metamorphosis visual"
-                className="w-full h-auto object-contain"
-              />
+                  <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                    It introduced students to the academic, cultural, and professional ecosystem of the institution through multiple modules and campus familiarization. They did team-building activities to form the foundation of holistic student development, while industry interactions and guest lectures provided early insights into real-world business practices. 
+                  </p>
+
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    The induction programme reflects the institution’s commitment to developing ethically grounded, industry-ready, and professionally competent management graduates.
+                  </p>
+
+                  <div className="mb-10 max-w-md mx-auto mt-5 ">
+                    {/* Top line with opening quote */}
+                    <div className="flex items-center gap-3 mb-3">
+                      <FaQuoteLeft className="w-5 h-5 text-secondary" />
+                      <div className="h-px flex-grow bg-gradient-to-r from-secondary/50 to-transparent" />
+                    </div>
+
+                    {/* Quote text */}
+                    <p className="text-secondary text-2xl font-medium italic leading-tight text-center px-4">
+                      Where future leaders spread their wings
+                      
+                      of knowledge and ambition.
+                    </p>
+
+                    {/* Bottom line with closing quote */}
+                    <div className="flex items-center gap-3 mt-3">
+                      <div className="h-px flex-grow bg-gradient-to-l from-secondary/50 to-transparent" />
+                      <FaQuoteRight className="w-5 h-5 text-secondary" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* RIGHT — IMAGE */}
+              <div className="flex-shrink-0 basis-[240px] pt-65">
+                <img
+                  src="/chanu/chanuhand2.png"
+                  alt="Metamorphosis visual"
+                  className="w-full h-auto object-contain drop-shadow-xl"
+                />
+              </div>
             </div>
+
+            
           </div>
 
           {/* RIGHT – CAROUSEL */}
@@ -104,15 +143,16 @@ export default function RoadmapSection() {
                             {item.designation}
                           </p>
 
-                          {item.companyLogo && item.companyLogo.trim() !== "" && (
-                            <div className="w-24 h-9 bg-white rounded-md flex items-center justify-center ">
-                              <img
-                                src={item.companyLogo}
-                                alt="Company logo"
-                                className="w-full h-full rounded-md object-contain"
-                              />
-                            </div>
-                          )}
+                          {item.companyLogo &&
+                            item.companyLogo.trim() !== "" && (
+                              <div className="w-24 h-9 bg-white rounded-md flex items-center justify-center ">
+                                <img
+                                  src={item.companyLogo}
+                                  alt="Company logo"
+                                  className="w-full h-full rounded-md object-contain"
+                                />
+                              </div>
+                            )}
                         </div>
 
                         {/* IMAGE */}

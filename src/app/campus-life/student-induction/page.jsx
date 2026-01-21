@@ -1,7 +1,5 @@
 import React from "react";
 import ScrollCrushWrapper from "@/components/ScrollCrushWrapper";
-
-// Components
 import RoadmapSection from "@/components/CampusLife/StudentInduction";
 import RoadmapSectionMobile from "@/components/CampusLife/RoadmapSection";
 import { MemoryLane } from "@/components/CampusLife/MemoryLane";
@@ -28,15 +26,11 @@ export default function StudentInductionPage() {
 
       {/* MOBILE VERSION - Simple stacked layout */}
       <div className="block md:hidden">
-        <div className="w-full h-full relative">
-          <RoadmapSectionMobile />
-        </div>
-        <div className="bg-white relative z-10">
-          <ArambhaSectionMobile />
-          <MemoryLane />
-          <Csuite />
-          <ExplorePast />
-        </div>
+        <RoadmapSection />
+        <ArambhaSection />
+        <MemoryLane />
+        <Csuite />
+        <ExplorePast />
       </div>
     </div>
   );

@@ -15,6 +15,7 @@ import PlacementCell from "@/components/PlacementComponents/PlacementCell";
 import RecruiterPlacement from "@/components/PlacementComponents/RecruiterPlacement";
 import DomainSteps from "@/components/PlacementComponents/DomainSteps";
 import PuzzleSkills from "@/components/PlacementComponents/PuzzleSection";
+import Testimonials from "@/components/home/Testimonials";
 
 export default function Placement() {
   return (
@@ -34,6 +35,7 @@ export default function Placement() {
         {/* <PlacementOrientation /> */}
         {/* <PlacementIndustryVisit /> */}
         {/* <PlacementCell /> */}
+        <Testimonials />
       </ScrollCrushWrapper>
     </div>
   );

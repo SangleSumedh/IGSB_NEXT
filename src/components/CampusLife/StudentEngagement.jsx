@@ -129,7 +129,7 @@ export default function StudentWelfare() {
   );
 
   return (
-    <div className="space-y-12 w-full">
+    <div className="space-y-12 w-full p-3">
       {/* Header */}
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 pb-6 border-b">
         <h1 className="text-3xl font-semibold text-secondary">

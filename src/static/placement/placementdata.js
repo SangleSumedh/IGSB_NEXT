@@ -5,6 +5,8 @@
         ✅ 2022-24
     ====================================================== */
     "2022-24": {
+      pdfName: "Placement Data 2022–24",
+    pdfUrl: "/placement/2022-24.xlsx",
       statsImages: [
         { img: "/IGSB/Placement/Chart1-2022-24.png", title: "Sectoral Distribution" },
         { img: "/IGSB/Placement/Chart2-2022-24.png", title: "Specialization" },
@@ -78,6 +80,8 @@
         ✅ 2021-23
     ====================================================== */
     "2021-23": {
+        pdfName: "Placement Data 2021–23",
+    pdfUrl: "/placement/2021-23.pdf",
       statsImages: [
         { img: "/IGSB/Placement/Chart4-2021-23.svg", title: "Sectoral Distribution" },
         { img: "/IGSB/Placement/Chart2-2021-23.svg", title: "Specialization" },
@@ -128,6 +132,8 @@
         ✅ 2020-22
     ====================================================== */
     "2020-22": {
+      pdfName: "Placement Data 2020–22",
+    pdfUrl: "/placement/2020-22.pdf",
       statsImages: [
         { img: "/IGSB/Placement/Chart1-2020-22.svg", title: "Sectoral Distribution" },
         { img: "/IGSB/Placement/Chart2-2020-22.svg", title: "Specialization" },
@@ -193,6 +199,8 @@
         ✅ 2019-21
     ====================================================== */
     "2019-21": {
+      pdfName: "Placement Data 2019–21",
+    pdfUrl: "/placement/2019-21.pdf",
       statsImages: [
         { img: "/IGSB/Placement/Chart1-2019-21.svg", title: "Sectoral Distribution" },
         { img: "/IGSB/Placement/Chart2-2019-21.svg", title: "Specialization" },
@@ -247,6 +255,8 @@
         ✅ 2018-20
     ====================================================== */
     "2018-20": {
+            pdfName: "Placement Data 2018–20",
+    pdfUrl: "/placement/2018-20.pdf",
       statsImages: [
         { img: "/IGSB/Placement/Chart1-2018-20.svg", title: "Sectoral Distribution" },
         { img: "/IGSB/Placement/Chart2-2018-20.svg", title: "Specialization" },
@@ -317,6 +327,8 @@
         ✅ 2017-19
     ====================================================== */
     "2017-19": {
+            pdfName: "Placement Data 2017–19",
+    pdfUrl: "/placement/2017-19.pdf",
       statsImages: [
         { img: "/IGSB/Placement/Chart1-2017-19.svg", title: "Sectoral Distribution" },
         { img: "/IGSB/Placement/Chart2-2017-19.svg", title: "Specialization" },
@@ -382,6 +394,8 @@
         ✅ 2016-18
     ====================================================== */
     "2016-18": {
+            pdfName: "Placement Data 2016–18",
+    pdfUrl: "/placement/2016-18.pdf",
       statsImages: [
         { img: "/IGSB/Placement/Chart1-2016-18.svg", title: "Sectoral Distribution" },
         { img: "/IGSB/Placement/Chart2-2016-18.svg", title: "Specialization" },

@@ -5,7 +5,7 @@ import { placementData } from "@/static/placement/placementdata";
 import { FiFileText,FiExternalLink } from "react-icons/fi";
 
 export default function PlacementRecords() {
-  const years = Object.keys(placementData).reverse();
+  const years = Object.keys(placementData);
   const [activeYear, setActiveYear] = useState(years[0]);
   const currentPdfLink = placementData[activeYear]?.pdfUrl || "#";
 

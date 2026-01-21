@@ -71,7 +71,7 @@ const InfoCard = ({
             </div>
 
             {/* Desktop version - positioned outside card */}
-            <div className="hidden md:block absolute -bottom-3   right-0 translate-y-1/2 z-20">
+            <div className="hidden md:block absolute -bottom-3 right-0 translate-y-1/2 z-20">
               <Image
                 src="/placement/certificate.png"
                 alt="Certification Symbol"

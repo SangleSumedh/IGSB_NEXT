@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { ArrowBigUp } from "lucide-react";
+import { ArrowBigUp, ChevronLeft, ChevronRight } from "lucide-react";
 
 /* ======================================================
    TESTIMONIALS DATA
@@ -26,12 +26,6 @@ const testimonials = [
     image: "/Home/Testimonials/Krutika-Patil.png",
     text: "I am fully satisfied with my decision to join Indira Global Business School. Excellent staff with exceptional support for academics and extra-curricular activities. Well-equipped infrastructure to meet the academic and accommodation requirements of students. The institute has one of the best ROIs amongst most MBA colleges, in terms of placements. I am placed with HDFC Ltd with more than a decent package for about a year now through campus placements and am very satisfied with my job.",
   },
-  // {
-  //   name: "Saurabh Kulkarni",
-  //   branch: "NielsenIQ",
-  //   image: "/Home/Testimonials/Saurabh-Kulkarni.png",
-  //   text: "There are very few moments in one's life when one feels to be genuinely fortunate. Indira Global Business School is not just the B-School but an institution that helped me transform and create my own identity in corporate world. My Faculties and mentors were always a part of this beautiful journey with me, and helped me survive, succeed and shine. IGBS not only provides the students an armory of knowledge, but also develops industry requirement skills which helps as ultimate confidence booster.",
-  // },
   {
     name: "Akshay Shirke",
     branch: "Amazon",
@@ -57,19 +51,17 @@ export default function CTASection() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
-    // Pause rotation if expanded so user can read
     if (isExpanded) return;
 
     const t = setInterval(
       () => setActiveIndex((i) => (i + 1) % testimonials.length),
-      5000,
+      5000
     );
     return () => clearInterval(t);
   }, [isExpanded]);
 
   const active = testimonials[activeIndex];
 
-  // Reset expansion when testimonial changes manually
   useEffect(() => {
     setIsExpanded(false);
   }, [activeIndex]);
@@ -81,15 +73,23 @@ export default function CTASection() {
     }
   };
 
+  const handlePrev = () => {
+    setActiveIndex((i) =>
+      i === 0 ? testimonials.length - 1 : i - 1
+    );
+  };
+
+  const handleNext = () => {
+    setActiveIndex((i) =>
+      i === testimonials.length - 1 ? 0 : i + 1
+    );
+  };
+
   return (
     <div className="relative w-full bg-gradient-to-r from-[#10404A] via-[#10404A] to-[#FF8B61] text-white shadow-xl overflow-hidden pt-2 md:pt-0">
-      {/* GRID UPDATE: 
-         Matched cols to 4 (Testimonial) - 2 (CTA) - 2 (Gentleman) 
-      */}
       <div className="grid grid-cols-1 md:grid-cols-8 min-h-[300px]">
-        {/* --- COL 1: TESTIMONIALS (Span 4) --- */}
+        {/* --- COL 1: TESTIMONIALS --- */}
         <div className="md:col-span-4 flex flex-col justify-center items-center p-2 md:p-6 bg-[#1F6D71]/50 md:bg-transparent z-20">
-          {/* ADDED TITLE */}
           <h2 className="text-xl md:text-2xl font-bold mb-4 text-white text-center tracking-tight shadow-black/10 drop-shadow-md">
             Student Testimonials
           </h2>
@@ -109,7 +109,9 @@ export default function CTASection() {
                 <h3 className="font-semibold text-sm md:text-base leading-tight">
                   {active.name}
                 </h3>
-                <p className="text-[0.75rem] text-white/80">{active.branch}</p>
+                <p className="text-[0.75rem] text-white/80">
+                  {active.branch}
+                </p>
               </div>
 
               {/* TEXT AREA */}
@@ -129,27 +131,48 @@ export default function CTASection() {
                   {isExpanded ? "Read Less" : "Read More"}
                 </button>
 
-                {/* DOTS */}
-                <div className="flex justify-center md:justify-start gap-1.5 mt-3">
-                  {testimonials.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setActiveIndex(i)}
-                      className={`h-1.5 rounded-full transition-all duration-300 ${
-                        activeIndex === i
-                          ? "w-6 bg-[#fb7035]"
-                          : "w-1.5 bg-white/30 hover:bg-white/50"
-                      }`}
-                      aria-label={`Go to testimonial ${i + 1}`}
-                    />
-                  ))}
+                {/* DOTS + NEXT / PREV */}
+                <div className="flex items-center justify-center md:justify-start gap-3 mt-3">
+                  {/* PREV */}
+                  <button
+                    onClick={handlePrev}
+                    className="p-1.5 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
+                    aria-label="Previous testimonial"
+                  >
+                    <ChevronLeft className="w-4 h-4 text-white" />
+                  </button>
+
+                  {/* DOTS */}
+                  <div className="flex gap-1.5">
+                    {testimonials.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setActiveIndex(i)}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                          activeIndex === i
+                            ? "w-6 bg-[#fb7035]"
+                            : "w-1.5 bg-white/30 hover:bg-white/50"
+                        }`}
+                        aria-label={`Go to testimonial ${i + 1}`}
+                      />
+                    ))}
+                  </div>
+
+                  {/* NEXT */}
+                  <button
+                    onClick={handleNext}
+                    className="p-1.5 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
+                    aria-label="Next testimonial"
+                  >
+                    <ChevronRight className="w-4 h-4 text-white" />
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* --- COL 2: CTA (Span 2) --- */}
+        {/* --- COL 2: CTA --- */}
         <div className="md:col-span-2 flex flex-col justify-center items-center text-center px-4 pt-8 pb-4 md:py-0 bg-white/5 md:bg-transparent z-20">
           <h2 className="text-xl lg:text-3xl font-bold mb-4 leading-tight drop-shadow-lg">
             <span className="font-[baskerville-bt] italic text-[#fb7035] md:text-white">
@@ -162,38 +185,23 @@ export default function CTASection() {
 
           <button
             onClick={handleDownload}
-            className="
-              inline-flex items-center gap-2 
-              px-5 py-3 
-              text-sm font-bold 
-              text-[#10404A] bg-white 
-              rounded-full shadow-lg 
-              hover:-translate-y-0.5 hover:shadow-xl hover:bg-gray-50
-              transition-all duration-200
-            "
+            className="inline-flex items-center gap-2 px-5 py-3 text-sm font-bold text-[#10404A] bg-white rounded-full shadow-lg hover:-translate-y-0.5 hover:shadow-xl hover:bg-gray-50 transition-all duration-200"
           >
             <ArrowBigUp className="w-5 h-5" />
             Get in Touch
           </button>
         </div>
 
-        {/* --- COL 3: GENTLEMAN (Span 2 & Dynamic Size) --- */}
+        {/* --- COL 3: GENTLEMAN --- */}
         <div className="md:col-span-2 flex items-end justify-center relative h-44 md:h-auto bg-white/5 md:bg-transparent overflow-visible">
           <img
             src="/Home/suitman.png"
             alt="Gentleman"
-            className={`
-              w-[80%]
-              object-contain object-bottom
-              transition-all duration-500 ease-in-out
-              z-10
-              drop-shadow-2xl
-              ${
-                isExpanded
-                  ? "h-[105%] md:h-[125%] translate-y-2 opacity-100"
-                  : "h-[90%] md:h-[95%] translate-y-4 opacity-90"
-              }
-            `}
+            className={`w-[80%] object-contain object-bottom transition-all duration-500 ease-in-out z-10 drop-shadow-2xl ${
+              isExpanded
+                ? "h-[105%] md:h-[125%] translate-y-2 opacity-100"
+                : "h-[90%] md:h-[95%] translate-y-4 opacity-90"
+            }`}
           />
         </div>
       </div>

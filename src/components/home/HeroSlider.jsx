@@ -11,11 +11,6 @@ const HeroSlider = () => {
     "/Home/IGSBBanner3.jpg",
   ];
 
-  const mobileImages = [
-    "/Home/IGSBBannerH4.jpg",
-    "/Home/IGSBBannerH5.jpg",
-  ];
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const [previousIndex, setPreviousIndex] = useState(0);
 
@@ -54,9 +49,7 @@ const HeroSlider = () => {
         <div className="flex-1 overflow-hidden whitespace-nowrap">
           <div className="flex animate-seamlessMarquee font-semibold text-xs sm:text-sm py-2 text-secondary">
             <span className="mr-12">
-              <span className="text-red-600 font-bold">
-                Important Notice:
-              </span>{" "}
+              <span className="text-red-600 font-bold">Important Notice:</span>{" "}
               Inter-Se-Merit List for ILS ACAP Admission for A.Y. 2025–26
             </span>
 
@@ -74,9 +67,7 @@ const HeroSlider = () => {
 
             {/* duplicate for seamless loop */}
             <span className="mr-12">
-              <span className="text-red-600 font-bold">
-                Important Notice:
-              </span>{" "}
+              <span className="text-red-600 font-bold">Important Notice:</span>{" "}
               Inter-Se-Merit List for ILS ACAP Admission for A.Y. 2025–26
             </span>
           </div>
@@ -161,76 +152,16 @@ const HeroSlider = () => {
           </div>
         </div>
 
-        {/* ================= MOBILE ================= */}
+        {/* ================= MOBILE (STATIC SINGLE BANNER) ================= */}
         <div className="block md:hidden relative w-full">
           <Image
-            src={mobileImages[currentIndex]}
-            alt="mobile banner"
-            className="w-full h-auto opacity-0 pointer-events-none"
+            src="/Home/IGSBBannerHome.jpg"
+            alt="IGSB mobile banner"
+            className="w-full h-auto object-contain"
             width={600}
             height={400}
             priority
           />
-
-          {mobileImages.map((img, i) => (
-            <div
-              key={i}
-              className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                currentIndex === i
-                  ? "opacity-100 scale-100 z-20"
-                  : previousIndex === i
-                  ? "opacity-0 scale-100 z-10"
-                  : "opacity-0 scale-105 z-0"
-              }`}
-            >
-              <Image
-                src={img}
-                alt="mobile banner"
-                className="w-full h-auto object-contain"
-                width={600}
-                height={400}
-                unoptimized
-              />
-            </div>
-          ))}
-
-          {/* ===== MOBILE RIGHT CORNER CONTROLS ===== */}
-          <div className="absolute bottom-4 right-4 flex items-center gap-3 z-30">
-            {/* Dots */}
-            <div className="flex items-center gap-1.5">
-              {mobileImages.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => handleDotClick(i)}
-                  className={`rounded-full transition-all duration-300 ${
-                    currentIndex === i
-                      ? "w-8 h-1.5 bg-secondary-600"
-                      : "w-1.5 h-1.5 bg-gray-300"
-                  }`}
-                  aria-label={`Go to slide ${i + 1}`}
-                />
-              ))}
-            </div>
-
-            {/* Arrows */}
-            <div className="flex items-center gap-2">
-              <button
-                onClick={handlePrev}
-                className="w-9 h-9 rounded-full bg-[#d6c2a8] flex items-center justify-center hover:brightness-110 transition"
-                aria-label="Previous slide"
-              >
-                <FaArrowLeft size={14} className="text-black" />
-              </button>
-
-              <button
-                onClick={handleNext}
-                className="w-9 h-9 rounded-full bg-[#d6c2a8] flex items-center justify-center hover:brightness-110 transition"
-                aria-label="Next slide"
-              >
-                <FaArrowRight size={14} className="text-black" />
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </div>

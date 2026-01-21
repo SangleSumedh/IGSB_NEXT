@@ -56,9 +56,9 @@ const ExploreSection = () => {
             </div>
 
             {/* Mobile & lg+ heading (original behaviour) */}
-            <h2 className="md:hidden lg:block text-4xl sm:text-2xl xl:text-3xl font-extrabold text-gray-800 tracking-tight mb-12 mt-12">
+            <h2 className="md:hidden lg:block   text-xl sm:text-2xl lg:text-3xl font-extrabold text-gray-800 tracking-tight mb-12 mt-12">
               Explore your Potential at <br />
-              <span className="text-[#FF8B61] text-4xl">
+              <span className="text-[#FF8B61] text-2xl lg:text-4xl">
                 Indira Global School of Business
               </span>
             </h2>

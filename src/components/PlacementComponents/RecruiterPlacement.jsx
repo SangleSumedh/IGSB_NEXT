@@ -10,14 +10,14 @@ import { Phone } from "lucide-react";
 /* ---------------- DATA ---------------- */
 
 const LOGO_COUNT = 46;
-const EXCLUDED_LOGOS = [4];
 
 const generateLogos = () =>
   Array.from({ length: LOGO_COUNT }, (_, i) => {
     const index = i + 1;
-    if (EXCLUDED_LOGOS.includes(index)) return null;
-    return `/placementlogos/${index}.jpg`;
-  }).filter(Boolean);
+
+    const extension = index === 4 ? "png" : "jpg";
+    return `/placementlogos/${index}.${extension}`;
+  });
 
 /* ---------------- COMPONENT ---------------- */
 

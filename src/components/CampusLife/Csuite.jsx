@@ -15,7 +15,7 @@ export default function Csuite() {
                   {/* HERO IMAGE - Top row spanning 2 columns */}
                   <div className="relative col-span-2 row-span-2 rounded-2xl overflow-hidden border border-white/30">
                     <Image
-                      src="/induction/2.jpg"
+                      src="/induction/2.JPG"
                       alt="Boardroom presentation at C-Suite simulation"
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-500"
@@ -26,7 +26,7 @@ export default function Csuite() {
                   {/* TALL IMAGE - Right column spanning 2 rows */}
                   <div className="relative col-span-1 row-span-2 rounded-2xl overflow-hidden border border-white/30">
                     <Image
-                      src="/induction/4.jpg"
+                      src="/induction/4.JPG"
                       alt="Team collaboration during simulation"
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-500"
@@ -38,7 +38,7 @@ export default function Csuite() {
                   {/* SMALL IMAGE 1 - Bottom left */}
                   <div className="relative col-span-1 row-span-1 rounded-xl overflow-hidden border border-white/30">
                     <Image
-                      src="/induction/1.jpg"
+                      src="/induction/1.JPG"
                       alt="Expert evaluation session"
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-500"
@@ -50,7 +50,7 @@ export default function Csuite() {
                   {/* SMALL IMAGE 2 - Bottom middle */}
                   <div className="relative col-span-1 row-span-1 rounded-xl overflow-hidden border border-white/30">
                     <Image
-                      src="/induction/5.jpg"
+                      src="/induction/5.JPG"
                       alt="Leadership workshop"
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-500"
@@ -61,7 +61,7 @@ export default function Csuite() {
                   {/* Optional: Add a 5th image or leave empty for design */}
                   <div className="relative col-span-1 row-span-1 rounded-xl overflow-hidden border border-white/30">
                     <Image
-                      src="/induction/3.jpg"
+                      src="/induction/3.JPG"
                       alt="Leadership workshop"
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-500"

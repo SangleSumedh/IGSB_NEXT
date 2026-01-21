@@ -6,7 +6,7 @@ export const roadmapData = [
     designation: "Vice President",
     company: "Leapfrog",
     date: "10th September 2025",
-    image: "/inductionimages/10th1.jpg",
+    image: "/inductionimages/10th1new.jpg",
     companyLogo: "/inductionlogos/1.jpg",
   },
   // {
@@ -24,7 +24,7 @@ export const roadmapData = [
     designation: "Vice President",
     company: "Vodafone UK",
     date: "10th September 2025",
-  image: "/inductionimages/10th2.jpg",
+  image: "/inductionimages/10th2new.jpg",
     companyLogo: "/inductionlogos/2.jpg",
   },
   
@@ -63,7 +63,7 @@ export const roadmapData = [
     designation: "Manager Internal Audit Europe and Asia PAC",
     company: "",
     date: "12th September 2025",
-    image: "/inductionimages/12th1.jpg",
+    image: "/inductionimages/12th1new.jpg",
     companyLogo: "/inductionlogos/5.jpg",
   },
   {
@@ -72,7 +72,7 @@ export const roadmapData = [
     designation: "Facilitator and Founder",
     company: "",
     date: "12th September 2025",
-    image: "/inductionimages/12th2.jpg",
+    image: "/inductionimages/12th2new.jpg",
     companyLogo: "/inductionlogos/6.jpg",
   },
 
@@ -83,7 +83,7 @@ export const roadmapData = [
     designation: "Executive Presence Consultant & Corporate Trainer",
     company: "",
     date: "13th September 2025",
-   image: "/inductionimages/13th1.jpg",
+   image: "/inductionimages/13th1new.jpg",
     companyLogo: "/inductionlogos/7.jpg",
   },
   {
@@ -92,7 +92,7 @@ export const roadmapData = [
     designation: "Co-Founder",
     company: "",
     date: "13th September 2025",
-    image: "/inductionimages/13th2.jpg",
+    image: "/inductionimages/13th2new.jpg",
     companyLogo: "/inductionlogos/8.jpg",
   },
 
@@ -103,7 +103,7 @@ export const roadmapData = [
     designation: "CHRO & Founder",
     company: "Inteliment Technologies",
     date: "15th September 2025",
-   image: "/inductionimages/15th1.jpg",
+   image: "/inductionimages/15th1new.jpg",
     companyLogo: "/inductionlogos/9.jpg",
   },
   {
@@ -112,7 +112,7 @@ export const roadmapData = [
     designation: "Regional Business Manager",
     company: "ERIS Lifesciences",
     date: "15th September 2025",
-    image: "/inductionimages/15th2.jpg",
+    image: "/inductionimages/15th2new.jpg",
    companyLogo: "/inductionlogos/10.jpg",
   },
 
@@ -123,7 +123,7 @@ export const roadmapData = [
     designation: "",
     company: "",
     date: "16th September 2025",
-     image: "/inductionimages/16th1.jpg",
+     image: "/inductionimages/16th1new.jpg",
    companyLogo: "/inductionlogos/11.jpg",
   },
   {
@@ -132,8 +132,8 @@ export const roadmapData = [
     designation: "Advocate",
     company: "",
     date: "16th September 2025",
-      image: "/inductionimages/16th.png",
-   companyLogo: "",
+      image: "/inductionimages/16th2new.jpg",
+  //  companyLogo: "",
   },
 
   // ===================== 17 SEPTEMBER =====================
@@ -143,7 +143,7 @@ export const roadmapData = [
     designation: "",
     company: "",
     date: "17th September 2025",
-     image: "/inductionimages/17th1.jpg",
+     image: "/inductionimages/17th1new.jpg",
    companyLogo: "/inductionlogos/12.jpg",
   },
   {
@@ -152,7 +152,7 @@ export const roadmapData = [
     designation: "",
     company: "",
     date: "17th September 2025",
-     image: "/inductionimages/17th2.jpg",
+     image: "/inductionimages/17th2new.jpg",
    companyLogo: "/inductionlogos/13.jpg",
   },
   {
@@ -161,8 +161,8 @@ export const roadmapData = [
     designation: "Counselling Psychologist",
     company: "",
     date: "17th September 2025",
-      image: "/inductionimages/17th3.jpg",
-   companyLogo: ""
+      image: "/inductionimages/17th3new.jpg",
+  //  companyLogo: ""
   },
 
   // ===================== 18 SEPTEMBER =====================
@@ -172,7 +172,7 @@ export const roadmapData = [
     designation: "",
     company: "",
     date: "18th September 2025",
-      image: "/inductionimages/18th1.jpg",
+      image: "/inductionimages/18th1new.jpg",
    companyLogo: "/inductionlogos/14.jpg",
   },
   {
@@ -192,7 +192,7 @@ export const roadmapData = [
     designation: "",
     company: "",
     date: "19th September 2025",
-     image: "/inductionimages/19th1.jpg",
+     image: "/inductionimages/19th1new.jpg",
    companyLogo: "/inductionlogos/16.jpg",
   },
   {
@@ -202,7 +202,7 @@ export const roadmapData = [
     company: "",
     date: "19th September 2025",
       image: "/inductionimages/19th2.jpg",
-   companyLogo: "",
+  //  companyLogo: "",
   },
   {
     topic: "Sales in the City",

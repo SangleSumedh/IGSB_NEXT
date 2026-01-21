@@ -45,6 +45,7 @@ export default function Csuite() {
                       sizes="(max-width: 768px) 33vw, 16.5vw"
                     />
                   </div>
+                
 
                   {/* SMALL IMAGE 2 - Bottom middle */}
                   <div className="relative col-span-1 row-span-1 rounded-xl overflow-hidden border border-white/30">

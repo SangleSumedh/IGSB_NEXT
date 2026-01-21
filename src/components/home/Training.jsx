@@ -45,7 +45,7 @@ function Training() {
               </div>
             </div>
 
-            {/* IRP FEATURES - IMAGE BASED */}
+            {/* IRP FEATURES */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-auto">
               {[
                 { label: "Aptitude", logo: "/Home/Aptitude9.png" },
@@ -111,15 +111,15 @@ function Training() {
               </div>
             </div>
 
-            {/* CLDP FEATURES - IMAGE BASED */}
+            {/* CLDP FEATURES */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-2 sm:gap-2 lg:gap-3 xl:gap-3 mt-auto">
               {[
                 { label: "Project Management", logo: "/Home/ProjectManagement.jpg" },
                 { label: "Product Management", logo: "/Home/ProductManagement.jpg" },
                 { label: "Excel", logo: "/Home/Excel.jpg" },
-                { label: "Power BI", logo: "/Home/PowerBIManagement.jpg" },
+                { label: "SAP", logo: "/Home/SAP.png" },
                 { label: "Business Analytics", logo: "/Home/businessA.jpg" },
-                { label: "SQL | Tableau", logo: "/Home/SQLManagement.jpg" },
+                { label: "Power BI |SQL | Tableau", logo: "/Home/SQLManagement1.jpg" },
               ].map((item, index) => (
                 <div
                   key={index}
@@ -131,7 +131,15 @@ function Training() {
                     <img
                       src={item.logo}
                       alt={item.label}
-                      className="w-full h-full object-contain transition-all duration-300 hover:scale-110"
+                      className={`
+                        object-contain transition-all duration-300 hover:scale-110
+                        ${
+                          item.label === "SAP" ||
+                          item.label === "Power BI |SQL | Tableau"
+                            ? "w-full h-full scale-y-125 sm:scale-y-130 lg:scale-y-160 lg:scale-x-160"
+                            : "w-full h-full"
+                        }
+                      `}
                     />
                   </div>
                   <span className="text-[9px] sm:text-[10px] lg:text-[11px] xl:text-[11px] font-medium text-black text-center leading-tight px-1">

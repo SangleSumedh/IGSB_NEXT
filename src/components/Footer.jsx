@@ -123,20 +123,20 @@ const Footer = () => {
 
             <div className="space-y-5 text-sm text-white/90">
               <div>
-                <strong className="text-[#10404A] block mb-1">MBA:</strong>
+                <strong className="text-white block mb-1">MBA:</strong>
                 <div>Mobile: 9657856103</div>
                 <div>Tel: 02114691417</div>
               </div>
 
               <div>
-                <strong className="text-[#10404A] block mb-1">
+                <strong className="text-white block mb-1">
                   Administrative:
                 </strong>
                 <div>Mobile: 9657856103</div>
               </div>
 
               <div>
-                <strong className="text-[#10404A] block mb-1">Emails:</strong>
+                <strong className="text-white block mb-1">Emails:</strong>
                 <div className="space-y-1">
                   <Link
                     href="mailto:exam.committee@indiragsb.edu.in"
@@ -346,7 +346,7 @@ const Footer = () => {
       {/* ================= BOTTOM BAR ================= */}
       <div className="bg-[#10404A] border-t-4 border-[#FF8C1A]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-4 text-center text-white text-xs sm:text-sm">
-          © 2025. Indira Global School of Business. All Rights Reserved.
+          © 2026. Indira Global School of Business. All Rights Reserved.
         </div>
       </div>
     </footer>

@@ -28,7 +28,7 @@ export default function ApplyForm({ variant = "card" }) {
 
   // Responsive input classes
   const inputClass =
-    "w-full border border-gray-300 bg-white rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary text-sm sm:text-base";
+    "w-full border border-gray-300 bg-white rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary text-sm sm:text-xxs";
 
   const selectClass =
     "w-full border border-gray-300 bg-white rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-secondary appearance-none cursor-pointer text-sm sm:text-base";
@@ -78,7 +78,7 @@ export default function ApplyForm({ variant = "card" }) {
           type="text"
           name="name"
           required
-          placeholder="Enter your Name *"
+          placeholder="Enter your Name "
           className={inputClass}
         />
 
@@ -87,7 +87,7 @@ export default function ApplyForm({ variant = "card" }) {
           type="email"
           name="email"
           required
-          placeholder="Enter your Email *"
+          placeholder="Enter your Email "
           className={inputClass}
         />
 
@@ -112,8 +112,8 @@ export default function ApplyForm({ variant = "card" }) {
             type="tel"
             name="mobile"
             required
-            placeholder="Enter Mobile Number *"
-            className={`${inputClass} w-full`}
+            placeholder="Enter Mobile Number "
+            className={`${inputClass} w-full text-xs`}
           />
         </div>
 

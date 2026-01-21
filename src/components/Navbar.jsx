@@ -29,6 +29,10 @@ const dropdownContent = {
         label: "Student Committees",
         link: "/campus-life/student-committees",
       },
+      // {
+      //   label: "Accrediations",
+      //   link: "/Accrediation",
+      // },
       {
         label: "Mandatory Disclosure",
         link: "/MandatoryDisclosure.pdf",
@@ -255,20 +259,29 @@ const Navbar = () => {
         className="w-full h-[12vh] flex justify-between bg-white text-black shadow-sm font-sans fixed top-0 left-0 right-0 z-50"
       >
         {/* Left: Logo */}
-        <div className="w-[29%] lg:w-[25%] xl:w-[30%] h-full flex items-center justify-start md:pl-0 md:justify-center">
-          <Link href="/">
-            <Image
-              src="/Logo.png"
-              alt="Logo"
-              height={300}
-              width={300}
-              className="w-auto cursor-pointer object-contain transition-transform duration-300"
-              priority
-              fetchPriority="high"
-              unoptimized={true}
-            />
-          </Link>
-        </div>
+   {/* Left: Logo */}
+<div className="w-[60%] md:w-[29%] lg:w-[25%] xl:w-[30%] h-full flex items-center justify-start pl-2 md:pl-3">
+  <Link href="/" className="flex items-center h-full">
+    <Image
+      src="/Logo.png"
+      alt="Logo"
+      height={340}
+      width={340}
+      className="
+        h-[92%] md:h-[78%]
+        w-auto 
+        cursor-pointer 
+        object-contain 
+        transition-transform 
+        duration-300
+      "
+      priority
+      fetchPriority="high"
+      unoptimized={true}
+    />
+  </Link>
+</div>
+
 
         {/* Right Section - Desktop */}
         <div className="hidden md:flex w-[70%] h-full flex-col">
@@ -276,14 +289,14 @@ const Navbar = () => {
           <div className="flex justify-end w-full h-[45%] text-[0.75rem] lg:text-sm">
             <div className="flex gap-2 lg:gap-4">
               <div className="flex items-center gap-2 md:gap-2 lg:gap-4 font-semibold">
-                <Link
-                  href="/"
+               {/* <Link
+                  href="/FRA"
                   className="relative inline-block group hover:text-primary transition-colors duration-200"
                 >
-                  Home
+                  FRA Fee Structure
                   <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
                 </Link>
-                <span className="text-secondary">|</span>
+                <span className="text-secondary">|</span> */}
                 <a
                   href="https://rapid.grayquest.com/iudp-master"
                   target="_blank"
@@ -317,6 +330,16 @@ const Navbar = () => {
                 </a>
 
                 <span className="text-secondary">|</span>
+
+                <Link
+                  href="/MeritList"
+                  className="relative inline-block group  hover:text-primary transition-colors duration-200"
+                >
+                  Merit List
+                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+                </Link>
+                <span className="text-secondary">|</span>
+
                 <Link
                   href="/contact"
                   className="relative inline-block group hover:text-primary transition-colors duration-200"
@@ -332,16 +355,8 @@ const Navbar = () => {
                   Blogs
                   <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
                 </Link>
-
-                {/* <span className="text-secondary">|</span>
-                <Link
-                  href="/Campus/Induction"
-                  className="relative inline-block group hover:text-primary transition-colors duration-200"
-                >
-                  Induction
-                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-                </Link> */}
-              </div>
+                </div>
+ 
 
               {/* Enquire Now Button */}
               <div className="flex justify-center items-center">

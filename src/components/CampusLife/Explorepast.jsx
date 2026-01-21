@@ -7,7 +7,7 @@ export default function RevisitMemoryLane() {
   const [open, setOpen] = useState(false);
 
   return (
-    <section className="w-full bg-white border-t border-slate-200  py-12">
+    <section className="w-full bg-white border-t border-slate-200 ">
       {/* TOGGLE HEADER */}
       <button
         onClick={() => setOpen((v) => !v)}

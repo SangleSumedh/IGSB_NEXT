@@ -162,10 +162,10 @@ const DomainSteps = () => {
                             key={i}
                             className="flex items-center gap-2 bg-gray-50/90 border border-gray-200 text-gray-700 px-4 py-2 rounded shadow-sm hover:bg-[#e0f2f1] hover:text-[#00695c] transition-all duration-300 cursor-default backdrop-blur-sm"
                           >
-                            <span className="text-lg text-secondary">
+                            <span className="text-lg text-primary">
                               {cert.icon}
                             </span>
-                            <span className="font-bold text-xs">
+                            <span className="font-bold text-xs text-primary">
                               {cert.title}
                             </span>
                           </div>

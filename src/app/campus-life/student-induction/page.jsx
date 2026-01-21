@@ -7,6 +7,9 @@ import RoadmapSectionMobile from "@/components/CampusLife/RoadmapSection";
 import { MemoryLane } from "@/components/CampusLife/MemoryLane";
 import ArambhaSection from "@/components/CampusLife/ArambhaSection";
 import ArambhaSectionMobile from "@/components/CampusLife/ArambhSectionMobile";
+import Csuite from "@/components/CampusLife/Csuite";
+import StudentWelfare from "@/components/CampusLife/StudentEngagement";
+import ExplorePast from "@/components/CampusLife/Explorepast";
 
 export default function StudentInductionPage() {
   return (
@@ -17,6 +20,8 @@ export default function StudentInductionPage() {
           <div className="bg-white relative z-10">
             <ArambhaSection />
             <MemoryLane />
+            <Csuite />
+            <ExplorePast />
           </div>
         </ScrollCrushWrapper>
       </div>
@@ -29,6 +34,8 @@ export default function StudentInductionPage() {
         <div className="bg-white relative z-10">
           <ArambhaSectionMobile />
           <MemoryLane />
+          <Csuite />
+          <ExplorePast />
         </div>
       </div>
     </div>

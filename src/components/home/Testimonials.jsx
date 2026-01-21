@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import Image from "next/image";
+
 const testimonials = [
   {
     image: "/Home/RTestimonials/juspay.png",
@@ -61,6 +62,7 @@ const testimonials = [
     position: "Early Career Talent India - Philips",
   },
 ];
+
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
@@ -97,11 +99,11 @@ export default function Testimonials() {
       className="py-4 md:py-8 pb-12 md:pb-16 lg:pb-20 bg-secondary"
       aria-labelledby="testimonials-title"
     >
-      <div className="max-w-7xl mx-auto  px-4 md:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="text-center mb-4 md:mb-8">
           <h2
             id="testimonials-title"
-            className="text-3xl text-white md:text-4xl lg:text-5xl font-bold  mb-4 leading-tight"
+            className="text-3xl text-white md:text-4xl lg:text-5xl font-bold mb-4 leading-tight"
           >
             Trusted by the Best in the Business
           </h2>
@@ -125,9 +127,9 @@ export default function Testimonials() {
             >
               {[...testimonials, testimonials[0]].map((item, index) => (
                 <div key={index} className="w-full flex-shrink-0 px-2">
-                  <div className="bg-[#3aafa9] rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 h-auto min-h-[280px] md:min-h-[320px] flex flex-col md:flex-row gap-6 border border-gray-100">
+                  <div className="bg-[#3aafa9] rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 h-auto min-h-[280px] md:min-h-[320px] flex flex-col md:flex-row gap-8 border border-gray-100">
                     {/* Content Section - Left Side */}
-                    <div className="flex-1 flex flex-col justify-center">
+                    <div className="flex-[1.7] flex flex-col justify-center">
                       {/* Quote Box */}
                       <div className="flex-1 flex flex-col justify-center mb-6">
                         <div className="relative">
@@ -151,14 +153,14 @@ export default function Testimonials() {
                     </div>
 
                     {/* Logo Section - Right Side */}
-                    <div className="flex-shrink-0 flex items-center justify-center">
-                      <div className="w-24 h-24 md:w-32 md:h-32 relative rounded-xl shadow-sm border bg-white border-gray-200 flex items-center justify-center p-3">
+                    <div className="flex-[0.9] flex items-start justify-center">
+                      <div className="w-40 h-24 md:w-52 md:h-32 relative rounded-xl shadow-sm border bg-white border-gray-200 flex items-center justify-center p-4">
                         <Image
                           src={item.image}
                           alt={`${item.name} logo`}
                           fill
                           className="object-contain"
-                          sizes="(max-width: 768px) 96px, 128px"
+                          sizes="(max-width: 768px) 160px, 208px"
                         />
                       </div>
                     </div>

@@ -112,16 +112,17 @@ export default function NewEvent() {
           </div>
 
           {activeEvent.backdrop && (
-            <div className="hidden lg:flex justify-end items-center relative w-[150px] h-[150px] opacity-80 mix-blend-multiply">
-              <Image
-                src={activeEvent.backdrop}
-                alt=""
-                aria-hidden="true"
-                fill
-                className="object-contain transition-opacity duration-700"
-                priority
-              />
-            </div>
+            <div className="hidden lg:flex justify-end items-center relative w-[150px] h-[150px] opacity-80 mix-blend-multiply mr-28">
+  <Image
+    src={activeEvent.backdrop}
+    alt=""
+    aria-hidden="true"
+    fill
+    className="object-contain transition-opacity duration-700"
+    priority
+  />
+</div>
+
           )}
         </div>
 

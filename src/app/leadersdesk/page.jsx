@@ -58,14 +58,6 @@ const leaders = [
       "We aim to nurture a culture of curiosity, research, and continuous learning. By encouraging critical thinking and ethical responsibility, we prepare students not only for successful careers but also for meaningful contributions to society.",
     reverse: true,
   },
-   {
-    name: "Managing Director's Message",
-    title: "Managing Director",
-    image: "/Home/ShashiSir2.jpg",
-    message:
-      "Our focus has always been on bridging the gap between academics and industry. Through modern infrastructure, industry-oriented curriculum, and experienced faculty, we strive to create professionals who are adaptable, skilled, and future-ready.",
-    reverse: false,
-  },
 ];
 
 // Combined Faculty and Staff Data

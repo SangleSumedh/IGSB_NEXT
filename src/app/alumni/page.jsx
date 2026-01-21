@@ -12,79 +12,111 @@ import OldPage from "./OldPage";
 // --- CONFIGURATION ---
 const GLOBE_RADIUS = 2;
 const AUTO_ROTATE_SPEED = 0.9;
-const CAROUSEL_INTERVAL = 10000; // 5 Seconds
+const CAROUSEL_INTERVAL = 3000; // 3 Seconds
 
 // --- ASSETS & DATA ---
-const EARTH_DAY_TEXTURE = "/textures/earth2k.jpg"; // High-res Earth texture
+const EARTH_DAY_TEXTURE = "/textures/earth2k.jpg";
 
 const ALUMNI_LOCATIONS = [
   {
     id: 1,
-    name: "Sarah Jenkins",
-    role: "Senior Product Manager",
-    company: "Google",
-    companyLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg",
-    lat: 40.7128,
-    lon: -74.006,
-    location: "New York, USA",
-    img: "/boy.png",
-    bio: "Leading the Maps integration team. Graduated Batch of 2018.",
+    name: "Soham Prashant Ghule",
+    role: "Management Trainee",
+    company: "BNY Mellon",
+    companyLogo: "/logos/3.jpg",
+    lat: 18.5246,
+    lon: 73.8786,
+    location: "Pune, India",
+    img: "/IGSB/Alumni/NewAlumni/soham_ghule.jpg",
+    bio: "",
   },
   {
     id: 2,
-    name: "Raj Patel",
-    role: "Tech Lead",
-    company: "Microsoft",
-    companyLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
-    lat: 19.076,
-    lon: 72.8777,
+    name: "Choudhary Shayan Izhar",
+    role: "Wealth Management Analyst",
+    company: "UBS Bank",
+    companyLogo: "/logos/15.jpg",
+    lat: 18.9582,
+    lon: 72.8321,
     location: "Mumbai, India",
-    img: "/boy.png",
-    bio: "Architecting cloud solutions for Azure. Graduated Batch of 2019.",
+    img: "/IGSB/Alumni/NewAlumni/shayan_choudhary.jpg",
+    bio: "",
   },
   {
     id: 3,
-    name: "Chen Wei",
-    role: "Data Scientist",
-    company: "Alibaba",
-    companyLogo:
-      "https://upload.wikimedia.org/wikipedia/en/8/80/Alibaba-Group-Logo.svg",
-    lat: 31.2304,
-    lon: 121.4737,
-    location: "Shanghai, China",
-    img: "/boy.png",
-    bio: "Specializing in AI-driven logistics. Graduated Batch of 2020.",
+    name: "Shelke Vaishnavi Shrikant",
+    role: "Management Trainee",
+    company: "Bajaj General Insurance",
+    companyLogo: "/logos/bagic.png", // Placeholder
+    lat: 18.53, // Offset for Pune
+    lon: 73.85,
+    location: "Pune, India",
+    img: "/IGSB/Alumni/NewAlumni/shelke_vaishnavi.jpg",
+    bio: "",
   },
+
+  // {
+  //   id: 4,
+  //   name: "Aditi Ravindra Sharma",
+  //   role: "Management Trainee",
+  //   company: "Eka Mobility",
+  //   companyLogo: "/logos/eka.jpg", // Placeholder
+  //   lat: 18.51, // Offset for Pune
+  //   lon: 73.82,
+  //   location: "Pune, India",
+  //   img: "/IGSB/Alumni/NewAlumni/aditi_sharma.jpg",
+  //   bio: "",
+  // },
+  // {
+  //   id: 5,
+  //   name: "Aashish B Dhakane",
+  //   role: "Intern + PPO",
+  //   company: "State Street Corporation",
+  //   companyLogo: "/logos/statestreet.jpg", // Placeholder
+  //   lat: 18.545, // Offset for Pune
+  //   lon: 73.885,
+  //   location: "Pune, India",
+  //   img: "/IGSB/Alumni/NewAlumni/aashish_dhakane.jpg",
+  //   bio: "",
+  // },
+  // {
+  //   id: 6,
+  //   name: "Bhavesh Gulab Patil",
+  //   role: "Intern + PPO",
+  //   company: "State Street Corporation",
+  //   companyLogo: "/logos/statestreet.jpg", // Placeholder
+  //   lat: 18.535, // Offset for Pune
+  //   lon: 73.875,
+  //   location: "Pune, India",
+  //   img: "/IGSB/Alumni/NewAlumni/bhavesh_patil.jpg",
+  //   bio: "",
+  // },
+  // {
+  //   id: 7,
+  //   name: "Chintalwar Tanisha",
+  //   role: "Intern + PPO",
+  //   company: "State Street Corporation",
+  //   companyLogo: "/logos/statestreet.jpg", // Placeholder
+  //   lat: 18.515, // Offset for Pune
+  //   lon: 73.865,
+  //   location: "Pune, India",
+  //   img: "/IGSB/Alumni/NewAlumni/chintalwar_tanisha.jpg",
+  //   bio: "",
+  // },
   {
     id: 4,
-    name: "Emma Wood",
-    role: "FinTech Consultant",
-    company: "Deloitte",
-    companyLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/5/56/Deloitte.svg",
-    lat: 51.5074,
-    lon: -0.1278,
-    location: "London, UK",
-    img: "/boy.png",
-    bio: "Consulting for top tier banking firms. Graduated Batch of 2017.",
+    name: "Varad Sunil Kulkarni",
+    role: "Management Trainee",
+    company: "Blue Dart",
+    companyLogo: "/logos/41.jpg", // Placeholder
+    lat: 19.076, // Mapped "Western India" to Mumbai for better distribution
+    lon: 72.8777,
+    location: "Western India",
+    img: "/IGSB/Alumni/NewAlumni/varad_kulkarni.jpg",
+    bio: "",
   },
-  {
-    id: 5,
-    name: "Lucas Silva",
-    role: "UX Researcher",
-    company: "Spotify",
-    companyLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg",
-    lat: -23.5505,
-    lon: -46.6333,
-    location: "São Paulo, Brazil",
-    img: "/boy.png",
-    bio: "Enhancing user discovery flows. Graduated Batch of 2021.",
-  },
+  
 ];
-
 // --- HELPER ---
 const latLongToVector3 = (lat, lon, radius) => {
   const phi = (90 - lat) * (Math.PI / 180);
@@ -138,22 +170,22 @@ const Globe = ({ selectedId, onSelect }) => {
   );
 };
 
-// --- COMPONENT: Interactive Marker ---
+// --- COMPONENT: Interactive Marker (FIXED OVERLAP) ---
 const Marker = ({ position, data, isSelected, onSelect }) => {
   const [hovered, setHovered] = useState(false);
   const meshRef = useRef();
+  const isActive = hovered || isSelected;
 
-  // Use frame to pulse the selected marker
+  // Pulse effect
   useFrame(({ clock }) => {
     if (isSelected && meshRef.current) {
-      const scale = 0.2 + Math.sin(clock.getElapsedTime() * 5) * 0.2; // Pulse effect
+      const scale = 0.2 + Math.sin(clock.getElapsedTime() * 5) * 0.2;
       meshRef.current.scale.set(scale, scale, scale);
     } else if (meshRef.current) {
       meshRef.current.scale.set(1, 1, 1);
     }
   });
 
-  // Shared event handlers
   const handlePointerOver = (e) => {
     e.stopPropagation();
     document.body.style.cursor = "pointer";
@@ -171,30 +203,23 @@ const Marker = ({ position, data, isSelected, onSelect }) => {
     onSelect(data);
   };
 
-  const isActive = hovered || isSelected;
-
   return (
     <group position={position}>
-      {/* 3D PIN GROUP */}
+      {/* 3D PIN GEOMETRY */}
       <group
         onPointerOver={handlePointerOver}
         onPointerOut={handlePointerOut}
         onClick={handleClick}
-        ref={meshRef} // Apply scale animation here
+        ref={meshRef}
       >
-        {/* Invisible Hitbox */}
         <mesh visible={false}>
           <sphereGeometry args={[0.15, 16, 16]} />
           <meshBasicMaterial />
         </mesh>
-
-        {/* Visual Pin Head */}
         <mesh>
           <sphereGeometry args={[isSelected ? 0.06 : 0.04, 16, 16]} />
           <meshBasicMaterial color={isActive ? "#fb7035" : "#ffffff"} />
         </mesh>
-
-        {/* Visual Pin Ring */}
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, 0]}>
           <ringGeometry args={[0.06, 0.08, 32]} />
           <meshBasicMaterial
@@ -206,23 +231,29 @@ const Marker = ({ position, data, isSelected, onSelect }) => {
         </mesh>
       </group>
 
-      {/* HTML OVERLAY */}
+      {/* HTML OVERLAY - FIXED Z-INDEX & OVERLAP */}
       <Html
         distanceFactor={12}
-        zIndexRange={[5, 0]}
-        style={{ pointerEvents: "auto" }}
+        // CRITICAL FIX: Give active elements a much higher Z-Index so they overlay neighbors
+        zIndexRange={isActive ? [100, 0] : [0, 0]}
+        style={{
+          pointerEvents: "none", // Allows clicking "through" the empty HTML container space
+          userSelect: "none",
+        }}
       >
         <div
           onMouseEnter={handlePointerOver}
           onMouseLeave={handlePointerOut}
           onClick={handleClick}
-          className={`flex flex-col items-center -translate-y-2/3 -translate-x-1/2 pb-2 cursor-pointer transition-transform duration-300 ${
-            isActive ? "scale-80 z-0" : "scale-50 z-[-5]"
+          // Added 'pointer-events-auto' to re-enable interaction on the actual visible div
+          className={`flex flex-col items-center -translate-y-2/3 -translate-x-1/2 pb-2 cursor-pointer pointer-events-auto transition-all duration-300 ease-out origin-bottom ${
+            isActive ? "scale-100 z-50" : "scale-40 z-0 grayscale"
           }`}
         >
+          {/* Avatar Bubble */}
           <div
             className={`w-8 h-8 rounded-full overflow-hidden border-2 shadow-md mb-1 bg-white transition-colors duration-300 ${
-              isActive ? "border-[#fb7035]" : "border-white"
+              isActive ? "border-[#fb7035]" : "border-white/80"
             }`}
           >
             <img
@@ -232,9 +263,10 @@ const Marker = ({ position, data, isSelected, onSelect }) => {
             />
           </div>
 
+          {/* Text Label - Only visible when Active/Hovered to reduce clutter */}
           <div
-            className={`px-2 py-0.5 bg-slate-900/90 text-white text-[10px] font-bold rounded shadow-xl whitespace-nowrap transition-opacity duration-200 ${
-              isActive ? "opacity-100" : "opacity-0"
+            className={`px-2 py-0.5 bg-slate-900/95 text-white text-[10px] font-bold rounded shadow-xl whitespace-nowrap transition-all duration-200 ${
+              isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
             }`}
           >
             {data.name}
@@ -290,18 +322,14 @@ export default function AlumniPage() {
 
   const selectedAlumni = ALUMNI_LOCATIONS[currentIndex];
 
-  // Auto-Carousel Logic
   useEffect(() => {
     if (isPaused) return;
-
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % ALUMNI_LOCATIONS.length);
     }, CAROUSEL_INTERVAL);
-
     return () => clearInterval(interval);
   }, [isPaused]);
 
-  // Handle Manual Selection
   const handleManualSelect = (data) => {
     const index = ALUMNI_LOCATIONS.findIndex((a) => a.id === data.id);
     if (index !== -1) {
@@ -311,14 +339,10 @@ export default function AlumniPage() {
 
   return (
     <>
-      {/* UPDATED HERO SECTION - More Cohesive Design */}
       <div className="w-full bg-white flex flex-col-reverse lg:flex-row overflow-hidden relative lg:h-[84vh]">
-        {/* --- LEFT SECTION - Centered & Balanced --- */}
-        {/* Changed lg:w-2/5 to lg:w-1/2 for better breathing room */}
-        <div className="w-full lg:w-2/5 p-6 md:p-6 flex flex-col justify-center  relative z-10 lg:h-full bg-white">
-          {/* Inner Wrapper: This handles the horizontal centering within the left panel */}
+        {/* --- LEFT SECTION --- */}
+        <div className="w-full lg:w-1/2 p-6 md:p-6 flex flex-col justify-center relative z-10 lg:h-full bg-white">
           <div className="w-full max-w-2xl mx-auto flex flex-col justify-center">
-            {/* Hero Title Section */}
             <div className="mb-8 lg:mb-10">
               <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
                 <div className="w-10 h-1 bg-[#fb7035] rounded-full"></div>
@@ -339,43 +363,59 @@ export default function AlumniPage() {
               </p>
             </div>
 
-            {/* Alumni Card - Updated Design */}
+            {/* --- UPDATED ALUMNI CARD --- */}
             <div className="w-full bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-[1.01]">
-              {/* Card Header with Gradient */}
-              <div className="h-20 bg-gradient-to-r from-[#10404A] to-[#1a5c6a] relative">
-                <div className="absolute -bottom-8 left-6">
-                  <div className="relative">
-                    <img
-                      src={selectedAlumni.img}
-                      alt={selectedAlumni.name}
-                      className="w-16 h-16 rounded-full border-4 border-white object-cover shadow-lg bg-slate-200"
-                    />
-                    <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full border-2 border-white"></div>
-                  </div>
+              {/* Header Gradient */}
+              <div className="h-24 bg-gradient-to-r from-[#10404A] to-[#1a5c6a] relative">
+                {/* Decorative Pattern */}
+                <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+              </div>
+
+              {/* Profile & Logo Row (Overlap) */}
+              <div className="px-6 flex justify-between items-end -mt-10 relative z-10">
+                {/* Profile Image */}
+                <div className="relative">
+                  <img
+                    src={selectedAlumni.img}
+                    alt={selectedAlumni.name}
+                    className="w-20 h-20 rounded-full border-4 border-white object-cover shadow-lg bg-slate-200"
+                  />
+                  <div className="absolute bottom-1 right-1 w-5 h-5 bg-emerald-500 rounded-full border-2 border-white"></div>
                 </div>
-                <div className="absolute bottom-3 right-4 bg-white/90 backdrop-blur-sm p-2 rounded-lg shadow-md">
+
+                {/* ENHANCED Company Logo */}
+                <div className="bg-white p-2 rounded-xl shadow-md border border-slate-100 mb-2">
                   <img
                     src={selectedAlumni.companyLogo}
-                    alt="Logo"
-                    className="h-6 w-auto object-contain"
+                    alt="Company Logo"
+                    className="h-10 w-auto max-w-[120px] object-contain"
                   />
                 </div>
               </div>
 
-              <div className="pt-10 px-6 pb-6">
-                <div className="mb-3">
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <h2 className="text-xl font-bold text-slate-800 leading-none">
-                        {selectedAlumni.name}
-                      </h2>
-                      <p className="text-[#fb7035] font-semibold text-xs mt-1">
-                        {selectedAlumni.role}
-                      </p>
-                    </div>
-                    <div className="flex items-center text-slate-600 text-xs bg-slate-50 px-2 py-1 rounded-full border border-slate-100">
+              {/* Card Content */}
+              <div className="pt-3 px-6 pb-6">
+                <div className="mb-4">
+                  <div className="flex flex-col">
+                    <h2 className="text-2xl font-bold text-slate-800 leading-tight">
+                      {selectedAlumni.name}
+                    </h2>
+                    <p className="text-[#fb7035] font-semibold text-sm mt-1">
+                      {selectedAlumni.role}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Details Grid */}
+                <div className="bg-slate-50 rounded-xl p-4 border border-slate-100 grid grid-cols-2 gap-4">
+                  {/* Location */}
+                  <div className="flex flex-col">
+                    <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider mb-1">
+                      Location
+                    </span>
+                    <div className="flex items-center text-slate-700 font-semibold text-sm">
                       <svg
-                        className="w-3 h-3 mr-1"
+                        className="w-4 h-4 mr-1 text-slate-400"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -396,32 +436,20 @@ export default function AlumniPage() {
                       {selectedAlumni.location}
                     </div>
                   </div>
-                </div>
 
-                <p className="text-slate-600 text-sm leading-relaxed mb-4 mt-4 bg-slate-50 p-3 rounded-lg border border-slate-100 italic">
-                  "{selectedAlumni.bio}"
-                </p>
-
-                <div className="border-t border-slate-100 pt-4 flex gap-8">
+                  {/* Company Text */}
                   <div className="flex flex-col">
                     <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider mb-1">
-                      Company
+                      Organization
                     </span>
-                    <span className="text-slate-800 text-sm font-semibold">
+                    <span className="text-slate-700 font-semibold text-sm">
                       {selectedAlumni.company}
-                    </span>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider mb-1">
-                      Batch
-                    </span>
-                    <span className="text-slate-800 text-sm font-semibold">
-                      2018
                     </span>
                   </div>
                 </div>
               </div>
 
+              {/* Progress Bar */}
               <div className="w-full h-1 bg-slate-100">
                 <div
                   key={selectedAlumni.id}
@@ -455,9 +483,8 @@ export default function AlumniPage() {
         </div>
 
         {/* --- RIGHT SECTION (Globe) --- */}
-        {/* Changed lg:w-3/5 to lg:w-1/2 to match the new 50/50 layout */}
         <div
-          className="w-full h-[50vh] lg:h-full lg:w-3/5 relative cursor-move lg:absolute lg:right-0 lg:top-0 lg:bottom-0"
+          className="w-full h-[50vh] lg:h-full lg:w-1/2 relative cursor-move lg:absolute lg:right-0 lg:top-0 lg:bottom-0"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -465,7 +492,6 @@ export default function AlumniPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(251,112,53,0.05)_0%,transparent_50%)] pointer-events-none"></div>
 
           <Canvas camera={{ position: [0, 0, 6.5], fov: 45 }}>
-            {/* ... keeping your existing globe/canvas setup ... */}
             <color attach="background" args={["#fff"]} />
             <fog attach="fog" args={["#f8fafc", 5, 12]} />
             <ambientLight intensity={1.8} color="#ffffff" />

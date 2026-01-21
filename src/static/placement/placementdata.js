@@ -1,6 +1,16 @@
   export const placementData = {
     
-
+    "2023-25": {
+        pdfName: "Placement Data 2023–25",
+    pdfUrl: "/placement/2023-25.xlsx",
+      statsImages: [
+        { img: "/placement/sectorial.png", title: "Sectoral Distribution" },
+        { img: "/placement/spec.png", title: "Specialization" },
+        { img: "/placement/package.png", title: "Package Overview" },
+        { img: "/placement/location.png", title: "Location Distribution" },
+      ],
+     
+    },
     /* ======================================================
         ✅ 2022-24
     ====================================================== */
@@ -83,7 +93,7 @@
         pdfName: "Placement Data 2021–23",
     pdfUrl: "/placement/2021-23.pdf",
       statsImages: [
-        { img: "/IGSB/Placement/Chart4-2021-23.svg", title: "Sectoral Distribution" },
+        { img: "/placement/2021.svg", title: "Sectoral Distribution" },
         { img: "/IGSB/Placement/Chart2-2021-23.svg", title: "Specialization" },
         { img: "/IGSB/Placement/Chart3-2021-23.svg", title: "Package Overview" },
         { img: "/IGSB/Placement/Chart4-2021-23.svg", title: "Gender Diversity" },

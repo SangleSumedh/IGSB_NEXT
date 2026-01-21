@@ -20,18 +20,6 @@ const EARTH_DAY_TEXTURE = "/textures/earth2k.jpg";
 const ALUMNI_LOCATIONS = [
   {
     id: 1,
-    name: "Soham Prashant Ghule",
-    role: "Management Trainee",
-    company: "BNY Mellon",
-    companyLogo: "/logos/3.jpg",
-    lat: 18.5246,
-    lon: 73.8786,
-    location: "Pune, India",
-    img: "/IGSB/Alumni/NewAlumni/soham_ghule.jpg",
-    bio: "",
-  },
-  {
-    id: 2,
     name: "Choudhary Shayan Izhar",
     role: "Wealth Management Analyst",
     company: "UBS Bank",
@@ -43,7 +31,7 @@ const ALUMNI_LOCATIONS = [
     bio: "",
   },
   {
-    id: 3,
+    id: 2,
     name: "Shelke Vaishnavi Shrikant",
     role: "Management Trainee",
     company: "Bajaj General Insurance",
@@ -54,7 +42,18 @@ const ALUMNI_LOCATIONS = [
     img: "/IGSB/Alumni/NewAlumni/shelke_vaishnavi.jpg",
     bio: "",
   },
-
+  {
+    id: 3,
+    name: "Soham Prashant Ghule",
+    role: "Management Trainee",
+    company: "BNY Mellon",
+    companyLogo: "/logos/3.jpg",
+    lat: 18.5246,
+    lon: 73.8786,
+    location: "Pune, India",
+    img: "/IGSB/Alumni/NewAlumni/soham_ghule.jpg",
+    bio: "",
+  },
   // {
   //   id: 4,
   //   name: "Aditi Ravindra Sharma",
@@ -115,7 +114,6 @@ const ALUMNI_LOCATIONS = [
     img: "/IGSB/Alumni/NewAlumni/varad_kulkarni.jpg",
     bio: "",
   },
-  
 ];
 // --- HELPER ---
 const latLongToVector3 = (lat, lon, radius) => {
@@ -235,7 +233,7 @@ const Marker = ({ position, data, isSelected, onSelect }) => {
       <Html
         distanceFactor={12}
         // CRITICAL FIX: Give active elements a much higher Z-Index so they overlay neighbors
-        zIndexRange={isActive ? [100, 0] : [0, 0]}
+        zIndexRange={isActive ? [10, 0] : [0, 0]}
         style={{
           pointerEvents: "none", // Allows clicking "through" the empty HTML container space
           userSelect: "none",
@@ -366,10 +364,7 @@ export default function AlumniPage() {
             {/* --- UPDATED ALUMNI CARD --- */}
             <div className="w-full bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-[1.01]">
               {/* Header Gradient */}
-              <div className="h-24 bg-gradient-to-r from-[#10404A] to-[#1a5c6a] relative">
-                {/* Decorative Pattern */}
-                <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-              </div>
+              <div className="h-24 bg-gradient-to-r from-[#10404A] to-[#1a5c6a] relative"></div>
 
               {/* Profile & Logo Row (Overlap) */}
               <div className="px-6 flex justify-between items-end -mt-10 relative z-10">
@@ -388,7 +383,7 @@ export default function AlumniPage() {
                   <img
                     src={selectedAlumni.companyLogo}
                     alt="Company Logo"
-                    className="h-10 w-auto max-w-[120px] object-contain"
+                    className="h-18 w-auto max-w-[120px] object-contain"
                   />
                 </div>
               </div>

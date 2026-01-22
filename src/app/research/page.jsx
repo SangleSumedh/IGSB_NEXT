@@ -2,12 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import OldPage from "./OldPage";
+import Image from "next/image"; // Import Next.js Image component
 
 const phdHolders = [
   {
     name: "Dr. Virendra Tatake",
     designation: "Professor & Research Guide",
-    image: "/Faculty/Dr-Virendra-Tatake.jpg",
+    image: "/Edited/Dr. Virendra Tatake.webp",
     expertise: "Financial Management",
     description:
       "Dr. Sharma has over 18 years of academic and research experience. His work focuses on applied AI systems, intelligent decision-making, and industry-driven research. (content to be updated soon)",
@@ -16,7 +17,7 @@ const phdHolders = [
   {
     name: "Dr. Pallavi Sajanapwar",
     designation: "Professor & Research Guide",
-    image: "/Faculty/Dr_Pallavi_Sajanapawar.png",
+    image: "/Edited/Dr. Pallavi Sajanapwar.webp",
     expertise: "Marketing Management",
     description:
       "Dr. Kulkarni specializes in data-driven research and analytics-based decision systems. She actively collaborates with industry and research institutions. (to be updated soon)",
@@ -31,7 +32,7 @@ const phdHolders = [
   {
     name: "Dr. Priyanka Darekar",
     designation: "Professor & Research Guide",
-    image: "/Faculty/Dr_Priyanka_Darekar_New.png",
+    image: "/Edited/Dr. Priyanka Darekar.webp",
     expertise: "Human Resource Management",
     description:
       "Dr. Iyer has guided multiple funded research projects and published extensively in international journals. His research interests include secure networks and distributed systems.",
@@ -42,11 +43,10 @@ const phdHolders = [
       },
     ],
   },
-
   {
     name: "Dr. Ashish Vyas",
     designation: "Professor & Research Guide",
-    image: "/Faculty/Dr_Ashish-Vyas.png",
+    image: "/Edited/Dr. Ashish Vyas.webp",
     expertise: "Human Resource Management",
     description:
       "Dr. Iyer has guided multiple funded research projects and published extensively in international journals. His research interests include secure networks and distributed systems.",
@@ -64,13 +64,13 @@ const phdHolders = [
   {
     name: "Dr. Aatish Zagade",
     designation: "Professor & Research Guide",
-    image: "/Faculty/Dr-Aatish-Zagade.jpg",
+    image: "/Edited/Dr. Aatish Zagade.webp",
     expertise: "Organizational Management",
     description:
       "Dr. Iyer has guided multiple funded research projects and published extensively in international journals. His research interests include secure networks and distributed systems.",
-    students: [
+     students: [
       {
-        name: "",
+        name: "Selection of one student is under process from SPPU",
         image: "/boy.png",
       },
     ],
@@ -351,10 +351,13 @@ export default function Page() {
 
                       {/* Image at bottom */}
                       <div className="mt-3 md:mt-4 lg:mt-6 rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden shadow-md md:shadow-lg">
-                        <img
+                        <Image
                           src={mdpItems[currentMdpIndex].image}
                           alt={mdpItems[currentMdpIndex].title}
                           className="w-full h-40 md:h-48 lg:h-56 object-cover"
+                          width={600}
+                          height={300}
+                          priority={currentMdpIndex === 0}
                         />
                       </div>
                     </div>
@@ -423,10 +426,13 @@ export default function Page() {
 
                       {/* Image at bottom */}
                       <div className="mt-3 md:mt-4 lg:mt-6 rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden shadow-md md:shadow-lg">
-                        <img
+                        <Image
                           src={fdpItems[currentFdpIndex].image}
                           alt={fdpItems[currentFdpIndex].title}
                           className="w-full h-40 md:h-48 lg:h-56 object-cover"
+                          width={600}
+                          height={300}
+                          priority={currentFdpIndex === 0}
                         />
                       </div>
                     </div>
@@ -603,16 +609,22 @@ function PhdCard({ phd, index }) {
     >
       {/* IMAGE SECTION — Full width on mobile, 1/3 on desktop */}
       <div className="w-full lg:w-1/3 flex justify-center">
-        <img
-          src={phd.image}
-          alt={phd.name}
-          className="
-            w-32 h-32 md:w-40 md:h-40 lg:w-60 lg:h-60 xl:w-72 xl:h-72
-            rounded-full object-cover
-            border-4 border-[#ffb088]
-            shadow-md
-          "
-        />
+        <div className="
+          w-32 h-32 md:w-40 md:h-40 lg:w-60 lg:h-60 xl:w-72 xl:h-72
+          rounded-full
+          border-4 border-[#ffb088]
+          shadow-md
+          overflow-hidden
+          relative
+        ">
+          <Image
+            src={phd.image}
+            alt={phd.name}
+            fill
+            className="object-cover object-top" // Added object-top here
+            sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 240px"
+          />
+        </div>
       </div>
 
       {/* CONTENT SECTION — Full width on mobile, 2/3 on desktop */}

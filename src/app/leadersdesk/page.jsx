@@ -46,7 +46,7 @@ const leaders = [
     title: "Chairperson & Chief Mentor-IGI",
     image: "/Home/TS.jpg",
     message:
-      "Dear Students, For over three decades, our institutions have stood as catalysts of transformation, bridging rigorous academics with real-world relevance. We understand that the leaders of tomorrow need more than knowledge; they need vision, adaptability, and a heart for meaningful change. At IGSB, we cultivate an ecosystem where innovation thrives and ethics lead. Through industry-aligned curricula, immersive learning experiences, and a faculty dedicated to mentorship, we empower each student to become not just a skilled professional, but a compassionate and conscious contributor to society. Our focus extends beyond academic brilliance; we nurture resilient, empathetic, and globally minded individuals who value integrity, sustainability, and inclusive progress. In a rapidly evolving world, we remain committed to integrating cutting-edge technology and outcome-driven pedagogy, ensuring our learners are always a step ahead. Here, you will discover more than an education; you will find a launchpad for your aspirations, a space to grow, lead, and inspire. Together, let’s build a future where excellence is a habit, learning is lifelong, and success is measured by the impact we create. The journey ahead is yours to shape. We are here to guide, support, and foster your spirit.  ",
+      "Dear Students, For over three decades, our institutions have stood as catalysts of transformation, bridging rigorous academics with real-world relevance. We understand that the leaders of tomorrow need more than knowledge; they need vision, adaptability, and a heart for meaningful change. At IGSB, we cultivate an ecosystem where innovation thrives and ethics lead. Through industry-aligned curricula, immersive learning experiences, and a faculty dedicated to mentorship, we empower each student to become not just a skilled professional, but a compassionate and conscious contributor to society. Our focus extends beyond academic brilliance; we nurture resilient, empathetic, and globally minded individuals who value integrity, sustainability, and inclusive progress. In a rapidly evolving world, we remain committed to integrating cutting-edge technology and outcome-driven pedagogy, ensuring our learners are always a step ahead. Here, you will discover more than an education; you will find a launchpad for your aspirations, a space to grow, lead, and inspire. Together, let's build a future where excellence is a habit, learning is lifelong, and success is measured by the impact we create. The journey ahead is yours to shape. We are here to guide, support, and foster your spirit.  ",
     reverse: false,
   },
   {
@@ -301,16 +301,19 @@ export default function LeadersDeskPage() {
                 {/* IMAGE SECTION — 1/3 */}
                 <div className="w-full lg:w-1/3 flex justify-center">
                   <div className="relative">
-                    <img
-                      src={leader.image}
-                      alt={leader.title}
-                      className="
-                        w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-72 lg:h-72 xl:w-84 xl:h-84
-                        rounded-full object-cover
-                        border-4 border-[#ffb088]
-                        shadow-md object-top
-                      "
-                    />
+                    <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-72 lg:h-72 xl:w-84 xl:h-84">
+                      <Image
+                        src={leader.image}
+                        alt={leader.title}
+                        fill
+                        className="
+                          rounded-full
+                          border-4 border-[#ffb088]
+                          shadow-md object-cover object-top
+                        "
+                        sizes="(max-width: 640px) 128px, (max-width: 768px) 144px, (max-width: 1024px) 160px, 288px"
+                      />
+                    </div>
                   </div>
                 </div>
 
@@ -375,9 +378,8 @@ export default function LeadersDeskPage() {
                       <Image
                         src={person.image}
                         alt={person.name}
-                        width={200}
-                        height={200}
-                        className="object-contain w-full h-full"
+                        fill
+                        className="object-contain"
                         sizes="(max-width: 480px) 100vw, (max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 14vw"
                       />
                     </div>
@@ -524,11 +526,13 @@ export default function LeadersDeskPage() {
                       >
                         {/* Staff Image - SQUARE for mobile, rectangle for desktop with object-contain */}
                         <div className="w-full aspect-square sm:aspect-auto sm:h-56 md:h-64 lg:h-72 xl:h-84 overflow-hidden bg-gray-50 flex items-center justify-center">
-                          <div className="relative w-full h-full flex items-center justify-center p-2">
-                            <img
+                          <div className="relative w-full h-full">
+                            <Image
                               src={person.image}
                               alt={person.name}
-                              className="object-cover object-top w-full h-full hover:scale-105 transition-transform duration-300"
+                              fill
+                              className="object-cover object-top hover:scale-105 transition-transform duration-300"
+                              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
                             />
                           </div>
                         </div>

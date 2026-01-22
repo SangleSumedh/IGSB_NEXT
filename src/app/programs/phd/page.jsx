@@ -193,7 +193,7 @@ export default function PHD() {
       {/* ===================================================
           PHD GUIDES
       =================================================== */}
-      <section className="bg-secondary px-6 md:px-8 lg:px-16  py-8  space-y-6 max-w-full mx-auto  mb-10 ">
+      <section className="bg-secondary px-6 md:px-8 lg:px-16 py-10 space-y-6 max-w-full mx-auto mb-10">
         <h2 className="text-3xl font-bold text-white text-left">
           Recognized Ph.D. Guides
         </h2>
@@ -203,49 +203,66 @@ export default function PHD() {
             [
               "Dr. Virendra Tatake",
               "Financial Management",
-              "/Edited/Dr. Virendra Tatake.jpg",
+              "/Edited/Dr. Virendra Tatake.webp",
             ],
             [
               "Dr. Pallavi Sajanapwar",
               "Marketing Management",
-              "/Edited/Dr. Pallavi Sajanapwar.jpg",
+              "/Edited/Dr. Pallavi Sajanapwar.webp",
             ],
             [
               "Dr. Aatish Zagade",
               "General Management",
-              "/Edited/Dr. Aatish Zagade.jpg",
+              "/Edited/Dr. Aatish Zagade.webp",
             ],
             [
               "Dr. Priyanka Darekar",
               "Human Resource Management",
-              "/Edited/Dr. Priyanka Darekar.jpg",
+              "/Edited/Dr. Priyanka Darekar.webp",
             ],
             [
               "Dr. Ashish Vyas",
               "Human Resource Management",
-              "/Edited/Dr. Ashish Vyas.jpg",
+              "/Edited/Dr. Ashish Vyas.webp",
             ],
           ].map(([name, field, img], i) => (
             <div
               key={i}
-              className="bg-[#33a6a9] text-white  rounded-xl  p-4 text-center space-y-2"
+              className="
+          bg-[#33a6a9]
+          text-white
+          rounded-xl
+          p-4
+          text-center
+          flex flex-col
+          items-center
+          shadow-md
+          hover:shadow-lg
+          transition-shadow
+        "
             >
-              <div className="w-full rounded-lg overflow-hidden">
+              {/* IMAGE */}
+              <div className="w-full aspect-square rounded-lg overflow-hidden bg-white/10">
                 <Image
                   src={img}
                   alt={name}
-                  width={720}
-                  height={720}
+                  width={600}
+                  height={600}
                   className="w-full h-full object-cover object-top"
                 />
               </div>
 
-              <h2 className="font-semibold  pt-2">{name}</h2>
-              <p className="text-white text-sm">{field}</p>
+              {/* TEXT */}
+              <h3 className="font-semibold text-base mt-3 leading-snug">
+                {name}
+              </h3>
+
+              <p className="text-sm text-white/90">{field}</p>
             </div>
           ))}
         </div>
       </section>
+
       {/* ===================================================
           OPTIONAL CTA + FAQ
       =================================================== */}

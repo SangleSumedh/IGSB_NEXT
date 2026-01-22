@@ -125,12 +125,22 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
           />
 
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent md:from-black/50 md:via-black/10 z-10" />
 
           {/* Content Overlay */}
           <div className="absolute inset-0 flex items-center justify-start z-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
             <div className="w-full max-w-[90rem] mx-auto py-4 md:py-8 lg:py-12 xl:py-0">
-              <div className="max-w-full lg:max-w-3xl xl:max-w-2xl">
+              <div
+                className="
+                  max-w-full
+                  lg:max-w-3xl
+                  xl:max-w-2xl
+                  bg-black/40 md:bg-transparent
+                
+                  rounded-lg
+                  p-3 sm:p-4 md:p-0 mt-10 md:mt-0
+                "
+              >
                 {/* Title */}
                 <h2
                   className={`font-bold text-white leading-tight tracking-tight transform transition-all duration-700 delay-100 ${
@@ -218,7 +228,7 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
           <FaArrowLeft className="text-white w-5 h-5" />
         </button>
         {/* Dots Indicator */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
+        <div className="hidden md:flex items-center gap-1.5 sm:gap-2">
           {slides.map((_, i) => (
             <button
               key={i}

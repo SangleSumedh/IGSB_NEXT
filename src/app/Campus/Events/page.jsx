@@ -148,7 +148,7 @@ export default function EventsPage() {
     {/* div1 */}
     <div className="col-span-2 row-span-2 relative overflow-hidden">
       <img
-        src="/newEvents/IWA8.jpg"
+        src="/newEvents/IWA8.webp"
         alt="Event 1"
         className="h-full w-full object-cover"
       />
@@ -157,7 +157,7 @@ export default function EventsPage() {
     {/* div2 */}
     <div className="col-span-2 row-span-2 col-start-3 relative overflow-hidden">
       <img
-        src="/newEvents/IDA1.jpg"
+        src="/newEvents/IDA1.webp"
         alt="Event 2"
         className="h-full w-full object-cover object-top"
       />
@@ -166,7 +166,7 @@ export default function EventsPage() {
     {/* div3 (tall right) */}
     <div className="col-span-2 row-span-4 col-start-5 relative overflow-hidden">
       <img
-        src="/newEvents/IDA12.JPG"
+        src="/newEvents/IDA12.webp"
         alt="Event 3"
         className="h-full w-full object-cover object-top"
       />
@@ -175,7 +175,7 @@ export default function EventsPage() {
     {/* div5 (tall left) */}
     <div className="col-span-2 row-span-4 row-start-3 relative overflow-hidden">
       <img
-        src="/newEvents/IWA2.jpg"
+        src="/newEvents/IWA2.webp"
         alt="Event 5"
         className="h-full w-full object-cover"
       />
@@ -184,7 +184,7 @@ export default function EventsPage() {
     {/* div9 (center square) */}
     <div className="col-span-2 row-span-2 col-start-3 row-start-3 relative overflow-hidden">
       <img
-        src="/newEvents/Gusto4.jpg"
+        src="/newEvents/Gusto4.webp"
         alt="Campus Beat"
         className="h-full w-full object-cover"
       />
@@ -193,7 +193,7 @@ export default function EventsPage() {
     {/* div7 */}
     <div className="col-span-2 row-span-2 col-start-3 row-start-5 relative overflow-hidden">
       <img
-        src="/newEvents/IWA12.jpg"
+        src="/newEvents/IWA12.webp"
         alt="Event 7"
         className="h-full w-full object-cover"
       />
@@ -202,7 +202,7 @@ export default function EventsPage() {
     {/* div8 */}
     <div className="col-span-2 row-span-2 col-start-5 row-start-5 relative overflow-hidden">
       <img
-        src="/newEvents/Splash6.jpg"
+        src="/newEvents/Splash6.webp"
         alt="Event 8"
         className="h-full w-full object-cover object-top"
       />
@@ -275,12 +275,12 @@ export default function EventsPage() {
           <img
             src={
               [
-                "/newEvents/BParak.jpg",
-                "/newEvents/IWA1.jpg",
-                "/newEvents/Gusto1.jpg",
-                "/newEvents/Navratri1.JPG",
-                "/newEvents/Splash6.jpg",
-                "/newEvents/GanpatiAartiImg.png",
+                "/newEvents/BParak.webp",
+                "/newEvents/IWA1.webp",
+                "/newEvents/Gusto1.webp",
+                "/newEvents/Navratri1.webp",
+                "/newEvents/Splash6.webp",
+                "/newEvents/GanpatiAartiImg.webp",
               ][index]
             }
             alt={event.title}

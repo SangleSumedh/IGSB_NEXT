@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import OldPage from "./OldPage";
+
 const phdHolders = [
   {
     name: "Dr. Virendra Tatake",
@@ -205,36 +206,36 @@ export default function Page() {
   return (
     <div className="w-full bg-white">
       {/* SCHOLAR QUOTE CTA */}
-      <section className="w-full bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] text-white py-12 px-6 xl:py-8 xl:px-16 text-center border-b border-gray-200">
+      <section className="w-full bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] text-white py-8 md:py-12 px-4 md:px-6 xl:px-16 text-center border-b border-gray-200">
         {/* Main heading with animation */}
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 animate-fade-up">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 animate-fade-up">
           Research is seeing what everybody else has seen, and thinking what
           nobody else has thought.
         </h1>
 
         {/* Description with animation */}
-        <p className="text-xl opacity-90 animate-fade-up animation-delay-100">
+        <p className="text-base md:text-xl opacity-90 animate-fade-up animation-delay-100 max-w-4xl mx-auto">
           Our institution fosters a strong culture of innovation, inquiry, and
           impactful research.
         </p>
       </section>
 
       {/* TOP PHD HOLDERS */}
-      <section className="w-full py-12 px-6 xl:py-12 xl:px-16 bg-gray-50">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 pb-12  text-center">
+      <section className="w-full py-8 md:py-12 px-4 md:px-6 xl:px-16 bg-gray-50">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 pb-6 md:pb-12 text-center">
           Our Top PhD Guides
         </h2>
 
-        <div className="space-y-24">
+        <div className="space-y-12 md:space-y-24">
           {phdHolders.map((phd, index) => (
             <div
               key={index}
               className="
                 w-full
-                rounded-3xl
-                p-6 md:p-8 lg:p-10
+                rounded-xl md:rounded-2xl lg:rounded-3xl
+                p-4 md:p-6 lg:p-8
                 bg-gradient-to-r from-[#10404A] to-[#1F6D71]
-                shadow-xl
+                shadow-lg md:shadow-xl
               "
             >
               <PhdCard phd={phd} index={index} />
@@ -244,22 +245,22 @@ export default function Page() {
       </section>
 
       {/* MDP HIGHLIGHTS SECTION */}
-      <section className="w-full py-12 px-6 xl:py-8 xl:px-16 bg-gray-50 ">
+      <section className="w-full py-8 md:py-12 px-4 md:px-6 xl:px-16 bg-gray-50">
         <div className="">
-          {/* Heading - Left aligned */}
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-8 md:mb-12 text-center">
+          {/* Heading - Center aligned on mobile, left on desktop */}
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-6 md:mb-8 lg:mb-12 text-center lg:text-left">
             Management Development Programmes (MDP)
           </h2>
 
           {/* Two Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
             {/* Left Column - Static Content */}
-            <div className="bg-gradient-to-r from-[#10404A] to-[#1F6D71] rounded-3xl shadow-xl p-6 md:p-8 lg:p-10">
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-6">
+            <div className="bg-gradient-to-r from-[#10404A] to-[#1F6D71] rounded-xl md:rounded-2xl lg:rounded-3xl shadow-lg md:shadow-xl p-4 md:p-6 lg:p-8 xl:p-10">
+              <h3 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-white mb-3 md:mb-4 lg:mb-6">
                 About Our MDP Cell
               </h3>
 
-              <div className="space-y-3 md:space-y-4">
+              <div className="space-y-2 md:space-y-3 lg:space-y-4">
                 <p className="text-white text-sm md:text-base lg:text-lg leading-relaxed">
                   Management Development Program [MDP] Cell of IGSB focuses on
                   skill improvement, interaction ability, confidence building,
@@ -321,11 +322,11 @@ export default function Page() {
             </div>
 
             {/* Right Column - Carousel */}
-            <div className="bg-white rounded-3xl shadow-xl p-6 md:p-8 lg:p-10">
+            <div className="bg-white rounded-xl md:rounded-2xl lg:rounded-3xl shadow-lg md:shadow-xl p-4 md:p-6 lg:p-8 xl:p-10">
               <div className="h-full flex flex-col">
                 {/* Carousel Content */}
                 <div
-                  className="flex-1 relative min-h-[400px]"
+                  className="flex-1 relative min-h-[300px] md:min-h-[350px] lg:min-h-[400px]"
                   onMouseEnter={() => setIsMdpHovered(true)}
                   onMouseLeave={() => setIsMdpHovered(false)}
                 >
@@ -333,27 +334,27 @@ export default function Page() {
                     {/* Carousel Items - Stacked vertically */}
                     <div className="relative h-full">
                       {/* Current Slide - Text at top */}
-                      <div className="mb-4 md:mb-6">
-                        <div className="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80 text-white rounded-full text-xs md:text-sm font-semibold mb-3 md:mb-4">
+                      <div className="mb-3 md:mb-4 lg:mb-6">
+                        <div className="inline-block px-2 py-1 md:px-3 md:py-1.5 lg:px-4 lg:py-2 bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80 text-white rounded-full text-xs md:text-sm font-semibold mb-2 md:mb-3 lg:mb-4">
                           MDP Highlight {mdpItems[currentMdpIndex].id}
                         </div>
-                        <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-slate-900">
+                        <h3 className="text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-slate-900">
                           {mdpItems[currentMdpIndex].title}
                         </h3>
                       </div>
 
-                      <div className="flex-1 overflow-y-auto mb-4 md:mb-6 max-h-[120px] md:max-h-[140px]">
+                      <div className="flex-1 overflow-y-auto mb-3 md:mb-4 lg:mb-6 max-h-[100px] md:max-h-[120px] lg:max-h-[140px]">
                         <p className="text-gray-700 text-sm md:text-base lg:text-lg leading-relaxed">
                           {mdpItems[currentMdpIndex].description}
                         </p>
                       </div>
 
                       {/* Image at bottom */}
-                      <div className="mt-4 md:mt-6 rounded-xl md:rounded-2xl overflow-hidden shadow-lg">
+                      <div className="mt-3 md:mt-4 lg:mt-6 rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden shadow-md md:shadow-lg">
                         <img
                           src={mdpItems[currentMdpIndex].image}
                           alt={mdpItems[currentMdpIndex].title}
-                          className="w-full h-48 md:h-56 object-cover"
+                          className="w-full h-40 md:h-48 lg:h-56 object-cover"
                         />
                       </div>
                     </div>
@@ -361,15 +362,15 @@ export default function Page() {
                 </div>
 
                 {/* Indicators */}
-                <div className="flex justify-center mt-6 md:mt-8">
+                <div className="flex justify-center mt-4 md:mt-6 lg:mt-8">
                   <div className="flex space-x-1.5 md:space-x-2">
                     {mdpItems.map((_, idx) => (
                       <button
                         key={idx}
                         onClick={() => setCurrentMdpIndex(idx)}
-                        className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
+                        className={`w-2 h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 rounded-full transition-all duration-300 ${
                           idx === currentMdpIndex
-                            ? "bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80 w-6 md:w-8"
+                            ? "bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80 w-4 md:w-6 lg:w-8"
                             : "bg-gray-300 hover:bg-gray-400"
                         }`}
                       />
@@ -383,21 +384,21 @@ export default function Page() {
       </section>
 
       {/* FDP HIGHLIGHTS SECTION */}
-      <section className="w-full py-12 px-6 xl:py-8 xl:px-16 bg-gray-50 text-center">
+      <section className="w-full py-8 md:py-12 px-4 md:px-6 xl:px-16 bg-gray-50">
         <div className="">
-          {/* Heading - Left aligned */}
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-8 md:mb-12">
+          {/* Heading - Center aligned on mobile, left on desktop */}
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-6 md:mb-8 lg:mb-12 text-center lg:text-left">
             Faculty Development Programmes (FDP)
           </h2>
 
           {/* Two Column Layout - Reversed for FDP */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
             {/* Left Column - Carousel */}
-            <div className="bg-white rounded-3xl shadow-xl p-6 md:p-8 lg:p-10">
+            <div className="bg-white rounded-xl md:rounded-2xl lg:rounded-3xl shadow-lg md:shadow-xl p-4 md:p-6 lg:p-8 xl:p-10">
               <div className="h-full flex flex-col">
                 {/* Carousel Content */}
                 <div
-                  className="flex-1 relative min-h-[400px]"
+                  className="flex-1 relative min-h-[300px] md:min-h-[350px] lg:min-h-[400px]"
                   onMouseEnter={() => setIsFdpHovered(true)}
                   onMouseLeave={() => setIsFdpHovered(false)}
                 >
@@ -405,27 +406,27 @@ export default function Page() {
                     {/* Carousel Items - Stacked vertically */}
                     <div className="relative h-full">
                       {/* Current Slide - Text at top */}
-                      <div className="mb-4 md:mb-6">
-                        <div className="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80 text-white rounded-full text-xs md:text-sm font-semibold mb-3 md:mb-4">
+                      <div className="mb-3 md:mb-4 lg:mb-6">
+                        <div className="inline-block px-2 py-1 md:px-3 md:py-1.5 lg:px-4 lg:py-2 bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80 text-white rounded-full text-xs md:text-sm font-semibold mb-2 md:mb-3 lg:mb-4">
                           FDP Highlight {fdpItems[currentFdpIndex].id}
                         </div>
-                        <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-slate-900">
+                        <h3 className="text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-slate-900">
                           {fdpItems[currentFdpIndex].title}
                         </h3>
                       </div>
 
-                      <div className="flex-1 overflow-y-auto mb-4 md:mb-6 max-h-[120px] md:max-h-[140px]">
+                      <div className="flex-1 overflow-y-auto mb-3 md:mb-4 lg:mb-6 max-h-[100px] md:max-h-[120px] lg:max-h-[140px]">
                         <p className="text-gray-700 text-sm md:text-base lg:text-lg leading-relaxed">
                           {fdpItems[currentFdpIndex].description}
                         </p>
                       </div>
 
                       {/* Image at bottom */}
-                      <div className="mt-4 md:mt-6 rounded-xl md:rounded-2xl overflow-hidden shadow-lg">
+                      <div className="mt-3 md:mt-4 lg:mt-6 rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden shadow-md md:shadow-lg">
                         <img
                           src={fdpItems[currentFdpIndex].image}
                           alt={fdpItems[currentFdpIndex].title}
-                          className="w-full h-48 md:h-56 object-cover"
+                          className="w-full h-40 md:h-48 lg:h-56 object-cover"
                         />
                       </div>
                     </div>
@@ -433,15 +434,15 @@ export default function Page() {
                 </div>
 
                 {/* Indicators */}
-                <div className="flex justify-center mt-6 md:mt-8">
+                <div className="flex justify-center mt-4 md:mt-6 lg:mt-8">
                   <div className="flex space-x-1.5 md:space-x-2">
                     {fdpItems.map((_, idx) => (
                       <button
                         key={idx}
                         onClick={() => setCurrentFdpIndex(idx)}
-                        className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
+                        className={`w-2 h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 rounded-full transition-all duration-300 ${
                           idx === currentFdpIndex
-                            ? "bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80 w-6 md:w-8"
+                            ? "bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80 w-4 md:w-6 lg:w-8"
                             : "bg-gray-300 hover:bg-gray-400"
                         }`}
                       />
@@ -452,12 +453,12 @@ export default function Page() {
             </div>
 
             {/* Right Column - Static Content */}
-            <div className="bg-gradient-to-l from-[#10404A] to-[#1F6D71] rounded-3xl shadow-xl p-6 md:p-8 lg:p-10">
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-6">
+            <div className="bg-gradient-to-l from-[#10404A] to-[#1F6D71] rounded-xl md:rounded-2xl lg:rounded-3xl shadow-lg md:shadow-xl p-4 md:p-6 lg:p-8 xl:p-10">
+              <h3 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-white mb-3 md:mb-4 lg:mb-6">
                 About Our FDP Initiatives
               </h3>
 
-              <div className="space-y-3 md:space-y-4">
+              <div className="space-y-2 md:space-y-3 lg:space-y-4">
                 <p className="text-white text-sm md:text-base lg:text-lg leading-relaxed">
                   Faculty Development Programmes at IGSB are designed to enhance
                   teaching methodologies, research capabilities, and
@@ -522,7 +523,7 @@ export default function Page() {
                   </li>
                 </ul>
 
-                <div className="mt-4 md:mt-6 p-3 md:p-4 bg-gradient-to-r from-[#10404A]/10 to-[#1F6D71]/10 rounded-lg md:rounded-xl">
+                <div className="mt-3 md:mt-4 lg:mt-6 p-2 md:p-3 lg:p-4 bg-gradient-to-r from-[#10404A]/10 to-[#1F6D71]/10 rounded-lg md:rounded-xl">
                   <p className="text-white text-sm md:text-base lg:text-lg font-medium">
                     <span className="text-[#FF8B61] font-bold">Impact:</span>{" "}
                     Our FDPs have significantly improved faculty performance,
@@ -540,14 +541,14 @@ export default function Page() {
       <div className="w-full bg-white border-t border-slate-200">
         <button
           onClick={() => setShowMemoryLane(!showMemoryLane)}
-          className="w-full py-8 flex flex-col items-center justify-center  transition-colors duration-300 group cursor-pointer outline-none"
+          className="w-full py-4 md:py-6 lg:py-8 flex flex-col items-center justify-center transition-colors duration-300 group cursor-pointer outline-none"
         >
-          <div className="flex items-center gap-3 text-[#10404A] group-hover:text-[#fb7035] transition-colors">
-            <h3 className="text-lg font-bold tracking-wide uppercase">
+          <div className="flex items-center gap-2 md:gap-3 text-[#10404A] group-hover:text-[#fb7035] transition-colors">
+            <h3 className="text-base md:text-lg font-bold tracking-wide uppercase">
               Revisit Memory Lane
             </h3>
             <svg
-              className={`w-5 h-5 transition-transform duration-500 ${
+              className={`w-4 h-4 md:w-5 md:h-5 transition-transform duration-500 ${
                 showMemoryLane ? "rotate-180" : "rotate-0"
               }`}
               fill="none"
@@ -562,7 +563,7 @@ export default function Page() {
               />
             </svg>
           </div>
-          <p className="text-xs text-slate-400 mt-2 font-medium tracking-widest opacity-80 group-hover:opacity-100">
+          <p className="text-xs text-slate-400 mt-1 md:mt-2 font-medium tracking-widest opacity-80 group-hover:opacity-100">
             CLICK TO EXPAND ARCHIVE
           </p>
         </button>
@@ -586,6 +587,7 @@ export default function Page() {
 /* ================= PhD Card Component ================= */
 
 function PhdCard({ phd, index }) {
+  const [isExpanded, setIsExpanded] = useState(false);
   const isEven = index % 2 === 1;
 
   // ✅ keep only students with a non-empty name
@@ -596,17 +598,16 @@ function PhdCard({ phd, index }) {
   return (
     <div
       className={`
-        flex flex-col md:flex-row items-center gap-6
-        ${isEven ? "md:flex-row-reverse" : ""}
+        flex flex-col ${isEven ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-4 md:gap-6
       `}
     >
-      {/* IMAGE SECTION — 1/3 */}
-      <div className="w-full md:w-1/3 flex justify-center">
+      {/* IMAGE SECTION — Full width on mobile, 1/3 on desktop */}
+      <div className="w-full lg:w-1/3 flex justify-center">
         <img
           src={phd.image}
           alt={phd.name}
           className="
-            w-40 h-40 md:w-72 md:h-72
+            w-32 h-32 md:w-40 md:h-40 lg:w-60 lg:h-60 xl:w-72 xl:h-72
             rounded-full object-cover
             border-4 border-[#ffb088]
             shadow-md
@@ -614,55 +615,66 @@ function PhdCard({ phd, index }) {
         />
       </div>
 
-      {/* CONTENT SECTION — 2/3 */}
-      <div className="w-full md:w-2/3">
+      {/* CONTENT SECTION — Full width on mobile, 2/3 on desktop */}
+      <div className="w-full lg:w-2/3">
         <div
           className="
             bg-[#3aafa9]
-            rounded-2xl
-            p-6 md:p-7 lg:p-8
+            rounded-xl md:rounded-2xl
+            p-4 md:p-6 lg:p-8
             shadow-xl
             text-white
           "
         >
-          <h3 className="text-2xl md:text-3xl font-extrabold mb-1">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-extrabold mb-1">
             {phd.name}
           </h3>
 
-          <p className="text-white/90 font-medium text-lg mb-2">
+          <p className="text-white/90 font-medium text-base md:text-lg lg:text-xl mb-1 md:mb-2">
             {phd.designation}
           </p>
 
-          <p className="text-white/95 text-lg mb-3">
+          <p className="text-white/95 text-base md:text-lg lg:text-xl mb-2 md:mb-3">
             <span className="font-semibold text-white/90">
               Research Expertise:
             </span>{" "}
             {phd.expertise}
           </p>
 
-          <p className="text-white/90 text-lg leading-relaxed mb-5">
-            {phd.description}
-          </p>
+          {/* Description with line clamp on mobile */}
+          <div className="mb-3 md:mb-4 lg:mb-5">
+            <p className={`text-white/90 text-base md:text-lg lg:text-xl leading-relaxed `}>
+              {phd.description}
+            </p>
+            {phd.description.length > 200 && (
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-[#ffb088] font-medium text-sm md:text-base mt-1 hover:underline"
+              >
+                {isExpanded ? 'Read less' : 'Read more'}
+              </button>
+            )}
+          </div>
 
           {/* SUBTLE DIVIDER */}
-          <div className="w-12 h-[2px] bg-[#ffb088] rounded-full mb-5" />
+          <div className="w-12 h-[2px] bg-[#ffb088] rounded-full mb-3 md:mb-4 lg:mb-5" />
 
           {/* ✅ STUDENT NAMES ONLY (conditional render) */}
           {validStudents.length > 0 && (
             <>
-              <h4 className="uppercase tracking-widest text-xs font-semibold mb-3 text-white/90">
+              <h4 className="uppercase tracking-widest text-xs font-semibold mb-2 md:mb-3 text-white/90">
                 PhD Scholars Guided
               </h4>
 
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 md:gap-2">
                 {validStudents.map((student, idx) => (
                   <span
                     key={idx}
                     className="
                       bg-white/20 backdrop-blur-sm
-                      px-3 py-1.5
+                      px-2 py-1 md:px-3 md:py-1.5
                       rounded-full
-                      text-sm
+                      text-xs md:text-sm
                       font-medium
                       text-white
                       border border-white/30
@@ -679,3 +691,21 @@ function PhdCard({ phd, index }) {
     </div>
   );
 }
+
+/* ================= Add custom CSS for line clamp ================= */
+<style jsx global>{`
+  .line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  @media (min-width: 768px) {
+    .line-clamp-4 {
+      display: block;
+      -webkit-line-clamp: none;
+      overflow: visible;
+    }
+  }
+`}</style>

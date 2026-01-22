@@ -490,7 +490,7 @@ const Navbar = () => {
         <>
           {/* Overlay */}
           <div
-            className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 animate-in fade-in-0 duration-300"
+            className="md:hidden fixed inset-0  bg-opacity-50 z-40 animate-in fade-in-0 duration-300"
             onClick={toggleMobileMenu}
           />
 
@@ -674,7 +674,7 @@ const Navbar = () => {
                     toggleModal();
                     setIsMobileMenuOpen(false);
                   }}
-                  className="w-full bg-gradient-to-r from-[#278da4] to-[#003c84] text-white py-2 text-sm font-semibold rounded-md hover:from-[#278da4]/90 hover:to-[#003c84]/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  className="w-full bg-secondary text-white py-2 text-sm font-semibold rounded-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 >
                   Enquire Now
                 </button>
@@ -684,48 +684,17 @@ const Navbar = () => {
         </>
       )}
 
-      {/* ===== Helpline Drawer ===== */}
-      {isHelplineOpen && (
-        <>
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-40 animate-in fade-in-0 duration-300"
-            onClick={toggleHelpline}
-          />
-          <div className="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 animate-in slide-in-from-right duration-300">
-            <div className="bg-primary text-white p-4 flex justify-between items-center">
-              <h3 className="text-lg font-bold">Admissions Helpline</h3>
-              <button
-                onClick={toggleHelpline}
-                className="hover:scale-110 transition-transform duration-300"
-              >
-                <HiX size={24} />
-              </button>
-            </div>
-
-            <div className="p-6 text-gray-800 space-y-6 overflow-y-auto h-full">
-              <div className="animate-in fade-in-0 slide-in-from-right-2 duration-500">
-                <p className="text-sm text-gray-600">
-                  For more information give a miss call on
-                </p>
-                <div className="bg-blue-50 p-4 rounded-lg mt-2 transition-all duration-300 hover:shadow-md">
-                  <p className="text-2xl font-bold text-primary text-center">
-                    1800 267 1999
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </>
-      )}
+ 
 
       {/* ===== APPLY NOW MODAL ===== */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60] animate-in fade-in-0 duration-300">
-          <div ref={modalRef} className="max-w-4xl">
-            <ApplyForm />
-          </div>
-        </div>
-      )}
+    {isModalOpen && (
+  <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60] animate-in fade-in-0 duration-300">
+    <div ref={modalRef} className="max-w-4xl relative">
+      <ApplyForm variant="modal" onClose={() => setIsModalOpen(false)} />
+    </div>
+  </div>
+)}
+
     </>
   );
 };

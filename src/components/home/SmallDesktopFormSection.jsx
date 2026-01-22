@@ -88,7 +88,7 @@ export default function SmallDesktopFormSection() {
               Admission Form
             </h2>
 
-            <ApplyForm variant="modal" />
+            <ApplyForm variant="card" />
 
             <div className="text-center mt-4">
               <p className="font-semibold flex justify-center gap-2 text-sm">

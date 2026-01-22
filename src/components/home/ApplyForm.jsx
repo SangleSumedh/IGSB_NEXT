@@ -13,7 +13,7 @@ const countryCodes = [
   { code: "+971", country: "UAE" },
 ];
 
-export default function ApplyForm({ variant = "card" }) {
+export default function ApplyForm({ variant = "card", onClose }) {
   const isModal = variant === "modal";
 
   const [selectedState, setSelectedState] = useState("");
@@ -62,17 +62,31 @@ export default function ApplyForm({ variant = "card" }) {
     <div
       id="contact-form"
       className={`w-full scroll-mt-[15vh] ${
-        isModal ? "p-0" : "bg-white rounded-lg p-4 sm:p-6 shadow-md border border-gray-200"
+        isModal
+          ? "relative bg-white rounded-lg p-4 sm:p-6 shadow-md border border-gray-200"
+          : "bg-transparent p-0"
       }`}
     >
-      {!isModal && (
+      {/* ❌ Close Button — ONLY for modal */}
+      {isModal && (
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute top-2 right-2 w-9 h-9 rounded-full bg-white shadow border border-gray-300 flex items-center justify-center text-gray-600 hover:text-black hover:shadow-md transition"
+        >
+          <span className="text-xl leading-none font-semibold">×</span>
+        </button>
+      )}
+
+      {/* Heading ONLY for modal */}
+      {isModal && (
         <h3 className="text-lg sm:text-xl font-semibold text-secondary mb-4 sm:mb-6 text-center">
           Enquire Now
         </h3>
       )}
 
-      <form onSubmit={handleSubmit} className={`space-y-3 sm:space-y-4 ${isModal ? "mt-4 px-2" : ""}`}>
-
+      <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
         {/* NAME */}
         <input
           type="text"
@@ -131,7 +145,7 @@ export default function ApplyForm({ variant = "card" }) {
           ))}
         </select>
 
-        {/* CITY (DYNAMIC DROPDOWN LINKED TO STATE) */}
+        {/* CITY */}
         <select
           name="city"
           required
@@ -147,7 +161,7 @@ export default function ApplyForm({ variant = "card" }) {
           ))}
         </select>
 
-        {/* COURSE (ONLY MBA AS PER YOUR UI) */}
+        {/* COURSE */}
         <select name="course" required className={selectClass}>
           <option value="">Select Course *</option>
           <option value="MBA">MBA</option>
@@ -155,11 +169,7 @@ export default function ApplyForm({ variant = "card" }) {
 
         {/* CHECKBOX */}
         <div className="flex items-start gap-2">
-          <input 
-            type="checkbox" 
-            required 
-            className="mt-1"
-          />
+          <input type="checkbox" required className="mt-1" />
           <label className="text-xs sm:text-sm text-gray-700 leading-tight">
             I agree to receive information regarding my registration
           </label>
@@ -169,7 +179,7 @@ export default function ApplyForm({ variant = "card" }) {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-[#10404A]  text-white font-semibold py-2 px-4 rounded-md text-sm sm:text-base"
+          className="w-full bg-[#10404A] text-white font-semibold py-2 px-4 rounded-md text-sm sm:text-base"
         >
           {loading ? "Submitting..." : "Submit"}
         </button>

@@ -11,9 +11,9 @@ const facilities = [
     title: "Sports",
     chanakyaImage: "/chanu/chanuSports1.png",
     images: [
-      "/NEWFacilities/Sports1.JPG",
-      "/NEWFacilities/Sports4.JPG",
-      "/NEWFacilities/Sports9.JPG",
+      "/NEWFacilities/Sports1.webp",
+      "/NEWFacilities/Sports4.webp",
+      "/NEWFacilities/Sports9.webp",
     ],
     description1:
       "The campus features modern sports facilities designed to support student fitness and overall wellness.",
@@ -24,9 +24,9 @@ const facilities = [
     title: "Library",
     chanakyaImage: "/chanu/chanakya.png",
     images: [
-      "/NEWFacilities/Lib4.jpg",
-      "/NEWFacilities/Lib1.jpg",
-      "/NEWFacilities/Lib3.jpg",
+      "/NEWFacilities/Lib4.webp",
+      "/NEWFacilities/Lib1.webp",
+      "/NEWFacilities/Lib3.webp",
     ],
     description1:
       "With a wide range of academic resources and digital learning materials, the library supports MBA coursework, research initiatives, and faculty development.",
@@ -37,9 +37,9 @@ const facilities = [
     title: "Canteen",
     chanakyaImage: "/chanu/chanuCanteen.png",
     images: [
-      "/NEWFacilities/Canteen2.JPG",
-      "/NEWFacilities/Canteen1.JPG",
-      "/NEWFacilities/Canteen3.JPG",
+      "/NEWFacilities/Canteen2.webp",
+      "/NEWFacilities/Canteen1.webp",
+      "/NEWFacilities/Canteen3.webp",
     ],
     description1:
       "The campus canteen offers hygienic, nutritious, and affordable meals in a comfortable and student-friendly environment.",
@@ -50,9 +50,9 @@ const facilities = [
     title: "Academics",
     chanakyaImage: "/chanu/chanuAcademics.png",
     images: [
-      "/NEWFacilities/Lab5.jpg",
-      "/NEWFacilities/Lab7.jpg",
-      "/NEWFacilities/Lab3.jpg",
+      "/NEWFacilities/Lab5.webp",
+      "/NEWFacilities/Lab7.webp",
+      "/NEWFacilities/Lab3.webp",
     ],
     description1:
       "The academic ecosystem emphasizes industry-relevant curriculum, experienced faculty, and outcome-driven learning.",
@@ -94,9 +94,9 @@ const facilities = [
     title: "Nature and Peace",
     chanakyaImage: "/chanu/chanumeditatingp2.png",
     images: [
-      "/NEWFacilities/Lab5.jpg",
-      "/NEWFacilities/Lab2.jpg",
-      "/NEWFacilities/Lab3.jpg",
+      "/NEWFacilities/nature1.png",
+      "/NEWFacilities/nature2.jpg",
+      "/NEWFacilities/nature3.jpg",
     ],
     description1:
       "Set amidst a green and serene landscape, the campus offers a clean, pollution-free environment with fresh air and a low AQI.",

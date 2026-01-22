@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -114,25 +115,27 @@ export default function EventsPage() {
 
   return (
     <>
-      {/* ================= HEADING ================= */}
- <div className="w-full h-[88vh] bg-white relative">
+
+{/* ================= HEADING ================= */}
+<div className="w-full h-[88vh] bg-white relative">
 
   {/* 🔤 Absolute overlay text */}
-<div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none">
-  <h2
-    className="
-      text-4xl md:text-6xl xl:text-8xl
-      font-extrabold
-      text-white
-      tracking-wide
-      drop-shadow-[0_6px_18px_rgba(0,0,0,0.9)]
-      [text-shadow:0_2px_8px_rgba(0,0,0,0.8)]
-      animate-fade-up text-center
-    "
-  >
-    Your Dream Campus Life
-  </h2>
-</div>
+  <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none">
+    <h2
+      className="
+        text-4xl md:text-6xl xl:text-8xl
+        font-extrabold
+        text-white
+        tracking-wide
+        drop-shadow-[0_6px_18px_rgba(0,0,0,0.9)]
+        [text-shadow:0_2px_8px_rgba(0,0,0,0.8)]
+        animate-fade-up text-center
+      "
+    >
+      Your Dream Campus Life
+    </h2>
+  </div>
+
   {/* 🌑 Dark overlay for contrast */}
   <div className="absolute inset-0 z-20 bg-black/30" />
 
@@ -147,64 +150,85 @@ export default function EventsPage() {
   >
     {/* div1 */}
     <div className="col-span-2 row-span-2 relative overflow-hidden">
-      <img
+      <Image
         src="/newEvents/IWA8.webp"
         alt="Event 1"
-        className="h-full w-full object-cover"
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 50vw, 33vw"
+        loading="lazy"
       />
     </div>
 
     {/* div2 */}
     <div className="col-span-2 row-span-2 col-start-3 relative overflow-hidden">
-      <img
+      <Image
         src="/newEvents/IDA1.webp"
         alt="Event 2"
-        className="h-full w-full object-cover object-top"
+        fill
+        className="object-cover object-top"
+        sizes="(max-width: 768px) 50vw, 33vw"
+        loading="lazy"
       />
     </div>
 
     {/* div3 (tall right) */}
     <div className="col-span-2 row-span-4 col-start-5 relative overflow-hidden">
-      <img
+      <Image
         src="/newEvents/IDA12.webp"
         alt="Event 3"
-        className="h-full w-full object-cover object-top"
+        fill
+        className="object-cover object-top"
+        sizes="(max-width: 768px) 50vw, 33vw"
+        loading="lazy"
       />
     </div>
 
     {/* div5 (tall left) */}
     <div className="col-span-2 row-span-4 row-start-3 relative overflow-hidden">
-      <img
+      <Image
         src="/newEvents/IWA2.webp"
         alt="Event 5"
-        className="h-full w-full object-cover"
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 50vw, 33vw"
+        loading="lazy"
       />
     </div>
 
     {/* div9 (center square) */}
     <div className="col-span-2 row-span-2 col-start-3 row-start-3 relative overflow-hidden">
-      <img
+      <Image
         src="/newEvents/Gusto4.webp"
         alt="Campus Beat"
-        className="h-full w-full object-cover"
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 80vw, 40vw"
+        priority
       />
     </div>
 
     {/* div7 */}
     <div className="col-span-2 row-span-2 col-start-3 row-start-5 relative overflow-hidden">
-      <img
+      <Image
         src="/newEvents/IWA12.webp"
         alt="Event 7"
-        className="h-full w-full object-cover"
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 50vw, 33vw"
+        loading="lazy"
       />
     </div>
 
     {/* div8 */}
     <div className="col-span-2 row-span-2 col-start-5 row-start-5 relative overflow-hidden">
-      <img
+      <Image
         src="/newEvents/Splash6.webp"
         alt="Event 8"
-        className="h-full w-full object-cover object-top"
+        fill
+        className="object-cover object-top"
+        sizes="(max-width: 768px) 50vw, 33vw"
+        loading="lazy"
       />
     </div>
   </div>
@@ -213,46 +237,51 @@ export default function EventsPage() {
 
 
 
+{/* ================= GSAP SECTION ================= */}
+<div className="hidden lg:block full-width-container">
+  <div className="arch">
+    {/* LEFT */}
+    <div className="arch__left">
+      {eventsData.map((event) => (
+        <div className="arch__info" key={event.id}>
+          <div className="content">
+            <h2 className="header">{event.title}</h2>
+            <p className="desc">{event.description}</p>
 
-      {/* ================= GSAP SECTION ================= */}
-      <div className="hidden lg:block full-width-container">
-        <div className="arch">
-          {/* LEFT */}
-          <div className="arch__left">
-            {eventsData.map((event) => (
-              <div className="arch__info" key={event.id}>
-                <div className="content">
-                  <h2 className="header">{event.title}</h2>
-                  <p className="desc">{event.description}</p>
-
-                  <Link href={`/Campus/Events/gallery/${event.id}`} className="link">
-                    <span>View Gallery</span>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* RIGHT */}
-          <div className="arch__right-pin">
-            <div className="arch__right">
-              {[
-                "/newEvents/BParak.jpg",
-                "/newEvents/IWA1.jpg",
-                "/newEvents/Gusto1.jpg",
-                "/newEvents/Navratri1.JPG",
-                "/newEvents/Splash6.jpg",
-                "/newEvents/GanpatiAartiImg.png",
-  
-              ].map((src, i) => (
-                <div className="img-wrapper" data-index={6 - i} key={i}>
-                  <img src={src} alt={`event-${i}`} />
-                </div>
-              ))}
-            </div>
+            <Link href={`/Campus/Events/gallery/${event.id}`} className="link">
+              <span>View Gallery</span>
+            </Link>
           </div>
         </div>
+      ))}
+    </div>
+
+    {/* RIGHT */}
+    <div className="arch__right-pin">
+      <div className="arch__right">
+        {[
+          "/newEvents/BParak.jpg",
+          "/newEvents/IWA1.jpg",
+          "/newEvents/Gusto1.jpg",
+          "/newEvents/Navratri1.JPG",
+          "/newEvents/Splash6.jpg",
+          "/newEvents/GanpatiAartiImg.png",
+        ].map((src, i) => (
+          <div className="img-wrapper" data-index={6 - i} key={i}>
+            <Image
+              src={src}
+              alt={`event-${i}`}
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              loading="lazy"
+            />
+          </div>
+        ))}
       </div>
+    </div>
+  </div>
+</div>
 
 
       {/* ================= MOBILE / TABLET EVENTS CARDS ================= */}
@@ -270,9 +299,9 @@ export default function EventsPage() {
           flex flex-col
         "
       >
-        {/* IMAGE */}
+       {/* IMAGE */}
         <div className="relative w-full h-56 sm:h-64">
-          <img
+          <Image
             src={
               [
                 "/newEvents/BParak.webp",
@@ -284,7 +313,10 @@ export default function EventsPage() {
               ][index]
             }
             alt={event.title}
-            className="h-full w-full object-cover"
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, 50vw"
+            loading="lazy"
           />
         </div>
 

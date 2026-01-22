@@ -7,8 +7,8 @@ export const eventsData = [
     link: "/gallery/indira-diversity-awards",
     images: [
       "/newEvents/BParak.webp",
-      "/newEvents/IDA1.webp",
-      "/newEvents/IDA2.webp",
+      // "/newEvents/IDA1.webp",
+      // "/newEvents/IDA2.webp",
       // "/newEvents/IDA5.webp",
       // "/newEvents/IDA6.webp",
       // "/newEvents/IDA7.webp",

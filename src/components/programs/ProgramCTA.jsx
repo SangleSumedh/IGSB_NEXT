@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { ArrowBigUp } from "lucide-react";
+import { ArrowBigUp, ChevronLeft, ChevronRight, Download } from "lucide-react";
 
 const testimonials = [
   {
@@ -23,12 +23,12 @@ const testimonials = [
     image: "/Home/Testimonials/Krutika-Patil.png",
     text: "I am fully satisfied with my decision to join Indira Global Business School. Excellent staff with exceptional support for academics and extra-curricular activities. Well-equipped infrastructure to meet the academic and accommodation requirements of students. The institute has one of the best ROIs amongst most MBA colleges, in terms of placements. I am placed with HDFC Ltd with more than a decent package for about a year now through campus placements and am very satisfied with my job.",
   },
-  {
-    name: "Saurabh Kulkarni",
-    branch: "NielsenIQ",
-    image: "/Home/Testimonials/Saurabh-Kulkarni.png",
-    text: "There are very few moments in one's life when one feels to be genuinely fortunate. Indira Global Business School is not just the B-School but an institution that helped me transform and create my own identity in corporate world. My Faculties and mentors were always a part of this beautiful journey with me, and helped me survive, succeed and shine. IGBS not only provides the students an armory of knowledge, but also develops industry requirement skills which helps as ultimate confidence booster.",
-  },
+  // {
+  //   name: "Saurabh Kulkarni",
+  //   branch: "NielsenIQ",
+  //   image: "/Home/Testimonials/Saurabh-Kulkarni.png",
+  //   text: "There are very few moments in one's life when one feels to be genuinely fortunate. Indira Global Business School is not just the B-School but an institution that helped me transform and create my own identity in corporate world. My Faculties and mentors were always a part of this beautiful journey with me, and helped me survive, succeed and shine. IGBS not only provides the students an armory of knowledge, but also develops industry requirement skills which helps as ultimate confidence booster.",
+  // },
   {
     name: "Akshay Shirke",
     branch: "Amazon",
@@ -76,37 +76,39 @@ export default function CTASection() {
     <div className="relative w-full bg-white text-slate-800 shadow-xl overflow-hidden pt-2 md:pt-0">
       <div className="grid grid-cols-1 md:grid-cols-8">
         {/* --- TESTIMONIALS --- */}
-        <div className="md:col-span-4 flex flex-col justify-center items-center p-2 md:p-8 bg-[#1F6D71]/50 md:bg-transparent">
+        <div className="md:col-span-4 flex flex-col justify-center items-center p-2 md:p-8 ">
           {/* New Title Section */}
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-slate-900 md:text-[#1F6D71] text-center tracking-tight">
             Student Testimonials
           </h2>
 
           <div className="p-4 md:p-6 rounded-xl border-2 border-[#3aafa9] max-w-3xl w-full bg-white/10 backdrop-blur-sm md:bg-white md:shadow-lg">
-            <div className="flex flex-col md:flex-col lg:flex-row items-center gap-5">
-              {/* PROFILE */}
-              <div className="flex flex-col items-center text-center min-w-[120px]">
+            <div className="grid grid-cols-1 lg:grid-cols-[140px_1fr] gap-5 items-start lg:items-center">
+              {/* PROFILE (fixed column) */}
+              <div className="flex flex-col items-center text-center w-full lg:w-[140px]">
                 <div className="relative w-14 h-14 md:w-20 md:h-20 rounded-full border-2 border-[#fb7035] overflow-hidden shadow-md mb-3">
                   <Image
                     src={active.image}
                     alt={active.name}
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
-                <h3 className="font-bold text-lg leading-tight text-slate-900">
+
+                <h3 className="font-bold text-md leading-tight text-slate-900">
                   {active.name}
                 </h3>
+
                 <p className="text-sm font-medium text-slate-700">
                   {active.branch}
                 </p>
               </div>
 
-              {/* TEXT AREA */}
-              <div className="flex-1 text-center lg:text-left overflow-hidden">
+              {/* TEXT AREA (fluid column) */}
+              <div className="text-center lg:text-left overflow-hidden">
                 <p
-                  className={`text-sm lg:text-[0.95rem] leading-relaxed text-slate-700 transition-all duration-300 ${
-                    isExpanded ? "" : "line-clamp-3 md:line-clamp-4"
+                  className={`text-sm text-justify lg:text-[0.95rem] leading-relaxed text-slate-700 transition-all duration-300 ${
+                    isExpanded ? "" : "line-clamp-3"
                   }`}
                 >
                   "{active.text}"
@@ -119,20 +121,42 @@ export default function CTASection() {
                   {isExpanded ? "Read Less" : "Read More"}
                 </button>
 
-                {/* DOTS */}
-                <div className="flex justify-center lg:justify-start gap-1.5 mt-4">
-                  {testimonials.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setActiveIndex(i)}
-                      className={`h-1.5 rounded-full transition-all duration-300 ${
-                        activeIndex === i
-                          ? "w-6 bg-[#fb7035]"
-                          : "w-1.5 bg-slate-400"
-                      }`}
-                      aria-label={`Go to testimonial ${i + 1}`}
-                    />
-                  ))}
+                {/* NAVIGATION */}
+                <div className="flex items-center justify-center lg:justify-start gap-3 mt-4">
+                  <button
+                    onClick={() =>
+                      setActiveIndex(
+                        (activeIndex - 1 + testimonials.length) %
+                          testimonials.length,
+                      )
+                    }
+                    className="p-1.5 rounded-full border border-slate-300 hover:bg-slate-100 transition"
+                  >
+                    <ChevronLeft className="w-4 h-4 text-slate-600" />
+                  </button>
+
+                  <div className="flex gap-1.5">
+                    {testimonials.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setActiveIndex(i)}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                          activeIndex === i
+                            ? "w-6 bg-[#fb7035]"
+                            : "w-1.5 bg-slate-400"
+                        }`}
+                      />
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={() =>
+                      setActiveIndex((activeIndex + 1) % testimonials.length)
+                    }
+                    className="p-1.5 rounded-full border border-slate-300 hover:bg-slate-100 transition"
+                  >
+                    <ChevronRight className="w-4 h-4 text-slate-600" />
+                  </button>
                 </div>
               </div>
             </div>
@@ -163,24 +187,18 @@ export default function CTASection() {
               transition-all duration-200
             "
           >
-            <ArrowBigUp className="w-5 h-5" />
+            <Download className="w-5 h-5" />
             Download Brochure
           </button>
         </div>
 
         {/* --- GENTLEMAN --- */}
-        <div className="md:col-span-1 flex items-end justify-center relative h-48 md:h-full bg-white/5 md:bg-transparent overflow-visible">
+        <div className="md:col-span-1 flex items-end justify-center relative h-48 md:h-full overflow-visible">
           <img
-            src="/Home/suitman.png"
+            src="/Home/suitwoman2.png"
             alt="Gentleman"
             className="
-              h-[90%] md:h-[125%]
-              w-auto
-              object-contain object-bottom
-              translate-y-2
-              opacity-100
-              z-10
-              drop-shadow-xl
+              h-[90%] md:h-[125%] w-auto object-contain object-bottom translate-y-2 opacity-100 z-10 drop-shadow-xl
             "
           />
         </div>

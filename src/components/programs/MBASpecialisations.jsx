@@ -40,10 +40,10 @@ const specializations = [
     description:
       "The MBA in Marketing at IGSB develops market-oriented, data-driven marketing leaders equipped to operate in dynamic and competitive environments, including emerging business models such as quick commerce, e-commerce, and dark store ecosystems. The programme blends marketing strategy, consumer behaviour, brand management, sales management, and digital marketing analytics, ensuring relevance across traditional, digital, and platform-led markets. Students learn to translate market insights into scalable business growth, preparing them for roles in brand management, digital marketing, sales leadership, market research, and growth strategy across consumer-centric sectors and technology-enabled commerce platforms.",
     roles: [
-      "Brand Manager / Assistant Brand Manager",
-      "Digital Marketing Manager / Specialist",
-      "Growth Marketing / Performance Marketing Manager",
-      "Marketing Analytics Specialist / Consumer Insights Manager",
+      "Brand Manager",
+      "Digital Marketing Manager",
+      "Growth Marketing Manager",
+      "Marketing Analytics Specialist",
       "Product Marketing Manager",
     ],
   },
@@ -54,11 +54,11 @@ const specializations = [
     description:
       "The MBA in Finance at IGSB prepares students for analytical, decision-driven roles in the financial ecosystem. The curriculum emphasizes financial management, corporate finance, financial modelling, investment analysis, risk management, and strategic financial decision-making, aligned with real-world business scenarios. Students gain exposure to capital markets, valuation, budgeting, compliance, and fintech fundamentals, enabling them to contribute effectively in corporate finance, banking, consulting, investment analysis, and financial strategy roles across industries.",
     roles: [
-      "Financial Analyst / Corporate Finance Analyst",
-      "Investment Banking Analyst / Associate",
-      "Equity Research Analyst / Market Analyst",
-      "Risk Management / Credit Risk Analyst",
-      "Finance Manager / Business Finance Partner",
+      "Financial Analyst ",
+      "Investment Banking Analyst",
+      "Equity Research Analyst",
+      "Risk Management Analyst",
+      "Finance Manager",
     ],
   },
   {
@@ -69,7 +69,7 @@ const specializations = [
       "The MBA in Human Resources at IGSB is designed to develop strategic HR leaders capable of managing talent, culture, and organizational transformation in modern enterprises. The program integrates HR analytics, talent acquisition, learning & development, performance management, and HR technology, enabling students to move beyond transactional HR into business-driven people management. With a strong focus on employee lifecycle management, organizational behaviour, labour laws, and leadership development, graduates are prepared for roles in HR consulting, talent strategy, corporate HR, and people analytics within leading organizations.",
     roles: [
       "HR Business Partner (HRBP)",
-      "Talent Acquisition / Recruitment Manager",
+      "Talent Acquisition ",
       "Learning & Development (L&D) Manager",
       "HR Analytics Specialist",
       "Compensation & Benefits Manager",
@@ -82,11 +82,11 @@ const specializations = [
     description:
       "The MBA in Operations & Supply Chain Management at IGSB focuses on building professionals who can optimize processes, manage complex supply networks, and drive operational excellence. The specialization covers operations strategy, supply chain planning, logistics management, procurement, quality systems, and lean methodologies. With increasing emphasis on data-driven operations, technology integration, and global supply chain resilience, students are trained for leadership roles in manufacturing, logistics, e-commerce, consulting, and operations strategy functions.",
     roles: [
-      "Operations Manager / Operations Analyst",
-      "Supply Chain Manager / SCM Analyst",
+      "Operations Manager ",
+      "Supply Chain Manager",
       "Logistics & Distribution Manager",
-      "Procurement / Sourcing Manager",
-      "Lean / Six Sigma Specialist",
+      "Procurement Manager",
+      "Six Sigma Specialist",
     ],
   },
   {
@@ -96,11 +96,11 @@ const specializations = [
     description:
       "The MBA in Business Analytics at IGSB is structured to create professionals who can convert data into strategic business insights. The specialization focuses on data analysis, business intelligence, predictive analytics, visualization tools, and decision science, aligned with managerial applications. By combining statistical thinking, analytical tools, and business context, students are prepared for high-impact roles in business analytics, consulting, strategy, operations analytics, and management decision-support functions in data-driven organizations.",
     roles: [
-      "Business / Data Analyst",
-      "Data Scientist / Machine Learning Analyst",
-      "BI (Business Intelligence) Analyst / Consultant",
-      "Analytics Consultant / Strategy Analyst",
-      "Customer / Marketing Analytics Specialist",
+      "Data Analyst",
+      "Data Scientist Analyst",
+      "BI (Business Intelligence) Analyst ",
+      "Analytics Consultant",
+      "Marketing Analytics Specialist",
     ],
   },
 ];
@@ -284,11 +284,11 @@ export default function ProgrammesSection() {
                     </h4>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-2">
+                  <div className="grid grid-cols-1 gap-x-2 gap-y-2">
                     {activeSpec.roles?.map((role, idx) => (
                       <div
                         key={idx}
-                        className="flex items-start gap-2 text-[11px] xl:text-xs text-slate-50 font-medium leading-snug"
+                        className="flex items-start gap-2 text-[11px] xl:text-sm text-slate-50 font-medium leading-snug"
                       >
                         <CheckCircle2
                           size={12}

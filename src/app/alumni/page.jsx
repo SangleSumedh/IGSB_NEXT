@@ -257,13 +257,13 @@ const Marker = ({ position, data, isSelected, onSelect }) => {
             <img
               src={data.img}
               alt={data.name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
             />
           </div>
 
           {/* Text Label - Only visible when Active/Hovered to reduce clutter */}
           <div
-            className={`px-2 py-0.5 bg-slate-900/95 text-white text-[10px] font-bold rounded shadow-xl whitespace-nowrap transition-all duration-200 ${
+            className={`px-2 py-0.5 bg-slate-900/95 text-white text-[8px] font-bold rounded shadow-xl whitespace-nowrap transition-all duration-200 ${
               isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
             }`}
           >

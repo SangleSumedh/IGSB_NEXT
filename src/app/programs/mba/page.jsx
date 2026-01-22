@@ -10,134 +10,134 @@ import MBASpecializations from "@/components/programs/MBASpecialisations";
 import MBASlider from "@/components/programs/MBASlider";
 import ProgramCTA from "@/components/programs/ProgramCTA";
 
-const mbaData = {
-  marketing: {
-    title: "Marketing Management (MKT)",
-    overview:
-      "This specialization equips students with cutting-edge skills in digital marketing, branding, consumer behavior, sales strategy, market research, and product management. Students learn to understand markets, create value-driven campaigns, and build strong customer relationships, developing into innovative marketers ready to compete in fast-changing global markets.  ",
-    structure: [
-      "Marketing Management & Consumer Behaviour",
-      "Digital Marketing & Social Media Strategy",
-      "Brand Management & Integrated Marketing Communications",
-      "Sales & Distribution Management",
-      "Strategic Marketing & Marketing Analytics",
-    ],
-    highlights: [
-      {
-        title: "Strategic Marketing Expertise",
-        text: "Develop a profound understanding of market dynamics, consumer insights, and competitive strategy to make informed, impactful marketing decisions.",
-      },
-      {
-        title: "Digital-First Approach",
-        text: "Gain hands-on experience with the latest digital marketing tools and analytics platforms, preparing you for the evolving landscape of online consumer engagement.",
-      },
-      {
-        title: "Industry Interface",
-        text: "Learn from industry experts and work on live projects with leading brands, bridging the gap between theory and practical marketing challenges.",
-      },
-    ],
-  },
+// const mbaData = {
+//   marketing: {
+//     title: "Marketing Management (MKT)",
+//     overview:
+//       "This specialization equips students with cutting-edge skills in digital marketing, branding, consumer behavior, sales strategy, market research, and product management. Students learn to understand markets, create value-driven campaigns, and build strong customer relationships, developing into innovative marketers ready to compete in fast-changing global markets.  ",
+//     structure: [
+//       "Marketing Management & Consumer Behaviour",
+//       "Digital Marketing & Social Media Strategy",
+//       "Brand Management & Integrated Marketing Communications",
+//       "Sales & Distribution Management",
+//       "Strategic Marketing & Marketing Analytics",
+//     ],
+//     highlights: [
+//       {
+//         title: "Strategic Marketing Expertise",
+//         text: "Develop a profound understanding of market dynamics, consumer insights, and competitive strategy to make informed, impactful marketing decisions.",
+//       },
+//       {
+//         title: "Digital-First Approach",
+//         text: "Gain hands-on experience with the latest digital marketing tools and analytics platforms, preparing you for the evolving landscape of online consumer engagement.",
+//       },
+//       {
+//         title: "Industry Interface",
+//         text: "Learn from industry experts and work on live projects with leading brands, bridging the gap between theory and practical marketing challenges.",
+//       },
+//     ],
+//   },
 
-  finance: {
-    title: "Finance Management (FIN)",
-    overview:
-      "The finance specialization develops strong analytical and strategic decision-making skills in financial planning, investment analysis, corporate finance, banking, risk management, and capital markets. Students learn to interpret financial data, evaluate opportunities, and drive sustainable financial growth, preparing them for diverse roles in the financial sector.",
-    structure: [
-      "Corporate Finance & Financial Statement Analysis",
-      "Investment Analysis & Portfolio Management",
-      "Financial Markets & Institutions",
-      "International Finance & Risk Management",
-      "Mergers, Acquisitions & Corporate Valuation",
-    ],
-    highlights: [
-      {
-        title: "Analytical Rigor",
-        text: "Build quantitative and analytical skills essential for modelling, valuation, and investment decision-making.",
-      },
-      {
-        title: "Market-Ready Skills",
-        text: "Gain practical exposure using financial databases, tools, and simulations.",
-      },
-      {
-        title: "Strategic Perspective",
-        text: "Understand the strategic role of finance in budgeting, governance, and corporate decision-making.",
-      },
-    ],
-  },
+//   finance: {
+//     title: "Finance Management (FIN)",
+//     overview:
+//       "The finance specialization develops strong analytical and strategic decision-making skills in financial planning, investment analysis, corporate finance, banking, risk management, and capital markets. Students learn to interpret financial data, evaluate opportunities, and drive sustainable financial growth, preparing them for diverse roles in the financial sector.",
+//     structure: [
+//       "Corporate Finance & Financial Statement Analysis",
+//       "Investment Analysis & Portfolio Management",
+//       "Financial Markets & Institutions",
+//       "International Finance & Risk Management",
+//       "Mergers, Acquisitions & Corporate Valuation",
+//     ],
+//     highlights: [
+//       {
+//         title: "Analytical Rigor",
+//         text: "Build quantitative and analytical skills essential for modelling, valuation, and investment decision-making.",
+//       },
+//       {
+//         title: "Market-Ready Skills",
+//         text: "Gain practical exposure using financial databases, tools, and simulations.",
+//       },
+//       {
+//         title: "Strategic Perspective",
+//         text: "Understand the strategic role of finance in budgeting, governance, and corporate decision-making.",
+//       },
+//     ],
+//   },
 
-  hr: {
-    title: "Human Resource Management (HR)",
-    overview:
-      "The HR specialization prepares students to manage people, culture, and organizational development with strategic insight. Students learn talent acquisition, performance management, employee engagement, HR analytics, and labor laws, enabling them to build high-performing workplaces and lead transformational people practices in dynamic business environments.",
-    structure: [
-      "Talent Management & Acquisition",
-      "Organizational Behaviour & Development",
-      "Performance Management Systems & Compensation",
-      "Employment Laws & Labor Relations",
-      "HR Analytics & Strategic HRM",
-    ],
-    highlights: [
-      {
-        title: "Strategic HR Partnering",
-        text: "Align HR strategies with business goals for talent-driven growth",
-      },
-      {
-        title: "People Analytics",
-        text: "Use data for evidence-based decisions in hiring, retention, and performance.",
-      },
-      {
-        title: "Leadership in Change Management",
-        text: "Develop the ability to drive organizational transformation and employee engagement.",
-      },
-    ],
-  },
+//   hr: {
+//     title: "Human Resource Management (HR)",
+//     overview:
+//       "The HR specialization prepares students to manage people, culture, and organizational development with strategic insight. Students learn talent acquisition, performance management, employee engagement, HR analytics, and labor laws, enabling them to build high-performing workplaces and lead transformational people practices in dynamic business environments.",
+//     structure: [
+//       "Talent Management & Acquisition",
+//       "Organizational Behaviour & Development",
+//       "Performance Management Systems & Compensation",
+//       "Employment Laws & Labor Relations",
+//       "HR Analytics & Strategic HRM",
+//     ],
+//     highlights: [
+//       {
+//         title: "Strategic HR Partnering",
+//         text: "Align HR strategies with business goals for talent-driven growth",
+//       },
+//       {
+//         title: "People Analytics",
+//         text: "Use data for evidence-based decisions in hiring, retention, and performance.",
+//       },
+//       {
+//         title: "Leadership in Change Management",
+//         text: "Develop the ability to drive organizational transformation and employee engagement.",
+//       },
+//     ],
+//   },
 
-  operations: {
-    title: "Operations and Supply Chain Management (OSCM)",
-    overview:
-      "Focused on efficiency and value creation, this specialization trains students in logistics, process optimization, supply chain strategy, project management, quality systems, and technology-enabled operations. Graduates gain the expertise to streamline operations, reduce costs, and manage complex supply networks in a competitive global business landscape.",
-    structure: [
-      "Operations Strategy & Supply Chain Management",
-      "Logistics & Transportation Management",
-      "Project Management & Quality Control",
-      "Procurement & Sourcing Strategies",
-      "Analytics for Operations & Decision Modelling",
-    ],
-    highlights: [
-      {
-        title: "End-to-End Supply Chain View",
-        text: "Understand sourcing, production, logistics, distribution, and last-mile operations.",
-      },
-      {
-        title: "Quantitative Problem-Solving",
-        text: "Learn forecasting, optimization, and ERP tools for real-world problem solving.",
-      },
-      {
-        title: "Global Perspective",
-        text: "Explore international logistics, trade regulations, and risk mitigation strategies",
-      },
-    ],
-  },
-  ba: {
-    title: "Business Analytics (BA)",
-    overview: "Coming soon",
-    structure: ["Coming soon"],
-    highlights: [
-      {
-        title: "Coming Soon",
-        text: "Coming Soon",
-      },
-      {
-        title: "Coming Soon",
-        text: "Coming Soon",
-      },
-      {
-        title: "Coming Soon",
-        text: "Coming Soon",
-      },
-    ],
-  },
-};
+//   operations: {
+//     title: "Operations and Supply Chain Management (OSCM)",
+//     overview:
+//       "Focused on efficiency and value creation, this specialization trains students in logistics, process optimization, supply chain strategy, project management, quality systems, and technology-enabled operations. Graduates gain the expertise to streamline operations, reduce costs, and manage complex supply networks in a competitive global business landscape.",
+//     structure: [
+//       "Operations Strategy & Supply Chain Management",
+//       "Logistics & Transportation Management",
+//       "Project Management & Quality Control",
+//       "Procurement & Sourcing Strategies",
+//       "Analytics for Operations & Decision Modelling",
+//     ],
+//     highlights: [
+//       {
+//         title: "End-to-End Supply Chain View",
+//         text: "Understand sourcing, production, logistics, distribution, and last-mile operations.",
+//       },
+//       {
+//         title: "Quantitative Problem-Solving",
+//         text: "Learn forecasting, optimization, and ERP tools for real-world problem solving.",
+//       },
+//       {
+//         title: "Global Perspective",
+//         text: "Explore international logistics, trade regulations, and risk mitigation strategies",
+//       },
+//     ],
+//   },
+//   ba: {
+//     title: "Business Analytics (BA)",
+//     overview: "Coming soon",
+//     structure: ["Coming soon"],
+//     highlights: [
+//       {
+//         title: "Coming Soon",
+//         text: "Coming Soon",
+//       },
+//       {
+//         title: "Coming Soon",
+//         text: "Coming Soon",
+//       },
+//       {
+//         title: "Coming Soon",
+//         text: "Coming Soon",
+//       },
+//     ],
+//   },
+// };
 
 const highlights = [
   {
@@ -380,11 +380,11 @@ export default function MBAContent() {
       {/* INFO SECTION – Pillars Style */}
       <div className="w-full bg-gradient-to-r from-[white] via-[white] to text-slate-900 py-14 px-6 md:px-16">
         <div className="w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8 justify-items-center">
+          <div className="grid grid-cols-2  lg:grid-cols-4 gap-y-10 gap-x-8 justify-items-center">
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="flex items-start gap-4 w-full max-w-[280px]"
+                className="flex flex-col lg:flex-row items-center md:items-start gap-4 w-full max-w-[280px]"
               >
                 {/* ICON CIRCLE */}
                 <div className="shrink-0 relative w-14 h-14">
@@ -394,8 +394,8 @@ export default function MBAContent() {
                 </div>
 
                 {/* TEXT */}
-                <div className="space-y-1">
-                  <h4 className="font-bold text-lg leading-tight tracking-wide">
+                <div className="space-y-1 text-center md:text-left">
+                  <h4 className="font-bold text-lg  leading-tight tracking-wide">
                     {item.title}
                   </h4>
 

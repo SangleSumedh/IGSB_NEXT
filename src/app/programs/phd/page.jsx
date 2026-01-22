@@ -40,54 +40,26 @@ export default function PHD() {
       {/* ===================================================
           HERO SECTION
       =================================================== */}
-      <div className="relative w-full h-[60vh] md:h-[75vh] flex items-center">
+      <div className="relative w-full h-auto  flex items-center">
         <Image
           src="/IGSB/Programmes/PHDBanner1.jpg"
           alt="IGSB Research Centre"
-          fill
-          className="object-cover object-center opacity-90"
+          height={1080}
+          width={1920}
+          className="object-cover object-center opacity-100"
           priority
         />
 
         {/* <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" /> */}
-
-        {/* <div className="relative max-w-6xl px-6 md:px-12 lg:px-20 z-20 text-white">
-          <h1 className="text-2xl md:text-4xl font-bold leading-snug">
-            Ph.D. Research Centre in Indira Global School of Business
-          </h1>
-          <p className="mt-4 text-white/90 max-w-2xl leading-relaxed">
-            A UGC-recognized Ph.D. research center dedicated to high-impact
-            academic research and innovation in business and management.
-            Supported by expert faculty, industry partnerships, and global
-            scholarly standards, we prepare researchers for leadership in
-            academia, policy, and corporate strategy.
-          </p>
-
-          <div className="flex gap-4 mt-6">
-            <button
-              onClick={toggleModal}
-              className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold"
-            >
-              Enquire Now
-            </button>
-
-            <button
-              onClick={handleBrochureDownload}
-              className="bg-secondary text-white px-8 py-3 rounded-lg"
-            >
-              Download Brochure
-            </button>
-          </div>
-        </div> */}
       </div>
 
       {/* ===================================================
           ABOUT RESEARCH CENTRE
       =================================================== */}
       <section className="bg-white max-w-full mx-auto mt-12 shadow-sm space-y-8">
-        <div className="px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="px-6 md:px-8 lg:px-16 grid grid-cols-1 xl:grid-cols-12 gap-12 items-center">
           {/* --- LEFT SIDE: TEXT (3/5 or 60%) --- */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="xl:col-span-7 space-y-6">
             <h2 className="text-2xl md:text-4xl font-bold text-secondary text-left">
               About IGSB Research Centre
             </h2>
@@ -123,12 +95,12 @@ export default function PHD() {
           </div>
 
           {/* --- RIGHT SIDE: IMAGE (2/5 or 40%) --- */}
-          <div className="lg:col-span-5 h-full min-h-[300px] relative  overflow-hidden  group">
+          <div className="xl:col-span-5 h-full min-h-[300px] relative  overflow-hidden rounded-lg group">
             <Image
-              src="/Programs/ResearchCentre.png"
+              src="/IGSB/Research/pgrc.webp"
               alt="IGSB Research Centre"
               fill
-              className="object-contain object-center transition-transform duration-700 group-hover:scale-105"
+              className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
             />
             {/* Optional Overlay for better integration */}
           </div>
@@ -138,7 +110,7 @@ export default function PHD() {
         <PHDSpecs />
       </section>
 
-      <section className="w-full bg-white py-16 px-4 md:px-8 lg:px-12 border-t border-slate-100">
+      <section className="w-full bg-white py-16 px-6 md:px-8 lg:px-16 border-t border-slate-100">
         <div className="max-w-[1800px] mx-auto">
           {/* --- FULL WIDTH: RESEARCH CENTRE ACTIVITIES --- */}
           <div className="flex flex-col">
@@ -192,9 +164,11 @@ export default function PHD() {
               {/* Event Image */}
               <div className="lg:w-2/5 flex-shrink-0">
                 <div className="relative h-64 lg:h-full min-h-[300px] w-full rounded-xl overflow-hidden shadow-lg group">
-                  <img
-                    src="/IGSB/Research/IGSBRC/Activities.png"
+                  <Image
+                    src="/IGSB/Research/IGSBRC/Activities.webp"
                     alt="IGSB Research Centre Guidance Session"
+                    height={1080}
+                    width={1920}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 
@@ -219,7 +193,7 @@ export default function PHD() {
       {/* ===================================================
           PHD GUIDES
       =================================================== */}
-      <section className="bg-secondary px-6 md:px-16  py-8  space-y-6 max-w-full mx-auto  mb-10 ">
+      <section className="bg-secondary px-6 md:px-8 lg:px-16 py-10 space-y-6 max-w-full mx-auto mb-10">
         <h2 className="text-3xl font-bold text-white text-left">
           Recognized Ph.D. Guides
         </h2>
@@ -229,49 +203,66 @@ export default function PHD() {
             [
               "Dr. Virendra Tatake",
               "Financial Management",
-              "/IGSB/Research/IGSBRC/PHD1.jpg",
+              "/Edited/Dr. Virendra Tatake.webp",
             ],
             [
               "Dr. Pallavi Sajanapwar",
               "Marketing Management",
-              "/IGSB/Research/IGSBRC/PHD2.png",
+              "/Edited/Dr. Pallavi Sajanapwar.webp",
             ],
             [
               "Dr. Aatish Zagade",
               "General Management",
-              "/IGSB/Research/IGSBRC/PHD3.jpg",
+              "/Edited/Dr. Aatish Zagade.webp",
             ],
             [
               "Dr. Priyanka Darekar",
               "Human Resource Management",
-              "/IGSB/Research/IGSBRC/PHD4.png",
+              "/Edited/Dr. Priyanka Darekar.webp",
             ],
             [
               "Dr. Ashish Vyas",
               "Human Resource Management",
-              "/IGSB/Research/IGSBRC/PHD5.png",
+              "/Edited/Dr. Ashish Vyas.webp",
             ],
           ].map(([name, field, img], i) => (
             <div
               key={i}
-              className="bg-[#33a6a9] text-white  rounded-xl  p-4 text-center space-y-2"
+              className="
+          bg-[#33a6a9]
+          text-white
+          rounded-xl
+          p-4
+          text-center
+          flex flex-col
+          items-center
+          shadow-md
+          hover:shadow-lg
+          transition-shadow
+        "
             >
-              <div className="w-full rounded-lg overflow-hidden">
+              {/* IMAGE */}
+              <div className="w-full aspect-square rounded-lg overflow-hidden bg-white/10">
                 <Image
                   src={img}
                   alt={name}
-                  width={720}
-                  height={1280}
-                  className="w-full h-full object-cover"
+                  width={600}
+                  height={600}
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
 
-              <h2 className="font-semibold  pt-2">{name}</h2>
-              <p className="text-white text-sm">{field}</p>
+              {/* TEXT */}
+              <h3 className="font-semibold text-base mt-3 leading-snug">
+                {name}
+              </h3>
+
+              <p className="text-sm text-white/90">{field}</p>
             </div>
           ))}
         </div>
       </section>
+
       {/* ===================================================
           OPTIONAL CTA + FAQ
       =================================================== */}

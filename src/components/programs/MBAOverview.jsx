@@ -2,6 +2,8 @@
 
 import React from "react";
 import { Info, LightbulbIcon } from "lucide-react";
+import { MdLightbulb } from "react-icons/md";
+import { BsStars } from "react-icons/bs";
 
 export default function MBAOverview() {
   const specializations = [
@@ -74,11 +76,19 @@ export default function MBAOverview() {
           <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-24">
             {/* Guidelines Section */}
             <div className="bg-gradient-to-br from-[#10404A] to-[#3aa6a9] text-white rounded-2xl p-8 shadow-lg relative overflow-hidden">
-              {/* Lightbulb Icon Overlay */}
-              <LightbulbIcon
-                size={100}
-                className="absolute top-4 right-4 text-yellow-500 opacity-80 drop-shadow-[0_0_10px_rgba(251,146,60,0.6)] animate-pulse pointer-events-none"
-              />
+              <div className="absolute top-4 right-4 pointer-events-none">
+                {/* Sparkles */}
+                <BsStars
+                  size={40}
+                  className="absolute -top-3 -right-3 text-yellow-300 animate-pulse"
+                />
+
+                {/* Bulb with filament */}
+                <MdLightbulb
+                  size={90}
+                  className="text-yellow-400 animate-pulse drop-shadow-[0_0_16px_rgba(251,191,36,0.8)]"
+                />
+              </div>
 
               {/* Header with Flash Animation */}
               <div className="flex items-center gap-3 mb-6 animate-pulse text-white">

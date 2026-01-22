@@ -95,6 +95,10 @@ export default function NewEvent() {
     setActiveEventIndex(index);
   };
 
+  const isTopCropEvent =
+    activeEvent.title === "Navratri" ||
+    activeEvent.title === "Splash";
+
   return (
     <div className="bg-slate-50 py-6 sm:py-12 overflow-hidden font-sans">
       <div className="max-w-full mx-auto px-4 sm:px-16">
@@ -113,16 +117,15 @@ export default function NewEvent() {
 
           {activeEvent.backdrop && (
             <div className="hidden lg:flex justify-end items-center relative w-[150px] h-[150px] opacity-80 mix-blend-multiply mr-28">
-  <Image
-    src={activeEvent.backdrop}
-    alt=""
-    aria-hidden="true"
-    fill
-    className="object-contain transition-opacity duration-700"
-    priority
-  />
-</div>
-
+              <Image
+                src={activeEvent.backdrop}
+                alt=""
+                aria-hidden="true"
+                fill
+                className="object-contain transition-opacity duration-700"
+                priority
+              />
+            </div>
           )}
         </div>
 
@@ -152,7 +155,6 @@ export default function NewEvent() {
 
           {/* LEFT NAV (LG+ ONLY) */}
           <div className="hidden lg:block lg:col-span-1">
-            {/* arrows */}
             <div className="flex gap-3 mb-6">
               <button
                 onClick={goPrev}
@@ -169,7 +171,6 @@ export default function NewEvent() {
               </button>
             </div>
 
-            {/* vertical list */}
             <div className="space-y-4">
               {eventList.map((event, index) => (
                 <div
@@ -216,14 +217,16 @@ export default function NewEvent() {
                 />
               </div>
 
-              {/* row 2 - full width */}
+              {/* row 2 - full width (CENTER BIG IMAGE) */}
               <div className="col-span-2 relative h-56 rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   key={activeEvent.images[0]}
                   src={activeEvent.images[0]}
                   alt={activeEvent.title}
                   fill
-                  className="object-cover transition-opacity duration-700 ease-in-out"
+                  className={`transition-opacity duration-700 ease-in-out ${
+                    isTopCropEvent ? "object-cover object-top" : "object-cover"
+                  }`}
                   priority
                 />
               </div>
@@ -252,7 +255,6 @@ export default function NewEvent() {
 
             {/* ===== TABLET + DESKTOP BENTO GRID ===== */}
             <div className="hidden md:grid md:grid-cols-3 gap-5 h-auto md:h-[500px]">
-
               {/* LEFT COLUMN */}
               <div className="flex flex-col gap-5">
                 <div className="flex-1 relative rounded-3xl overflow-hidden shadow-xl">
@@ -311,8 +313,8 @@ export default function NewEvent() {
                   />
                 </div>
               </div>
-
             </div>
+
           </div>
 
         </div>

@@ -42,16 +42,16 @@ const trustees = [
 
 const leaders = [
   {
-    name: "Chairperson's Message",
-    title: "Chairperson",
+    name: "DR. TARITA SHANKAR",
+    title: "Chairperson & Chief Mentor-IGI",
     image: "/Home/TS.jpg",
     message:
-      "At our institution, we believe education is the foundation of a progressive society. Our goal is to empower students with knowledge, values, and skills that prepare them to lead with confidence and integrity. We are committed to fostering innovation, discipline, and excellence in every learner.",
+      "Dear Students, For over three decades, our institutions have stood as catalysts of transformation, bridging rigorous academics with real-world relevance. We understand that the leaders of tomorrow need more than knowledge; they need vision, adaptability, and a heart for meaningful change. At IGSB, we cultivate an ecosystem where innovation thrives and ethics lead. Through industry-aligned curricula, immersive learning experiences, and a faculty dedicated to mentorship, we empower each student to become not just a skilled professional, but a compassionate and conscious contributor to society. Our focus extends beyond academic brilliance; we nurture resilient, empathetic, and globally minded individuals who value integrity, sustainability, and inclusive progress. In a rapidly evolving world, we remain committed to integrating cutting-edge technology and outcome-driven pedagogy, ensuring our learners are always a step ahead. Here, you will discover more than an education; you will find a launchpad for your aspirations, a space to grow, lead, and inspire. Together, let’s build a future where excellence is a habit, learning is lifelong, and success is measured by the impact we create. The journey ahead is yours to shape. We are here to guide, support, and foster your spirit.  ",
     reverse: false,
   },
   {
-    name: "Principal's Message",
-    title: "Principal",
+    name: "Dr.Virendra Tatake",
+    title: "Director",
     image: "/Home/TakdakeSir.jpg",
     message:
       "We aim to nurture a culture of curiosity, research, and continuous learning. By encouraging critical thinking and ethical responsibility, we prepare students not only for successful careers but also for meaningful contributions to society.",
@@ -59,278 +59,196 @@ const leaders = [
   },
 ];
 
-// Combined Faculty and Staff Data
-const allStaff = [
-  // Teaching Staff
+// Teaching Staff IGSB - Simplified as per requirements
+const teachingStaff = [
   {
-    name: "Dr. Virendra Vasant Tatake",
+    name: "Dr. Virendra Tatake",
     role: "Director",
-    expertise: "Finance",
-    image: "/Faculty/Dr-Virendra-Tatake.jpg",
-    linkedin: true,
-    website: true,
+    image: "/Edited/Dr. Virendra Tatake.webp",
     type: "teaching",
   },
   {
-    name: "Dr. Pallavi Shrirang Sajanapwar",
+    name: "Dr. Pallavi Sajanapwar",
     role: "Dean Academics and Research",
-    expertise: "Marketing and General Management",
-    image: "/Faculty/Dr_Pallavi_Sajanapawar.png",
+    image: "/Edited/Dr. Pallavi Sajanapwar.webp",
     type: "teaching",
   },
   {
-    name: "Dr. Aatish Dilip Zagade",
+    name: "Dr. Aatish Zagade",
     role: "Deputy Director",
-    expertise: "Human Resource & Marketing Management",
-    image: "/Faculty/Dr-Aatish-Zagade.jpg",
-    linkedin: true,
-    website: true,
+    image: "/Edited/Dr. Aatish Zagade.webp",
     type: "teaching",
   },
   {
-    name: "Dr. Anuradha Samarth Phadnis",
+    name: "Dr. Anuradha Phadnis",
     role: "Associate Professor",
-    subRole: "IQAC Head",
-    expertise:
-      "Human Resources Management, Marketing Management and General Management",
-    image: "/Faculty/Dr_Anuraddha_Phadnis_1.jpg",
-    linkedin: true,
-    website: true,
+    image: "/Edited/Dr. Anuradha Phadnis.webp",
     type: "teaching",
   },
   {
-    name: "Dr. Priyanka Rohan Darekar",
+    name: "Dr. Priyanka Darekar",
     role: "Associate Professor",
-    subRole: "Learning Facilitator (Human Resources)",
-    expertise: "Human Resource & General Management",
-    image: "/Faculty/Dr_Priyanka_Darekar_New.png",
-    linkedin: true,
-    website: true,
+    image: "/Edited/Dr. Priyanka Darekar.webp",
     type: "teaching",
   },
   {
-    name: "Dr. Aniruddha Vilas Thuse",
+    name: "Dr. Aniruddha Thuse",
     role: "Associate Professor",
-    expertise: "Financial Management",
-    image: "/Faculty/Dr_Anirudha_Thus_New.png",
-    linkedin: true,
+    image: "/Edited/Dr. Aniruddha Thuse.webp",
     type: "teaching",
   },
   {
-    name: "Dr. Poonam Avinash Wani",
+    name: "Dr. Poonam Wani",
     role: "Assistant Professor",
-    subRole: "Learning Facilitator (Finance)",
-    expertise: "Financial & Marketing Management",
-    image: "/Faculty/Dr_Poonam_Wani_New.png",
-    linkedin: true,
-    website: true,
+    image: "/Edited/Dr. Poonam Wani.webp",
     type: "teaching",
   },
   {
     name: "Dr. Prashant Dubey",
     role: "Assistant Professor",
-    subRole: "Learning Facilitator (Marketing)",
-    expertise: "Marketing & Financial Management",
-    image: "/Faculty/Dr-Prashan-Dubey.jpg",
+    image: "/Edited/Dr. Prashant Dubey.webp",
     type: "teaching",
   },
   {
-    name: "Mr. Mahesh Ganpatrao Bhagat",
+    name: "Mr. Mahesh Bhagat",
     role: "Assistant Professor",
-    subRole:
-      "Chief Exam Officer (IGSB) / Learning Facilitator Operations & Supply Chain Management",
-    expertise: "Human Resource Management",
-    image: "/Faculty/Prof-Mahesh-Bhagat.jpg",
+    image: "/Edited/Mr. Mahesh Bhagat.webp",
     type: "teaching",
   },
   {
-    name: "Dr. Ashish Krishna Vyas",
+    name: "Dr. Ashish Vyas",
     role: "Assistant Professor",
-    expertise: "Human Resource Management",
-    image: "/Faculty/Dr_Ashish-Vyas.png",
-    linkedin: true,
-    website: true,
+    image: "/Edited/Dr. Ashish Vyas.webp",
     type: "teaching",
   },
   {
     name: "Dr. Neha Chaudhry",
     role: "Assistant Professor",
-    subRole: "Finance Management",
-    image: "/Faculty/Neha-Chaudhry-New-img.png",
-    linkedin: true,
-    website: true,
+    image: "/Edited/Dr. Neha Chaudhry.webp",
     type: "teaching",
   },
   {
-    name: "Mr. Jayant Arun Joshi",
-    role: "Deputy Director Corporate Relations, Assistant Professor",
-    subRole: "Placement Coordinator",
-    expertise: "Marketing & Financial Management",
-    image: "/Faculty/Prof-Jayant-Joshi.jpg",
-    linkedin: true,
+    name: "Mr. Jayant Joshi",
+    role: "Deputy Director Corporate Relations",
+    image: "/Edited/Mr. Jayant Joshi.webp",
     type: "teaching",
   },
   {
-    name: "Mr. Amol Kundalik Ankush",
+    name: "Mr. Amol Ankush",
     role: "Assistant Professor",
-    subRole: "Event Coordinator",
-    expertise: "Marketing & Operations Managment",
-    image: "/Faculty/Prof-Amol-Ankush.jpg",
+    image: "/Edited/Mr. Amol Ankush.webp",
     type: "teaching",
   },
   {
-    name: "Ms. Girija Deepak Shirurkar",
+    name: "Ms. Gijira Shirurkar",
     role: "Assistant Professor",
-    expertise: "Human Resource Management and General Management",
-    image: "/Faculty/Prof-Girija-Shirurkar.jpg",
-    linkedin: true,
-    website: true,
+    image: "/Edited/Ms. Gijira Shirurkar.webp",
     type: "teaching",
   },
   {
-    name: "Mrs. Snehal Ganesh Masurkar",
+    name: "Mrs. Snehal Masurkar",
     role: "Assistant Professor",
-    expertise: "Marketing & Human Resource Management",
-    image: "/Faculty/Prof_Snehal_Masulkar_New.png",
-    linkedin: true,
+    image: "/Edited/Ms. Snehal Masurkar.webp",
     type: "teaching",
   },
   {
-    name: "Mrs. Chhaya Shivkumar Bodkurwar",
+    name: "Mrs. Chhaya Bodkurwar",
     role: "Assistant Professor",
-    expertise: "Business Analytics",
-    image: "/Faculty/Prof-chhaya-bodkurwar.png",
-    linkedin: true,
+    image: "/Edited/Ms. Chhaya Bodkurwar.webp",
     type: "teaching",
   },
   {
-    name: "Mrs. Siddhi Sanjay Dhoble",
+    name: "Mrs. Siddhi Dhoble",
     role: "Assistant Professor",
-    expertise: "Finance",
-    image: "/Faculty/Ms-Siddhi-Dhoble.png",
-    linkedin: true,
+    image: "/Edited/Ms. Siddhi Dhoble.webp",
     type: "teaching",
   },
   {
     name: "Mrs. Neha Shah",
     role: "Assistant Professor",
-    expertise: "Banking & Finance",
-    image: "/Faculty/Neha-Shah-Img.png",
-    linkedin: true,
+    image: "/Edited/Ms. Neha Shah.webp",
     type: "teaching",
   },
   {
-    name: "Mr. Neelesh Madhukar Atre",
-    role: "Professor of Practice",
-    expertise: "Marketing Management",
-    image: "/Faculty/Mr-Neelesh-Atre.png",
-    linkedin: true,
+    name: "Mr. Neelesh Atre",
+    role: "Assistant Professor",
+    image: "/Edited/Mr. Neelesh Atre.webp",
     type: "teaching",
   },
   {
-    name: "Mr. Santosh Vitthalrao Dagade",
+    name: "Mr. Santosh Dagade",
     role: "Librarian",
-    expertise: "Library and Information Science",
-    image: "/Faculty/Santosh-Dagade.jpg",
+    image: "/Edited/Mr. Santosh Dagade.webp",
     type: "teaching",
   },
+];
 
-  // Non-Teaching Staff
+// Non-Teaching Staff IGSB - Simplified as per requirements
+const nonTeachingStaff = [
   {
-    name: "Mr. Yogesh Dilip Gheware",
+    name: "Mr. Yogesh Gheware",
     role: "Office Superintendent",
-    expertise: "MBA (HR)",
-    image: "/Faculty/Yogesh-Gheware.jpg",
-    linkedin: true,
-    website: true,
+    image: "/Edited/Yogesh Gheware.webp",
     type: "non-teaching",
   },
   {
-    name: "Mr. Dinesh Vilas Khodke",
+    name: "Mr. Dinesh Khodke",
     role: "System Administrator",
-    expertise: "MBA (HR)",
-    subRole: "Microsoft certified Professional",
-    image: "/Faculty/Dinesh-Khodke.jpg",
-    linkedin: true,
-    website: true,
+    image: "/Edited/Mr. Dinesh Khodke.webp",
     type: "non-teaching",
   },
   {
-    name: "Mr. Nilesh Govind Yedre",
+    name: "Mr. Nilesh Yedre",
     role: "Account Officer",
-    expertise: "MBA (Finance)",
-    subRole: "Diploma in Taxation Law",
-    image: "/Faculty/Nilesh-Yendre.jpg",
-    website: true,
+    image: "/Edited/Mr. Nilesh Yedre.webp",
     type: "non-teaching",
   },
   {
-    name: "Mr. Ashish Bhimrao Jadhav",
+    name: "Mr. Ashish Jadhav",
     role: "Junior Clerk",
-    expertise: "BBA",
-    image: "/Faculty/Ashish-Jadhav.jpg",
-    website: true,
+    image: "/Edited/Mr. Ashish Jadhav.webp",
     type: "non-teaching",
   },
   {
-    name: "Mr. Jagannath Dhanaji Kadam",
+    name: "Mr. Jagannath Kadam",
     role: "Senior Clerk",
-    expertise: "BA",
-    image: "/Faculty/Jagannath-Kadam.jpg",
-    website: true,
+    image: "/Edited/Mr. Jagannath Kadam.webp",
     type: "non-teaching",
   },
   {
-    name: "Mr. Bhagavan Shivaji Patil",
-    role: "Senior Admin Officer",
-    image: "/Faculty/Jiban-Murikal.jpg",
-    linkedin: true,
-    website: true,
+    name: "Mr. Bhagavan Patil",
+    role: "Sr. Admin Officer",
+    image: "/Edited/Mr. Bhagavan Patil.webp",
     type: "non-teaching",
   },
   {
-    name: "Mr. Balasaheb Chhaburao Shinde",
+    name: "Mr. Balasaheb Shinde",
     role: "Admin Officer",
-    image: "/Faculty/Balasaheb-Shinde.jpg",
-    website: true,
+    image: "/Edited/Mr. Balasaheb Shinde.webp",
     type: "non-teaching",
   },
   {
-    name: "Mr. Solomon Sanjay Gaikwad",
+    name: "Mr. Solomon Gaikwad",
     role: "Social Media Manager",
-    expertise:
-      "Branding Officer with 7 years of media experience in Mass Communication & Journalism",
-    subRole: "BA Journalism and Mass Communication",
-    image: "/Faculty/Solomon-Gaikwad.jpg",
-    linkedin: true,
+    image: "/Edited/Mr. Solomon Gaikwad.webp",
     type: "non-teaching",
   },
   {
-    name: "Mr. Rohan Ravindra Shinde",
+    name: "Mr. Rohan Shinde",
     role: "IT Lab Assistant",
-    expertise: "BCA, MCA",
     image: "/Faculty/Rohan-Shinde.jpg",
-    linkedin: true,
-    website: true,
     type: "non-teaching",
   },
   {
-    name: "Mr. Vaibhav Bhimrao Jadhav",
+    name: "Mr. Vaibhav Jadhav",
     role: "Executive Assistant",
-    image: "/Faculty/Mr.jpg",
-    linkedin: true,
-    website: true,
-    type: "non-teaching",
-  },
-  {
-    name: "Mr. Amit Shashikant Kothari",
-    role: "coming soon",
-    image: "/Faculty/Mr.jpg",
-    linkedin: true,
-    website: true,
+    image: "/Edited/Mr. Vaibhav Jadhav.webp",
     type: "non-teaching",
   },
 ];
+
+// Combined staff for display
+const allStaff = [...teachingStaff, ...nonTeachingStaff];
 
 export default function LeadersDeskPage() {
   const [showAllStaff, setShowAllStaff] = useState(false);
@@ -434,59 +352,56 @@ export default function LeadersDeskPage() {
             </div>
           ))}
         </div>
-{/* Board of Trustees Section */}
-<section id="about-trustees" className="relative scroll-mt-[15vh] mb-12 sm:mb-16 md:mb-20">
-  <div className="bg-gradient-to-r from-[#10404A] to-[#1F6D71] p-4 sm:p-5 md:p-6 lg:p-8 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg">
-    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3">
-      Board of Trustees
-    </h2>
-    <p className="text-white text-sm sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-10">
-      Managing Committee Members/Trustees of 'Shree Chanakya Education Society'
-    </p>
 
-    <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3 sm:gap-4">
-      {trustees.map((person, index) => (
-        <div
-          key={index}
-          className="bg-[#3aafa9] rounded-lg sm:rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-secondary group flex flex-col"
-        >
-          {/* Image Container - SQUARE for mobile, tighter rectangle for desktop */}
-          <div className="w-full aspect-square sm:aspect-auto sm:h-44 md:h-48 lg:h-52 bg-gray-100 flex items-center justify-center text-gray-400 rounded-t-lg sm:rounded-t-xl group-hover:bg-gray-50 transition-colors overflow-hidden">
-            <div className="relative w-full h-full flex items-center justify-center p-1.5">
-              <Image
-                src={person.image}
-                alt={person.name}
-                width={200}
-                height={200}
-                className="object-contain w-full h-full"
-                sizes="(max-width: 480px) 100vw, (max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 14vw"
-              />
+        {/* Board of Trustees Section */}
+        <section id="about-trustees" className="relative scroll-mt-[15vh] mb-12 sm:mb-16 md:mb-20">
+          <div className="bg-gradient-to-r from-[#10404A] to-[#1F6D71] p-4 sm:p-5 md:p-6 lg:p-8 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3">
+              Board of Trustees
+            </h2>
+            <p className="text-white text-sm sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-10">
+              Managing Committee Members/Trustees of 'Shree Chanakya Education Society'
+            </p>
+
+            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3 sm:gap-4">
+              {trustees.map((person, index) => (
+                <div
+                  key={index}
+                  className="bg-[#3aafa9] rounded-lg sm:rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-secondary group flex flex-col"
+                >
+                  {/* Image Container - SQUARE for mobile, rectangle for desktop */}
+                  <div className="w-full aspect-square sm:aspect-auto sm:h-48 md:h-54 bg-gray-100 flex items-center justify-center text-gray-400 rounded-t-lg sm:rounded-t-xl group-hover:bg-gray-50 transition-colors overflow-hidden">
+                    <div className="relative w-full h-full flex items-center justify-center p-2">
+                      <Image
+                        src={person.image}
+                        alt={person.name}
+                        width={200}
+                        height={200}
+                        className="object-contain w-full h-full"
+                        sizes="(max-width: 480px) 100vw, (max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 14vw"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="p-2 sm:p-3 flex-grow flex flex-col">
+                    <h4 
+                      className="font-bold text-white text-xs sm:text-sm md:text-sm group-hover:text-secondary transition-colors"
+                      style={{
+                        display: '-webkit-box',
+                        WebkitLineClamp: '2',
+                        WebkitBoxOrient: 'vertical',
+                        overflow: 'hidden',
+                      }}
+                    >
+                      {person.name}
+                    </h4>
+                    <p className="text-white mt-1 text-xs sm:text-xs flex-grow">{person.role}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-
-          {/* Text Section */}
-          <div className="p-2 sm:p-2.5 flex flex-col">
-            <h4 
-              className="font-bold text-white text-xs sm:text-sm md:text-sm leading-snug group-hover:text-secondary transition-colors"
-              style={{
-                display: "-webkit-box",
-                WebkitLineClamp: "2",
-                WebkitBoxOrient: "vertical",
-                overflow: "hidden",
-              }}
-            >
-              {person.name}
-            </h4>
-            <p className="text-white mt-0.5 text-[11px] sm:text-xs leading-snug">
-              {person.role}
-            </p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
+        </section>
 
         {/* SCES Section with Read More */}
         <section id="about-sces" className="relative scroll-mt-[15vh] mb-12 sm:mb-16">
@@ -591,7 +506,7 @@ export default function LeadersDeskPage() {
               <div className="bg-[#1F6D71] px-4 sm:px-5 md:px-6 py-6 sm:py-8 md:py-10 lg:py-12 rounded-md">
                 {/* Combined Staff Section */}
                 <div className="mb-12 sm:mb-14 md:mb-16">
-                  <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
+                  <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
                     {displayedStaff.map((person, index) => (
                       <div
                         key={index}
@@ -607,19 +522,21 @@ export default function LeadersDeskPage() {
                           h-full
                         "
                       >
-                        {/* Staff Image - SQUARE for mobile, rectangle for desktop */}
-                        <div className="w-full aspect-square sm:aspect-auto sm:h-56 md:h-64 lg:h-72 xl:h-84 overflow-hidden bg-gray-50">
-                          <img
-                            src={person.image}
-                            alt={person.name}
-                            className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
-                          />
+                        {/* Staff Image - SQUARE for mobile, rectangle for desktop with object-contain */}
+                        <div className="w-full aspect-square sm:aspect-auto sm:h-56 md:h-64 lg:h-72 xl:h-84 overflow-hidden bg-gray-50 flex items-center justify-center">
+                          <div className="relative w-full h-full flex items-center justify-center p-2">
+                            <img
+                              src={person.image}
+                              alt={person.name}
+                              className="object-cover object-top w-full h-full hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
                         </div>
 
-                        {/* Staff Info */}
+                        {/* Staff Info - Simplified */}
                         <div className="p-3 sm:p-4 flex flex-col flex-grow">
                           <h3 
-                            className="text-sm sm:text-base md:text-lg font-semibold text-white mb-1"
+                            className="text-sm sm:text-base md:text-lg font-semibold text-white mb-2"
                             style={{
                               display: '-webkit-box',
                               WebkitLineClamp: '2',
@@ -630,37 +547,11 @@ export default function LeadersDeskPage() {
                           >
                             {person.name}
                           </h3>
-                          <p className="text-xs sm:text-sm font-medium text-white mb-1">
+                          <p className="text-xs sm:text-sm font-medium text-white">
                             {person.role}
                           </p>
-                          {person.subRole && (
-                            <p 
-                              className="text-xs text-white mb-1 sm:mb-2"
-                              style={{
-                                display: '-webkit-box',
-                                WebkitLineClamp: '1',
-                                WebkitBoxOrient: 'vertical',
-                                overflow: 'hidden',
-                              }}
-                            >
-                              {person.subRole}
-                            </p>
-                          )}
-                          {person.expertise && (
-                            <p 
-                              className="text-xs text-white mb-2 sm:mb-3 flex-grow"
-                              style={{
-                                display: '-webkit-box',
-                                WebkitLineClamp: '3',
-                                WebkitBoxOrient: 'vertical',
-                                overflow: 'hidden',
-                              }}
-                            >
-                              {person.expertise}
-                            </p>
-                          )}
 
-                          <div className="w-full flex items-center justify-between mt-auto">
+                          <div className="w-full flex items-center justify-between mt-auto pt-3">
                             <div>
                               <span
                                 className={`
@@ -674,39 +565,6 @@ export default function LeadersDeskPage() {
                               >
                                 {person.type === "teaching" ? "Teaching" : "Non-Teaching"}
                               </span>
-                            </div>
-
-                            <div className="flex gap-1 sm:gap-2">
-                              {person.linkedin && (
-                                <button
-                                  className="text-white hover:text-[#0077B5] transition-colors p-1"
-                                  aria-label="LinkedIn profile"
-                                >
-                                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                                  </svg>
-                                </button>
-                              )}
-                              {person.website && (
-                                <button
-                                  className="text-white hover:text-[#10404A] transition-colors p-1"
-                                  aria-label="Website"
-                                >
-                                  <svg
-                                    className="w-4 h-4 sm:w-5 sm:h-5"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                  >
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      strokeWidth={2}
-                                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                                    />
-                                  </svg>
-                                </button>
-                              )}
                             </div>
                           </div>
                         </div>

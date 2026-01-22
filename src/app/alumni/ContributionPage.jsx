@@ -128,7 +128,7 @@ export default function ContributionSection() {
 
   // Open modal and pre-select the card clicked
   const handleOpen = (item) => {
-    setSelectedInterests([item.title]);
+    setSelectedInterests([item.title] );
     setShowModal(true);
   };
 
@@ -163,7 +163,7 @@ export default function ContributionSection() {
         {/* Title Section */}
         <div className="text-center mb-8 space-y-4">
           <h2 className="text-4xl font-bold text-[#10404A] tracking-tight">
-            How can our alumini contribute?
+            How can our alumni contribute?
           </h2>
           <div className="w-20 h-1 bg-[#FF8B61] mx-auto rounded-full"></div>
           <p className="text-[#10404A]/70 max-w-2xl mx-auto">

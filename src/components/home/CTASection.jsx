@@ -106,23 +106,30 @@ export default function CTASection() {
                     className="object-cover object-top"
                   />
                 </div>
-                <h3 className="font-semibold text-sm md:text-base leading-tight">
-                  {active.name}
-                </h3>
-                <p className="text-[0.75rem] text-white/80">
-                  {active.branch}
-                </p>
+
+                {/* fixed-height name + branch wrapper */}
+                <div className="min-h-[3.25rem] md:min-h-[3.75rem] flex flex-col justify-start">
+                  <h3 className="font-semibold text-sm md:text-base leading-tight">
+                    {active.name}
+                  </h3>
+                  <p className="text-[0.75rem] text-white/80">
+                    {active.branch}
+                  </p>
+                </div>
               </div>
 
               {/* TEXT AREA */}
               <div className="flex-1 text-center md:text-left overflow-hidden">
-                <p
-                  className={`text-xs md:text-sm leading-relaxed text-white/95 px-1 transition-all duration-300 ${
-                    isExpanded ? "" : "line-clamp-3 md:line-clamp-4"
-                  }`}
-                >
-                  "{active.text}"
-                </p>
+                {/* fixed-height text wrapper */}
+                <div className="min-h-[4.5rem] md:min-h-[6.5rem]">
+                  <p
+                    className={`text-xs md:text-sm leading-relaxed text-white/95 px-1 transition-all duration-300 ${
+                      isExpanded ? "" : "line-clamp-3 md:line-clamp-4"
+                    }`}
+                  >
+                    "{active.text}"
+                  </p>
+                </div>
 
                 <button
                   onClick={() => setIsExpanded(!isExpanded)}

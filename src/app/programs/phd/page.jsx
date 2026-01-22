@@ -147,16 +147,26 @@ export default function PHD() {
                 {/* Description */}
                 <div className="space-y-4 text-lg leading-relaxed text-justify">
                   <p>
-                    The IGSB Research Centre organized a comprehensive guidance
-                    session aiming to provide clarity on doctoral entrance
-                    eligibility, research orientation, the purpose of a Ph.D.,
-                    and its professional relevance.
+                    On 5th June 2025, We invited Dr. Abhijit Chandratreya,
+                    Deputy Director (PGRC) IIMP for this session. All teaching
+                    faculties of Indira Global School of Business, had the
+                    privilege to get the guidance from the Dr. Abhijit
+                    Chandratreya, Deputy Director (PGRC) IIMP.
+                  </p>
+
+                  <p>
+                    Dr. Ashish Vyas, Coordinator- IGSB Research Center, welcomes
+                    Guest Dr. Abhijit Chandratreya, Deputy Director (PGRC) IIMP;
+                    Dr. Virendra Tatake, Director, IGSB; Dr. Pallavi Sajanapwar,
+                    Dean Research and Academics, IGSB; and all the faculties of
+                    IGSB.
                   </p>
                   <p>
-                    The workshop was instrumental in building an academic
-                    research mindset among aspirants, focusing heavily on
-                    ethical considerations and high-quality publication
-                    standards required in modern academia.
+                    The guidance session covered the guidance about the
+                    eligibility for the entrance test for Ph.D. program. Who
+                    should pursue Ph.D. and its benefit. The faculties asked the
+                    questions about the challenges they are facing while
+                    pursuing the Ph.D.
                   </p>
                 </div>
               </div>

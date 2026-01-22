@@ -41,8 +41,8 @@ const Career = () => {
     },
     {
       id: 4,
-      title: "Internships & Exposure",
-      desc: "Mandatory internships and live projects provide practical business experience, strengthening employability and workplace readiness.",
+      title: "Internship & Exposure",
+      desc: "Mandatory internship and live projects provide practical business experience, strengthening employability and workplace readiness.",
       icon: <FaBriefcase />,
     },
     {
@@ -64,13 +64,13 @@ const Career = () => {
       <div className="py-8 px-4 text-center text-white">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-2 leading-tight text-secondary tracking-tight">
           An Ecosystem Designed for{" "}
-          <span className="text-primary">Real Careers</span>
+          <span className="text-primary">Great Careers</span>
         </h1>
         <p className="text-base text-secondary max-w-3xl mx-auto font-light">
           IGSB offers a structured placement ecosystem focused on industry-ready
-          MBA careers. Through strong corporate partnerships, expert mentorship,
+          talent. Through strong corporate partnership, expert mentorship,
           and hands-on exposure, students graduate with the skills required for
-          long-term success
+          long-term success.
         </p>
       </div>
       <div className="max-w-full mx-auto px-4 sm:px-6 relative mt-16 mb-15 ">

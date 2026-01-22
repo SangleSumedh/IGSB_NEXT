@@ -50,7 +50,7 @@ export default function FacultyStatSection() {
               <p className="text-base md:text-lg lg:text-xl leading-relaxed text-white font-semibold">
                 Most of IGSB's faculty members are Ph.D. holders, ensuring that every
                 learner is guided by scholars with deep subject expertise,
-                strong research credentials, and a rigorous understanding of
+                strong research credentials, and a thorough understanding of
                 advanced management concepts.
               </p>
 

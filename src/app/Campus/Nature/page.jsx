@@ -99,7 +99,7 @@ const facilities = [
       "/NEWFacilities/nature3.jpg",
     ],
     description1:
-      "Set amidst a green and serene landscape, the campus offers a clean, pollution-free environment with fresh air and a low AQI.",
+      "Set amidst a green and serene landscape, the campus offers a clean, pollution-free environment with fresh air and  low AQI.",
     description2:
       "Surrounded by nature, landscaped gardens, and open spaces, the peaceful campus enhances focus, well-being, and holistic student development.",
   },
@@ -321,7 +321,7 @@ export default function FacilitiesPage() {
       <div className="w-full py-12 md:py-16 bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] shadow-lg">
   <div className="max-w-7xl mx-auto px-5 md:px-6 xl:px-16 text-center">
     <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-extrabold text-white animate-fade-up">
-      An MBA Campus Designed for Growth and Innovation
+      MBA Campus Designed for Growth and Innovation
     </h1>
 
     <div className="mx-auto mt-4 md:mt-5 mb-5 md:mb-6 w-12 md:w-16 h-[3px] rounded-full bg-[#fc7116] animate-fade-up animation-delay-100" />

@@ -24,7 +24,7 @@ function Training() {
               {/* TEXT */}
               <div className="w-full sm:w-[70%] lg:w-[70%] xl:w-[60%]">
                 <p className="text-gray-700 leading-relaxed text-sm sm:text-base lg:text-base xl:text-base text-justify">
-                  The Industry Readiness Programme (IRP) is a structured
+                  The Industry Readiness Programme (IRP) is a customized
                   training programme designed in close collaboration with
                   <span className="font-bold"> industry experts</span> to align
                   academic learning with real-world corporate expectations. It

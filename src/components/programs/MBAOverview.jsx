@@ -45,14 +45,14 @@ export default function MBAOverview() {
             </div>
             <div className="space-y-6 text-lg leading-relaxed text-slate-700 text-justify">
               <p className="">
-                The SPPU MBA programme is a four-semester, AICTE-aligned degree
-                offers a flexible, career-oriented curriculum. Students can
+                The SPPU affliated MBA programme is a four-semester, AICTE-aligned degree
+                offering a flexible, career-oriented curriculum. Students can
                 customize their academic journey by selecting courses aligned
                 with their career goals, aptitude, and industry interests.
               </p>
 
               <p>
-                The CBCGS framework combines academic depth with practical skill
+                The (CBCGS)Choice Based Credit and Grading System framework combines academic depth with practical skill
                 development, integrating foundation, enrichment, and alternative
                 credit courses. Foundation courses strengthen core management
                 knowledge such as accounting, economics, and business
@@ -64,9 +64,8 @@ export default function MBAOverview() {
 
               <p>
                 Students choose one focused MBA specialization, supported by an
-                outcome-based assessment system that measures practical
-                application, analytical ability, and real-world business
-                readiness, ensuring graduates are professionally competent and
+                outcome-based assessment system that measures their analytical ability, and real-world business
+                readiness, ensuring our MBA cohort are professionally competent and
                 industry-ready.
               </p>
             </div>

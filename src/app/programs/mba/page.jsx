@@ -161,7 +161,7 @@ const highlights = [
   },
   {
     title: "Credit System",
-    desc: "Choice Based Credits",
+    desc: "Choice Based Credit and Grading System",
     icon: (
       <svg
         fill="none"
@@ -275,8 +275,8 @@ const highlights = [
     ),
   },
   {
-    title: "Internship",
-    desc: "Industry Exposure Programme",
+    title: "Internships",
+    desc: "Industry Exposure Programmes",
     icon: (
       <svg
         fill="none"
@@ -425,7 +425,7 @@ export default function MBAContent() {
           Department of <span className="">MBA</span>
         </h2>
         <p className="text-slate-100  mx-auto text-lg max-w-7xl font-light leading-relaxed">
-          Empowering future innovators with technical excellence, research, and
+          Empowering future leaders with technical excellence, research, and
           hands-on business experience.
         </p>
       </div>

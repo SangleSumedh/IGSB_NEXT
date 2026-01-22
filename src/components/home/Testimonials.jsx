@@ -109,7 +109,7 @@ export default function Testimonials() {
           </h2>
           <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed">
             Our strongest endorsements come from our recruitment partners.
-            Discover why leading companies consistently choose IGSB graduates to
+            Discover why leading companies consistently choose IGSB post graduates to
             drive their success.
           </p>
         </div>

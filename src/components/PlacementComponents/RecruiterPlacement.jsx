@@ -33,11 +33,11 @@ const RecruiterPlacement = () => {
     },
     "/placement": {
       headline: "Recruiters Who Value Industry-Ready Talent",
-      body: "Leading organizations that recognize, recruit, and trust IGSB graduates for their domain expertise and professional readiness.",
+      body: "Leading organizations that recognize, recruit, and trust IGSB post graduates for their domain expertise and professional readiness.",
     },
     "/programs/mba": {
       headline: "Trusted by Industry, Defined by Outcomes",
-      body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of graduate performance and professional readiness.",
+      body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of  graduate performance and professional readiness.",
     },
   };
 
@@ -113,12 +113,12 @@ const OrangeCard = () => (
       <ApplyForm variant="card" />
 
       <div className="text-center mt-4">
-        <p className="font-semibold flex justify-center gap-2 text-sm">
+        {/* <p className="font-semibold flex justify-center gap-2 text-sm">
           Or Give us a call <Phone size={14} /> +91 0000000000
         </p>
         <p className="text-xs opacity-90 mt-1">
           The Support Centre is Available 24/7
-        </p>
+        </p> */}
       </div>
     </div>
   </div>

@@ -26,7 +26,7 @@ const ExploreSection = () => {
             {/* md → <lg : heading + small logos inline */}
             <div className="hidden md:flex lg:hidden justify-between items-start gap-6 mt-12">
               <h2 className="text-3xl font-extrabold text-gray-800 tracking-tight max-w-[70%]">
-                Explore your Potential at <br />
+                Explore Your Potential at <br />
                 <span className="text-[#FF8B61]">
                   Indira Global School of Business
                 </span>
@@ -65,10 +65,10 @@ const ExploreSection = () => {
 
             <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-justify">
               We develop globally competent, purpose-driven leaders equipped to
-              excel in today’s fast-evolving business landscape. As a premier
+              excel in today’s fast-evolving business landscape. As a top
               <span className="font-semibold">
                 {" "}
-                AICTE-approved MBA institute
+                AICTE-approved & SPPU affiliated MBA institute
               </span>
               , our vision is to be a hub of academic excellence that nurtures
               strategic thinkers who lead with integrity, empathy, and a
@@ -85,7 +85,7 @@ const ExploreSection = () => {
             </p>
 
             <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-justify">
-              Through industry-integrated MBA programmes and rigorous
+              Through industry-integrated MBA programme and rigorous
               experiential learning pedagogy, IGSB empowers future leaders with
               strategic acumen, adaptive mindset, and ethical grounding. We
               don’t just teach management—we cultivate leaders who create value,

@@ -21,7 +21,7 @@ const actions = [
     ),
   },
   {
-    title: "Campus Visit",
+    title: "Campus Visits",
     desc: "Drop by for a coffee and interact with faculty and peers.",
     icon: (
       <svg
@@ -45,7 +45,7 @@ const actions = [
     ),
   },
   {
-    title: "HR Partnership",
+    title: "HR Partnerships",
     desc: "Help your organization discover talent at IGSB.",
     icon: (
       <svg
@@ -163,7 +163,7 @@ export default function ContributionSection() {
         {/* Title Section */}
         <div className="text-center mb-8 space-y-4">
           <h2 className="text-4xl font-bold text-[#10404A] tracking-tight">
-            How can our alumina contribute?
+            How can our alumini contribute?
           </h2>
           <div className="w-20 h-1 bg-[#FF8B61] mx-auto rounded-full"></div>
           <p className="text-[#10404A]/70 max-w-2xl mx-auto">

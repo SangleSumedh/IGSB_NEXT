@@ -68,7 +68,7 @@ export const eventsData = [
   },
   {
     id: 6,
-    title: "Ganpati Celebration ",
+    title: "Ganpati Celebrations ",
     description:
       "Students came together to welcome Bappa with enthusiasm, engaging in daily devotional gatherings that strengthened bonds across the campus community. The festivities culminated in a meaningful visarjan ceremony, held in September 2024, which honoured both tradition and togetherness. These celebrations reflect IGSB’s commitment to fostering cultural awareness, collective belonging, and holistic student life beyond the classroom. ",
     link: "/gallery/splash",

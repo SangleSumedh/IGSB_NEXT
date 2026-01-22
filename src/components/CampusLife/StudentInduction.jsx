@@ -59,7 +59,7 @@ export default function RoadmapSection() {
 
                 <div className="mb-8">
                   <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                    The MBA Induction Programme 2025 at Chanakya Campus is a
+                    The MBA Induction Programme 2025 at Chanakya Campus was a
                     structured academic initiative designed in alignment with
                     AICTE guidelines to ensure a smooth transition into
                     postgraduate management education.

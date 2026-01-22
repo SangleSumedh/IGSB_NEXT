@@ -32,7 +32,7 @@ export default function AlumniSpotlight() {
         </h2>
 
         <p className="text-white/80 text-xl leading-relaxed max-w-5xl">
-          A future-focused learning ecosystem that combines academic excellence,
+          We are proud to have a future-focused learning ecosystem that combines academic excellence,
           holistic development, and a nurturing campus environment to support
           lifelong growth.
         </p>

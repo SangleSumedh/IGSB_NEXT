@@ -15,7 +15,7 @@ export default function PlacementRecords() {
         
         {/* Title */}
         <h1 className="text-3xl lg:text-4xl font-bold text-white text-center mb-10 lg:mb-16">
-          Placement Records
+          Our Placement Records
         </h1>
 
         {/* ================= MAIN RESPONSIVE GRID ================= */}

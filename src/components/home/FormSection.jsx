@@ -30,15 +30,15 @@ export default function FormSection() {
   const pageContent = {
     "/": {
       headline: "Trusted by Industry, Defined by Outcomes",
-      body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of graduate performance and professional readiness.",
+      body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of student performance and professional readiness.",
     },
     "/placement": {
       headline: "Trusted by Industry, Defined by Outcomes",
-      body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of graduate performance and professional readiness.",
+      body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of student performance and professional readiness.",
     },
     "/programs/mba": {
       headline: "Trusted by Industry, Defined by Outcomes",
-      body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of graduate performance and professional readiness.",
+      body: "We foster long-term partnerships with prominent recruiters, built on a consistent track record of student performance and professional readiness.",
     },
   };
 

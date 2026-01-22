@@ -423,7 +423,7 @@ const Navbar = () => {
                 className="flex items-center gap-1 px-2 lg:px-3 hover:text-secondary transition-all duration-200 group"
               >
                 <span className="relative">
-                  Programee & Admission
+                  Programme & Admission
                   <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
                 </span>
                 <FiChevronDown

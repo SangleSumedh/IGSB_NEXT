@@ -356,8 +356,8 @@ export default function AlumniPage() {
               </h1>
 
               <p className="text-center md:text-left text-slate-700 text-base max-w-md font-medium leading-relaxed">
-                Alumni progress across global organizations, reflecting strong
-                career outcomes and international professional mobility.
+                Our alumni network is spread across multiple global organizations, reflecting strong
+                career outcomes and professional mobility.
               </p>
             </div>
 

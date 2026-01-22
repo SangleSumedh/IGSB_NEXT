@@ -110,8 +110,7 @@ export default function NewEvent() {
               Life at IGSB
             </h2>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-              From cultural celebrations to award ceremonies, campus life at
-              IGSB is vibrant, visual, and unforgettable.
+              Experience the best of campus life at IGSB with vibrant cultural celebrations, distinguished award ceremonies, and moments you'll treasure forever.
             </p>
           </div>
 

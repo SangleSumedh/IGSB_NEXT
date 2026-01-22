@@ -96,7 +96,7 @@ export default function CASsection() {
           <InfoCard
             title="Industry Readiness Programme"
             icon={Users}
-            text="The Industry Readiness Programme (IRP) is a foundational training initiative designed to prepare students for entry into the corporate world. By building core professional skills, business fundamentals, and workplace awareness, IRP bridges the gap between classroom education and industry expectations, ensuring job readiness from the outset."
+            text="The Industry Readiness Programme (IRP) is a foundational training initiative designed to prepare students for entry into the corporate world. By building core professional skills, business fundamentals, and workplace awareness, IRP bridges the gap between classroom education and industry expectations, ensuring job readiness."
           />
 
           {/* CENTER — 360 ICON (clean white space) */}

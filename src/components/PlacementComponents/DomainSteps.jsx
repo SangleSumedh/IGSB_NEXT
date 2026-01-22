@@ -51,7 +51,7 @@ const DomainSteps = () => {
       ],
     },
     {
-      title: "Human Resources",
+      title: "Human Resource",
       clipart: "/placement/HR11.png",
       icon: <FaUsers />,
       certs: [
@@ -66,7 +66,7 @@ const DomainSteps = () => {
       ],
     },
     {
-      title: "OSCM",
+      title: "Operations & Supply Chain",
       clipart: "/placement/OSCM11.png",
       icon: <FaCogs />,
       certs: [

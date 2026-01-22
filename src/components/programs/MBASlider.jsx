@@ -9,7 +9,7 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
     {
       id: 1,
       image: "/Programs/marketing3.jpg",
-      title: "Marketing Skills Built on Insight and Impact.",
+      title: "Marketing Skills Built on Insight and Impact",
       description:
         "Become a data-driven, consumer-centric marketing leader skilled in brand strategy, digital marketing, and growth across traditional and emerging business platforms.",
     },
@@ -23,21 +23,21 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
     {
       id: 3,
       image: "/Programs/hr2.jpg",
-      title: "Transforming Talent into Organizational Strength.",
+      title: "Transforming Talent into Organizational Strength",
       description:
-        "Excel at strategic HR leaders skilled in talent management, organizational development, and workforce analytics. ",
+        "Excel at strategic HR leadership skills, talent management, organizational development, and workforce analytics. ",
     },
     {
       id: 4,
       image: "/Programs/Logistic.png",
-      title: "Driving Efficiency Across Global Value Chains.",
+      title: "Driving Efficiency Across Global Supply Chains",
       description:
-        "Gain expertise in operations strategy, supply chain optimization, logistics, and process excellence across complex business ecosystems.",
+        "Gain expertise in operational strategy, supply chain optimization, logistics, and process excellence across complex business ecosystems.",
     },
     {
       id: 5,
       image: "/Programs/ba2.jpg",
-      title: "Transforming Data into Business Intelligence. ",
+      title: "Transforming Data into Business Intelligence",
       description:
         "Gain hands-on exposure to business analytics, statistical modelling, predictive analytics, and data-driven strategy to excel in analytics-led organizations.",
     },

@@ -6,8 +6,8 @@ export const roadmapData = [
     designation: "Vice President",
     company: "Leapfrog",
     date: "10th September 2025",
-    image: "/inductionimages/10th1new.jpg",
-    companyLogo: "/inductionlogos/1.jpg",
+    image: "/inductionimages/10th1new.webp",
+    companyLogo: "/inductionlogos/1.webp",
   },
   // {
   //   topic: "Meet Your Mentors",
@@ -16,7 +16,7 @@ export const roadmapData = [
   //   company: "Leapfrog",
   //   date: "10th September 2025",
   //   image: "/IGSB/student-induction/induction25-1.png",
-  //   companyLogo: "/placementlogos/1.jpg",
+  //   companyLogo: "/placementlogos/1.webp",
   // },
   {
     topic: "Sahaj Yoga Meditation",
@@ -24,8 +24,8 @@ export const roadmapData = [
     designation: "Vice President",
     company: "Vodafone UK",
     date: "10th September 2025",
-  image: "/inductionimages/10th2new.jpg",
-    companyLogo: "/inductionlogos/2.jpg",
+  image: "/inductionimages/10th2new.webp",
+    companyLogo: "/inductionlogos/2.webp",
   },
   
   {
@@ -34,8 +34,8 @@ export const roadmapData = [
     designation: "Vice President",
     company: "Edelweiss",
     date: "11th September 2025",
-    image: "/inductionimages/11th.jpg",
-    companyLogo: "/inductionlogos/3.jpg",
+    image: "/inductionimages/11th.webp",
+    companyLogo: "/inductionlogos/3.webp",
   },
   {
     topic: "Decoding Happiness",
@@ -44,7 +44,7 @@ export const roadmapData = [
     company: "Navkshitij Pune",
     date: "11th September 2025",
     image: "/IGSB/student-induction/induction25-2.png",
-    companyLogo: "/inductionlogos/4.jpg",
+    companyLogo: "/inductionlogos/4.webp",
   },
   // {
   //   topic: "Living the Core: Universal Human Values",
@@ -53,7 +53,7 @@ export const roadmapData = [
   //   company: "",
   //   date: "11th September 2025",
   //   image: "/IGSB/student-induction/induction25-3.png",
-  //   companyLogo: "/placementlogos/3.jpg",
+  //   companyLogo: "/placementlogos/3.webp",
   // },
 
   // ===================== 12 SEPTEMBER =====================
@@ -63,8 +63,8 @@ export const roadmapData = [
     designation: "Manager Internal Audit Europe and Asia PAC",
     company: "",
     date: "12th September 2025",
-    image: "/inductionimages/12th1new.jpg",
-    companyLogo: "/inductionlogos/5.jpg",
+    image: "/inductionimages/12th1new.webp",
+    companyLogo: "/inductionlogos/5.webp",
   },
   {
     topic: "Learning Through Drama – Interactive Workshop",
@@ -72,8 +72,8 @@ export const roadmapData = [
     designation: "Facilitator and Founder",
     company: "",
     date: "12th September 2025",
-    image: "/inductionimages/12th2new.jpg",
-    companyLogo: "/inductionlogos/6.jpg",
+    image: "/inductionimages/12th2new.webp",
+    companyLogo: "/inductionlogos/6.webp",
   },
 
   // ===================== 13 SEPTEMBER =====================
@@ -83,8 +83,8 @@ export const roadmapData = [
     designation: "Executive Presence Consultant & Corporate Trainer",
     company: "",
     date: "13th September 2025",
-   image: "/inductionimages/13th1new.jpg",
-    companyLogo: "/inductionlogos/7.jpg",
+   image: "/inductionimages/13th1new.webp",
+    companyLogo: "/inductionlogos/7.webp",
   },
   {
     topic: "The Pattern of Potential",
@@ -92,8 +92,8 @@ export const roadmapData = [
     designation: "Co-Founder",
     company: "",
     date: "13th September 2025",
-    image: "/inductionimages/13th2new.jpg",
-    companyLogo: "/inductionlogos/8.jpg",
+    image: "/inductionimages/13th2new.webp",
+    companyLogo: "/inductionlogos/8.webp",
   },
 
   // ===================== 15 SEPTEMBER =====================
@@ -103,8 +103,8 @@ export const roadmapData = [
     designation: "CHRO & Founder",
     company: "Inteliment Technologies",
     date: "15th September 2025",
-   image: "/inductionimages/15th1new.jpg",
-    companyLogo: "/inductionlogos/9.jpg",
+   image: "/inductionimages/15th1new.webp",
+    companyLogo: "/inductionlogos/9.webp",
   },
   {
     topic: "Pharma Horizons",
@@ -112,8 +112,8 @@ export const roadmapData = [
     designation: "Regional Business Manager",
     company: "ERIS Lifesciences",
     date: "15th September 2025",
-    image: "/inductionimages/15th2new.jpg",
-   companyLogo: "/inductionlogos/10.jpg",
+    image: "/inductionimages/15th2new.webp",
+   companyLogo: "/inductionlogos/10.webp",
   },
 
   // ===================== 16 SEPTEMBER =====================
@@ -123,8 +123,8 @@ export const roadmapData = [
     designation: "",
     company: "",
     date: "16th September 2025",
-     image: "/inductionimages/16th1new.jpg",
-   companyLogo: "/inductionlogos/11.jpg",
+     image: "/inductionimages/16th1new.webp",
+   companyLogo: "/inductionlogos/11.webp",
   },
   {
     topic: "Creating Safe Workplaces – POSH Awareness",
@@ -132,7 +132,7 @@ export const roadmapData = [
     designation: "Advocate",
     company: "",
     date: "16th September 2025",
-      image: "/inductionimages/16th2new.jpg",
+      image: "/inductionimages/16th2new.webp",
   //  companyLogo: "",
   },
 
@@ -143,8 +143,8 @@ export const roadmapData = [
     designation: "",
     company: "",
     date: "17th September 2025",
-     image: "/inductionimages/17th1new.jpg",
-   companyLogo: "/inductionlogos/12.jpg",
+     image: "/inductionimages/17th1new.webp",
+   companyLogo: "/inductionlogos/12.webp",
   },
   {
     topic: "Good to Great",
@@ -152,8 +152,8 @@ export const roadmapData = [
     designation: "",
     company: "",
     date: "17th September 2025",
-     image: "/inductionimages/17th2new.jpg",
-   companyLogo: "/inductionlogos/13.jpg",
+     image: "/inductionimages/17th2new.webp",
+   companyLogo: "/inductionlogos/13.webp",
   },
   {
     topic: "Effective Communication",
@@ -161,7 +161,7 @@ export const roadmapData = [
     designation: "Counselling Psychologist",
     company: "",
     date: "17th September 2025",
-      image: "/inductionimages/17th3new.jpg",
+      image: "/inductionimages/17th3new.webp",
   //  companyLogo: ""
   },
 
@@ -172,8 +172,8 @@ export const roadmapData = [
     designation: "",
     company: "",
     date: "18th September 2025",
-      image: "/inductionimages/18th1new.jpg",
-   companyLogo: "/inductionlogos/14.jpg",
+      image: "/inductionimages/18th1new.webp",
+   companyLogo: "/inductionlogos/14.webp",
   },
   {
     topic: "Campus to Corporate Transformation",
@@ -182,7 +182,7 @@ export const roadmapData = [
     company: "",
     date: "18th September 2025",
       image: "/inductionimages/18th2.png",
-   companyLogo: "/inductionlogos/15.jpg",
+   companyLogo: "/inductionlogos/15.webp",
   },
 
   // ===================== 19 SEPTEMBER =====================
@@ -192,8 +192,8 @@ export const roadmapData = [
     designation: "",
     company: "",
     date: "19th September 2025",
-     image: "/inductionimages/19th1new.jpg",
-   companyLogo: "/inductionlogos/16.jpg",
+     image: "/inductionimages/19th1new.webp",
+   companyLogo: "/inductionlogos/16.webp",
   },
   {
     topic: "HR Functions Across Companies",
@@ -201,7 +201,7 @@ export const roadmapData = [
     designation: "Expert Trainer",
     company: "",
     date: "19th September 2025",
-      image: "/inductionimages/19th2.jpg",
+      image: "/inductionimages/19th2.webp",
   //  companyLogo: "",
   },
   {
@@ -211,6 +211,6 @@ export const roadmapData = [
     company: "",
     date: "19th September 2025",
       image: "/inductionimages/19th3.png",
-   companyLogo: "/inductionlogos/17.jpg",
+   companyLogo: "/inductionlogos/17.webp",
   },
 ];

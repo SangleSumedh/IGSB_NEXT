@@ -16,7 +16,7 @@ export default function ArambhaSection() {
                   {/* HERO IMAGE - Top row spanning 2 columns */}
                   <div className="relative col-span-2 row-span-2 rounded-2xl overflow-hidden border border-white/30">
                     <Image
-                      src="/arambh/1.jpg"
+                      src="/arambh/1.webp"
                       alt="Main induction event"
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-500"
@@ -27,7 +27,7 @@ export default function ArambhaSection() {
                   {/* TALL IMAGE - Right column spanning 2 rows */}
                   <div className="relative col-span-1 row-span-2 rounded-2xl overflow-hidden border border-white/30">
                     <Image
-                      src="/arambh/2.jpg"
+                      src="/arambh/2.webp"
                       alt="Induction highlight"
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-500"
@@ -38,7 +38,7 @@ export default function ArambhaSection() {
                   {/* SMALL IMAGE 1 - Bottom left */}
                   <div className="relative col-span-1 row-span-1 rounded-xl overflow-hidden border border-white/30">
                     <Image
-                      src="/arambh/3.jpg"
+                      src="/arambh/3.webp"
                       alt="Induction activity"
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-500"
@@ -49,7 +49,7 @@ export default function ArambhaSection() {
                   {/* SMALL IMAGE 2 - Bottom middle */}
                   <div className="relative col-span-1 row-span-1 rounded-xl overflow-hidden border border-white/30">
                     <Image
-                      src="/arambh/4.jpg"
+                      src="/arambh/4.webp"
                       alt="Induction moment"
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-500"
@@ -60,7 +60,7 @@ export default function ArambhaSection() {
                   {/* Optional: Add a 5th image or leave empty for design */}
                   <div className="relative col-span-1 row-span-1 rounded-xl overflow-hidden border border-white/30">
                     <Image
-                      src="/arambh/5.jpg"
+                      src="/arambh/5.webp"
                       alt="Induction moment"
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-500"

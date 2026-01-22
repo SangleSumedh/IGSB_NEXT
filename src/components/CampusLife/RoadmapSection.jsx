@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { roadmapData } from "./roadmapdata";
-import { arambhData } from "./arambhdata";
 import ArambhaSectionMobile from "./ArambhSectionMobile";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 

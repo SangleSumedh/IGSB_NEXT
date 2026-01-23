@@ -52,10 +52,9 @@ export default function CTASection() {
 
   useEffect(() => {
     if (isExpanded) return;
-
     const t = setInterval(
       () => setActiveIndex((i) => (i + 1) % testimonials.length),
-      5000
+      5000,
     );
     return () => clearInterval(t);
   }, [isExpanded]);
@@ -68,37 +67,32 @@ export default function CTASection() {
 
   const handleDownload = () => {
     const el = document.getElementById("form-section");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const handlePrev = () => {
-    setActiveIndex((i) =>
-      i === 0 ? testimonials.length - 1 : i - 1
-    );
+    setActiveIndex((i) => (i === 0 ? testimonials.length - 1 : i - 1));
   };
 
   const handleNext = () => {
-    setActiveIndex((i) =>
-      i === testimonials.length - 1 ? 0 : i + 1
-    );
+    setActiveIndex((i) => (i === testimonials.length - 1 ? 0 : i + 1));
   };
 
   return (
-    <div className="relative w-full bg-gradient-to-r from-[#10404A] via-[#10404A] to-[#FF8B61] text-white shadow-xl overflow-hidden pt-2 md:pt-0">
-      <div className="grid grid-cols-1 md:grid-cols-8 min-h-[300px]">
-        {/* --- COL 1: TESTIMONIALS --- */}
-        <div className="md:col-span-4 flex flex-col justify-center items-center p-2 md:p-6 bg-[#1F6D71]/50 md:bg-transparent z-20">
-          <h2 className="text-xl md:text-2xl font-bold mb-4 text-white text-center tracking-tight shadow-black/10 drop-shadow-md">
+    <div className="relative w-full bg-gradient-to-r from-[#10404A] via-[#10404A] to-[#FF8B61] text-white shadow-xl overflow-hidden pt-1 md:pt-0">
+      {/* 🔹 grid now 10 cols instead of 8 */}
+      <div className="grid grid-cols-1 md:grid-cols-10 min-h-[180px] md:min-h-[220px]">
+        {/* --- COL 1: TESTIMONIALS (≈70%) --- */}
+        <div className="md:col-span-7 flex flex-col justify-center items-center p-2 md:p-4 bg-[#1F6D71]/50 md:bg-transparent z-20">
+          <h2 className="text-lg md:text-2xl font-bold mb-3 text-white text-center tracking-tight shadow-black/10 drop-shadow-md">
             Student Testimonials
           </h2>
 
-          <div className="p-4 md:p-5 rounded-xl border border-[#3aafa9] max-w-3xl w-full bg-white/10 backdrop-blur-md shadow-lg transition-all duration-300">
-            <div className="flex flex-col md:flex-row items-center gap-4">
+          <div className="p-3 md:p-4 rounded-xl border border-[#3aafa9] max-w-4xl w-full bg-white/10 backdrop-blur-md shadow-lg transition-all duration-300">
+            <div className="flex flex-col md:flex-row items-center gap-3">
               {/* PROFILE */}
-              <div className="flex flex-col items-center text-center min-w-[100px]">
-                <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-[#fb7035] overflow-hidden shadow mb-2">
+              <div className="flex flex-col items-center text-center min-w-[90px]">
+                <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-[#fb7035] overflow-hidden shadow mb-1.5">
                   <Image
                     src={active.image}
                     alt={active.name}
@@ -107,23 +101,19 @@ export default function CTASection() {
                   />
                 </div>
 
-                {/* fixed-height name + branch wrapper */}
-                <div className="min-h-[3.25rem] md:min-h-[3.75rem] flex flex-col justify-start">
-                  <h3 className="font-semibold text-sm md:text-base leading-tight">
+                <div className="min-h-[2.75rem] md:min-h-[3.25rem] flex flex-col justify-start">
+                  <h3 className="font-semibold text-xs md:text-sm leading-tight">
                     {active.name}
                   </h3>
-                  <p className="text-[0.75rem] text-white/80">
-                    {active.branch}
-                  </p>
+                  <p className="text-[0.7rem] text-white/80">{active.branch}</p>
                 </div>
               </div>
 
               {/* TEXT AREA */}
               <div className="flex-1 text-center md:text-left overflow-hidden">
-                {/* fixed-height text wrapper */}
-                <div className="min-h-[4.5rem] md:min-h-[6.5rem]">
+                <div className="min-h-[3.25rem] md:min-h-[4.75rem]">
                   <p
-                    className={`text-xs md:text-sm leading-relaxed text-white/95 px-1 transition-all duration-300 ${
+                    className={`text-[11px] md:text-sm leading-relaxed text-white/95 px-1 transition-all duration-300 ${
                       isExpanded ? "" : "line-clamp-3 md:line-clamp-4"
                     }`}
                   >
@@ -133,23 +123,20 @@ export default function CTASection() {
 
                 <button
                   onClick={() => setIsExpanded(!isExpanded)}
-                  className="text-[#fb7035] text-[10px] md:text-xs font-bold uppercase mt-2 hover:text-[#ff9d70] hover:underline tracking-wide transition-colors"
+                  className="text-[#fb7035] text-[9px] md:text-[10px] font-bold uppercase mt-1.5 hover:text-[#ff9d70] hover:underline tracking-wide transition-colors"
                 >
                   {isExpanded ? "Read Less" : "Read More"}
                 </button>
 
                 {/* DOTS + NEXT / PREV */}
-                <div className="flex items-center justify-center md:justify-start gap-3 mt-3">
-                  {/* PREV */}
+                <div className="flex items-center justify-center md:justify-start gap-2 mt-2">
                   <button
                     onClick={handlePrev}
-                    className="p-1.5 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
-                    aria-label="Previous testimonial"
+                    className="p-1 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
                   >
-                    <ChevronLeft className="w-4 h-4 text-white" />
+                    <ChevronLeft className="w-3.5 h-3.5 text-white" />
                   </button>
 
-                  {/* DOTS */}
                   <div className="flex gap-1.5">
                     {testimonials.map((_, i) => (
                       <button
@@ -160,18 +147,15 @@ export default function CTASection() {
                             ? "w-6 bg-[#fb7035]"
                             : "w-1.5 bg-white/30 hover:bg-white/50"
                         }`}
-                        aria-label={`Go to testimonial ${i + 1}`}
                       />
                     ))}
                   </div>
 
-                  {/* NEXT */}
                   <button
                     onClick={handleNext}
-                    className="p-1.5 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
-                    aria-label="Next testimonial"
+                    className="p-1 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
                   >
-                    <ChevronRight className="w-4 h-4 text-white" />
+                    <ChevronRight className="w-3.5 h-3.5 text-white" />
                   </button>
                 </div>
               </div>
@@ -179,35 +163,35 @@ export default function CTASection() {
           </div>
         </div>
 
-        {/* --- COL 2: CTA --- */}
-        <div className="md:col-span-2 flex flex-col justify-center items-center text-center px-4 pt-8 pb-4 md:py-0 bg-white/5 md:bg-transparent z-20">
-          <h2 className="text-xl lg:text-3xl font-bold mb-4 leading-tight drop-shadow-lg">
+        {/* --- COL 2: CTA (≈20%) --- */}
+        <div className="md:col-span-2 flex flex-col justify-center items-center text-center px-3 pt-6 pb-3 md:py-0 bg-white/5 md:bg-transparent z-20">
+          <h2 className="text-lg lg:text-2xl font-bold mb-3 leading-tight drop-shadow-lg">
             <span className="font-[baskerville-bt] italic text-[#fb7035] md:text-white">
               Ready to Lead?
             </span>
-            <span className="block text-lg lg:text-xl mt-1 font-sans">
+            <span className="block text-sm lg:text-base mt-1 font-sans">
               Get the full details.
             </span>
           </h2>
 
           <button
             onClick={handleDownload}
-            className="inline-flex items-center gap-2 px-5 py-3 text-sm font-bold text-[#10404A] bg-white rounded-full shadow-lg hover:-translate-y-0.5 hover:shadow-xl hover:bg-gray-50 transition-all duration-200"
+            className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold text-[#10404A] bg-white rounded-full shadow-lg hover:-translate-y-0.5 hover:shadow-xl transition-all duration-200"
           >
-            <ArrowBigUp className="w-5 h-5" />
+            <ArrowBigUp className="w-4 h-4" />
             Get in Touch
           </button>
         </div>
 
-        {/* --- COL 3: GENTLEMAN --- */}
-        <div className="md:col-span-2 flex items-end justify-center relative h-44 md:h-auto bg-white/5 md:bg-transparent overflow-visible">
+        {/* --- COL 3: GENTLEMAN (≈10%) --- */}
+        <div className="md:col-span-1 flex items-end justify-center relative h-32 md:h-auto bg-white/5 md:bg-transparent overflow-visible">
           <img
             src="/Home/suitman.png"
             alt="Gentleman"
-            className={`w-[80%] object-contain object-bottom transition-all duration-500 ease-in-out z-10 drop-shadow-2xl ${
+            className={`w-[95%] object-contain object-bottom transition-all duration-500 ease-in-out z-10 drop-shadow-2xl ${
               isExpanded
-                ? "h-[105%] md:h-[125%] translate-y-2 opacity-100"
-                : "h-[90%] md:h-[95%] translate-y-4 opacity-90"
+                ? "h-[100%] md:h-[115%] translate-y-1 opacity-100"
+                : "h-[85%] md:h-[90%] translate-y-2 opacity-90"
             }`}
           />
         </div>

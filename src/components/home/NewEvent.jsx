@@ -43,7 +43,7 @@ const eventList = [
   {
     title: "Navratri",
     images: [
-      "/newEvents/Navratri5.webp",
+      "/newEvents/Navratri5.JPG",
       "/newEvents/Navratri2.webp",
       "/newEvents/Navratri4.webp",
       "/newEvents/Navratri6.webp",

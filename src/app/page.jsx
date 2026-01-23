@@ -39,9 +39,9 @@ export default function HomePage() {
         {/* ===== FORMS (RESPONSIVE) ===== */}
         <FormSection />                {/* xl and above */}
         <SmallDesktopFormSection />    {/* lg → xl */}
-        <Phd />
-        <FactSection />
         <Training />
+        <FactSection />
+        <Phd />
               
                
               {/* <NewCTA /> */}

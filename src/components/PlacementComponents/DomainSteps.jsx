@@ -119,7 +119,7 @@ const DomainSteps = () => {
                         <span className="text-xl text-white bg-secondary p-4 rounded-full shadow-lg flex items-center justify-center">
                           {domain.icon}
                         </span>
-                        <h3 className="text-xl font-extrabold uppercase tracking-wider text-primary max-w-[70%]">
+                        <h3 className="text-xl font-extrabold uppercase tracking-wider text-primary max-w-[60%]">
                           {domain.title}
                         </h3>
                       </div>

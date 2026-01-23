@@ -53,7 +53,7 @@ export default function RoadmapSection() {
                   </span>
                 </h1>
 
-                <p className="text-secondary mb-4 text-lg sm:text-xl font-bold">
+                <p className="text-secondary mb-4 text-lg sm:text-xl italic font-bold">
                   Unfolding Wings of Knowledge
                 </p>
 
@@ -143,11 +143,11 @@ export default function RoadmapSection() {
                           </p>
 
                           {item.companyLogo && (
-                            <div className="w-20 h-10 bg-white rounded-md flex items-center justify-center">
+                            <div className="w-25 h-15 bg-white rounded-md flex items-center justify-center">
                               <img
                                 src={item.companyLogo}
                                 alt="Company logo"
-                                className="w-full h-full object-contain"
+                                className="w-full h-full object-contain rounded-md"
                               />
                             </div>
                           )}
@@ -157,7 +157,7 @@ export default function RoadmapSection() {
                         <div className="absolute right-0 top-0 h-full w-[45%]">
                           <span
                             className="absolute top-1 right-1 bg-white/40 backdrop-blur-sm
-                                     text-white text-[10px] px-2 py-0.5 rounded-full z-10"
+                                     text-secondary text-[10px] px-2 py-0.5 rounded-full z-10"
                           >
                             {item.date}
                           </span>
@@ -181,7 +181,7 @@ export default function RoadmapSection() {
             </div>
 
             {/* DOTS */}
-            <div className="flex justify-center gap-2 mt-6">
+            <div className="flex justify-center align-top gap-2 mt-1">
               {slides.map((_, index) => (
                 <button
                   key={index}

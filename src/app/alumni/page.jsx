@@ -51,7 +51,7 @@ const ALUMNI_LOCATIONS = [
     lat: 18.5246,
     lon: 73.8786,
     location: "Pune, India",
-    img: "/IGSB/Alumni/NewAlumni/soham_ghule.webp",
+    img: "/IGSB/Alumni/NewAlumni/soham_ghule.jpg",
     bio: "",
   },
   // {
@@ -337,28 +337,30 @@ export default function AlumniPage() {
 
   return (
     <>
-      <div className="w-full bg-white flex flex-col-reverse lg:flex-row overflow-hidden relative lg:h-[84vh]">
+      <div className="w-full bg-white flex flex-col-reverse lg:flex-row overflow-hidden relative lg:min-h-[84vh] ">
         {/* --- LEFT SECTION --- */}
         <div className="w-full lg:w-1/2 p-6 md:p-6 flex flex-col justify-center relative z-10 lg:h-full bg-white">
           <div className="w-full max-w-2xl mx-auto flex flex-col justify-center">
             <div className="mb-8 lg:mb-10">
-              <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
+              <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
                 <div className="w-10 h-1 bg-[#fb7035] rounded-full"></div>
                 <span className="text-xs text-center font-semibold tracking-widest text-[#10404A] uppercase">
                   Global Network
                 </span>
               </div>
+              <div className="flex flex-col items-center lg:items-start">
+                <h1 className="text-4xl text-center md:text-left xl:text-5xl font-bold tracking-tight text-[#10404A] mb-6 leading-[1.15]">
+                  We Build <span className="text-[#fb7035]">Careers</span>
+                  <br />
+                  Without Borders
+                </h1>
 
-              <h1 className="text-4xl text-center md:text-left xl:text-5xl font-bold tracking-tight text-[#10404A] mb-6 leading-[1.15]">
-                We Build <span className="text-[#fb7035]">Careers</span>
-                <br />
-                Without Borders
-              </h1>
-
-              <p className="text-center md:text-left text-slate-700 text-base max-w-md font-medium leading-relaxed">
-                Our alumni network is spread across multiple global organizations, reflecting strong
-                career outcomes and professional mobility.
-              </p>
+                <p className="text-center lg:text-left text-slate-700 text-base max-w-md font-medium leading-relaxed">
+                  Our alumni network is spread across multiple global
+                  organizations, reflecting strong career outcomes and
+                  professional mobility.
+                </p>
+              </div>
             </div>
 
             {/* --- UPDATED ALUMNI CARD --- */}

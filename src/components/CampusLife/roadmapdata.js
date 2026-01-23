@@ -15,7 +15,7 @@ export const roadmapData = [
   //   designation: "Vice President",
   //   company: "Leapfrog",
   //   date: "10th September 2025",
-  //   image: "/IGSB/student-induction/induction25-1.png",
+  //   image: "/IGSB/student-induction/induction25-1.webp",
   //   companyLogo: "/placementlogos/1.webp",
   // },
   {
@@ -43,7 +43,7 @@ export const roadmapData = [
     designation: "Managing Trustee",
     company: "Navkshitij Pune",
     date: "11th September 2025",
-    image: "/IGSB/student-induction/induction25-2.png",
+    image: "/IGSB/student-induction/induction25-2.webp",
     companyLogo: "/inductionlogos/4.webp",
   },
   // {
@@ -52,7 +52,7 @@ export const roadmapData = [
   //   designation: "",
   //   company: "",
   //   date: "11th September 2025",
-  //   image: "/IGSB/student-induction/induction25-3.png",
+  //   image: "/IGSB/student-induction/induction25-3.webp",
   //   companyLogo: "/placementlogos/3.webp",
   // },
 
@@ -181,7 +181,7 @@ export const roadmapData = [
     designation: "",
     company: "",
     date: "18th September 2025",
-      image: "/inductionimages/18th2.png",
+      image: "/inductionimages/18th2.webp",
    companyLogo: "/inductionlogos/15.webp",
   },
 
@@ -210,7 +210,7 @@ export const roadmapData = [
     designation: "",
     company: "",
     date: "19th September 2025",
-      image: "/inductionimages/19th3.png",
+      image: "/inductionimages/19th3.webp",
    companyLogo: "/inductionlogos/17.webp",
   },
 ];

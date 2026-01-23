@@ -13,8 +13,8 @@ export const studentEvents = {
         `To enable students to acquire multidimensional skills as to equip them to comprehend the process of strategy formulation.`,
       ],
       images: [
-        `/IGSB/student-engagement/student-engagement5.jpg`,
-        `/IGSB/student-engagement/student-engagement6.jpg`,
+        `/IGSB/student-engagement/student-engagement5.webp`,
+        `/IGSB/student-engagement/student-engagement6.webp`,
       ],
     },
     {
@@ -30,7 +30,7 @@ export const studentEvents = {
         `To discuss how the grievance can be raised and addressed using web based interface`,
         `To Create the awareness about Crypto Currency`,
       ],
-      images: [`/IGSB/student-engagement/student-engagement5.jpg`],
+      images: [`/IGSB/student-engagement/student-engagement5.webp`],
     },
     {
       title: `Awareness Programme on Insolvency Profession`,
@@ -46,9 +46,9 @@ export const studentEvents = {
         `To Create the awareness about Crypto Currency`,
       ],
       images: [
-        `/IGSB/student-engagement/student-engagement2.jpg`,
-        `/IGSB/student-engagement/student-engagement3.jpg`,
-        `/IGSB/student-engagement/student-engagement4.jpg`,
+        `/IGSB/student-engagement/student-engagement2.webp`,
+        `/IGSB/student-engagement/student-engagement3.webp`,
+        `/IGSB/student-engagement/student-engagement4.webp`,
       ],
     },
   ],
@@ -60,8 +60,8 @@ export const studentEvents = {
         ` The Eminent Guest Speaker was Dr.Nitin Shukla, she is Principal Scientist & Head Intellectual Property Group of CSIR-NCL Innovations, India’s leading IP management group in the non-profit sector. Ma'am guided our students on IP protection, IP portfolio planning, management, value addition, Law and policy advising on IP related issues for project agreements and licensing/ PPP negotiations. The session was very beneficial to students and the response was enormous which reflected in question and answer session. It will help Students in establishing their ventures and research.`,
       ],
       images: [
-        `/IGSB/student-engagement/Intellectual Property Rights1.png`,
-        `/IGSB/student-engagement/Intellectual Property Rights2.png`,
+        `/IGSB/student-engagement/Intellectual Property Rights1.webp`,
+        `/IGSB/student-engagement/Intellectual Property Rights2.webp`,
       ],
     },
     {
@@ -81,8 +81,8 @@ export const studentEvents = {
       ],
       objective: `Objective of Artha Tarka is to imbibe what budget is and how it benefits Common Man.`,
       images: [
-        `/IGSB/student-engagement/engagement1.png`,
-        `/IGSB/student-engagement/engagement3.png`,
+        `/IGSB/student-engagement/engagement1.webp`,
+        `/IGSB/student-engagement/engagement3.webp`,
       ],
     },
     {
@@ -91,7 +91,7 @@ export const studentEvents = {
         `Session gave basic introduction about the three main Apex financial institutions, SEBI, RBI and BSE. This session was basically organized to create awareness about capital market amongst students. This session was organized in collaboration with Bombay Stock Exchange.`,
       ],
       objective: `To imbibe the awareness regarding security markets and trading in securities and also about additional qualification that can be done to be able to trade.`,
-      images: [`/IGSB/student-engagement/engagement4.jpg`],
+      images: [`/IGSB/student-engagement/engagement4.webp`],
       topics: [
         "Profit after taxation",
         "Earnings per share",
@@ -109,8 +109,8 @@ export const studentEvents = {
       ],
       objective: `To imbibe the awareness regarding security markets and trading in securities and also about additional qualification that can be done to be able to trade.`,
       images: [
-        `/IGSB/student-engagement/engagement6.jpg`,
-        `/IGSB/student-engagement/engagement7.jpg`,
+        `/IGSB/student-engagement/engagement6.webp`,
+        `/IGSB/student-engagement/engagement7.webp`,
       ],
       topics: [
         "Diversity and Inclusion in workplace: Benefits and Challenges please be informed that I will conduct the GD.",
@@ -171,8 +171,8 @@ export const studentEvents = {
         `The meeting concluded on a very positive note with smiling and emotional, assured faces of Parents and promise from IGSB, to continue with all the great and innovative teaching methodologies being adopted so that the students are benefited in all realms with the best of the possibilities and to grow and evolve in order to achieve new heights in the life.`,
       ],
       images: [
-        `/IGSB/student-engagement/FB-Parents-1.jpg`,
-        `/IGSB/student-engagement/FB-ParentsPic-2.png`,
+        `/IGSB/student-engagement/FB-Parents-1.webp`,
+        `/IGSB/student-engagement/FB-ParentsPic-2.webp`,
       ],
     },
   ],
@@ -183,10 +183,10 @@ export const studentEvents = {
         "SIP an important aspect in the life of an MBA student, Mr. Shantanu Sen Sharma, Chairman - YUGMA interacted with the students of IGSB on the Do’s and Don’t’s of SIP and ensuring successful completion of the Project",
       ],
       images: [
-        `/IGSB/student-engagement/SIP-Chronicles.jpg`,
-        `/IGSB/student-engagement/SIP-Chronicles-2.jpg`,
-        `/IGSB/student-engagement/SIP-Chronicles-3.jpg`,
-        `/IGSB/student-engagement/SIP-Chronicles-4.jpg`,
+        `/IGSB/student-engagement/SIP-Chronicles.webp`,
+        `/IGSB/student-engagement/SIP-Chronicles-2.webp`,
+        `/IGSB/student-engagement/SIP-Chronicles-3.webp`,
+        `/IGSB/student-engagement/SIP-Chronicles-4.webp`,
       ],
     },
     {
@@ -194,7 +194,7 @@ export const studentEvents = {
       description: [
         "Two days workshop on AI based Resume Building & AI assisted Mock interview in collaboration with VIOSA organized at IGSB on 28th & 29th of March 24 at IGSB campus About the tools : With Resumatic AI, crafting a standout resume becomes effortless, utilizing advanced algorithms to optimize content and format for maximum impact. Interview PRO : revolutionizes preparation with AI-assisted mock interviews, offering personalized feedback and insights to enhance performance.",
       ],
-      images: [`/IGSB/student-engagement/AI-Powered-Resume.jpg`],
+      images: [`/IGSB/student-engagement/AI-Powered-Resume.webp`],
     },
     {
       title:
@@ -211,44 +211,44 @@ export const studentEvents = {
         `"Meri Maati Mera Desh" campaign is envisaged from 9th August 2023 as a culminating event of ‘Azadi Ka Amrit Mahotsava’. It is tribute to the Veers and Viranganas who have made the supreme sacrifice for the country. "Meri Maati Mera Desh" envisions a unified celebration of India's soil and valour, commemorating the nation's journey of freedom and progress. By connecting with the land and honoring our heroes, this program will instill a sense of national pride and inspire future generations to protect India's cherished heritage.`,
         ` On 15th August 2023, All the faculty memebers, Staff and Students were present with Mr. Aadesh Gaikawad (trustee IGI), Dr. Virendra tatake (Director IGSB) and Dr. Sunil Ingole (Principal IGSB) for Independence Day Celebration. The Program was started with Hoisting of the National Flag and singing of Rashtragaan. It was followed by taking a solemn pledge covering Panch Pran of the Hon'ble Prime Minister, affirming their commitment to the country. During the ceremony, everyone was encouraged to either individually or collectively take a selfie while taking the pledge with soil in the hand and same is being uploaded to the dedicated website https://yuva.gov.in`,
       ],
-      images: [`/IGSB/student-engagement/mathi.jpg`],
+      images: [`/IGSB/student-engagement/mathi.webp`],
     },
     {
       title: "Brand Slam 2023",
       description: [],
-      images: [`/IGSB/student-engagement/student-engagement2024-1.jpg`],
+      images: [`/IGSB/student-engagement/student-engagement2024-1.webp`],
     },
     {
       title: "World HRD Congress 2024",
       description: [],
-      images: [`/IGSB/student-engagement/student-engagement2024-2.jpg`],
+      images: [`/IGSB/student-engagement/student-engagement2024-2.webp`],
     },
     {
       title: `"Unleash the potential within" A one day motivational program`,
       description: [],
-      images: [`/IGSB/student-engagement/student-engagement2024-3.jpg`],
+      images: [`/IGSB/student-engagement/student-engagement2024-3.webp`],
     },
     {
       title: `Corporate Relations`,
       description: [
         `Session by Ms. Madhuri Sathe Madam, Chief Corporate Relations Officer, Indira Group of Institutes and Placement Team for first year MBA students`,
       ],
-      images: [`/IGSB/student-engagement/student-engagement2024-4.jpg`],
+      images: [`/IGSB/student-engagement/student-engagement2024-4.webp`],
     },
     {
       title: `Diwali Celebrations`,
       description: [],
-      images: [`/IGSB/student-engagement/student-engagement2024-5.jpg`],
+      images: [`/IGSB/student-engagement/student-engagement2024-5.webp`],
     },
     {
       title: `On budget day, expert session by Shri. Chandrashekar Tilak Sir (Executive Vice-President- NSDL) on Union budget 2024-25`,
       description: [],
-      images: [`/IGSB/student-engagement/student-engagement2024-6.jpg`],
+      images: [`/IGSB/student-engagement/student-engagement2024-6.webp`],
     },
     {
       title: `Investment awareness session by Trade Bull`,
       description: [],
-      images: [`/IGSB/student-engagement/student-engagement2024-7.jpg`],
+      images: [`/IGSB/student-engagement/student-engagement2024-7.webp`],
     },
   ],
   "AY-2024-25": [
@@ -259,11 +259,11 @@ export const studentEvents = {
         `The experience facilitated by Team IIMP gave IGSB Students invaluable insights into the real-world business environment and reinforced the importance of adaptability, leadership, and teamwork!`,
       ],
       images: [
-        `/IGSB/student-engagement/Vyavahar-1.jpg`,
-        `/IGSB/student-engagement/Vyavahar-2.jpg`,
-        `/IGSB/student-engagement/Vyavahar-3.jpg`,
-        `/IGSB/student-engagement/Vyavahar-4.jpg`,
-        `/IGSB/student-engagement/Vyavahar-5.jpg`,
+        `/IGSB/student-engagement/Vyavahar-1.webp`,
+        `/IGSB/student-engagement/Vyavahar-2.webp`,
+        `/IGSB/student-engagement/Vyavahar-3.webp`,
+        `/IGSB/student-engagement/Vyavahar-4.webp`,
+        `/IGSB/student-engagement/Vyavahar-5.webp`,
       ],
     },
 
@@ -273,10 +273,10 @@ export const studentEvents = {
         `The business plan competition was organized by Domain Club of IGSB for MBA I students with main intention of developing their entrepreneurial skills. Total 19 groups of MBA I participated in the competition and presented their new business ideas. The business ideas found new and unique. The competition was evaluated by eminent IGSB faculties. Out of 19, the top 9 groups were shortlisted for the second round. The winners in the second round shall get the opportunity to participate in the upcoming event Indiapreneur in March 2025.`,
       ],
       images: [
-        `/IGSB/student-engagement/Start-Up-Sprint_1.jpg`,
-        `/IGSB/student-engagement/Start-Up-Sprint_2.jpg`,
-        `/IGSB/student-engagement/Start-Up-Sprint_3.jpg`,
-        `/IGSB/student-engagement/Start-Up-Sprint_4.jpg`,
+        `/IGSB/student-engagement/Start-Up-Sprint_1.webp`,
+        `/IGSB/student-engagement/Start-Up-Sprint_2.webp`,
+        `/IGSB/student-engagement/Start-Up-Sprint_3.webp`,
+        `/IGSB/student-engagement/Start-Up-Sprint_4.webp`,
       ],
     },
     {
@@ -294,10 +294,10 @@ export const studentEvents = {
         `From soul-stirring performances in dance, music, and drama to jaw-dropping artistic displays, Splash was a kaleidoscope of talent and energy. The event wasn’t just about showcasing skills; it was about building connections, breaking barriers, and reviling in the rich tapestry of cultures that make our campus so unique.`,
       ],
       images: [
-        `/IGSB/student-engagement/Splash_2024_1.jpg`,
-        `/IGSB/student-engagement/Splash_2024_2.jpg`,
-        `/IGSB/student-engagement/Splash_2024_3.jpg`,
-        `/IGSB/student-engagement/Splash_2024_4.jpg`,
+        `/IGSB/student-engagement/Splash_2024_1.webp`,
+        `/IGSB/student-engagement/Splash_2024_2.webp`,
+        `/IGSB/student-engagement/Splash_2024_3.webp`,
+        `/IGSB/student-engagement/Splash_2024_4.webp`,
       ],
     },
     {
@@ -308,8 +308,8 @@ export const studentEvents = {
         `The event featured Ms. Aparna Sharma—a bestselling author, HR leader, and corporate board director—as the chief guest. She launched three books during the event, aiming to foster a reading culture among students. In her engaging 90-minute session, Ms. Sharma shared insights from her life and career, underscoring the importance of lifelong learning, adaptability, and resilience. Her stories left a strong impact, giving students practical lessons for both personal and professional growth. The event was a valuable experience for the students, encouraging a culture of reading and self-development.`,
       ],
       images: [
-        `/IGSB/student-engagement/The-Book-Badshah_1.jpg`,
-        `/IGSB/student-engagement/The-Book-Badshah_2.jpg`,
+        `/IGSB/student-engagement/The-Book-Badshah_1.webp`,
+        `/IGSB/student-engagement/The-Book-Badshah_2.webp`,
       ],
     },
     {
@@ -319,8 +319,8 @@ export const studentEvents = {
         `The session with Mr. Devesh Maheshwari was an insightful interaction for the students as well as the faculty. The speaker gave detailed insights on starting a business from scratch, taking risks, and emphasized on having a clear set of goals in mind. He also dwelled on his fond memories of being a part of Indira Global School of Business. He encouraged the students with his wisdom acquired over the years on international trade and exports.`,
       ],
       images: [
-        `/IGSB/student-engagement/Chai-Pee-Charcha_1.jpg`,
-        `/IGSB/student-engagement/Chai-Pee-Charcha_2.jpg`,
+        `/IGSB/student-engagement/Chai-Pee-Charcha_1.webp`,
+        `/IGSB/student-engagement/Chai-Pee-Charcha_2.webp`,
       ],
     },
     {
@@ -330,8 +330,8 @@ export const studentEvents = {
         `The inauguration of conference was done from the hands of CMA Sagar Malpure- the Chairperson, ICMAI, PCA Chapter. The speeches of Prof.Chetan Wakalkar (Academic Advisor- IGI and Dr.Virendra Tatake (Director- IGSB) added valuable inputs to the audience. The speakers showcased different dimensions of the area Fintech. The program was quite successful with its new theme and tremendous response of students.`,
       ],
       images: [
-        `/IGSB/student-engagement/Students-Conference_1.jpg`,
-        `/IGSB/student-engagement/Students-Conference_2.jpg`,
+        `/IGSB/student-engagement/Students-Conference_1.webp`,
+        `/IGSB/student-engagement/Students-Conference_2.webp`,
       ],
     },
     {
@@ -340,8 +340,8 @@ export const studentEvents = {
         `We had the privilege of hosting a full day workshop by Prof. Chetan Wakalkar on 'Corporate Yodha - Unleashing the Power of Qu in You.' The session delved deep into the importance of emotional intelligence, creative quotient, digital skills, mental resilience, and strategic thinking in the corporate world. Prof. Chetan Wakalkar's unique approach provided students of MBA Batch 2024-26 with practical tools to harness their inner strength and overcome challenges in the workplace. It was an enriching experience that left the students feeling empowered and ready to conquer the corporate battlefield!`,
       ],
       images: [
-        `/IGSB/student-engagement/Corporate-Yodha_1.jpg`,
-        `/IGSB/student-engagement/Corporate-Yodha_2.jpg`,
+        `/IGSB/student-engagement/Corporate-Yodha_1.webp`,
+        `/IGSB/student-engagement/Corporate-Yodha_2.webp`,
       ],
     },
     {
@@ -351,10 +351,10 @@ export const studentEvents = {
         `This interactive workshop emphasized the importance of creating inclusive workplaces and fostering respectful professional environments. Together, we are shaping future leaders who value equality, safety, and mutual respect.`,
       ],
       images: [
-        `/IGSB/student-engagement/POSH_Orientation_1.jpg`,
-        `/IGSB/student-engagement/POSH_Orientation_2.jpg`,
-        `/IGSB/student-engagement/POSH_Orientation_3.jpg`,
-        `/IGSB/student-engagement/POSH_Orientation_4.jpg`,
+        `/IGSB/student-engagement/POSH_Orientation_1.webp`,
+        `/IGSB/student-engagement/POSH_Orientation_2.webp`,
+        `/IGSB/student-engagement/POSH_Orientation_3.webp`,
+        `/IGSB/student-engagement/POSH_Orientation_4.webp`,
       ],
     },
     {
@@ -365,11 +365,11 @@ export const studentEvents = {
         `Mr. Ravi Ahuja, SEBI Certified Securities Market Trainer and Programme Coordinator- Skill Development Centre, SPPU made students aware with the unexplored work avenues associated with security markets. Whereas Mr. Vikram Limaye, Former Managing Director and CEO of the National Stock Exchange of India Limited (NSE) and IDFC enlightened students about the transactions taking place through security market. We thank our esteemed speakers for today's session from the bottom of our heart and for helping us to empower our students for Viksit Bharat.`,
       ],
       images: [
-        `/IGSB/student-engagement/Viksit_Bharat_1.jpg`,
-        `/IGSB/student-engagement/Viksit_Bharat_2.jpg`,
-        `/IGSB/student-engagement/Viksit_Bharat_3.jpg`,
-        `/IGSB/student-engagement/Viksit_Bharat_4.jpg`,
-        `/IGSB/student-engagement/Viksit_Bharat_5.jpg`,
+        `/IGSB/student-engagement/Viksit_Bharat_1.webp`,
+        `/IGSB/student-engagement/Viksit_Bharat_2.webp`,
+        `/IGSB/student-engagement/Viksit_Bharat_3.webp`,
+        `/IGSB/student-engagement/Viksit_Bharat_4.webp`,
+        `/IGSB/student-engagement/Viksit_Bharat_5.webp`,
       ],
     },
     {
@@ -378,9 +378,9 @@ export const studentEvents = {
         "The SOUL Yoga program at IGSB empowered students with mindfulness, balance, and inner strength.",
       ],
       images: [
-        `/IGSB/student-engagement/SOUL_1.jpg`,
-        `/IGSB/student-engagement/SOUL_2.jpg`,
-        `/IGSB/student-engagement/SOUL_3.jpg`,
+        `/IGSB/student-engagement/SOUL_1.webp`,
+        `/IGSB/student-engagement/SOUL_2.webp`,
+        `/IGSB/student-engagement/SOUL_3.webp`,
       ],
     },
     {
@@ -400,10 +400,10 @@ export const studentEvents = {
         `IGSB students engaged in an insightful session with Ms. Shilpa Tambe on Mental Health & Wellness on 5th Feb 2025. A step towards balanced minds and empowered futures!`,
       ],
       images: [
-        `/IGSB/student-engagement/MHW_Session_1.jpg`,
-        `/IGSB/student-engagement/MHW_Session_2.jpg`,
-        `/IGSB/student-engagement/MHW_Session_3.jpg`,
-        `/IGSB/student-engagement/MHW_Session_4.jpg`,
+        `/IGSB/student-engagement/MHW_Session_1.webp`,
+        `/IGSB/student-engagement/MHW_Session_2.webp`,
+        `/IGSB/student-engagement/MHW_Session_3.webp`,
+        `/IGSB/student-engagement/MHW_Session_4.webp`,
       ],
     },
     {
@@ -412,7 +412,7 @@ export const studentEvents = {
         `IGSB was honored to host Mr. Chandrashekhar Tilak, Retired Executive Vice President of NSDL Group, who shared his expertise and deep analysis of the Union Budget 2025 on 8th Feb 2025. The session was packed with key takeaways and practical insights, leaving our students and faculty enriched with a better understanding of its implications.`,
         `The event concluded with the Union Budget Quiz Competition prize distribution, celebrating the sharp minds who excelled in analyzing budgetary concepts.`,
       ],
-      images: [`/IGSB/student-engagement/Budget_2025_Img.jpg`],
+      images: [`/IGSB/student-engagement/Budget_2025_Img.webp`],
     },
     {
       title: "Workshop – Designing and Executing Strong Business Strategy",
@@ -432,9 +432,9 @@ export const studentEvents = {
         `IGSB hosted a Movie Club Activity on 22nd Feb 2025. The activity brought management lessons to life as students explored leadership, strategy, and decision-making through the lens of cinema.`,
       ],
       images: [
-        `/IGSB/student-engagement/Movie_Club_1.jpg`,
-        `/IGSB/student-engagement/Movie_Club_2.jpg`,
-        `/IGSB/student-engagement/Movie_Club_3.jpg`,
+        `/IGSB/student-engagement/Movie_Club_1.webp`,
+        `/IGSB/student-engagement/Movie_Club_2.webp`,
+        `/IGSB/student-engagement/Movie_Club_3.webp`,
       ],
     },
     {
@@ -443,11 +443,11 @@ export const studentEvents = {
         `On 24 Feb 2025, IGSB students explored the future of smart manufacturing at C4I4 Lab, SPPU, gaining hands-on experience in Industry 4.0 technologies! From automation to AI-driven solutions, this orientation provided valuable insights into the next era of industrial innovation.`,
       ],
       images: [
-        `/IGSB/student-engagement/C4I4_1.jpg`,
-        `/IGSB/student-engagement/C4I4_2.jpg`,
-        `/IGSB/student-engagement/C4I4_3.jpg`,
-        `/IGSB/student-engagement/C4I4_4.jpg`,
-        `/IGSB/student-engagement/C4I4_5.jpg`,
+        `/IGSB/student-engagement/C4I4_1.webp`,
+        `/IGSB/student-engagement/C4I4_2.webp`,
+        `/IGSB/student-engagement/C4I4_3.webp`,
+        `/IGSB/student-engagement/C4I4_4.webp`,
+        `/IGSB/student-engagement/C4I4_5.webp`,
       ],
     },
     {
@@ -456,10 +456,10 @@ export const studentEvents = {
         `Celebrate the strength, grace, and resilience of the incredible women at IGSB! On this Women’s Day, team IGSB expresses our heartfelt gratitude with a token of appreciation—because every woman deserves to be celebrated every day!`,
       ],
       images: [
-        `/IGSB/student-engagement/Womens_Day_1.jpg`,
-        `/IGSB/student-engagement/Womens_Day_2.jpg`,
-        `/IGSB/student-engagement/Womens_Day_3.jpg`,
-        `/IGSB/student-engagement/Womens_Day_4.jpg`,
+        `/IGSB/student-engagement/Womens_Day_1.webp`,
+        `/IGSB/student-engagement/Womens_Day_2.webp`,
+        `/IGSB/student-engagement/Womens_Day_3.webp`,
+        `/IGSB/student-engagement/Womens_Day_4.webp`,
       ],
     },
     {
@@ -468,9 +468,9 @@ export const studentEvents = {
         `Exploring the synergy between Indian Knowledge Systems (IKS) and HR functions! Dr. Ashutosh Misal engaged IGSB MBA 1st-year students in a thought-provoking session on how traditional wisdom can enhance modern HR practices on 11th March 2025.`,
       ],
       images: [
-        `/IGSB/student-engagement/IKS_1.jpg`,
-        `/IGSB/student-engagement/IKS_2.jpg`,
-        `/IGSB/student-engagement/IKS_3.jpg`,
+        `/IGSB/student-engagement/IKS_1.webp`,
+        `/IGSB/student-engagement/IKS_2.webp`,
+        `/IGSB/student-engagement/IKS_3.webp`,
       ],
     },
   ],

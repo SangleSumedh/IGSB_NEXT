@@ -78,7 +78,7 @@ export default function Impact() {
       {/* ➤ BACKGROUND IMAGE */}
       <div className="absolute inset-0 z-0 h-[400px] md:h-full">
         <img
-          src="/placement/impact3.jpg"
+          src="/placement/impact3.webp"
           alt="Background"
           className="w-full h-full object-cover pointer-none::select-none "
         />

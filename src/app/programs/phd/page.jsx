@@ -42,7 +42,7 @@ export default function PHD() {
       =================================================== */}
       <div className="relative w-full h-auto  flex items-center">
         <Image
-          src="/IGSB/Programmes/PHDBanner1.jpg"
+          src="/IGSB/Programmes/PHDBanner1.webp"
           alt="IGSB Research Centre"
           height={1080}
           width={1920}

@@ -331,27 +331,6 @@ export default function MBAContent() {
     faqRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const commonCareers = [
-    "Brand Manager",
-    "Digital Marketing Manager",
-    "Market Research Analyst",
-    "Sales Manager",
-    "Product Manager",
-    "Media Planner",
-    "CRM Manager",
-    "Head of Marketing",
-    "Financial Analyst",
-    "Investment Banker",
-    "Risk Manager",
-    "HR Business Partner",
-    "Talent Acquisition Manager",
-    "Operations Manager",
-    "Supply Chain Analyst",
-    "Business Development Manager",
-    "Project Manager",
-    "Strategy Consultant",
-  ];
-
   const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   const handleBrochureDownload = () => {
@@ -362,12 +341,6 @@ export default function MBAContent() {
     link.click();
     document.body.removeChild(link);
   };
-
-  const mbaHighlightImages = [
-    "/Programs/MBA/MBA1.jpg",
-    "/Programs/MBA/MBA2.jpg",
-    "/Programs/MBA/MBA3.jpg",
-  ];
 
   return (
     <div className="w-full bg-white text-white">

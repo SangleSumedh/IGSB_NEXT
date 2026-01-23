@@ -8,21 +8,21 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
   const slides = [
     {
       id: 1,
-      image: "/Programs/marketing3.jpg",
+      image: "/Programs/marketing3.webp",
       title: "Marketing Skills Built on Insight and Impact",
       description:
         "Become a data-driven, consumer-centric marketing leader skilled in brand strategy, digital marketing, and growth across traditional and emerging business platforms.",
     },
     {
       id: 2,
-      image: "/Programs/finance3.jpg",
+      image: "/Programs/finance3.webp",
       title: "Finance Education Aligned with Global Business Needs",
       description:
         "Build expertise in financial analysis, corporate finance, investment strategy, and risk management for leadership roles in global financial environments. ",
     },
     {
       id: 3,
-      image: "/Programs/hr2.jpg",
+      image: "/Programs/hr2.webp",
       title: "Transforming Talent into Organizational Strength",
       description:
         "Excel at strategic HR leadership skills, talent management, organizational development, and workforce analytics. ",
@@ -36,7 +36,7 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
     },
     {
       id: 5,
-      image: "/Programs/ba2.jpg",
+      image: "/Programs/ba2.webp",
       title: "Transforming Data into Business Intelligence",
       description:
         "Gain hands-on exposure to business analytics, statistical modelling, predictive analytics, and data-driven strategy to excel in analytics-led organizations.",
@@ -125,7 +125,7 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
           />
 
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent md:from-black/50 md:via-black/10 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t backdrop-blur-[1px] md:backdrop-blur-[0px] from-black/70 via-black/40 to-transparent md:from-black/50 md:via-black/10 z-10" />
 
           {/* Content Overlay */}
           <div className="absolute inset-0 flex items-center justify-start z-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
@@ -135,7 +135,7 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
                   max-w-full
                   lg:max-w-3xl
                   xl:max-w-2xl
-                  bg-black/40 md:bg-transparent
+                 
                 
                   rounded-lg
                   p-3 sm:p-4 md:p-0 mt-10 md:mt-0

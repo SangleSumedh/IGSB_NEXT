@@ -15,7 +15,7 @@ const AUTO_ROTATE_SPEED = 0.9;
 const CAROUSEL_INTERVAL = 3000; // 3 Seconds
 
 // --- ASSETS & DATA ---
-const EARTH_DAY_TEXTURE = "/textures/earth2k.jpg";
+const EARTH_DAY_TEXTURE = "/textures/earth2k.webp";
 
 const ALUMNI_LOCATIONS = [
   {
@@ -23,11 +23,11 @@ const ALUMNI_LOCATIONS = [
     name: "Choudhary Shayan Izhar",
     role: "Wealth Management Analyst",
     company: "UBS Bank",
-    companyLogo: "/logos/15.jpg",
+    companyLogo: "/logos/15.webp",
     lat: 18.9582,
     lon: 72.8321,
     location: "Mumbai, India",
-    img: "/IGSB/Alumni/NewAlumni/shayan_choudhary.jpg",
+    img: "/IGSB/Alumni/NewAlumni/shayan_choudhary.webp",
     bio: "",
   },
   {
@@ -39,7 +39,7 @@ const ALUMNI_LOCATIONS = [
     lat: 18.53, // Offset for Pune
     lon: 73.85,
     location: "Pune, India",
-    img: "/IGSB/Alumni/NewAlumni/shelke_vaishnavi.jpg",
+    img: "/IGSB/Alumni/NewAlumni/shelke_vaishnavi.webp",
     bio: "",
   },
   {
@@ -47,11 +47,11 @@ const ALUMNI_LOCATIONS = [
     name: "Soham Prashant Ghule",
     role: "Management Trainee",
     company: "BNY Mellon",
-    companyLogo: "/logos/3.jpg",
+    companyLogo: "/logos/3.webp",
     lat: 18.5246,
     lon: 73.8786,
     location: "Pune, India",
-    img: "/IGSB/Alumni/NewAlumni/soham_ghule.jpg",
+    img: "/IGSB/Alumni/NewAlumni/soham_ghule.webp",
     bio: "",
   },
   // {
@@ -59,11 +59,11 @@ const ALUMNI_LOCATIONS = [
   //   name: "Aditi Ravindra Sharma",
   //   role: "Management Trainee",
   //   company: "Eka Mobility",
-  //   companyLogo: "/logos/eka.jpg", // Placeholder
+  //   companyLogo: "/logos/eka.webp", // Placeholder
   //   lat: 18.51, // Offset for Pune
   //   lon: 73.82,
   //   location: "Pune, India",
-  //   img: "/IGSB/Alumni/NewAlumni/aditi_sharma.jpg",
+  //   img: "/IGSB/Alumni/NewAlumni/aditi_sharma.webp",
   //   bio: "",
   // },
   // {
@@ -71,11 +71,11 @@ const ALUMNI_LOCATIONS = [
   //   name: "Aashish B Dhakane",
   //   role: "Intern + PPO",
   //   company: "State Street Corporation",
-  //   companyLogo: "/logos/statestreet.jpg", // Placeholder
+  //   companyLogo: "/logos/statestreet.webp", // Placeholder
   //   lat: 18.545, // Offset for Pune
   //   lon: 73.885,
   //   location: "Pune, India",
-  //   img: "/IGSB/Alumni/NewAlumni/aashish_dhakane.jpg",
+  //   img: "/IGSB/Alumni/NewAlumni/aashish_dhakane.webp",
   //   bio: "",
   // },
   // {
@@ -83,11 +83,11 @@ const ALUMNI_LOCATIONS = [
   //   name: "Bhavesh Gulab Patil",
   //   role: "Intern + PPO",
   //   company: "State Street Corporation",
-  //   companyLogo: "/logos/statestreet.jpg", // Placeholder
+  //   companyLogo: "/logos/statestreet.webp", // Placeholder
   //   lat: 18.535, // Offset for Pune
   //   lon: 73.875,
   //   location: "Pune, India",
-  //   img: "/IGSB/Alumni/NewAlumni/bhavesh_patil.jpg",
+  //   img: "/IGSB/Alumni/NewAlumni/bhavesh_patil.webp",
   //   bio: "",
   // },
   // {
@@ -95,11 +95,11 @@ const ALUMNI_LOCATIONS = [
   //   name: "Chintalwar Tanisha",
   //   role: "Intern + PPO",
   //   company: "State Street Corporation",
-  //   companyLogo: "/logos/statestreet.jpg", // Placeholder
+  //   companyLogo: "/logos/statestreet.webp", // Placeholder
   //   lat: 18.515, // Offset for Pune
   //   lon: 73.865,
   //   location: "Pune, India",
-  //   img: "/IGSB/Alumni/NewAlumni/chintalwar_tanisha.jpg",
+  //   img: "/IGSB/Alumni/NewAlumni/chintalwar_tanisha.webp",
   //   bio: "",
   // },
   {
@@ -107,11 +107,11 @@ const ALUMNI_LOCATIONS = [
     name: "Varad Sunil Kulkarni",
     role: "Management Trainee",
     company: "Blue Dart",
-    companyLogo: "/logos/41.jpg", // Placeholder
+    companyLogo: "/logos/41.webp", // Placeholder
     lat: 19.076, // Mapped "Western India" to Mumbai for better distribution
     lon: 72.8777,
     location: "Western India",
-    img: "/IGSB/Alumni/NewAlumni/varad_kulkarni.jpg",
+    img: "/IGSB/Alumni/NewAlumni/varad_kulkarni.webp",
     bio: "",
   },
 ];

@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import SectorAnalyticsCard from "./SectoralDistribution";
 import ApplyForm from "../home/ApplyForm";
 import { Phone } from "lucide-react";
 
@@ -61,7 +60,7 @@ const RecruiterPlacement = () => {
           </div>
 
           {/* Logo Grid */}
-          <div className="relative z-10 grid grid-cols-4 xl:grid-cols-10 gap-4">
+          <div className="relative z-10 grid grid-cols-4 xl:grid-cols-10 gap-3">
             {visibleLogos.map((logo, i) => (
               <LogoItem key={i} src={logo} />
             ))}
@@ -103,7 +102,7 @@ const RecruiterPlacement = () => {
 
 const OrangeCard = () => (
  
-  <div className="w-full rounded-3xl relative overflow-hidden text-white flex flex-col shadow-2xl">
+  <div className="w-full rounded-3xl relative overflow-hidden text-white flex flex-col shadow-2xl ">
     
     <div className="bg-[#ff885b] text-white rounded-xl p-5 h-full w-full">
       <h2 className="text-xl text-center font-bold mb-4">
@@ -131,7 +130,7 @@ const LogoItem = ({ src }) => (
         src={src}
         alt="Recruiter Logo"
         fill
-        className="object-contain p-1"
+        className="object-contain "
         sizes="(max-width: 768px) 33vw, 15vw"
       />
     </div>

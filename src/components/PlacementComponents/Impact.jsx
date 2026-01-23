@@ -74,11 +74,11 @@ export default function Impact() {
   };
 
   return (
-    <section ref={sectionRef} className="relative w-full min-h-[800px] ">
+    <section ref={sectionRef} className="relative w-full min-h-[400px] md:min-h-[800px]">
       {/* ➤ BACKGROUND IMAGE */}
-      <div className="absolute inset-0 z-0 h-full">
+      <div className="absolute inset-0 z-0 h-[400px] md:h-full">
         <img
-          src="/placement/impact3.jpg"
+          src="/placement/impact3.webp"
           alt="Background"
           className="w-full h-full object-cover pointer-none::select-none "
         />
@@ -87,7 +87,7 @@ export default function Impact() {
       <div className="relative inset-0 z-10 w-full max-w-7xl mx-auto px-2 py-2 md:mx-auto md:pt-10">
         {/* Section Title */}
         <div className="text-center md:mt-5 md:mb-5">
-          <h2 className="text-xl md:text-xl lg:text-2xl font-bold text-secondary uppercase tracking-wide">
+          <h2 className="text-xl md:text-xl lg:text-3xl font-bold text-secondary uppercase tracking-wide">
             Career Outcomes That <span className="text-primary">Speak</span> for
             Themselves
           </h2>

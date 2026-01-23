@@ -31,10 +31,10 @@ Students were encouraged to choose roles that align with career aspirations inst
 
 Overall, the discussion helped students gain clarity, direction, and motivation for their future careers.`,
     images: [
-      "/IGSB/Alumni/AlumniMeet/1Meet23.jpg",
-      "/IGSB/Alumni/AlumniMeet/2Meet23.jpg",
-      "/IGSB/Alumni/AlumniMeet/3Meet23.jpg",
-      "/IGSB/Alumni/AlumniMeet/4Meet23.jpg",
+      "/IGSB/Alumni/AlumniMeet/1Meet23.webp",
+      "/IGSB/Alumni/AlumniMeet/2Meet23.webp",
+      "/IGSB/Alumni/AlumniMeet/3Meet23.webp",
+      "/IGSB/Alumni/AlumniMeet/4Meet23.webp",
     ],
   },
 
@@ -65,10 +65,10 @@ Alumni Inputs:
 • Suggested identifying high-performing students for advanced inputs  
 • Recommended training in communication, business etiquette, professionalism, mental well-being, technical certifications`,
     images: [
-      "/IGSB/Alumni/AlumniMeet/1Meeet24.jpg",
-      "/IGSB/Alumni/AlumniMeet/2Meet24.jpg",
-      "/IGSB/Alumni/AlumniMeet/3Meet24.jpg",
-      "/IGSB/Alumni/AlumniMeet/4Meet24.jpg",
+      "/IGSB/Alumni/AlumniMeet/1Meeet24.webp",
+      "/IGSB/Alumni/AlumniMeet/2Meet24.webp",
+      "/IGSB/Alumni/AlumniMeet/3Meet24.webp",
+      "/IGSB/Alumni/AlumniMeet/4Meet24.webp",
     ],
   },
 
@@ -88,7 +88,7 @@ The Alumni Portal, achievements, and opportunities to contribute were highlighte
 
 Outcome:
 The meet was insightful, engaging, and productive with exchange of ideas, feedback, networking, and commitment toward student development.`,
-    images: ["/IGSB/Alumni/AlumniMeet/Meet22.jpg"],
+    images: ["/IGSB/Alumni/AlumniMeet/Meet22.webp"],
   },
 ];
 
@@ -144,7 +144,7 @@ const interactionCards = [
     academicYear: "2022-23",
   },
   {
-    img: "/IGSB/Alumni/AlumnniInteraction/AK2223.jpg",
+    img: "/IGSB/Alumni/AlumnniInteraction/AK2223.webp",
     topic: " Placement preparation for core sales roles.",
     speaker: "Akshay Shirke",
     organization: "Amazon (Customer Service Manager)",
@@ -154,7 +154,7 @@ const interactionCards = [
     academicYear: "2020-21",
   },
   {
-    img: "/IGSB/Alumni/AlumnniInteraction/HP2223.jpg",
+    img: "/IGSB/Alumni/AlumnniInteraction/HP2223.webp",
     topic: "Practical tips and domain knowledge to crack interviews.",
     speaker: "Hemant Apte",
     organization: "Huron Consulting (EPM Consultant)",
@@ -164,7 +164,7 @@ const interactionCards = [
     academicYear: "2020-21",
   },
   {
-    img: "/IGSB/Alumni/AlumnniInteraction/GS2223.jpg",
+    img: "/IGSB/Alumni/AlumnniInteraction/GS2223.webp",
     topic: "Product Development and Pricing Strategies.",
     speaker: "Govind Singh",
     organization: "Renault India (Product Manager)",
@@ -174,7 +174,7 @@ const interactionCards = [
     academicYear: "2020-21",
   },
   {
-    img: "/IGSB/Alumni/AlumnniInteraction/VV2223.jpg",
+    img: "/IGSB/Alumni/AlumnniInteraction/VV2223.webp",
     topic: "Career Opportunities relating to Knowledge Management",
     speaker: " Vaishnavi Vartak",
     organization: "Deloitte (Business Analyst)",
@@ -184,7 +184,7 @@ const interactionCards = [
     academicYear: "2020-21",
   },
   {
-    img: "/IGSB/Alumni/AlumnniInteraction/ST2223.jpg",
+    img: "/IGSB/Alumni/AlumnniInteraction/ST2223.webp",
     topic: "Overview of the profiles relating to Taxation",
     speaker: "Samiksha Tiwari",
     organization: "KPMG (Tax Associate)",
@@ -199,7 +199,7 @@ const interactionCards = [
 const achievementCards = [
   // ✅ Existing 23 Cards — unchanged
   {
-    img: "/IGSB/Alumni/AlumniAchievements/prashantKhatrabad.jpg",
+    img: "/IGSB/Alumni/AlumniAchievements/prashantKhatrabad.webp",
     name: "Prashant C Katrabad",
     batch: "2012-14",
     position: "AVP - Lead Business Analyst",
@@ -207,7 +207,7 @@ const achievementCards = [
     awards: "Employee of the year, Employee of the Quarter, Best Newcomer",
   },
   {
-    img: "/IGSB/Alumni/AlumniAchievements/OB1416.jpg",
+    img: "/IGSB/Alumni/AlumniAchievements/OB1416.webp",
     name: "Omkar Barge",
     batch: "2014-16",
     position: "Senior Territory Manager",
@@ -215,7 +215,7 @@ const achievementCards = [
     awards: "Ace Award winner",
   },
   {
-    img: "/IGSB/Alumni/AlumniAchievements/sridharkadam.jpg",
+    img: "/IGSB/Alumni/AlumniAchievements/sridharkadam.webp",
     name: "Sridhar Kadam",
     batch: "2013-14",
     position: "Regional Lead",
@@ -231,7 +231,7 @@ const achievementCards = [
     awards: "Awarded for best Inventory Management",
   },
   {
-    img: "/IGSB/Alumni/AlumniAchievements/jyotiDhanwani.jpg",
+    img: "/IGSB/Alumni/AlumniAchievements/jyotiDhanwani.webp",
     name: "Jyoti Dhanwani",
     batch: "2012-14",
     position: "Head of People & Culture Business Partner",
@@ -271,7 +271,7 @@ const achievementCards = [
     awards: "CFO Award 2022 Q1, Silver Award, Q1 2020 Best Performance",
   },
   {
-    img: "/IGSB/Alumni/AlumniAchievements/RB1214.jpg",
+    img: "/IGSB/Alumni/AlumniAchievements/RB1214.webp",
     name: "Reshmi Bagchi",
     batch: "2012-14",
     position: "Entrepreneur, General Manager",
@@ -329,7 +329,7 @@ const achievementCards = [
     awards: "Branding Ambassador, Multiple project awards",
   },
   {
-    img: "/IGSB/Alumni/AlumniAchievements/AK1113.jpg",
+    img: "/IGSB/Alumni/AlumniAchievements/AK1113.webp",
     name: "Amit Kumar",
     batch: "2011-13",
     position: "Project Manager",
@@ -353,7 +353,7 @@ const achievementCards = [
     awards: "Chief Minister’s Fellowship Program Award — 2018",
   },
   {
-    img: "/IGSB/Alumni/AlumniAchievements/ST1719.jpg",
+    img: "/IGSB/Alumni/AlumniAchievements/ST1719.webp",
     name: "Samiksha Tiwari",
     batch: "2017-19",
     position: "Tax Associate 2",
@@ -361,7 +361,7 @@ const achievementCards = [
     awards: "Kudos Award",
   },
   {
-    img: "/IGSB/Alumni/AlumniAchievements/NW1315.jpg",
+    img: "/IGSB/Alumni/AlumniAchievements/NW1315.webp",
     name: "Nikhil Wadekar",
     batch: "2013-15",
     position: "Assistant Vice President",
@@ -369,7 +369,7 @@ const achievementCards = [
     awards: "Multiple ICICI Bank Excellence & MDRT Awards",
   },
   {
-    img: "/IGSB/Alumni/AlumniAchievements/KJ1315.jpg",
+    img: "/IGSB/Alumni/AlumniAchievements/KJ1315.webp",
     name: "Kamlesh Jagdale",
     batch: "2013-15",
     position: "India Lead – University Recruiting and Early Talent Programs",
@@ -378,7 +378,7 @@ const achievementCards = [
       "CEO Award, Business Excellence, Industry Partnership Award, Best Industry Mentor",
   },
   {
-    img: "/IGSB/Alumni/AlumniAchievements/NS1416.jpg",
+    img: "/IGSB/Alumni/AlumniAchievements/NS1416.webp",
     name: "Neeklesh Sabale",
     batch: "2014-16",
     position: "Business Analyst",
@@ -406,7 +406,7 @@ const achievementCards = [
       "Shoutout Award for significant project contribution, PSPO certified B.A.",
   },
   {
-    img: "/IGSB/Alumni/AlumniAchievements/BP1214.jpg",
+    img: "/IGSB/Alumni/AlumniAchievements/BP1214.webp",
     name: "Bhagwan Patil",
     batch: "2012-14",
     position: "Team Lead",
@@ -414,7 +414,7 @@ const achievementCards = [
     awards: "Employee of the year in project, Star Performer",
   },
   {
-    img: "/IGSB/Alumni/AlumniAchievements/MM1113.jpg",
+    img: "/IGSB/Alumni/AlumniAchievements/MM1113.webp",
     name: "Mahesh Mitkari",
     batch: "2011-13",
     position: "Associate Vice President Sales",
@@ -464,7 +464,7 @@ const achievementCards = [
       "Represented SAP India in Make in India Week 2016; interacted with Union Minister Nitin Gadkari",
   },
   {
-    img: "/IGSB/Alumni/AlumniAchievements/VD1315.jpg",
+    img: "/IGSB/Alumni/AlumniAchievements/VD1315.webp",
     name: "Viraj Deshmukh",
     batch: "2013-15",
     position: "—",
@@ -473,7 +473,7 @@ const achievementCards = [
       '"Best Channel Manager" for outstanding sales performance in Pune region',
   },
   {
-    img: "/IGSB/Alumni/AlumniAchievements/HP1618.jpg",
+    img: "/IGSB/Alumni/AlumniAchievements/HP1618.webp",
     name: "Hemant Apte",
     batch: "2016-18",
     position: "—",
@@ -497,7 +497,7 @@ const achievementCards = [
     awards: "Most consistent employee award",
   },
   {
-    img: "/IGSB/Alumni/AlumniAchievements/RS1315.jpg",
+    img: "/IGSB/Alumni/AlumniAchievements/RS1315.webp",
     name: "Rinky Soni",
     batch: "2013-15",
     position: "—",
@@ -606,7 +606,7 @@ export default function Alumni() {
       <div className="min-h-screen ">
         {/* <div className="relative w-full h-[40vh] sm:h-[50vh] lg:h-[65vh]">
           <Image
-            src="/NISMBanner1.jpg"
+            src="/NISMBanner1.webp"
             alt="Alumni Banner"
             fill
             priority

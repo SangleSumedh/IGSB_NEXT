@@ -6,12 +6,13 @@ export default function PlacementHero() {
     <div className="relative w-full h-auto ">
       <div className="relative w-full overflow-hidden">
         <Image
-          src="/placement/plcementbannerfinal.jpg"
+          src="/placement/plcementbannerfinal.webp"
           alt="Placement Banner"
           priority
           className="w-full h-auto "
           width={1600}
           height={700}
+          unoptimized={true}
         />
       </div>
     </div>

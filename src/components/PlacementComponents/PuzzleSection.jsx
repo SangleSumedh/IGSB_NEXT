@@ -8,6 +8,7 @@ const PuzzleSkills = () => {
     {
       id: 1,
       title: "Business Communication",
+      hours: "(40 HRS)",
       icon: <FaHandshake />,
       bg: "bg-[#10404a]", // Dark Teal
       hasBottomTab: true,
@@ -16,6 +17,7 @@ const PuzzleSkills = () => {
     {
       id: 2,
       title: "Aptitude",
+      hours: "(40 HRS)",
       icon: <FaBrain />,
       bg: "bg-[#f9712f]", // Orange
       hasTopTab: true,
@@ -24,6 +26,7 @@ const PuzzleSkills = () => {
     {
       id: 3,
       title: "Personal Branding",
+      hours: "(12 HRS)",
       icon: <FaUserTie />,
       bg: "bg-[#00a49e]", // Teal
       hasBottomTab: true,
@@ -32,6 +35,7 @@ const PuzzleSkills = () => {
     {
       id: 4,
       title: "Generative AI",
+      hours: "(18 HRS)",
       icon: <FaRobot />,
       bg: "bg-[#10404a]", // Dark Teal
       hasTopTab: true,
@@ -72,20 +76,13 @@ const PuzzleSkills = () => {
                   /* DESKTOP: Puzzle Shapes, no spacing, centered text */
                   md:rounded-none md:mb-0 md:items-center md:text-center
                   md:first:rounded-l-2xl md:last:rounded-r-2xl
-                  
-                  /* Shadow for depth */
-               
                 `}
               >
                 {/* 1. RIGHT CONNECTOR (Horizontal Lock) - Desktop Only */}
                 {!isLast && (
                   <div className="hidden md:block absolute top-1/2 -right-6 transform -translate-y-1/2 z-20">
                     <div
-                      className={`
-                        w-12 h-12 rounded-full 
-                        ${item.bg}
-                    
-                      `}
+                      className={`w-12 h-12 rounded-full ${item.bg}`}
                     />
                   </div>
                 )}
@@ -105,21 +102,26 @@ const PuzzleSkills = () => {
                 )}
 
                 {/* ================= CONTENT ================= */}
-                {/* On mobile: Flex-row for Icon + Title to save vertical space */}
                 <div className="relative z-10 w-full flex flex-col md:items-center">
                   
-                  {/* Header Section */}
+                  {/* Header Section with Icon, Title, and Hours */}
                   <div className="flex items-center gap-4 md:flex-col md:gap-2 mb-4 md:mb-6">
                     <span className="text-3xl md:text-4xl drop-shadow-md bg-white/10 p-2 rounded-lg md:bg-transparent md:p-0">
                       {item.icon}
                     </span>
-                    <h3 className="text-xl font-bold tracking-tight uppercase">
-                      {item.title}
-                    </h3>
+                    <div className="flex flex-col">
+                      <h3 className="text-xl font-bold tracking-tight uppercase leading-tight">
+                        {item.title}
+                      </h3>
+                      {/* Hours on a new line */}
+                      <span className="text-sm md:text-base font-medium text-white/80 md:mt-1">
+                        {item.hours}
+                      </span>
+                    </div>
                   </div>
 
                   {/* List Content */}
-                  <ul className="space-y-3 md:space-y-2 text-sm font-medium text-white/90 w-full">
+                  <ul className="space-y-3 md:space-y-2 text-md font-medium text-white/90 w-full">
                     {item.content.map((line, i) => (
                       <li key={i} className="flex items-start gap-3 md:justify-center">
                         {/* Bullet point only visible on mobile for left-align structure */}

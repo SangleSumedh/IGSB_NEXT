@@ -103,7 +103,7 @@ export default function CASsection() {
           <div className="hidden md:flex items-center justify-center">
             <div className="w-55 h-55 flex items-center justify-center bg-white rounded-full ">
               <img
-                src="/placement/3603.png"
+                src="/placement/360new1.png"
                 alt="360 Degree Development"
                 className="w-55 h-55 object-contain"
               />

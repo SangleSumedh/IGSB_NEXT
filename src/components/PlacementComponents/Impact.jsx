@@ -74,9 +74,9 @@ export default function Impact() {
   };
 
   return (
-    <section ref={sectionRef} className="relative w-full min-h-[800px] ">
+    <section ref={sectionRef} className="relative w-full min-h-[400px] md:min-h-[800px]">
       {/* ➤ BACKGROUND IMAGE */}
-      <div className="absolute inset-0 z-0 h-full">
+      <div className="absolute inset-0 z-0 h-[400px] md:h-full">
         <img
           src="/placement/impact3.jpg"
           alt="Background"

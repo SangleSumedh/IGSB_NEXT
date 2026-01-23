@@ -130,7 +130,7 @@ export default function RoadmapSectionMobile() {
                       {item.designation}
                     </p>
 
-                    <div className="w-24 h-10 bg-white/10 rounded-lg flex items-center justify-center p-2 mt-2">
+                    <div className="w-40 h-30 bg-white/10 rounded-lg flex items-center justify-center mt-1">
                       <img
                         src={item.companyLogo}
                         alt="Company logo"
@@ -191,8 +191,6 @@ export default function RoadmapSectionMobile() {
         <span>Swipe or use buttons to navigate</span>
         <span className="animate-pulse">→</span>
       </div>
-
-    
      
     </div>
   );

@@ -68,8 +68,8 @@ const Career = () => {
         </h1>
         <p className="text-base text-secondary max-w-3xl mx-auto font-light">
           IGSB offers a structured placement ecosystem focused on industry-ready
-          talent. Through strong corporate partnership, expert mentorship,
-          and hands-on exposure, students graduate with the skills required for
+          talent. Through strong corporate partnership, expert mentorship, and
+          hands-on exposure, students graduate with the skills required for
           long-term success.
         </p>
       </div>
@@ -126,19 +126,22 @@ const Career = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2, duration: 0.5 }}
-                    className={`absolute w-full max-w-[220px] p-5 rounded-xl md:rounded-3xl bg-secondary backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors h-[240px]
+                    className={`absolute w-full max-w-[350px] p-4 rounded-xl md:rounded-3xl bg-secondary backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors h-[260px]
                       ${isTop ? "top-[60%]" : "bottom-[60%]"}
                     `}
                   >
-                    <div className=" text-primary text-3xl mb-3">
-                      {step.icon}
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className=" text-primary text-3xl mb-2">
+                        {step.icon}
+                      </div>
+                      <h3 className="font-bold text-lg leading-tight mb-3 text-white">
+                        {step.title}
+                      </h3>
                     </div>
-                    <h3 className="font-bold text-lg leading-tight mb-2 text-white">
-                      {step.title}
-                    </h3>
+
                     <p
-                      className="text-xs text-white
-                  leading-relaxed line-clamp-5"
+                      className="text-lg text-white
+                  leading-tight "
                     >
                       {step.desc}
                     </p>
@@ -206,7 +209,7 @@ const Career = () => {
                   <h3 className="text-xl font-bold text-[#ff712d] mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                  <p className="text-gray-300 text-sm  leading-relaxed">
                     {step.desc}
                   </p>
                 </div>

@@ -107,7 +107,7 @@ export default function PlacementRecords() {
                   rel="noreferrer"
                   className="mt-4 lg:mt-6 px-6 lg:px-8 py-3 bg-secondary text-white rounded-lg font-bold flex items-center gap-2 hover:bg-[#ff885b] transition-colors shadow-lg shadow-secondary/20 text-sm lg:text-base"
                 >
-                  View Full PDF <FiExternalLink size={16} />
+                  View / Download Full PDF <FiExternalLink size={16} />
                 </a>
               </div>
             </div>

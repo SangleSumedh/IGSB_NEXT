@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 // The folder you want to target
-const targetDir = 'public/Edited';
+const targetDir = 'public/new';
 
 console.log(`Scanning ${targetDir}...`);
 

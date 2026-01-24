@@ -23,9 +23,9 @@ export default function FormSection() {
   const logos = generateLogos();
 
   /* ---------------- FIXED MARQUEE SPLIT ---------------- */
-  const row1 = logos.slice(0, 12);   // 1–12
-  const row2 = logos.slice(12, 23);  // 13–23
-  const row3 = logos.slice(23);      // 24–46
+  const row1 = logos.slice(0, 12); // 1–12
+  const row2 = logos.slice(12, 23); // 13–23
+  const row3 = logos.slice(23); // 24–46
 
   const pageContent = {
     "/": {
@@ -50,11 +50,9 @@ export default function FormSection() {
       className="relative w-full bg-gradient-to-r from-[#0f3d3e] via-[#1f6d71] to-[#2ea3a1] overflow-hidden md:scroll-mt-32"
     >
       {/* ================= XL AND ABOVE ================= */}
-      <div className="hidden xl:grid grid-cols-[78%_22%] min-h-[600px]">
-
+      <div className="hidden xl:grid grid-cols-[72%_28%] min-h-[650px]">
         {/* ================= LEFT ================= */}
         <div className="relative overflow-hidden">
-
           {/* TEXT */}
           <div className="relative z-10 pt-12 pb-6 px-20 text-center">
             <h2 className="text-3xl font-extrabold text-white mb-4">
@@ -67,7 +65,6 @@ export default function FormSection() {
 
           {/* MARQUEES */}
           <div className="relative z-10 space-y-10 py-6">
-
             {/* ROW 1 → Right to Left */}
             <div className="overflow-hidden">
               <div className="marquee marquee-left gap-8">
@@ -94,21 +91,20 @@ export default function FormSection() {
                 ))}
               </div>
             </div>
-
           </div>
         </div>
 
         {/* ================= RIGHT : FORM ================= */}
         <div className="relative z-20 flex items-center justify-end pr-12">
-          <div className="w-[420px]">
-            <div className="bg-[#ff885b]/95 backdrop-blur-sm text-white rounded-xl shadow-2xl p-5">
-              <h2 className="text-xl text-center font-bold mb-4">
+          <div className="w-[480px]">
+            <div className="bg-[#ff885b]/95 backdrop-blur-sm text-white rounded-2xl shadow-2xl p-7">
+              <h2 className="text-2xl text-center font-bold mb-5">
                 Admission Form
               </h2>
 
               <ApplyForm variant="card" />
 
-              <div className="text-center mt-4">
+              <div className="text-center mt-5">
                 <p className="font-semibold flex justify-center gap-2 text-sm">
                   Or Give us a call <Phone size={14} /> +91 9657856103
                 </p>
@@ -116,7 +112,6 @@ export default function FormSection() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

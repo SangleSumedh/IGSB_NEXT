@@ -22,6 +22,7 @@ const FixedActionBar = () => {
           <div className="relative p-[1px] transition-all duration-500 rounded-md">
             <button
               title="Menu"
+              aria-label="Go to Social Media page"
               className="relative flex items-center justify-center bg-secondary text-white p-3 rounded-md shadow-lg hover:brightness-110 transition-all duration-300"
             >
               <LayoutGrid size={18} />
@@ -40,6 +41,7 @@ const FixedActionBar = () => {
               <Link
                 href="https://www.facebook.com/igsbpune"
                 target="_blank"
+                aria-label="Open Facebook Page"
                 className="bg-white text-black p-2 rounded-md shadow hover:scale-105 transition"
               >
                 <FaFacebookF size={16} />
@@ -50,6 +52,7 @@ const FixedActionBar = () => {
               <Link
                 href="https://www.linkedin.com/company/indira-global-school-of-business/"
                 target="_blank"
+                aria-label="Open Linkedin"
                 className="bg-white text-black p-2 rounded-md shadow hover:scale-105 transition"
               >
                 <FaLinkedinIn size={16} />
@@ -60,6 +63,7 @@ const FixedActionBar = () => {
               <Link
                 href="mailto:mba.admissions@indiragsb.edu.in"
                 target="_blank"
+                aria-label="Open Mail"
                 className="bg-white text-black p-2 rounded-md shadow hover:scale-105 transition"
               >
                 <Mail size={16} />
@@ -70,6 +74,7 @@ const FixedActionBar = () => {
               <Link
                 href="https://www.instagram.com/indira.igsb/"
                 target="_blank"
+                aria-label="Open Instagram"
                 className="bg-white text-black p-2 rounded-md shadow hover:scale-105 transition"
               >
                 <FaInstagram size={16} />
@@ -86,6 +91,7 @@ const FixedActionBar = () => {
           <div className="relative p-[2px] transition-all duration-500 rounded-md">
             <button
               title="Social Media"
+              aria-label="Go to post"
               onClick={() => setIsOpenMobile(!isOpenMobile)}
               className="relative flex items-center justify-center bg-secondary text-white p-2 shadow-lg hover:brightness-110 transition-all duration-300 rounded-full"
             >
@@ -109,6 +115,7 @@ const FixedActionBar = () => {
               <Link
                 href="https://www.facebook.com/igsbpune"
                 target="_blank"
+                aria-label="Open Facebook"
                 className="bg-white text-black p-2 shadow hover:scale-105 transition"
               >
                 <FaFacebookF size={16} />
@@ -119,6 +126,7 @@ const FixedActionBar = () => {
               <Link
                 href="https://www.linkedin.com/company/indira-global-school-of-business/"
                 target="_blank"
+                aria-label="Open Linkedin"
                 className="bg-white text-black p-2 shadow hover:scale-105 transition"
               >
                 <FaLinkedinIn size={16} />
@@ -129,6 +137,7 @@ const FixedActionBar = () => {
               <Link
                 href="mailto:mba.admissions@indiragsb.edu.in"
                 target="_blank"
+                aria-label="Open Mail"
                 className="bg-white text-black p-2 shadow hover:scale-105 transition"
               >
                 <Mail size={16} />
@@ -139,6 +148,7 @@ const FixedActionBar = () => {
               <Link
                 href="https://www.instagram.com/indira.igsb/"
                 target="_blank"
+                aria-label="Open Instagram"
                 className="bg-white text-black p-2 shadow hover:scale-105 transition"
               >
                 <FaInstagram size={16} />

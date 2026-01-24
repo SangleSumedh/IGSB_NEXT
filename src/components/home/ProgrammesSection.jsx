@@ -238,6 +238,7 @@ export default function ProgrammesSection() {
 
                 <button
                   onClick={() => router.push("/programs/mba")}
+                  aria-label="Go to Programs page"
                   className="group flex items-center gap-2 bg-[#10404A] text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300"
                 >
                   Read More
@@ -272,6 +273,7 @@ export default function ProgrammesSection() {
 
                 <button
                   onClick={() => handleManualSelect(index)}
+                  aria-label={`Go to ${spec} page`}
                   className={`
                     shrink-0 min-w-12 min-h-12
                     z-10 w-12 h-12 rounded-full 
@@ -314,6 +316,7 @@ export default function ProgrammesSection() {
 
                       <button
                         onClick={() => router.push("/programs/mba")}
+                        aria-label="Go to Programs page"
                         className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange-600 hover:text-orange-700"
                       >
                         Read More

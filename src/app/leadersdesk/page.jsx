@@ -6,12 +6,12 @@ const trustees = [
   {
     name: "Smt. Sarita Shankar Wakalkar",
     role: "President",
-    image: "/banners/sarita-shankar.jpeg",
+    image: "/banners/sarita-shankar.webp",
   },
   {
     name: "Dr. Tarita Shankar",
     role: "Chief Managing Trustee and Founder Secretary",
-    image: "/banners/dr-tarita-shankar-chairperson.png",
+    image: "/banners/dr-tarita-shankar-chairperson.webp",
   },
   {
     name: "Mr. Shardul Nitin Gangal",
@@ -21,22 +21,22 @@ const trustees = [
   {
     name: "Mr. Sahil Tarita Shankar",
     role: "Joint Secretary",
-    image: "/banners/Sahil-Mehendale.jpg",
+    image: "/banners/Sahil-Mehendale.webp",
   },
   {
     name: "Mr. Pilaji Sursingh Jadhavrao",
     role: "Treasurer",
-    image: "/banners/pilaji-sursingh-jadhavrao.jpg",
+    image: "/banners/pilaji-sursingh-jadhavrao.webp",
   },
   {
     name: "Mr. Vasant Maruti Maske",
     role: "Trustee Member",
-    image: "/banners/VASANT-MARUTI-MASKE.png",
+    image: "/banners/VASANT-MARUTI-MASKE.webp",
   },
   {
     name: "Mr. Shaan Tarita Shankar",
     role: "Trustee Member",
-    image: "/banners/SHAAN-ADITYA-MEHENDALE.png",
+    image: "/banners/SHAAN-ADITYA-MEHENDALE.webp",
   },
 ];
 
@@ -44,7 +44,7 @@ const leaders = [
   {
     name: "DR. TARITA SHANKAR",
     title: "Chairperson & Chief Mentor-IGI",
-    image: "/Home/TS.jpg",
+    image: "/Home/TS.webp",
     message:
       "Dear Students, For over three decades, our institutions have stood as catalysts of transformation, bridging rigorous academics with real-world relevance. We understand that the leaders of tomorrow need more than knowledge; they need vision, adaptability, and a heart for meaningful change. At IGSB, we cultivate an ecosystem where innovation thrives and ethics lead. Through industry-aligned curricula, immersive learning experiences, and a faculty dedicated to mentorship, we empower each student to become not just a skilled professional, but a compassionate and conscious contributor to society. Our focus extends beyond academic brilliance; we nurture resilient, empathetic, and globally minded individuals who value integrity, sustainability, and inclusive progress. In a rapidly evolving world, we remain committed to integrating cutting-edge technology and outcome-driven pedagogy, ensuring our learners are always a step ahead. Here, you will discover more than an education; you will find a launchpad for your aspirations, a space to grow, lead, and inspire. Together, let's build a future where excellence is a habit, learning is lifelong, and success is measured by the impact we create. The journey ahead is yours to shape. We are here to guide, support, and foster your spirit.  ",
     reverse: false,
@@ -52,7 +52,7 @@ const leaders = [
   {
     name: "Dr.Virendra Tatake",
     title: "Director",
-    image: "/Home/TakdakeSir.jpg",
+    image: "/Home/TakdakeSir.webp",
     message:
       "We aim to nurture a culture of curiosity, research, and continuous learning. By encouraging critical thinking and ethical responsibility, we prepare students not only for successful careers but also for meaningful contributions to society.",
     reverse: true,
@@ -236,7 +236,7 @@ const nonTeachingStaff = [
   {
     name: "Mr. Rohan Shinde",
     role: "IT Lab Assistant",
-    image: "/Faculty/Rohan-Shinde.jpg",
+    image: "/Faculty/Rohan-Shinde.webp",
     type: "non-teaching",
   },
   {

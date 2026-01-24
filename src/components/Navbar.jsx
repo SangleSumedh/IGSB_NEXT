@@ -259,15 +259,15 @@ const Navbar = () => {
         className="w-full h-[12vh] flex justify-between bg-white text-black shadow-sm font-sans fixed top-0 left-0 right-0 z-50"
       >
         {/* Left: Logo */}
-   {/* Left: Logo */}
-<div className="w-[60%] md:w-[29%] lg:w-[25%] xl:w-[30%] h-full flex items-center justify-start pl-2 md:pl-3">
-  <Link href="/" className="flex items-center h-full">
-    <Image
-      src="/Logo.png"
-      alt="Logo"
-      height={340}
-      width={340}
-      className="
+        {/* Left: Logo */}
+        <div className="w-[60%] md:w-[29%] lg:w-[25%] xl:w-[30%] h-full flex items-center justify-start pl-2 md:pl-3">
+          <Link href="/" className="flex items-center h-full">
+            <Image
+              src="/Home/Logo.webp"
+              alt="Logo"
+              height={100}
+              width={100}
+              className="
         h-[92%] md:h-[78%]
         w-auto 
         cursor-pointer 
@@ -275,13 +275,12 @@ const Navbar = () => {
         transition-transform 
         duration-300
       "
-      priority
-      fetchPriority="high"
-      unoptimized={true}
-    />
-  </Link>
-</div>
-
+              priority
+              fetchPriority="high"
+              unoptimized={true}
+            />
+          </Link>
+        </div>
 
         {/* Right Section - Desktop */}
         <div className="hidden md:flex w-[70%] h-full flex-col">
@@ -289,7 +288,7 @@ const Navbar = () => {
           <div className="flex justify-end w-full h-[45%] text-[0.75rem] lg:text-sm">
             <div className="flex gap-2 lg:gap-4">
               <div className="flex items-center gap-2 md:gap-2 lg:gap-4 font-semibold">
-               {/* <Link
+                {/* <Link
                   href="/FRA"
                   className="relative inline-block group hover:text-primary transition-colors duration-200"
                 >
@@ -355,8 +354,7 @@ const Navbar = () => {
                   Blogs
                   <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
                 </Link>
-                </div>
- 
+              </div>
 
               {/* Enquire Now Button */}
               <div className="flex justify-center items-center">
@@ -684,17 +682,14 @@ const Navbar = () => {
         </>
       )}
 
- 
-
       {/* ===== APPLY NOW MODAL ===== */}
-    {isModalOpen && (
-  <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60] animate-in fade-in-0 duration-300">
-    <div ref={modalRef} className="max-w-4xl relative">
-      <ApplyForm variant="modal" onClose={() => setIsModalOpen(false)} />
-    </div>
-  </div>
-)}
-
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-[60] animate-in fade-in-0 duration-300">
+          <div ref={modalRef} className="max-w-4xl relative">
+            <ApplyForm variant="modal" onClose={() => setIsModalOpen(false)} />
+          </div>
+        </div>
+      )}
     </>
   );
 };

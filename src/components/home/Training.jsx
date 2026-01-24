@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 function Training() {
   return (
@@ -17,8 +18,10 @@ function Training() {
           </div>
 
           {/* FLOATING WHITE CARD */}
-          <div className="relative -mt-10 mx-4 sm:mx-6 lg:mx-6 xl:mx-6 mb-6 bg-white rounded-xl shadow-lg p-5 sm:p-6 lg:p-8 xl:p-8 space-y-6 flex flex-col h-full 
-                          transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-gray-50 hover:shadow-2xl">
+          <div
+            className="relative -mt-10 mx-4 sm:mx-6 lg:mx-6 xl:mx-6 mb-6 bg-white rounded-xl shadow-lg p-5 sm:p-6 lg:p-8 xl:p-8 space-y-6 flex flex-col h-full 
+                          transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-gray-50 hover:shadow-2xl"
+          >
             {/* TEXT + IMAGE */}
             <div className="flex flex-col sm:flex-row gap-6">
               {/* TEXT */}
@@ -37,9 +40,11 @@ function Training() {
 
               {/* IMAGE */}
               <div className="w-full sm:w-[30%] lg:w-[30%] xl:w-[35%] flex items-center justify-center relative">
-                <img
-                  src="/Home/ICEMCertificates.jpg"
+                <Image
+                  src="/Home/ICEMCertificates.webp"
                   alt="ICEM Certificates"
+                  width={300}
+                  height={200}
                   className="w-full h-auto max-h-40 object-contain rounded-lg transition-all duration-300 hover:scale-105"
                 />
               </div>
@@ -59,9 +64,11 @@ function Training() {
                              bg-[#10404A] border-2 border-white/80 transition-all duration-300 
                              hover:bg-[#10404A] hover:scale-105"
                 >
-                  <img
+                  <Image
                     src={item.logo}
+                    height={100}
                     alt={item.label}
+                    width={100}
                     className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 xl:w-14 xl:h-14 object-contain transition-all duration-300 hover:scale-110"
                   />
                   <span className="text-xs sm:text-sm lg:text-sm xl:text-sm font-medium text-white text-center leading-tight">
@@ -83,8 +90,10 @@ function Training() {
           </div>
 
           {/* FLOATING WHITE CARD */}
-          <div className="relative -mt-10 mx-4 sm:mx-6 lg:mx-6 xl:mx-6 mb-6 bg-white rounded-xl shadow-2xl p-4 sm:p-5 lg:p-6 xl:p-6 space-y-6 flex flex-col h-full z-20
-                          transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-gray-50 hover:shadow-3xl">
+          <div
+            className="relative -mt-10 mx-4 sm:mx-6 lg:mx-6 xl:mx-6 mb-6 bg-white rounded-xl shadow-2xl p-4 sm:p-5 lg:p-6 xl:p-6 space-y-6 flex flex-col h-full z-20
+                          transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-gray-50 hover:shadow-3xl"
+          >
             {/* TEXT + IMAGE */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-3 lg:gap-3 xl:gap-3">
               {/* TEXT */}
@@ -103,9 +112,11 @@ function Training() {
 
               {/* IMAGE */}
               <div className="w-full sm:w-[30%] lg:w-[30%] xl:w-[35%] flex items-center justify-center relative">
-                <img
-                  src="/Home/ICEMCertificates.jpg"
+                <Image
+                  src="/Home/ICEMCertificates.webp"
                   alt="ICEM Certificates"
+                  width={300}
+                  height={200}
                   className="w-full h-auto max-h-40 object-contain rounded-lg transition-all duration-300 hover:scale-105"
                 />
               </div>
@@ -114,12 +125,21 @@ function Training() {
             {/* CLDP FEATURES */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-2 sm:gap-2 lg:gap-3 xl:gap-3 mt-auto">
               {[
-                { label: "Project Management", logo: "/Home/ProjectManagement.jpg" },
-                { label: "Product Management", logo: "/Home/ProductManagement.jpg" },
-                { label: "Excel", logo: "/Home/Excel.jpg" },
+                {
+                  label: "Project Management",
+                  logo: "/Home/ProjectManagement.webp",
+                },
+                {
+                  label: "Product Management",
+                  logo: "/Home/ProductManagement.webp",
+                },
+                { label: "Excel", logo: "/Home/Excel.webp" },
                 { label: "SAP", logo: "/Home/SAP.png" },
-                { label: "Business Analytics", logo: "/Home/businessA.jpg" },
-                { label: "Power BI |SQL | Tableau", logo: "/Home/SQLManagement1.jpg" },
+                { label: "Business Analytics", logo: "/Home/businessA.webp" },
+                {
+                  label: "Power BI |SQL | Tableau",
+                  logo: "/Home/SQLManagement1.webp",
+                },
               ].map((item, index) => (
                 <div
                   key={index}
@@ -128,8 +148,10 @@ function Training() {
                              hover:scale-105 hover:bg-orange-50 min-h-[80px]"
                 >
                   <div className="w-10 h-10 sm:w-10 sm:h-10 lg:w-12 lg:h-12 xl:w-12 xl:h-12 mb-1 flex items-center justify-center">
-                    <img
+                    <Image
                       src={item.logo}
+                      height={100}
+                      width={100}
                       alt={item.label}
                       className={`
                         object-contain transition-all duration-300 hover:scale-110

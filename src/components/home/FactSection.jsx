@@ -1,24 +1,43 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 /* ===== Faculty Data ===== */
 const teachingStaff = [
-  { name: "Dr. Virendra Vasant Tatake", image: "/Faculty/Dr-Virendra-Tatake.jpg" },
-  { name: "Dr. Pallavi Shrirang Sajanapwar", image: "/Faculty/Dr_Pallavi_Sajanapawar.png" },
-  { name: "Dr. Aatish Dilip Zagade", image: "/Faculty/Dr-Aatish-Zagade.jpg" },
-  { name: "Dr. Anuradha Samarth Phadnis", image: "/Faculty/Dr_Anuraddha_Phadnis_1.jpg" },
-  { name: "Dr. Priyanka Rohan Darekar", image: "/Faculty/Dr_Priyanka_Darekar_New.png" },
-  { name: "Dr. Aniruddha Vilas Thuse", image: "/Faculty/Dr_Anirudha_Thus_New.png" },
-  { name: "Dr. Poonam Avinash Wani", image: "/Faculty/Dr_Poonam_Wani_New.png" },
-  { name: "Dr. Prashant Dubey", image: "/Faculty/Dr-Prashan-Dubey.jpg" },
-  { name: "Dr. Ashish Krishna Vyas", image: "/Faculty/Dr_Ashish-Vyas.png" },
-  { name: "Dr. Neha Chaudhry", image: "/Faculty/Neha-Chaudhry-New-img.png" },
+  {
+    name: "Dr. Virendra Vasant Tatake",
+    image: "/Faculty/Dr-Virendra-Tatake.webp",
+  },
+  {
+    name: "Dr. Pallavi Shrirang Sajanapwar",
+    image: "/Faculty/Dr_Pallavi_Sajanapawar.webp",
+  },
+  { name: "Dr. Aatish Dilip Zagade", image: "/Faculty/Dr-Aatish-Zagade.webp" },
+  {
+    name: "Dr. Anuradha Samarth Phadnis",
+    image: "/Faculty/Dr_Anuraddha_Phadnis_1.webp",
+  },
+  {
+    name: "Dr. Priyanka Rohan Darekar",
+    image: "/Faculty/Dr_Priyanka_Darekar_New.webp",
+  },
+  {
+    name: "Dr. Aniruddha Vilas Thuse",
+    image: "/Faculty/Dr_Anirudha_Thus_New.webp",
+  },
+  {
+    name: "Dr. Poonam Avinash Wani",
+    image: "/Faculty/Dr_Poonam_Wani_New.webp",
+  },
+  { name: "Dr. Prashant Dubey", image: "/Faculty/Dr-Prashan-Dubey.webp" },
+  { name: "Dr. Ashish Krishna Vyas", image: "/Faculty/Dr_Ashish-Vyas.webp" },
+  { name: "Dr. Neha Chaudhry", image: "/Faculty/Neha-Chaudhry-New-img.webp" },
 ];
 
 /* ===== Filter PhD Faculty ===== */
-const phdFaculty = teachingStaff.filter(f =>
-  f.name.toLowerCase().includes("dr.")
+const phdFaculty = teachingStaff.filter((f) =>
+  f.name.toLowerCase().includes("dr."),
 );
 
 export default function FacultyStatSection() {
@@ -31,7 +50,6 @@ export default function FacultyStatSection() {
     <section className="relative w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] py-8 overflow-hidden text-white">
       <div className="container mx-auto px-4 lg:px-16 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-
           {/* LEFT SIDE */}
           <div className="w-full lg:w-1/3 flex justify-center lg:justify-start">
             <div className="relative inline-block">
@@ -48,8 +66,8 @@ export default function FacultyStatSection() {
           <div className="w-full lg:w-2/3">
             <div className="bg-[#3aafa9] border border-white/10 rounded-2xl p-6 md:p-8 lg:p-10 shadow-2xl">
               <p className="text-base md:text-lg lg:text-xl leading-relaxed text-white font-semibold">
-                Most of IGSB's faculty members are Ph.D. holders, ensuring that every
-                learner is guided by scholars with deep subject expertise,
+                Most of IGSB's faculty members are Ph.D. holders, ensuring that
+                every learner is guided by scholars with deep subject expertise,
                 strong research credentials, and a thorough understanding of
                 advanced management concepts.
               </p>
@@ -70,9 +88,11 @@ export default function FacultyStatSection() {
                       }
                     >
                       {/* Avatar */}
-                      <img
+                      <Image
                         src={faculty.image}
                         alt={faculty.name}
+                        width={50}
+                        height={50}
                         className="
                           w-8 h-8 md:w-10 md:h-10
                           rounded-full object-cover
@@ -136,10 +156,8 @@ export default function FacultyStatSection() {
                   Academic Excellence
                 </span>
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
     </section>

@@ -17,6 +17,7 @@ import {
   FaClipboardCheck,
   FaCheckCircle,
 } from "react-icons/fa";
+import Image from "next/image";
 
 const DomainSteps = () => {
   const domains = [

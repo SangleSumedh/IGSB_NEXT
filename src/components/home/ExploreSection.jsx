@@ -63,7 +63,7 @@ const ExploreSection = () => {
               </span>
             </h2>
 
-            <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-justify">
+            <p className="text-gray-700 text-base sm:text-xl leading-relaxed text-justify">
               We develop globally competent, purpose-driven leaders equipped to
               excel in today’s fast-evolving business landscape. As a top
               <span className="font-semibold">
@@ -76,7 +76,7 @@ const ExploreSection = () => {
               practices.
             </p>
 
-            <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-justify">
+            <p className="text-gray-700 text-base sm:text-xl leading-relaxed text-justify">
               <span className="font-semibold">IGSB</span> is located along the
               Mumbai–Pune Expressway, where our campus blends state-of-the-art
               infrastructure with a serene, natural setting, offering a fresh
@@ -84,7 +84,7 @@ const ExploreSection = () => {
               holistic development.
             </p>
 
-            <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-justify">
+            <p className="text-gray-700 text-base sm:text-xl leading-relaxed text-justify">
               Through industry-integrated MBA programme and rigorous
               experiential learning pedagogy, IGSB empowers future leaders with
               strategic acumen, adaptive mindset, and ethical grounding. We
@@ -134,8 +134,10 @@ const ExploreSection = () => {
                 <h3 className="text-lg font-semibold tracking-widest text-[#fc7116]">
                   VISION
                 </h3>
-                <p className="text-lg font-bold italic">
-                  Shaping Industry-Ready Leaders for a Real Business World.
+                <p className="text-md font-bold  text-left">
+                  Indira Global School of Business will be a preferred center of academic excellence for developing dynamic management practitioners who will be globally competent and socially responsible business leaders with a purpose driven life.
+
+
                 </p>
               </div>
 
@@ -151,10 +153,10 @@ const ExploreSection = () => {
                 <h3 className="text-lg font-semibold tracking-widest text-[#fc7116]">
                   MISSION
                 </h3>
-                <p className="text-lg font-bold italic">
-                  To deliver outcome-driven MBA education through industry
-                  integration, skill mastery, and leadership development.
-                </p>
+               <p className="text-md font-bold  text-left">
+                  1. To mentor budding managers, global business leaders and encourage entrepreneurs by promoting a learning environment to create and lead sustainable business. <br />
+                  2. To enable stakeholders to cultivate strategic alliance that promote cross-cultural, social sensitivity, academic excellence, research and consultancy aimed at attaining comprehensive development.
+                </p>  
               </div>
 
             </div>

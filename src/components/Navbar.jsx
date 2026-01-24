@@ -57,7 +57,7 @@ const dropdownContent = {
       // },
       {
         label: "Facilities",
-        link: "/Campus/Nature",
+        link: "/Campus/Facilities",
       },
       {
         label: "Events",
@@ -67,15 +67,15 @@ const dropdownContent = {
   },
 
   programs: {
-    title: "Programs & Admission",
+    title: "Programme & Admission",
     sections: [
       {
         label: "MBA",
-        link: "/programs/mba",
+        link: "/programme/mba",
       },
       {
         label: "PhD",
-        link: "/programs/phd",
+        link: "/programme/phd",
       },
     ],
   },
@@ -635,7 +635,7 @@ const Navbar = () => {
                     onClick={() => toggleMobileDropdown("programs")}
                     className="w-full flex justify-between items-center py-3 text-left font-medium text-gray-900 text-sm hover:text-primary transition-all duration-200"
                   >
-                    <span>Programs & Admission</span>
+                    <span>Programme & Admission</span>
                     <span className="text-lg transition-transform duration-300">
                       {mobileDropdown === "programs" ? (
                         <FiChevronUp className="w-4 h-4" />

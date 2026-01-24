@@ -14,14 +14,15 @@ export default function StudentInductionPage() {
     <div className="bg-white text-gray-900">
       {/* DESKTOP VERSION with ScrollCrushWrapper */}
       <div className="hidden md:block">
-        <ScrollCrushWrapper Hero={<RoadmapSection />}>
+        {/* <ScrollCrushWrapper Hero={<RoadmapSection />}> */}
           <div className="bg-white relative z-10">
+            <RoadmapSection />
             <ArambhaSection />
             <MemoryLane />
             <Csuite />
             <ExplorePast />
           </div>
-        </ScrollCrushWrapper>
+        {/* </ScrollCrushWrapper> */}
       </div>
 
       {/* MOBILE VERSION - Simple stacked layout */}

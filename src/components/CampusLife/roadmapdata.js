@@ -213,4 +213,13 @@ export const roadmapData = [
       image: "/inductionimages/19th3.webp",
    companyLogo: "/inductionlogos/17.webp",
   },
+  {
+    topic: "Campus to Corporate",
+    name: "Mr. Prasad Narayan",
+    designation: "Vice President",
+    company: "Leapfrog",
+    date: "10th September 2025",
+    image: "/inductionimages/10th1new.webp",
+    companyLogo: "/inductionlogos/1.webp",
+  },
 ];

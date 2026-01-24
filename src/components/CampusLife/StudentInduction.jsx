@@ -24,74 +24,84 @@ export default function RoadmapSection() {
     return () => clearInterval(autoPlayRef.current);
   }, [slides.length]);
 
+  const QuoteBlock = () => (
+    <div className="w-full flex justify-center">
+      <div className="flex items-center gap-4 max-w-2xl">
+        {/* IMAGE */}
+        <div className="flex-shrink-0">
+          <img
+            src="/chanu/chanuhand2.png"
+            alt="Metamorphosis visual"
+            className="w-20 sm:w-24 md:w-28 h-auto object-contain drop-shadow-lg"
+          />
+        </div>
+
+        {/* QUOTE CONTENT */}
+        <div className="relative flex-1">
+          {/* Opening quote */}
+          <FaQuoteLeft className="absolute -left-4 -top-2 w-4 h-4 text-secondary" />
+
+          <p className="text-secondary text-base sm:text-lg md:text-xl font-medium italic leading-snug text-center px-4">
+            Where future leaders spread their wings of knowledge and ambition.
+          </p>
+
+          {/* Closing quote */}
+          <FaQuoteRight className="absolute -right-4 -bottom-2 w-4 h-4 text-secondary" />
+        </div>
+      </div>
+    </div>
+  );
+
   return (
-    <section className="bg-white w-full min-h-screen overflow-hidden">
-      <div className="max-w-full mx-auto px-4 sm:px-6 py-6">
-        {/* ================== 3 FLEX SECTIONS ================== */}
-        <div className="flex flex-col lg:flex-row gap-5  items-start">
-          {/* ================= TEXT SECTION ================= */}
-          <div className="flex-1 min-w-0 max-w-xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase mb-6 leading-tight">
-              <span className="bg-clip-text text-transparent bg-secondary">
+    <section className="bg-white w-full overflow-hidden">
+      <div className="max-w-full mx-auto px-6 py-12 xl:px-16 xl:py-8">
+        <div className="flex flex-col xl:flex-row gap-10 items-start">
+          {/* ================= LEFT SECTION ================= */}
+          <div className="w-full xl:w-[45%] flex flex-col items-center xl:items-start">
+            {/* HEADING */}
+            <div className="mb-6 text-center xl:text-left w-full">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-secondary leading-tight">
                 Metamorphosis
-              </span>
-            </h1>
+              </h1>
 
-            <p className="text-secondary mb-4 text-lg sm:text-xl italic font-bold">
-              Unfolding Wings of Knowledge
-            </p>
+              <div className="mt-2 mb-2 w-16 h-[3px] rounded-full bg-secondary mx-auto xl:mx-0" />
 
-            <div className="space-y-4">
-              <p className="text-gray-700 text-sm leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-snug">
+                Unfolding Wings of Knowledge
+              </p>
+            </div>
+
+            {/* TEXT */}
+            <div className="space-y-4 text-left">
+              <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                 The MBA Induction Programme 2025 at Chanakya Campus was a
                 structured academic initiative designed in alignment with AICTE
                 guidelines to ensure a smooth transition into postgraduate
                 management education.
               </p>
 
-              <p className="text-gray-700 text-sm leading-relaxed">
+              <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                 It introduced students to the academic, cultural, and
                 professional ecosystem of the institution through multiple
                 modules and campus familiarization.
               </p>
 
-              <p className="text-gray-700 text-sm leading-relaxed">
+              <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                 The induction programme reflects the institution’s commitment to
                 developing ethically grounded, industry-ready, and
                 professionally competent management graduates.
               </p>
             </div>
 
-            {/* QUOTE */}
-            <div className="mt-8 max-w-md mx-auto lg:mx-0">
-              <div className="flex items-center gap-3 mb-3">
-                <FaQuoteLeft className="w-4 h-4 text-secondary" />
-                <div className="h-px flex-grow bg-gradient-to-r from-secondary/50 to-transparent" />
-              </div>
-
-              <p className="text-secondary text-xl sm:text-2xl font-medium italic leading-tight text-center px-4">
-                Where future leaders spread their wings of knowledge and
-                ambition.
-              </p>
-
-              <div className="flex items-center gap-3 mt-3">
-                <div className="h-px flex-grow bg-gradient-to-l from-secondary/50 to-transparent" />
-                <FaQuoteRight className="w-4 h-4 text-secondary" />
-              </div>
+            {/* QUOTE + IMAGE (XL ONLY) */}
+            <div className="hidden xl:block mt-8 w-full">
+              <QuoteBlock />
             </div>
           </div>
 
-          {/* ================= IMAGE SECTION ================= */}
-          <div className="hidden md:flex flex-shrink-0 pt-65">
-            <img
-              src="/chanu/chanuhand2.png"
-              alt="Metamorphosis visual"
-              className="w-48 lg:w-60 h-auto object-contain drop-shadow-xl"
-            />
-          </div>
-
-          {/* ================= CAROUSEL SECTION ================= */}
-          <div className="flex-1 min-w-50 md:min-w-150 w-full">
+          {/* ================= RIGHT SECTION ================= */}
+          <div className="w-full xl:w-[55%] flex flex-col">
+            {/* CAROUSEL */}
             <div className="relative w-full overflow-hidden">
               <div
                 className="flex transition-transform duration-500 ease-out"
@@ -159,13 +169,18 @@ export default function RoadmapSection() {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`h-3 rounded-full transition-all duration-300 ${
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
                     index === currentSlide
                       ? "bg-secondary w-8"
-                      : "bg-gray-300 w-3"
+                      : "bg-gray-300 w-2.5"
                   }`}
                 />
               ))}
+            </div>
+
+            {/* QUOTE BELOW CAROUSEL (< XL ONLY) */}
+            <div className="xl:hidden mt-10 w-full">
+              <QuoteBlock />
             </div>
           </div>
         </div>

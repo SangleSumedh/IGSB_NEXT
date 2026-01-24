@@ -51,10 +51,10 @@ const leaders = [
   },
   {
     name: "Dr.Virendra Tatake",
-    title: "Director",
+    title: "Director, Indira Global Business School, Pune.",
     image: "/Home/TakdakeSir.webp",
     message:
-      "We aim to nurture a culture of curiosity, research, and continuous learning. By encouraging critical thinking and ethical responsibility, we prepare students not only for successful careers but also for meaningful contributions to society.",
+      "Indira Global Business School is proud to be the part of The Shree Chanakya Education Society (SCES) which is celebrating its Silver Jubilee Year of its establishment.During these 25 years, Indira Group of Institutes (IGI) has grown steadily and today it has 14 Institutes, having more than 8000 students from all over India pursuing multi-disciplinary, graduate & post-graduate programmes. IGI has always been committed to impart effective & qualitative education throughout this journey of 25 years.The completion of 25 years is indeed a major milestone in the life of an educational institution. IGI since its foundation in 1994, has earned appreciation for providing value-based education and for imparting the ideals of academic excellence, sense of discipline and high moral and ethical values, leading to the development of integrated personalities.The motto of The SCES is reflected in its faith that education is a process of awakening individual potential to creative knowledge inculcating in them, the desire to excel in various spheres. It is extremely noteworthy that IGI considers it to be its duty to nurture its students as sensitive people with strong values, who will leverage their individual achievements to strengthen the fabric of the community, the nation and the planet.I , on behalf of Indira Global Business School convey our good wishes and thanks to everyone associated with us during this journey and wish all success and a great future ahead.",
     reverse: true,
   },
 ];

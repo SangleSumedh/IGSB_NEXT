@@ -1,42 +1,11 @@
-"use client";
+export const metadata = {
+  title: "Placement | IGSB NEXT",
+  description:
+    "Discover IGSB's comprehensive placement ecosystem with 21 LPA highest package, 8.16 LPA average, and 650+ recruiting companies. Industry-led career development for great outcomes.",
+};
 
-import ScrollCrushWrapper from "@/components/ScrollCrushWrapper";
-import PlacementHero from "@/components/PlacementComponents/PlacementHero";
+import PlacementClient from "./PlacementClient";
 
-import CASsection from "@/components/PlacementComponents/CASection";
-import Impact from "@/components/PlacementComponents/Impact";
-import Career from "@/components/PlacementComponents/Career";
-import Upskilling from "@/components/PlacementComponents/Upskilling";
-import RecruitersSection from "@/components/home/RecruiterSection";
-import PlacementRecords from "@/components/PlacementComponents/PlacementRecords";
-import PlacementOrientation from "@/components/PlacementComponents/PlacementOrientation";
-import PlacementIndustryVisit from "@/components/PlacementComponents/PlacementIndustryVisit";
-import PlacementCell from "@/components/PlacementComponents/PlacementCell";
-import RecruiterPlacement from "@/components/PlacementComponents/RecruiterPlacement";
-import DomainSteps from "@/components/PlacementComponents/DomainSteps";
-import PuzzleSkills from "@/components/PlacementComponents/PuzzleSection";
-import Testimonials from "@/components/home/Testimonials";
-
-export default function Placement() {
-  return (
-    <div className="bg-white text-gray-900">
-      {/* ⬅️ FIX: Hero must be passed as prop */}
-      <ScrollCrushWrapper Hero={<PlacementHero />}>
-        {/* Sections with scroll fade animation */}
-        <Impact />
-        {/* <RecruitersSection /> */}
-        <RecruiterPlacement />
-        <Career />
-        <CASsection />
-        {/* <Upskilling /> */}
-        <DomainSteps />
-        <PuzzleSkills />
-        <PlacementRecords />
-        {/* <PlacementOrientation /> */}
-        {/* <PlacementIndustryVisit /> */}
-        {/* <PlacementCell /> */}
-        <Testimonials />
-      </ScrollCrushWrapper>
-    </div>
-  );
+export default function PlacementPage() {
+  return <PlacementClient />;
 }

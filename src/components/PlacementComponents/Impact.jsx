@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,10 +78,14 @@ export default function Impact() {
     <section ref={sectionRef} className="relative w-full min-h-[400px] md:min-h-[800px]">
       {/* ➤ BACKGROUND IMAGE */}
       <div className="absolute inset-0 z-0 h-[400px] md:h-full">
-        <img
+        <Image
           src="/placement/impact3.webp"
           alt="Background"
+          height={400}
+          width={1920}
           className="w-full h-full object-cover pointer-none::select-none "
+          unoptimized
+          priority
         />
       </div>
 
@@ -106,7 +111,7 @@ export default function Impact() {
                   1. Padding: 'p-2' (mobile) -> 'md:px-6 md:py-6 lg:py-3' (desktop)
                   2. Height: 'h-14' (mobile compact) -> 'md:h-20' (desktop)
               */}
-              <div className="bg-[#3aafa9] p-2 md:px-6 md:py-6 lg:py-3 lg:px-2 text-center h-14 md:h-20 flex items-center justify-center shrink-0">
+              <div className="bg-[#3aafa9] p-2 md:px-6 md:py-6 lg:py-3 lg:px-2 text-center h-10 md:h-20 flex items-center justify-center shrink-0">
                 {/* Font size: text-lg (mobile) -> md:text-3xl (desktop) */}
                 <h3 className="text-lg md:text-3xl xl:text-5xl font-extrabold text-white">
                   {counts[index].toFixed(stat.decimal)}
@@ -114,9 +119,7 @@ export default function Impact() {
                 </h3>
               </div>
 
-              {/* CHANGES MADE HERE:
-                  1. Padding: 'py-2 px-1' (mobile) -> 'md:py-3 md:px-2' (desktop)
-              */}
+            
               <div className="flex-grow flex items-center justify-center bg-secondary py-2 px-1 md:py-3 md:px-2 text-center border-t-2 border-secondary group-hover:bg-[#3aafa9] transition-colors duration-300">
                 {/* Font size: text-xs (mobile) -> text-md (desktop) */}
                 <p className="text-white font-bold uppercase tracking-wider p-1 md:p-3 text-xs md:text-lg leading-tight">

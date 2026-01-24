@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import stateCityData from "../../../public/States/Indian_Cities_In_States_JSON.json";
 
-// Country Codes
 const countryCodes = [
   { code: "+91", country: "India" },
   { code: "+1", country: "USA" },
@@ -21,19 +20,16 @@ export default function ApplyForm({ variant = "card", onClose }) {
   const [countryCode, setCountryCode] = useState("+91");
   const [loading, setLoading] = useState(false);
 
-  // Load cities when State changes
   useEffect(() => {
     setCities(selectedState ? stateCityData[selectedState] : []);
   }, [selectedState]);
 
-  // Responsive input classes
   const inputClass =
     "w-full border border-gray-300 bg-white rounded-md px-3 py-2 text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary text-sm sm:text-xxs";
 
   const selectClass =
     "w-full border border-gray-300 bg-white rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-secondary appearance-none cursor-pointer text-sm sm:text-base";
 
-  // AJAX Submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -43,14 +39,17 @@ export default function ApplyForm({ variant = "card", onClose }) {
     formData.append("_captcha", "false");
 
     try {
-      await fetch("https://formsubmit.co/ajax/gauravipatilgip@gmail.com", {
-        method: "POST",
-        body: formData,
-      });
+      await fetch(
+        "https://formsubmit.co/ajax/mba.admissions@indiraigsb.edu.in",
+        {
+          method: "POST",
+          body: formData,
+        },
+      );
 
       toast.success("Form submitted successfully!");
       e.target.reset();
-      setSelectedState(""); // reset selects
+      setSelectedState("");
     } catch {
       toast.error("Failed to submit!");
     }
@@ -67,19 +66,17 @@ export default function ApplyForm({ variant = "card", onClose }) {
           : "bg-transparent p-0"
       }`}
     >
-      {/* ❌ Close Button — ONLY for modal */}
       {isModal && (
         <button
           type="button"
           onClick={onClose}
-          aria-label="Close"
+          aria-label="Close enquiry form"
           className="absolute top-2 right-2 w-9 h-9 rounded-full bg-white shadow border border-gray-300 flex items-center justify-center text-gray-600 hover:text-black hover:shadow-md transition"
         >
           <span className="text-xl leading-none font-semibold">×</span>
         </button>
       )}
 
-      {/* Heading ONLY for modal */}
       {isModal && (
         <h3 className="text-lg sm:text-xl font-semibold text-secondary mb-4 sm:mb-6 text-center">
           Enquire Now
@@ -88,51 +85,69 @@ export default function ApplyForm({ variant = "card", onClose }) {
 
       <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
         {/* NAME */}
+        <label htmlFor="name" className="sr-only">
+          Full Name
+        </label>
         <input
+          id="name"
           type="text"
           name="name"
           required
-          placeholder="Enter your Name "
+          placeholder="Enter your Name"
           className={inputClass}
         />
 
         {/* EMAIL */}
+        <label htmlFor="email" className="sr-only">
+          Email Address
+        </label>
         <input
+          id="email"
           type="email"
           name="email"
           required
-          placeholder="Enter your Email "
+          placeholder="Enter your Email"
           className={inputClass}
         />
 
-        {/* PHONE NUMBER - Responsive layout */}
+        {/* PHONE */}
         <div className="flex flex-col sm:flex-row gap-3 w-full">
-          <div className="relative w-full sm:w-32">
-            <select
-              name="countryCode"
-              value={countryCode}
-              onChange={(e) => setCountryCode(e.target.value)}
-              className={`${selectClass} w-full`}
-            >
-              {countryCodes.map((c) => (
-                <option key={c.code} value={c.code}>
-                  {c.code}
-                </option>
-              ))}
-            </select>
-          </div>
+          <label htmlFor="countryCode" className="sr-only">
+            Country Code
+          </label>
+          <select
+            id="countryCode"
+            name="countryCode"
+            value={countryCode}
+            onChange={(e) => setCountryCode(e.target.value)}
+            className={`${selectClass} w-full sm:w-32`}
+          >
+            {countryCodes.map((c) => (
+              <option key={c.code} value={c.code}>
+                {c.code}
+              </option>
+            ))}
+          </select>
 
+          <label htmlFor="mobile" className="sr-only">
+            Mobile Number
+          </label>
           <input
+            id="mobile"
             type="tel"
             name="mobile"
             required
-            placeholder="Enter Mobile Number "
-            className={`${inputClass} w-full text-xs`}
+            placeholder="Enter Mobile Number"
+            className={`${inputClass} w-full`}
           />
         </div>
 
         {/* STATE */}
+        <label htmlFor="state" className="sr-only">
+          State
+        </label>
         <select
+          id="state"
           name="state"
           required
           value={selectedState}
@@ -146,7 +161,11 @@ export default function ApplyForm({ variant = "card", onClose }) {
         </select>
 
         {/* CITY */}
+        <label htmlFor="city" className="sr-only">
+          City
+        </label>
         <select
+          id="city"
           name="city"
           required
           disabled={!selectedState}
@@ -155,22 +174,27 @@ export default function ApplyForm({ variant = "card", onClose }) {
           <option value="">
             {selectedState ? "Select City *" : "Select State First"}
           </option>
-
           {cities.map((city) => (
             <option key={city}>{city}</option>
           ))}
         </select>
 
         {/* COURSE */}
-        <select name="course" required className={selectClass}>
+        <label htmlFor="course" className="sr-only">
+          Course
+        </label>
+        <select id="course" name="course" required className={selectClass}>
           <option value="">Select Course *</option>
           <option value="MBA">MBA</option>
         </select>
 
         {/* CHECKBOX */}
         <div className="flex items-start gap-2">
-          <input type="checkbox" required className="mt-1" />
-          <label className="text-xs sm:text-sm text-gray-700 leading-tight">
+          <input id="agree" type="checkbox" required className="mt-1" />
+          <label
+            htmlFor="agree"
+            className="text-xs sm:text-sm text-gray-700 leading-tight"
+          >
             I agree to receive information regarding my registration
           </label>
         </div>
@@ -179,6 +203,7 @@ export default function ApplyForm({ variant = "card", onClose }) {
         <button
           type="submit"
           disabled={loading}
+          aria-label="Submit enquiry form"
           className="w-full bg-[#10404A] text-white font-semibold py-2 px-4 rounded-md text-sm sm:text-base"
         >
           {loading ? "Submitting..." : "Submit"}

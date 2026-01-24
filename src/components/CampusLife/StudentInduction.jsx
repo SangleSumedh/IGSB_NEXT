@@ -7,7 +7,6 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 export default function RoadmapSection() {
   const CARDS_PER_SLIDE = 3;
 
-  // split roadmap data into slides of 3
   const slides = [];
   for (let i = 0; i < roadmapData.length; i += CARDS_PER_SLIDE) {
     slides.push(roadmapData.slice(i, i + CARDS_PER_SLIDE));
@@ -16,101 +15,84 @@ export default function RoadmapSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const autoPlayRef = useRef(null);
 
-  const prev = () => {
-    setCurrentSlide((s) => (s === 0 ? slides.length - 1 : s - 1));
-  };
-
   const next = () => {
     setCurrentSlide((s) => (s === slides.length - 1 ? 0 : s + 1));
   };
 
-  // Auto-play functionality
   useEffect(() => {
-    autoPlayRef.current = setInterval(() => {
-      setCurrentSlide((s) => (s === slides.length - 1 ? 0 : s + 1));
-    }, 3000); // Change slide every 3 seconds
-
-    return () => {
-      if (autoPlayRef.current) {
-        clearInterval(autoPlayRef.current);
-      }
-    };
+    autoPlayRef.current = setInterval(next, 3000);
+    return () => clearInterval(autoPlayRef.current);
   }, [slides.length]);
 
   return (
-    <div className="text-white">
-      {/* ================= METAMORPHOSIS ================= */}
-      <section className="bg-white min-h-screen lg:min-h-screen">
-        <div className="max-w-full mx-auto min-h-screen flex flex-col lg:flex-row px-4 lg:px-6 py-5">
-          {/* LEFT */}
-          <div className=" lg:w-2/4 flex flex-col mb-2 mt-10 lg:mt-0">
-            <div className="flex flex-col lg:flex-row w-full gap-6 items-start">
-              {/* TEXT */}
-              <div className="flex-1 max-w-lg text-justify mx-auto lg:mx-0">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase mb-6 leading-tight">
-                  <span className="bg-clip-text text-transparent bg-secondary">
-                    Metamorphosis
-                  </span>
-                </h1>
+    <section className="bg-white w-full min-h-screen overflow-hidden">
+      <div className="max-w-full mx-auto px-4 sm:px-6 py-6">
+        {/* ================== 3 FLEX SECTIONS ================== */}
+        <div className="flex flex-col lg:flex-row gap-5  items-start">
+          {/* ================= TEXT SECTION ================= */}
+          <div className="flex-1 min-w-0 max-w-xl">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase mb-6 leading-tight">
+              <span className="bg-clip-text text-transparent bg-secondary">
+                Metamorphosis
+              </span>
+            </h1>
 
-                <p className="text-secondary mb-4 text-lg sm:text-xl italic font-bold">
-                  Unfolding Wings of Knowledge
-                </p>
+            <p className="text-secondary mb-4 text-lg sm:text-xl italic font-bold">
+              Unfolding Wings of Knowledge
+            </p>
 
-                <div className="mb-8">
-                  <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                    The MBA Induction Programme 2025 at Chanakya Campus was a
-                    structured academic initiative designed in alignment with
-                    AICTE guidelines to ensure a smooth transition into
-                    postgraduate management education.
-                  </p>
+            <div className="space-y-4">
+              <p className="text-gray-700 text-sm leading-relaxed">
+                The MBA Induction Programme 2025 at Chanakya Campus was a
+                structured academic initiative designed in alignment with AICTE
+                guidelines to ensure a smooth transition into postgraduate
+                management education.
+              </p>
 
-                  <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                    It introduced students to the academic, cultural, and
-                    professional ecosystem of the institution through multiple
-                    modules and campus familiarization.
-                  </p>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                It introduced students to the academic, cultural, and
+                professional ecosystem of the institution through multiple
+                modules and campus familiarization.
+              </p>
 
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    The induction programme reflects the institution’s
-                    commitment to developing ethically grounded, industry-ready,
-                    and professionally competent management graduates.
-                  </p>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                The induction programme reflects the institution’s commitment to
+                developing ethically grounded, industry-ready, and
+                professionally competent management graduates.
+              </p>
+            </div>
 
-                  {/* QUOTE */}
-                  <div className="mb-10 max-w-md mx-auto mt-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <FaQuoteLeft className="w-4 h-4 text-secondary" />
-                      <div className="h-px flex-grow bg-gradient-to-r from-secondary/50 to-transparent" />
-                    </div>
-
-                    <p className="text-secondary text-xl sm:text-2xl font-medium italic leading-tight text-center px-4">
-                      Where future leaders spread their wings of knowledge and
-                      ambition.
-                    </p>
-
-                    <div className="flex items-center gap-3 mt-3">
-                      <div className="h-px flex-grow bg-gradient-to-l from-secondary/50 to-transparent" />
-                      <FaQuoteRight className="w-4 h-4 text-secondary" />
-                    </div>
-                  </div>
-                </div>
+            {/* QUOTE */}
+            <div className="mt-8 max-w-md mx-auto lg:mx-0">
+              <div className="flex items-center gap-3 mb-3">
+                <FaQuoteLeft className="w-4 h-4 text-secondary" />
+                <div className="h-px flex-grow bg-gradient-to-r from-secondary/50 to-transparent" />
               </div>
 
-              {/* IMAGE */}
-              <div className="hidden md:flex flex-shrink-0 basis-[240px] pt-65">
-                <img
-                  src="/chanu/chanuhand2.png"
-                  alt="Metamorphosis visual"
-                  className="w-40 sm:w-48 lg:w-full h-auto object-contain drop-shadow-xl"
-                />
+              <p className="text-secondary text-xl sm:text-2xl font-medium italic leading-tight text-center px-4">
+                Where future leaders spread their wings of knowledge and
+                ambition.
+              </p>
+
+              <div className="flex items-center gap-3 mt-3">
+                <div className="h-px flex-grow bg-gradient-to-l from-secondary/50 to-transparent" />
+                <FaQuoteRight className="w-4 h-4 text-secondary" />
               </div>
             </div>
           </div>
 
-          {/* RIGHT – CAROUSEL */}
-          <div className="w-full lg:w-2/4 flex flex-col mt-8 lg:mt-0">
-            <div className="overflow-hidden">
+          {/* ================= IMAGE SECTION ================= */}
+          <div className="hidden md:flex flex-shrink-0 pt-65">
+            <img
+              src="/chanu/chanuhand2.png"
+              alt="Metamorphosis visual"
+              className="w-48 lg:w-60 h-auto object-contain drop-shadow-xl"
+            />
+          </div>
+
+          {/* ================= CAROUSEL SECTION ================= */}
+          <div className="flex-1 min-w-50 md:min-w-150 w-full">
+            <div className="relative w-full overflow-hidden">
               <div
                 className="flex transition-transform duration-500 ease-out"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -118,32 +100,29 @@ export default function RoadmapSection() {
                 {slides.map((slide, slideIndex) => (
                   <div
                     key={slideIndex}
-                    className="min-w-full flex flex-col gap-4 px-2 sm:px-6"
+                    className="min-w-full w-full flex flex-col gap-4 px-1 sm:px-4 box-border"
                   >
                     {slide.map((item, i) => (
                       <div
                         key={i}
-                        className="relative flex bg-secondary
-                             border border-white/10 rounded-xl
-                             overflow-hidden shadow-sm
-                             min-h-[160px] sm:min-h-[180px]"
+                        className="relative flex w-full bg-secondary border border-white/10 rounded-xl overflow-hidden shadow-sm min-h-[160px] sm:min-h-[180px]"
                       >
                         {/* TEXT */}
-                        <div className="w-[55%] p-3 sm:p-4 flex flex-col justify-center gap-2">
+                        <div className="w-[55%] p-3 sm:p-4 flex flex-col justify-center gap-2 min-w-0">
                           <span className="text-[10px] font-bold uppercase tracking-widest text-white">
                             {item.topic}
                           </span>
 
-                          <h3 className="text-lg sm:text-xl font-bold text-white leading-tight">
+                          <h3 className="text-lg sm:text-xl font-bold text-white leading-tight truncate">
                             {item.name}
                           </h3>
 
-                          <p className="text-xs text-white border-l-2 border-white pl-2">
+                          <p className="text-xs text-white border-l-2 border-white pl-2 line-clamp-2">
                             {item.designation}
                           </p>
 
                           {item.companyLogo && (
-                            <div className="w-25 h-15 bg-white rounded-md flex items-center justify-center">
+                            <div className="w-30 h-15 bg-white rounded-md flex items-center justify-center">
                               <img
                                 src={item.companyLogo}
                                 alt="Company logo"
@@ -154,11 +133,8 @@ export default function RoadmapSection() {
                         </div>
 
                         {/* IMAGE */}
-                        <div className="absolute right-0 top-0 h-full w-[45%]">
-                          <span
-                            className="absolute top-1 right-1 bg-white/40 backdrop-blur-sm
-                                     text-secondary text-[10px] px-2 py-0.5 rounded-full z-10"
-                          >
+                        <div className="absolute right-0 top-0 h-full w-[45%] overflow-hidden">
+                          <span className="absolute top-1 right-1 bg-white/40 backdrop-blur-sm text-secondary text-[10px] px-2 py-0.5 rounded-full z-10">
                             {item.date}
                           </span>
 
@@ -168,10 +144,7 @@ export default function RoadmapSection() {
                             className="w-full h-full object-cover"
                           />
 
-                          <div
-                            className="absolute inset-0 bg-gradient-to-l
-                                    from-transparent via-[#050110]/20 to-[#050110]/50"
-                          />
+                          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#050110]/20 to-[#050110]/50" />
                         </div>
                       </div>
                     ))}
@@ -181,7 +154,7 @@ export default function RoadmapSection() {
             </div>
 
             {/* DOTS */}
-            <div className="flex justify-center align-top gap-2 mt-1">
+            <div className="flex justify-center gap-2 mt-4">
               {slides.map((_, index) => (
                 <button
                   key={index}
@@ -196,7 +169,7 @@ export default function RoadmapSection() {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

@@ -6,9 +6,9 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 const HeroSlider = () => {
   const desktopImages = [
-    "/Home/IGSBBanner4.jpg",
-    "/Home/IGSBBanner2.jpg",
-    "/Home/IGSBBanner3.jpg",
+    "/Home/IGSBBanner4.webp",
+    "/Home/IGSBBanner2.webp",
+    "/Home/IGSBBanner3.webp",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -54,16 +54,15 @@ const HeroSlider = () => {
             </span>
 
             <span className="mr-12">
-              Admission Advertisement for ILS / ACAP MBA (MB06976) – IGSB 2025–26
+              Admission Advertisement for ILS / ACAP MBA (MB06976) – IGSB
+              2025–26
             </span>
 
             <span className="mr-12">
               MBA Admission Alert: DTE Code for IGSB is *MB6976*
             </span>
 
-            <span className="mr-12">
-              AICTE Approved | Affiliated to SPPU
-            </span>
+            <span className="mr-12">AICTE Approved | Affiliated to SPPU</span>
 
             {/* duplicate for seamless loop */}
             <span className="mr-12">
@@ -88,6 +87,7 @@ const HeroSlider = () => {
             className="w-full h-auto opacity-0 pointer-events-none"
             width={1600}
             height={700}
+            fetchPriority={"high"}
             priority
           />
 
@@ -98,8 +98,8 @@ const HeroSlider = () => {
                 currentIndex === i
                   ? "opacity-100 scale-100 z-20"
                   : previousIndex === i
-                  ? "opacity-0 scale-100 z-10"
-                  : "opacity-0 scale-105 z-0"
+                    ? "opacity-0 scale-100 z-10"
+                    : "opacity-0 scale-105 z-0"
               }`}
             >
               <Image
@@ -108,6 +108,8 @@ const HeroSlider = () => {
                 className="w-full h-auto object-contain"
                 width={1600}
                 height={700}
+                priority
+                fetchPriority={"high"}
                 unoptimized
               />
             </div>
@@ -155,12 +157,13 @@ const HeroSlider = () => {
         {/* ================= MOBILE (STATIC SINGLE BANNER) ================= */}
         <div className="block md:hidden relative w-full">
           <Image
-            src="/Home/IGSBBannerHome.jpg"
+            src="/Home/IGSBBannerHome.webp"
             alt="IGSB mobile banner"
             className="w-full h-auto object-contain"
-            width={600}
-            height={400}
+            width={400}
+            height={300}
             priority
+            fetchPriority="high"
           />
         </div>
       </div>

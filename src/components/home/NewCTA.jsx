@@ -2,6 +2,7 @@
 import React from "react";
 import { ArrowBigUp, Download } from "lucide-react";
 import { FaDownload } from "react-icons/fa";
+import Image from "next/image";
 function NewCTA() {
   const handleDownload = () => {
     alert("Downloading brochure...");
@@ -18,9 +19,11 @@ function NewCTA() {
         {/* --- COLUMN 1: LEFT IMAGE (Confused Person) --- Mobile: Visible, height fixed to h-40 (approx 160px) to not dominate screen. Desktop: Visible, takes full height of container. */}{" "}
         <div className="flex md:col-span-1 items-end justify-center relative h-40 md:h-full pt-4 md:pt-0">
           {" "}
-          <img
+          <Image
             src="/Home/confused.png"
             alt="Confused person"
+            height={200}
+            width={180}
             onError={handleImageError}
             className=" h-full w-auto object-contain object-bottom opacity-90 hover:scale-105 transition-transform duration-500 "
           />{" "}
@@ -45,7 +48,7 @@ function NewCTA() {
           >
             {" "}
             {/* <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" > <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /> </svg> */}{" "}
-            <FaDownload /> Download Brochure{" "}
+            <Download /> Download Brochure{" "}
           </button>{" "}
         </div>{" "}
         {/* --- COLUMN 3: RIGHT IMAGE (IGSB Campus) --- Mobile: HIDDEN (as requested). Desktop: Visible (cols 4-8), strict 25vh height. */}{" "}
@@ -53,10 +56,12 @@ function NewCTA() {
           {" "}
           <div className="absolute inset-0 w-full h-full">
             {" "}
-            <img
-              src="/Home/igsb_grid.jpg"
+            <Image
+              src="/Home/igsb_grid.webp"
               alt="IGSB Campus"
               onError={handleImageError}
+              height={300}
+              width={600}
               className=" w-full h-full object-cover object-center opacity-80 mix-blend-overlay md:mix-blend-normal md:opacity-100 [mask-image:linear-gradient(to_right,transparent,black_15%)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_15%)] "
             />{" "}
           </div>{" "}

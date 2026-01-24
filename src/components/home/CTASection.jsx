@@ -185,9 +185,11 @@ export default function CTASection() {
 
         {/* --- COL 3: GENTLEMAN (≈10%) --- */}
         <div className="md:col-span-1 flex items-end justify-center relative h-32 md:h-auto bg-white/5 md:bg-transparent overflow-visible">
-          <img
+          <Image
             src="/Home/suitman.png"
             alt="Gentleman"
+            height={200}
+            width={180}
             className={`w-[95%] object-contain object-bottom transition-all duration-500 ease-in-out z-10 drop-shadow-2xl ${
               isExpanded
                 ? "h-[100%] md:h-[115%] translate-y-1 opacity-100"

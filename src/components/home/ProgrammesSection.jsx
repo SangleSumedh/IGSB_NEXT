@@ -120,7 +120,6 @@ export default function ProgrammesSection() {
 
   return (
     <section className="relative w-full bg-white font-sans">
-      
       {/* DESKTOP LAYOUT - LG AND ABOVE */}
       <div className="hidden lg:block relative lg:h-[95vh] overflow-hidden flex items-center">
         {/* IMAGE AT BOTTOM LEFT */}
@@ -257,7 +256,6 @@ export default function ProgrammesSection() {
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#10404A] mb-3">
             MBA Specializations
           </h2>
- 
         </div>
 
         {/* TREE STRUCTURE */}

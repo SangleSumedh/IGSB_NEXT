@@ -8,7 +8,7 @@ import { studentInduction } from "@/static/campuslife/student-inductions.js";
 export function OldPage() {
   // 1. Get all keys & slice to get the past 3 years
   const allYears = Object.keys(studentInduction);
-  const pastYearsKeys = allYears.slice(1, 4);
+  const pastYearsKeys = allYears.slice(2, 7);
 
   // 2. State for the currently active tab (defaults to the first past year)
   const [activeTab, setActiveTab] = useState(pastYearsKeys[0]);
@@ -155,7 +155,7 @@ export function TimelineItem({ item, index, isLast }) {
       <div className="absolute left-0 top-1 w-6 h-6 sm:w-8 sm:h-8 bg-blue-500 rounded-full border-4 border-white shadow-md z-10 flex items-center justify-center">
         <div className="w-2 h-2 bg-white rounded-full" />
       </div>
-0
+
       <div className="flex flex-col space-y-4">
         <div className="bg-[#1e293b] text-white py-3 px-6 rounded-r-full rounded-bl-xl shadow-lg self-start inline-block max-w-full sm:max-w-2xl transform transition hover:-translate-y-1">
           <h3 className="text-lg sm:text-xl font-bold tracking-wide uppercase">

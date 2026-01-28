@@ -308,7 +308,7 @@ const Navbar = () => {
 
          
           <Link href="/MeritList" className="relative group hover:text-primary">
-            Merit List 25-26
+            Merit List
             <span className="absolute left-0 -bottom-1 h-[5px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100" />
           </Link>
           <span className="text-secondary">|</span>

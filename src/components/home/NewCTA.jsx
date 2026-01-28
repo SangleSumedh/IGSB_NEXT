@@ -60,8 +60,8 @@ function NewCTA() {
               src="/Home/igsb_grid.webp"
               alt="IGSB Campus"
               onError={handleImageError}
-              height={300}
-              width={600}
+              height={500}
+              width={1000}
               className=" w-full h-full object-cover object-center opacity-80 mix-blend-overlay md:mix-blend-normal md:opacity-100 [mask-image:linear-gradient(to_right,transparent,black_15%)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_15%)] "
             />{" "}
           </div>{" "}

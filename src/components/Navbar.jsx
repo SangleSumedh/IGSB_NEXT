@@ -280,8 +280,8 @@ const Navbar = () => {
     <div className="flex justify-end w-full h-[45%] text-[0.65rem] sm:text-[0.7rem] md:text-[0.60rem] lg:text-[0.78rem]">
       <div className="flex gap-1 sm:gap-2 lg:gap-4">
         
-        <div className="flex items-center gap-1 sm:gap-2 lg:gap-4 font-medium lg:font-semibold">
-           <Link href="/fra" className="relative group hover:text-primary">
+        <div className="flex items-center gap-1 sm:gap-2 lg:gap-2 font-medium lg:font-semibold">
+           <Link href="/newfra" className="relative group hover:text-primary">
             FRA Fee Structure
             <span className="absolute left-0 -bottom-1 h-[5px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100" />
           </Link>

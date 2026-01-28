@@ -29,10 +29,10 @@ const dropdownContent = {
         label: "Student Committees",
         link: "/campus-life/student-committees",
       },
-      // {
-      //   label: "Accrediations",
-      //   link: "/Accrediation",
-      // },
+      {
+        label: "Accrediations",
+        link: "/Accrediation",
+      },
       {
         label: "Mandatory Disclosure",
         link: "/MandatoryDisclosure.pdf",
@@ -255,230 +255,167 @@ const Navbar = () => {
     <>
       {/* ===== NAVBAR ===== */}
       <nav
-        ref={navbarRef}
-        className="w-full h-[12vh] flex justify-between bg-white text-black shadow-sm font-sans fixed top-0 left-0 right-0 z-50"
-      >
-        {/* Left: Logo */}
-        {/* Left: Logo */}
-        <div className="w-[60%] md:w-[29%] lg:w-[25%] xl:w-[30%] h-full flex items-center justify-start pl-2 md:pl-3">
-          <Link href="/" className="flex items-center h-full">
-            <Image
-              src="/Home/Logo.webp"
-              alt="Logo"
-              height={100}
-              width={100}
-              className="
-        h-[92%] md:h-[78%]
-        w-auto 
-        cursor-pointer 
-        object-contain 
-        transition-transform 
-        duration-300
-      "
-              priority
-              fetchPriority="high"
-              unoptimized={true}
-            />
+  ref={navbarRef}
+  className="w-full h-[12vh] flex justify-between bg-white text-black shadow-sm font-sans fixed top-0 left-0 right-0 z-50"
+>
+  {/* Left: Logo */}
+  <div className="w-[60%] md:w-[29%] lg:w-[25%] xl:w-[30%] h-full flex items-center justify-start pl-2 md:pl-3">
+    <Link href="/" className="flex items-center h-full">
+      <Image
+        src="/Home/Logo.webp"
+        alt="Logo"
+        height={100}
+        width={100}
+        className="h-[92%] md:h-[78%] w-auto cursor-pointer object-contain transition-transform duration-300"
+        priority
+        fetchPriority="high"
+        unoptimized
+      />
+    </Link>
+  </div>
+
+  {/* Right Section - Desktop */}
+  <div className="hidden md:flex w-[70%] h-full flex-col">
+    {/* ===== Top Bar ===== */}
+    <div className="flex justify-end w-full h-[45%] text-[0.65rem] sm:text-[0.7rem] md:text-[0.60rem] lg:text-[0.78rem]">
+      <div className="flex gap-1 sm:gap-2 lg:gap-4">
+        
+        <div className="flex items-center gap-1 sm:gap-2 lg:gap-4 font-medium lg:font-semibold">
+           <Link href="/fra" className="relative group hover:text-primary">
+            FRA Fee Structure
+            <span className="absolute left-0 -bottom-1 h-[5px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100" />
+          </Link>
+          <span className="text-secondary">|</span>
+          {[
+          
+            ["Pay Fee", "https://rapid.grayquest.com/iudp-master"],
+            ["ERP Login", "http://220.226.204.21/login.aspx/"],
+            ["Superset", "https://app.joinsuperset.com/join/#/signup/student/placements/621c7653-bdeb-4ee2-bb72-765e5d1d9635"],
+          ].map(([label, link], i) => (
+            <span key={label} className="flex items-center gap-1">
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group hover:text-primary transition-colors"
+              >
+                {label}
+                <span className="absolute left-0 -bottom-1 h-[5px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100" />
+              </a>
+              <span className="text-secondary">|</span>
+            </span>
+          ))}
+
+         
+          <Link href="/MeritList" className="relative group hover:text-primary">
+            Merit List 25-26
+            <span className="absolute left-0 -bottom-1 h-[5px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100" />
+          </Link>
+          <span className="text-secondary">|</span>
+
+          <Link href="/contact" className="relative group hover:text-primary">
+            Contact Us
+            <span className="absolute left-0 -bottom-1 h-[5px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100" />
+          </Link>
+          <span className="text-secondary">|</span>
+
+          <Link href="/blogs" className="relative group hover:text-primary">
+            Blogs
+            <span className="absolute left-0 -bottom-1 h-[5px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100" />
           </Link>
         </div>
 
-        {/* Right Section - Desktop */}
-        <div className="hidden md:flex w-[70%] h-full flex-col">
-          {/* Top Bar */}
-          <div className="flex justify-end w-full h-[45%] text-[0.75rem] lg:text-sm">
-            <div className="flex gap-2 lg:gap-4">
-              <div className="flex items-center gap-2 md:gap-2 lg:gap-4 font-semibold">
-                {/* <Link
-                  href="/FRA"
-                  className="relative inline-block group hover:text-primary transition-colors duration-200"
-                >
-                  FRA Fee Structure
-                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-                </Link>
-                <span className="text-secondary">|</span> */}
-                <a
-                  href="https://rapid.grayquest.com/iudp-master"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative inline-block group hover:text-secondary transition-colors duration-200"
-                >
-                  Pay Fee
-                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-                </a>
-
-                <span className="text-secondary">|</span>
-                <a
-                  href="http://220.226.204.21/login.aspx/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative inline-block group hover:text-secondary transition-colors duration-200"
-                >
-                  ERP Login
-                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-                </a>
-
-                <span className="text-secondary">|</span>
-                <a
-                  href="https://app.joinsuperset.com/join/#/signup/student/placements/621c7653-bdeb-4ee2-bb72-765e5d1d9635"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative inline-block group hover:text-secondary transition-colors duration-200"
-                >
-                  Superset
-                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-                </a>
-
-                <span className="text-secondary">|</span>
-
-                <Link
-                  href="/MeritList"
-                  className="relative inline-block group  hover:text-primary transition-colors duration-200"
-                >
-                  Merit List
-                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-                </Link>
-                <span className="text-secondary">|</span>
-
-                <Link
-                  href="/contact"
-                  className="relative inline-block group hover:text-primary transition-colors duration-200"
-                >
-                  Contact Us
-                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-                </Link>
-                <span className="text-secondary">|</span>
-                <Link
-                  href="/blogs"
-                  className="relative inline-block group hover:text-primary transition-colors duration-200"
-                >
-                  Blogs
-                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-                </Link>
-              </div>
-
-              {/* Enquire Now Button */}
-              <div className="flex justify-center items-center">
-                <button
-                  onClick={toggleModal}
-                  className="bg-[#10404A] hover:!bg-[#fc7116] h-[80%] hover:text-gray-800 text-gray-50 px-6 rounded-bl-sm text-sm font-semibold relative overflow-hidden transition-all duration-300"
-                >
-                  <span>Enquire Now</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Nav Links with Dropdowns */}
-          <div className="flex justify-end items-center gap-2 md:gap-2 lg:gap-5 h-[55%] text-[0.74rem] lg:text-sm font-bold lg:font-bold whitespace-nowrap relative">
-            {/* About Us with dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => toggleDropdown("aboutUs")}
-                className="flex h-full items-center px-2 lg:px-3 gap-1 hover:text-secondary transition-all duration-200 group"
-              >
-                <span className="relative">
-                  About Us
-                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-                </span>
-                <FiChevronDown
-                  className={`w-3 h-3 transition-transform duration-200 ${
-                    activeDropdown === "aboutUs" ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-
-              {/* About Us Dropdown */}
-              {activeDropdown === "aboutUs" &&
-                renderCompactDropdown(dropdownContent.aboutUs)}
-            </div>
-
-            {/* Campus Life with dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => toggleDropdown("campusLife")}
-                className="flex items-center gap-1 md:px-2 hover:text-secondary transition-all duration-200 group"
-              >
-                <span className="relative">
-                  Campus Life
-                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-                </span>
-                <FiChevronDown
-                  className={`w-3 h-3 transition-transform duration-200 ${
-                    activeDropdown === "campusLife" ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-
-              {/* Campus Life Dropdown */}
-              {activeDropdown === "campusLife" &&
-                renderCompactDropdown(dropdownContent.campusLife)}
-            </div>
-
-            {/* Programs & Admission with dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => toggleDropdown("programs")}
-                className="flex items-center gap-1 px-2 lg:px-3 hover:text-secondary transition-all duration-200 group"
-              >
-                <span className="relative">
-                  Programme & Admission
-                  <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-                </span>
-                <FiChevronDown
-                  className={`w-3 h-3 transition-transform duration-200 ${
-                    activeDropdown === "programs" ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-
-              {/* Programs & Admission Dropdown */}
-              {activeDropdown === "programs" &&
-                renderCompactDropdown(dropdownContent.programs)}
-            </div>
-
-            {/* Single Links (no dropdown) */}
-            <Link
-              href="/placement"
-              className="hover:text-secondary px-2 lg:px-3 transition-colors duration-200 group"
-            >
-              <span className="relative">
-                Placement
-                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-              </span>
-            </Link>
-
-            <Link
-              href="/alumni"
-              className="hover:text-secondary px-2 lg:px-3 transition-colors duration-200 group"
-            >
-              <span className="relative">
-                Alumni
-                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-              </span>
-            </Link>
-
-            <Link
-              href="/research"
-              className="hover:text-secondary px-2 lg:px-3 transition-colors duration-200 group"
-            >
-              <span className="relative">
-                Research
-                <span className="absolute left-0 -bottom-1 h-[6px] w-full scale-x-0 bg-primary rounded-md opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-              </span>
-            </Link>
-          </div>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <div className="md:hidden w-[20%] flex items-center justify-center pr-4">
+        {/* Enquire Now */}
+        <div className="flex items-center">
           <button
-            onClick={toggleMobileMenu}
-            className="text-gray-700 hover:text-primary transition-all duration-300 hover:scale-110"
+            onClick={toggleModal}
+            className="bg-[#10404A] hover:!bg-[#fc7116] text-gray-50 hover:text-gray-800
+                       text-[0.65rem] sm:text-xs lg:text-sm
+                       px-3 sm:px-4 lg:px-6 h-[80%]
+                       rounded-bl-sm font-semibold transition-all duration-300"
           >
-            <Menu size={28} />
+            Enquire Now
           </button>
         </div>
-      </nav>
+      </div>
+    </div>
+
+    {/* ===== Bottom Nav ===== */}
+    <div className="flex justify-end items-center gap-1 sm:gap-2 lg:gap-5 h-[55%]
+                    text-[0.65rem] sm:text-[0.7rem] md:text-[0.75rem] lg:text-sm
+                    font-semibold lg:font-bold whitespace-nowrap">
+
+      {/* About Us */}
+      <div className="relative">
+        <button
+          onClick={() => toggleDropdown("aboutUs")}
+          className="flex items-center px-1 sm:px-2 lg:px-3 gap-1 hover:text-secondary group"
+        >
+          <span className="relative">
+            About Us
+            <span className="absolute left-0 -bottom-1 h-[5px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100" />
+          </span>
+          <FiChevronDown className={`w-2.5 h-2.5 sm:w-3 sm:h-3 transition-transform ${activeDropdown === "aboutUs" ? "rotate-180" : ""}`} />
+        </button>
+        {activeDropdown === "aboutUs" && renderCompactDropdown(dropdownContent.aboutUs)}
+      </div>
+
+      {/* Campus Life */}
+      <div className="relative">
+        <button
+          onClick={() => toggleDropdown("campusLife")}
+          className="flex items-center px-1 sm:px-2 gap-1 hover:text-secondary group"
+        >
+          <span className="relative">
+            Campus Life
+            <span className="absolute left-0 -bottom-1 h-[5px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100" />
+          </span>
+          <FiChevronDown className={`w-2.5 h-2.5 sm:w-3 sm:h-3 transition-transform ${activeDropdown === "campusLife" ? "rotate-180" : ""}`} />
+        </button>
+        {activeDropdown === "campusLife" && renderCompactDropdown(dropdownContent.campusLife)}
+      </div>
+
+      {/* Programme */}
+      <div className="relative">
+        <button
+          onClick={() => toggleDropdown("programs")}
+          className="flex items-center px-1 sm:px-2 lg:px-3 gap-1 hover:text-secondary group"
+        >
+          <span className="relative">
+            Programme & Admission
+            <span className="absolute left-0 -bottom-1 h-[5px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100" />
+          </span>
+          <FiChevronDown className={`w-2.5 h-2.5 sm:w-3 sm:h-3 transition-transform ${activeDropdown === "programs" ? "rotate-180" : ""}`} />
+        </button>
+        {activeDropdown === "programs" && renderCompactDropdown(dropdownContent.programs)}
+      </div>
+
+      {["placement", "alumni", "research"].map((item) => (
+        <Link
+          key={item}
+          href={`/${item}`}
+          className="px-1 sm:px-2 lg:px-3 hover:text-secondary group"
+        >
+          <span className="relative capitalize">
+            {item}
+            <span className="absolute left-0 -bottom-1 h-[5px] w-full scale-x-0 bg-primary opacity-70 transition-transform duration-300 origin-left group-hover:scale-x-100" />
+          </span>
+        </Link>
+      ))}
+    </div>
+  </div>
+
+  {/* Mobile Menu */}
+  <div className="md:hidden w-[20%] flex items-center justify-center pr-4">
+    <button
+      onClick={toggleMobileMenu}
+      className="text-gray-700 hover:text-primary transition-all duration-300 hover:scale-110"
+    >
+      <Menu size={28} />
+    </button>
+  </div>
+</nav>
+
 
       {/* Add padding to main content to account for fixed navbar */}
       <div className="pt-[12vh]"></div>

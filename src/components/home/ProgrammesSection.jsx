@@ -237,7 +237,7 @@ export default function ProgrammesSection() {
                 </p>
 
                 <button
-                  onClick={() => router.push("/programs/mba")}
+                  onClick={() => router.push("/programme/mba")}
                   aria-label="Go to Programs page"
                   className="group flex items-center gap-2 bg-[#10404A] text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300"
                 >
@@ -315,7 +315,7 @@ export default function ProgrammesSection() {
                       </p>
 
                       <button
-                        onClick={() => router.push("/programs/mba")}
+                        onClick={() => router.push("/programme/mba")}
                         aria-label="Go to Programs page"
                         className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange-600 hover:text-orange-700"
                       >

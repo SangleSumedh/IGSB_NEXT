@@ -248,7 +248,7 @@ export default function EventsPage() {
             <h2 className="header">{event.title}</h2>
             <p className="desc">{event.description}</p>
 
-            <Link href={`/Campus/Events/gallery/${event.id}`} className="link">
+            <Link href={`/Campus/Events/gallery?id=${event.id}`} className="link">
               <span>View Gallery</span>
             </Link>
           </div>
@@ -331,7 +331,7 @@ export default function EventsPage() {
           </p>
 
           <Link
-            href={`/Campus/Events/gallery/${event.id}`}
+            href={`/Campus/Events/gallery/?id=${event.id}`}
             className="
               inline-block
               px-6 py-3

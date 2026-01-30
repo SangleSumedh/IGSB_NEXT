@@ -5,7 +5,7 @@ export default function Csuite() {
   return (
     <>
       {/* C-SUITE SECTION */}
-      <div className="bg-secondary">
+      <div className="bg-gradient-to-r from-[#10404A] to-[#1F6D71]">
         <div className="relative overflow-hidden">
           <div className="max-w-full mx-auto flex flex-col lg:flex-row">
             {/* LEFT (DESKTOP) → GALLERY / BENTO */}

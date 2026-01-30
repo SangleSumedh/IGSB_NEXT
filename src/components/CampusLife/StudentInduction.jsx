@@ -115,7 +115,7 @@ export default function RoadmapSection() {
                     {slide.map((item, i) => (
                       <div
                         key={i}
-                        className="relative flex w-full bg-secondary border border-white/10 rounded-xl overflow-hidden shadow-sm min-h-[160px] sm:min-h-[180px]"
+                        className="relative flex w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] border border-white/10 rounded-xl overflow-hidden shadow-sm min-h-[160px] sm:min-h-[180px]"
                       >
                         {/* TEXT */}
                         <div className="w-[55%] p-3 sm:p-4 flex flex-col justify-center gap-2 min-w-0">

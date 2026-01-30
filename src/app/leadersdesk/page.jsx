@@ -46,15 +46,28 @@ const leaders = [
     title: "Chairperson & Chief Mentor-IGI",
     image: "/Home/TS.webp",
     message:
-      "Dear Students, For over three decades, our institutions have stood as catalysts of transformation, bridging rigorous academics with real-world relevance. We understand that the leaders of tomorrow need more than knowledge; they need vision, adaptability, and a heart for meaningful change. At IGSB, we cultivate an ecosystem where innovation thrives and ethics lead. Through industry-aligned curricula, immersive learning experiences, and a faculty dedicated to mentorship, we empower each student to become not just a skilled professional, but a compassionate and conscious contributor to society. Our focus extends beyond academic brilliance; we nurture resilient, empathetic, and globally minded individuals who value integrity, sustainability, and inclusive progress. In a rapidly evolving world, we remain committed to integrating cutting-edge technology and outcome-driven pedagogy, ensuring our learners are always a step ahead. Here, you will discover more than an education; you will find a launchpad for your aspirations, a space to grow, lead, and inspire. Together, let's build a future where excellence is a habit, learning is lifelong, and success is measured by the impact we create. The journey ahead is yours to shape. We are here to guide, support, and foster your spirit.  ",
+      `Dear Students,
+      For over three decades, our institutions have stood as catalysts of transformation, bridging rigorous academics with real-world relevance. We understand that the leaders of tomorrow need more than knowledge; they need vision, adaptability, and a heart for meaningful change.
+      At IGSB, we cultivate an ecosystem where innovation thrives and ethics lead. Through industry-aligned curricula, immersive learning experiences, and a faculty dedicated to mentorship, we empower each student to become not just a skilled professional, but a compassionate and conscious contributor to society.
+      Our focus extends beyond academic brilliance; we nurture resilient, empathetic, and globally minded individuals who value integrity, sustainability, and inclusive progress. In a rapidly evolving world, we remain committed to integrating cutting-edge technology and outcome-driven pedagogy, ensuring our learners are always a step ahead.
+      Here, you will discover more than an education; you will find a launchpad for your aspirations, a space to grow, lead, and inspire. Together, let's build a future where excellence is a habit, learning is lifelong, and success is measured by the impact we create.
+      The journey ahead is yours to shape. We are here to guide, support, and foster your spirit.`,
     reverse: false,
   },
   {
-    name: "Dr.Virendra Tatake",
+    name: "Dr. Virendra Tatake",
     title: "Director, Indira Global Business School, Pune.",
-    image: "/Home/TakdakeSir.webp",
+    image: "/Edited/Dr. Virendra Tatake.webp",
     message:
-      "Indira Global Business School is proud to be the part of The Shree Chanakya Education Society (SCES) which is celebrating its Silver Jubilee Year of its establishment.During these 25 years, Indira Group of Institutes (IGI) has grown steadily and today it has 14 Institutes, having more than 8000 students from all over India pursuing multi-disciplinary, graduate & post-graduate programmes. IGI has always been committed to impart effective & qualitative education throughout this journey of 25 years.The completion of 25 years is indeed a major milestone in the life of an educational institution. IGI since its foundation in 1994, has earned appreciation for providing value-based education and for imparting the ideals of academic excellence, sense of discipline and high moral and ethical values, leading to the development of integrated personalities.The motto of The SCES is reflected in its faith that education is a process of awakening individual potential to creative knowledge inculcating in them, the desire to excel in various spheres. It is extremely noteworthy that IGI considers it to be its duty to nurture its students as sensitive people with strong values, who will leverage their individual achievements to strengthen the fabric of the community, the nation and the planet.I , on behalf of Indira Global Business School convey our good wishes and thanks to everyone associated with us during this journey and wish all success and a great future ahead.",
+     `At Indira Global School of  Business , we strongly believe that education must continuously evolve to remain relevant, meaningful, and future-ready. The rapidly changing global landscape, driven by technology, innovation, and sustainability, calls for institutions to reimagine learning—and we are proud to be at the forefront of this transformation.
+     The National Education Policy (NEP)  provides a progressive roadmap for building a flexible, multidisciplinary, and learner-centric education system. In alignment with NEP, our academic framework emphasizes critical thinking, experiential learning, skill development, and ethical leadership. We focus not only on what students learn, but also on how they learn—encouraging curiosity, adaptability, and lifelong learning.
+     In today’s digital era, Artificial Intelligence (AI) is no longer a choice but a necessity. At Indira Global School of  Business , we integrate AI-driven tools and concepts into management education to help students understand data-driven decision-making, automation, analytics, and emerging business models. Our goal is to prepare students who can confidently leverage technology while retaining a strong human and ethical perspective.
+     Equally important is our strong focus on entrepreneurship and innovation. We encourage students to move beyond job-seeking and develop an entrepreneurial mindset—one that embraces creativity, problem-solving, risk-taking, and value creation. Through incubation support, industry interaction, live projects, and mentorship, we aim to nurture future entrepreneurs, intrapreneurs, and change-makers who can contribute meaningfully to economic and social development.
+     At the heart of our philosophy lies a commitment to value-based education, leadership with integrity, and social responsibility. We strive to shape professionals who are not only competent and confident but also compassionate and conscious of their role in nation-building.
+     I invite all aspiring learners to join us in this journey of transformation—where education empowers minds, innovation fuels ambition, and values guide success.
+      Warm regards,
+      Director
+      `,
     reverse: true,
   },
 ];
@@ -171,7 +184,7 @@ const teachingStaff = [
   },
   {
     name: "Mr. Neelesh Atre",
-    role: "Assistant Professor",
+    role: "Professor of Practice",
     image: "/Edited/Mr. Neelesh Atre.webp",
     type: "teaching",
   },
@@ -295,25 +308,19 @@ export default function LeadersDeskPage() {
             >
               <div
                 className={`
-                  flex flex-col ${leader.reverse ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-4 sm:gap-5 md:gap-6
+                  flex flex-col ${leader.reverse ? "lg:flex-row-reverse" : "lg:flex-row"} items-stretch gap-4 sm:gap-5 md:gap-6
                 `}
               >
                 {/* IMAGE SECTION — 1/3 */}
-                <div className="w-full lg:w-1/3 flex justify-center">
-                  <div className="relative">
-                    <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-72 lg:h-72 xl:w-84 xl:h-84">
-                      <Image
-                        src={leader.image}
-                        alt={leader.title}
-                        fill
-                        className="
-                          rounded-full
-                          border-4 border-[#ffb088]
-                          shadow-md object-cover object-top
-                        "
-                        sizes="(max-width: 640px) 128px, (max-width: 768px) 144px, (max-width: 1024px) 160px, 288px"
-                      />
-                    </div>
+                <div className="w-full lg:w-1/3 relative min-h-[300px] lg:min-h-0">
+                  <div className="w-full h-full relative rounded-lg sm:rounded-xl md:rounded-2xl border-4 border-[#ffb088] shadow-md overflow-hidden">
+                    <Image
+                      src={leader.image}
+                      alt={leader.title}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 288px"
+                    />
                   </div>
                 </div>
 
@@ -326,6 +333,7 @@ export default function LeadersDeskPage() {
                       p-4 sm:p-5 md:p-6 lg:p-7 xl:p-8
                       shadow-xl
                       text-white
+                      h-full
                     "
                   >
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold mb-1">
@@ -339,9 +347,9 @@ export default function LeadersDeskPage() {
                     {/* SUBTLE DIVIDER */}
                     <div className="w-10 sm:w-12 h-[2px] bg-[#ffb088] rounded-full mb-3 sm:mb-4 md:mb-5" />
 
-                    <p className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed">
+                    <div className="text-white/90 text-xs sm:text-sm md:text-[0.95rem] leading-relaxed whitespace-pre-line">
                       {leader.message}
-                    </p>
+                    </div>
 
                     {/* SIGNATURE AREA */}
                     <div className="mt-4 sm:mt-5 md:mt-6 pt-3 sm:pt-4 border-t border-white/20">

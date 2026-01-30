@@ -125,7 +125,7 @@ export default function ProgrammesSection() {
         {/* IMAGE AT BOTTOM LEFT */}
         <div className="absolute bottom-0 left-0 lg:w-[45vw] xl:w-[50vw] h-[80vh] z-20 pointer-events-none">
           <Image
-            src="/Home/MBASpec.png"
+            src="/Home/MBASpec.webp"
             alt="MBA Specializations"
             fill
             className="object-contain object-bottom left-0"

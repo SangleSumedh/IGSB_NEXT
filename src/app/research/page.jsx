@@ -11,8 +11,8 @@ const phdHolders = [
     image: "/Edited/Dr. Virendra Tatake.webp",
     expertise: "Financial Management",
     description:
-      "Dr. Sharma has over 18 years of academic and research experience. His work focuses on applied AI systems, intelligent decision-making, and industry-driven research. (content to be updated soon)",
-    students: [{ name: "Mr. Pankaj Badhiye", image: "/boy.png" }],
+      "Dr. Virendra V. Tatake is an eminent academician and approved PhD Research Supervisor in Financial Management with over 25 years of experience in teaching, research, and academic administration. He serves as Director of Indira Global Business School and specializes in finance, stock markets, mutual funds, and investor behaviour. A prolific author and media contributor, Dr. Tatake has guided doctoral researchers, presented at national and international forums, and received multiple awards for academic leadership and excellence in finance education.",
+    students: [{ name: "Ms. Manasi Tushar Patil", image: "/boy.png" }, {name: "Ms. Chhaya Thakaji Lande", image: "/boy.png"}],
   },
   {
     name: "Dr. Pallavi Sajanapwar",
@@ -20,7 +20,7 @@ const phdHolders = [
     image: "/Edited/Dr. Pallavi Sajanapwar.webp",
     expertise: "Marketing Management",
     description:
-      "Dr. Kulkarni specializes in data-driven research and analytics-based decision systems. She actively collaborates with industry and research institutions. (to be updated soon)",
+      "Dr. Pallavi Sajanapwar is a senior academic leader and recognized PhD Research Supervisor in Marketing Management with over two decades of experience in higher education and research. She currently serves as Dean – Academics & Research at Indira Global School of Business. Her academic expertise includes Marketing Management, Consumer Behaviour, Services Marketing, and Business Research. An alumna of IIM Ahmedabad’s Faculty Development Programme, she has contributed to national and international research publications and has been honoured with prestigious academic leadership awards.",
     students: [
       { name: "Mr. Nivrutti Nagare", image: "/boy.png" },
       { name: "Mr. Amol Daspute", image: "/boy.png" },
@@ -35,10 +35,14 @@ const phdHolders = [
     image: "/Edited/Dr. Priyanka Darekar.webp",
     expertise: "Human Resource Management",
     description:
-      "Dr. Iyer has guided multiple funded research projects and published extensively in international journals. His research interests include secure networks and distributed systems.",
+      "Dr. Priyanka Darekar is an approved PhD Research Supervisor in Human Resource Management with over 15 years of experience in academics, research, and professional training. She holds a doctorate from Savitribai Phule Pune University and currently serves as Associate Professor at Indira Global School of Business. Her areas of expertise include Organizational Behaviour, Human Resource Management, Strategic Management, and Business Research Methods. Dr. Darekar has guided doctoral scholars, authored books, published extensively in reputed journals, and received national recognition for academic excellence.",
     students: [
       {
-        name: "Selection of one student is under process from SPPU",
+        name: "Ms. Sarika Khandekar",
+        image: "/boy.png",
+      },
+      {
+        name: "Ms. Neelam Singh",
         image: "/boy.png",
       },
     ],
@@ -49,14 +53,14 @@ const phdHolders = [
     image: "/Edited/Dr. Ashish Vyas.webp",
     expertise: "Human Resource Management",
     description:
-      "Dr. Iyer has guided multiple funded research projects and published extensively in international journals. His research interests include secure networks and distributed systems.",
+      "Dr. Ashish K. Vyas is an experienced academician and PhD Research Supervisor in Human Resource Management with more than 14 years of experience in teaching, research guidance, and academic quality processes. He currently serves as Assistant Professor and Research Center Coordinator at Indira Global School of Business. His research interests include competency mapping, employee engagement, organizational behaviour, and research methodology. Dr. Vyas has published widely in reputed journals and actively contributes to fostering a strong research culture at the institution.",
     students: [
       {
         name: "Mr. Someshwar Pawar",
         image: "/boy.png",
       },
       {
-        name: "Ms, Hemangi Dhikate",
+        name: "Ms, Hemangi Dhokte",
         image: "/boy.png",
       },
     ],
@@ -67,7 +71,7 @@ const phdHolders = [
     image: "/Edited/Dr. Aatish Zagade.webp",
     expertise: "Organizational Management",
     description:
-      "Dr. Iyer has guided multiple funded research projects and published extensively in international journals. His research interests include secure networks and distributed systems.",
+      "Dr. Aatish Dilip Zagade is an award-winning academician and approved PhD Research Supervisor with over 17 years of combined industry and academic experience. He holds a PhD from Nagpur University and an MBA in Human Resource Management, and has completed executive development programs from IIM Ahmedabad. Currently serving as Deputy Director and Professor at Indira Global Business School, his expertise spans Human Resource Management, digital marketing, management education, and organizational development, supported by extensive publications in reputed journals.",
      students: [
       {
         name: "Selection of one student is under process from SPPU",
@@ -543,6 +547,55 @@ export default function Page() {
         </div>
       </section>
 
+      {/* CONFERENCE SECTION */}
+      <section className="w-full py-8 md:py-12 px-4 md:px-6 xl:px-16 bg-gray-50">
+        <div className="">
+          {/* Heading */}
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-6 md:mb-8 lg:mb-12 text-center lg:text-left">
+            National Conference 2025-26
+          </h2>
+
+          <div className="flex flex-col gap-6 md:gap-8 lg:gap-12">
+            {/* Top Row - Content */}
+            <div className="w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] rounded-xl md:rounded-2xl lg:rounded-3xl shadow-lg md:shadow-xl p-4 md:p-6 lg:p-8 xl:p-10 text-white">
+              <h3 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold mb-3 md:mb-4 lg:mb-6">
+                Innovation Meets Sustainability: Forging the Future Together
+              </h3>
+              <div className="space-y-4 text-sm md:text-base lg:text-lg leading-relaxed opacity-95">
+                <p>
+                  The National Conference on “Innovation Meets Sustainability: Forging the Future Together” was inaugurated in the distinguished presence of our esteemed Guests of Honour—Dr. Bharat Kasar, CMA Ajit Shinde, and CMA Balkrishna Ananda Hajare.
+                </p>
+                <p>
+                  Their inspiring addresses set a purposeful tone for the conference, fostering meaningful dialogue and insightful exchanges focused on driving innovation and building a sustainable future.
+                </p>
+              </div>
+            </div>
+
+            {/* Bottom Row - Images Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
+              {/* Conference Image 1 */}
+              <div className="rounded-xl md:rounded-2xl lg:rounded-3xl shadow-lg md:shadow-xl overflow-hidden relative min-h-[300px] md:min-h-[400px]">
+                <Image
+                  src="/IGSB/Research/Conference/conference1.jpg"
+                  alt="Conference Inauguration"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              {/* Conference Image 2 */}
+              <div className="rounded-xl md:rounded-2xl lg:rounded-3xl shadow-lg md:shadow-xl overflow-hidden relative min-h-[300px] md:min-h-[400px]">
+                <Image
+                  src="/IGSB/Research/Conference/conference2.jpg"
+                  alt="Conference Guests"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Memory Lane Section */}
       <div className="w-full bg-white border-t border-slate-200">
         <button
@@ -604,14 +657,14 @@ function PhdCard({ phd, index }) {
   return (
     <div
       className={`
-        flex flex-col ${isEven ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-4 md:gap-6
+        flex flex-col ${isEven ? "lg:flex-row-reverse" : "lg:flex-row"} items-stretch gap-4 md:gap-6
       `}
     >
-      {/* IMAGE SECTION — Full width on mobile, 1/3 on desktop */}
-      <div className="w-full lg:w-1/3 flex justify-center">
+      {/* IMAGE SECTION — Full width on mobile, 1/3 on desktop, filling height */}
+      <div className="w-full lg:w-1/3 relative min-h-[300px] lg:min-h-0">
         <div className="
-          w-32 h-32 md:w-40 md:h-40 lg:w-60 lg:h-60 xl:w-72 xl:h-72
-          rounded-full
+          w-full h-full
+          rounded-xl md:rounded-2xl
           border-4 border-[#ffb088]
           shadow-md
           overflow-hidden
@@ -621,8 +674,7 @@ function PhdCard({ phd, index }) {
             src={phd.image}
             alt={phd.name}
             fill
-            className="object-cover object-top" // Added object-top here
-            sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 240px"
+            className="object-cover object-top"
           />
         </div>
       </div>

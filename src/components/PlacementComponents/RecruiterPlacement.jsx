@@ -106,7 +106,7 @@ const OrangeCard = () => (
     
     <div className="bg-[#ff885b] text-white rounded-xl p-5 h-full w-full">
       <h2 className="text-xl text-center font-bold mb-4">
-        Admission Form
+        Enquire Now
       </h2>
 
       <ApplyForm variant="card" />

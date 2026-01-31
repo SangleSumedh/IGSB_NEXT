@@ -99,7 +99,7 @@ export default function FormSection() {
           <div className="w-[480px]">
             <div className="bg-[#ff885b]/95 backdrop-blur-sm text-white rounded-2xl shadow-2xl p-7">
               <h2 className="text-2xl text-center font-bold mb-5">
-                Admission Form
+                Enquire Now
               </h2>
 
               <ApplyForm variant="card" />

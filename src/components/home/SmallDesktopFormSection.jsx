@@ -85,7 +85,7 @@ export default function SmallDesktopFormSection() {
         <div className="flex justify-center " id="form-section">
           <div className="w-full max-w-[420px] bg-[#ff885b] text-white rounded-xl shadow-2xl p-5">
             <h2 className="text-xl text-center font-bold mb-4">
-              Admission Form
+               Enquire Now
             </h2>
 
             <ApplyForm variant="card" />

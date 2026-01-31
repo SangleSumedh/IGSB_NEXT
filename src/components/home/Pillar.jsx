@@ -4,10 +4,10 @@ import React from "react";
 import Image from "next/image";
 
 const pillars = [
-  { title: "Industry Readiness From Day One", image: "/Home/Pillar1.png" },
-  { title: "Placement-Driven Curriculum Design", image: "/Home/Pillar4.png" },
-  { title: "150+ Hours of Career Leadership Development Programme", image: "/Home/Pillar3.png" },
-  { title: "200+ Hours of Industry Readiness Programme", image: "/Home/Pillar2.png" },
+  { title: "Industry Readiness From Day One", image: "/newc/Pillar1.webp" },
+  { title: "Placement-Driven Curriculum Design", image: "/newc/Pillar4.webp" },
+  { title: "150+ Hours of Career Leadership Development Programme", image: "/newc/Pillar3.webp" },
+  { title: "200+ Hours of Industry Readiness Programme", image: "/newc/Pillar2.webp" },
 ];
 
 export default function PillarsSection() {

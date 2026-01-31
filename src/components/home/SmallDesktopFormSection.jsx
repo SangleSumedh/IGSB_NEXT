@@ -21,7 +21,7 @@ const generateLogos = () =>
   Array.from({ length: LOGO_COUNT }, (_, i) => {
     const index = i + 1;
     if (EXCLUDED_INDICES.includes(index)) return null;
-    return `/logos/${index}.jpg`;
+    return `/newlogo/${index}.webp`;
   }).filter(Boolean);
 
 /* ================= COMPONENT ================= */

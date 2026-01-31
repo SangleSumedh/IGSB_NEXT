@@ -100,7 +100,7 @@ const ExploreSection = () => {
             <div className="flex justify-center gap-6 md:hidden lg:flex">
               <div className="w-36 h-36 flex items-center justify-center bg-white rounded-full shadow-md">
                 <Image
-                  src="/Home/AICTE1.png"
+                  src="/newc/AICTE1.webp"
                   alt="AICTE Approved"
                   width={150}
                   height={150}
@@ -110,7 +110,7 @@ const ExploreSection = () => {
 
               <div className="w-36 h-36 flex items-center justify-center bg-white rounded-full shadow-md">
                 <Image
-                  src="/Home/SPPU1.png"
+                  src="/newc/SPPU1.webp"
                   alt="Affiliated to SPPU"
                   width={150}
                   height={150}

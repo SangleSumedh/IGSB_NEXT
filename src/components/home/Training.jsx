@@ -53,10 +53,10 @@ function Training() {
             {/* IRP FEATURES */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-auto">
               {[
-                { label: "Aptitude", logo: "/Home/Aptitude9.png" },
-                { label: "Technical", logo: "/Home/technical.png" },
-                { label: "Soft Skills", logo: "/Home/SS.png" },
-                { label: "Tools", logo: "/Home/Tools.png" },
+                { label: "Aptitude", logo: "/newc/Aptitude9.webp" },
+                { label: "Technical", logo: "/newc/technical.webp" },
+                { label: "Soft Skills", logo: "/newc/SS.webp" },
+                { label: "Tools", logo: "/newc/Tools.webp" },
               ].map((item, index) => (
                 <div
                   key={index}
@@ -127,18 +127,18 @@ function Training() {
               {[
                 {
                   label: "Project Management",
-                  logo: "/Home/ProjectManagement.webp",
+                  logo: "/newc/ProjectManagement.webp",
                 },
                 {
                   label: "Product Management",
-                  logo: "/Home/ProductManagement.webp",
+                  logo: "/newc/ProductManagement.webp",
                 },
                 { label: "Excel", logo: "/Home/Excel.webp" },
-                { label: "SAP", logo: "/Home/SAP.png" },
-                { label: "Business Analytics", logo: "/Home/businessA.webp" },
+                { label: "SAP", logo: "/newc/SAP.webp" },
+                { label: "Business Analytics", logo: "/newc/businessA.webp" },
                 {
                   label: "Power BI |SQL | Tableau",
-                  logo: "/Home/SQLManagement1.webp",
+                  logo: "/newc/SQLManagement1.webp",
                 },
               ].map((item, index) => (
                 <div

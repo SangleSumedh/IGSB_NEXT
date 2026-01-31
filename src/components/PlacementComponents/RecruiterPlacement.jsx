@@ -13,10 +13,9 @@ const LOGO_COUNT = 46;
 const generateLogos = () =>
   Array.from({ length: LOGO_COUNT }, (_, i) => {
     const index = i + 1;
-
-    const extension = index === 4 ? "png" : "webp";
-    return `/placementlogos/${index}.${extension}`;
+    return `/newlogo/${index}.webp`;
   });
+
 
 /* ---------------- COMPONENT ---------------- */
 

@@ -151,7 +151,7 @@ export default function EventsPage() {
     {/* div1 */}
     <div className="col-span-2 row-span-2 relative overflow-hidden">
       <Image
-        src="/newEvents/IWA8.webp"
+        src="/newc/IWA8.jpg"
         alt="Event 1"
         fill
         className="object-cover"
@@ -163,7 +163,7 @@ export default function EventsPage() {
     {/* div2 */}
     <div className="col-span-2 row-span-2 col-start-3 relative overflow-hidden">
       <Image
-        src="/newEvents/IDA1.webp"
+        src="/newc/IDA1.jpg"
         alt="Event 2"
         fill
         className="object-cover object-top"
@@ -175,7 +175,7 @@ export default function EventsPage() {
     {/* div3 (tall right) */}
     <div className="col-span-2 row-span-4 col-start-5 relative overflow-hidden">
       <Image
-        src="/newEvents/IDA12.webp"
+        src="/newc/IDA12.jpg"
         alt="Event 3"
         fill
         className="object-cover object-top"
@@ -187,7 +187,7 @@ export default function EventsPage() {
     {/* div5 (tall left) */}
     <div className="col-span-2 row-span-4 row-start-3 relative overflow-hidden">
       <Image
-        src="/newEvents/IWA2.webp"
+        src="/newc/IWA2.jpg"
         alt="Event 5"
         fill
         className="object-cover"
@@ -199,7 +199,7 @@ export default function EventsPage() {
     {/* div9 (center square) */}
     <div className="col-span-2 row-span-2 col-start-3 row-start-3 relative overflow-hidden">
       <Image
-        src="/newEvents/Gusto4.webp"
+        src="/newc/Gusto4.jpg"
         alt="Campus Beat"
         fill
         className="object-cover"
@@ -211,7 +211,7 @@ export default function EventsPage() {
     {/* div7 */}
     <div className="col-span-2 row-span-2 col-start-3 row-start-5 relative overflow-hidden">
       <Image
-        src="/newEvents/IWA12.webp"
+        src="/newc/IWA12.webp"
         alt="Event 7"
         fill
         className="object-cover"
@@ -223,7 +223,7 @@ export default function EventsPage() {
     {/* div8 */}
     <div className="col-span-2 row-span-2 col-start-5 row-start-5 relative overflow-hidden">
       <Image
-        src="/newEvents/Splash6.webp"
+        src="/newc/Splash6.webp"
         alt="Event 8"
         fill
         className="object-cover object-top"
@@ -260,12 +260,12 @@ export default function EventsPage() {
     <div className="arch__right-pin">
       <div className="arch__right">
         {[
-          "/newEvents/BParak.jpg",
-          "/newEvents/IWA1.jpg",
-          "/newEvents/Gusto1.jpg",
-          "/newEvents/Navratri1.JPG",
-          "/newEvents/Splash6.jpg",
-          "/newEvents/GanpatiAartiImg.png",
+          "/newc/BParak.jpg",
+                "/newc/IWA1.jpg",
+                "/newc/Gusto1.jpg",
+                "/newc/Navratri4.webp",
+                "/newc/Splash6.webp",
+                "/newEvents/GanpatiAartiImg.png",
         ].map((src, i) => (
           <div className="img-wrapper" data-index={6 - i} key={i}>
             <Image
@@ -304,12 +304,12 @@ export default function EventsPage() {
           <Image
             src={
               [
-                "/newEvents/BParak.webp",
-                "/newEvents/IWA1.webp",
-                "/newEvents/Gusto1.webp",
-                "/newEvents/Navratri1.webp",
-                "/newEvents/Splash6.webp",
-                "/newEvents/GanpatiAartiImg.webp",
+                "/newc/BParak.jpg",
+                "/newc/IWA1.jpg",
+                "/newc/Gusto1.jpg",
+                "/newc/Navratri4.webp",
+                "/newc/Splash6.webp",
+                "/newEvents/GanpatiAartiImg.png",
               ][index]
             }
             alt={event.title}

@@ -7,60 +7,51 @@ const testimonials = [
   {
     image: "/Home/RTestimonials/juspay.png",
     quote:
-      "IGSB’s emphasis on both managerial excellence and practical application prepares students exceptionally well. Their post graduates bring not just skills, but a solution-oriented mindset to Juspay.",
+      "IGSB MBA graduates bring exceptional analytical skills and business acumen to our team. Their ability to adapt quickly and drive results has been impressive.",
     name: "Dr. Shipra Pandit",
     position: "Director - HR, Juspay",
+  },
+   {
+    image: "/Home/RTestimonials/philips.jpg",
+    quote:
+      "We consistently find IGSB MBA graduates well-prepared for the corporate environment. Their strong foundation in business fundamentals and leadership qualities stand out.",
+    name: "Mr. Vispi Karkaria",
+    position: "Early Career Talent India - Philips",
   },
   {
     image: "/Home/RTestimonials/mastercard.webp",
     quote:
-      "IGSB’s commitment to blending technical education with real-world readiness is evident in their students, who arrive well-prepared to contribute meaningfully from day one, making them a preferred choice for our campus recruitment.",
+      "IGSB's MBA programme produces candidates with the strategic thinking and problem-solving capabilities we seek. They have been valuable additions to our organization.",
     name: "Mr. Urvish Pandey",
     position:
       "India Head, University Relations & Early Talent Engagement – Mastercard",
   },
-  {
-    image: "/Home/RTestimonials/ultra.webp",
-    quote:
-      "IGSB has always provided us with trained cohort, and as an organization, we appreciate the college's efforts to prepare the students for the industry.",
-    name: "Dr. Rahul Bagale",
-    position: "Vice President Human Resources – Ultra Corpotech Pvt Ltd",
-  },
-  {
-    image: "/Home/RTestimonials/vascon.webp",
-    quote:
-      "We have entered into an MOU with IGSB to actively support their endeavours in providing excellent job opportunities for management students. Our longstanding partnership with IGSB will continue further to support their MBA cohort .",
-    name: "Mr. Siddharth Moorthy",
-    position: "Managing Director – Vascon Engineers",
-  },
-  {
-    image: "/Home/RTestimonials/zinnov.png",
-    quote:
-      "While conducting campus recruitment drives across the country, IGSB consistently emerges as the top choice due to their exceptional commitment to preparing students for their dream job offers.",
-    name: "Ms. Shilpi Mahar",
-    position: "Associate Director – Zinnov",
-  },
-  {
-    image: "/Home/RTestimonials/expleo.webp",
-    quote:
-      "We appreciate the designed training programs by IGSB aimed at equipping core management students with the necessary skills to excel in the industry. These programs ensure that students emerge as industry-ready professionals",
-    name: "Ms. Sumana Chakraborty",
-    position: "General Manager, HR – Expleo Group",
-  },
+  
+  
+  
+  
   {
     image: "/Home/RTestimonials/ey.png",
     quote:
-      "IGSB has been a top choice since a long time. Their way of creating resources prepared specifically to meet the needs of students ensures a transformative experience that prepares them effectively for the corporate world.",
+      "We value the analytical rigor and professional readiness that IGSB MBA graduates bring to our consulting teams. They integrate seamlessly into our work environment.",
     name: "Mr. Sushant Kumar",
     position: "Assistant Director – Early Career Program, EY",
   },
   {
-    image: "/Home/RTestimonials/philips.jpg",
+    image: "/Home/RTestimonials/50.jpg",
     quote:
-      "We consistently find IGSB students to be proactive learners and strong team players—traits that resonate deeply with the culture of innovation and collaborative excellence at Philips.",
-    name: "Mr. Vispi Karkaria",
-    position: "Early Career Talent India - Philips",
+      "The quality of talent from IGSB's MBA programme has exceeded our expectations. Their graduates demonstrate both theoretical knowledge and practical business sense.",
+    name: "Landmark Group",
+    // position: "Assistant Director – Early Career Program, EY",
   },
+  {
+    image: "/Home/RTestimonials/49.jpg",
+    quote:
+      "IGSB MBA graduates demonstrate strong operational excellence and process orientation. Their ability to handle complex business scenarios makes them valuable assets to our global delivery teams",
+    name: "Rohan Kumar Sudan",
+    position: "Campus & Early Engagement Programs - WNS Global Services Pvt. Ltd.",
+  },
+ 
 ];
 
 export default function Testimonials() {

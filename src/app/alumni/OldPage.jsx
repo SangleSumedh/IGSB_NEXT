@@ -31,10 +31,10 @@ Students were encouraged to choose roles that align with career aspirations inst
 
 Overall, the discussion helped students gain clarity, direction, and motivation for their future careers.`,
     images: [
-      "/IGSB/Alumni/AlumniMeet/1Meet23.webp",
-      "/IGSB/Alumni/AlumniMeet/2Meet23.webp",
-      "/IGSB/Alumni/AlumniMeet/3Meet23.webp",
-      "/IGSB/Alumni/AlumniMeet/4Meet23.webp",
+      "/IGSB/Alumni/AlumniMeet/1Meeet24.webp",
+      "/IGSB/Alumni/AlumniMeet/2Meet24.webp",
+      "/IGSB/Alumni/AlumniMeet/3Meet24.webp",
+      "/IGSB/Alumni/AlumniMeet/4Meet24.webp",
     ],
   },
 
@@ -64,11 +64,12 @@ Alumni Inputs:
 • Offered expertise for SIP viva, PI, GD, guest lectures  
 • Suggested identifying high-performing students for advanced inputs  
 • Recommended training in communication, business etiquette, professionalism, mental well-being, technical certifications`,
-    images: [
-      "/IGSB/Alumni/AlumniMeet/1Meeet24.webp",
-      "/IGSB/Alumni/AlumniMeet/2Meet24.webp",
-      "/IGSB/Alumni/AlumniMeet/3Meet24.webp",
-      "/IGSB/Alumni/AlumniMeet/4Meet24.webp",
+    
+      images: [
+      "/IGSB/Alumni/AlumniMeet/1Meet23.webp",
+      "/IGSB/Alumni/AlumniMeet/2Meet23.webp",
+      "/IGSB/Alumni/AlumniMeet/3Meet23.webp",
+      "/IGSB/Alumni/AlumniMeet/4Meet23.webp",
     ],
   },
 

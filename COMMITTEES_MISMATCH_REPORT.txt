@@ -1,0 +1,411 @@
+================================================================================
+GOVERNANCE & COMMITTEES DATA MISMATCH REPORT
+Generated: February 2, 2026
+================================================================================
+
+SUMMARY:
+--------
+Multiple discrepancies found between the provided committee data and the current 
+governance page implementation. Below is a detailed analysis of all mismatches.
+
+================================================================================
+1. BOARD OF GOVERNORS
+================================================================================
+
+MISSING MEMBER (In Provided Data but NOT in Code):
+✗ Sr.No 3: Mr. Shaan Mehendale - Member - Trust Representative
+  (This member is completely missing from the current code)
+
+MISMATCHED DATA:
+✗ Sr.No 10: Dr. Balkrishan V. Sangvikar vs "Awaited"
+  - Provided: "Dr.Balkrishan V. Sangvikar" - SPPU Academic Expert
+  - Current Code: "Awaited" - SPPU Academic Expert
+  - ACTION: Update with actual name
+
+OTHER OBSERVATIONS:
+✓ Sr.No 1, 2, 4, 5, 6, 7, 8, 9 match correctly
+✓ Sr.No 11-14 match with minor formatting differences
+✓ Sr.No 15/16 match (Director Member Secretary)
+
+================================================================================
+2. COLLEGE DEVELOPMENT COMMITTEE (CDC)
+================================================================================
+
+MISSING MEMBERS (In Provided Data but NOT in Code):
+✗ Sr.No 6: Dr. Anuradha Phadnis - Listed twice with different details
+  - Provided Data has her as part of CDC with mention of "LF-HR" in one entry
+  - Current Code: Sr.No 6 shows "IQAC Head & LF-HR" (CORRECT)
+
+✗ Sr.No 12: Dr. Supriya Patil - Member - Local Member: Education Representative
+  - MISSING from current code
+
+INCORRECT DATA:
+✗ Sr.No 9 in Provided vs Sr.No 9 in Code:
+  - Provided: "Mr.Mahesh Bhagat" - Teaching Representatives, LF-OSCM & CEO
+  - Current Code: "Mr. Mahesh Bhagat" - Teaching Representatives, CEO
+  - MISSING: "LF-OSCM" designation
+
+✗ Sr.No 10/11 Mismatch:
+  - Provided: Mr. Jayant Joshi - Nominee Teaching (Corporate Relations)
+  - Current Code: Sr.No 10 has same info, but Sr.No 11 listed separately as Dr. Priyanka Darekar
+  
+MISSING STUDENT REPRESENTATION:
+✗ Provided Data: "Mr. Atharva Mulay" or "Ms.Mrunal Salve" - Student Representation
+  - Current Code: "Mr. Atharva Mulay" (exists in current code - CORRECT)
+
+SUMMARY FOR CDC:
+- 18 members in provided data
+- 18 members in current code
+- 3-4 members have minor discrepancies in designation details
+
+================================================================================
+3. GRIEVANCE REDRESSAL COMMITTEE - STAFF
+================================================================================
+
+MAJOR MISMATCH - COMPLETELY DIFFERENT STRUCTURE:
+✗ PROVIDED DATA SHOWS:
+  - Sr.No 1: Dr. Virendra Tatake - Chairman
+  - Sr.No 2: Dr.Pallavi Sajanapwar - Member
+  - Sr.No 3: Ms.Snehal Masurkar - Member
+  - Sr.No 4: Shri. B. D. Udhane - Member
+  - Sr.No 5: Mr. Yogesh Gheware - Member
+  - Sr.No 6: Bhumika Deshmukh - Member
+  - Sr.No 7: Abhishek Satav - Member
+  - Sr.No 8: Karan Chandankhed - Member
+  - Sr.No 9: Nidhi Sachin Nene - Member
+  - Sr.No 10: Mr.Mahesh Bhagat - Member Secretary
+
+✗ CURRENT CODE SHOWS (Different Committee Name - "Grievance Redressal Committee"):
+  Same structure as provided (APPEARS CORRECT but verify committee naming)
+
+================================================================================
+4. INTERNAL COMPLAINTS COMMITTEE (ICC)
+================================================================================
+
+MISMATCHED MEMBER - Sr.No 3:
+✗ Provided: "Ms. Pushpa Modi" 
+  Current Code: "Ms. Pushpa Modi" (EXISTS - correct)
+
+✗ Provided: Sr.No 5 has "Adv. Mitali Savlekar" 
+  Current Code: "Adv. Mitali Savlekar" (Note: spelling variation: Mitali vs Meetali)
+  - Provided: "Adv. Mitali Savlekar"
+  - Current: "Adv. Meetali Savlekar"
+  - ACTION: Clarify correct spelling
+
+DIFFERENT STUDENT REPRESENTATIVES:
+✗ Provided lists specific names (Riya Sharma, Varsha Mohite, Deepak Javalgekar)
+  Current Code lists similar structure but names may differ
+
+SUMMARY: Committee exists with mostly matching data but minor name variations.
+
+================================================================================
+5. ACADEMIC ADVISORY COMMITTEE
+================================================================================
+
+MISSING MEMBERS:
+✗ Sr.No 4: In Provided data - "Dr. Ashish Vyas" is NOT listed as member
+  Current Code: Dr. Ashish Vyas NOT listed (CORRECT per provided data)
+
+✗ Provided has 15 members listed
+  Current Code has 14 members (missing details for some roles)
+
+INCORRECT DATA:
+✗ Sr.No 9: Provided shows "-" (empty/awaited)
+  Current Code: Shows "-" (CORRECT)
+
+ACTION NEEDED: Verify and update member count
+
+================================================================================
+6. EXAMINATION COMMITTEE
+================================================================================
+
+STRUCTURE MISMATCH:
+✗ Provided Data shows:
+  Sr.No 1: Dr. Virendra Tatake - Chairman - Director / Center Head
+  Sr.No 2: Dr. Pallavi Sajanapwar - Member - Dean: Academics and Research / IS
+  
+  Current Code shows SAME structure (APPEARS CORRECT)
+
+MISSING DESIGNATION CLARITY:
+✗ Sr.No 5: Ms. Snehal Masurkar 
+  - Provided shows as "SIP Co-ordinator"
+  - Current Code shows similar designation 
+
+SUMMARY: This committee appears mostly aligned
+
+================================================================================
+7. MENTORING COMMITTEE
+================================================================================
+
+MAJOR STRUCTURAL DIFFERENCES:
+✗ PROVIDED DATA SHOWS:
+  - Sr.No 1: Dr. Virendra Tatake - Chairman
+  - Sr.No 2: Mr.Shardul Gangal - Member
+  - Sr.No 3: Mr. Chetan Shankarrao Wakalkar - Member
+  - Sr.No 4: Dr.Pallavi Sajanapwar - Member
+  - Sr.No 5: Dr. Aatish Zagade - Member
+  - Sr.No 6: Dr. Anuradha Phadnis - Member
+  - Sr.No 7: Dr. Priyanka Darekar - Member Secretary
+
+✗ CURRENT CODE SHOWS:
+  - Sr.No 1: Dr. Virendra Tatake - Director
+  - Sr.No 2: Dr. Pallavi Sajanapwar - Member
+  - Sr.No 3: Dr. Aatish Zagade - Member
+  - Sr.No 4: Dr. Anuradha Phadnis - Member
+  - Sr.No 5: Mr. Shrinivas Pande - Member (STUDENT)
+  - Sr.No 6: Ms. Anushka Edake - Member (STUDENT)
+  - Sr.No 7: Mr. Shashwat Deoshetti - Member Secretary
+
+ACTION: MAJOR UPDATE NEEDED - Current code shows different committee composition
+
+================================================================================
+8. LIBRARY COMMITTEE (Digital Library)
+================================================================================
+
+MISSING MEMBERS:
+✗ Provided data shows Sr.No 10: "Prof. Kanchan Patil"
+  NOT FOUND in current code
+
+✗ Provided shows Sr.No 14: "Mr.Jayant Joshi" - Not clearly in the provided list
+  
+ACTION: Update member list
+
+================================================================================
+9. ICT COMMITTEE (ERP, Website & Language Lab)
+================================================================================
+
+MISMATCHED MEMBERS:
+✗ Provided Sr.No 2: "Dr. Neha Chaudhry"
+  Current Sr.No 2: "Dr. Neha Choudhary" (Spelling variation: Chaudhry vs Choudhary)
+  
+✗ Provided Sr.No 6: "Atharva Kumbhar" - Student Rep I year
+  Current Code: "Atharva Kumbhar" (EXISTS - CORRECT)
+
+✗ Provided Sr.No 7: "Mr. Dinesh Khodke" - IT Head
+  Current Code: "Mr. Dinesh Khodke" (EXISTS - CORRECT)
+
+SUMMARY: Minor spelling inconsistencies
+
+================================================================================
+10. ADMIN/ACCOUNTS & MAINTENANCE COMMITTEE
+================================================================================
+
+STATUS: APPEARS ALIGNED
+All members listed in both provided data and current code match
+Minor formatting differences only
+
+================================================================================
+11. ANTI-RAGGING COMMITTEE
+================================================================================
+
+MAJOR MISMATCH - COMPLETELY DIFFERENT STRUCTURE:
+✗ PROVIDED DATA shows extensive committee with:
+  - Faculty members
+  - Hostel wardens
+  - Student representatives
+  - Police/Civil Administration
+  - NGO representatives
+  
+✗ CURRENT CODE SHOWS:
+  NOT FOUND as separate committee (May be merged with another committee)
+
+ACTION: CRITICAL - This committee appears to be missing or renamed
+
+================================================================================
+12. GRIEVANCE REDRESSAL COMMITTEE - STUDENT
+================================================================================
+
+DIFFERENT STRUCTURE:
+✗ Provided shows multiple student representatives and coordinators
+✗ Current code may have different implementation
+
+ACTION: VERIFY implementation
+
+================================================================================
+13. STUDENTS WELFARE COUNCIL
+================================================================================
+
+PROVIDED DATA SHOWS:
+- Multiple student representatives with specific roles
+  
+CURRENT CODE STATUS:
+- Not clearly visible as separate committee
+
+ACTION: VERIFY and potentially add
+
+================================================================================
+14. HOSTEL COMMITTEE
+================================================================================
+
+MISMATCHED MEMBERS:
+✗ Provided Sr.No 3: "Dr. Poonam Wani"
+  Current Code Sr.No 3: "Dr. Poonam Wani" (EXISTS - CORRECT)
+
+✗ Provided Sr.No 4: "Ms. Kanchan Patil" 
+  Current Code Sr.No 4: "Ms. Kanchan Patil" (EXISTS - CORRECT)
+
+✗ Provided Sr.No 7: "Ms. Snehal Masurkar" - Member Secretary
+  Current Code Sr.No 7: "Ms. Snehal Masurkar" (EXISTS - CORRECT)
+
+SUMMARY: Committee appears aligned
+
+================================================================================
+15. ALUMNI ASSOCIATION
+================================================================================
+
+PROVIDED DATA:
+- Sr.No 1: Dr. Virendra Tatake - Chairman
+- Sr.No 2: Dr. Aatish Zagade - Treasurer
+- Sr.No 3: Dr.Pallavi Sajanapwar - Member
+- Sr.No 4-7: Alumni Association members
+
+CURRENT CODE STATUS:
+- NOT FOUND in current governance page implementation
+
+ACTION: ALUMNI ASSOCIATION committee is MISSING
+
+================================================================================
+16. EQUAL OPPORTUNITY CELL (Caste Based Discrimination Committee)
+================================================================================
+
+MISMATCHED MEMBERS:
+✗ Sr.No 8: Provided shows "Ms. Gauri Chavan"
+  Current Code: Shows similar representation but name may differ
+
+✗ Overall structure is present but member names may need verification
+
+ACTION: Cross-reference student names
+
+================================================================================
+17. DIVYANG CELL
+================================================================================
+
+MISMATCHED MEMBERS:
+✗ Provided Sr.No 5: "Mr. Santosh Dagade" - Librarian
+  Current Code: "Mr. Santosh Dagade" (EXISTS - CORRECT)
+
+✗ Provided Sr.No 7: "Ms. Shravani Otari"
+  Current Code: "Ms. Shravani Otari" (EXISTS - CORRECT)
+
+SUMMARY: Committee appears mostly aligned
+
+================================================================================
+18. INTERNSHIP CELL
+================================================================================
+
+MISMATCHED MEMBERS:
+✗ Provided Sr.No 3-4: Different student coordinator names
+  Current Code: Different student coordinators listed
+
+ACTION: Verify latest student representatives
+
+================================================================================
+19. PLACEMENT CELL
+================================================================================
+
+MISSING MEMBERS:
+✗ Provided lists 12 members
+  Current Code lists 9 members
+
+✗ Missing from current code:
+  - Dr. Ashish Vyas (as separate entry in some versions)
+  - Additional teaching representatives
+
+ACTION: Update member list
+
+================================================================================
+20. BRANDING, CREATIVE & MEDIA CELL
+================================================================================
+
+SIGNIFICANTLY DIFFERENT STRUCTURE:
+✗ Provided shows specific student roles:
+  - Coordinator - Content
+  - Coordinator - Logistic
+  - Coordinator - Creatives
+  - Coordinator - Music
+  - Coordinator - IT support
+  - Coordinator - Finance
+
+✗ Current Code shows different structure with student names
+
+ACTION: Update to match provided structure
+
+================================================================================
+21. INSTITUTIONS INNOVATION COUNCIL (IIC)
+================================================================================
+
+MISMATCHED MEMBERS:
+✗ Provided lists Dr. Aniruddh Thuse
+  Current Code: "Dr. Aniruddh Thuse" (EXISTS but role may differ)
+
+✗ Provided Sr.No 11: "Mr. Jagannath Kadam" - ARIIA coordinator
+  Current Code: "Mr. Jaganath Kadam" (Spelling: Jagannath vs Jaganath)
+
+✗ Provided Sr.No 13: "Ms. Vaishnavi Janakawade"
+  Current Code: "Ms. Saurav Nilpatrewar" (DIFFERENT person)
+
+ACTION: Verify and update student representatives
+
+================================================================================
+22. RESEARCH & CONSULTANCY COMMITTEE
+================================================================================
+
+STATUS: APPEARS ALIGNED
+Members match between provided data and current code
+
+================================================================================
+CRITICAL ISSUES SUMMARY
+================================================================================
+
+HIGHEST PRIORITY (MISSING COMMITTEES):
+1. ✗ ALUMNI ASSOCIATION - Completely missing from code
+2. ✗ ANTI-RAGGING COMMITTEE - Missing or renamed
+3. ✗ STUDENTS WELFARE COUNCIL - May be missing or renamed
+4. ✗ MENTOR COMMITTEE - Structure significantly different
+
+HIGH PRIORITY (MAJOR DISCREPANCIES):
+5. ✗ MENTORING COMMITTEE - Multiple members don't match
+6. ✗ PLACEMENT CELL - 3 members missing
+7. ✗ IIC - Student representative names don't match
+8. ✗ BRANDING CELL - Structure is different
+
+MEDIUM PRIORITY (NAME/SPELLING ISSUES):
+9. ✗ Dr. Balkrishan V. Sangvikar - Shows as "Awaited" in code
+10. ✗ Adv. Mitali/Meetali Savlekar - Spelling inconsistency
+11. ✗ Dr. Neha Chaudhry/Choudhary - Spelling inconsistency
+12. ✗ Jagannath/Jaganath Kadam - Spelling inconsistency
+
+LOW PRIORITY (MINOR UPDATES):
+13. ✗ Various student representative names need updating
+14. ✗ Some designation details need clarification
+
+================================================================================
+RECOMMENDATIONS
+================================================================================
+
+ACTION ITEMS:
+1. Add ALUMNI ASSOCIATION committee section to governance page
+2. Verify and update ANTI-RAGGING COMMITTEE (check if merged elsewhere)
+3. Verify STUDENTS WELFARE COUNCIL (check if exists separately)
+4. Completely revise MENTORING COMMITTEE member list
+5. Add missing members to PLACEMENT CELL
+6. Update BRANDING CELL structure and student roles
+7. Fix all spelling inconsistencies for faculty names
+8. Verify all student representative names (especially for 2025-26 batch)
+9. Update IIC student representatives
+10. Clarify Dr. Balkrishan V. Sangvikar's entry (currently "Awaited")
+
+FILE LOCATION FOR UPDATES:
+- Update File: src/app/about/governance/page.jsx
+
+ESTIMATED EFFORT:
+- Critical Issues: 3-4 hours
+- High Priority Issues: 2-3 hours
+- Medium Priority Issues: 1-2 hours
+- Low Priority Issues: 1-2 hours
+
+TOTAL ESTIMATED TIME: 7-11 hours of development work
+
+================================================================================
+END OF REPORT
+================================================================================

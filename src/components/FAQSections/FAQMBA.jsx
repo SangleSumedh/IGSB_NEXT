@@ -1,6 +1,12 @@
 "use client";
 
-import { ArrowBigDown, ArrowBigDownDashIcon, Book, BookAIcon, BookAudio } from "lucide-react";
+import {
+  ArrowBigDown,
+  ArrowBigDownDashIcon,
+  Book,
+  BookAIcon,
+  BookAudio,
+} from "lucide-react";
 import React, { useState } from "react";
 import { FaHandPointUp } from "react-icons/fa";
 import { TbPointerUp } from "react-icons/tb";
@@ -429,65 +435,65 @@ const sectionContent = {
       "Programme Educational Objectives (PEOs)": [
         {
           icon: <Icons.Target />,
-          text: "PEO-1: Graduates will integrate cross-functional management theories with real-world practices.",
+          text: "PEO1: Graduates of the MBA program will successfully integrate core, cross-functional and inter-disciplinary aspects of management theories, models and frameworks with the real-world practices and the sector specific nuances to provide solutions to real world business, policy and social issues in a dynamic and complex world.",
         },
         {
           icon: <Icons.Globe />,
-          text: "PEO-2: Graduates will possess excellent communication skills and appreciate global contexts.",
+          text: "PEO2: Graduates of the MBA program will possess excellent communication skills, excel in cross-functional, multi-disciplinary, multi-cultural teams, and have an appreciation for local, domestic and global contexts so as to manage continuity, change, risk, ambiguity and complexity.",
         },
         {
-          icon: <Icons.Star />,
-          text: "PEO-3: Graduates will be appreciative of Indian ethos and values in decision making.",
+          icon: <Icons.Bulb />,
+          text: "PEO3: Graduates of the MBA program will be appreciative of the significance of Indian ethos and values in managerial decision making and exhibit value centered leadership.",
         },
         {
           icon: <Icons.Briefcase />,
-          text: "PEO-4: Graduates will be ready for careers in corporate, non-profit, and entrepreneurial ventures.",
+          text: "PEO4: Graduates of the MBA program will be ready to engage in successful career pursuits covering a broad spectrum of areas in corporate, non-profit organizations, public policy, entrepreneurial ventures and engage in life-long learning.",
         },
         {
-          icon: <Icons.Book />,
-          text: "PEO-5: Graduates will be recognized for managerial competence and ethical leadership.",
+          icon: <Icons.Star />,
+          text: "PEO5: Graduates of the MBA program will be recognized in their chosen fields for their managerial competence, creativity & innovation, integrity & sensitivity to local and global issues of social relevance and earn the trust & respect of others as inspiring, effective and ethical leaders, managers, entrepreneurs, intrapreneurs and change agents.",
         },
       ],
       "Programme Outcomes (POs)": [
         {
           icon: <Icons.Book />,
-          text: "PO-1: Generic and Domain Knowledge",
+          text: "Generic and Domain Knowledge - Ability to articulate, illustrate, analyze, synthesize and apply the knowledge of principles and frameworks of management and allied domains to the solutions of real-world complex business issues.",
         },
         {
           icon: <Icons.Puzzle />,
-          text: "PO-2: Problem Solving & Innovation",
+          text: "Problem Solving & Innovation - Ability to Identify, formulate and provide innovative solution frameworks to real world complex business and social problems by systematically applying modern quantitative and qualitative problem-solving tools and techniques.",
         },
         {
           icon: <Icons.Chart />,
-          text: "PO-3: Critical Thinking",
+          text: "Critical Thinking - Ability to conduct investigation of multidimensional business problems using research based knowledge and research methods to arrive at data driven decisions.",
         },
         {
           icon: <Icons.Users />,
-          text: "PO-4: Effective Communication",
+          text: "Effective Communication - Ability to effectively communicate in cross-cultural settings, in technology mediated environments, especially in the business context and with society at large.",
         },
         {
           icon: <Icons.Target />,
-          text: "PO-5: Leadership and Team Work",
+          text: "Leadership and Team Work - Ability to collaborate in an organizational context and across organizational boundaries and lead themselves and others in the achievement of organizational goals and optimize outcomes for all stakeholders.",
         },
         {
           icon: <Icons.Globe />,
-          text: "PO-6: Global Orientation",
+          text: "Global Orientation and Cross-Cultural Appreciation: Ability to approach any relevant business issues from a global perspective and exhibit an appreciation of Cross Cultural aspects of business and management.",
         },
         {
           icon: <Icons.Briefcase />,
-          text: "PO-7: Entrepreneurship",
+          text: "Entrepreneurship - Ability to identify entrepreneurial opportunities and leverage managerial & leadership skills for founding, leading & managing startups as well as professionalizing and growing family businesses.",
         },
         {
           icon: <Icons.Leaf />,
-          text: "PO-8: Environment and Sustainability",
+          text: "Environment and Sustainability - Ability to demonstrate knowledge of and need for sustainable development and assess the impact of managerial decisions and business priorities on the societal, economic and environmental aspects.",
         },
         {
           icon: <Icons.Star />,
-          text: "PO-9: Social Responsiveness and Ethics",
+          text: "Social Responsiveness and Ethics - Ability to exhibit a broad appreciation of the ethical and value underpinnings of managerial choices in a political, cross-cultural, globalized, digitized, socio-economic environment and distinguish between ethical and unethical behaviors & act with integrity.",
         },
         {
           icon: <Icons.Bulb />,
-          text: "PO-10: Life Long Learning",
+          text: "LifeLong Learning – Ability to operate independently in new environment, acquire new knowledge and skills and assimilate them into the internalized knowledge and skills.",
         },
       ],
       "Programme Specific Outcomes (PSOs)": [

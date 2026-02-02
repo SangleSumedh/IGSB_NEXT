@@ -55,7 +55,7 @@ const leaders = [
   },
   {
     name: "Dr. Virendra Tatake",
-    title: "Director, Indira Global Business School, Pune.",
+    title: "Director, Indira Global School of Business, Pune.",
     image: "/Edited/Dr. Virendra Tatake.webp",
     message: `At Indira Global School of  Business , we strongly believe that education must continuously evolve to remain relevant, meaningful, and future-ready. The rapidly changing global landscape, driven by technology, innovation, and sustainability, calls for institutions to reimagine learning—and we are proud to be at the forefront of this transformation.
      The National Education Policy (NEP)  provides a progressive roadmap for building a flexible, multidisciplinary, and learner-centric education system. In alignment with NEP, our academic framework emphasizes critical thinking, experiential learning, skill development, and ethical leadership. We focus not only on what students learn, but also on how they learn—encouraging curiosity, adaptability, and lifelong learning.
@@ -72,12 +72,12 @@ const leaders = [
 
 // Teaching Staff IGSB - Simplified as per requirements
 const teachingStaff = [
-  {
-    name: "Dr. Virendra Tatake",
-    role: "Director",
-    image: "/Edited/Dr. Virendra Tatake.webp",
-    type: "teaching",
-  },
+  // {
+  //   name: "Dr. Virendra Tatake",
+  //   role: "Director",
+  //   image: "/Edited/Dr. Virendra Tatake.webp",
+  //   type: "teaching",
+  // },
   {
     name: "Dr. Pallavi Sajanapwar",
     role: "Dean Academics and Research",

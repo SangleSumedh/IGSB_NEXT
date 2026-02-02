@@ -74,7 +74,7 @@ export default function RoadmapSectionMobile() {
       {/* IMAGE */}
       <div className="mb-8">
         <img
-          src="/chanu/chanuhand2.png"
+          src="/chanu/chanuhand2new.png"
           alt="Metamorphosis visual"
           className="w-full h-auto object-contain max-h-64"
         />

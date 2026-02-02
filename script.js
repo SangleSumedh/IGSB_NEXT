@@ -2,54 +2,48 @@ const sharp = require("sharp");
 const fs = require("fs");
 const path = require("path");
 
-const targetDir = "public/NEWFacilities";
+const targetDir = "public/IGSB/student-engagement";
 
 console.log(`Scanning ${targetDir}...`);
 
-const files = fs.readdirSync(targetDir, { recursive: true });
-
 /* -------------------------------------------------
-   STEP 1: DELETE EXISTING WEBP FILES
+   CONVERT/OPTIMIZE IMAGES TO WEBP
+   Handles: PNG, JPEG, JPG, and WebP files
+   (No deletion - re-optimizes existing WebP)
 ------------------------------------------------- */
-files.forEach((file) => {
+const imageFiles = fs
+  .readdirSync(targetDir, { recursive: true })
+  .filter((file) => {
+    const fullPath = path.join(targetDir, file);
+    return (
+      fs.existsSync(fullPath) &&
+      fs.statSync(fullPath).isFile() &&
+      /\.(png|jpe?g|webp)$/i.test(fullPath)
+    );
+  });
+
+let completed = 0;
+
+imageFiles.forEach((file) => {
   const fullPath = path.join(targetDir, file);
+  const destination = fullPath.replace(/\.(png|jpe?g|webp)$/i, ".webp");
 
-  if (
-    fs.existsSync(fullPath) &&
-    fs.statSync(fullPath).isFile() &&
-    /\.webp$/i.test(fullPath)
-  ) {
-    fs.unlinkSync(fullPath);
-    console.log(`🗑️ Deleted old WebP: ${file}`);
-  }
-});
-
-/* -------------------------------------------------
-   STEP 2: CONVERT IMAGES TO WEBP (1280px inside)
-------------------------------------------------- */
-files.forEach((file) => {
-  const fullPath = path.join(targetDir, file);
-
-  if (
-    fs.existsSync(fullPath) &&
-    fs.statSync(fullPath).isFile() &&
-    /\.(png|jpe?g)$/i.test(fullPath)
-  ) {
-    const destination = fullPath.replace(/\.(png|jpe?g)$/i, ".webp");
-
-    sharp(fullPath)
-      .rotate()
-      .resize({
-        width: 1280,
-        height: 1280,
-        fit: "inside",
-        withoutEnlargement: true,
-      })
-      .webp({ quality: 75, effort: 6 })
-      .toFile(destination)
-      .then(() => console.log(`✅ Created: ${destination}`))
-      .catch((err) =>
-        console.error(`❌ Error converting ${file}:`, err)
-      );
-  }
+  sharp(fullPath)
+    .rotate()
+    .resize({
+      width: 1280,
+      height: 1280,
+      fit: "inside",
+      withoutEnlargement: true,
+    })
+    .webp({ quality: 50, effort: 6 })
+    .toFile(destination)
+    .then(() => {
+      completed++;
+      console.log(`✅ Created: ${destination}`);
+      if (completed === imageFiles.length) {
+        console.log(`\n✨ All ${completed} images converted successfully!`);
+      }
+    })
+    .catch((err) => console.error(`❌ Error converting ${file}:`, err));
 });

@@ -195,7 +195,7 @@ export default function CTASection() {
         {/* --- GENTLEMAN --- */}
         <div className="md:col-span-1 flex items-end justify-center relative h-48 md:h-full overflow-visible">
           <img
-            src="/Home/suitwoman2.png"
+            src="/Home/suitwoman2new.png"
             alt="Gentleman"
             className="
               h-[90%] md:h-[125%] w-auto object-contain object-bottom translate-y-2 opacity-100 z-10 drop-shadow-xl

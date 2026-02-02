@@ -30,7 +30,7 @@ export default function RoadmapSection() {
         {/* IMAGE */}
         <div className="flex-shrink-0">
           <img
-            src="/chanu/chanuhand2.png"
+            src="/chanu/chanuhand2new.png"
             alt="Metamorphosis visual"
             className="w-20 sm:w-24 md:w-28 h-auto object-contain drop-shadow-lg"
           />

@@ -176,7 +176,7 @@ const DomainSteps = () => {
                   </div>
 
                   {/* ================= DECORATIVE IMAGE (Right Corner) ================= */}
-                  <div className="hidden md:flex absolute right-13 bottom-8 z-0 pointer-events-none overflow-hidden">
+                  <div className="hidden lg:flex absolute right-13 bottom-8 z-0 pointer-events-none overflow-hidden">
                     <img
                       src={domain.clipart}
                       alt=""

@@ -12,7 +12,10 @@ const phdHolders = [
     expertise: "Financial Management",
     description:
       "Dr. Virendra V. Tatake is an eminent academician and approved PhD Research Supervisor in Financial Management with over 25 years of experience in teaching, research, and academic administration. He serves as Director of Indira Global Business School and specializes in finance, stock markets, mutual funds, and investor behaviour. A prolific author and media contributor, Dr. Tatake has guided doctoral researchers, presented at national and international forums, and received multiple awards for academic leadership and excellence in finance education.",
-    students: [{ name: "Ms. Manasi Tushar Patil", image: "/boy.png" }, {name: "Ms. Chhaya Thakaji Lande", image: "/boy.png"}],
+    students: [
+      { name: "Ms. Manasi Tushar Patil", image: "/boy.png" },
+      { name: "Ms. Chhaya Thakaji Lande", image: "/boy.png" },
+    ],
   },
   {
     name: "Dr. Pallavi Sajanapwar",
@@ -72,7 +75,7 @@ const phdHolders = [
     expertise: "Organizational Management",
     description:
       "Dr. Aatish Dilip Zagade is an award-winning academician and approved PhD Research Supervisor with over 17 years of combined industry and academic experience. He holds a PhD from Nagpur University and an MBA in Human Resource Management, and has completed executive development programs from IIM Ahmedabad. Currently serving as Deputy Director and Professor at Indira Global Business School, his expertise spans Human Resource Management, digital marketing, management education, and organizational development, supported by extensive publications in reputed journals.",
-     students: [
+    students: [
       {
         name: "Selection of one student is under process from SPPU",
         image: "/boy.png",
@@ -563,10 +566,17 @@ export default function Page() {
               </h3>
               <div className="space-y-4 text-sm md:text-base lg:text-lg leading-relaxed opacity-95">
                 <p>
-                  The National Conference on “Innovation Meets Sustainability: Forging the Future Together” was inaugurated in the distinguished presence of our esteemed Guests of Honour—Dr. Bharat Kasar, CMA Ajit Shinde, and CMA Balkrishna Ananda Hajare.
+                  The National Conference on “Innovation Meets Sustainability:
+                  Forging the Future Together” was inaugurated in the
+                  distinguished presence of our esteemed Guests of Honour—Dr.
+                  Bharat Kasar, CMA Ajit Shinde, and CMA Balkrishna Ananda
+                  Hajare.
                 </p>
                 <p>
-                  Their inspiring addresses set a purposeful tone for the conference, fostering meaningful dialogue and insightful exchanges focused on driving innovation and building a sustainable future.
+                  Their inspiring addresses set a purposeful tone for the
+                  conference, fostering meaningful dialogue and insightful
+                  exchanges focused on driving innovation and building a
+                  sustainable future.
                 </p>
               </div>
             </div>
@@ -661,15 +671,17 @@ function PhdCard({ phd, index }) {
       `}
     >
       {/* IMAGE SECTION — Full width on mobile, 1/3 on desktop, filling height */}
-      <div className="w-full lg:w-1/3 relative min-h-[300px] lg:min-h-0">
-        <div className="
+      <div className="w-full lg:w-1/3 relative aspect-[3/4] sm:aspect-[3/4] md:aspect-[1/1.3] lg:aspect-auto">
+        <div
+          className="
           w-full h-full
           rounded-xl md:rounded-2xl
           border-4 border-[#ffb088]
           shadow-md
           overflow-hidden
           relative
-        ">
+        "
+        >
           <Image
             src={phd.image}
             alt={phd.name}
@@ -707,7 +719,9 @@ function PhdCard({ phd, index }) {
 
           {/* Description with line clamp on mobile */}
           <div className="mb-3 md:mb-4 lg:mb-5">
-            <p className={`text-white/90 text-base md:text-lg lg:text-xl leading-relaxed `}>
+            <p
+              className={`text-white/90 text-base md:text-lg lg:text-xl leading-relaxed `}
+            >
               {phd.description}
             </p>
             {phd.description.length > 200 && (
@@ -715,7 +729,7 @@ function PhdCard({ phd, index }) {
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="text-[#ffb088] font-medium text-sm md:text-base mt-1 hover:underline"
               >
-                {isExpanded ? 'Read less' : 'Read more'}
+                {isExpanded ? "Read less" : "Read more"}
               </button>
             )}
           </div>
@@ -764,7 +778,7 @@ function PhdCard({ phd, index }) {
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   @media (min-width: 768px) {
     .line-clamp-4 {
       display: block;
@@ -772,4 +786,4 @@ function PhdCard({ phd, index }) {
       overflow: visible;
     }
   }
-`}</style>
+`}</style>;

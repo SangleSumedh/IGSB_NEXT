@@ -45,8 +45,7 @@ const leaders = [
     name: "DR. TARITA SHANKAR",
     title: "Chairperson & Chief Mentor-IGI",
     image: "/Home/TS.webp",
-    message:
-      `Dear Students,
+    message: `Dear Students,
       For over three decades, our institutions have stood as catalysts of transformation, bridging rigorous academics with real-world relevance. We understand that the leaders of tomorrow need more than knowledge; they need vision, adaptability, and a heart for meaningful change.
       At IGSB, we cultivate an ecosystem where innovation thrives and ethics lead. Through industry-aligned curricula, immersive learning experiences, and a faculty dedicated to mentorship, we empower each student to become not just a skilled professional, but a compassionate and conscious contributor to society.
       Our focus extends beyond academic brilliance; we nurture resilient, empathetic, and globally minded individuals who value integrity, sustainability, and inclusive progress. In a rapidly evolving world, we remain committed to integrating cutting-edge technology and outcome-driven pedagogy, ensuring our learners are always a step ahead.
@@ -58,8 +57,7 @@ const leaders = [
     name: "Dr. Virendra Tatake",
     title: "Director, Indira Global Business School, Pune.",
     image: "/Edited/Dr. Virendra Tatake.webp",
-    message:
-     `At Indira Global School of  Business , we strongly believe that education must continuously evolve to remain relevant, meaningful, and future-ready. The rapidly changing global landscape, driven by technology, innovation, and sustainability, calls for institutions to reimagine learning—and we are proud to be at the forefront of this transformation.
+    message: `At Indira Global School of  Business , we strongly believe that education must continuously evolve to remain relevant, meaningful, and future-ready. The rapidly changing global landscape, driven by technology, innovation, and sustainability, calls for institutions to reimagine learning—and we are proud to be at the forefront of this transformation.
      The National Education Policy (NEP)  provides a progressive roadmap for building a flexible, multidisciplinary, and learner-centric education system. In alignment with NEP, our academic framework emphasizes critical thinking, experiential learning, skill development, and ethical leadership. We focus not only on what students learn, but also on how they learn—encouraging curiosity, adaptability, and lifelong learning.
      In today’s digital era, Artificial Intelligence (AI) is no longer a choice but a necessity. At Indira Global School of  Business , we integrate AI-driven tools and concepts into management education to help students understand data-driven decision-making, automation, analytics, and emerging business models. Our goal is to prepare students who can confidently leverage technology while retaining a strong human and ethical perspective.
      Equally important is our strong focus on entrepreneurship and innovation. We encourage students to move beyond job-seeking and develop an entrepreneurial mindset—one that embraces creativity, problem-solving, risk-taking, and value creation. Through incubation support, industry interaction, live projects, and mentorship, we aim to nurture future entrepreneurs, intrapreneurs, and change-makers who can contribute meaningfully to economic and social development.
@@ -312,7 +310,7 @@ export default function LeadersDeskPage() {
                 `}
               >
                 {/* IMAGE SECTION — 1/3 */}
-                <div className="w-full lg:w-1/3 relative min-h-[300px] lg:min-h-0">
+                <div className="w-full lg:w-1/3 relative aspect-[3/4] sm:aspect-[3/4] md:aspect-[1/1.3] lg:aspect-auto">
                   <div className="w-full h-full relative rounded-lg sm:rounded-xl md:rounded-2xl border-4 border-[#ffb088] shadow-md overflow-hidden">
                     <Image
                       src={leader.image}
@@ -365,13 +363,17 @@ export default function LeadersDeskPage() {
         </div>
 
         {/* Board of Trustees Section */}
-        <section id="about-trustees" className="relative scroll-mt-[15vh] mb-12 sm:mb-16 md:mb-20">
+        <section
+          id="about-trustees"
+          className="relative scroll-mt-[15vh] mb-12 sm:mb-16 md:mb-20"
+        >
           <div className="bg-gradient-to-r from-[#10404A] to-[#1F6D71] p-4 sm:p-5 md:p-6 lg:p-8 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3">
               Board of Trustees
             </h2>
             <p className="text-white text-sm sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-10">
-              Managing Committee Members/Trustees of 'Shree Chanakya Education Society'
+              Managing Committee Members/Trustees of 'Shree Chanakya Education
+              Society'
             </p>
 
             <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3 sm:gap-4">
@@ -380,32 +382,32 @@ export default function LeadersDeskPage() {
                   key={index}
                   className="bg-[#3aafa9] rounded-lg sm:rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-secondary group flex flex-col"
                 >
-                  {/* Image Container - SQUARE for mobile, rectangle for desktop */}
-                  <div className="w-full aspect-square sm:aspect-auto sm:h-48 md:h-54 bg-gray-100 flex items-center justify-center text-gray-400 rounded-t-lg sm:rounded-t-xl group-hover:bg-gray-50 transition-colors overflow-hidden">
-                    <div className="relative w-full h-full flex items-center justify-center p-2">
-                      <Image
-                        src={person.image}
-                        alt={person.name}
-                        fill
-                        className="object-contain"
-                        sizes="(max-width: 480px) 100vw, (max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 14vw"
-                      />
-                    </div>
+                  {/* Image Container - Portrait aspect ratio for all screens to prevent cutoff */}
+                  <div className="w-full aspect-[3/4] sm:aspect-[3/4] md:aspect-[3/4] lg:aspect-[3/4] bg-gray-100 rounded-t-lg sm:rounded-t-xl group-hover:bg-gray-50 transition-colors overflow-hidden relative">
+                    <Image
+                      src={person.image}
+                      alt={person.name}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 480px) 100vw, (max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 14vw"
+                    />
                   </div>
 
                   <div className="p-2 sm:p-3 flex-grow flex flex-col">
-                    <h4 
+                    <h4
                       className="font-bold text-white text-xs sm:text-sm md:text-sm group-hover:text-secondary transition-colors"
                       style={{
-                        display: '-webkit-box',
-                        WebkitLineClamp: '2',
-                        WebkitBoxOrient: 'vertical',
-                        overflow: 'hidden',
+                        display: "-webkit-box",
+                        WebkitLineClamp: "2",
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
                       }}
                     >
                       {person.name}
                     </h4>
-                    <p className="text-white mt-1 text-xs sm:text-xs flex-grow">{person.role}</p>
+                    <p className="text-white mt-1 text-xs sm:text-xs flex-grow">
+                      {person.role}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -414,19 +416,22 @@ export default function LeadersDeskPage() {
         </section>
 
         {/* SCES Section with Read More */}
-        <section id="about-sces" className="relative scroll-mt-[15vh] mb-12 sm:mb-16">
+        <section
+          id="about-sces"
+          className="relative scroll-mt-[15vh] mb-12 sm:mb-16"
+        >
           <div className="bg-gradient-to-r from-[#10404A] to-[#1F6D71] p-4 sm:p-5 md:p-6 lg:p-8 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-5 md:mb-6">
               Shree Chanakya Education Society (SCES)
             </h2>
             <div className="relative">
-              <div 
-                className={`text-white leading-relaxed text-sm sm:text-base md:text-lg text-justify ${isScesExpanded ? '' : 'line-clamp-10 md:line-clamp-none'}`}
+              <div
+                className={`text-white leading-relaxed text-sm sm:text-base md:text-lg text-justify ${isScesExpanded ? "" : "line-clamp-10 md:line-clamp-none"}`}
                 style={{
-                  display: isScesExpanded ? 'block' : '-webkit-box',
-                  WebkitLineClamp: !isScesExpanded && '10',
-                  WebkitBoxOrient: !isScesExpanded && 'vertical',
-                  overflow: !isScesExpanded && 'hidden',
+                  display: isScesExpanded ? "block" : "-webkit-box",
+                  WebkitLineClamp: !isScesExpanded && "10",
+                  WebkitBoxOrient: !isScesExpanded && "vertical",
+                  overflow: !isScesExpanded && "hidden",
                 }}
               >
                 The Shree Chanakya Education Society (SCES) was established in
@@ -434,40 +439,41 @@ export default function LeadersDeskPage() {
                 Shankar, with the aim of providing top quality post-graduate
                 education in the ﬁelds of Business Management, International
                 Business and Information Technology. By consistently providing
-                quality education over the past few decades, institutes at Indira
-                Group is now considered as one of the best institutes in Pune. At
-                a time when India was struggling to put its economy back on its
-                feet, after the nation having pawned the "family jewels" just to
-                keep aﬂoat, Dr. Tarita Shankar sensed that education too would
-                have to become more broad based and more vocational in nature if
-                India was to stand up to the world competition in quality and
-                price for its products, The then Finance Minister had prescribed
-                for the economy and so, in 1994, began a saga of growth and
-                quality in education; a story that is just reaching its zenith
-                with 14 full ﬂedged Institutes registering a strong presence on
-                Pune's educational horizon. Since inception, the Institutes
-                managed by SCES, have maintained high academic standards and have
-                successfully provided trained manpower to the industrial and
-                services sector of the country. These institutes are now listed
-                amongst the top colleges not just in Pune, but also in Maharashtra
-                and India. With a modest strength of 60 students pursuing a single
-                course, SCES has grown steadily and today boasts of 14 Institutes,
-                having more than 8000 students from all over India pursuing
-                multi-disciplinary, graduate & post-graduate programs. The
-                objective of the institute is providing 'Management education in a
-                corporate environment', has been possible due to the sincere and
-                dedicated efforts of the members of SCES, who have invaluable
-                experience in varied areas like academics, industry, service and
+                quality education over the past few decades, institutes at
+                Indira Group is now considered as one of the best institutes in
+                Pune. At a time when India was struggling to put its economy
+                back on its feet, after the nation having pawned the "family
+                jewels" just to keep aﬂoat, Dr. Tarita Shankar sensed that
+                education too would have to become more broad based and more
+                vocational in nature if India was to stand up to the world
+                competition in quality and price for its products, The then
+                Finance Minister had prescribed for the economy and so, in 1994,
+                began a saga of growth and quality in education; a story that is
+                just reaching its zenith with 14 full ﬂedged Institutes
+                registering a strong presence on Pune's educational horizon.
+                Since inception, the Institutes managed by SCES, have maintained
+                high academic standards and have successfully provided trained
+                manpower to the industrial and services sector of the country.
+                These institutes are now listed amongst the top colleges not
+                just in Pune, but also in Maharashtra and India. With a modest
+                strength of 60 students pursuing a single course, SCES has grown
+                steadily and today boasts of 14 Institutes, having more than
+                8000 students from all over India pursuing multi-disciplinary,
+                graduate & post-graduate programs. The objective of the
+                institute is providing 'Management education in a corporate
+                environment', has been possible due to the sincere and dedicated
+                efforts of the members of SCES, who have invaluable experience
+                in varied areas like academics, industry, service and
                 social-world.
               </div>
-              
+
               {/* Read More/Less Button for mobile */}
               <div className="md:hidden mt-4 text-center">
                 <button
                   onClick={() => setIsScesExpanded(!isScesExpanded)}
                   className="text-[#ffb088] font-medium text-sm hover:underline"
                 >
-                  {isScesExpanded ? 'Read Less' : 'Read More'}
+                  {isScesExpanded ? "Read Less" : "Read More"}
                 </button>
               </div>
             </div>
@@ -547,14 +553,14 @@ export default function LeadersDeskPage() {
 
                         {/* Staff Info - Simplified */}
                         <div className="p-3 sm:p-4 flex flex-col flex-grow">
-                          <h3 
+                          <h3
                             className="text-sm sm:text-base md:text-lg font-semibold text-white mb-2"
                             style={{
-                              display: '-webkit-box',
-                              WebkitLineClamp: '2',
-                              WebkitBoxOrient: 'vertical',
-                              overflow: 'hidden',
-                              minHeight: '2.5rem',
+                              display: "-webkit-box",
+                              WebkitLineClamp: "2",
+                              WebkitBoxOrient: "vertical",
+                              overflow: "hidden",
+                              minHeight: "2.5rem",
                             }}
                           >
                             {person.name}
@@ -575,7 +581,9 @@ export default function LeadersDeskPage() {
                                   }
                                 `}
                               >
-                                {person.type === "teaching" ? "Teaching" : "Non-Teaching"}
+                                {person.type === "teaching"
+                                  ? "Teaching"
+                                  : "Non-Teaching"}
                               </span>
                             </div>
                           </div>

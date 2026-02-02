@@ -9,7 +9,7 @@ import Image from "next/image";
 const facilities = [
   {
     title: "Sports",
-    chanakyaImage: "/chanu/chanuSports1.png",
+    chanakyaImage: "/chanu/chanuSports1.webp",
     images: [
       "/NEWFacilities/Sports1.webp",
       "/NEWFacilities/Sports4.webp",
@@ -22,7 +22,7 @@ const facilities = [
   },
   {
     title: "Library",
-    chanakyaImage: "/chanu/chanakya.png",
+    chanakyaImage: "/chanu/chanakya.webp",
     images: [
       "/NEWFacilities/Lib4.webp",
       "/NEWFacilities/Lib1.webp",
@@ -35,7 +35,7 @@ const facilities = [
   },
   {
     title: "Canteen",
-    chanakyaImage: "/chanu/chanuCanteen.png",
+    chanakyaImage: "/chanu/chanuCanteen.webp",
     images: [
       "/NEWFacilities/Canteen2.webp",
       "/NEWFacilities/Canteen1.webp",
@@ -48,7 +48,7 @@ const facilities = [
   },
   {
     title: "Academics",
-    chanakyaImage: "/chanu/chanuAcademics.png",
+    chanakyaImage: "/chanu/chanuAcademics.webp",
     images: [
       "/NEWFacilities/Lab5.webp",
       "/NEWFacilities/Lab7.webp",
@@ -61,7 +61,7 @@ const facilities = [
   },
   {
     title: "Gym",
-    chanakyaImage: "/chanu/chanuGym.png",
+    chanakyaImage: "/chanu/chanuGym.webp",
     images: [
       "/NEWFacilities/Gym3.webp",
       "/NEWFacilities/Gym8.webp",
@@ -74,8 +74,8 @@ const facilities = [
   },
   {
     title: "Hostel",
-    chanakyaImage: "/chanu/chanuHostel.png",
-    singleImage: "/NEWFacilities/FacilitiesHostel.jpg",
+    chanakyaImage: "/chanu/chanuHostel.webp",
+    singleImage: "/NEWFacilities/FacilitiesHostel.webp",
     description1:
       "The campus hostel offers secure, comfortable, and well-maintained residential facilities for students.",
     description2:
@@ -83,7 +83,7 @@ const facilities = [
   },
   {
     title: "Transport",
-    chanakyaImage: "/chanu/chanu7.png",
+    chanakyaImage: "/chanu/chanu7.webp",
     singleImage: "/NEWFacilities/Transport.webp",
     description1:
       "The institution provides reliable and safe transportation facilities with well-connected routes for students and staff.",
@@ -92,11 +92,11 @@ const facilities = [
   },
   {
     title: "Nature and Peace",
-    chanakyaImage: "/chanu/chanumeditatingp2.png",
+    chanakyaImage: "/chanu/chanumeditatingp2.webp",
     images: [
-      "/NEWFacilities/nature1.png",
-      "/NEWFacilities/nature2.jpg",
-      "/NEWFacilities/nature3.jpg",
+      "/NEWFacilities/nature1.webp",
+      "/NEWFacilities/nature2.webp",
+      "/NEWFacilities/nature3.webp",
     ],
     description1:
       "Set amidst a green and serene landscape, the campus offers a clean, pollution-free environment with fresh air and  low AQI.",
@@ -192,7 +192,6 @@ function FacilitySectionMobile({ data, index }) {
     </div>
   );
 }
-
 
 /* =========================
    DESKTOP DESIGN (UNCHANGED)
@@ -319,21 +318,20 @@ export default function FacilitiesPage() {
   return (
     <section className="relative bg-white">
       <div className="w-full py-12 md:py-16 bg-gradient-to-r from-[#FF8B61] via-[#10404A] to-[#10404A] shadow-lg">
-  <div className="max-w-7xl mx-auto px-5 md:px-6 xl:px-16 text-center">
-    <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-extrabold text-white animate-fade-up">
-      MBA Campus Designed for Growth and Innovation
-    </h1>
+        <div className="max-w-7xl mx-auto px-5 md:px-6 xl:px-16 text-center">
+          <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-extrabold text-white animate-fade-up">
+            MBA Campus Designed for Growth and Innovation
+          </h1>
 
-    <div className="mx-auto mt-4 md:mt-5 mb-5 md:mb-6 w-12 md:w-16 h-[3px] rounded-full bg-[#fc7116] animate-fade-up animation-delay-100" />
+          <div className="mx-auto mt-4 md:mt-5 mb-5 md:mb-6 w-12 md:w-16 h-[3px] rounded-full bg-[#fc7116] animate-fade-up animation-delay-100" />
 
-    <p className="text-sm sm:text-base md:text-lg lg:text-lg text-white/90 max-w-4xl mx-auto leading-relaxed animate-fade-up animation-delay-200">
-      Explore a dynamic business school campus offering advanced academic facilities, 
-      collaborative learning spaces, and a vibrant student ecosystem that prepares 
-      future leaders for global careers.
-    </p>
-  </div>
-</div>
-
+          <p className="text-sm sm:text-base md:text-lg lg:text-lg text-white/90 max-w-4xl mx-auto leading-relaxed animate-fade-up animation-delay-200">
+            Explore a dynamic business school campus offering advanced academic
+            facilities, collaborative learning spaces, and a vibrant student
+            ecosystem that prepares future leaders for global careers.
+          </p>
+        </div>
+      </div>
 
       {/* MOBILE → LG */}
       <div className="block lg:hidden">

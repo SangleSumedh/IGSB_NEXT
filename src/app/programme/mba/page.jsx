@@ -470,7 +470,7 @@ export default function MBAContent() {
               ×
             </button>
 
-            <ApplyForm />
+            <ApplyForm variant="modal"/>
           </div>
         </div>
       )}

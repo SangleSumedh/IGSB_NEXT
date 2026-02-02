@@ -283,6 +283,24 @@ body {
   transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
+/* Enable hover variants for custom Tailwind colors */
+.hover\:bg-primary:hover {
+  background-color: rgb(var(--color-primary)) !important;
+}
+
+.hover\:text-primary:hover {
+  color: rgb(var(--color-primary)) !important;
+}
+
+.hover\:bg-white:hover {
+  background-color: #ffffff !important;
+}
+
+.hover\:text-white:hover {
+  color: #ffffff !important;
+}
+
+
 /* ============================================================
    FORM FIXES (Modal Inputs)
 ============================================================ */

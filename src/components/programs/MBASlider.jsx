@@ -190,25 +190,29 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
                     marginTop: "clamp(1.5rem, 3vw, 2.5rem)",
                   }}
                 >
-                  <button
-                    onClick={handleBrochureDownload}
-                    className="px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3 bg-primary hover:bg-white text-white hover:text-primary font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95"
-                    style={{
-                      fontSize: "clamp(0.8125rem, 1.2vw, 1rem)",
-                    }}
-                  >
-                    Download Brochure
-                  </button>
+               <button
+  onClick={handleBrochureDownload}
+  className="px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3
+             bg-primary text-white
+             
+             font-semibold rounded-lg transition-all duration-300
+             shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 md:hover:bg-white md:hover:text-black"
+>
+  Download Brochure
+</button>
 
-                  <button
-                    onClick={toggleModal}
-                    className="px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3 bg-white hover:bg-white text-gray-700 hover:text-gray-900 font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95"
-                    style={{
-                      fontSize: "clamp(0.8125rem, 1.2vw, 1rem)",
-                    }}
-                  >
-                    Enquire Now
-                  </button>
+<button
+  onClick={toggleModal}
+  className="px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3
+             bg-white text-black
+             hover:bg-primary hover:text-white
+             font-semibold rounded-lg transition-all duration-300
+             shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95"
+>
+  Enquire Now
+</button>
+
+
                 </div>
               </div>
             </div>
@@ -222,7 +226,7 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
       <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 xl:bottom-10 xl:right-12 flex items-center gap-3 sm:gap-4 z-30">
         <button
           onClick={handlePrev}
-          className="rounded-full bg-primary hover:brightness-110 transition flex items-center justify-center p-2"
+          className=" hidden md:flex rounded-full bg-primary hover:brightness-110 transition  items-center justify-center p-2"
           aria-label="Previous slide"
         >
           <FaArrowLeft className="text-white w-5 h-5" />
@@ -254,7 +258,7 @@ const MBASlider = ({ toggleModal, handleBrochureDownload }) => {
         </div>
 
         {/* Navigation Arrows */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
+        <div className="hidden md:flex items-center gap-1.5 sm:gap-2">
           <button
             onClick={handleNext}
             className="rounded-full bg-primary hover:brightness-110 transition flex items-center justify-center p-2"

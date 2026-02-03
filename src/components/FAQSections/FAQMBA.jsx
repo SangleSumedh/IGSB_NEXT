@@ -249,28 +249,29 @@ const sectionContent = {
   "MBA Programme Structure ": {
     type: "accordion",
     content: {
-      "Types of Courses in CBCS": [
-        `• Foundation Courses – For students needing fundamental knowledge such as Accounting, Economics, etc.`,
-        `• Enrichment Courses – For students interested in exploring subjects beyond the core syllabus.`,
-        `• Alternative Study Credit Courses – Independent study via live projects, MOOCs, research work, and more.`,
-      ],
+      
 
-      "Major + Minor Specialization Structure": [
-        `Major Specialization – 9 Courses (4 Core + 5 Elective)`,
-        `Minor Specialization – 4 Courses (2 Core + 2 Elective)`,
-        `Major Specialization Credits: 22 (12 Core + 10 Elective)`,
-        `Minor Specialization Credits: 10 (6 Core + 4 Elective)`,
-        `The Major + Minor specialization structure is OPTIONAL.`,
-        `Students opting for Major + Minor must choose Foundation/Enrichment/ASC courses ONLY in lieu of Generic Electives.`,
-      ],
+      // "Major + Minor Specialization Structure": [
+      //   `Major Specialization – 9 Courses (4 Core + 5 Elective)`,
+      //   `Minor Specialization – 4 Courses (2 Core + 2 Elective)`,
+      //   `Major Specialization Credits: 22 (12 Core + 10 Elective)`,
+      //   `Minor Specialization Credits: 10 (6 Core + 4 Elective)`,
+      //   `The Major + Minor specialization structure is OPTIONAL.`,
+      //   `Students opting for Major + Minor must choose Foundation/Enrichment/ASC courses ONLY in lieu of Generic Electives.`,
+      // ],
 
       "Degree Award Details": [
         `• Completing 6 Core + 7 Electives in one domain earns: MBA (Specialization).`,
         `• Completing a Major + Minor combination earns: MBA (Major Specialization + Minor Specialization).`,
       ],
+      "Types of Courses in CBCS": [
+        `• Foundation Courses – For students needing fundamental knowledge such as Accounting, Economics, etc.`,
+        `• Enrichment Courses – For students interested in exploring subjects beyond the core syllabus.`,
+        `• Alternative Study Credit Courses – Independent study via live projects, MOOCs, research work, and more.`,
+      ],
     },
   },
-  "Programme Objectives (AY 2024-25)": {
+  "Programme Objectives ": {
     type: "accordion",
     content: {
       "Programme Educational Objectives (PEOs)": [
@@ -429,97 +430,97 @@ const sectionContent = {
       ],
     },
   },
-  "Programme Objectives (Legacy/Pre-2024)": {
-    type: "accordion",
-    content: {
-      "Programme Educational Objectives (PEOs)": [
-        {
-          icon: <Icons.Target />,
-          text: "PEO1: Graduates of the MBA program will successfully integrate core, cross-functional and inter-disciplinary aspects of management theories, models and frameworks with the real-world practices and the sector specific nuances to provide solutions to real world business, policy and social issues in a dynamic and complex world.",
-        },
-        {
-          icon: <Icons.Globe />,
-          text: "PEO2: Graduates of the MBA program will possess excellent communication skills, excel in cross-functional, multi-disciplinary, multi-cultural teams, and have an appreciation for local, domestic and global contexts so as to manage continuity, change, risk, ambiguity and complexity.",
-        },
-        {
-          icon: <Icons.Bulb />,
-          text: "PEO3: Graduates of the MBA program will be appreciative of the significance of Indian ethos and values in managerial decision making and exhibit value centered leadership.",
-        },
-        {
-          icon: <Icons.Briefcase />,
-          text: "PEO4: Graduates of the MBA program will be ready to engage in successful career pursuits covering a broad spectrum of areas in corporate, non-profit organizations, public policy, entrepreneurial ventures and engage in life-long learning.",
-        },
-        {
-          icon: <Icons.Star />,
-          text: "PEO5: Graduates of the MBA program will be recognized in their chosen fields for their managerial competence, creativity & innovation, integrity & sensitivity to local and global issues of social relevance and earn the trust & respect of others as inspiring, effective and ethical leaders, managers, entrepreneurs, intrapreneurs and change agents.",
-        },
-      ],
-      "Programme Outcomes (POs)": [
-        {
-          icon: <Icons.Book />,
-          text: "Generic and Domain Knowledge - Ability to articulate, illustrate, analyze, synthesize and apply the knowledge of principles and frameworks of management and allied domains to the solutions of real-world complex business issues.",
-        },
-        {
-          icon: <Icons.Puzzle />,
-          text: "Problem Solving & Innovation - Ability to Identify, formulate and provide innovative solution frameworks to real world complex business and social problems by systematically applying modern quantitative and qualitative problem-solving tools and techniques.",
-        },
-        {
-          icon: <Icons.Chart />,
-          text: "Critical Thinking - Ability to conduct investigation of multidimensional business problems using research based knowledge and research methods to arrive at data driven decisions.",
-        },
-        {
-          icon: <Icons.Users />,
-          text: "Effective Communication - Ability to effectively communicate in cross-cultural settings, in technology mediated environments, especially in the business context and with society at large.",
-        },
-        {
-          icon: <Icons.Target />,
-          text: "Leadership and Team Work - Ability to collaborate in an organizational context and across organizational boundaries and lead themselves and others in the achievement of organizational goals and optimize outcomes for all stakeholders.",
-        },
-        {
-          icon: <Icons.Globe />,
-          text: "Global Orientation and Cross-Cultural Appreciation: Ability to approach any relevant business issues from a global perspective and exhibit an appreciation of Cross Cultural aspects of business and management.",
-        },
-        {
-          icon: <Icons.Briefcase />,
-          text: "Entrepreneurship - Ability to identify entrepreneurial opportunities and leverage managerial & leadership skills for founding, leading & managing startups as well as professionalizing and growing family businesses.",
-        },
-        {
-          icon: <Icons.Leaf />,
-          text: "Environment and Sustainability - Ability to demonstrate knowledge of and need for sustainable development and assess the impact of managerial decisions and business priorities on the societal, economic and environmental aspects.",
-        },
-        {
-          icon: <Icons.Star />,
-          text: "Social Responsiveness and Ethics - Ability to exhibit a broad appreciation of the ethical and value underpinnings of managerial choices in a political, cross-cultural, globalized, digitized, socio-economic environment and distinguish between ethical and unethical behaviors & act with integrity.",
-        },
-        {
-          icon: <Icons.Bulb />,
-          text: "LifeLong Learning – Ability to operate independently in new environment, acquire new knowledge and skills and assimilate them into the internalized knowledge and skills.",
-        },
-      ],
-      "Programme Specific Outcomes (PSOs)": [
-        {
-          icon: <Icons.Megaphone />,
-          text: "PSO – MKT: To develop Marketing Professionals with abilities to contemplate business problems and design sustainable strategies.",
-        },
-        {
-          icon: <Icons.Currency />,
-          text: "PSO – FIN: To develop finance professionals with analytical skills for various industries.",
-        },
-        {
-          icon: <Icons.Users />,
-          text: "PSO – HR: To develop HR professionals with in-depth knowledge of HRM practices.",
-        },
-        {
-          icon: <Icons.Truck />,
-          text: "PSO – OSCM: To develop skills for planning, designing and operations control.",
-        },
-        {
-          icon: <Icons.Chart />,
-          text: "PSO – BA: To be updated by next week.",
-        },
-      ],
-    },
-  },
+  // "Programme Objectives (Legacy/Pre-2024)": {
+  //   type: "accordion",
+  //   content: {
+  //     "Programme Educational Objectives (PEOs)": [
+  //       {
+  //         icon: <Icons.Target />,
+  //         text: "PEO1: Graduates of the MBA program will successfully integrate core, cross-functional and inter-disciplinary aspects of management theories, models and frameworks with the real-world practices and the sector specific nuances to provide solutions to real world business, policy and social issues in a dynamic and complex world.",
+  //       },
+  //       {
+  //         icon: <Icons.Globe />,
+  //         text: "PEO2: Graduates of the MBA program will possess excellent communication skills, excel in cross-functional, multi-disciplinary, multi-cultural teams, and have an appreciation for local, domestic and global contexts so as to manage continuity, change, risk, ambiguity and complexity.",
+  //       },
+  //       {
+  //         icon: <Icons.Bulb />,
+  //         text: "PEO3: Graduates of the MBA program will be appreciative of the significance of Indian ethos and values in managerial decision making and exhibit value centered leadership.",
+  //       },
+  //       {
+  //         icon: <Icons.Briefcase />,
+  //         text: "PEO4: Graduates of the MBA program will be ready to engage in successful career pursuits covering a broad spectrum of areas in corporate, non-profit organizations, public policy, entrepreneurial ventures and engage in life-long learning.",
+  //       },
+  //       {
+  //         icon: <Icons.Star />,
+  //         text: "PEO5: Graduates of the MBA program will be recognized in their chosen fields for their managerial competence, creativity & innovation, integrity & sensitivity to local and global issues of social relevance and earn the trust & respect of others as inspiring, effective and ethical leaders, managers, entrepreneurs, intrapreneurs and change agents.",
+  //       },
+  //     ],
+  //     "Programme Outcomes (POs)": [
+  //       {
+  //         icon: <Icons.Book />,
+  //         text: "Generic and Domain Knowledge - Ability to articulate, illustrate, analyze, synthesize and apply the knowledge of principles and frameworks of management and allied domains to the solutions of real-world complex business issues.",
+  //       },
+  //       {
+  //         icon: <Icons.Puzzle />,
+  //         text: "Problem Solving & Innovation - Ability to Identify, formulate and provide innovative solution frameworks to real world complex business and social problems by systematically applying modern quantitative and qualitative problem-solving tools and techniques.",
+  //       },
+  //       {
+  //         icon: <Icons.Chart />,
+  //         text: "Critical Thinking - Ability to conduct investigation of multidimensional business problems using research based knowledge and research methods to arrive at data driven decisions.",
+  //       },
+  //       {
+  //         icon: <Icons.Users />,
+  //         text: "Effective Communication - Ability to effectively communicate in cross-cultural settings, in technology mediated environments, especially in the business context and with society at large.",
+  //       },
+  //       {
+  //         icon: <Icons.Target />,
+  //         text: "Leadership and Team Work - Ability to collaborate in an organizational context and across organizational boundaries and lead themselves and others in the achievement of organizational goals and optimize outcomes for all stakeholders.",
+  //       },
+  //       {
+  //         icon: <Icons.Globe />,
+  //         text: "Global Orientation and Cross-Cultural Appreciation: Ability to approach any relevant business issues from a global perspective and exhibit an appreciation of Cross Cultural aspects of business and management.",
+  //       },
+  //       {
+  //         icon: <Icons.Briefcase />,
+  //         text: "Entrepreneurship - Ability to identify entrepreneurial opportunities and leverage managerial & leadership skills for founding, leading & managing startups as well as professionalizing and growing family businesses.",
+  //       },
+  //       {
+  //         icon: <Icons.Leaf />,
+  //         text: "Environment and Sustainability - Ability to demonstrate knowledge of and need for sustainable development and assess the impact of managerial decisions and business priorities on the societal, economic and environmental aspects.",
+  //       },
+  //       {
+  //         icon: <Icons.Star />,
+  //         text: "Social Responsiveness and Ethics - Ability to exhibit a broad appreciation of the ethical and value underpinnings of managerial choices in a political, cross-cultural, globalized, digitized, socio-economic environment and distinguish between ethical and unethical behaviors & act with integrity.",
+  //       },
+  //       {
+  //         icon: <Icons.Bulb />,
+  //         text: "LifeLong Learning – Ability to operate independently in new environment, acquire new knowledge and skills and assimilate them into the internalized knowledge and skills.",
+  //       },
+  //     ],
+  //     "Programme Specific Outcomes (PSOs)": [
+  //       {
+  //         icon: <Icons.Megaphone />,
+  //         text: "PSO – MKT: To develop Marketing Professionals with abilities to contemplate business problems and design sustainable strategies.",
+  //       },
+  //       {
+  //         icon: <Icons.Currency />,
+  //         text: "PSO – FIN: To develop finance professionals with analytical skills for various industries.",
+  //       },
+  //       {
+  //         icon: <Icons.Users />,
+  //         text: "PSO – HR: To develop HR professionals with in-depth knowledge of HRM practices.",
+  //       },
+  //       {
+  //         icon: <Icons.Truck />,
+  //         text: "PSO – OSCM: To develop skills for planning, designing and operations control.",
+  //       },
+  //       {
+  //         icon: <Icons.Chart />,
+  //         text: "PSO – BA: To be updated by next week.",
+  //       },
+  //     ],
+  //   },
+  // },
   "Syllabus & Course Structure": {
     type: "syllabus",
     content: syllabusList,

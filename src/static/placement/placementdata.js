@@ -4,10 +4,10 @@
         pdfName: "Placement Data 2023–25",
     pdfUrl: "/placement/2023-25.xlsx",
       statsImages: [
-        { img: "/placement/sectorial.png", title: "Sectoral Distribution" },
-        { img: "/placement/spec.png", title: "Specialization" },
-        { img: "/placement/package.png", title: "Package Overview" },
-        { img: "/placement/location.png", title: "Location Distribution" },
+        { img: "/placement/sectorial.webp", title: "Sectoral Distribution" },
+        { img: "/placement/spec.webp", title: "Specialization" },
+        { img: "/placement/package.webp", title: "Package Overview" },
+        { img: "/placement/location.webp", title: "Location Distribution" },
       ],
      
     },

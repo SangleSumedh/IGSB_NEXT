@@ -6,7 +6,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 const HeroSlider = () => {
   const desktopImages = [
-    "/Home/IGSBBannerH7.webp",
+    // "/Home/IGSBBannerH7.webp",
     "/Home/IGSBBanner4.webp",
     "/Home/IGSBBanner2.webp",
     "/Home/IGSBBanner3.webp",

@@ -30,8 +30,8 @@ function page() {
 
     // ✅ NEW VIDEO CARD
     {
-      title: "IGSB Infrastructure Video (30 mins)",
-      file: "https://shreechanakya-my.sharepoint.com/personal/solomon_gaikwad_indiraigsb_edu_in/_layouts/15/stream.aspx?id=%2Fpersonal%2Fsolomon_gaikwad_indiraigsb_edu_in%2FDocuments%2FIGSB%20Photos%2FIGSB%2030%20Mins%20Infra%2Emp4",
+      title: "Infrastructure & Facility of IGSB",
+      file: "https://drive.google.com/file/d/1QbbTPa3UezSJw-mphgTFLMNbxnBeuKqW/view",
       type: "video",
     },
   ];

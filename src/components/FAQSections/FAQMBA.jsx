@@ -246,32 +246,51 @@ const examList = [
 ];
 
 const sectionContent = {
-  "MBA Programme Structure ": {
+  "MBA Programme Structure": {
     type: "accordion",
     content: {
-      
+      "Types of Courses under CBCS": [
+        `Core courses are the compulsory courses for all the students. Core courses are of two types: Generic Core & Subject Core.`,
+        `• Generic Core: This is the course which should compulsorily be studied by a candidate as a core requirement to complete the requirement of a degree in a said discipline of study. Therefore, Generic Core courses are mandatory and fundamental in nature. These courses cannot be substituted by any other courses. Such courses are also known as Hard Core Courses.`,
+        `• Subject Core: A Core course may be a Subject Core if there is a choice or an option for the candidate to choose from a broad category (grouping) of subjects (specializations).`,
+        `• Elective Course: Elective course is a course which can be chosen from a pool of courses. It may be:`,
+        `a) Very Specialized or advanced course focusing on a specific aspect`,
+        `b) Supportive to the discipline of study`,
+        `c) Providing an extended scope`,
+        `d) Enabling an exposure to some other discipline/domain`,
+        `e) Nurturing candidate's proficiency/skills.`,
+        `• Generic Elective: An elective course which is common across disciplines / subjects is called a generic elective. 'Generic Elective' courses develop generic proficiencies amongst the students`,
+        `• Subject Elective: A 'Discipline (specialization) centric' elective is called 'Subject Elective.' Subject Elective courses, in the Semester II, III and IV are focused on a specialization.`,
+        `• Research Methodology Courses: These courses are focused on various aspects of Research. They include –Business Research Methods, Desk Research (DR) and Field Project (FP) in Semester II, On The Job Training (OJT) in Semester III and Research Project (RP) in Semester IV. DR, FP, OJT and RP shall be specialization specific compulsory courses (subject core). BRM shall be a generic compulsory course.`,
+        `• Course Announcement Each semester, the institute announces the elective courses and specializations offered from a wider course basket. While it is not mandatory to offer all electives or specializations, in the spirit of CBCS, students are provided with meaningful choices beyond the minimum required options. This enables them to tailor their learning journey according to their interests and career goals.`,
+        `• Course Orientation`,
+        `Orientation of courses is conducted at the beginning of every semester. On admission, each student is assigned a Faculty Mentor who provides academic guidance and counseling on course selection, considering the student's profile, career objectives, and prior coursework. With the Mentors consent, students selects a set of courses planned for the semester.`,
+        `This structured approach ensures that students benefit from academic flexibility, guided mentorship, and a curriculum aligned with their professional development and industry readiness`,
+      ],
 
-      // "Major + Minor Specialization Structure": [
-      //   `Major Specialization – 9 Courses (4 Core + 5 Elective)`,
-      //   `Minor Specialization – 4 Courses (2 Core + 2 Elective)`,
-      //   `Major Specialization Credits: 22 (12 Core + 10 Elective)`,
-      //   `Minor Specialization Credits: 10 (6 Core + 4 Elective)`,
-      //   `The Major + Minor specialization structure is OPTIONAL.`,
-      //   `Students opting for Major + Minor must choose Foundation/Enrichment/ASC courses ONLY in lieu of Generic Electives.`,
-      // ],
+      "Major Specialization Structure": [
+        `The following specializations are being offered:`,
+        `1. Marketing Management (MKT)`,
+        `2. Financial Management (FIN)`,
+        `3. Human Resources Management (HRM)`,
+        `4. Operations & Supply Chain Management (OSCM)`,
+        `5. Business Analytics (BA) `,
+        `• Additional Specialization:`,
+        `A student who has completed the MBA programme under this pattern may enroll for additional specialization after passing out the regular MBA programme. Such students will be exempted from appearing for all the generic core and generic elective courses.`,
+        `Such students shall have to appear for the subject core, subject elective courses, DR, FP, OJT and RP of the additional specialization that they have opted for`,
+      ],
 
       "Degree Award Details": [
-        `• Completing 6 Core + 7 Electives in one domain earns: MBA (Specialization).`,
-        `• Completing a Major + Minor combination earns: MBA (Major Specialization + Minor Specialization).`,
-      ],
-      "Types of Courses in CBCS": [
-        `• Foundation Courses – For students needing fundamental knowledge such as Accounting, Economics, etc.`,
-        `• Enrichment Courses – For students interested in exploring subjects beyond the core syllabus.`,
-        `• Alternative Study Credit Courses – Independent study via live projects, MOOCs, research work, and more.`,
+        `The degree requirements for the MBA programme are completion of minimum 104 credits.`,
+        `Maximum Attempts per Course:`,
+        `A student shall earn the credits for a given course in maximum FOUR attempts.`,
+        `Maximum Duration for completion of the Programme:`,
+        `The candidates shall complete the MBA Programme within 4 years from the date of admission.`,
+        `The entire process of MBA Degree Convocation is executed by Savitribai Phule Pune University, Pune, Maharashtra.`,
       ],
     },
   },
-  "Programme Objectives ": {
+  "POs , PEOs , PSOs": {
     type: "accordion",
     content: {
       "Programme Educational Objectives (PEOs)": [
@@ -430,97 +449,7 @@ const sectionContent = {
       ],
     },
   },
-  // "Programme Objectives (Legacy/Pre-2024)": {
-  //   type: "accordion",
-  //   content: {
-  //     "Programme Educational Objectives (PEOs)": [
-  //       {
-  //         icon: <Icons.Target />,
-  //         text: "PEO1: Graduates of the MBA program will successfully integrate core, cross-functional and inter-disciplinary aspects of management theories, models and frameworks with the real-world practices and the sector specific nuances to provide solutions to real world business, policy and social issues in a dynamic and complex world.",
-  //       },
-  //       {
-  //         icon: <Icons.Globe />,
-  //         text: "PEO2: Graduates of the MBA program will possess excellent communication skills, excel in cross-functional, multi-disciplinary, multi-cultural teams, and have an appreciation for local, domestic and global contexts so as to manage continuity, change, risk, ambiguity and complexity.",
-  //       },
-  //       {
-  //         icon: <Icons.Bulb />,
-  //         text: "PEO3: Graduates of the MBA program will be appreciative of the significance of Indian ethos and values in managerial decision making and exhibit value centered leadership.",
-  //       },
-  //       {
-  //         icon: <Icons.Briefcase />,
-  //         text: "PEO4: Graduates of the MBA program will be ready to engage in successful career pursuits covering a broad spectrum of areas in corporate, non-profit organizations, public policy, entrepreneurial ventures and engage in life-long learning.",
-  //       },
-  //       {
-  //         icon: <Icons.Star />,
-  //         text: "PEO5: Graduates of the MBA program will be recognized in their chosen fields for their managerial competence, creativity & innovation, integrity & sensitivity to local and global issues of social relevance and earn the trust & respect of others as inspiring, effective and ethical leaders, managers, entrepreneurs, intrapreneurs and change agents.",
-  //       },
-  //     ],
-  //     "Programme Outcomes (POs)": [
-  //       {
-  //         icon: <Icons.Book />,
-  //         text: "Generic and Domain Knowledge - Ability to articulate, illustrate, analyze, synthesize and apply the knowledge of principles and frameworks of management and allied domains to the solutions of real-world complex business issues.",
-  //       },
-  //       {
-  //         icon: <Icons.Puzzle />,
-  //         text: "Problem Solving & Innovation - Ability to Identify, formulate and provide innovative solution frameworks to real world complex business and social problems by systematically applying modern quantitative and qualitative problem-solving tools and techniques.",
-  //       },
-  //       {
-  //         icon: <Icons.Chart />,
-  //         text: "Critical Thinking - Ability to conduct investigation of multidimensional business problems using research based knowledge and research methods to arrive at data driven decisions.",
-  //       },
-  //       {
-  //         icon: <Icons.Users />,
-  //         text: "Effective Communication - Ability to effectively communicate in cross-cultural settings, in technology mediated environments, especially in the business context and with society at large.",
-  //       },
-  //       {
-  //         icon: <Icons.Target />,
-  //         text: "Leadership and Team Work - Ability to collaborate in an organizational context and across organizational boundaries and lead themselves and others in the achievement of organizational goals and optimize outcomes for all stakeholders.",
-  //       },
-  //       {
-  //         icon: <Icons.Globe />,
-  //         text: "Global Orientation and Cross-Cultural Appreciation: Ability to approach any relevant business issues from a global perspective and exhibit an appreciation of Cross Cultural aspects of business and management.",
-  //       },
-  //       {
-  //         icon: <Icons.Briefcase />,
-  //         text: "Entrepreneurship - Ability to identify entrepreneurial opportunities and leverage managerial & leadership skills for founding, leading & managing startups as well as professionalizing and growing family businesses.",
-  //       },
-  //       {
-  //         icon: <Icons.Leaf />,
-  //         text: "Environment and Sustainability - Ability to demonstrate knowledge of and need for sustainable development and assess the impact of managerial decisions and business priorities on the societal, economic and environmental aspects.",
-  //       },
-  //       {
-  //         icon: <Icons.Star />,
-  //         text: "Social Responsiveness and Ethics - Ability to exhibit a broad appreciation of the ethical and value underpinnings of managerial choices in a political, cross-cultural, globalized, digitized, socio-economic environment and distinguish between ethical and unethical behaviors & act with integrity.",
-  //       },
-  //       {
-  //         icon: <Icons.Bulb />,
-  //         text: "LifeLong Learning – Ability to operate independently in new environment, acquire new knowledge and skills and assimilate them into the internalized knowledge and skills.",
-  //       },
-  //     ],
-  //     "Programme Specific Outcomes (PSOs)": [
-  //       {
-  //         icon: <Icons.Megaphone />,
-  //         text: "PSO – MKT: To develop Marketing Professionals with abilities to contemplate business problems and design sustainable strategies.",
-  //       },
-  //       {
-  //         icon: <Icons.Currency />,
-  //         text: "PSO – FIN: To develop finance professionals with analytical skills for various industries.",
-  //       },
-  //       {
-  //         icon: <Icons.Users />,
-  //         text: "PSO – HR: To develop HR professionals with in-depth knowledge of HRM practices.",
-  //       },
-  //       {
-  //         icon: <Icons.Truck />,
-  //         text: "PSO – OSCM: To develop skills for planning, designing and operations control.",
-  //       },
-  //       {
-  //         icon: <Icons.Chart />,
-  //         text: "PSO – BA: To be updated by next week.",
-  //       },
-  //     ],
-  //   },
-  // },
+
   "Syllabus & Course Structure": {
     type: "syllabus",
     content: syllabusList,
@@ -630,14 +559,14 @@ const sectionContent = {
             [
               `(i) The candidate should be an Indian National;
 
-(ii) Passed minimum three-year duration Bachelor’s Degree awarded by any of the Universities recognized by UGC or AIU in any discipline with at least 50% marks in aggregate (45% for backward class categories and PwD of Maharashtra State only);
+(ii) Passed minimum three-year duration Bachelor's Degree awarded by any of the Universities recognized by UGC or AIU in any discipline with at least 50% marks in aggregate (45% for backward class categories and PwD of Maharashtra State only);
 
 (iii) Obtained non-zero score in MAH-MBA/MMS-CET.`,
               `**Obtained non-zero positive score in any one of the following examinations:  
 MAH-MBA/MMS-CET, CAT, CMAT**`,
               `The candidate should be an Indian National;
 
-Passed minimum three-year duration Bachelor’s Degree awarded by any of the Universities recognized by UGC/AIU with at least 50% marks (45% for backward class categories & PwD of Maharashtra State);
+Passed minimum three-year duration Bachelor's Degree awarded by any of the Universities recognized by UGC/AIU with at least 50% marks (45% for backward class categories & PwD of Maharashtra State);
 
 OR
 
@@ -653,8 +582,8 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
 • "Aggregate marks" means the grand total of marks for subjects considered for class declaration by the respective University.  
 • If grades/CGPA are awarded instead of marks, conversion will follow the procedure certified by the respective University/Institution.  
 • Percentage shall be calculated by rounding off to two decimal places.  
-• Candidates belonging to SC, VJ/DT (NT-A), NT-B, NT-C, NT-D, OBC, SBC, SEBC categories must submit “Caste Validity Certificate” issued by Social Welfare Scrutiny Committee.  
-• ST candidates must submit “Tribe Validity Certificate” issued by the Tribal Department Scrutiny Committee.`,
+• Candidates belonging to SC, VJ/DT (NT-A), NT-B, NT-C, NT-D, OBC, SBC, SEBC categories must submit "Caste Validity Certificate" issued by Social Welfare Scrutiny Committee.  
+• ST candidates must submit "Tribe Validity Certificate" issued by the Tribal Department Scrutiny Committee.`,
 
         // DOCUMENTS REQUIRED
         {
@@ -702,7 +631,7 @@ Must obtain a non-zero positive score in MAH-MBA/MMS-CET, CAT, CMAT.`,
 
 // ================== MAIN COMPONENT ==================
 export default function FAQMBA() {
-  const [active, setActive] = useState("MBA Programme Structure ");
+  const [active, setActive] = useState("MBA Programme Structure");
 
   const tabs = Object.keys(sectionContent);
 

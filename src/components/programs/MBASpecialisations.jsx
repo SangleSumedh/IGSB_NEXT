@@ -147,13 +147,13 @@ export default function ProgrammesSection() {
             src="/Home/MBASpec.png"
             alt="MBA Specializations"
             fill
-            className="object-contain object-bottom left-0"
+            className="object-contain object-left-bottom left-0"
             priority
           />
         </div>
 
         {/* LEFT SIDE: CIRCLE INTERFACE */}
-        <div className="absolute -bottom-10 lg:left-10 xl:left-16 lg:w-[40vw] lg:h-[40vw] xl:w-[45vw] xl:h-[45vw]">
+        <div className="absolute -bottom-[10%] lg:left-10 xl:left-16 lg:w-[min(40vw,50rem)] lg:h-[min(40vw,50rem)] xl:w-[min(45vw,60rem)] xl:h-[min(45vw,60rem)]">
           <div className="relative w-full h-full rounded-full border-4 border-[#fc7116]">
             {specializations.map((spec, index) => {
               const radian = (spec.angle * Math.PI) / 180;

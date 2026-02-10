@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import { Linkedin, Globe } from "lucide-react";
 
 const trustees = [
   {
@@ -70,196 +71,234 @@ const leaders = [
   },
 ];
 
-// Teaching Staff IGSB - Simplified as per requirements
+// Teaching Staff IGSB
 const teachingStaff = [
-  // {
-  //   name: "Dr. Virendra Tatake",
-  //   role: "Director",
-  //   image: "/Edited/Dr. Virendra Tatake.webp",
-  //   type: "teaching",
-  // },
   {
-    name: "Dr. Pallavi Sajanapwar",
+    name: "Dr. Pallavi Shrirang Sajanapwar",
     role: "Dean Academics and Research",
+    expertise: "Marketing and General Management",
     image: "/Edited/Dr. Pallavi Sajanapwar.webp",
-    type: "teaching",
   },
   {
-    name: "Dr. Aatish Zagade",
+    name: "Dr. Aatish Dilip Zagade",
     role: "Deputy Director",
+    expertise: "Human Resource & Marketing Management",
     image: "/Edited/Dr. Aatish Zagade.webp",
-    type: "teaching",
+    linkedin: true,
+    website: true,
   },
   {
-    name: "Dr. Anuradha Phadnis",
+    name: "Dr. Anuradha Samarth Phadnis",
     role: "Associate Professor",
+    subRole: "IQAC Head",
+    expertise: "Human Resources Management, Marketing Management and General Management",
     image: "/Edited/Dr. Anuradha Phadnis.webp",
-    type: "teaching",
+    linkedin: true,
+    website: true,
   },
   {
-    name: "Dr. Priyanka Darekar",
+    name: "Dr. Priyanka Rohan Darekar",
     role: "Associate Professor",
+    subRole: "Learning Facilitator (Human Resources)",
+    expertise: "Human Resource & General Management",
     image: "/Edited/Dr. Priyanka Darekar.webp",
-    type: "teaching",
+    linkedin: true,
+    website: true,
   },
   {
-    name: "Dr. Aniruddha Thuse",
+    name: "Dr. Aniruddha Vilas Thuse",
     role: "Associate Professor",
+    expertise: "Financial Management",
     image: "/Edited/Dr. Aniruddha Thuse.webp",
-    type: "teaching",
+    linkedin: true,
   },
   {
-    name: "Dr. Poonam Wani",
+    name: "Dr. Poonam Avinash Wani",
     role: "Assistant Professor",
+    subRole: "Learning Facilitator (Finance)",
+    expertise: "Financial & Marketing Management",
     image: "/Edited/Dr. Poonam Wani.webp",
-    type: "teaching",
+    linkedin: true,
+    website: true,
   },
   {
     name: "Dr. Prashant Dubey",
     role: "Assistant Professor",
+    subRole: "Learning Facilitator (Marketing)",
+    expertise: "Marketing & Financial Management",
     image: "/Edited/Dr. Prashant Dubey.webp",
-    type: "teaching",
   },
   {
-    name: "Mr. Mahesh Bhagat",
+    name: "Mr. Mahesh Ganpatrao Bhagat",
     role: "Assistant Professor",
+    subRole: "Chief Exam Officer (IGSB) / Learning Facilitator OSCM",
+    expertise: "Human Resource Management",
     image: "/Edited/Mr. Mahesh Bhagat.webp",
-    type: "teaching",
   },
   {
-    name: "Dr. Ashish Vyas",
+    name: "Dr. Ashish Krishna Vyas",
     role: "Assistant Professor",
+    expertise: "Human Resource Management",
     image: "/Edited/Dr. Ashish Vyas.webp",
-    type: "teaching",
+    linkedin: true,
+    website: true,
   },
   {
     name: "Dr. Neha Chaudhry",
     role: "Assistant Professor",
+    subRole: "Finance Management",
     image: "/Edited/Dr. Neha Chaudhry.webp",
-    type: "teaching",
+    linkedin: true,
+    website: true,
   },
   {
-    name: "Mr. Jayant Joshi",
-    role: "Deputy Director Corporate Relations",
+    name: "Mr. Jayant Arun Joshi",
+    role: "Deputy Director Corporate Relations, Assistant Professor",
+    subRole: "Placement Coordinator",
+    expertise: "Marketing & Financial Management",
     image: "/Edited/Mr. Jayant Joshi.webp",
-    type: "teaching",
+    linkedin: true,
   },
   {
-    name: "Mr. Amol Ankush",
+    name: "Mr. Amol Kundalik Ankush",
     role: "Assistant Professor",
+    subRole: "Event Coordinator",
+    expertise: "Marketing & Operations Managment",
     image: "/Edited/Mr. Amol Ankush.webp",
-    type: "teaching",
   },
   {
-    name: "Ms. Gijira Shirurkar",
+    name: "Ms. Girija Deepak Shirurkar",
     role: "Assistant Professor",
+    expertise: "Human Resource Management and General Management",
     image: "/Edited/Ms. Gijira Shirurkar.webp",
-    type: "teaching",
+    linkedin: true,
+    website: true,
   },
   {
-    name: "Mrs. Snehal Masurkar",
+    name: "Mrs. Snehal Ganesh Masurkar",
     role: "Assistant Professor",
+    expertise: "Marketing & Human Resource Management",
     image: "/Edited/Ms. Snehal Masurkar.webp",
-    type: "teaching",
+    linkedin: true,
   },
   {
-    name: "Mrs. Chhaya Bodkurwar",
+    name: "Mrs. Chhaya Shivkumar Bodkurwar",
     role: "Assistant Professor",
+    expertise: "Business Analytics",
     image: "/Edited/Ms. Chhaya Bodkurwar.webp",
-    type: "teaching",
+    linkedin: true,
   },
   {
-    name: "Mrs. Siddhi Dhoble",
+    name: "Mrs. Siddhi Sanjay Dhoble",
     role: "Assistant Professor",
+    expertise: "Finance",
     image: "/Edited/Ms. Siddhi Dhoble.webp",
-    type: "teaching",
+    linkedin: true,
   },
   {
     name: "Mrs. Neha Shah",
     role: "Assistant Professor",
+    expertise: "Banking & Finance",
     image: "/Edited/Ms. Neha Shah.webp",
-    type: "teaching",
+    linkedin: true,
   },
   {
-    name: "Mr. Neelesh Atre",
-    role: "Professor of Practice",
+    name: "Mr. Neelesh Madhukar Atre",
+    role: "Assistant Professor",
+    expertise: "Marketing Management",
     image: "/Edited/Mr. Neelesh Atre.webp",
-    type: "teaching",
+    linkedin: true,
   },
   {
-    name: "Mr. Santosh Dagade",
+    name: "Mr. Santosh Vitthalrao Dagade",
     role: "Librarian",
+    expertise: "Library and Information Science",
     image: "/Edited/Mr. Santosh Dagade.webp",
-    type: "teaching",
   },
 ];
 
-// Non-Teaching Staff IGSB - Simplified as per requirements
+// Non-Teaching Staff IGSB
 const nonTeachingStaff = [
   {
-    name: "Mr. Yogesh Gheware",
+    name: "Mr. Yogesh Dilip Gheware",
     role: "Office Superintendent",
+    expertise: "MBA (HR)",
     image: "/Edited/Yogesh Gheware.webp",
-    type: "non-teaching",
+    linkedin: true,
+    website: true,
   },
   {
-    name: "Mr. Dinesh Khodke",
+    name: "Mr. Dinesh Vilas Khodke",
     role: "System Administrator",
+    expertise: "MBA (HR)",
+    subRole: "Microsoft certified Professional",
     image: "/Edited/Mr. Dinesh Khodke.webp",
-    type: "non-teaching",
+    linkedin: true,
+    website: true,
   },
   {
-    name: "Mr. Nilesh Yedre",
+    name: "Mr. Nilesh Govind Yedre",
     role: "Account Officer",
+    expertise: "MBA (Finance)",
+    subRole: "Diploma in Taxation Law",
     image: "/Edited/Mr. Nilesh Yedre.webp",
-    type: "non-teaching",
+    website: true,
   },
   {
-    name: "Mr. Ashish Jadhav",
+    name: "Mr. Ashish Bhimrao Jadhav",
     role: "Junior Clerk",
+    expertise: "BBA",
     image: "/Edited/Mr. Ashish Jadhav.webp",
-    type: "non-teaching",
+    website: true,
   },
   {
-    name: "Mr. Jagannath Kadam",
+    name: "Mr. Jagannath Dhanaji Kadam",
     role: "Senior Clerk",
+    expertise: "BA",
     image: "/Edited/Mr. Jagannath Kadam.webp",
-    type: "non-teaching",
+    website: true,
   },
   {
-    name: "Mr. Bhagavan Patil",
-    role: "Sr. Admin Officer",
+    name: "Mr. Bhagavan Shivaji Patil",
+    role: "Senior Admin Officer",
     image: "/Edited/Mr. Bhagavan Patil.webp",
-    type: "non-teaching",
+    linkedin: true,
+    website: true,
   },
   {
-    name: "Mr. Balasaheb Shinde",
+    name: "Mr. Balasaheb Chhaburao Shinde",
     role: "Admin Officer",
     image: "/Edited/Mr. Balasaheb Shinde.webp",
-    type: "non-teaching",
+    website: true,
   },
   {
-    name: "Mr. Solomon Gaikwad",
+    name: "Mr. Solomon Sanjay Gaikwad",
     role: "Social Media Manager",
+    expertise: "Branding Officer",
+    subRole: "BA Journalism and Mass Communication",
     image: "/Edited/Mr. Solomon Gaikwad.webp",
-    type: "non-teaching",
+    linkedin: true,
   },
   {
-    name: "Mr. Rohan Shinde",
+    name: "Mr. Rohan Ravindra Shinde",
     role: "IT Lab Assistant",
+    expertise: "BCA, MCA",
     image: "/Faculty/Rohan-Shinde.webp",
-    type: "non-teaching",
+    linkedin: true,
+    website: true,
   },
   {
-    name: "Mr. Vaibhav Jadhav",
+    name: "Mr. Vaibhav Bhimrao Jadhav",
     role: "Executive Assistant",
     image: "/Edited/Mr. Vaibhav Jadhav.webp",
-    type: "non-teaching",
+    linkedin: true,
+    website: true,
   },
 ];
 
 // Combined staff for display
 const allStaff = [...teachingStaff, ...nonTeachingStaff];
+
 
 export default function LeadersDeskPage() {
   const [showAllStaff, setShowAllStaff] = useState(false);
@@ -554,38 +593,44 @@ export default function LeadersDeskPage() {
                         {/* Staff Info - Simplified */}
                         <div className="p-3 sm:p-4 flex flex-col flex-grow">
                           <h3
-                            className="text-sm sm:text-base md:text-lg font-semibold text-white mb-2"
+                            className="text-sm sm:text-base md:text-lg font-semibold text-white mb-1"
                             style={{
                               display: "-webkit-box",
                               WebkitLineClamp: "2",
                               WebkitBoxOrient: "vertical",
                               overflow: "hidden",
-                              minHeight: "2.5rem",
                             }}
                           >
                             {person.name}
                           </h3>
-                          <p className="text-xs sm:text-sm font-medium text-white">
+                          <p className="text-xs sm:text-sm font-medium text-white/90">
                             {person.role}
                           </p>
+                          
+                          {person.subRole && (
+                            <p className="text-xs sm:text-sm text-white/80 mt-1">
+                              {person.subRole}
+                            </p>
+                          )}
+                          
+                          {person.expertise && (
+                            <p className="text-xs text-white/70 mt-2 italic border-t border-white/20 pt-2">
+                              {person.expertise}
+                            </p>
+                          )}
 
-                          <div className="w-full flex items-center justify-between mt-auto pt-3">
-                            <div>
-                              <span
-                                className={`
-                                  inline-block px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs font-semibold rounded-full
-                                  ${
-                                    person.type === "teaching"
-                                      ? "bg-[#fb7035] text-white"
-                                      : "bg-[#fb7035] text-white"
-                                  }
-                                `}
-                              >
-                                {person.type === "teaching"
-                                  ? "Teaching"
-                                  : "Non-Teaching"}
-                              </span>
-                            </div>
+                          {/* Social Links */}
+                          <div className="flex gap-3 mt-3 pt-2">
+                            {person.linkedin && (
+                              <button className="text-white hover:text-[#0077b5] transition-colors" title="LinkedIn Profile">
+                                <Linkedin className="w-4 h-4" />
+                              </button>
+                            )}
+                            {person.website && (
+                              <button className="text-white hover:text-emerald-300 transition-colors" title="Website / Portfolio">
+                                <Globe className="w-4 h-4" />
+                              </button>
+                            )}
                           </div>
                         </div>
                       </div>

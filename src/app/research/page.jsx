@@ -230,7 +230,7 @@ export default function Page() {
       {/* TOP PHD HOLDERS */}
       <section className="w-full py-8 md:py-12 px-4 md:px-6 xl:px-16 bg-gray-50">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 pb-6 md:pb-12 text-center">
-          Our Top PhD Guides
+          Our Top Ph.D Guides
         </h2>
 
         <div className="space-y-12 md:space-y-24">
@@ -550,61 +550,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* CONFERENCE SECTION */}
-      <section className="w-full py-8 md:py-12 px-4 md:px-6 xl:px-16 bg-gray-50">
-        <div className="">
-          {/* Heading */}
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-6 md:mb-8 lg:mb-12 text-center lg:text-left">
-            National Conference 2025-26
-          </h2>
 
-          <div className="flex flex-col gap-6 md:gap-8 lg:gap-12">
-            {/* Top Row - Content */}
-            <div className="w-full bg-gradient-to-r from-[#10404A] to-[#1F6D71] rounded-xl md:rounded-2xl lg:rounded-3xl shadow-lg md:shadow-xl p-4 md:p-6 lg:p-8 xl:p-10 text-white">
-              <h3 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold mb-3 md:mb-4 lg:mb-6">
-                Innovation Meets Sustainability: Forging the Future Together
-              </h3>
-              <div className="space-y-4 text-sm md:text-base lg:text-lg leading-relaxed opacity-95">
-                <p>
-                  The National Conference on “Innovation Meets Sustainability:
-                  Forging the Future Together” was inaugurated in the
-                  distinguished presence of our esteemed Guests of Honour—Dr.
-                  Bharat Kasar, CMA Ajit Shinde, and CMA Balkrishna Ananda
-                  Hajare.
-                </p>
-                <p>
-                  Their inspiring addresses set a purposeful tone for the
-                  conference, fostering meaningful dialogue and insightful
-                  exchanges focused on driving innovation and building a
-                  sustainable future.
-                </p>
-              </div>
-            </div>
-
-            {/* Bottom Row - Images Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
-              {/* Conference Image 1 */}
-              <div className="rounded-xl md:rounded-2xl lg:rounded-3xl shadow-lg md:shadow-xl overflow-hidden relative min-h-[300px] md:min-h-[400px]">
-                <Image
-                  src="/IGSB/Research/Conference/conference1.jpg"
-                  alt="Conference Inauguration"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              {/* Conference Image 2 */}
-              <div className="rounded-xl md:rounded-2xl lg:rounded-3xl shadow-lg md:shadow-xl overflow-hidden relative min-h-[300px] md:min-h-[400px]">
-                <Image
-                  src="/IGSB/Research/Conference/conference2.jpg"
-                  alt="Conference Guests"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Memory Lane Section */}
       <div className="w-full bg-white border-t border-slate-200">

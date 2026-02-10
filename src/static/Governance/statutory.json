@@ -1,0 +1,1178 @@
+[
+  {
+    "name": "College Development Committee (CDC)",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Tarita Shankar",
+        "role": "Chairman",
+        "representation": "Chairperson"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Mr.Shardul Gangal",
+        "role": "Member",
+        "representation": "Trust Nominee"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Mr. Chetan Shankarrao Wakalkar",
+        "role": "Member",
+        "representation": "IGI Academic Advisor"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "role": "Member",
+        "representation": "Women Teacher Representative (Professor & Dean - Academics and Research)"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Dr. Aatish Zagade",
+        "role": "Member",
+        "representation": "Dy.Director"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Dr. Anuradha Phadnis",
+        "role": "Member",
+        "representation": "IQAC Head"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Dr. Priyanka Darekar",
+        "role": "Member",
+        "representation": "Teaching Representatives, LF-HR"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Dr.Poonam Wani",
+        "role": "Member",
+        "representation": "Teaching Representatives, LF- Finance"
+      },
+      {
+        "sr_no": 9,
+        "name_of_member": "Dr.Parshant Dubey",
+        "role": "Member",
+        "representation": "Teaching Representatives, LF- Marketing"
+      },
+      {
+        "sr_no": 10,
+        "name_of_member": "Mr.Mahesh Bhagat",
+        "role": "Member",
+        "representation": "Teaching Representatives, LF-OSCM & CEO"
+      },
+      {
+        "sr_no": 11,
+        "name_of_member": "Mr.Jayant Joshi",
+        "role": "Member",
+        "representation": "Nominee Teaching - Dy.Director (Corporate Relations)"
+      },
+      {
+        "sr_no": 12,
+        "name_of_member": "Dr.Ashish Vyas",
+        "role": "Member",
+        "representation": "Nominee Teaching Representative-Asst. Prof"
+      },
+      {
+        "sr_no": 13,
+        "name_of_member": "Dr.Supriya Patil",
+        "role": "Member",
+        "representation": "Local Member: Education Representative"
+      },
+      {
+        "sr_no": 14,
+        "name_of_member": "Mr. Paresh Gund",
+        "role": "Member",
+        "representation": "Local Member: Industry Representative (Alumni)"
+      },
+      {
+        "sr_no": 15,
+        "name_of_member": "Mr.Pratik Puprediiwar",
+        "role": "Member",
+        "representation": "Local Member: Research Representative"
+      },
+      {
+        "sr_no": 16,
+        "name_of_member": "Ms.Smita Shetty",
+        "role": "Member",
+        "representation": "Local Member: Social Service Representative"
+      },
+      {
+        "sr_no": 17,
+        "name_of_member": "Mr. Yogesh Gheware",
+        "role": "Member",
+        "representation": "Nominee Non-Teaching Representative"
+      },
+      {
+        "sr_no": 18,
+        "name_of_member": "Ms.Mrunal Salve",
+        "role": "Member",
+        "representation": "Student Representation - President"
+      },
+      {
+        "sr_no": 19,
+        "name_of_member": "Dr. Virendra Tatake",
+        "role": "Member Secretary",
+        "representation": "Director"
+      }
+    ]
+  },
+  {
+    "name": "Internal Quality Assurance Cell (IQAC)",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "role": "Chairman",
+        "representation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Mr.Shardul Gangal",
+        "role": "Member",
+        "representation": "Trust/ Management Representative"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Mr.Shaan Mehendale",
+        "role": "Member",
+        "representation": "Local Soceity/Trust Representative"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Mr. Chetan Shankarrao Wakalkar",
+        "role": "Member",
+        "representation": "IGI Academic Advisor"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Dr.Anjali Kalkar",
+        "role": "Member",
+        "representation": "Nominee from (Employer)"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "role": "Member",
+        "representation": "Dean - Academics and Research"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Dr. Aatish Zagade",
+        "role": "Member",
+        "representation": "Teaching Representative-Dy.Director"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Dr. Priyanka Darekar",
+        "role": "Member",
+        "representation": "Teaching Representatives, LF-HR"
+      },
+      {
+        "sr_no": 9,
+        "name_of_member": "Dr.Poonam Wani",
+        "role": "Member",
+        "representation": "Teaching Representatives, LF- Finance, Alumni Association"
+      },
+      {
+        "sr_no": 10,
+        "name_of_member": "Dr.Prashant Dubey",
+        "role": "Member",
+        "representation": "Teaching Representatives, LF- Marketing"
+      },
+      {
+        "sr_no": 11,
+        "name_of_member": "Mr.Mahesh Bhagat",
+        "role": "Member",
+        "representation": "Teaching Representatives, LF-OSCM & CEO"
+      },
+      {
+        "sr_no": 12,
+        "name_of_member": "Mr.Jayant Joshi",
+        "role": "Member",
+        "representation": "Nominee Teaching - Dy.Director (Corporate Relations)"
+      },
+      {
+        "sr_no": 13,
+        "name_of_member": "Ms.Chhaya Bodkurwar",
+        "role": "Member",
+        "representation": "Nominee Teaching Representative-Asst. Prof"
+      },
+      {
+        "sr_no": 14,
+        "name_of_member": "Mr. Yogesh Gheware",
+        "role": "Member",
+        "representation": "Non-Teaching Representative"
+      },
+      {
+        "sr_no": 15,
+        "name_of_member": "Mr.Akash Karmakar",
+        "role": "Member",
+        "representation": "Industry Representative"
+      },
+      {
+        "sr_no": 16,
+        "name_of_member": "Mr.Gorakh Palve",
+        "role": "Member",
+        "representation": "Nominee- Parents"
+      },
+      {
+        "sr_no": 17,
+        "name_of_member": "Ms.Mrunmayee Ramteke",
+        "role": "Member",
+        "representation": "Student Representative-Alumni"
+      },
+      {
+        "sr_no": 18,
+        "name_of_member": "Mr.Krushna Palve",
+        "role": "Member",
+        "representation": "Student Representative-MBA I"
+      },
+      {
+        "sr_no": 19,
+        "name_of_member": "Dr. Anuradha Phadnis",
+        "role": "Member Secretary",
+        "representation": "Head"
+      }
+    ]
+  },
+  {
+    "name": "Grievance Redressal Committee - Staff",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "mobile_number": "02114 661 609 / 9657856103",
+        "role": "Chairman",
+        "representation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Ms.Chhaya Bodkurwar",
+        "mobile_number": "9767104510",
+        "role": "Member",
+        "representation": "Teaching Representative- Female"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Shri. B. D. Udhane Deputy Registrar, Law & Grievances",
+        "mobile_number": "25601192/ 25690028",
+        "role": "Member",
+        "representation": "Ombudsman by University"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Mr. Yogesh Gheware",
+        "mobile_number": "02114 661 568 / 9545278111",
+        "role": "Member",
+        "representation": "Non-Teaching Representatives"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Mr. Santosh Dagade",
+        "mobile_number": "9763853241",
+        "role": "Member",
+        "representation": "Librarian"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Dr.Priyanka Darekar",
+        "mobile_number": "9890067178",
+        "role": "Member Secretatry",
+        "representation": "Teaching Representative - Senior Faculty"
+      }
+    ]
+  },
+  {
+    "name": "Grievance Redressal Committee - Student",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "mobile_number": "02114 661 609 / 9657856103",
+        "role": "Chairman",
+        "representation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "mobile_number": "9822406437",
+        "role": "Member",
+        "representation": "Teaching Representative - Senior Faculty"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Ms.Snehal Masurkar",
+        "mobile_number": "9561317957",
+        "role": "Member",
+        "representation": "Teaching Representative- Female"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Shri. B. D. Udhane Deputy Registrar, Law & Grievances",
+        "mobile_number": "25601192/ 25690028",
+        "role": "Member",
+        "representation": "Ombudsman by University"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Mr. Yogesh Gheware",
+        "mobile_number": "02114 661 568 / 9545278111",
+        "role": "Member",
+        "representation": "Non-Teaching Representatives"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Bhumika Deshmukh",
+        "mobile_number": "7410148796",
+        "role": "Member",
+        "representation": "Student Representative (Female)-Co-curricular Representative"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Abhishek Satav",
+        "mobile_number": "8805771049",
+        "role": "Member",
+        "representation": "Student Representative -Academic Representative/ / Sports Representative"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Karan Chandankhed",
+        "mobile_number": "7057625895",
+        "role": "Member",
+        "representation": "Student Representative -Academic Representative"
+      },
+      {
+        "sr_no": 9,
+        "name_of_member": "Nidhi Sachin Nene",
+        "mobile_number": "9022523307",
+        "role": "Member",
+        "representation": "Student Representative -Academic Representative"
+      },
+      {
+        "sr_no": 10,
+        "name_of_member": "Mr.Mahesh Bhagat",
+        "mobile_number": "9822074890",
+        "role": "Member Secretatry",
+        "representation": "Teaching Representative ( SC/ST/OBC)"
+      }
+    ]
+  },
+  {
+    "name": "Anti-Ragging Committee",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "mobile_number": "02114 661 609 / 9657856103",
+        "role": "Chairman",
+        "representation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr.Prashant Dubey",
+        "mobile_number": "9699314970",
+        "role": "Member",
+        "representation": "Teaching Representative"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Mr.Yogesh Gheware",
+        "mobile_number": "02114 661 568 / 9545278111",
+        "role": "Member",
+        "representation": "Non - Teaching Representative"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Dattatray Tukaram Oval",
+        "mobile_number": "8788562431",
+        "role": "Member",
+        "representation": "Boys Hostel Rector"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Manisha Aburao Dhiwar",
+        "mobile_number": "9588475368",
+        "role": "Member",
+        "representation": "Girls Hostel Rector"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Mahesh Narendra Kolhe",
+        "mobile_number": "9325109224",
+        "role": "Member",
+        "representation": "Student Representative - Fresher Batch (Boy)"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Shreya Narasinha Prabhukhanolkar",
+        "mobile_number": "9764707052",
+        "role": "Member",
+        "representation": "Student Representative - Fresher Batch (Girl)"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Sahil M",
+        "mobile_number": "9755104082",
+        "role": "Member",
+        "representation": "Student Representative - Senior Batch (Boy)"
+      },
+      {
+        "sr_no": 9,
+        "name_of_member": "Yukta Patil",
+        "mobile_number": "8626015231",
+        "role": "Member",
+        "representation": "Student Representative - Senior Batch (Girl)"
+      },
+      {
+        "sr_no": 10,
+        "name_of_member": "Mr.Narendra Kolhe",
+        "mobile_number": "8055859081",
+        "role": "Member",
+        "representation": "Parents Representative - Fresher Batch"
+      },
+      {
+        "sr_no": 11,
+        "name_of_member": "Mr.Vijay Patil",
+        "mobile_number": "9503163139",
+        "role": "Member",
+        "representation": "Parents Representative - Senior Batch"
+      },
+      {
+        "sr_no": 12,
+        "name_of_member": "Mrs. Sulbhatai Kundan Bhote",
+        "mobile_number": "8766456009",
+        "role": "Member",
+        "representation": "Civil Administration Representative"
+      },
+      {
+        "sr_no": 13,
+        "name_of_member": "Mr. Samadhan Phadtare",
+        "mobile_number": "8805544106",
+        "role": "Member",
+        "representation": "Police Administration Representative"
+      },
+      {
+        "sr_no": 14,
+        "name_of_member": "Mrs. Reshma Phadtare",
+        "mobile_number": "7038784875",
+        "role": "Member",
+        "representation": "Local Media (Senior Officer Business Standard Pvt. Ltd.) - AWAJ News Tal. - Maval"
+      },
+      {
+        "sr_no": 15,
+        "name_of_member": "Ms.Smita Shetty",
+        "mobile_number": "9890881378",
+        "role": "Member",
+        "representation": "NGO Representative"
+      },
+      {
+        "sr_no": 16,
+        "name_of_member": "Ms.Chhaya Bodkurwar",
+        "mobile_number": "9767104510",
+        "role": "Member Secretary",
+        "representation": "Teaching Representative -Female"
+      }
+    ]
+  },
+  {
+    "name": "Anti-Ragging Squad",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "mobile_number": "02114 661 609 / 9657856103",
+        "role": "Chairman",
+        "representation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Mr.Jagannath Kadam",
+        "mobile_number": "97300 23413",
+        "role": "Member",
+        "representation": "Non-Teaching Staff Representative"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Mr.Balasaheb Shinde",
+        "mobile_number": "99716 58919",
+        "role": "Member",
+        "representation": "Non-Teaching Staff Representative"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Mr. Dattatraya Ovhal",
+        "mobile_number": "8788562431",
+        "role": "Member",
+        "representation": "Boys Hostel Warden"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Ms. Manisha Dhiwar",
+        "mobile_number": "9588475368",
+        "role": "Member",
+        "representation": "Girls Hostel Warden"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Ms.Sapna Dhalke",
+        "mobile_number": "9699913109",
+        "role": "Member",
+        "representation": "Girls Hostel Warden"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Dr.Neha Chaudhry",
+        "mobile_number": "9172657155",
+        "role": "Member Secretary",
+        "representation": "Teaching Representative -Female"
+      }
+    ]
+  },
+  {
+    "name": "Students Welfare Council",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "mobile_number": "02114 661 609 / 9657856103",
+        "role": "Chairman",
+        "representation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "mobile_number": "9822406437",
+        "role": "Member",
+        "representation": "Teaching Representative- Senior faculty member"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Ms.Snehal Masurkar",
+        "mobile_number": "9561317957",
+        "role": "Member",
+        "representation": "Teaching Representative-Cultural Coordinator"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Ms.Mrunal Salve",
+        "mobile_number": "7498 684 661",
+        "role": "President",
+        "representation": "Student Representative"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Abhishek Padale",
+        "mobile_number": "7972749782",
+        "role": "Secretary",
+        "representation": "Student Representative"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Ms. Neha Wankhade",
+        "mobile_number": "8830263096",
+        "role": "Lady Representative",
+        "representation": "Student Representative"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Ms. Shrawani Otari",
+        "mobile_number": "9307247732",
+        "role": "Community Representative",
+        "representation": "Student Representative"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Mr. Hrishikesh Nikam",
+        "mobile_number": "7775957990",
+        "role": "NSS/NCC/Sports Representative",
+        "representation": "Student Representative"
+      },
+      {
+        "sr_no": 9,
+        "name_of_member": "Mr. Mayur Darade",
+        "mobile_number": "7666215348",
+        "role": "Cultural Representative",
+        "representation": "Student Representative - Marketing"
+      },
+      {
+        "sr_no": 10,
+        "name_of_member": "Mr. Datta Gore",
+        "mobile_number": "8766520505",
+        "role": "Class Representative – Div A",
+        "representation": "Student Representative- Placements (HR)"
+      },
+      {
+        "sr_no": 11,
+        "name_of_member": "Mr. Siddhesh Gujarathi",
+        "mobile_number": "7775094250",
+        "role": "Class Representative – Div B",
+        "representation": "Student Representative - Alumni (Finance)"
+      },
+      {
+        "sr_no": 12,
+        "name_of_member": "Ms.Shrushti Gondekar",
+        "mobile_number": "8830614847",
+        "role": "Class Representative – Div C",
+        "representation": "Student Representative- Branding"
+      },
+      {
+        "sr_no": 13,
+        "name_of_member": "Mr.Amol Ankush",
+        "mobile_number": "8767740257",
+        "role": "Member Secretary",
+        "representation": "Teaching Representative- Sports Coordinator"
+      }
+    ]
+  },
+  {
+    "name": "Internal Committee (IC)",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Pallavi Sajanapwar",
+        "mobile_number": "9822406437",
+        "role": "Presiding Officer (Female)",
+        "representation": "Senior Faculty (Professor)"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Ms. Snehal Masurkar",
+        "mobile_number": "9561317957",
+        "role": "Member",
+        "representation": "Teaching Representative"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Mr. Dinesh Khodke",
+        "mobile_number": "9823245799",
+        "role": "Member",
+        "representation": "Non-Teaching Staff Representative"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Adv. Meetali Savlekar",
+        "mobile_number": "9890826444",
+        "role": "Member",
+        "representation": "Advocate working for the cause of women."
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Ms. Neha Wankhade",
+        "mobile_number": "8830263096",
+        "role": "Member",
+        "representation": "Student Representative- Girl (Lady Representative)"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Ms. Gauri Chavan",
+        "mobile_number": "9356440415",
+        "role": "Member",
+        "representation": "Student Representative- Girl"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Mr. Mayur Darade",
+        "mobile_number": "7666215348",
+        "role": "Member",
+        "representation": "Student Representative -Boy"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Ms. Girija Shirurkar",
+        "mobile_number": "98234 40772",
+        "role": "Member Secretary",
+        "representation": "Teaching Representative -Female"
+      }
+    ]
+  },
+  {
+    "name": "Alumni Association",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "role": "Chairman",
+        "representation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr. Aatish Zagade",
+        "role": "Treasurer",
+        "representation": "Teaching Representative- Dy.Director"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "role": "Member",
+        "representation": "Teaching Representative- Dean Academics and Research"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Mr Hans Daryani",
+        "role": "Alumni Association- President",
+        "representation": "Alumni Representative"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Ms. Rashmi Bagchi",
+        "role": "Alumni Association- Secretary",
+        "representation": "Alumni Representative"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Vishal Garje",
+        "role": "Member",
+        "representation": "Alumni Representative"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Nainal Seth",
+        "role": "Member",
+        "representation": "Alumni Representative - Female"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Dr.Poonam Wani",
+        "role": "Member Secretary",
+        "representation": "Teaching Representative"
+      }
+    ]
+  },
+  {
+    "name": "Caste Based Discrimination Committee (Equal Opportunity Cell)",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "mobile_number": "9657856103",
+        "role": "President",
+        "representation": "Chairman/(Director)"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr. Pallavi Sajanapawar",
+        "mobile_number": "9822406437",
+        "role": "Member",
+        "representation": "Dean: Academics & Research"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Mr. Amol Ankush",
+        "mobile_number": "8767740257",
+        "role": "Member",
+        "representation": "Student Welfare Council Officer (OBC Category)"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Dr. Anuradha Phadnis",
+        "mobile_number": "9763853241",
+        "role": "Member",
+        "representation": "Teaching Representative- Female"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Mr. Dinesh Khodke",
+        "mobile_number": "9588402019",
+        "role": "Member",
+        "representation": "Non-Teaching Representative (OBC Category)"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Dr. Shilpa Tambe",
+        "mobile_number": "9226958888",
+        "role": "Member",
+        "representation": "Representative: Counsellor/Social/Subject Expert"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Ms.Vaishnavi Shirke",
+        "mobile_number": "8767703969",
+        "role": "Member",
+        "representation": "Student Representative (OBC Category)"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Mr. Abhijeet Kumar",
+        "mobile_number": "7479816409",
+        "role": "Member",
+        "representation": "Student Representative (Open Category)"
+      },
+      {
+        "sr_no": 9,
+        "name_of_member": "Mr. Utkarsh Shinde",
+        "mobile_number": "8007783358",
+        "role": "Member",
+        "representation": "Student Representative (SC Category)"
+      },
+      {
+        "sr_no": 10,
+        "name_of_member": "Mr.Sujit Kulkarni",
+        "mobile_number": "9423705408",
+        "role": "Member",
+        "representation": "Student Representative (EWS Category)"
+      },
+      {
+        "sr_no": 11,
+        "name_of_member": "Avishkar Lahu Shingade",
+        "mobile_number": "9767910815",
+        "role": "Member",
+        "representation": "Student Representative (ST Category)"
+      },
+      {
+        "sr_no": 12,
+        "name_of_member": "Mr. Vishnu Shirke",
+        "mobile_number": "9822965041",
+        "role": "Member",
+        "representation": "Parent Representatives"
+      },
+      {
+        "sr_no": 13,
+        "name_of_member": "Balkrishna G Kulkarni",
+        "mobile_number": "9405911935",
+        "role": "Member",
+        "representation": "Parent Representatives"
+      },
+      {
+        "sr_no": 14,
+        "name_of_member": "Dr. Neha Chaudhry",
+        "mobile_number": "9172657155",
+        "role": "Member Secretary",
+        "representation": "Teaching Representative (SC)"
+      }
+    ]
+  },
+  {
+    "name": "Divyang Cell",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "mobile_number": "02114 661 609 / 9657856103",
+        "role": "Chairman",
+        "representation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr.Aatish Zagade",
+        "mobile_number": "9823939483",
+        "role": "Member",
+        "representation": "Teaching Representative"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "mobile_number": "9822406437",
+        "role": "Member",
+        "representation": "Teaching Representative"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Mr. Yogesh Gheware",
+        "mobile_number": "9545278111",
+        "role": "Member",
+        "representation": "Non- Teaching Representative"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Mr.Jayant Joshi",
+        "mobile_number": "9423226420",
+        "role": "Member",
+        "representation": "Expert Advisor 1"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Mr.Anand Varrier",
+        "mobile_number": "9049354058",
+        "role": "Member",
+        "representation": "Expert Advisor 2"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Vaishnavi Shirke",
+        "mobile_number": "8767703969",
+        "role": "Member",
+        "representation": "Student Representative 1"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Shreya Prabhukhanolkar",
+        "mobile_number": "9764707052",
+        "role": "Member",
+        "representation": "Student Representative 2"
+      },
+      {
+        "sr_no": 9,
+        "name_of_member": "Vishnu Popat shirke",
+        "mobile_number": "9822965041",
+        "role": "Member",
+        "representation": "Parent Representative 1"
+      },
+      {
+        "sr_no": 10,
+        "name_of_member": "Narasinha Pundalik Prabhukhanolkar",
+        "mobile_number": "9420258671",
+        "role": "Member",
+        "representation": "Parent Representative 2"
+      },
+      {
+        "sr_no": 11,
+        "name_of_member": "Ms.Siddhi Dhoble",
+        "mobile_number": "7058145454",
+        "role": "Member Secretary",
+        "representation": "Teaching Representative"
+      }
+    ]
+  },
+  {
+    "name": "Student Counsellor",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Mrs..Shilpa Tambe",
+        "mobile_number": "9226958888",
+        "role": "Student Counsellor",
+        "representation": "Clinical Counsellor"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Ms.Siddhi Dhoble",
+        "mobile_number": "7058145454",
+        "role": "Member",
+        "representation": "Teaching Representative"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Dr.Aatish Zagade",
+        "mobile_number": "9823939483",
+        "role": "Incharge",
+        "representation": "Deputy Director"
+      }
+    ]
+  },
+  {
+    "name": "Industry Institutional Cell",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "role": "Director",
+        "representation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr. Aatish Zagade",
+        "role": "Member",
+        "representation": "Teaching Representative (Dy.Director)"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "role": "Member",
+        "representation": "Teaching Representative (Dean : Academics and Research)"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Mr.Jayant Joshi",
+        "role": "Member",
+        "representation": "Nominee Teaching - Dy.Director (Corporate Relations)"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Mr. Dinesh Khodke",
+        "role": "Member",
+        "representation": "Non-Teaching Representative"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Siddhesh Gujarathi",
+        "role": "Member",
+        "representation": "Student Representative - Boy"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Kiran Sathe",
+        "role": "Member",
+        "representation": "Student Representative - Girl"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Mr. Hemant Apte",
+        "role": "Member",
+        "representation": "Industry Representative"
+      },
+      {
+        "sr_no": 9,
+        "name_of_member": "Dr.Priyanka Darekar",
+        "role": "Member Secretary",
+        "representation": "Teaching Representative"
+      }
+    ]
+  },
+  {
+    "name": "Institutions Innovation Council (IIC)",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "role": "President",
+        "representation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr. Aatish Zagade",
+        "role": "Vice President",
+        "representation": "Teaching Representative (Dy.Director)"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "role": "Member",
+        "representation": "Teaching Representative- (Dean : Academics and Research) - Consultancy"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Dr.Aniruddh Thuse",
+        "role": "Innovation activity coordinator",
+        "representation": "Teaching Representative"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Dr.Anuradha Phadis",
+        "role": "Startup activity coordinator",
+        "representation": "Teaching Representative"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Ms.Snehal Masurkar",
+        "role": "Internship coordinator",
+        "representation": "Teaching Representative"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Dr.Prashant Dubey",
+        "role": "IPR activity coordinator",
+        "representation": "Teaching Representative"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Mr.Solomon Gaikwad",
+        "role": "Social media coordinator",
+        "representation": "Non-Teaching Representative"
+      },
+      {
+        "sr_no": 9,
+        "name_of_member": "Mr.Jagannath Kadam",
+        "role": "ARIIA coordinator",
+        "representation": "Non-Teaching Representative"
+      },
+      {
+        "sr_no": 10,
+        "name_of_member": "Mr.Yogesh Gheware",
+        "role": "NIRF coordinator",
+        "representation": "Non-Teaching Representative"
+      },
+      {
+        "sr_no": 11,
+        "name_of_member": "Mr.Santosh Dagade",
+        "role": "Member",
+        "representation": "Librarian"
+      },
+      {
+        "sr_no": 12,
+        "name_of_member": "Mr. Digvijay Bhosale",
+        "role": "Member",
+        "representation": "Student Representation"
+      },
+      {
+        "sr_no": 13,
+        "name_of_member": "Ms. Vaishnavi Janakawade",
+        "role": "Member",
+        "representation": "Student Representation"
+      },
+      {
+        "sr_no": 14,
+        "name_of_member": "Mr.Amol Ankush",
+        "role": "Convenor",
+        "representation": "Teaching Representative"
+      }
+    ]
+  },
+  {
+    "name": "Intellectual Property Right Cell",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "role": "President",
+        "representation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "role": "Member",
+        "representation": "Teaching Representative (Dean : Academics and Research)"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Dr. Aatish Zagade",
+        "role": "Member",
+        "representation": "Teaching Representative (Dy.Director)"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Mr.Amol Ankush",
+        "role": "Member",
+        "representation": "Teaching Representative"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Mr.Santosh Dagade",
+        "role": "Member",
+        "representation": "Librarian"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Dr.Prashant Dubey",
+        "role": "Member Secretary",
+        "representation": "Teaching Representative"
+      }
+    ]
+  },
+  {
+    "name": "Internship Cell",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Aatish Zagade",
+        "role": "Dy. Director",
+        "representation": "Nodal Officer"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Mr.Jayant Joshi",
+        "role": "Member",
+        "representation": "Assistant Coordinator"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Adtiya Jadhav",
+        "role": "Member",
+        "representation": "Management Student Coordinator"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Ankit zalke",
+        "role": "Member",
+        "representation": "Management Student Coordinator"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Ms.Snehal Masurkar",
+        "role": "Member Secretary",
+        "representation": "Management Faculty"
+      }
+    ]
+  }
+]

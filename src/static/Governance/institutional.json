@@ -1,0 +1,675 @@
+[
+  {
+    "name": "Academic Advisory Committee",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "role": "Chairman",
+        "designation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr. Aatish Zagade",
+        "role": "Member",
+        "designation": "Teaching Representative (Dy.Director)"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Dr. Anuradha Phadnis",
+        "role": "Member",
+        "designation": "IQAC Head"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Dr. Priyanka Darekar",
+        "role": "Member",
+        "designation": "Teaching Representatives, LF-HR"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Dr.Poonam Wani",
+        "role": "Member",
+        "designation": "Teaching Representatives, LF- Finance"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Mr.Mahesh Bhagat",
+        "role": "Member",
+        "designation": "Teaching Representatives, LF- OSCM"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Dr.Prashant Dubey",
+        "role": "Member",
+        "designation": "Teaching Representatives, LF- Marketing"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Mr.Jayant Joshi",
+        "role": "Member",
+        "designation": "Teaching Representatives-Dy.Director (Corporate Relations)"
+      },
+      {
+        "sr_no": 9,
+        "name_of_member": "Dr.Ashish Vyas",
+        "role": "Member",
+        "designation": "Nominee Teaching Representative-Asst. Prof"
+      },
+      {
+        "sr_no": 10,
+        "name_of_member": "Mr. Santosh Dagade",
+        "role": "Member",
+        "designation": "Librarian"
+      },
+      {
+        "sr_no": 11,
+        "name_of_member": "Mr.Dinesh Khodke",
+        "role": "Member",
+        "designation": "ICT Cell"
+      },
+      {
+        "sr_no": 12,
+        "name_of_member": "Mrs. Umme Aiman Ansari",
+        "role": "Member",
+        "designation": "Industry Representative"
+      },
+      {
+        "sr_no": 13,
+        "name_of_member": "Mr.Prashant Katrabad",
+        "role": "Member",
+        "designation": "Alumni Representative"
+      },
+      {
+        "sr_no": 14,
+        "name_of_member": "Ms.Neha Shah",
+        "role": "Member",
+        "designation": "Academic Coordinator"
+      },
+      {
+        "sr_no": 15,
+        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "role": "Member Secretary",
+        "designation": "Dean: Academics and Research"
+      }
+    ]
+  },
+  {
+    "name": "Examination Committee",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "role": "Chairman",
+        "designation": "Director/ Center Head"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "role": "Member",
+        "designation": "Dean: Academics and Research/ IS"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Dr. Aatish Zagade",
+        "role": "Member",
+        "designation": "Dy.Director/ISS"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Dr. Anuradha Phadnis",
+        "role": "Member",
+        "designation": "IQAC Head / AISS"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Ms.Snehal Masurkar",
+        "role": "Member",
+        "designation": "Internship Cell Co-ordinator"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Dr.Ashish Vyas",
+        "role": "Member",
+        "designation": "Custodian"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Mr. Santosh Dagade",
+        "role": "Member",
+        "designation": "Non-Teaching Representative-Stationery Incharge"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Mr.Nilesh Yedre",
+        "role": "Member",
+        "designation": "Non-Teaching Representative-Accountant"
+      },
+      {
+        "sr_no": 9,
+        "name_of_member": "Mr.Sameer Jadhav",
+        "role": "Member",
+        "designation": "Support Staff"
+      },
+      {
+        "sr_no": 10,
+        "name_of_member": "Mr.Mahesh Bhagat",
+        "role": "Member Secretary",
+        "designation": "CEO"
+      }
+    ]
+  },
+  {
+    "name": "Research & Consultancy",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "role": "Chairman",
+        "designation": "Dean: Academics and Research"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr. Aatish Zagade",
+        "role": "Member",
+        "designation": "Dy.Director"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Dr. Anuradha Phadnis",
+        "role": "Member",
+        "designation": "IQAC Head"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Dr. Priyanaka Darekar",
+        "role": "Member",
+        "designation": "Teaching Representative- Consultancy"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Mr. Santosh Dagade",
+        "role": "Member",
+        "designation": "Librarian"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Dr.Aniruddh Thuse",
+        "role": "Member Secretary",
+        "designation": "Teaching Representative - Research"
+      }
+    ]
+  },
+  {
+    "name": "Mentoring Committee",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "designation": "Director",
+        "representation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "designation": "Member",
+        "representation": "Dean: Academics and Research"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Mr.Dinesh Khodke",
+        "designation": "Member",
+        "representation": "Teaching Representative"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Ms. Anuja Bothe",
+        "designation": "Member",
+        "representation": "Student Representation- Male"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Mr. Rohit Tondare",
+        "designation": "Member",
+        "representation": "Student Representation- Female"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Dr.Neha Chaudhry",
+        "designation": "Member Secretary",
+        "representation": "Teaching Representative"
+      }
+    ]
+  },
+  {
+    "name": "Placement Cell",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "designation": "Chairman",
+        "representation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "designation": "Member",
+        "representation": "Dean: Academics and Research"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Dr. Aatish Zagade",
+        "designation": "Member",
+        "representation": "Dy.Director"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Dr. Anuradha Phadnis",
+        "designation": "Member",
+        "representation": "IQAC Head"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Dr. Priyanka Darekar",
+        "designation": "Member",
+        "representation": "LF-HR"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Dr.Poonam Wani",
+        "designation": "Member",
+        "representation": "LF Finance"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Dr.Prashant Dubey",
+        "designation": "Member",
+        "representation": "LF Mktg"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Mr.Mahesh Bhagat",
+        "designation": "Member",
+        "representation": "LF- OSCM"
+      },
+      {
+        "sr_no": 9,
+        "name_of_member": "Mr.Nilesh Atre",
+        "designation": "Member",
+        "representation": "Teaching Representatives"
+      },
+      {
+        "sr_no": 10,
+        "name_of_member": "Mr.Prafull Shinde",
+        "designation": "Member",
+        "representation": "Student Representation-VP"
+      },
+      {
+        "sr_no": 11,
+        "name_of_member": "Mr.Jayant Joshi",
+        "designation": "Member Secretary",
+        "representation": "Dy.Director (Corporate Relations)"
+      }
+    ]
+  },
+  {
+    "name": "Library Committee (Digital Library)",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "role": "Chairman",
+        "designation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "role": "Member",
+        "designation": "Dean: Academics and Research"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Dr. Aatish Zagade",
+        "role": "Member",
+        "designation": "Dy.Director & Teaching Representative"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Dr. Anuradha Phadnis",
+        "role": "Member",
+        "designation": "IQAC Head"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Dr. Priyanka Darekar",
+        "role": "Member",
+        "designation": "LF-HR"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Dr.Poonam Wani",
+        "role": "Member",
+        "designation": "LF Finance"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Dr.Prashant Dubey",
+        "role": "Member",
+        "designation": "LF Mktg"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Prof. Mahesh Bhagat",
+        "role": "Member",
+        "designation": "LF OSCM"
+      },
+      {
+        "sr_no": 9,
+        "name_of_member": "Mr.Jagannath Kadam",
+        "role": "Member",
+        "designation": "Non-Teaching Representative"
+      },
+      {
+        "sr_no": 10,
+        "name_of_member": "Sanjay Vijay Rathod",
+        "role": "Member",
+        "designation": "Student Representative I year"
+      },
+      {
+        "sr_no": 11,
+        "name_of_member": "Kalyani Landge",
+        "role": "Member",
+        "designation": "Student Representative II year"
+      },
+      {
+        "sr_no": 12,
+        "name_of_member": "Mr. Santosh Dagade",
+        "role": "Member Secretary",
+        "designation": "Librarian"
+      }
+    ]
+  },
+  {
+    "name": "ICT Committee (ERP, Website & Language Lab)",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "designation": "Director",
+        "representation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr.Neha Chaudhry",
+        "designation": "Member",
+        "representation": "Teaching Representative"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Mr.Rohan Shinde",
+        "designation": "Member",
+        "representation": "Asst. IT"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Atharva Kumbhar",
+        "designation": "Member",
+        "representation": "Student Representative II year"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Digvijay Bosale",
+        "designation": "Member",
+        "representation": "Student Representative I year"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Mr. Dinesh Khodke",
+        "designation": "Member Secretary",
+        "representation": "IT Head"
+      }
+    ]
+  },
+  {
+    "name": "Administration, Accounts & Maintenance Committee",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "role": "Chairman",
+        "designation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "role": "Member",
+        "designation": "Dean: Academics and Research"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Dr. Aatish Zagade",
+        "role": "Member",
+        "designation": "Teaching Representative & Dy.Director"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Dr. Anuradha Phadnis",
+        "role": "Member",
+        "designation": "Teaching Representative- IQAC Head"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Mr.Manish Patel",
+        "role": "Member",
+        "designation": "HR & Admin Incharge"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Mr.Jagannath Kadam",
+        "role": "Member",
+        "designation": "Admin: Senior Clerk"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Mr.Balasaheb Shinde",
+        "role": "Member",
+        "designation": "Admin Officer"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Mr. Nilesh Yedre",
+        "role": "Member",
+        "designation": "Accountant"
+      },
+      {
+        "sr_no": 9,
+        "name_of_member": "Mr. Dinesh Khodke",
+        "role": "Member",
+        "designation": "IT Head"
+      },
+      {
+        "sr_no": 10,
+        "name_of_member": "Mr.Santosh Dagade",
+        "role": "Member",
+        "designation": "Librarian"
+      },
+      {
+        "sr_no": 11,
+        "name_of_member": "Mr. Yogesh Gheware",
+        "role": "Member Secretary",
+        "designation": "Office Superintendent"
+      }
+    ]
+  },
+  {
+    "name": "Branding, Creative & Media Cell",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "designation": "Director",
+        "representation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "designation": "Member",
+        "representation": "Dean: Academics and Research"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Dr. Anuradha Phadnis",
+        "designation": "Member",
+        "representation": "Teaching Representative- IQAC Head"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Bhumika Deshmukh",
+        "designation": "Member",
+        "representation": "Student Representative- Creative Coordinator"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Vaishnavi Sonawane",
+        "designation": "Member",
+        "representation": "Student Representative -Mktg"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Sanjana Dhanwade",
+        "designation": "Member",
+        "representation": "Student Representative -Mktg"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Tejaswini Paradke",
+        "designation": "Member",
+        "representation": "Student Representative -Mktg"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Mr.Solomon Gaikwad",
+        "designation": "Member Secretary",
+        "representation": "Branding Officer"
+      }
+    ]
+  },
+  {
+    "name": "Hostel Committee",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Dr. Virendra Tatake",
+        "role": "Director",
+        "representation": "Director"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Mr.Amol Ankush",
+        "role": "Member",
+        "representation": "Teaching Representative- Students Welfare Officer"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Ms.Chhaya Bodkurwar",
+        "role": "Member",
+        "representation": "Teaching Representative- Anti Ragging Committee"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Dr.Neha Chaudhry",
+        "role": "Member",
+        "representation": "Teaching Representative - Anti Ragging Squad"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Mr.Balasaheb Shinde",
+        "role": "Member",
+        "representation": "Non Teaching Representative"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Mr.Bhagwan Patil",
+        "role": "Member",
+        "representation": "Non Teaching Representative"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Shivani Chiwadshetti",
+        "role": "Member",
+        "representation": "Student Representative - MBA I Hostel Accomodation (Girl)"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Mahesh Narendra Kolhe",
+        "role": "Member",
+        "representation": "Student Representative - MBA I Hostel Accomodation (Boy)"
+      },
+      {
+        "sr_no": 9,
+        "name_of_member": "Ms.Neha Shah",
+        "role": "Member Secretary",
+        "representation": "Teaching Representative"
+      }
+    ]
+  },
+  {
+    "name": "Event Committee",
+    "members": [
+      {
+        "sr_no": 1,
+        "name_of_member": "Mr. Sadahiv Joshi",
+        "mobile_number": "90210 04897",
+        "role": "Team Leader"
+      },
+      {
+        "sr_no": 2,
+        "name_of_member": "Ms. Shriya Jain",
+        "mobile_number": "97665 58948",
+        "role": "Coordinator- Content"
+      },
+      {
+        "sr_no": 3,
+        "name_of_member": "Mr. Datta Gore",
+        "mobile_number": "87665 20505",
+        "role": "Coordinator - Logistic"
+      },
+      {
+        "sr_no": 4,
+        "name_of_member": "Ms. Khushboo Singh",
+        "mobile_number": "84858 93320",
+        "role": "Coordinator - Creatives"
+      },
+      {
+        "sr_no": 5,
+        "name_of_member": "Ms. Samiksha Mukadam",
+        "mobile_number": "724 935 4960",
+        "role": "Coordinator - Music"
+      },
+      {
+        "sr_no": 6,
+        "name_of_member": "Mr. Mayur Sawant",
+        "mobile_number": "93703 45507",
+        "role": "Coordinator - IT support"
+      },
+      {
+        "sr_no": 7,
+        "name_of_member": "Mr. Shubham Dhengle",
+        "mobile_number": "90227 11370",
+        "role": "Coordinator - Finance"
+      },
+      {
+        "sr_no": 8,
+        "name_of_member": "Ms.Snehal Masurkar",
+        "mobile_number": "9561317957",
+        "role": "Member"
+      },
+      {
+        "sr_no": 9,
+        "name_of_member": "Mr.Amol Ankush",
+        "mobile_number": "8767740257",
+        "role": "Member Secretary"
+      }
+    ]
+  }
+]

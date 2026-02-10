@@ -233,15 +233,75 @@ const araList = [
   },
 ];
 const examList = [
+  // {
+  //   id: "academic-calendar",
+  //   label: "Academic Calendar 23-24",
+  //   pdf: "/IGSB/Programmes/AcademicCalendar.pdf",
+  // },
+  // {
+  //   id: "sppu-academic-calendar",
+  //   label: "SPPU Academic Calendar 23-24",
+  //   pdf: "/IGSB/Programmes/SPPUAcademicCalendar.pdf",
+  // },
   {
-    id: "academic-calendar",
-    label: "Academic Calendar 23-24",
-    pdf: "/IGSB/Programmes/AcademicCalendar.pdf",
+    id: "circular-08-01-2026",
+    label: "Circular - Exam Dates (08/01/2026)",
+    pdf: "/ExamData/04.2025_08.01.2026_08012025 (1).pdf",
   },
   {
-    id: "sppu-academic-calendar",
-    label: "SPPU Academic Calendar 23-24",
-    pdf: "/IGSB/Programmes/SPPUAcademicCalendar.pdf",
+    id: "circular-28-04-2025",
+    label: "Circular - Exam (28/04/2025)",
+    pdf: "/ExamData/116_2025_28.04.25_28042025 (1).pdf",
+  },
+  {
+    id: "notification-winter-2025",
+    label: "Notification for Revised Exam Dates (Winter 2025)",
+    pdf: "/ExamData/Notification for revised exam. dates for MBA (2019 Rev. Patt.) for exam. winter session 2025_31012026.pdf",
+  },
+  {
+    id: "notification-22-01-2026",
+    label: "Notification for Revised Exam Dates (22/01/2026)",
+    pdf: "/ExamData/Notification for revised exam. dates for MBA (2019 Rev. Patt.)_22012026 (1).pdf",
+  },
+  {
+    id: "revised-letter-2019-pattern",
+    label: "Revised Letter for MBA (2019 Rev. Credit Pattern) - Winter 2025",
+    pdf: "/ExamData/Revised Letter for MBA (2019 REV. CREDIT PATTERN) Exam. conducted for winter session 2025_26112025.pdf",
+  },
+  {
+    id: "revised-notification-winter-2025",
+    label: "Revised Notification for Exam Dates - Winter 2025",
+    pdf: "/ExamData/Revised Notification for revised exam. dates for MBA course for exam. winter session 2025_08012026.pdf",
+  },
+  {
+    id: "mba-service-2021-1st-year",
+    label: "Time Table - MBA (Service Management) 2021 Pattern - 1st Year",
+    pdf: "/ExamData/Time-Table-of-M.B.A.(Service Management)-(2021-Pattern)_1 YEAR.pdf",
+  },
+  {
+    id: "mba-service-2021-2nd-year",
+    label: "Time Table - MBA (Service Management) 2021 Pattern - 2nd Year",
+    pdf: "/ExamData/Time-Table-of-M.B.A.(Service Management)-(2021-Pattern)_2 YEAR.pdf",
+  },
+  {
+    id: "mba-2024-pattern-1st-year",
+    label: "Time Table - MBA 2024 Pattern - 1st Year",
+    pdf: "/ExamData/Time-Table-of-MBA--2024-Pattern_1 YEAR.pdf",
+  },
+  {
+    id: "mba-2024-pattern-2nd-year",
+    label: "Time Table - MBA 2024 Pattern - 2nd Year",
+    pdf: "/ExamData/Time-Table-of-MBA--2024-Pattern_2 YEAR.pdf",
+  },
+  {
+    id: "mba-2019-revised-1st-year",
+    label: "Time Table - MBA (2019 Revised Pattern) - 1st Year",
+    pdf: "/ExamData/Time-Table-of-Master-In-Business-Administration(M.B.A.)(PAT.2019-Revised)_1 YEAR.pdf",
+  },
+  {
+    id: "mba-2019-revised-2nd-year",
+    label: "Time Table - MBA (2019 Revised Pattern) - 2nd Year",
+    pdf: "/ExamData/Time-Table-of-Master-In-Business-Administration(M.B.A.)(PAT.2019-Revised)_2 YEAR.pdf",
   },
 ];
 
@@ -290,7 +350,7 @@ const sectionContent = {
       ],
     },
   },
-  "POs , PEOs , PSOs": {
+  "PEOs , POs , PSOs": {
     type: "accordion",
     content: {
       "Programme Educational Objectives (PEOs)": [

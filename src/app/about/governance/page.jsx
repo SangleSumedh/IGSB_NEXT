@@ -78,6 +78,22 @@ export default function GovernanceAndCommittees() {
       case "committees":
         const currentData = activeCommitteeTab === "statutory" ? statutoryCommittees : institutionalCommittees;
 
+        // Committees to exclude as they are now on their own page
+        const excludedCommittees = [
+          "Grievance Redressal Committee - Student",
+          "Anti-Ragging Committee",
+          "Anti-Ragging Squad",
+          "Students Welfare Council",
+          "Student Counsellor",
+          "Event Committee",
+          "Hostel Committee",
+        ];
+
+        // Filter out excluded committees
+        const filteredData = currentData.filter(
+          (committee) => !excludedCommittees.includes(committee.name)
+        );
+
         return (
           <div className="space-y-8">
             {/* Sub-Tabs for Committees */}
@@ -106,7 +122,7 @@ export default function GovernanceAndCommittees() {
 
             {/* Content */}
             <div className="space-y-12">
-              {currentData.map((committee, index) => {
+              {filteredData.map((committee, index) => {
                 const headers =
                   committee.members.length > 0
                     ? Object.keys(committee.members[0]).map((key) => {

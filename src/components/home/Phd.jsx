@@ -64,7 +64,7 @@ export default function PhdSection() {
     return (
       <Link
         key={index}
-        href="/programs/phd"
+        href="/programme/phd"
         className="
           group
           bg-[#10404A] hover:bg-[#14545f]
@@ -119,7 +119,6 @@ export default function PhdSection() {
     );
   })}
 </div>
-
       </div>
     </section>
   );

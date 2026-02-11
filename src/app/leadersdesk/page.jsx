@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import { Linkedin, Globe } from "lucide-react";
+
 
 const trustees = [
   {
@@ -88,11 +88,19 @@ const teachingStaff = [
     website: true,
   },
   {
+    name: "Mr. Jayant Arun Joshi",
+    role: "Deputy Director Corporate Relations, Assistant Professor",
+    subRole: "Placement Coordinator",
+    expertise: "Marketing & Financial Management",
+    image: "/Edited/Mr. Jayant Joshi.webp",
+    linkedin: true,
+  },
+  {
     name: "Dr. Anuradha Samarth Phadnis",
     role: "Associate Professor",
     subRole: "IQAC Head",
     expertise: "Human Resources Management, Marketing Management and General Management",
-    image: "/Edited/Dr. Anuradha Phadnis.webp",
+    image: "/Edited/DrAnuradha.webp",
     linkedin: true,
     website: true,
   },
@@ -106,11 +114,11 @@ const teachingStaff = [
     website: true,
   },
   {
-    name: "Dr. Aniruddha Vilas Thuse",
-    role: "Associate Professor",
-    expertise: "Financial Management",
-    image: "/Edited/Dr. Aniruddha Thuse.webp",
-    linkedin: true,
+    name: "Dr. Prashant Dubey",
+    role: "Assistant Professor",
+    subRole: "Learning Facilitator (Marketing)",
+    expertise: "Marketing & Financial Management",
+    image: "/Edited/Dr. Prashant Dubey.webp",
   },
   {
     name: "Dr. Poonam Avinash Wani",
@@ -122,18 +130,25 @@ const teachingStaff = [
     website: true,
   },
   {
-    name: "Dr. Prashant Dubey",
-    role: "Assistant Professor",
-    subRole: "Learning Facilitator (Marketing)",
-    expertise: "Marketing & Financial Management",
-    image: "/Edited/Dr. Prashant Dubey.webp",
-  },
-  {
     name: "Mr. Mahesh Ganpatrao Bhagat",
     role: "Assistant Professor",
     subRole: "Chief Exam Officer (IGSB) / Learning Facilitator OSCM",
     expertise: "Human Resource Management",
     image: "/Edited/Mr. Mahesh Bhagat.webp",
+  },
+  {
+    name: "Mr. Neelesh Madhukar Atre",
+    role: "Professor of Practise",
+    expertise: "Marketing Management",
+    image: "/Edited/Mr. Neelesh Atre.webp",
+    linkedin: true,
+  },
+  {
+    name: "Dr. Aniruddha Vilas Thuse",
+    role: "Associate Professor",
+    expertise: "Financial Management",
+    image: "/Edited/Dr. Aniruddha Thuse.webp",
+    linkedin: true,
   },
   {
     name: "Dr. Ashish Krishna Vyas",
@@ -150,14 +165,6 @@ const teachingStaff = [
     image: "/Edited/Dr. Neha Chaudhry.webp",
     linkedin: true,
     website: true,
-  },
-  {
-    name: "Mr. Jayant Arun Joshi",
-    role: "Deputy Director Corporate Relations, Assistant Professor",
-    subRole: "Placement Coordinator",
-    expertise: "Marketing & Financial Management",
-    image: "/Edited/Mr. Jayant Joshi.webp",
-    linkedin: true,
   },
   {
     name: "Mr. Amol Kundalik Ankush",
@@ -203,13 +210,6 @@ const teachingStaff = [
     linkedin: true,
   },
   {
-    name: "Mr. Neelesh Madhukar Atre",
-    role: "Assistant Professor",
-    expertise: "Marketing Management",
-    image: "/Edited/Mr. Neelesh Atre.webp",
-    linkedin: true,
-  },
-  {
     name: "Mr. Santosh Vitthalrao Dagade",
     role: "Librarian",
     expertise: "Library and Information Science",
@@ -245,13 +245,6 @@ const nonTeachingStaff = [
     website: true,
   },
   {
-    name: "Mr. Ashish Bhimrao Jadhav",
-    role: "Junior Clerk",
-    expertise: "BBA",
-    image: "/Edited/Mr. Ashish Jadhav.webp",
-    website: true,
-  },
-  {
     name: "Mr. Jagannath Dhanaji Kadam",
     role: "Senior Clerk",
     expertise: "BA",
@@ -269,6 +262,13 @@ const nonTeachingStaff = [
     name: "Mr. Balasaheb Chhaburao Shinde",
     role: "Admin Officer",
     image: "/Edited/Mr. Balasaheb Shinde.webp",
+    website: true,
+  },
+  {
+    name: "Mr. Ashish Bhimrao Jadhav",
+    role: "Junior Clerk",
+    expertise: "BBA",
+    image: "/Edited/Mr. Ashish Jadhav.webp",
     website: true,
   },
   {
@@ -296,16 +296,12 @@ const nonTeachingStaff = [
   },
 ];
 
-// Combined staff for display
-const allStaff = [...teachingStaff, ...nonTeachingStaff];
+
 
 
 export default function LeadersDeskPage() {
-  const [showAllStaff, setShowAllStaff] = useState(false);
   const [showFaculties, setShowFaculties] = useState(false);
   const [isScesExpanded, setIsScesExpanded] = useState(false);
-
-  const displayedStaff = showAllStaff ? allStaff : allStaff.slice(0, 20);
 
   return (
     <section className="w-full bg-white">
@@ -559,10 +555,13 @@ export default function LeadersDeskPage() {
           >
             <div className="overflow-hidden">
               <div className="bg-[#1F6D71] px-4 sm:px-5 md:px-6 py-6 sm:py-8 md:py-10 lg:py-12 rounded-md">
-                {/* Combined Staff Section */}
-                <div className="mb-12 sm:mb-14 md:mb-16">
+                {/* Teaching Staff Section */}
+                <div className="mb-12">
+                  <h3 className="text-2xl font-bold text-white mb-6 border-l-4 border-[#ffb088] pl-3">
+                    Teaching Staff
+                  </h3>
                   <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
-                    {displayedStaff.map((person, index) => (
+                    {teachingStaff.map((person, index) => (
                       <div
                         key={index}
                         className="
@@ -619,78 +618,81 @@ export default function LeadersDeskPage() {
                             </p>
                           )}
 
-                          {/* Social Links */}
-                          <div className="flex gap-3 mt-3 pt-2">
-                            {person.linkedin && (
-                              <button className="text-white hover:text-[#0077b5] transition-colors" title="LinkedIn Profile">
-                                <Linkedin className="w-4 h-4" />
-                              </button>
-                            )}
-                            {person.website && (
-                              <button className="text-white hover:text-emerald-300 transition-colors" title="Website / Portfolio">
-                                <Globe className="w-4 h-4" />
-                              </button>
-                            )}
-                          </div>
+
                         </div>
                       </div>
                     ))}
                   </div>
+                </div>
 
-                  {/* Show More/Less Button for All Staff */}
-                  {allStaff.length > 20 && (
-                    <div className="flex justify-center mt-8 sm:mt-10">
-                      <button
-                        onClick={() => setShowAllStaff(!showAllStaff)}
+                {/* Non-Teaching Staff Section */}
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-6 border-l-4 border-[#ffb088] pl-3">
+                    Non-Teaching Staff
+                  </h3>
+                  <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
+                    {nonTeachingStaff.map((person, index) => (
+                      <div
+                        key={index}
                         className="
-                          px-4 sm:px-6 md:px-8 py-2 sm:py-3
-                          bg-gradient-to-r from-[#FF8B61] to-[#FF8B61]/80
-                          text-white
-                          rounded-full
-                          font-semibold text-sm sm:text-base
+                          bg-[#3aafa9]
+                          rounded-lg sm:rounded-xl
+                          shadow-md
+                          border border-gray-200
+                          overflow-hidden
                           hover:shadow-lg
-                          transition-all duration-300
-                          flex items-center gap-1 sm:gap-2
+                          transition-shadow duration-300
+                          flex flex-col
+                          h-full
                         "
                       >
-                        {showAllStaff ? (
-                          <>
-                            <svg
-                              className="w-4 h-4 sm:w-5 sm:h-5"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M5 15l7-7 7 7"
-                              />
-                            </svg>
-                            Show Less
-                          </>
-                        ) : (
-                          <>
-                            Show More (+{allStaff.length - 20})
-                            <svg
-                              className="w-4 h-4 sm:w-5 sm:h-5"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M19 9l-7 7-7-7"
-                              />
-                            </svg>
-                          </>
-                        )}
-                      </button>
-                    </div>
-                  )}
+                        {/* Staff Image - SQUARE for mobile, rectangle for desktop with object-contain */}
+                        <div className="w-full aspect-square sm:aspect-auto sm:h-56 md:h-64 lg:h-72 xl:h-84 overflow-hidden bg-gray-50 flex items-center justify-center">
+                          <div className="relative w-full h-full">
+                            <Image
+                              src={person.image}
+                              alt={person.name}
+                              fill
+                              className="object-cover object-top hover:scale-105 transition-transform duration-300"
+                              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
+                            />
+                          </div>
+                        </div>
+
+                        {/* Staff Info - Simplified */}
+                        <div className="p-3 sm:p-4 flex flex-col flex-grow">
+                          <h3
+                            className="text-sm sm:text-base md:text-lg font-semibold text-white mb-1"
+                            style={{
+                              display: "-webkit-box",
+                              WebkitLineClamp: "2",
+                              WebkitBoxOrient: "vertical",
+                              overflow: "hidden",
+                            }}
+                          >
+                            {person.name}
+                          </h3>
+                          <p className="text-xs sm:text-sm font-medium text-white/90">
+                            {person.role}
+                          </p>
+                          
+                          {person.subRole && (
+                            <p className="text-xs sm:text-sm text-white/80 mt-1">
+                              {person.subRole}
+                            </p>
+                          )}
+                          
+                          {person.expertise && (
+                            <p className="text-xs text-white/70 mt-2 italic border-t border-white/20 pt-2">
+                              {person.expertise}
+                            </p>
+                          )}
+
+
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

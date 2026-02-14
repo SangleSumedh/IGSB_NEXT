@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { researchConsultancyCommittee } from "@/static/Governance/ResearchConsultancy";
+
 import { boardOfGovernors } from "@/static/Governance/BOG";
 import statutoryCommittees from "@/static/Governance/statutory.json";
 import institutionalCommittees from "@/static/Governance/institutional.json";
@@ -16,7 +16,6 @@ export default function GovernanceAndCommittees() {
     { id: "committees", label: "Committees" },
     // { id: "cells", label: "Cells" },
     // { id: "iic", label: "IIC" },
-    { id: "research", label: "Research & Consultancy" },
   ];
 
   /* ========================================================
@@ -155,18 +154,7 @@ export default function GovernanceAndCommittees() {
       // case "cells": return ( ... );
       // case "iic": return ( ... );
 
-      case "research":
-        return (
-          <section>
-            <h2 className="text-2xl md:text-4xl font-bold text-secondary mb-2">
-              Research and Consultancy Committee
-            </h2>
-            {renderTable(
-              ["Sr.No", "Name of the Member", "Role", "Designation"],
-              researchConsultancyCommittee
-            )}
-          </section>
-        );
+
 
       default:
         return null;

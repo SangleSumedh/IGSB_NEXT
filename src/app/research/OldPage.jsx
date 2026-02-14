@@ -995,9 +995,7 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
                       </svg>
                     </div>
 
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      International Journals
-                    </div>
+              
                     <div
                       onClick={() => setShowUGCModal(true)}
                       className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition cursor-pointer hover:bg-gray-50 text-secondary flex flex-col items-center gap-2 group"

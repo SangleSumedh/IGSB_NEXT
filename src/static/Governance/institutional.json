@@ -160,11 +160,11 @@
     ]
   },
   {
-    "name": "Research & Consultancy",
+    "name": "Research and Consultancy Committee",
     "members": [
       {
         "sr_no": 1,
-        "name_of_member": "Dr.Pallavi Sajanapwar",
+        "name_of_member": "Dr. Pallavi Sajanapwar",
         "role": "Chairman",
         "designation": "Dean: Academics and Research"
       },
@@ -172,7 +172,7 @@
         "sr_no": 2,
         "name_of_member": "Dr. Aatish Zagade",
         "role": "Member",
-        "designation": "Dy.Director"
+        "designation": "Dy. Director"
       },
       {
         "sr_no": 3,
@@ -182,9 +182,9 @@
       },
       {
         "sr_no": 4,
-        "name_of_member": "Dr. Priyanaka Darekar",
+        "name_of_member": "Dr. Priyanka Darekar",
         "role": "Member",
-        "designation": "Teaching Representative- Consultancy"
+        "designation": "Teaching Representative – Consultancy"
       },
       {
         "sr_no": 5,
@@ -194,9 +194,9 @@
       },
       {
         "sr_no": 6,
-        "name_of_member": "Dr.Aniruddh Thuse",
+        "name_of_member": "Dr. Aniruddh Thuse",
         "role": "Member Secretary",
-        "designation": "Teaching Representative - Research"
+        "designation": "Teaching Representative – Research"
       }
     ]
   },

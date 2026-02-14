@@ -7,7 +7,8 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 const HeroSlider = () => {
   const desktopImages = [
     "/Home/IGSBBannerH10.webp",
-    "/Home/IGSBH1.webp",
+    // "/Home/IGSBBanner4.webp",
+    "/Home/IGSBH2.webp",
     "/Home/IGSBBanner2.webp",
     "/Home/IGSBBanner3.webp",
   ];
@@ -102,7 +103,7 @@ const HeroSlider = () => {
           ))}
 
           {/* ===== RIGHT CORNER CONTROLS ===== */}
-          <div className="absolute bottom-2 right-4 flex items-center gap-4 z-30">
+          <div className="absolute bottom-5 right-4 flex items-center gap-4 z-30">
             {/* Dots */}
             <div className="flex items-center gap-2">
               {desktopImages.map((_, i) => (

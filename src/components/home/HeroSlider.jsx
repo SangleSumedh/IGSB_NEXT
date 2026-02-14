@@ -7,7 +7,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 const HeroSlider = () => {
   const desktopImages = [
     "/Home/IGSBBannerH10.webp",
-    "/Home/IGSBBanner4.webp",
+    "/Home/IGSBBannerH1.webp",
     "/Home/IGSBBanner2.webp",
     "/Home/IGSBBanner3.webp",
   ];
@@ -80,12 +80,12 @@ const HeroSlider = () => {
       {/* ================= SLIDER ================= */}
       <div className="relative w-full overflow-hidden">
         {/* ================= DESKTOP ================= */}
-        <div className="hidden md:block relative w-full">
-          {/* height provider */}
+        <div className="hidden md:block relative w-full lg:h-[84vh]">
+          {/* height provider – on lg+ the parent has a fixed height, so hide this */}
           <Image
             src={desktopImages[currentIndex]}
             alt="banner"
-            className="w-full h-auto opacity-0 pointer-events-none"
+            className="w-full h-auto opacity-0 pointer-events-none lg:hidden"
             width={1600}
             height={700}
             fetchPriority={"high"}
@@ -106,12 +106,12 @@ const HeroSlider = () => {
               <Image
                 src={img}
                 alt="banner"
-                className="w-full h-auto object-contain"
-                width={1600}
-                height={700}
+                className={`w-full h-full object-cover ${i === 1 ? "object-bottom" : "object-top"}`}
+                fill
                 priority
                 fetchPriority={"high"}
                 unoptimized
+                sizes="100vw"
               />
             </div>
           ))}

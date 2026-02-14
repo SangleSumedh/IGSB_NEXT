@@ -80,22 +80,11 @@ const HeroSlider = () => {
       {/* ================= SLIDER ================= */}
       <div className="relative w-full overflow-hidden">
         {/* ================= DESKTOP ================= */}
-        <div className="hidden md:block relative w-full lg:h-[84vh]">
-          {/* height provider – on lg+ the parent has a fixed height, so hide this */}
-          <Image
-            src={desktopImages[currentIndex]}
-            alt="banner"
-            className="w-full h-auto opacity-0 pointer-events-none lg:hidden"
-            width={1600}
-            height={700}
-            fetchPriority={"high"}
-            priority
-          />
-
+        <div className="hidden md:grid relative w-full">
           {desktopImages.map((img, i) => (
             <div
               key={i}
-              className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+              className={`col-start-1 row-start-1 w-full transition-all duration-700 ease-in-out ${
                 currentIndex === i
                   ? "opacity-100 scale-100 z-20"
                   : previousIndex === i
@@ -103,15 +92,11 @@ const HeroSlider = () => {
                     : "opacity-0 scale-105 z-0"
               }`}
             >
-              <Image
+              <img
                 src={img}
                 alt="banner"
-                className={`w-full h-full object-cover ${i === 1 ? "object-bottom" : "object-top"}`}
-                fill
-                priority
-                fetchPriority={"high"}
-                unoptimized
-                sizes="100vw"
+                className="w-full h-auto block"
+                fetchPriority="high"
               />
             </div>
           ))}

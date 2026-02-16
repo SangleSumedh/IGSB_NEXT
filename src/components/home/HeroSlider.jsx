@@ -144,7 +144,7 @@ const HeroSlider = () => {
         {/* ================= MOBILE (STATIC SINGLE BANNER) ================= */}
         <div className="block md:hidden relative w-full">
           <Image
-            src="/Home/IGSBBannerHome.webp"
+            src="/Home/IGSBM1.webp"
             alt="IGSB mobile banner"
             className="w-full h-auto object-contain"
             width={400}

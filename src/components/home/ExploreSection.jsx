@@ -14,7 +14,7 @@ const ExploreSection = () => {
   }, []);
 
   return (
-    <section className="w-full bg-white px-6 lg:px-16 py-8 pb-10 relative z-30 overflow-x-hidden">
+    <section className="w-full bg-white px-6 lg:px-16 md:py-8 pb-10 relative z-30 overflow-x-hidden">
       <div className="w-full mb-8">
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,60%)_minmax(0,40%)] gap-12 items-stretch">
 

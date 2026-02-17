@@ -12,6 +12,83 @@ export default function Research() {
   const [showScopusModal, setShowScopusModal] = useState(false);
   const [showPeerReviewedModal, setShowPeerReviewedModal] = useState(false);
   const [showConferenceModal, setShowConferenceModal] = useState(false);
+  const [showCampusDroneModal, setShowCampusDroneModal] = useState(false);
+  const [showCampusHeraldModal, setShowCampusHeraldModal] = useState(false);
+  const [showConfProceedingsModal, setShowConfProceedingsModal] =
+    useState(false);
+
+  const campusDroneFiles = [
+    {
+      name: "Campus Drone Jan 2026",
+      path: "/institute/CampusDrone/Campus Drone Jan 2026_compressed.pdf",
+    },
+    {
+      name: "Campus Drone August 2025",
+      path: "/institute/CampusDrone/Campus Drone August 2025 1st & Last pg Draft 2_compressed.pdf",
+    },
+    {
+      name: "Campus Drone Jan 2025",
+      path: "/institute/CampusDrone/Campus Drone Jan 2025 1st & Last pg_compressed.pdf",
+    },
+    {
+      name: "Campus Drone August 2024",
+      path: "/institute/CampusDrone/Campus Drone August 2024_compressed.pdf",
+    },
+    {
+      name: "Campus Drone 2024",
+      path: "/institute/CampusDrone/Campus Drone 2024_compressed.pdf",
+    },
+    {
+      name: "Campus Drone August 2023",
+      path: "/institute/CampusDrone/Campus Drone 2023 August Edition.pdf.pdf",
+    },
+  ];
+
+  const campusHeraldFiles = [
+    {
+      name: "Campus Herald - December",
+      path: "/institute/CampushHerald/Campus Herald Dec_compressed.pdf",
+    },
+    {
+      name: "Campus Herald - January",
+      path: "/institute/CampushHerald/Campus Herald Jan_compressed.pdf",
+    },
+    {
+      name: "Campus Herald - November",
+      path: "/institute/CampushHerald/Campus Herald Nov_compressed.pdf",
+    },
+    {
+      name: "Campus Herald - October 2025",
+      path: "/institute/CampushHerald/Campus Herald OCT 2025_compressed.pdf",
+    },
+    {
+      name: "Campus Herald - September",
+      path: "/institute/CampushHerald/Campus Herald Sept_compressed.pdf",
+    },
+  ];
+
+  const conferenceProceedingsImages = [
+    {
+      name: "National Conference Oct 2025 - Brochure",
+      path: "/institute/Conference/National Conference Oct 2025- Brochure Designing.webp",
+    },
+    {
+      name: "Conference Proceeding Oct 2024",
+      path: "/institute/Conference/Conference Proceeding Oct 2024.webp",
+    },
+    {
+      name: "Students Conference Brochure Oct 2024",
+      path: "/institute/Conference/Students conference Boucher Oct 2024.webp",
+    },
+    {
+      name: "Conference Proceeding Feb 2024",
+      path: "/institute/Conference/Conference proceeding Feb 2024.webp",
+    },
+    {
+      name: "Conference Brochure Feb 2024",
+      path: "/institute/Conference/Conference Brochure Feb 2024.webp",
+    },
+  ];
 
   const bookPublications = [
     {
@@ -89,7 +166,8 @@ export default function Research() {
       faculty: "Dr.Virendra Tatake",
       journal: "South India Journal of Social Sciences",
       year: "2022-23",
-      title: "Critical Analysis of NPA and its impact on Indian Commercial Banks",
+      title:
+        "Critical Analysis of NPA and its impact on Indian Commercial Banks",
       status: "UGC",
     },
     {
@@ -142,7 +220,8 @@ export default function Research() {
       faculty: "Dr.Anuradha Phadnis",
       journal: "Journal Of the Oriental Institute",
       year: "2022-23",
-      title: "Organic Shoppers’ Involvement In Organic Foods: Self And Identity",
+      title:
+        "Organic Shoppers’ Involvement In Organic Foods: Self And Identity",
       status: "UGC",
     },
     {
@@ -245,8 +324,7 @@ export default function Research() {
     },
     {
       srNo: 19,
-      faculty:
-        "Dr.Anuradha Phadnis & Dr.Aatish Zagade",
+      faculty: "Dr.Anuradha Phadnis & Dr.Aatish Zagade",
       journal: "IEEE International Conference Journal 2024",
       year: "2024-25",
       title:
@@ -397,7 +475,8 @@ export default function Research() {
       faculty: "Dr.Poonam Wani",
       journal: "IPE Journal Of Management",
       year: "2023-24",
-      title: "Effect of Social Media Marketing on performance of Solar Products",
+      title:
+        "Effect of Social Media Marketing on performance of Solar Products",
       status: "Peer Reviewed",
     },
     {
@@ -618,8 +697,7 @@ export default function Research() {
       organizer: "IIM Ranchi, International Conference",
       year: "2025-26",
       type: "International",
-      participation:
-        "Paper Presentation & Best Paper 2nd Runners Up",
+      participation: "Paper Presentation & Best Paper 2nd Runners Up",
       title:
         "Redefining Responsibility: A Sustainability-Centric Review of India's Diesel Engine Manufacturing Sector",
     },
@@ -638,7 +716,6 @@ export default function Research() {
   return (
     <>
       <div className="min-h-screen bg-white">
-        
         <div className="w-full px-6 py-12 xl:px-16 xl:py-8">
           {/* ===========================
               🔷 TABS
@@ -995,7 +1072,6 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
                       </svg>
                     </div>
 
-              
                     <div
                       onClick={() => setShowUGCModal(true)}
                       className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition cursor-pointer hover:bg-gray-50 text-secondary flex flex-col items-center gap-2 group"
@@ -1111,24 +1187,172 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
                   </h2>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Campus Drone
+                    <div
+                      onClick={() => setShowCampusDroneModal(true)}
+                      className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition cursor-pointer hover:bg-gray-50 text-secondary flex flex-col items-center gap-2 group"
+                    >
+                      <span>Campus Drone</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 text-gray-400 group-hover:text-secondary transition-colors"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        />
+                      </svg>
                     </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Campus Herald
+                    <div
+                      onClick={() => setShowCampusHeraldModal(true)}
+                      className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition cursor-pointer hover:bg-gray-50 text-secondary flex flex-col items-center gap-2 group"
+                    >
+                      <span>Campus Herald</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 text-gray-400 group-hover:text-secondary transition-colors"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        />
+                      </svg>
                     </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Management Research Monograph
+                    <div
+                      onClick={() =>
+                        window.open(
+                          "/institute/ResearchManagement/Research Project With ISBN.pdf",
+                          "_blank",
+                        )
+                      }
+                      className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition cursor-pointer hover:bg-gray-50 text-secondary flex flex-col items-center gap-2 group"
+                    >
+                      <span>Management Research Monograph</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 text-gray-400 group-hover:text-secondary transition-colors"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        />
+                      </svg>
                     </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Analysi - Case Booklet
+                    <div
+                      onClick={() =>
+                        window.open(
+                          "/institute/Anlysi/Analysis Booklet.pdf",
+                          "_blank",
+                        )
+                      }
+                      className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition cursor-pointer hover:bg-gray-50 text-secondary flex flex-col items-center gap-2 group"
+                    >
+                      <span>Analysi - Case Booklet</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 text-gray-400 group-hover:text-secondary transition-colors"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        />
+                      </svg>
                     </div>
 
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Conference Proceedings
+                    <div
+                      onClick={() => setShowConfProceedingsModal(true)}
+                      className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition cursor-pointer hover:bg-gray-50 text-secondary flex flex-col items-center gap-2 group"
+                    >
+                      <span>Conference Proceedings</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 text-gray-400 group-hover:text-secondary transition-colors"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        />
+                      </svg>
                     </div>
-                    <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
-                      Blog
+                    <div
+                      onClick={() => window.open("/blogs", "_self")}
+                      className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition cursor-pointer hover:bg-gray-50 text-secondary flex flex-col items-center gap-2 group"
+                    >
+                      <span>Blog</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 text-gray-400 group-hover:text-secondary transition-colors"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        />
+                      </svg>
                     </div>
                     <div className="bg-white p-8 rounded-xl shadow border border-gray-200 text-center font-semibold hover:shadow-lg transition">
                       Patent
@@ -1150,12 +1374,12 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
                     <div className="lg:w-1/2">
                       <p className="text-md md:text-lg text-gray-700 text-justify">
                         Dr. Priyanka Darekar served as a Session Chair at 4th
-                        International Conference on Technological Advancements in
-                        Computational Sciences, Amity University, Tashkent City,
-                        Street Labzak, Building-70, 100028, Uzbekistan. She
-                        facilitated the scholarly presentations and discussions,
-                        and contributing to the smooth conduct of the
-                        international academic event.
+                        International Conference on Technological Advancements
+                        in Computational Sciences, Amity University, Tashkent
+                        City, Street Labzak, Building-70, 100028, Uzbekistan.
+                        She facilitated the scholarly presentations and
+                        discussions, and contributing to the smooth conduct of
+                        the international academic event.
                       </p>
                     </div>
 
@@ -1326,436 +1550,612 @@ Research plays a vital role in grooming a teacher with contemporary skills and e
           </div>
         </div>
 
-      {/* Book Publications Modal */}
-      {showBookModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-6xl max-h-[90vh] overflow-hidden flex flex-col">
-            <div className="p-6 border-b flex justify-between items-center bg-gray-50">
-              <h3 className="text-2xl font-bold text-secondary">
-                Book Publications
-              </h3>
-              <button
-                onClick={() => setShowBookModal(false)}
-                className="text-gray-500 hover:text-red-500 transition-colors"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+        {/* Book Publications Modal */}
+        {showBookModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-6xl max-h-[90vh] overflow-hidden flex flex-col">
+              <div className="p-6 border-b flex justify-between items-center bg-gray-50">
+                <h3 className="text-2xl font-bold text-secondary">
+                  Book Publications
+                </h3>
+                <button
+                  onClick={() => setShowBookModal(false)}
+                  className="text-gray-500 hover:text-red-500 transition-colors"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="p-6 overflow-auto">
-              <table className="w-full border-collapse border border-slate-300 text-left text-sm">
-                <thead className="bg-[#10404A] text-white">
-                  <tr>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Sr No
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Name of Applicant
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Book Title
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Chapter Title & Name of book in which published
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Volume & Issue number
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Year of Publication
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-300">
-                  {bookPublications.map((book, index) => (
-                    <tr
-                      key={index}
-                      className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}
-                    >
-                      <td className="border border-slate-300 px-4 py-3 text-center">
-                        {book.srNo}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3">
-                        {book.applicant}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3 italic">
-                        {book.title}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3">
-                        {book.chapter || "-"}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3 font-mono text-xs">
-                        {book.isbn}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3 text-center">
-                        {book.year}
-                      </td>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div className="p-6 overflow-auto">
+                <table className="w-full border-collapse border border-slate-300 text-left text-sm">
+                  <thead className="bg-[#10404A] text-white">
+                    <tr>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Sr No
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Name of Applicant
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Book Title
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Chapter Title & Name of book in which published
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Volume & Issue number
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Year of Publication
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-slate-300">
+                    {bookPublications.map((book, index) => (
+                      <tr
+                        key={index}
+                        className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}
+                      >
+                        <td className="border border-slate-300 px-4 py-3 text-center">
+                          {book.srNo}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3">
+                          {book.applicant}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3 italic">
+                          {book.title}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3">
+                          {book.chapter || "-"}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3 font-mono text-xs">
+                          {book.isbn}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3 text-center">
+                          {book.year}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* UGC Publications Modal */}
-      {showUGCModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-7xl max-h-[90vh] overflow-hidden flex flex-col">
-            <div className="p-6 border-b flex justify-between items-center bg-gray-50">
-              <h3 className="text-2xl font-bold text-secondary">
-                UGC Publications
-              </h3>
-              <button
-                onClick={() => setShowUGCModal(false)}
-                className="text-gray-500 hover:text-red-500 transition-colors"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+        {/* UGC Publications Modal */}
+        {showUGCModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-7xl max-h-[90vh] overflow-hidden flex flex-col">
+              <div className="p-6 border-b flex justify-between items-center bg-gray-50">
+                <h3 className="text-2xl font-bold text-secondary">
+                  UGC Publications
+                </h3>
+                <button
+                  onClick={() => setShowUGCModal(false)}
+                  className="text-gray-500 hover:text-red-500 transition-colors"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="p-6 overflow-auto">
-              <table className="w-full border-collapse border border-slate-300 text-left text-sm">
-                <thead className="bg-[#10404A] text-white">
-                  <tr>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold whitespace-nowrap">
-                      Sr No
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Name of Faculty
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Name of Journal
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Year
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Title of Paper
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold whitespace-nowrap">
-                      Status of Paper
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-300">
-                  {ugcPublications.map((pub, index) => (
-                    <tr
-                      key={index}
-                      className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}
-                    >
-                      <td className="border border-slate-300 px-4 py-3 text-center">
-                        {pub.srNo}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3">
-                        {pub.faculty}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3 italic">
-                        {pub.journal}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3 text-center whitespace-nowrap">
-                        {pub.year}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3">
-                        {pub.title}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3 text-center">
-                        {pub.status}
-                      </td>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div className="p-6 overflow-auto">
+                <table className="w-full border-collapse border border-slate-300 text-left text-sm">
+                  <thead className="bg-[#10404A] text-white">
+                    <tr>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold whitespace-nowrap">
+                        Sr No
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Name of Faculty
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Name of Journal
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Year
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Title of Paper
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold whitespace-nowrap">
+                        Status of Paper
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-slate-300">
+                    {ugcPublications.map((pub, index) => (
+                      <tr
+                        key={index}
+                        className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}
+                      >
+                        <td className="border border-slate-300 px-4 py-3 text-center">
+                          {pub.srNo}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3">
+                          {pub.faculty}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3 italic">
+                          {pub.journal}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3 text-center whitespace-nowrap">
+                          {pub.year}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3">
+                          {pub.title}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3 text-center">
+                          {pub.status}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Peer Reviewed Publications Modal */}
-      {showPeerReviewedModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-7xl max-h-[90vh] overflow-hidden flex flex-col">
-            <div className="p-6 border-b flex justify-between items-center bg-gray-50">
-              <h3 className="text-2xl font-bold text-secondary">
-                Peer Reviewed Publications
-              </h3>
-              <button
-                onClick={() => setShowPeerReviewedModal(false)}
-                className="text-gray-500 hover:text-red-500 transition-colors"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+        {/* Peer Reviewed Publications Modal */}
+        {showPeerReviewedModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-7xl max-h-[90vh] overflow-hidden flex flex-col">
+              <div className="p-6 border-b flex justify-between items-center bg-gray-50">
+                <h3 className="text-2xl font-bold text-secondary">
+                  Peer Reviewed Publications
+                </h3>
+                <button
+                  onClick={() => setShowPeerReviewedModal(false)}
+                  className="text-gray-500 hover:text-red-500 transition-colors"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="p-6 overflow-auto">
-              <table className="w-full border-collapse border border-slate-300 text-left text-sm">
-                <thead className="bg-[#10404A] text-white">
-                  <tr>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold whitespace-nowrap">
-                      Sr No
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Name of Faculty
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Name of Journal
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Year
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Title of Paper
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold whitespace-nowrap">
-                      Status of Paper
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-300">
-                  {peerReviewedPublications.map((pub, index) => (
-                    <tr
-                      key={index}
-                      className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}
-                    >
-                      <td className="border border-slate-300 px-4 py-3 text-center">
-                        {pub.srNo}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3">
-                        {pub.faculty}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3 italic">
-                        {pub.journal}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3 text-center whitespace-nowrap">
-                        {pub.year}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3">
-                        {pub.title}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3 text-center">
-                        {pub.status}
-                      </td>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div className="p-6 overflow-auto">
+                <table className="w-full border-collapse border border-slate-300 text-left text-sm">
+                  <thead className="bg-[#10404A] text-white">
+                    <tr>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold whitespace-nowrap">
+                        Sr No
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Name of Faculty
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Name of Journal
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Year
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Title of Paper
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold whitespace-nowrap">
+                        Status of Paper
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-slate-300">
+                    {peerReviewedPublications.map((pub, index) => (
+                      <tr
+                        key={index}
+                        className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}
+                      >
+                        <td className="border border-slate-300 px-4 py-3 text-center">
+                          {pub.srNo}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3">
+                          {pub.faculty}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3 italic">
+                          {pub.journal}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3 text-center whitespace-nowrap">
+                          {pub.year}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3">
+                          {pub.title}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3 text-center">
+                          {pub.status}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Conference Publications Modal */}
-      {showConferenceModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-7xl max-h-[90vh] overflow-hidden flex flex-col">
-            <div className="p-6 border-b flex justify-between items-center bg-gray-50">
-              <h3 className="text-2xl font-bold text-secondary">
-                Conference Presentations
-              </h3>
-              <button
-                onClick={() => setShowConferenceModal(false)}
-                className="text-gray-500 hover:text-red-500 transition-colors"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+        {/* Conference Publications Modal */}
+        {showConferenceModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-7xl max-h-[90vh] overflow-hidden flex flex-col">
+              <div className="p-6 border-b flex justify-between items-center bg-gray-50">
+                <h3 className="text-2xl font-bold text-secondary">
+                  Conference Presentations
+                </h3>
+                <button
+                  onClick={() => setShowConferenceModal(false)}
+                  className="text-gray-500 hover:text-red-500 transition-colors"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="p-6 overflow-auto">
-              <table className="w-full border-collapse border border-slate-300 text-left text-sm">
-                <thead className="bg-[#10404A] text-white">
-                  <tr>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold whitespace-nowrap">
-                      Sr No
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Name of Faculty
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Organizer of Conference
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Year
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      National/International
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Nature of Participation
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Research Paper Title
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-300">
-                  {conferencePublications.map((pub, index) => (
-                    <tr
-                      key={index}
-                      className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}
-                    >
-                      <td className="border border-slate-300 px-4 py-3 text-center">
-                        {pub.srNo}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3">
-                        {pub.faculty}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3 italic">
-                        {pub.organizer}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3 text-center whitespace-nowrap">
-                        {pub.year}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3 text-center">
-                        {pub.type}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3 text-center">
-                        {pub.participation}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3">
-                        {pub.title}
-                      </td>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div className="p-6 overflow-auto">
+                <table className="w-full border-collapse border border-slate-300 text-left text-sm">
+                  <thead className="bg-[#10404A] text-white">
+                    <tr>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold whitespace-nowrap">
+                        Sr No
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Name of Faculty
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Organizer of Conference
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Year
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        National/International
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Nature of Participation
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Research Paper Title
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-slate-300">
+                    {conferencePublications.map((pub, index) => (
+                      <tr
+                        key={index}
+                        className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}
+                      >
+                        <td className="border border-slate-300 px-4 py-3 text-center">
+                          {pub.srNo}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3">
+                          {pub.faculty}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3 italic">
+                          {pub.organizer}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3 text-center whitespace-nowrap">
+                          {pub.year}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3 text-center">
+                          {pub.type}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3 text-center">
+                          {pub.participation}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3">
+                          {pub.title}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Scopus/IEEE/ABDC Publications Modal */}
-      {showScopusModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-7xl max-h-[90vh] overflow-hidden flex flex-col">
-            <div className="p-6 border-b flex justify-between items-center bg-gray-50">
-              <h3 className="text-2xl font-bold text-secondary">
-                Scopus/IEEE/ABDC Publications
-              </h3>
-              <button
-                onClick={() => setShowScopusModal(false)}
-                className="text-gray-500 hover:text-red-500 transition-colors"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+        {/* Scopus/IEEE/ABDC Publications Modal */}
+        {showScopusModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-7xl max-h-[90vh] overflow-hidden flex flex-col">
+              <div className="p-6 border-b flex justify-between items-center bg-gray-50">
+                <h3 className="text-2xl font-bold text-secondary">
+                  Scopus/IEEE/ABDC Publications
+                </h3>
+                <button
+                  onClick={() => setShowScopusModal(false)}
+                  className="text-gray-500 hover:text-red-500 transition-colors"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="p-6 overflow-auto">
-              <table className="w-full border-collapse border border-slate-300 text-left text-sm">
-                <thead className="bg-[#10404A] text-white">
-                  <tr>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold whitespace-nowrap">
-                      Sr No
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Name of Faculty
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Name of Journal
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Year
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold">
-                      Title of Paper
-                    </th>
-                    <th className="border border-slate-400 px-4 py-3 font-semibold whitespace-nowrap">
-                      Status of Paper
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-300">
-                  {scopusPublications.map((pub, index) => (
-                    <tr
-                      key={index}
-                      className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}
-                    >
-                      <td className="border border-slate-300 px-4 py-3 text-center">
-                        {pub.srNo}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3">
-                        {pub.faculty}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3 italic">
-                        {pub.journal}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3 text-center whitespace-nowrap">
-                        {pub.year}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3">
-                        {pub.title}
-                      </td>
-                      <td className="border border-slate-300 px-4 py-3 text-center">
-                        {pub.status}
-                      </td>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div className="p-6 overflow-auto">
+                <table className="w-full border-collapse border border-slate-300 text-left text-sm">
+                  <thead className="bg-[#10404A] text-white">
+                    <tr>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold whitespace-nowrap">
+                        Sr No
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Name of Faculty
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Name of Journal
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Year
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold">
+                        Title of Paper
+                      </th>
+                      <th className="border border-slate-400 px-4 py-3 font-semibold whitespace-nowrap">
+                        Status of Paper
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-slate-300">
+                    {scopusPublications.map((pub, index) => (
+                      <tr
+                        key={index}
+                        className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}
+                      >
+                        <td className="border border-slate-300 px-4 py-3 text-center">
+                          {pub.srNo}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3">
+                          {pub.faculty}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3 italic">
+                          {pub.journal}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3 text-center whitespace-nowrap">
+                          {pub.year}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3">
+                          {pub.title}
+                        </td>
+                        <td className="border border-slate-300 px-4 py-3 text-center">
+                          {pub.status}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+        {/* Campus Drone Modal */}
+        {showCampusDroneModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col">
+              <div className="p-6 border-b flex justify-between items-center bg-gray-50">
+                <h3 className="text-2xl font-bold text-secondary">
+                  Campus Drone
+                </h3>
+                <button
+                  onClick={() => setShowCampusDroneModal(false)}
+                  className="text-gray-500 hover:text-red-500 transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div className="p-6 overflow-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {campusDroneFiles.map((file, index) => (
+                    <a
+                      key={index}
+                      href={file.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 p-4 rounded-xl border border-gray-200 hover:shadow-md hover:border-secondary transition group"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-8 w-8 text-red-500 flex-shrink-0"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                        />
+                      </svg>
+                      <span className="text-sm font-medium text-gray-700 group-hover:text-secondary transition-colors">
+                        {file.name}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Campus Herald Modal */}
+        {showCampusHeraldModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col">
+              <div className="p-6 border-b flex justify-between items-center bg-gray-50">
+                <h3 className="text-2xl font-bold text-secondary">
+                  Campus Herald
+                </h3>
+                <button
+                  onClick={() => setShowCampusHeraldModal(false)}
+                  className="text-gray-500 hover:text-red-500 transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div className="p-6 overflow-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {campusHeraldFiles.map((file, index) => (
+                    <a
+                      key={index}
+                      href={file.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 p-4 rounded-xl border border-gray-200 hover:shadow-md hover:border-secondary transition group"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-8 w-8 text-red-500 flex-shrink-0"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                        />
+                      </svg>
+                      <span className="text-sm font-medium text-gray-700 group-hover:text-secondary transition-colors">
+                        {file.name}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Conference Proceedings Modal */}
+        {showConfProceedingsModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden flex flex-col">
+              <div className="p-6 border-b flex justify-between items-center bg-gray-50">
+                <h3 className="text-2xl font-bold text-secondary">
+                  Conference Proceedings
+                </h3>
+                <button
+                  onClick={() => setShowConfProceedingsModal(false)}
+                  className="text-gray-500 hover:text-red-500 transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div className="p-6 overflow-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {conferenceProceedingsImages.map((item, index) => (
+                    <div key={index} className="space-y-2">
+                      <div className="relative h-64 rounded-xl overflow-hidden shadow border border-gray-200">
+                        <Image
+                          src={item.path}
+                          alt={item.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <p className="text-sm font-medium text-gray-700 text-center">
+                        {item.name}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

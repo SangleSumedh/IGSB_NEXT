@@ -35,7 +35,7 @@ const HeroSlider = () => {
 
   const handleDotClick = (index) => {
     setPreviousIndex(currentIndex);
-    setCurrentIndex(index);
+    setCurrentIndex(index); 
   };
 
   return (

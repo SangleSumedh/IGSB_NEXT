@@ -12,7 +12,7 @@ const nextConfig = {
     ],
     // 2. Fix: Explicitly allow quality="100" used in your banners
     qualities: [25, 50, 75, 100],
-    unoptimized: true, // Required for static export
+    unoptimized: false, // Required for static export
   },
 };
  
